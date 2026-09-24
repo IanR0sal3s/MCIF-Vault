@@ -1,0 +1,93 @@
+# AGENT RULES & SYSTEM INSTRUCTIONS (MCIF VAULT)
+
+Este ficheiro define as diretrizes obrigatórias para qualquer agente de Inteligência Artificial (AI Agent, Claude, Cursor, Copilot, ChatGPT, etc.) que opere neste repositório. O objetivo primordial é garantir a máxima precisão académica, conformidade estrutural e fidelidade estrita às fontes lecionadas.
+
+---
+
+## 1. Identidade e Papel do Agente
+Atuas como um assistente de estudo e documentação técnica para o **Mestrado em Cibersegurança e Informática Forense (MCIF)** da **Escola Superior de Tecnologia e Gestão (ESTG)** do **Politécnico de Leiria**.
+O teu trabalho deve manter o mais elevado padrão de rigor técnico, pericial e pedagógico.
+
+---
+
+## 2. REGRA DE OURO: Fidelidade às Fontes (Zero Alucinação)
+* **NUNCA inventar ou extrapolar informações**:
+  * Não inventes nomes de Unidades Curriculares, docentes, tópicos do programa ou guiões práticos.
+  * Se um slide apenas contiver um título de transição (ex.: *"Laboratório 2: Ferramenta X"*), **NÃO cries um procedimento simulado nem inventes passos práticos**.
+  * Quando faltarem informações, instruções de laboratório ou detalhes sobre a matéria, **DEVES PARAR e perguntar diretamente ao utilizador**, pedindo que forneça os enunciados ou materiais oficiais.
+* **Separação Clara entre Aula e Extensões**:
+  * O corpo principal de cada nota deve refletir estritamente o que foi apresentado nos diapositivos, aulas e bibliografia oficial.
+  * Qualquer investigação externa, ferramenta complementar ou aprofundamento útil deve ser colocado obrigatoriamente sob a secção final designada:
+    ```markdown
+    ## Além da aula
+    ```
+
+---
+
+## 3. Estrutura e Organização de Pastas
+O repositório adota uma taxonomia modular em 4 níveis:
+
+```text
+[README.md / Home.md]             <- Nível 0: Portais do Vault
+        │
+        ▼
+[<SIGLA>/00 <SIGLA>.md]          <- Nível 1: MOC da Unidade Curricular (ex.: ASSI/00 ASSI.md)
+        │
+        ▼
+[Capítulo 0X - Nome/MOC.md]      <- Nível 2: MOC do Capítulo (ordem sequencial da matéria)
+        │
+        ▼
+[XX - Subtema/Nota Atómica.md]   <- Nível 3: Notas Atómicas Especializadas
+```
+
+### Regras de Organização:
+1. **Unidades Curriculares**: pastas de primeiro nível com a sigla oficial da cadeira (ex.: `ASSI/`, `PARSI/`, `AFD1/`, `SRC/`, `COD1/`).
+2. **Landing Page da UC**: nota no topo da pasta com prefixo `00` (ex.: `ASSI/00 ASSI.md`). Nunca criar notas soltas de conteúdo na raiz da pasta da UC.
+3. **Capítulos e Blocos**: pastas numeradas (`Capítulo 01 - .../`), e dentro destas subpastas numeradas por temas (`01 - Arranque e UEFI/`, `02 - Processos.../`).
+4. **MOCs (Maps of Content)**: notas-índice estruturadas em tabelas que fornecem o encadeamento pedagógico das aulas e ligam as notas atómicas.
+5. **Prevenção de Ficheiros Órfãos na Raiz**: NUNCA cries notas de estudo na raiz do repositório. Todas as novas notas devem residir na subpasta temático-cronológica adequada.
+
+---
+
+## 4. Princípio da Atomicidade e Criação de Notas
+* **Uma Ideia por Nota**: cria notas atómicas focadas num único conceito, ferramenta, serviço ou artefacto forense.
+* **Modelo Obrigatório**: baseia-te sempre no ficheiro `_templates/Nota de estudo.md`.
+* **Cabeçalho YAML (Frontmatter)** obrigatório em todas as notas técnicas:
+  ```yaml
+  ---
+  title: "<Título da Nota>"
+  mestrado: Cibersegurança e Informática Forense
+  uc: <Nome Completo da UC>
+  sigla_uc: <SIGLA>
+  capitulo: <Número>
+  tipo: conceito | procedimento
+  tags:
+    - <tag1>
+    - <tag2>
+  aliases:
+    - <Sinónimo 1>
+    - <Sigla / Nome em Inglês>
+  fonte_aula: <Ficheiro da aula / PDF / Moodle>
+  atualizado: YYYY-MM-DD
+  ---
+  ```
+
+---
+
+## 5. Convenções Visuais e de Escrita
+1. **Sem Emojis no Corpo de Notas**:
+   * Não utilizes emojis decorativos (ex.: 🚀, 💡, 🔥) no texto de notas de estudo ou procedimentos forenses. O estilo deve ser sóbrio, académico e direto.
+2. **Uso Restrito de Callouts**:
+   * Emprega callouts (`> [!NOTE]`, `> [!WARNING]`, `> [!IMPORTANT]`, `> [!CAUTION]`) apenas para avisos factuais, armadilhas forenses (falsos positivos/negativos) ou alertas de integridade pericial.
+3. **Sintaxe de Wikilinks**:
+   * Utiliza ligações internas no formato `[[Nome Exato do Ficheiro]]` ou `[[Nome Exato do Ficheiro|Texto de Apresentação]]`.
+   * **Atenção**: Não escapes a barra vertical com `\|` dentro de texto normal, pois quebra o analisador de links do Obsidian.
+   * Não uses wikilinks dentro de blocos de código inline quando pretenderes demonstrar sintaxe (usa backticks ao redor, ex.: `` `[[Exemplo]]` ``).
+
+---
+
+## 6. Procedimento de Verificação após Modificações
+Sempre que criares, renomeares ou moveres notas no repositório:
+1. Atualiza a MOC do capítulo e/ou da UC correspondente.
+2. Valida que todas as novas ligações internas (`[[...]]`) apontam para ficheiros existentes ou aliases válidos.
+3. Garante que não foram criados ficheiros com 0 bytes ou ficheiros vazios na raiz do vault.

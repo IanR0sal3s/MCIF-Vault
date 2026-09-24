@@ -1,0 +1,18 @@
+# Obsidian workspace e caches locais (evita conflitos de separadores e layout entre colegas)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.obsidian/indexed/
+
+# Reciclagem interna do Obsidian
+.trash/
+
+# Ficheiros de sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ficheiros temporários e backups de editores
+*~
+*.swp
+*.tmp

@@ -1,0 +1,14 @@
+{
+  "attachmentFolderPath": "_anexos",
+  "newFileLocation": "current",
+  "newFileFolderPath": "ASSI",
+  "useMarkdownLinks": false,
+  "newLinkFormat": "shortest",
+  "alwaysUpdateLinks": true,
+  "showLineNumber": false,
+  "livePreview": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "showInlineTitle": true,
+  "propertiesInDocument": "visible"
+}
