@@ -1,6 +1,7 @@
 # Obsidian workspace e caches locais (evita conflitos de separadores e layout entre colegas)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+.obsidian/graph.json
 .obsidian/cache/
 .obsidian/indexed/
 

@@ -68,7 +68,7 @@ Para ultrapassar as limitações nativas e analisar hives sem alterar marcas tem
 | Ferramenta | Autor / Origem | Características e Cenário de Uso |
 | :--- | :--- | :--- |
 | **RegScanner** | NirSoft | Utilitário gráfico leve para pesquisas avançadas no Registry ativo. Permite filtrar por tipo de valor, comprimento, texto/Unicode, e de forma crítica por **intervalo de datas de modificação** de chaves. |
-| **RegistryExplorer** | Eric Zimmerman | Aplicação de referência em DFIR. Permite análise de hives em sistemas ativos (com privilégios de administrador via VSS) e análise *offline* de ficheiros copiados (`SYSTEM`, `SOFTWARE`, `NTUSER.DAT`, etc.). Inclui marcadores (*bookmarks*), plugins automáticos de interpretação e **descodificação transparente de campos binários e cifras (ex.: ROT13 em [[Artefacto Forense UserAssist|UserAssist]])**. |
+| **RegistryExplorer** | Eric Zimmerman | Aplicação de referência em DFIR. Permite análise de hives em sistemas ativos (com privilégios de administrador via VSS) e análise *offline* de ficheiros copiados (`SYSTEM`, `SOFTWARE`, `NTUSER.DAT`, etc.). Inclui marcadores (*bookmarks*), plugins automáticos de interpretação e **descodificação transparente de campos binários e cifras (ex.: ROT13 em [[Artefacto Forense UserAssist\|UserAssist]])**. |
 | **RegRipper** | Harlan Carvey / Mark Woan | Ferramenta em Perl desenhada para extração rápida e direcionada de artefactos forenses através de plugins especializados. É amplamente empregue de forma automatizada por plataformas periciais como o **Autopsy**. |
 
 ### Utilização do RegRipper na Linha de Comandos

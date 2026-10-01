@@ -37,12 +37,15 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist
 
 ## Estrutura das Subchaves e Ofuscação ROT13
 
-Debaixo da chave `UserAssist` existem subchaves identificadas por **GUIDs** (*Globally Unique Identifiers*). Cada GUID corresponde a uma categoria de execução:
+Debaixo da chave `UserAssist` existem subchaves identificadas por **GUIDs** (*Globally Unique Identifiers*). Estes identificadores **são constantes estáticas pré-definidas pela Microsoft** (não variam por ordem de arranque, processo ou máquina) e definem a categoria do mecanismo de lançamento:
 
-| Subchave GUID | Função / Origem da Execução |
+| Subchave GUID (Windows 7 a 11) | Função / Origem da Execução |
 | :--- | :--- |
 | `{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}` | Execução direta de ficheiro executável (`.exe`). |
-| `{F4E57C4B-45F0-49AB-443B-CFE233D9F}` | Execução a partir de atalho do Windows (`.lnk`). |
+| `{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}` | Execução a partir de atalho do Windows (`.lnk`). |
+
+> [!NOTE] Constantes do Sistema vs. PIDs Dinâmicos
+> Ao contrário de um **PID** (*Process ID*), que é dinâmico e gerado pelo *kernel* a cada execução, os GUIDs do UserAssist são **constantes estáticas codificadas no Windows Explorer (`explorer.exe`)**. Qualquer máquina Windows moderna utilizará exatamente o mesmo GUID para a mesma finalidade.
 
 Dentro destas subchaves existe uma subchave denominada **`Count`**, onde residem os valores individuais de cada aplicação.
 
