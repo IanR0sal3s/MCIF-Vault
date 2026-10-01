@@ -66,6 +66,9 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 
 ---
 
+> [!TIP] Folha de Consulta Rápida (Cheat Sheet)
+> Para uma síntese rápida de todos os caminhos, ficheiros de hive, estruturas binárias (SYSTEMTIME, UserAssist), matriz de artefactos forenses e comandos CLI, consulta a **[[Cheat Sheet - Registry e Forense]]**.
+
 ## 5. Fundamentos e Ferramentas do Registry (05 - Registry e Forense)
 
 | Nota | Descrição e Foco Técnico |
