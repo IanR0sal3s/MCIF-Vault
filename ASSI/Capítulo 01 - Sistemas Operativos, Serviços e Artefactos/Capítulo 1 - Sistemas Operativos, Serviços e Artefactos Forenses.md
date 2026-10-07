@@ -14,14 +14,14 @@ tags:
 aliases:
   - Capítulo 1 ASSI
   - MOC Capítulo 1
-atualizado: 2026-09-23
+atualizado: 2026-10-07
 ---
 
 # Capítulo 1 — Sistemas Operativos, Serviços e Artefactos Forenses
 
-Índice temático e encadeamento pedagógico do programa completo do Capítulo 1 (*Serviços & Artefactos Forenses no Windows*, 180 slides, Prof. Patrício Domingues). 
+Índice temático e encadeamento pedagógico do programa completo do Capítulo 1 (*Sistemas Operativos, Serviços e Artefactos Forenses no Windows*, lecionado pelo Prof. Patrício Domingues). 
 
-As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASSI/Capítulo 01 - Sistemas Operativos, Serviços e Artefactos/`.
+As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASSI/Capítulo 01 - Sistemas Operativos, Serviços e Artefactos/`, cobrindo os fundamentos de arranque, serviços, Registry e os artefactos do sistema e do utilizador.
 
 ---
 
@@ -109,7 +109,88 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 
 ---
 
+## 9. VSS e Linha do Tempo Live (09 - VSS e Linha do Tempo Live)
+
+| Nota | Descrição e Foco Técnico |
+| :--- | :--- |
+| [[LastActivityView e Reconstituição Temporal Live]] | Triagem rápida de atividade *live*, agregação multi-fonte (Prefetch, Registry, Minidump), automação CLI (`/stab`) |
+| [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]] | Snapshots de ficheiros em estado *locked*, arquitetura (VSS Service `VSSVC.exe`, Writers, Requestor, Providers), quotas na GUI |
+| [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]] | Manipulação por `vssadmin`, automação em PowerShell WMI, vetor de ransomware (`wmic /nointeractive`), permissões com `icacls` |
+| [[Acesso Forense e Montagem de Shadow Copies]] | Montagem nativa com `mklink /d` (barra final `\`), ferramentas `VSCMount` (Eric Zimmerman) e `ShadowCopyView` (NirSoft); Ficha 3 VSS |
+
+---
+
+## 10. Execução e Otimização do Sistema (10 - Prefetch e SysMain)
+
+| Nota | Descrição e Foco Técnico |
+| :--- | :--- |
+| [[Taxonomia dos Artefactos de Execução no Windows]] | Classificação em System, Registry e User artifacts (Singh & Singh), motivações de engenharia (UX e retrocompatibilidade) |
+| [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]] | Redução de tempo de carregamento e boot, evolução SuperFetch/SysMain, limites (1024), escrita exclusiva por `svchost.exe (-s SysMain)`, armadilha de `EnablePrefetcher` |
+| [[Estrutura Interna e Algoritmo de Hashing do Prefetch]] | Algoritmo de hash (314159/37), exceção para executáveis anfitriões CLI, compressão MAM vs SCCA, 8 marcas temporais de execução, ausência de vínculo a utilizador |
+| [[Análise Forense e Criação a Pedido do Prefetch]] | Análise com `WinPrefetchView` e `PECmd` (Zimmerman), validação de integridade com `sigcheck`, criação programática via APIs `OperationStart`/`OperationEnd` (`Op-*.pf`); Ficha 04 |
+
+---
+
+## 11. Infraestrutura de Compatibilidade (11 - ShimCache e AmCache)
+
+| Nota | Descrição e Foco Técnico |
+| :--- | :--- |
+| [[Application Compatibility e ShimCache (AppCompatCache)]] | Infraestrutura de shims, `PcaSvc` e `sysmain.sdb`, retenção na RAM e escrita no shutdown (`SYSTEM`), buffer circular (1024), remoção da InsertFlag no W10/W11 |
+| [[AmCache - Arquitetura, Hives e Evolução para SQLite]] | Histórico (`RecentFileCache.bcf` W7 vs `Amcache.hve` REGF W8+), tarefas agendadas, hash SHA-1 e VirusTotal, evolução para SQLite3 no Windows 11 (>25H2) |
+| [[Extração da AmCache e Comparação Forense com a ShimCache]] | Extração de ficheiros bloqueados, parsing com `AmcacheParser` (Zimmerman) e `RegRipper`, tabela comparativa, regra de ouro (prova de existência vs. execução); Ficha 05 |
+
+---
+
+## 12. Interação do Utilizador e Atalhos (12 - Jump Lists e Ficheiros LNK)
+
+| Nota | Descrição e Foco Técnico |
+| :--- | :--- |
+| [[Jump Lists - Arquitetura, AppIDs e Carving]] | Listas automáticas (CFB/OLE) vs customizadas, catálogo de AppIDs, persistência pós-desinstalação, trailer de carving `AB FB BF BA`, ferramentas `JLECmd` e `JumpList Explorer`; Ficha 06 |
+| [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] | Assinatura `4C 00 00 00`, metadados recuperáveis (MAC timestamps, volume serial, MAC address NIC), pasta `Recent` (limite 149), parsing com `LECmd` e `LnkParse3` |
+| [[Abuso e Vetores de Ataque com Ficheiros LNK]] | Engenharia social com ícones trocados, execução de LOLBins, campanhas Emotet e APT10, payload embutido (`findstr`), vulnerabilidade de truncagem visual (256 vs. 4096 carateres) |
+
+---
+
+## 13. Caches de Shell e Visualização (13 - Caches Gráficas e Miniaturas)
+
+| Nota | Descrição e Foco Técnico |
+| :--- | :--- |
+| [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]] | Evolução histórica (`ShellIconCache`, `IconCache.db` com magic `Win4`), pasta Explorer (`thumbcache_*.db`), ferramentas `thumbcache viewer` (GUI/CLI), mapeamento com Windows Search (`Windows.db`), ressalva probatória de visualização; Ficha 07 |
+
+---
+
+## 14. Monitorização de Atividade e Recursos (14 - Windows Activity Timeline e SRUM)
+
+| Nota | Descrição e Foco Técnico |
+| :--- | :--- |
+| [[Windows Activity Timeline - Arquitetura e Base SQLite]] | SQLite `ActivitiesCache.db`, serviço UWP `CDPUserSvc`, campo `PlatformDeviceId` (Base64), chave `TaskFlow\DeviceCache`, utilidade reduzida no W11, parsing com `WxTCmd`; Ficha 08 |
+| [[Recuperação de Clipboard e Sincronização na Timeline]] | Extração de área de transferência da coluna `ClipboardPayload`, requisitos (Win+V e Cloud Sync), payload JSON Base64 (12h de retenção), ferramenta `Clippy` (DB e WAL) |
+| [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]] | Base ESE `SRUDB.dat`, serviço DPS (`nduprov.dll`, etc.), armazenamento diferido (Registry e descarga ao minuto 30), tabelas GUID de CPU/rede/energia, mapeamento `SruDbIdMapTable`, reparação com `esentutl`; Ficha 09 |
+| [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]] | Limitações do Task Manager, utilitário nativo `powercfg` (`/energy`, `/srumutil` para CSV, `/batteryReport`), NirSoft `ESE Database Viewer` (UTF-16), exportação profissional com `SrumECmd` (Zimmerman) e deteção de exfiltração |
+
+---
+
+> [!TIP] Folha de Consulta Rápida — Parte 2 (Execução e Sistema)
+> Para uma síntese rápida de todos os caminhos de artefactos, motores (ESE, SQLite, CFB), assinaturas binárias (MAM, SCCA, 4C 00 00 00, NP, uLEB128), matriz cronológica de ativação e comandos CLI, consulta a **[[Cheat Sheet - Artefactos de Execução e Sistema no Windows]]**.
+
+## 15. Aplicações Modernas e Matriz Forense (15 - Aplicações Modernas e Matriz Forense)
+
+| Nota | Descrição e Foco Técnico |
+| :--- | :--- |
+| [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] | Aplicação UWP/MSIX, pasta `LocalState\TabState`, persistência de texto não gravado (*unsaved text*), estrutura binária `NP` em UTF-16LE, parsers `notepad_parser` e `Notepad-State-Library`; Ficha 10 |
+| [[Codificação uLEB128 em Estruturas de Dados do Windows]] | Algoritmo *Unsigned Little Endian Base 128*, regra dos 7 bits e MSB continuation bit, passo a passo de codificação do valor decimal 301 (`AD 02`), implementação de leitura pericial |
+| [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] | Linha do tempo de ativação ($T_0 \to$ UserAssist $\approx 3\text{s} \to$ Prefetch $\approx 10\text{s} \to$ SRUM $\approx 1\text{h} \to$ Amcache $\to$ Shimcache no shutdown), tabela consolidada W10/W11 e pastas críticas de sistema |
+
+---
+
 ## Navegação
 
 - [[00 ASSI|Voltar ao MOC Geral de ASSI]]
 - [[Home|Voltar ao Hub Central do MCIF]]
+
+
+
+
+
+
+

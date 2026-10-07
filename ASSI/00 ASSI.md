@@ -11,7 +11,7 @@ aliases:
   - ASSI
   - 00 ASSI
   - Administração Segura de Sistemas Informáticos
-atualizado: 2026-09-23
+atualizado: 2026-10-07
 ---
 
 # Administração Segura de Sistemas Informáticos (ASSI)
@@ -25,20 +25,28 @@ Unidade curricular do **Mestrado em Cibersegurança e Informática Forense (MCIF
 
 ## 📖 Programa e Capítulos
 
-| Capítulo | Designação | Estado |
+| Capítulo | Designação | Estado / Cobertura |
 | :--- | :--- | :--- |
-| **[[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]** | Serviços & Artefactos Forenses no Windows (Arranque/PKfail, Processos, Serviços, UWP, Registry e Dispositivos USB) | Concluído (180 slides) |
+| **[[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]** | **Sistemas Operativos, Serviços e Artefactos Forenses no Windows**<br/>• **Parte 1**: Arranque, UEFI/PKfail, Processos, Serviços, UWP, Registry e Dispositivos USB (180 slides)<br/>• **Parte 2**: VSS, Prefetch, ShimCache, AmCache, Jump Lists, LNK, Caches Gráficas, Timeline, SRUM, Bloco de Notas W11 e Matriz Forense (160 slides) | Concluído (340 slides mapeados, 49 notas temáticas + 2 Cheat Sheets) |
 | *Capítulo 2* | *A disponibilizar conforme o avanço letivo* | Planeado |
+
+### 📑 Folhas de Consulta Rápida (Cheat Sheets de Apoio)
+* **[[Cheat Sheet - Registry e Forense]]**: Guia de bolso para Hives lógicos/físicos, UserAssist, ShellBags, USBSTOR, Timestamps e comandos CLI.
+* **[[Cheat Sheet - Artefactos de Execução e Sistema no Windows]]**: Guia de bolso para VSS, Prefetch (MAM), ShimCache, AmCache (SHA-1/SQLite), Jump Lists (CFB), LNKs, Thumbnails, Timeline, SRUM (ESE) e Linha do Tempo de Ativação.
 
 ---
 
 ## 🔗 Recursos e Fontes Oficiais
 
 * **Moodle da UC**: Materiais oficiais, guiões práticos, anúncios e apresentações disponibilizados pelo docente na plataforma institucional de e-learning do Politécnico de Leiria.
-* **Apresentação de Apoio (Cap. 1)**: `01_FA_services+WSearch+Registry---2026-27_ULO_v2.pdf`.
+* **Apresentações de Apoio (Capítulo 1)**:
+  * Parte 1: `01_FA_services+WSearch+Registry---2026-27_ULO_v2.pdf` (180 slides).
+  * Parte 2: `Artefactos Windows OS` (160 slides).
+* **Fichas Laboratoriais Mapeadas**: Fichas 1 a 10 integradas nas notas correspondentes.
 
 ---
 
 ## 🧭 Navegação
 
 * [[Home|Voltar ao Hub Central do MCIF]]
+
