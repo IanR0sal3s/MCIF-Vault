@@ -69,7 +69,7 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 > [!TIP] Folha de Consulta Rápida (Cheat Sheet)
 > Para uma síntese rápida de todos os caminhos, ficheiros de hive, estruturas binárias (SYSTEMTIME, UserAssist), matriz de artefactos forenses e comandos CLI, consulta a **[[Cheat Sheet - Registry e Forense]]**.
 
-## 5. Fundamentos e Ferramentas do Registry (05 - Registry e Forense)
+## 5. Fundamentos e Ferramentas do Registry (05 - Fundamentos e Ferramentas do Registry)
 
 | Nota | Descrição e Foco Técnico |
 | :--- | :--- |
@@ -80,7 +80,7 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 
 ---
 
-## 6. Aplicações Modernas, Timestamps e Monitorização (05 - Registry e Forense)
+## 6. Aplicações Modernas, Timestamps e Monitorização (06 - Aplicações Modernas, Timestamps e Monitorização)
 
 | Nota | Descrição e Foco Técnico |
 | :--- | :--- |
@@ -90,18 +90,18 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 
 ---
 
-## 7. Artefactos Forenses de Utilizador e Navegação (05 - Registry e Forense)
+## 7. Artefactos Forenses de Utilizador e Navegação (07 - Artefactos Forenses de Utilizador e Navegação)
 
-| Nota | Descrição e Foco Técnico |
-| :--- | :--- |
-| [[Artefactos Forenses de Execução e Persistência no Registry]] | Chaves `Run`/`RunOnce`, Sysinternals `autoruns`, `LogonStats` (1.º login), Cache MUI (`UsrClass.dat`) e `RecentApps` |
-| [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]] | Listas MRU: `RunMRU` (`MRUList`), `RecentDocs` (`MRUListEx`), `ComDlg32`, caminhos digitados em `TypedPaths` |
-| [[Artefacto Forense UserAssist]] | Telemetria de apps GUI no Explorer, subchaves GUID, cifra ROT13, estrutura binária `Count` (72 bytes) e falsos positivos |
-| [[Artefacto Forense ShellBags]] | Histórico de layout e navegação em pastas (`BagMRU`/`Bags`), suporte a arquivos comprimidos (ZIP, e 7z/RAR no W11 22H2), `SBECmd` |
+| Nota                                                                  | Descrição e Foco Técnico                                                                                                          |
+| :-------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
+| [[Artefactos Forenses de Execução e Persistência no Registry]]        | Chaves `Run`/`RunOnce`, Sysinternals `autoruns`, `LogonStats` (1.º login), Cache MUI (`UsrClass.dat`) e `RecentApps`              |
+| [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]] | Listas MRU: `RunMRU` (`MRUList`), `RecentDocs` (`MRUListEx`), `ComDlg32`, caminhos digitados em `TypedPaths`                      |
+| [[Artefacto Forense UserAssist]]                                      | Telemetria de apps GUI no Explorer, subchaves GUID, cifra ROT13, estrutura binária `Count` (72 bytes) e falsos positivos          |
+| [[Artefacto Forense ShellBags]]                                       | Histórico de layout e navegação em pastas (`BagMRU`/`Bags`), suporte a arquivos comprimidos (ZIP, e 7z/RAR no W11 22H2), `SBECmd` |
 
 ---
 
-## 8. Caso de Estudo: Dispositivos USB (05 - Registry e Forense)
+## 8. Caso de Estudo: Dispositivos USB (08 - Artefactos Forenses de Dispositivos USB)
 
 | Nota | Descrição e Foco Técnico |
 | :--- | :--- |
@@ -111,12 +111,12 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 
 ## 9. VSS e Linha do Tempo Live (09 - VSS e Linha do Tempo Live)
 
-| Nota | Descrição e Foco Técnico |
-| :--- | :--- |
-| [[LastActivityView e Reconstituição Temporal Live]] | Triagem rápida de atividade *live*, agregação multi-fonte (Prefetch, Registry, Minidump), automação CLI (`/stab`) |
-| [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]] | Snapshots de ficheiros em estado *locked*, arquitetura (VSS Service `VSSVC.exe`, Writers, Requestor, Providers), quotas na GUI |
-| [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]] | Manipulação por `vssadmin`, automação em PowerShell WMI, vetor de ransomware (`wmic /nointeractive`), permissões com `icacls` |
-| [[Acesso Forense e Montagem de Shadow Copies]] | Montagem nativa com `mklink /d` (barra final `\`), ferramentas `VSCMount` (Eric Zimmerman) e `ShadowCopyView` (NirSoft); Ficha 3 VSS |
+| Nota                                                           | Descrição e Foco Técnico                                                                                                             |
+| :------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| [[LastActivityView e Reconstituição Temporal Live]]            | Triagem rápida de atividade *live*, agregação multi-fonte (Prefetch, Registry, Minidump), automação CLI (`/stab`)                    |
+| [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]  | Snapshots de ficheiros em estado *locked*, arquitetura (VSS Service `VSSVC.exe`, Writers, Requestor, Providers), quotas na GUI       |
+| [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]] | Manipulação por `vssadmin`, automação em PowerShell WMI, vetor de ransomware (`wmic /nointeractive`), permissões com `icacls`        |
+| [[Acesso Forense e Montagem de Shadow Copies]]                 | Montagem nativa com `mklink /d` (barra final `\`), ferramentas `VSCMount` (Eric Zimmerman) e `ShadowCopyView` (NirSoft); Ficha 3 VSS |
 
 ---
 
@@ -138,16 +138,17 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 | [[Application Compatibility e ShimCache (AppCompatCache)]] | Infraestrutura de shims, `PcaSvc` e `sysmain.sdb`, retenção na RAM e escrita no shutdown (`SYSTEM`), buffer circular (1024), remoção da InsertFlag no W10/W11 |
 | [[AmCache - Arquitetura, Hives e Evolução para SQLite]] | Histórico (`RecentFileCache.bcf` W7 vs `Amcache.hve` REGF W8+), tarefas agendadas, hash SHA-1 e VirusTotal, evolução para SQLite3 no Windows 11 (>25H2) |
 | [[Extração da AmCache e Comparação Forense com a ShimCache]] | Extração de ficheiros bloqueados, parsing com `AmcacheParser` (Zimmerman) e `RegRipper`, tabela comparativa, regra de ouro (prova de existência vs. execução); Ficha 05 |
+| [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]] | Síntese e visão integrada: pirâmide de compatibilidade (WOW64, Shims/sysmain.sdb, PcaSvc, ShimCache, AmCache), fluxo de execução e correlação forense |
 
 ---
 
 ## 12. Interação do Utilizador e Atalhos (12 - Jump Lists e Ficheiros LNK)
 
-| Nota | Descrição e Foco Técnico |
-| :--- | :--- |
-| [[Jump Lists - Arquitetura, AppIDs e Carving]] | Listas automáticas (CFB/OLE) vs customizadas, catálogo de AppIDs, persistência pós-desinstalação, trailer de carving `AB FB BF BA`, ferramentas `JLECmd` e `JumpList Explorer`; Ficha 06 |
-| [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] | Assinatura `4C 00 00 00`, metadados recuperáveis (MAC timestamps, volume serial, MAC address NIC), pasta `Recent` (limite 149), parsing com `LECmd` e `LnkParse3` |
-| [[Abuso e Vetores de Ataque com Ficheiros LNK]] | Engenharia social com ícones trocados, execução de LOLBins, campanhas Emotet e APT10, payload embutido (`findstr`), vulnerabilidade de truncagem visual (256 vs. 4096 carateres) |
+| Nota                                                          | Descrição e Foco Técnico                                                                                                                                                                 |
+| :------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [[Jump Lists - Arquitetura, AppIDs e Carving]]                | Listas automáticas (CFB/OLE) vs customizadas, catálogo de AppIDs, persistência pós-desinstalação, trailer de carving `AB FB BF BA`, ferramentas `JLECmd` e `JumpList Explorer`; Ficha 06 |
+| [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] | Assinatura `4C 00 00 00`, metadados recuperáveis (MAC timestamps, volume serial, MAC address NIC), pasta `Recent` (limite 149), parsing com `LECmd` e `LnkParse3`                        |
+| [[Abuso e Vetores de Ataque com Ficheiros LNK]]               | Engenharia social com ícones trocados, execução de LOLBins, campanhas Emotet e APT10, payload embutido (`findstr`), vulnerabilidade de truncagem visual (256 vs. 4096 carateres)         |
 
 ---
 

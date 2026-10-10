@@ -112,14 +112,14 @@ flowchart LR
 
 A tabela seguinte sumariza as divergências técnicas e operacionais entre os dois pilares da infraestrutura de compatibilidade:
 
-| Propriedade / Característica | AmCache (`Amcache.hve`) | ShimCache (`AppCompatCache`) |
-| :--- | :--- | :--- |
-| **Âmbito do Registo** | Registo da existência de executáveis, aplicações instaladas, pacotes de drivers e dispositivos PnP. | Registo de atributos de ficheiros executáveis e DLLs intercetadas pelo subsistema de compatibilidade. |
-| **Formato e Localização** | *Hive* independente em `%WINDIR%\AppCompat\Programs\Amcache.hve` (ou SQLite no W11 recente). | Armazenado na memória RAM durante a sessão e descarregado para `HKLM\SYSTEM\...\AppCompatCache` no *shutdown*. |
-| **Hashes Criptográficos** | **Sim (Hash SHA-1 de cada executável)**. | **Não** (apenas PE Checksum em certas versões). |
-| **Marcadores Temporais** | Data de compilação PE, data de criação do ficheiro e data de registo pelo sistema. | Data de **última modificação do ficheiro** no sistema de ficheiros (não regista quando entrou na cache). |
-| **Capacidade e Gestão** | Sem limite fixo de 1024 entradas; gerido por tarefas agendadas a cada 24 horas. | Buffer circular estrito com máximo de **1024 entradas** no Windows moderno. |
-| **Presença de Argumentos CLI** | Não armazena argumentos de linha de comandos. | Não armazena argumentos de linha de comandos. |
+| Propriedade / Característica   | AmCache (`Amcache.hve`)                                                                             | ShimCache (`AppCompatCache`)                                                                                   |
+| :----------------------------- | :-------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
+| **Âmbito do Registo**          | Registo da existência de executáveis, aplicações instaladas, pacotes de drivers e dispositivos PnP. | Registo de atributos de ficheiros executáveis e DLLs intercetadas pelo subsistema de compatibilidade.          |
+| **Formato e Localização**      | *Hive* independente em `%WINDIR%\AppCompat\Programs\Amcache.hve` (ou SQLite no W11 recente).        | Armazenado na memória RAM durante a sessão e descarregado para `HKLM\SYSTEM\...\AppCompatCache` no *shutdown*. |
+| **Hashes Criptográficos**      | **Sim (Hash SHA-1 de cada executável)**.                                                            | **Não** (apenas PE Checksum em certas versões).                                                                |
+| **Marcadores Temporais**       | Data de compilação PE, data de criação do ficheiro e data de registo pelo sistema.                  | Data de **última modificação do ficheiro** no sistema de ficheiros (não regista quando entrou na cache).       |
+| **Capacidade e Gestão**        | Sem limite fixo de 1024 entradas; gerido por tarefas agendadas a cada 24 horas.                     | Buffer circular estrito com máximo de **1024 entradas** no Windows moderno.                                    |
+| **Presença de Argumentos CLI** | Não armazena argumentos de linha de comandos.                                                       | Não armazena argumentos de linha de comandos.                                                                  |
 
 ---
 
@@ -150,5 +150,6 @@ Os procedimentos práticos de extração com `AmcacheParser`, `AppCompatCachePar
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
 - [[Application Compatibility e ShimCache (AppCompatCache)]]
 - [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
+- [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
 - [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]

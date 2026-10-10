@@ -50,11 +50,19 @@ flowchart TD
     Vitima --> Stage2["Descarrega e executa Payload de Nível 2 (VBS / DLL / Trojan)"]
 ```
 
+> [!IMPORTANT] Sinergia das Técnicas: Operação Combinada no Ataque Real
+> Embora o diagrama acima apresente as três técnicas de forma ramificada para facilitar a distinção conceptual de cada vetor, na prática cibercriminosa (campanhas de *Emotet*, *Qakbot* ou atores como o *APT10*) estas técnicas **não operam como caminhos separados nem são alternativas mutuamente exclusivas**.
+> 
+> Pelo contrário, os atacantes **combinam-nas habitualmente em conjunto no mesmo ficheiro `.lnk`**, de forma a auxiliarem-se mutuamente:
+> 1. O **ícone falso** (Word/PDF) garante a engenharia social necessária para a vítima dar o clique inicial;
+> 2. O **preenchimento de espaços (*padding*)** oculta a linha de comandos na interface gráfica se as propriedades do atalho forem inspecionadas no Explorer;
+> 3. O **LOLBin** (`cmd.exe`/`powershell.exe`) assegura a execução do *payload* contornando listas de bloqueio e políticas de restrição de software (AppLocker/WDAC).
+
 ### 1. Mascaramento de Ícones
 O formato LNK permite associar livremente qualquer recurso de ícone (`Icon Location` e `Icon Index`). Um atacante disfarça um atalho executável aplicando o ícone oficial do **Microsoft Word** (`DOCX`) ou do **Adobe Acrobat** (`PDF`). A vítima é levada a crer que se trata de uma fatura ou documento de texto inofensivo.
 
 ### 2. Living off the Land Binaries (LOLBins)
-Em vez de apontar para um binário compilado suspeito, o `.lnk` invoca ferramentas administrativas nativas já presentes no Windows (como `cmd.exe`, `powershell.exe`, `mshta.exe`, `wscript.exe`, `cscript.exe` ou `AppInstaller.exe`). Uma vez que estes executáveis são assinados pela Microsoft, contornam listas de bloqueio baseadas em nomes ou assinaturas.
+Em vez de apontar para um binário compilado suspeito, o `.lnk` invoca ferramentas administrativas nativas já presentes no Windows (como `cmd.exe`, `powershell.exe`, `mshta.exe`, `wscript.exe`, `cscript.exe` ou `AppInstaller.exe`). Uma vez que estes executáveis são assinados pela Microsoft, contornam listas de bloqueio baseadas em nomes ou assinaturas (AppLocker/WDAC).
 
 ---
 

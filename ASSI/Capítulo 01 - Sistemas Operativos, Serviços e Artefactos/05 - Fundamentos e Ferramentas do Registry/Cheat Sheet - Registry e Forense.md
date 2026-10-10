@@ -4,6 +4,7 @@ mestrado: Cibersegurança e Informática Forense
 uc: Administração Segura de Sistemas Informáticos
 sigla_uc: ASSI
 capitulo: 1
+bloco: 5
 tipo: cheatsheet
 tags:
   - windows
@@ -27,7 +28,7 @@ atualizado: 2026-10-01
 # Cheat Sheet — Windows Registry e Artefactos Forenses
 
 > [!TIP] Finalidade desta Folha de Consulta Rápida
-> Este documento condensa todos os caminhos físicos e lógicos, estruturas binárias, marcadores temporais, ferramentas e armadilhas periciais abordados nas 12 notas temáticas da pasta `05 - Registry e Forense`. Serve de guia de bolso para revisão rápida, resolução de desafios práticos e triagem em laboratório.
+> Este documento condensa todos os caminhos físicos e lógicos, estruturas binárias, marcadores temporais, ferramentas e armadilhas periciais abordados nas notas temáticas dos blocos do Registry (pastas `05` a `08`). Serve de guia de bolso para revisão rápida, resolução de desafios práticos e triagem em laboratório.
 
 ---
 

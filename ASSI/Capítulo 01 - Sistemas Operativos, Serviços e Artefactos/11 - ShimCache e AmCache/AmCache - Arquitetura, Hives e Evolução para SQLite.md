@@ -144,4 +144,5 @@ Na base `InventoryApplicationFile.db`, cada registo preserva:
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
 - [[Application Compatibility e ShimCache (AppCompatCache)]]
 - [[Extração da AmCache e Comparação Forense com a ShimCache]]
+- [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]

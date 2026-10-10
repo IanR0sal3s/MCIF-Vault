@@ -165,6 +165,7 @@ O comando exporta um ficheiro CSV estruturado com as seguintes colunas essenciai
 ## Navegação
 
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
 - [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
 - [[Extração da AmCache e Comparação Forense com a ShimCache]]
+- [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]]
+- [[Taxonomia dos Artefactos de Execução no Windows]]
