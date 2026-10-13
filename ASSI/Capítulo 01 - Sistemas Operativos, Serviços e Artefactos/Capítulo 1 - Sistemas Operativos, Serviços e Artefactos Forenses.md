@@ -54,6 +54,7 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 | [[Serviço BITS]] | Transferências em background; vetor LOL; base ESE `qmgr.db` e `BitsParser` |
 | [[Serviço Delivery Optimization]] | Protocolo P2P (BitTorrent) no Windows Update |
 | [[Windows Search]] | Mecanismos de indexação: ESE (`Windows.edb`) vs SQLite3 (`Windows.db`); extração com `sidr` e `WinSearchDBAnalyzer`; Laboratório 1 |
+| [[Ficha Prática e Questionário - Serviços e Windows Search]] | Guião prático (Laboratório 1) e questionário de avaliação sobre processos, serviços e WSearch |
 
 ---
 
@@ -77,6 +78,7 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 | [[Tipos de Dados e Associação de Ficheiros no Registry]] | Tipos de valores (`REG_SZ`, `REG_DWORD`, etc.), `HKCR`, comandos `assoc` e `ftype` |
 | [[Ferramentas de Análise e Extração do Registry]] | CLI (`reg query`, `reg export`), GUI (`regedit`, `RegScanner`), `RegistryExplorer` (Zimmerman) e `RegRipper` |
 | [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]] | Redirecionamento WOW64, limitação de ferramentas 32-bit, identificação de PE via HxD, `exiftool` e `trid` |
+| [[Ficha Prática e Questionário - Windows Registry e Artefactos Forenses]] | Guião prático e questionário de avaliação para os blocos de Registry (05 a 08: Hives, WOW64, UserAssist, ShellBags e USB) |
 
 ---
 
@@ -139,6 +141,7 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 | [[AmCache - Arquitetura, Hives e Evolução para SQLite]] | Histórico (`RecentFileCache.bcf` W7 vs `Amcache.hve` REGF W8+), tarefas agendadas, hash SHA-1 e VirusTotal, evolução para SQLite3 no Windows 11 (>25H2) |
 | [[Extração da AmCache e Comparação Forense com a ShimCache]] | Extração de ficheiros bloqueados, parsing com `AmcacheParser` (Zimmerman) e `RegRipper`, tabela comparativa, regra de ouro (prova de existência vs. execução); Ficha 05 |
 | [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]] | Síntese e visão integrada: pirâmide de compatibilidade (WOW64, Shims/sysmain.sdb, PcaSvc, ShimCache, AmCache), fluxo de execução e correlação forense |
+| [[Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)]] | Guião prático e questionário de avaliação sobre VSS, Prefetch, ShimCache e AmCache (Fichas 3, 4 e 5) |
 
 ---
 
@@ -181,6 +184,20 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 | [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] | Aplicação UWP/MSIX, pasta `LocalState\TabState`, persistência de texto não gravado (*unsaved text*), estrutura binária `NP` em UTF-16LE, parsers `notepad_parser` e `Notepad-State-Library`; Ficha 10 |
 | [[Codificação uLEB128 em Estruturas de Dados do Windows]] | Algoritmo *Unsigned Little Endian Base 128*, regra dos 7 bits e MSB continuation bit, passo a passo de codificação do valor decimal 301 (`AD 02`), implementação de leitura pericial |
 | [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] | Linha do tempo de ativação ($T_0 \to$ UserAssist $\approx 3\text{s} \to$ Prefetch $\approx 10\text{s} \to$ SRUM $\approx 1\text{h} \to$ Amcache $\to$ Shimcache no shutdown), tabela consolidada W10/W11 e pastas críticas de sistema |
+| [[Ficha Prática e Questionário - Shell, Atividade e Matriz Forense]] | Desafio forense integrado e questionário de avaliação sobre Jump Lists, LNKs, Caches, SRUM, Notepad W11 e Matriz de Ativação (Fichas 6 a 10) |
+
+---
+
+## 16. Fichas Práticas e Questionários de Avaliação
+
+Guiões laboratoriais integrados com exercícios práticos e questionários de exame resolvidos e comentados:
+
+| Ficha / Questionário | Blocos Abrangidos | Tópicos Centrais e Ferramentas Forenses |
+| :--- | :---: | :--- |
+| [[Ficha Prática e Questionário - Serviços e Windows Search]] | 02 e 03 | Auditoria com `sc`/`net`, processos em `svchost.exe`, comandos `forfiles`, extração do Windows Search (`Windows.edb`/`Windows.db`) com `sidr`; Laboratório 1 |
+| [[Ficha Prática e Questionário - Windows Registry e Artefactos Forenses]] | 05 a 08 | Extração de Hives, nós `WOW6432Node`, timestamps FILETIME/UNIX, `UserAssist` (ROT13 + struct Count), `ShellBags` (`SBECmd`), `USBSTOR` e identificação de números de série USB |
+| [[Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)]] | 09 a 11 | Descompressão MAM com `PECmd`, parsing com `AppCompatCacheParser` e `AmcacheParser`, resolução de *file in use* com VSS (`mklink`), VirusTotal e Regra de Ouro (Existência vs Execução); Fichas 3, 4 e 5 |
+| [[Ficha Prática e Questionário - Shell, Atividade e Matriz Forense]] | 12 a 15 | Atalhos maliciosos LNK com `LECmd` (discrepância 256 vs 4096 carateres), Jump Lists (`JLECmd` e trailer `AB FB BF BA`), `Thumbcache Viewer`, quantificação de exfiltração no SRUM (`SrumECmd`), Notepad W11 `TabState`, decodificação manual de `uLEB128` e desafio pericial de reconstituição temporal; Fichas 6 a 10 |
 
 ---
 

@@ -34,6 +34,12 @@ Unidade curricular do **Mestrado em Cibersegurança e Informática Forense (MCIF
 * **[[Cheat Sheet - Registry e Forense]]**: Guia de bolso para Hives lógicos/físicos, UserAssist, ShellBags, USBSTOR, Timestamps e comandos CLI.
 * **[[Cheat Sheet - Artefactos de Execução e Sistema no Windows]]**: Guia de bolso para VSS, Prefetch (MAM), ShimCache, AmCache (SHA-1/SQLite), Jump Lists (CFB), LNKs, Thumbnails, Timeline, SRUM (ESE) e Linha do Tempo de Ativação.
 
+### 🧪 Fichas Práticas e Questionários de Avaliação (Capítulo 1)
+* **[[Ficha Prática e Questionário - Serviços e Windows Search]]**: Laboratório 1 — Serviços, Processos, CLI e Windows Search (`sidr`).
+* **[[Ficha Prática e Questionário - Windows Registry e Artefactos Forenses]]**: Laboratório do Registry — Hives, WOW64, UserAssist (ROT13), ShellBags e USB.
+* **[[Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)]]**: Fichas 3, 4 e 5 — VSS, Prefetch (`PECmd`), ShimCache, AmCache e Regra de Ouro.
+* **[[Ficha Prática e Questionário - Shell, Atividade e Matriz Forense]]**: Fichas 6 a 10 — LNKs (`LECmd`), Jump Lists, Thumbcache, SRUM, Notepad W11, uLEB128 e Reconstituição Temporal.
+
 ---
 
 ## 🔗 Recursos e Fontes Oficiais
