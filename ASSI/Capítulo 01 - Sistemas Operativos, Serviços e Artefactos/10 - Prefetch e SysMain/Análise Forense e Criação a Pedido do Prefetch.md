@@ -130,7 +130,10 @@ O procedimento baseia-se num par de funções de sistema:
 
 ### Nomenclatura dos Ficheiros Gerados
 Quando um programa utiliza esta API, o ficheiro resultante recebe o prefixo **`Op-`** no nome:
-$$\texttt{Op-[NOME\_EXE]-[HASH]-[OPERATION\_ID].pf}$$
+
+```text
+Op-[NOME_EXE]-[HASH]-[OPERATION_ID].pf
+```
 
 *Exemplo real*: `Op-PYTHON3.11.EXE-CA90C813-00373331.pf`
 *(Criado via script Python utilizando chamadas à API documentadas pelo investigador Mikhail Suhanov)*.

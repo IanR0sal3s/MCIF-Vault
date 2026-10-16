@@ -1,6 +1,6 @@
 ---
 title: Acesso Forense e Montagem de Shadow Copies
-tipo: processo
+tipo: procedimento
 mestrado: Cibersegurança e Informática Forense
 uc: Administração Segura de Sistemas Informáticos
 sigla_uc: ASSI
@@ -23,7 +23,7 @@ aliases:
   - VSCMount
   - ShadowCopyView
   - Ficha 3 VSS
-atualizado: 2026-10-07
+atualizado: 2026-10-16
 ---
 
 # Acesso Forense e Montagem de Shadow Copies
@@ -31,7 +31,10 @@ atualizado: 2026-10-07
 Uma vez identificadas as cópias de sombra através do [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)|vssadmin]], surge o desafio prático de aceder e navegar na árvore de ficheiros contida no snapshot.
 
 Por desenho de segurança do Windows NT, os volumes de sombra não recebem automaticamente uma letra de unidade (`C:`, `D:`) e não são visíveis no Windows Explorer comum. Residem no *namespace* interno do *kernel* acessíveis sob a rota de dispositivo:
-$$\texttt{\textbackslash\textbackslash?\textbackslash GLOBALROOT\textbackslash Device\textbackslash HarddiskVolumeShadowCopy[N]}$$
+
+```text
+\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy[N]
+```
 
 Existem três metodologias principais para montar e explorar estes volumes em perícia forense:
 1. **Método Nativo**: Criação de ligações simbólicas de diretório com `mklink /d`.

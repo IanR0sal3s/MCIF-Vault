@@ -7,6 +7,7 @@ capitulo: 1
 bloco: 5
 tipo: cheatsheet
 tags:
+  - assi
   - windows
   - registry
   - forense
@@ -22,7 +23,7 @@ aliases:
   - Tabela de Artefactos do Registry
   - Cheat Sheet Forense do Registry
 fonte_aula: 01_FA_services+WSearch+Registry---2026-27_ULO_v2.pdf
-atualizado: 2026-10-01
+atualizado: 2026-10-16
 ---
 
 # Cheat Sheet — Windows Registry e Artefactos Forenses
@@ -161,7 +162,7 @@ flowchart TB
 
 | Formato | Origem (EPOCH) | Granularidade / Unidade | Tamanho | Utilização no Windows | Conversão Rápida |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Microsoft FILETIME64** | **01/01/1601** 00:00:00 UTC | **100 nanossegundos** ($10^{-7}\text{ s}$) | 64 bits (`QWORD`) Little-Endian | Timestamps NTFS ($STANDARD_INFO), Registry, UserAssist | `w32tm.exe /ntte <valor>` |
+| **Microsoft FILETIME64** | **01/01/1601** 00:00:00 UTC | **100 nanossegundos** ($10^{-7}\text{ s}$) | 64 bits (`QWORD`) Little-Endian | Timestamps NTFS (`$STANDARD_INFORMATION`), Registry, UserAssist | `w32tm.exe /ntte <valor>` |
 | **UNIX Epoch** | **01/01/1970** 00:00:00 UTC | **Segundos** | 32 ou 64 bits | Logs de serviços, aplicações multiplataforma | CyberChef: *From UNIX Timestamp* |
 | **WebKit / Chrome** | **01/01/1601** 00:00:00 UTC | **Microssegundos** ($10^{-6}\text{ s}$) | 64 bits | Bases SQLite de navegadores Chromium | `(WebKit / 1000000) - 11644473600` |
 | **`SYSTEMTIME`** | Calendário gregoriano | Milissegundos | **128 bits (16 bytes)** (8x `WORD`) | `LogonStats`, perfis de rede (`DateCreated`) | Script Python / DCODE |
@@ -210,10 +211,10 @@ flowchart TD
 ### Regra de Ouro: Serial Real vs. Windows Assigned ID
 
 * **Número de Série Real de Fábrica**:
-  * Formato alfanumérico uniforme **sem o caractere `&` na segunda posição** (ex.: `0707268153443174`).
-  * Gravado no chip do controlador USB; **mantém-se idêntico** em qualquer computador onde o suporte seja inserido.
+  * Formato alfanumérico uniforme **sem o caractere `&` na segunda posição** (ex.: `0707268153443174&0`).
+  * Gravado no chip do controlador USB; **mantém-se idêntico** em qualquer computador onde o suporte seja inserido (embora em certos controladores o `pnpdeviceID` em `USBSTOR`, como `00045F057BD8BDC1D9C90033&0`, possa divergir do `serialnumber` de hardware lido via WMI, como `0B0D0C415DF9`).
 * **Windows Assigned Device ID**:
-  * O identificador tem um **`&` na segunda posição** (ex.: `00045F057BD8BDC1D9C90033&0`).
+  * O identificador tem um **`&` na segunda posição** (ex.: `7&19a58b0&0`).
   * Gerado localmente pelo Windows quando a pen não disponibiliza um número de série de hardware válido.
   * **Não é constante entre máquinas!** Duas máquinas diferentes gerarão códigos distintos para a mesmíssima pen.
 

@@ -7,6 +7,7 @@ capitulo: 1
 bloco: 5
 tipo: conceito
 tags:
+  - assi
   - windows
   - registry
   - wow64

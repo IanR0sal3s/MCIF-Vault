@@ -1,12 +1,15 @@
 ---
 title: "{{title}}"
+tipo: conceito
 mestrado: Cibersegurança e Informática Forense
 uc: Administração Segura de Sistemas Informáticos
 sigla_uc: ASSI
-tipo: conceito
-tags: []
+capitulo: 1
+bloco: 1
+fonte_aula: ""
+tags:
+  - assi
 aliases: []
-fonte_aula: []
 criado: "{{date}}"
 atualizado: "{{date}}"
 ---

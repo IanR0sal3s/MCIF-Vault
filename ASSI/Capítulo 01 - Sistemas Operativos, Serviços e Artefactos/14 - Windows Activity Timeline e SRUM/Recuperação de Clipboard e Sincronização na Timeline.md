@@ -1,6 +1,6 @@
 ---
 title: Recuperação de Clipboard e Sincronização na Timeline
-tipo: processo
+tipo: procedimento
 mestrado: Cibersegurança e Informática Forense
 uc: Administração Segura de Sistemas Informáticos
 sigla_uc: ASSI
@@ -21,7 +21,7 @@ aliases:
   - Clippy
   - ClipboardPayload
   - Sincronização Cloud Timeline
-atualizado: 2026-10-07
+atualizado: 2026-10-16
 ---
 
 # Recuperação de Clipboard e Sincronização na Timeline
@@ -71,7 +71,10 @@ O dado é encapsulado num objeto JSON contendo o formato do conteúdo e a carga 
 
 ### Processo de Descodificação Pericial
 Ao extrair a cadeia da chave `content`, o perito aplica descodificação padrão de Base64:
-$$\texttt{"SXN0byDDqSB1bSB0ZXN0ZSE="} \xrightarrow{\text{Base64 Decode}} \mathbf{\text{"Isto é um teste!"}}$$
+
+```text
+"SXN0byDDqSB1bSB0ZXN0ZSE="  ---[Base64 Decode]--->  "Isto é um teste!"
+```
 
 > [!IMPORTANT] Janela Temporal de Retenção: 12 Horas
 > O conteúdo textual armazenado no campo `ClipboardPayload` possui uma **validade de 12 horas**. Após esse período, a tarefa de manutenção interna da Timeline purga a entrada ou esvazia a coluna `ClipboardPayload`, permanecendo apenas o registo genérico de atividade.

@@ -35,7 +35,7 @@ Para esse efeito, o investigador deve dominar duas dimensões essenciais:
 
 ## 1. Cronologia do "Tempo de Ativação" dos Artefactos de Execução
 
-Conforme sistematizado nas lições do Prof. Patrício Domingues (Slide 158), os artefactos do sistema não são gravados simultaneamente. Cada componente possui a sua própria janela temporal de comutação:
+Conforme sistematizado nas lições do Prof. Patrício Domingues (Slide 156), os artefactos do sistema não são gravados simultaneamente. Cada componente possui a sua própria janela temporal de comutação:
 
 ```mermaid
 flowchart TD
@@ -69,12 +69,14 @@ flowchart TD
 | **[[Serviço Prefetch e SysMain - Arquitetura e Funcionamento\|Prefetch]]** | `%WINDIR%\Prefetch\*.pf` | Nome do executável, contadores, últimas 8 execuções e DLLs | **Prova de execução incontestável** (global do sistema, sem identificar utilizador). |
 | **[[Application Compatibility e ShimCache (AppCompatCache)\|ShimCache]]** | `HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache` | Caminho do ficheiro, tamanho, carimbo de modificação (1024 entradas) | **Prova de presença/existência** no disco, partilha UNC ou pen USB (não prova execução no W10/W11). |
 | **[[AmCache - Arquitetura, Hives e Evolução para SQLite\|Amcache]]** | `%WINDIR%\AppCompat\Programs\Amcache.hve` (e SQLite3 no W11) | Caminho, metadados PE e **Hash SHA-1** | Inventário de binários presentes e correlação direta com o VirusTotal. |
-| **[[Jump Lists - Arquitetura, AppIDs e Carving\|Jump Lists]]** | `%APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations\` e `CustomDestinations\` | Ficheiros recentemente abertos pelo utilizador por AppID | **Persiste após desinstalação da app**; carving em espaço não-alocado com `AB FB BF BA`. |
+| **[[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)\|Windows PCA (W11)]]** | `%SYSTEMROOT%\appcompat\pca` (ex.: `PcaAppLaunchDic.txt`, `PcaGeneralDb*.txt`) e `HKCU\...\AppCompatFlags\Layers` | Registos de execução e falhas monitorizados pelo *Program Compatibility Assistant* | Evidência adicional de execução de aplicações e caminhos invocados no Windows 11. |
+| **[[Jump Lists - Arquitetura, AppIDs e Carving\|Jump Lists]]** | `%APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations\` e `CustomDestinations\` | Ficheiros recentemente abertos pelo utilizador por AppID | **Persiste após desinstalação da app**; carving de `.customDestinations-ms` com `AB FB BF BA`. |
 | **[[Ficheiros LNK (Shell Links) - Metadados e Formato Binário\|Ficheiros LNK]]** | `%APPDATA%\Microsoft\Windows\Recent\` | Atalhos para documentos, pastas e URLs (máx. 149) | Metadados de ficheiros apagados (MAC timestamps, Serial de volume USB, MAC da NIC). |
 | **[[Caches de Ícones e Miniaturas (IconCache e Thumbcache)\|Thumbcache]]** | `%LOCALAPPDATA%\Microsoft\Windows\Explorer\thumbcache_*.db` | Miniaturas visuais em várias resoluções | Conteúdo visual de imagens e PDFs apagados (não prova visualização consciente). |
 | **[[Artefacto Forense UserAssist\|UserAssist]]** | `HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist` | Aplicações GUI lançadas no Explorer (ROT13) | Execução interativa pelo utilizador daquela conta específica. |
 | **[[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE\|SRUM]]** | `%WINDIR%\system32\sru\SRUDB.dat` | Ciclos de CPU, bytes de rede (Up/Down) e bateria ao longo de 30–60 dias | Quantificação matemática de **exfiltração de dados** e mineração de criptomoedas. |
-| **BAM (Background Activity Monitor)** | `HKLM\SYSTEM\CurrentControlSet\Services\bam\UserSettings\<SID>` | Execução de processos no Windows 10 $\ge$ 17.09 | Registo de execução associado ao SID de cada utilizador com carimbos temporais. |
+| **BAM (Background Activity Monitor)** | `HKLM\SYSTEM\CurrentControlSet\Services\bam\UserSettings\<SID>` | Execução de processos no Windows 10 $\ge$ 17.09 e Windows 11 | Registo de execução associado ao SID de cada utilizador com carimbos temporais. |
+| **Capability Access Manager (CAM)** | `C:\ProgramData\Microsoft\Windows\CapabilityAccessManager` (e `ConsentStore` no Registry) | Histórico de acesso de aplicações a recursos sensíveis (câmara, microfone, localização) | Auditoria de que aplicações (UWP e Win32) acederam a periféricos de captura e quando. |
 | **RecentApps** *(W10 apenas)* | `HKCU\Software\Microsoft\Windows\CurrentVersion\Search\RecentApps` | Caminhos de aplicações e últimos 10 ficheiros | Interação de utilizador no W10 (**Removido formalmente no Windows 11**). |
 | **[[Windows Activity Timeline - Arquitetura e Base SQLite\|Timeline]]** | `%LOCALAPPDATA%\ConnectedDevicesPlatform\...\ActivitiesCache.db` | Histórico de atividades e Clipboard (Win+V) | Sequência de tarefas e extração de texto copiado nas últimas 12 horas. |
 | **[[Artefacto Forense do Bloco de Notas (Notepad Windows 11)\|Notepad TabState]]** | `%LOCALAPPDATA%\Packages\Microsoft.WindowsNotepad_...\LocalState\TabState` | Ficheiros `{GUID}.bin` em UTF-16LE com uLEB128 | **Recuperação de texto não guardado** que sobrevive a reinícios do sistema. |
@@ -83,7 +85,7 @@ flowchart TD
 
 ## 3. Guia de Diretórios e Ficheiros Críticos para Triagem Forense
 
-Conforme compilado na síntese de pastas críticas de sistema (Slide 159):
+Conforme compilado na síntese de pastas críticas de sistema (Slide 157):
 
 | Diretório / Ficheiro do Windows | Descrição Pericial e Foco de Investigação |
 | :--- | :--- |

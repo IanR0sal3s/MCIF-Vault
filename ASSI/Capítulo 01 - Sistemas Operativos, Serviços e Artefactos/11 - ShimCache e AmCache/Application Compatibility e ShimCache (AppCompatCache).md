@@ -76,7 +76,9 @@ Uma característica fundamental para os peritos de DFIR reside no facto de a Shi
 * **Windows XP**:
   `HKLM\CurrentControlSet\Control\Session Manager\AppCompatibility\AppCompatCache`
 * **Windows 7, 8, 10 e 11**:
-  $$\texttt{HKLM\textbackslash SYSTEM\textbackslash CurrentControlSet\textbackslash Control\textbackslash Session Manager\textbackslash AppCompatCache}$$
+  ```text
+  HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache
+  ```
 
 ### Valores Binários Armazenados
 * **`AppCompatCache`** (`REG_BINARY`): O bloco de dados brutos que contém os registos de ficheiros em cache.

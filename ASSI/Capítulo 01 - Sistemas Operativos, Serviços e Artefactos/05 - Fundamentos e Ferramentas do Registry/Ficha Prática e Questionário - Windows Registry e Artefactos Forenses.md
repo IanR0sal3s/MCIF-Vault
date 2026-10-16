@@ -80,7 +80,9 @@ O Windows Registry utiliza predominantemente o formato **FILETIME** (inteiro de 
 
 ### Exercício 4: Parsing do Artefacto `UserAssist` (ROT13 e Estrutura `Count`)
 1. **Localizar a chave no *hive* do utilizador**:
-   $$\texttt{HKCU\textbackslash Software\textbackslash Microsoft\textbackslash Windows\textbackslash CurrentVersion\textbackslash Explorer\textbackslash UserAssist\textbackslash\{GUID\}\textbackslash Count}$$
+   ```text
+   HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count
+   ```
 2. **Desofuscação manual**:
    * O nome do valor encontra-se cifrado com **ROT13** (ex.: `P:\Jvaqbjf\flfgrz32\pzq.rkr` $\to$ `C:\Windows\system32\cmd.exe`).
 3. **Análise pericial da estrutura binária `Count` (72 bytes no Windows 10/11)**:
@@ -126,18 +128,18 @@ Um perito forense está a realizar triagem em tempo real (*live triage*) numa m�
 ---
 
 ### Questão 2
-Ao analisar a subchave `UserAssist` de um utilizador no ficheiro `NTUSER.DAT`, o perito descobre uma entrada com o nome cifrado `HRX_Nppf_P:\GlcreCebwrpg\cnd.rkr`. Aplicando a cifra ROT13, que caminho executável e que significado tem o prefixo `UEM_` (ou `HRX_` cifrado)?
-* **A)** `C:\HyperProject\paq.exe`; o prefixo indica um erro de inicialização gráfica do processo.
-* **B)** `C:\HyperProject\paq.exe`; o prefixo `UEM_runpath` é o marcador do UserAssist que comprova que o executável foi lançado interativamente a partir da interface gráfica do Windows Explorer.
-* **C)** `C:\Temp\malware.exe`; o prefixo indica que o executável residia numa partilha de rede UNC.
-* **D)** `C:\Users\Public\script.ps1`; o prefixo indica execução via linha de comandos do PowerShell.
+Ao analisar a subchave `UserAssist` (`{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}\Count`) de um utilizador no ficheiro `NTUSER.DAT`, o perito descobre uma entrada com o nome cifrado `{0139Q44R-6NSR-49S2-8690-3QNSPNR6SSO8}\Fxlcr cnen Rzcerfnf.yax`. Aplicando a cifra ROT13, a que atalho corresponde esta entrada e o que representa o identificador inicial entre chavetas?
+* **A)** `C:\Program Files\Skype\Skype.exe`; o GUID identifica a placa de rede utilizada na ligação.
+* **B)** `{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\Skype para Empresas.lnk`; o GUID inicial é um *KnownFolderID* (`FOLDERID_CommonPrograms`, correspondente a `%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs`), mecanismo que substituiu os antigos prefixos `UEME_RUNPATH` (`HRZR_EHACNGU`) usados no Windows XP.
+* **C)** `C:\Temp\malware.exe`; o GUID indica que o executável residia numa partilha de rede UNC.
+* **D)** `C:\Users\Public\script.ps1`; o GUID indica execução via linha de comandos do PowerShell.
 
 ---
 
 ### Questão 3
-Em relação à estrutura binária do `UserAssist` (bloco `Count` de 72 bytes no Windows 10/11), qual das seguintes afirmações sobre o valor do contador de execuções (*Run Count*) está correta?
-* **A)** O contador de execuções inicia no valor `1` e é incrementado em uma unidade cada vez que o executável é lançado.
-* **B)** O contador de execuções do UserAssist inicia no valor base `5` no Windows 7 e `0` no Windows 10, mas apenas contabiliza processos iniciados pela interface gráfica (GUI), ignorando scripts e executáveis lançados via terminal CLI (`cmd.exe`/`PowerShell`).
+Em relação à estrutura binária do `UserAssist` (bloco `Count` de 72 bytes utilizado desde o Windows 7 até ao Windows 10/11), qual das seguintes afirmações sobre o valor do contador de execuções (*Run Counter*, offsets 4 a 7) está correta?
+* **A)** O contador de execuções regista todos os processos criados no sistema, quer sejam invocados por serviços quer por linha de comandos.
+* **B)** Na estrutura moderna de 72 bytes (Windows 7, 10 e 11), o contador de execuções inicia no valor `0` (ao contrário do Windows XP, onde iniciava em `5`), mas apenas contabiliza programas e atalhos acionados pela interface gráfica (`explorer.exe`), ignorando comandos lançados via terminal CLI (`cmd.exe`/`PowerShell`).
 * **C)** O contador de execuções apenas regista processos que falharam no encerramento.
 * **D)** O UserAssist não armazena contadores de execução, apenas o carimbo temporal da primeira abertura.
 
@@ -168,7 +170,7 @@ Qual o papel do artefacto **ShellBags** (`BagMRU` e `Bags`) na reconstituição 
 ### Questão 6
 A partir da compilação **Windows 10 versão 1803**, a tarefa agendada `RegIdleBackup` deixou de criar cópias de segurança automáticas dos hives do Registry na pasta `C:\Windows\System32\config\RegBack\`. Qual foi a motivação de engenharia da Microsoft para esta alteração e qual o impacto para a resposta a incidentes?
 * **A)** A pasta causava conflito com o antivírus; agora o perito deve usar o VSS (*Volume Shadow Copies*) para recuperar versões históricas dos hives.
-* **B)** A Microsoft reduziu o espaço em disco ocupado pelo SO (os ficheiros passaram a apresentar tamanho de 0 bytes); para obter cópias históricas de hives sem VSS, o administrador tem de ativar explicitamente a flag `EnableRegistryBackup = 1`.
+* **B)** A Microsoft reduziu o espaço em disco ocupado pelo SO (os ficheiros passaram a apresentar tamanho de 0 bytes); para obter cópias históricas de hives sem VSS, o administrador tem de ativar explicitamente o valor DWORD `EnablePeriodicBackup = 1`.
 * **C)** O Registry passou a ser gravado em formato SQLite e não suporta cópias de segurança em disco.
 * **D)** As opções A e B estão corretas e complementam-se.
 
@@ -197,11 +199,11 @@ Qual é a fórmula de cálculo e a resolução temporal nativa do formato **FILE
 | Questão | Opção Correta | Fundamentação Técnica |
 | :---: | :---: | :--- |
 | **1** | **B** | O subsistema **WOW64** intercepta chamadas de 32 bits e redireciona `HKLM\Software` para `WOW6432Node`. Se a ferramenta forense for de 32 bits e não usar a flag `KEY_WOW64_64KEY`, não consegue ver as chaves nativas de 64 bits do sistema. |
-| **2** | **B** | O prefixo `UEM_runpath` é adicionado pela shell gráfica do Explorer para itens lançados através da barra de tarefas, menu Iniciar ou duplo clique. A cifra ROT13 de `U` é `H`, de `E` é `R`, e de `M` é `X`. O caminho real é `C:\HyperProject\paq.exe`. |
-| **3** | **B** | O UserAssist apenas monitoriza o Windows Explorer (GUI). Execuções através de terminal `cmd.exe`, scripts `.bat` ou serviços de background **não são registadas no UserAssist**. |
+| **2** | **B** | Aplicando ROT13 aos carateres alfabéticos, `{0139Q44R-6NSR-49S2-8690-3QNSPNR6SSO8}\Fxlcr cnen Rzcerfnf.yax` descodifica para `{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\Skype para Empresas.lnk`. Desde o Windows 7, o UserAssist substituiu o prefixo `UEME_RUNPATH` por *KnownFolderIDs* (neste caso, `FOLDERID_CommonPrograms`). |
+| **3** | **B** | Na estrutura de 72 bytes (Windows 7 a 11), o `Run Counter` (offsets 4–7) inicia em `0`. O UserAssist apenas monitoriza ações via `explorer.exe` (GUI); execuções via terminal (`cmd.exe`/`PowerShell`) ou serviços **não são registadas no UserAssist**. |
 | **4** | **B** | Se o 2.º caractere for `&`, o número de série foi gerado aleatoriamente pelo sistema operativo com base no barramento USB porque a pen não possuía número de série gravado no chip pelo fabricante. |
 | **5** | **B** | As chaves `BagMRU` e `Bags` guardam preferências de visualização de cada pasta aberta. Como sobrevivem à eliminação das pastas, permitem ao perito provar a existência pretérita de diretórios confidenciais. |
-| **6** | **D** | A pasta `RegBack` foi mantida com ficheiros de 0 bytes por razões de retrocompatibilidade de espaço em disco pós-1803. O perito deve recorrer a Shadow Copies (VSS) ou à ativação manual de `EnableRegistryBackup`. |
+| **6** | **D** | A pasta `RegBack` foi mantida com ficheiros de 0 bytes por razões de redução de pegada de armazenamento pós-1803. O perito deve recorrer a Shadow Copies (VSS) ou à ativação prévia do valor DWORD `EnablePeriodicBackup = 1` em `Configuration Manager`. |
 | **7** | **B** | A tecnologia de virtualização de registo para MSIX denomina-se **Helium**, residindo no ficheiro `User.dat` dentro da pasta `SystemAppData\Helium\` de cada pacote. |
 | **8** | **B** | O FILETIME é um inteiro de 64 bits baseado em intervalos de 100 nanossegundos com época de referência fixada em **01/01/1601 UTC**. |
 

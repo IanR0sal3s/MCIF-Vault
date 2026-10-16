@@ -37,7 +37,9 @@ Apesar de a Microsoft ter **removido a interface gráfica da Timeline no Windows
 
 Os registos da Timeline são geridos através do motor relacional **SQLite 3**, residindo num subdiretório específico do perfil do utilizador:
 
-$$\texttt{\%LOCALAPPDATA\%\textbackslash ConnectedDevicesPlatform\textbackslash}$$
+```text
+%LOCALAPPDATA%\ConnectedDevicesPlatform\
+```
 *(Caminho expandido: `C:\Users\<UserName>\AppData\Local\ConnectedDevicesPlatform\`)*
 
 ```mermaid
@@ -61,7 +63,10 @@ flowchart TD
 A gravação dos eventos na base de dados ocorre de forma **quase instantânea** após a realização da ação no sistema operativo. 
 
 O processo responsável pela manutenção e escrita de `ActivitiesCache.db` é:
-$$\texttt{svchost.exe -k UnistackSvcGroup -s CDPUserSvc}$$
+
+```text
+svchost.exe -k UnistackSvcGroup -s CDPUserSvc
+```
 
 ### Análise dos Parâmetros de Execução
 * **`-k UnistackSvcGroup`**: Grupo de serviços partilhados associado à infraestrutura de aplicações modernas da **Universal Windows Platform (UWP)**.
@@ -118,7 +123,9 @@ Quando o utilizador sincroniza múltiplos dispositivos na mesma conta, a Timelin
 Para identificar o nome da máquina associada ao código em Base64:
 1. O campo `PlatformDeviceId` apresenta um código criptográfico (ex.: `0Yb2A9Xf+CNQxR57p1SOcH0DmUwpLCcqY/PUKTzth/Q=`).
 2. O analista pode consultar a seguinte chave no hive do utilizador:
-   $$\texttt{HKCU\textbackslash Software\textbackslash Microsoft\textbackslash Windows\textbackslash CurrentVersion\textbackslash TaskFlow\textbackslash DeviceCache\textbackslash}$$
+   ```text
+   HKCU\Software\Microsoft\Windows\CurrentVersion\TaskFlow\DeviceCache\
+   ```
    * Sob esta chave existem subpastas com o nome de cada `PlatformDeviceID`, contendo os seguintes valores:
      * **`DeviceName`**: Nome do computador na rede (ex.: `pat`);
      * **`DeviceMake`**: Fabricante do equipamento (ex.: `Packard Bell`);

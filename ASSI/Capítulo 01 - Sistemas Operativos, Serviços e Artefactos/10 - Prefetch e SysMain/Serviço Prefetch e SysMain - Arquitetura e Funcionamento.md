@@ -77,7 +77,10 @@ Ao contrário do Prefetch clássico (que apenas otimiza leituras de disco), o **
 ## 3. Diretório de Armazenamento e Limites do Sistema
 
 Os ficheiros de Prefetch residem no diretório protegido do sistema:
-$$\text{Localização: } \texttt{\%WINDIR\%\textbackslash Prefetch} \quad \text{(geralmente } \texttt{C:\textbackslash Windows\textbackslash Prefetch}\text{)}$$
+
+```text
+%WINDIR%\Prefetch   (geralmente C:\Windows\Prefetch)
+```
 
 ### Limites de Retenção
 O Windows impõe um número máximo de ficheiros com extensão `.pf` mantidos simultaneamente no diretório:

@@ -36,7 +36,10 @@ Para interpretar corretamente estes artefactos numa perícia de DFIR (*Digital F
 ## 1. Convenção de Nomenclatura e Estrutura dos Nomes
 
 Cada ficheiro gerado no diretório `%WINDIR%\Prefetch` segue o formato:
-$$\texttt{[NOME\_EXECUTAVEL]-[HASH].pf}$$
+
+```text
+[NOME_EXECUTAVEL]-[HASH].pf
+```
 *Exemplo*: `STRINGS.EXE-68CB2EEA.pf`, onde `STRINGS.EXE` identifica o processo e `68CB2EEA` é a hash em formato hexadecimal de 8 carateres (32 bits).
 
 * **Truncagem de Nome**: Se o nome do executável exceder 29 carateres, o Windows trunca-o aos primeiros 29 carateres antes de anexar a hash.

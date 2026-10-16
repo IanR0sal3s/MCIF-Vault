@@ -35,7 +35,9 @@ Guião prático de consolidação laboratorial e questionário de avaliação pa
 
 ### Exercício 1: Auditoria Pericial de Atalhos Maliciosos LNK (`LECmd`)
 1. **Localização física dos ficheiros LNK recentes**:
-   $$\texttt{\%APPDATA\%\textbackslash Microsoft\textbackslash Windows\textbackslash Recent\textbackslash}$$
+   ```text
+   %APPDATA%\Microsoft\Windows\Recent\
+   ```
 2. **Processar o atalho suspeito com o utilitário `LECmd` (Eric Zimmerman)**:
    ```cmd
    LECmd.exe -f "C:\Caminho\Fatura_Pendente.pdf.lnk"
@@ -49,17 +51,17 @@ Guião prático de consolidação laboratorial e questionário de avaliação pa
 ---
 
 ### Exercício 2: Extração de Jump Lists e Carving (`JLECmd`)
-1. **Diferença de caminhos**:
-   * Listas Automáticas: `%APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations\`
-   * Listas Customizadas: `%APPDATA%\Microsoft\Windows\Recent\CustomDestinations\`
+1. **Diferença de caminhos e formatos**:
+   * Listas Automáticas (`.automaticDestinations-ms`, contentor CFB/OLE `D0 CF 11 E0`): `%APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations\`
+   * Listas Customizadas (`.customDestinations-ms`, estruturas LNK sequenciais): `%APPDATA%\Microsoft\Windows\Recent\CustomDestinations\`
 2. **Processar as Jump Lists em lote exportando para CSV**:
    ```cmd
    JLECmd.exe -d "%APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations" --csv "C:\Forensics\JumpLists_Out"
    ```
-3. **Carving de entradas eliminadas**:
-   * No editor hexadecimal (HxD), localizar entradas órfãs em espaço não-alocado procurando pelo marcador de fim (*trailer*) característico de streams do LNK em Jump Lists:
+3. **Carving de Jump Lists eliminadas**:
+   * No editor hexadecimal (HxD), localizar ficheiros `.customDestinations-ms` em espaço não-alocado procurando pelo cabeçalho `02 00 00 00 01` (seguido de blocos LNK `4C 00 00 00`) e pelo marcador de fim (*trailer*) característico das Custom Jump Lists:
      ```text
-     Bytes hexadecimais: AB FB BF BA
+     Cabeçalho: 02 00 00 00 01  |  Trailer final: AB FB BF BA
      ```
 
 ---
@@ -86,7 +88,9 @@ O **SRUM** (*System Resource Usage Monitor*) regista o consumo de CPU, dados de 
 Nas versões modernas do Windows 11, o Bloco de Notas preserva ficheiros de texto mesmo que o utilizador nunca tenha clicado em "Guardar".
 
 1. **Localização física dos separadores ativos (*TabState*)**:
-   $$\texttt{\%LOCALAPPDATA\%\textbackslash Packages\textbackslash Microsoft.WindowsNotepad\_8wekyb3d8bbwe\textbackslash LocalState\textbackslash TabState\textbackslash}$$
+   ```text
+   %LOCALAPPDATA%\Packages\Microsoft.WindowsNotepad_8wekyb3d8bbwe\LocalState\TabState\
+   ```
 2. **Inspeção dos ficheiros `{GUID}.bin` no HxD**:
    * **Assinatura binária inicial**: `4E 50` (ASCII: `NP`).
    * **Codificação dos dados**: Texto armazenado em formato **UTF-16LE** (dois bytes por caractere).
@@ -113,11 +117,11 @@ No entanto, o clique no ficheiro provocou a descarrega e execução de um trojan
 ---
 
 ### Questão 2 (Carving de Jump Lists)
-Numa investigação forense, o suspeito eliminou a pasta `%APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations\` para destruir provas de abertura de documentos confidenciais. Que assinatura hexadecimal deve o perito utilizar no carving em espaço não-alocado para identificar fragmentos de fluxos LNK preservados nessas Jump Lists?
+Numa investigação forense, o suspeito eliminou os ficheiros da pasta `%APPDATA%\Microsoft\Windows\Recent\CustomDestinations\` para destruir provas de tarefas e atalhos afixados (*pinned*). Que assinaturas hexadecimais de cabeçalho e de fecho (*trailer*) deve o perito utilizar no carving em espaço não-alocado para recuperar ficheiros `.customDestinations-ms` (que concatenam estruturas LNK `4C 00 00 00`)?
 * **A)** `50 4B 03 04` (formato ZIP).
-* **B)** `4C 00 00 00` (início de ficheiro LNK) e o trailer de fecho `AB FB BF BA`.
+* **B)** Cabeçalho `02 00 00 00 01` (seguido de blocos LNK `4C 00 00 00`) e o trailer de fecho `AB FB BF BA`.
 * **C)** `4E 50` (Bloco de Notas).
-* **D)** `D0 CF 11 E0` (cabeçalho de ficheiro executável).
+* **D)** `D0 CF 11 E0` (exclusivo dos contentores OLE/CFB das `AutomaticDestinations`, sem o trailer `AB FB BF BA`).
 
 ---
 
@@ -180,7 +184,7 @@ Na famosa cadeia de infeção do malware **Emotet**, os atacantes recorreram ao 
 | Questão | Opção Correta | Fundamentação Técnica |
 | :---: | :---: | :--- |
 | **1** | **A** | A interface gráfica do Windows Explorer corta a caixa de texto de destino aos 256 carateres. A especificação binária suporta até 4096 carateres. O atacante coloca espaços para empurrar o payload em PowerShell para fora do campo visível. O `LECmd` descodifica a totalidade do comando. |
-| **2** | **B** | Os ficheiros de Jump List automática (`AutomaticDestinations-ms`) são contentores compostos (CFB/OLE) que encapsulam múltiplos atalhos LNK. O trailer característico que encerra essas estruturas é `AB FB BF BA`. |
+| **2** | **B** | Os ficheiros `.customDestinations-ms` organizam múltiplos fluxos `SHLLINK` (`4C 00 00 00`) de forma sequencial, iniciando com o cabeçalho `02 00 00 00 01` e encerrando com o trailer `AB FB BF BA` (já as `AutomaticDestinations` usam o contentor CFB/OLE `D0 CF 11 E0`). |
 | **3** | **B** | As miniaturas são geradas automaticamente pelo Explorer para acelerar a experiência de navegação sempre que uma pasta que contenha ficheiros gráficos é aberta. A existência da miniatura não comprova que o utilizador tenha aberto ou visualizado a imagem individualmente. |
 | **4** | **B** | O serviço DPS retém as métricas em RAM e no hive `SOFTWARE`, descarregando para o ficheiro físico `SRUDB.dat` apenas ao **minuto 30 de cada hora** e antes do encerramento regular do sistema. |
 | **5** | **B** | Esta é a cronologia fundamental sistematizada na aula: $T_0 \to \text{UserAssist } (\approx 3\text{s}) \to \text{Prefetch } (\approx 10\text{s}) \to \text{SRUM } (\approx 1\text{h}) \to \text{AmCache } (\text{tarefa diária}) \to \text{ShimCache } (\text{apenas no shutdown})$. |

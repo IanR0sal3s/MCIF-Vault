@@ -7,6 +7,7 @@ capitulo: 1
 bloco: 7
 tipo: conceito
 tags:
+  - assi
   - windows
   - registry
   - userassist

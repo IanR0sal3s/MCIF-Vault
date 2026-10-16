@@ -4,8 +4,10 @@ mestrado: Cibersegurança e Informática Forense
 uc: Administração Segura de Sistemas Informáticos
 sigla_uc: ASSI
 capitulo: 1
+bloco: 2
 tipo: procedimento
 tags:
+  - assi
   - windows
   - processos
   - sysinternals
@@ -15,8 +17,11 @@ aliases:
   - Linha de Comandos
   - tasklist
   - pslist
+  - btop4win
 fonte_aula: 01_FA_services+WSearch+Registry---2026-27_ULO_v2.pdf
-atualizado: 2026-09-24
+fontes:
+  - "https://github.com/aristocratos/btop4win"
+atualizado: 2026-10-16
 ---
 
 # Processos e Linha de Comandos no Windows
@@ -39,15 +44,16 @@ No interpretador de comandos (`cmd.exe`), o caracter de espaço atua como delimi
 
 ## Utilitários de Listagem e Auditoria de Processos
 
-A monitorização de processos ativos é realizada através de ferramentas nativas e utilitários da suite Sysinternals:
+A monitorização de processos ativos é realizada através de ferramentas nativas, utilitários da suite Sysinternals e monitores de terminal:
 
 | Ferramenta | Origem | Capacidades e Cenário de Uso |
 | :--- | :--- | :--- |
 | **`tasklist`** | Nativo (Windows) | Listagem de processos ativos; filtragem por critérios; mapeamento de serviços, DLLs e pacotes UWP. |
 | **Gestor de Tarefas** | Nativo (`Ctrl+Shift+Esc`) | Monitorização visual de recursos (CPU, Memória, Disco, Rede); no Windows 11 inclui atalho direto para o Gestor de Serviços. |
 | **Process Explorer** | Sysinternals | Visualização gráfica em árvore de processos pai/filho; localizador de *handles* e DLLs bloqueadas; deteção de processos ocultos. |
-| **`pslist`** | Sysinternals | Utilitário CLI flexível; suporte para árvore (`-t`), memória detalhada (`-m`), threads (`-d`) e conexão remota a computadores da rede (`\\computador`). |
+| **`pslist`** | Sysinternals | Utilitário CLI flexível; suporte para árvore (`-t`), memória (`-m`), threads (`-d`), vista combinada (`-x`) e conexão remota (`\\computador`). |
 | **`pskill`, `psexec`, `psservice`** | Sysinternals | Terminação de processos, execução remota de comandos e gestão granular de serviços. |
+| **`btop++` (`btop4win`)** | Open-source (`aristocratos/btop4win`) | Monitor interativo de recursos em modo texto (TUI) para Windows, exibindo utilização de CPU, RAM, discos, rede e árvore/filtragem de processos. |
 
 ### Sintaxe e Filtros Avançados do `tasklist`
 
@@ -95,8 +101,10 @@ A suite Sysinternals (originalmente criada por Mark Russinovich e integrada pela
 O `pslist` disponibiliza opções avançadas de depuração em linha de comandos:
 * `-d`: Mostra o detalhe de todas as threads do processo.
 * `-m`: Exibe o mapeamento detalhado de memória (Working Set, Virtual Memory, Peak).
+* `-x`: Mostra simultaneamente processos, informação de memória e threads.
 * `-t`: Reconstrói a árvore genealógica de processos (relação pai-filho).
-* `-s [n]`: Opera em modo interativo de monitorização em tempo real (análogo ao Gestor de Tarefas), atualizado a cada *n* segundos.
+* `-e`: Exige correspondência exata (*exact match*) do nome do processo pesquisado.
+* `-s [n]`: Opera em modo interativo de monitorização em tempo real (*task-manager mode*), atualizado a cada *n* segundos.
 * `\\computador -u <user> -p <pass>`: Executa a auditoria de processos num computador remoto com credenciais autenticadas.
 
 ---

@@ -4,8 +4,10 @@ mestrado: Cibersegurança e Informática Forense
 uc: Administração Segura de Sistemas Informáticos
 sigla_uc: ASSI
 capitulo: 1
+bloco: 3
 tipo: procedimento
 tags:
+  - assi
   - windows
   - wsearch
   - ese

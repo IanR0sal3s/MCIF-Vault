@@ -22,10 +22,10 @@ Este espaço foi desenhado para ser partilhado e expandido pela comunidade de es
 
 | Sigla    | Unidade Curricular                                          | Docente            | Semestre | Estado                          |
 | :------- | :---------------------------------------------------------- | :----------------- | :------- | :------------------------------ |
-| **ASSI** | [[00 ASSI]] (Administração Segura de Sistemas Informáticos) | Patrício Domingues | S1       | Concluído (Capítulo 1 — 180 slides) |
+| **ASSI** | [[00 ASSI]] (Administração Segura de Sistemas Informáticos) | Patrício Domingues | S1       | Concluído (Capítulo 1 — 328 slides, 53 notas) |
 | *PARSI*  | *Políticas e Análise de Risco na Segurança de Informação*   | Nuno Salvador      | S1       | Planeado                        |
 | *AFD1*   | *Análise Forense Digital I*                                 | Miguel Frade       | S1       | Planeado                        |
-| *SRC*    | *Segurança em Redes de Computadores*                        | Luís frazão        | S1       | Planeado                        |
+| *SRC*    | *Segurança em Redes de Computadores*                        | Luís Frazão        | S1       | Planeado                        |
 | *COD1*   | *Cibersegurança Ofensiva e Defensiva I*                     | Leonel Santos      | S1       | Planeado                        |
 
 ---

@@ -4,8 +4,10 @@ mestrado: Cibersegurança e Informática Forense
 uc: Administração Segura de Sistemas Informáticos
 sigla_uc: ASSI
 capitulo: 1
-tipo: vulnerabilidade
+bloco: 1
+tipo: conceito
 tags:
+  - assi
   - cve/cve-2016-5247
   - uefi
   - secure-boot

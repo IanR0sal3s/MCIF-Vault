@@ -58,7 +58,7 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 
 ---
 
-## 4. Aplicações Modernas UWP (04 - Aplicações Modernas)
+## 4. Aplicações Modernas UWP (04 - Aplicações Modernas (UWP e MSIX))
 
 | Nota | Descrição e Foco Técnico |
 | :--- | :--- |

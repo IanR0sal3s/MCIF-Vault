@@ -47,7 +47,7 @@ A necessidade de armazenar ícones em cache remonta ao Windows 95, tendo a sua l
 ### A Assinatura Binária Mágica: `Win4`
 Conforme documentado no estudo de **Tiago Lourenço (ASSI-MCIF, 2021)**, o cabeçalho binário do ficheiro legado `IconCache.db` apresenta uma estrutura rígida de 16 bytes:
 
-$$\text{Assinatura Mágica (Offset 0x04): } \mathbf{\text{57 69 6E 34}} \quad (\text{ASCII: } \texttt{Win4})$$
+* **Assinatura Mágica (Offset `0x04`)**: **`57 69 6E 34`** (ASCII: `Win4`)
 
 ```text
 Offset (h)  00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F  Decoded Text
@@ -65,7 +65,9 @@ Offset (h)  00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F  Decoded Text
 
 A partir do Windows Vista, a Microsoft reformulou a gestão gráfica e centralizou as caches de miniaturas e ícones numa pasta dedicada dentro do perfil de cada utilizador:
 
-$$\texttt{\%LOCALAPPDATA\%\textbackslash Microsoft\textbackslash Windows\textbackslash Explorer\textbackslash}$$
+```text
+%LOCALAPPDATA%\Microsoft\Windows\Explorer\
+```
 *(Caminho expandido: `C:\Users\<UserName>\AppData\Local\Microsoft\Windows\Explorer\`)*
 
 ```mermaid
@@ -107,7 +109,7 @@ A geração de miniaturas não se restringe a fotografias e imagens. O Windows g
 
 ## 4. Ferramenta Forense: `Thumbcache Viewer`
 
-O **Thumbcache Viewer** (desenvolvido por Eric Zimmerman e mantido no projeto `https://thumbcacheviewer.github.io/`) é o utilitário de referência para extração e reconstrução pericial.
+O **Thumbcache Viewer** (desenvolvido por **Eric Kutcher** e mantido no projeto `https://thumbcacheviewer.github.io/`) é o utilitário de referência para extração e reconstrução pericial.
 
 ```text
 Colunas de Metadados Extraídas do Thumbcache:
@@ -148,7 +150,7 @@ Para reconstituir onde o ficheiro original residia no disco:
 ## 6. Enquadramento Laboratorial e Bibliografia
 
 ### Ficha Laboratorial
-Os procedimentos de análise da pasta Explorer, extração de imagens com `thumbcacheviewer_cmd.exe` e correlação de atalhos constituem a base prática da **Ficha 07 – Shortcuts & thumbcache**.
+Os procedimentos de análise da pasta Explorer, extração de imagens com `thumbcache_viewer_cmd.exe` e correlação de atalhos constituem a base prática da **Ficha 07 – Shortcuts & thumbcache**.
 
 ### Referências Académicas
 * **Quick, D., Tassone, C., & Choo, K.-K. R. (2014)**. *Forensic analysis of Windows thumbcache files*. [DOI: 10.1016/j.diin.2014.05.002](https://doi.org/10.1016/j.diin.2014.05.002).

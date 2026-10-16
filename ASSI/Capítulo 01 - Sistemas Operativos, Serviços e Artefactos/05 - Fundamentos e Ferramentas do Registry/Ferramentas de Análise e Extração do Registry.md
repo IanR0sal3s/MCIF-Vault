@@ -7,6 +7,7 @@ capitulo: 1
 bloco: 5
 tipo: procedimento
 tags:
+  - assi
   - windows
   - registry
   - ferramentas

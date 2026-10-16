@@ -35,10 +35,11 @@ Guião prático de consolidação laboratorial e questionário de avaliação pa
 ### Exercício 1: Extração de Ficheiros Bloqueados via VSS (Ficha 3 VSS)
 Em sistemas ativos, ficheiros críticos como `Amcache.hve` e os hives do Registry estão bloqueados pelo kernel.
 
-1. **Criar um snapshot do volume de sistema `C:`**:
-   ```cmd
-   vssadmin create shadow /for=C:
+1. **Criar um snapshot do volume de sistema `C:` (PowerShell com privilégios de Administrador)**:
+   ```powershell
+   (Get-WmiObject -List Win32_ShadowCopy).Create("C:\", "ClientAccessible")
    ```
+   *(Nota: o comando `vssadmin create shadow /for=C:` apenas está disponível em edições Windows Server).*
 2. **Identificar o caminho do volume shadow**:
    ```cmd
    vssadmin list shadows
@@ -77,7 +78,9 @@ O serviço **SysMain** cria ficheiros com extensão `.pf` comprimidos com o algo
 
 ### Exercício 3: Extração da ShimCache com `AppCompatCacheParser` (Ficha 05)
 1. **Localização lógica no hive `SYSTEM`**:
-   $$\texttt{HKLM\textbackslash SYSTEM\textbackslash CurrentControlSet\textbackslash Control\textbackslash Session Manager\textbackslash AppCompatCache}$$
+   ```text
+   HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache
+   ```
 2. **Execução da ferramenta `AppCompatCacheParser`**:
    ```cmd
    AppCompatCacheParser.exe -f "C:\Forensics\SYSTEM" --csv "C:\Forensics\Shim_Export"
@@ -158,10 +161,10 @@ Qual das seguintes opções resume com rigor a evolução histórica dos ficheir
 
 ---
 
-### Questão 7 (Cálculo de Hash do Prefetch em Processos CLI)
-No cálculo do hash de 8 caracteres hexadecimais que acompanha o nome de um ficheiro `.pf` (ex.: `CMD.EXE-A1B2C3D4.pf`), que regra de exceção aplica o Windows a executáveis anfitriões de linha de comandos (`cmd.exe`, `powershell.exe`, `svchost.exe`, `dllhost.exe`)?
+### Questão 7 (Cálculo de Hash do Prefetch em Processos Anfitriões)
+No cálculo do hash de 8 caracteres hexadecimais que acompanha o nome de um ficheiro `.pf` (ex.: `SVCHOST.EXE-4327296F.pf`), que regra de exceção aplica o Windows aos processos anfitriões/encapsuladores (`svchost.exe`, `dllhost.exe`, `mmc.exe` e `rundll32.exe`)?
 * **A)** O hash é gerado com base no nome do utilizador com sessão iniciada.
-* **B)** O hash é calculado incluindo os argumentos da linha de comandos na fórmula matemática, permitindo distinguir execuções com comandos diferentes; em binários comuns, o hash baseia-se unicamente no caminho absoluto do executável.
+* **B)** O hash é calculado incluindo os argumentos da linha de comandos na fórmula matemática, gerando múltiplos ficheiros `.pf` distintos consoante os parâmetros; já nos restantes executáveis (incluindo `cmd.exe` e `powershell.exe`), o hash baseia-se unicamente no caminho absoluto do binário.
 * **C)** O hash é omitido e substituído pelo PID do processo.
 * **D)** O hash é o hash MD5 dos primeiros 512 bytes do binário.
 
@@ -186,7 +189,7 @@ Qual a principal razão técnica pela qual o `Amcache.hve` é mais valioso que a
 | **4** | **C** | A rotina interna `PfSvSuperfetchCheckAndEnable` anula alterações no Registry forçando o valor para `3` se o serviço `SysMain` estiver ativo. Apenas parando e desativando o serviço `SysMain` se desliga o Prefetch. |
 | **5** | **B** | Nomes quase iguais, mas sistemas independentes: `sysmain.sdb` é a base de dados de Shims (compatibilidade aplicacional); `SysMain` é o serviço de SuperFetch/Prefetch (gestão de RAM e arranque). |
 | **6** | **B** | A evolução é: binário simples `RecentFileCache.bcf` no W7 $\to$ hive independente `Amcache.hve` do W8 ao W11 $\to$ migração para **SQLite 3** (`Inventory*.db`) nas versões mais recentes do Windows 11 (>25H2). |
-| **7** | **B** | Para a generalidade dos programas, o hash do Prefetch baseia-se apenas no caminho do ficheiro. Mas para binários anfitriões (`cmd.exe`, `powershell.exe`, etc.), o Windows inclui os argumentos na função de hash, permitindo ter múltiplos ficheiros `.pf` para o mesmo binário. |
+| **7** | **B** | Para a generalidade dos programas (incluindo `cmd.exe` e `powershell.exe`), o hash do Prefetch baseia-se apenas no caminho do ficheiro. Mas para processos anfitriões (`svchost.exe`, `dllhost.exe`, `mmc.exe`, `rundll32.exe`), o Windows inclui os argumentos na função de hash, gerando ficheiros `.pf` separados por serviço/biblioteca. |
 | **8** | **A** | A ShimCache tem limite circular de 1024 entradas e guarda apenas caminhos e timestamps de modificação. O AmCache guarda um inventário muito mais vasto com **Hashes SHA-1**, viabilizando triagem direta no VirusTotal. |
 
 ---

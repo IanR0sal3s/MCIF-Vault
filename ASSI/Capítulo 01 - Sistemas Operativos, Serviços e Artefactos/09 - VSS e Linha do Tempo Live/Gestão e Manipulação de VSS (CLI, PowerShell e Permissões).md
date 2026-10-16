@@ -1,6 +1,6 @@
 ---
 title: Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)
-tipo: processo
+tipo: procedimento
 mestrado: Cibersegurança e Informática Forense
 uc: Administração Segura de Sistemas Informáticos
 sigla_uc: ASSI
@@ -21,7 +21,7 @@ aliases:
   - vssadmin
   - Comandos VSS
   - Manipulação de Shadow Copies
-atualizado: 2026-10-07
+atualizado: 2026-10-16
 ---
 
 # Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)
@@ -76,7 +76,10 @@ Get-WmiObject Win32_ShadowCopy | Select-Object ID, VolumeName, DeviceObject, Ins
 ## 3. Armazenamento Físico e Permissões NTFS (`icacls`)
 
 As cópias diferenciais e metadados do VSS são armazenados no diretório de sistema protegido na raiz de cada volume:
-$$\text{Caminho Físico: } \texttt{C:\textbackslash System Volume Information}$$
+
+```text
+C:\System Volume Information
+```
 
 Por omissão, o Windows restringe o acesso a esta pasta exclusivamente à conta **`NT AUTHORITY\SYSTEM`**. Qualquer tentativa de acesso direto por parte de um Administrador via Windows Explorer ou terminal resulta em **Acesso Negado (*Access is denied*)**.
 

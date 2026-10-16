@@ -52,7 +52,9 @@ flowchart LR
 ### 2. Segunda Geração: `Amcache.hve` (Windows 8 a Windows 11)
 * **Formato**: Estrutura binária padrão de *hive* do Windows (**Windows NT Registry File — `REGF`**).
 * **Localização no Disco**:
-  $$\texttt{\%WINDIR\%\textbackslash AppCompat\textbackslash Programs\textbackslash Amcache.hve} \quad \text{(geralmente } \texttt{C:\textbackslash Windows\textbackslash AppCompat\textbackslash Programs}\text{)}$$
+  ```text
+  %WINDIR%\AppCompat\Programs\Amcache.hve   (geralmente C:\Windows\AppCompat\Programs)
+  ```
 
 > [!IMPORTANT] Hive Independente fora do Registry Principal
 > Embora possua internamente a estrutura binária `REGF` (com blocos `nk`, `vk` e células de registo idênticas a um `NTUSER.DAT`), o `Amcache.hve` **não pertence ao Registry principal do Windows**. 
@@ -103,7 +105,10 @@ Conforme demonstrado no relatório técnico do instituto francês de cibersegura
 Nas versões mais recentes do **Windows 11 (>25H2)**, a Microsoft iniciou a transição da arquitetura baseada em *hives* para **bases de dados relacionais SQLite 3**.
 
 Estes novos ficheiros residem no mesmo diretório:
-$$\texttt{C:\textbackslash Windows\textbackslash appcompat\textbackslash programs\textbackslash}$$
+
+```text
+C:\Windows\appcompat\programs\
+```
 
 ### Principais Ficheiros de Base de Dados SQLite Identificados:
 * **`DeviceCensus.db`**: Registo de componentes de hardware e telemetria do sistema (firmware, processador, storage, rede, bateria).

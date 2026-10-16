@@ -60,9 +60,10 @@ O repositório adota uma taxonomia modular em 4 níveis:
   uc: <Nome Completo da UC>
   sigla_uc: <SIGLA>
   capitulo: <Número>
-  tipo: conceito | procedimento
+  bloco: <Número>
+  tipo: conceito | procedimento | analise | ferramenta | exercicio | cheatsheet | indice
   tags:
-    - <tag1>
+    - <sigla_uc_minuscula>
     - <tag2>
   aliases:
     - <Sinónimo 1>

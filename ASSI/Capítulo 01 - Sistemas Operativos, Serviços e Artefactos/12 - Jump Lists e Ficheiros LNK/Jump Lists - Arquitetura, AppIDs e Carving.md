@@ -75,7 +75,9 @@ flowchart TD
 ## 3. Jump Lists Automáticas (`AutomaticDestinations`)
 
 * **Localização no Disco**:
-  $$\texttt{\%APPDATA\%\textbackslash Microsoft\textbackslash Windows\textbackslash Recent\textbackslash AutomaticDestinations\textbackslash}$$
+  ```text
+  %APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations\
+  ```
   *(Uma pasta por utilizador, permitindo separar a atividade em sistemas multi-utilizador).*
 * **Nomenclatura**: `[AppID].automaticDestinations-ms`
 * **Formato Interno**: **Compound File Binary (CFB)** (a estrutura clássica de contentor hierárquico OLE da Microsoft).
@@ -114,7 +116,9 @@ O **AppID** é uma chave de **16 carateres hexadecimais** (hash de 64 bits) calc
 As aplicações com menus contextuais ricos (ex.: navegadores web com opções de navegação privada, leitores multimédia como o VLC ou software de produtividade da Microsoft) criam e mantêm listas personalizadas.
 
 * **Localização no Disco**:
-  $$\texttt{\%APPDATA\%\textbackslash Microsoft\textbackslash Windows\textbackslash Recent\textbackslash CustomDestinations\textbackslash}$$
+  ```text
+  %APPDATA%\Microsoft\Windows\Recent\CustomDestinations\
+  ```
 * **Nomenclatura**: `[AppID].customDestinations-ms`
 * **Formato Interno**: Estrutura sequencial em fluxo contínuo.
 
@@ -122,8 +126,7 @@ As aplicações com menus contextuais ricos (ex.: navegadores web com opções d
 Conforme demonstrado nas investigações periciais de **Singh & Singh (2018)**:
 * **Cabeçalho (*Header*)**: Sequência fixa de bytes `02 00 00 00 01`;
 * **Corpo**: Concatenação direta de ficheiros de atalho binários (formato `.lnk`);
-* **Marcador de Término (*Trailer / Footer*)**:
-  $$\text{Quatro últimos octetos: } \mathbf{\text{AB FB BF BA}}$$
+* **Marcador de Término (*Trailer / Footer*)**: **`AB FB BF BA`** (quatro últimos octetos).
 
 > [!IMPORTANT] Recuperação Pericial por File Carving
 > Quando um utilizador ou um agente malicioso apaga deliberadamente o diretório `CustomDestinations`, os blocos permanecem em espaço não-alocado (*unallocated space*). 

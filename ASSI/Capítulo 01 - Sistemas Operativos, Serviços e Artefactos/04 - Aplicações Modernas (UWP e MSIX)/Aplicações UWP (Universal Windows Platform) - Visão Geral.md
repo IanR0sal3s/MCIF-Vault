@@ -4,8 +4,10 @@ mestrado: Cibersegurança e Informática Forense
 uc: Administração Segura de Sistemas Informáticos
 sigla_uc: ASSI
 capitulo: 1
+bloco: 4
 tipo: conceito
 tags:
+  - assi
   - windows
   - uwp
   - appx

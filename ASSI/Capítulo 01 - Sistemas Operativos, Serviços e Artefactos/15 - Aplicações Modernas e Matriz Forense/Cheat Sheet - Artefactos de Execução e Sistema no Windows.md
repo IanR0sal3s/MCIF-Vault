@@ -31,7 +31,7 @@ atualizado: 2026-10-07
 # Cheat Sheet — Artefactos de Execução e Sistema no Windows
 
 > [!TIP] Finalidade desta Folha de Consulta Rápida
-> Este documento condensa a totalidade dos caminhos físicos, formatos binários, assinaturas mágicas (*magic bytes*), linhas de tempo de gravação, sintaxes CLI e armadilhas periciais lecionadas nos 160 diapositivos da segunda metade do Capítulo 1 (*"Artefactos Windows OS"*). Serve de guia de bolso rápido para resolução de exames práticos, incidentes de DFIR e laboratórios.
+> Este documento condensa a totalidade dos caminhos físicos, formatos binários, assinaturas mágicas (*magic bytes*), linhas de tempo de gravação, sintaxes CLI e armadilhas periciais lecionadas nos 158 diapositivos da segunda metade do Capítulo 1 (*"Artefactos Windows OS"*). Serve de guia de bolso rápido para resolução de exames práticos, incidentes de DFIR e laboratórios.
 
 ---
 

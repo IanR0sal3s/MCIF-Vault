@@ -37,7 +37,10 @@ Para além da sua função utilitária de facultar atalhos rápidos para ficheir
 ## 1. Assinatura Mágica e Estrutura Binária
 
 Todo o ficheiro `.lnk` válido inicia-se obrigatoriamente com a assinatura mágica de 4 bytes:
-$$\text{Offset 0x00: } \mathbf{\text{4C 00 00 00}} \quad \text{(o byte } \texttt{0x4C}\text{ corresponde à letra ASCII 'L' de Link)}$$
+
+```text
+Offset 0x00: 4C 00 00 00   (o byte 0x4C corresponde à letra ASCII 'L' de Link)
+```
 
 A estrutura do formato divide-se em cinco secções sequenciais:
 
@@ -79,7 +82,9 @@ Ao dissecar um ficheiro `.lnk`, o investigador consegue demonstrar factos perici
 
 Sempre que um utilizador clica duas vezes num documento para o abrir na respetiva aplicação pré-definida (ex.: abrir um documento Word, visualizar um PDF ou aceder a uma pasta no Explorador), o sistema operativo cria **automaticamente** um ficheiro `.lnk` na pasta de histórico do perfil:
 
-$$\texttt{\%APPDATA\%\textbackslash Microsoft\textbackslash Windows\textbackslash Recent\textbackslash} \quad \text{(atalho no executar: } \texttt{recent}\text{)}$$
+```text
+%APPDATA%\Microsoft\Windows\Recent\   (atalho no executar: recent)
+```
 
 ### Limite Estrito e Política de Rotação
 * A pasta `Recent` mantém um **limite máximo estrito de 149 entradas**.

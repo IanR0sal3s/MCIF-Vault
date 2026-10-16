@@ -27,7 +27,7 @@ Unidade curricular do **Mestrado em Cibersegurança e Informática Forense (MCIF
 
 | Capítulo | Designação | Estado / Cobertura |
 | :--- | :--- | :--- |
-| **[[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]** | **Sistemas Operativos, Serviços e Artefactos Forenses no Windows**<br/>• **Parte 1**: Arranque, UEFI/PKfail, Processos, Serviços, UWP, Registry e Dispositivos USB (180 slides)<br/>• **Parte 2**: VSS, Prefetch, ShimCache, AmCache, Jump Lists, LNK, Caches Gráficas, Timeline, SRUM, Bloco de Notas W11 e Matriz Forense (160 slides) | Concluído (340 slides mapeados, 49 notas temáticas + 2 Cheat Sheets) |
+| **[[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]** | **Sistemas Operativos, Serviços e Artefactos Forenses no Windows**<br/>• **Parte 1**: Arranque, UEFI/PKfail, Processos, Serviços, UWP, Registry e Dispositivos USB (170 slides)<br/>• **Parte 2**: VSS, Prefetch, ShimCache, AmCache, Jump Lists, LNK, Caches Gráficas, Timeline, SRUM, Bloco de Notas W11 e Matriz Forense (158 slides) | Concluído (328 slides mapeados, 47 notas temáticas + 4 Fichas Práticas + 2 Cheat Sheets) |
 | *Capítulo 2* | *A disponibilizar conforme o avanço letivo* | Planeado |
 
 ### 📑 Folhas de Consulta Rápida (Cheat Sheets de Apoio)
@@ -46,8 +46,8 @@ Unidade curricular do **Mestrado em Cibersegurança e Informática Forense (MCIF
 
 * **Moodle da UC**: Materiais oficiais, guiões práticos, anúncios e apresentações disponibilizados pelo docente na plataforma institucional de e-learning do Politécnico de Leiria.
 * **Apresentações de Apoio (Capítulo 1)**:
-  * Parte 1: `01_FA_services+WSearch+Registry---2026-27_ULO_v2.pdf` (180 slides).
-  * Parte 2: `Artefactos Windows OS` (160 slides).
+  * Parte 1: `01_FA_services+WSearch+Registry---2026-27_ULO_v2.pdf` (170 páginas / slides 1–171).
+  * Parte 2: `Artefactos Windows OS` (158 slides).
 * **Fichas Laboratoriais Mapeadas**: Fichas 1 a 10 integradas nas notas correspondentes.
 
 ---

@@ -38,7 +38,9 @@ Em investigações forenses, este artefacto permite recuperar rascunhos, credenc
 
 Os ficheiros de estado do Bloco de Notas residem no contentor privado do pacote UWP do utilizador:
 
-$$\texttt{\%LOCALAPPDATA\%\textbackslash Packages\textbackslash Microsoft.WindowsNotepad\_8wekyb3d8bbwe\textbackslash LocalState\textbackslash}$$
+```text
+%LOCALAPPDATA%\Packages\Microsoft.WindowsNotepad_8wekyb3d8bbwe\LocalState\
+```
 *(Caminho expandido: `C:\Users\<User>\AppData\Local\Packages\Microsoft.WindowsNotepad_8wekyb3d8bbwe\LocalState\`)*
 
 ```mermaid
@@ -54,35 +56,42 @@ flowchart TD
 
 Cada separador ativo ou recuperável é representado por um ficheiro nomeado pelo seu GUID exclusivo (ex.: `04b74c4a-5e1b-46ec-9a90-0eb68371af75.bin`).
 
-O ficheiro segue uma especificação binária proprietária rigorosa (conforme mapeado na biblioteca *Notepad-State-Library*):
+O ficheiro segue uma especificação binária proprietária rigorosa (conforme mapeado na biblioteca *Notepad-State-Library*), cuja estrutura varia consoante o separador corresponda a um **ficheiro gravado em disco (`TypeFlag = 1`)** ou a um **separador de rascunho não gravado (`TypeFlag = 0`)**:
 
 ```text
 Offset (h)  00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F  Decoded Text
 00000000    4E 50 00 01 6F 43 00 3A 00 5C 00 55 00 73 00 65  NP..oC.:.\.U.s.e
-            [Magic]                                            [Texto UTF-16LE...]
+            [Magic]  [T][L][Caminho UTF-16LE: C:\Use...]
 ```
+*(No exemplo acima, `0x01` no offset `0x03` indica separador gravado em disco, `0x6F` indica um caminho de 111 carateres em `uLEB128`, seguido de `C:\Users\patri\OneDrive...` em UTF-16LE).*
 
-### Estrutura de Campos (Separador com Conteúdo Não Gravado)
+### Estrutura de Campos: Separador Gravado (`TypeFlag = 1`) vs. Não Gravado (`TypeFlag = 0`)
 
-| Campo | Tamanho / Tipo | Descrição e Função Técnica |
-| :--- | :--- | :--- |
-| **Signature / Magic Bytes** | 2 bytes | Assinatura mágica constante: **`0x4E 0x50`** (carateres ASCII **`NP`** de Notepad). |
-| **Sequence Number** | `uLEB128` | Inteiro de sequência (frequentemente `0`). |
-| **TypeFlag** | `uLEB128` | Flag de tipologia interna (igual a `0`). |
-| **Unknown Flag** | 1 byte | Byte de controlo (`0x01`). |
-| **SelectionStartIndex** | `uLEB128` | Posição de início da seleção de texto (cursor). |
-| **SelectionEndIndex** | `uLEB128` | Posição de fim da seleção de texto. |
-| **Configuration Block** | Bloco variável | Parâmetros de quebra de linha (*word wrap*) e codificação. |
-| **ContentLength** | `uLEB128` | Comprimento do texto do documento em bytes. |
-| **Content** | Variável (**UTF-16LE**) | O **conteúdo textual do separador** codificado em UTF-16 Little-Endian. |
-| **Unsaved Flag** | 1 byte | Flag de documento não gravado (`0` se vazio/salvo). |
-| **Checksum CRC32** | 4 bytes | Valor de integridade CRC-32 para validação contra corrupção de ficheiro. |
-| **Unsaved Buffer Chunks** | Bloco dinâmico | Fragmentos de alterações em memória pendentes antes do fecho formal da app. |
+| Campo | Tamanho / Tipo | Presente em | Descrição e Função Técnica |
+| :--- | :--- | :---: | :--- |
+| **Signature / Magic Bytes** | 2 bytes | Ambos | Assinatura mágica constante: **`0x4E 0x50`** (carateres ASCII **`NP`** de Notepad). |
+| **Sequence Number** | `uLEB128` | Ambos | Inteiro de sequência (frequentemente `0x00`). |
+| **TypeFlag** | `uLEB128` | Ambos | **`0x01`** = Ficheiro associado no disco; **`0x00`** = Separador não gravado (*unsaved tab*). |
+| **FilePathLength** | `uLEB128` | Apenas `TypeFlag = 1` | Comprimento do caminho do ficheiro em carateres (ex.: `0x6F` = 111 carateres). |
+| **FilePath** | Variável (**UTF-16LE**) | Apenas `TypeFlag = 1` | Caminho completo do ficheiro no disco codificado em UTF-16LE (`2 × FilePathLength` bytes). |
+| **FileSize** | `uLEB128` | Apenas `TypeFlag = 1` | Tamanho do ficheiro original em bytes no disco. |
+| **Encoding & CR Type** | 2 bytes (`1B + 1B`) | Apenas `TypeFlag = 1` | Tipo de codificação de texto (ex.: `0x05` = UTF-8) e tipo de quebra de linha (`0x01` = CRLF). |
+| **LastWriteTimestamp** | `uLEB128` | Apenas `TypeFlag = 1` | Carimbo temporal **FILETIME** da última gravação em disco, comprimido em `uLEB128`. |
+| **FileHash** | 32 bytes | Apenas `TypeFlag = 1` | Hash SHA-256 do ficheiro em disco. |
+| **Unknown Bytes / Flag** | `2 bytes` (`Type=1`) ou `1 byte` (`Type=0`) | Ambos | Bytes de controlo (terminando em `0x01` antes dos índices do cursor). |
+| **SelectionStartIndex** | `uLEB128` | Ambos | Posição de início da seleção de texto (cursor). |
+| **SelectionEndIndex** | `uLEB128` | Ambos | Posição de fim da seleção de texto. |
+| **Configuration Block** | Bloco variável | Ambos | Parâmetros de quebra de linha (*word wrap*), flags de estado e codificação. |
+| **ContentLength** | `uLEB128` | Ambos | Comprimento do texto do documento em carateres. |
+| **Content** | Variável (**UTF-16LE**) | Ambos | O **conteúdo textual integral do separador** codificado em UTF-16 Little-Endian. |
+| **Unsaved Flag** | 1 byte | Ambos | Flag de conteúdo pendente não gravado (`0` se salvo/sincronizado, `1` se conter edições não gravadas). |
+| **Checksum CRC32** | 4 bytes (Big-Endian) | Ambos | Valor de integridade CRC-32 calculado sobre os dados desde o início do cabeçalho. |
+| **Unsaved Buffer Chunks** | Bloco dinâmico | Ambos | Fragmentos de adições/remoções em memória pendentes antes do fecho formal da app. |
 
 > [!IMPORTANT] Codificação Numérica e Textual
 > O ficheiro combina dois formatos técnicos distintos:
 > 1. **Texto**: Todas as strings (caminhos de ficheiros e conteúdo das notas) estão codificadas em **UTF-16LE** (2 bytes por caráter).
-> 2. **Inteiros Numéricos**: Todos os contadores e comprimentos são codificados no formato de compressão **`uLEB128`**, detalhado em [[Codificação uLEB128 em Estruturas de Dados do Windows]].
+> 2. **Inteiros Numéricos**: Todos os contadores, comprimentos e até o *FILETIME* são codificados no formato de compressão **`uLEB128`**, detalhado em [[Codificação uLEB128 em Estruturas de Dados do Windows]].
 
 ---
 

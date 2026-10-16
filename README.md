@@ -1,6 +1,6 @@
 # MCIF — Repositório de Conhecimento Colaborativo
 
-Repositório aberto e colaborativo de notas de estudo, resumos técnicos e artefactos de investigação para os estudantes do **Mestrado em Cibersegurança e Informática Forense .
+Repositório aberto e colaborativo de notas de estudo, resumos técnicos e artefactos de investigação para os estudantes do **Mestrado em Cibersegurança e Informática Forense (MCIF)**.
 
 O objetivo deste projeto é disponibilizar à comunidade de estudantes uma base de conhecimento fiável, estruturada, limpa e modular, onde todos possam estudar, consultar e contribuir para expandir a qualidade dos conteúdos ao longo do curso.
 
@@ -47,7 +47,7 @@ Em vez de depender apenas de árvores de pastas profundas e rígidas, a navegaç
 
 | Sigla | Unidade Curricular | Docente | Semestre | Estado |
 | :--- | :--- | :--- | :--- | :--- |
-| **[[00 ASSI]]** | **Administração Segura de Sistemas Informáticos** | Patrício Domingues | S1 | Concluído (Capítulo 1 — 180 slides) |
+| **[[00 ASSI]]** | **Administração Segura de Sistemas Informáticos** | Patrício Domingues | S1 | Concluído (Capítulo 1 — 328 slides, 53 notas) |
 | **PARSI** | Políticas e Análise de Risco na Segurança de Informação | Nuno Salvador | S1 | Planeado |
 | **AFD1** | Análise Forense Digital I | Miguel Frade | S1 | Planeado |
 | **SRC** | Segurança em Redes de Computadores | Luís Frazão | S1 | Planeado |

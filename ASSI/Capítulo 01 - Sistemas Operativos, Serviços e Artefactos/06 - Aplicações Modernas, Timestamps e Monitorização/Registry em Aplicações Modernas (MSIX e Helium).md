@@ -7,6 +7,7 @@ capitulo: 1
 bloco: 6
 tipo: conceito
 tags:
+  - assi
   - windows
   - msix
   - helium

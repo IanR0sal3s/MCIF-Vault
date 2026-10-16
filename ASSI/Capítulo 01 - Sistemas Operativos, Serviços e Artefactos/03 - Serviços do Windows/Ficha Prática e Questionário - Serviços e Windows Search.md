@@ -87,7 +87,9 @@ O comando `forfiles` permite iterar recursivamente em ficheiros e executar coman
 O **Windows Search** indexa conteúdos de ficheiros e histórico de navegação no ficheiro `Windows.edb` (Windows 10) ou `Windows.db` (Windows 11).
 
 1. **Localização física da base de dados**:
-   $$\texttt{C:\textbackslash ProgramData\textbackslash Microsoft\textbackslash Search\textbackslash Data\textbackslash Applications\textbackslash Windows\textbackslash}$$
+   ```text
+   C:\ProgramData\Microsoft\Search\Data\Applications\Windows\
+   ```
 2. **Extração de relatórios CSV** utilizando o utilitário `sidr`:
    ```cmd
    sidr.exe -f csv "C:\ProgramData\Microsoft\Search\Data\Applications\Windows" -o "C:\Forensics\Relatorio_WSearch"

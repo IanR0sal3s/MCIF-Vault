@@ -62,7 +62,9 @@ Para minimizar o impacto de I/O em disco, o SRUM adota uma estratégia de grava�
 
 1. **Nível 1 (Recolha em Tempo Real no Registry)**:
    * O sistema acumula as métricas continuamente no *hive* `SOFTWARE`, sob a chave:
-     $$\texttt{HKLM\textbackslash SOFTWARE\textbackslash Microsoft\textbackslash Windows NT\textbackslash CurrentVersion\textbackslash SRUM\textbackslash extensions}$$
+     ```text
+     HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SRUM\extensions
+     ```
    * Sob esta chave residem subpastas identificadas por GUIDs contendo contadores e buffers binários.
 2. **Nível 2 (Descarga Periódica para Base de Dados ESE)**:
    * Os dados acumulados no Registry são consolidados e gravados em disco:
@@ -74,7 +76,10 @@ Para minimizar o impacto de I/O em disco, o SRUM adota uma estratégia de grava�
 ## 3. O Ficheiro Físico `SRUDB.dat` e o Motor ESE
 
 A base de dados física do SRUM reside no diretório protegido do sistema:
-$$\texttt{\%WINDIR\%\textbackslash system32\textbackslash SRU\textbackslash SRUDB.dat} \quad \text{(geralmente } \texttt{C:\textbackslash Windows\textbackslash System32\textbackslash SRU\textbackslash}\text{)}$$
+
+```text
+%WINDIR%\system32\SRU\SRUDB.dat   (geralmente C:\Windows\System32\SRU\)
+```
 
 * **Motor de Base de Dados**: **Extensible Storage Engine (ESE)** (também conhecido por motor **JET Blue** da Microsoft, o mesmo formato transacional adotado pelo Active Directory, Exchange Server e o antigo `Windows.edb` do [[Windows Search]]).
 * **Ficheiros Auxiliares Transacionais**:
@@ -106,7 +111,9 @@ As tabelas de métricas não gravam o nome textual do executável em cada linha,
 
 A tabela de metadados **`SruDbIdMapTable`** funciona como catálogo mestre:
 * Mapeia cada `IdIndex` (ex.: `139`) para o seu descritor de texto em formato **UTF-16LE Unicode** (`IdBlob`), identificando o caminho do executável:
-  $$\texttt{IdIndex = 139} \Longleftrightarrow \texttt{Device\textbackslash HarddiskVolume1\textbackslash Program Files (x86)\textbackslash Mozilla Firefox\textbackslash firefox.exe}$$
+  ```text
+  IdIndex = 139  <==>  \Device\HarddiskVolume1\Program Files (x86)\Mozilla Firefox\firefox.exe
+  ```
 
 ---
 

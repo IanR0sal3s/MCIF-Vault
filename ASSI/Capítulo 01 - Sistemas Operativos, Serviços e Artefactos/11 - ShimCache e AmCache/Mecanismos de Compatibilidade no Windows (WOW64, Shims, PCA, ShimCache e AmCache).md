@@ -1,6 +1,6 @@
 ---
 title: Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)
-tipo: sintese
+tipo: conceito
 mestrado: Cibersegurança e Informática Forense
 uc: Administração Segura de Sistemas Informáticos
 sigla_uc: ASSI
@@ -47,7 +47,7 @@ flowchart TD
     end
 
     subgraph L4["4. Deteção de Falhas & Assistência Reativa"]
-        PCA["<b>PCA</b> (Serviço <code>PcaSvc</code>)<br/>Chave: <code>AppCompatFlags\\Layers</code>"]
+        PCA["<b>PCA</b> (Serviço <code>PcaSvc</code>)<br/>Chave: <code>AppCompatFlags\\Layers</code> e <code>%SYSTEMROOT%\\appcompat\\pca</code> (W11)"]
     end
 
     subgraph L3["3. Cache de Alto Desempenho do Carregador"]
@@ -69,13 +69,13 @@ flowchart TD
 
 ## 2. A Matriz das 5 Camadas de Compatibilidade
 
-| Camada | Mecanismo / Componente | Papel Principal no Sistema | Momento em que Atua | Rasto / Artefacto Gerado |
-| :---: | :--- | :--- | :--- | :--- |
-| **1** | **[[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)\|WOW64]]** | Traduz chamadas de 32 bits para o *kernel* de 64 bits e isola caminhos. | No arranque de qualquer binário de 32 bits. | Ficheiros em `SysWOW64`; Chaves de Registry sob `WOW6432Node`. |
-| **2** | **Shims** (`sysmain.sdb`) | Interceta chamadas à API e "mente" ao binário (versão do SO, privilégios, ficheiros). | Durante o carregamento das DLLs do processo. | Registo de regras aplicadas; base `%WINDIR%\AppPatch\sysmain.sdb`. |
-| **3** | **[[Application Compatibility e ShimCache (AppCompatCache)\|ShimCache]]** | Cache de memória para o carregador saber rapidamente se um binário precisa de shims. | No momento do lançamento do executável. | Mantido na RAM; persistido no hive `SYSTEM` (buffer circular de 1024 entradas) no *shutdown*. |
-| **4** | **PCA (`PcaSvc`)** | Monitoriza anomalias/crashes em instaladores antigos e sugere modos de compatibilidade. | Quando um binário ou instalador falha ou encerra de forma anómala. | Chaves de utilizador em `HKCU\...\AppCompatFlags\Layers`. |
-| **5** | **[[AmCache - Arquitetura, Hives e Evolução para SQLite\|AmCache]]** | Inventário abrangente de software, drivers e periféricos para preparar *upgrades*. | Em segundo plano por tarefas agendadas ($\approx 24\,\text{h}$). | Ficheiro `Amcache.hve` (com **Hashes SHA-1**) ou bases SQLite no W11 recente. |
+| Camada | Mecanismo / Componente                                                           | Papel Principal no Sistema                                                              | Momento em que Atua                                                | Rasto / Artefacto Gerado                                                                      |
+| :----: | :------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :----------------------------------------------------------------- | :-------------------------------------------------------------------------------------------- |
+| **1**  | **[[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)\|WOW64]]** | Traduz chamadas de 32 bits para o *kernel* de 64 bits e isola caminhos.                 | No arranque de qualquer binário de 32 bits.                        | Ficheiros em `SysWOW64`; Chaves de Registry sob `WOW6432Node`.                                |
+| **2**  | **Shims** (`sysmain.sdb`)                                                        | Interceta chamadas à API e "mente" ao binário (versão do SO, privilégios, ficheiros).   | Durante o carregamento das DLLs do processo.                       | Registo de regras aplicadas; base `%WINDIR%\AppPatch\sysmain.sdb`.                            |
+| **3**  | **[[Application Compatibility e ShimCache (AppCompatCache)\|ShimCache]]**        | Cache de memória para o carregador saber rapidamente se um binário precisa de shims.    | No momento do lançamento do executável.                            | Mantido na RAM; persistido no hive `SYSTEM` (buffer circular de 1024 entradas) no *shutdown*. |
+| **4**  | **PCA (`PcaSvc`)**                                                               | Monitoriza anomalias/crashes em instaladores antigos e sugere modos de compatibilidade. | Quando um binário ou instalador falha ou é monitorizado pelo PCA.  | Chaves em `HKCU\...\AppCompatFlags\Layers` e ficheiros em `%SYSTEMROOT%\appcompat\pca` (W11). |
+| **5**  | **[[AmCache - Arquitetura, Hives e Evolução para SQLite\|AmCache]]**             | Inventário abrangente de software, drivers e periféricos para preparar *upgrades*.      | Em segundo plano por tarefas agendadas ($\approx 24\,\text{h}$).   | Ficheiro `Amcache.hve` (com **Hashes SHA-1**) ou bases SQLite no W11 recente.                 |
 
 ---
 
@@ -122,7 +122,7 @@ flowchart LR
 
 ### Confusão 3: Shims Nativos vs. Serviço `PcaSvc`
 * **Shims Nativos (`sysmain.sdb`)**: São intervenções estáticas transparentes. Se um programa conhecido estiver listado na base de dados da Microsoft, o *loader* aplica o shim no momento do arranque sem qualquer intervenção humana.
-* **`PcaSvc` (*Program Compatibility Assistant Service*)**: É o componente dinâmico/reativo. Observa o comportamento da aplicação em execução. Se um instalador terminar com códigos de erro ou ficheiros em falta, o `PcaSvc` apresenta o assistente gráfico ao utilizador e regista ajustes na subchave `AppCompatFlags\Layers` para as próximas execuções.
+* **`PcaSvc` (*Program Compatibility Assistant Service*)**: É o componente dinâmico/reativo. Observa o comportamento da aplicação em execução. Se um instalador terminar com códigos de erro ou ficheiros em falta, o `PcaSvc` apresenta o assistente gráfico ao utilizador, regista ajustes na subchave `AppCompatFlags\Layers` para as próximas execuções e, no Windows 11, mantém registos dedicados de execução em `%SYSTEMROOT%\appcompat\pca` (ex.: `PcaAppLaunchDic.txt` e `PcaGeneralDb*.txt`).
 
 ---
 

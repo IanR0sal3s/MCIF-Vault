@@ -7,6 +7,7 @@ capitulo: 1
 bloco: 6
 tipo: conceito
 tags:
+  - assi
   - windows
   - timestamps
   - filetime
@@ -23,7 +24,7 @@ fonte_aula: 01_FA_services+WSearch+Registry---2026-27_ULO_v2.pdf
 fontes:
   - "https://www.digital-detective.net/dcode/"
   - "https://www.silisoftware.com/tools/date.php"
-atualizado: 2026-09-23
+atualizado: 2026-10-16
 ---
 
 # Marcadores Temporais no Windows (Timestamps)
@@ -48,7 +49,7 @@ Qualquer marcador temporal numérico assenta em dois elementos fundamentais:
 * **Origem**: 1 de janeiro de 1601 às 00:00:00 GMT/UTC.
 * **Unidade**: intervalos de **100 nanossegundos** ($10^{-7}\text{ s}$).
 * **Tamanho**: inteiro de 64 bits (`int64` / `QWORD`) em formato Little-Endian.
-* *Uso no Windows*: marcas temporais NTFS (MFT: $STANDARD_INFORMATION e $FILE_NAME), chaves de execução do Registry e telemetria.
+* *Uso no Windows*: marcas temporais NTFS (MFT: `$STANDARD_INFORMATION` e `$FILE_NAME`), chaves de execução do Registry e telemetria.
 
 ### 3. WebKit / Google Chrome
 * **Origem**: 1 de janeiro de 1601 às 00:00:00 GMT/UTC (idêntico à EPOCH da Microsoft).
@@ -111,6 +112,19 @@ REM Saída: 153240 17:46:40.0000000 - 2020-07-23 5:46:40 PM
 * **DCODE** (Digital Detective): ferramenta gráfica pericial capaz de detetar e converter automaticamente dezenas de formatos temporais (UNIX, FILETIME, SYSTEMTIME, HFS+, Google Chrome, OLE Automation).
 * **CyberChef**: operações `From UNIX Timestamp` e conversões hexadecimais.
 * **SiliSoftware Date/Time Converter**: conversão online rápida entre EPOCHs.
+
+---
+
+## Exercícios Práticos de Aula: Limites e Conversões
+
+1. **Limite de 32 bits do UNIX Timestamp (*Year 2038 Problem*)**:
+   * **Valor**: $2^{31} - 1 = 2147483647\text{ segundos}$ (valor máximo positivo de um inteiro de 32 bits com sinal `int32`, `0x7FFFFFFF`).
+   * **Data correspondente**: **`19/01/2038 03:14:07 UTC`** (terça-feira). Um segundo depois, contadores `int32` sofrem *integer overflow* para valores negativos (`13/12/1901`).
+2. **Conversão de Microsoft FILETIME64 (`140000000000000000`)**:
+   * **Cálculo**: $\frac{140000000000000000 - 116444736000000000}{10000000} = 2355526400\text{ s}$ (UNIX Epoch).
+   * **Data correspondente** (validável via `w32tm.exe /ntte 140000000000000000`): **`13/09/2044 02:53:20 UTC`**.
+
+---
 
 ## Implicações Forenses
 
