@@ -16,11 +16,13 @@ atualizado: "{{date}}"
 
 # {{title}}
 
-## Ideia central
+Resumo introdutório e definição central do conceito ou artefacto.
 
-## Da aula
+---
 
-## Implicações para administração / forense
+## Conceitos e Arquitetura
+
+## Implicações Forenses
 
 ## Perguntas de revisão
 

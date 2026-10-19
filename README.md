@@ -48,8 +48,8 @@ Em vez de depender apenas de árvores de pastas profundas e rígidas, a navegaç
 | Sigla | Unidade Curricular | Docente | Semestre | Estado |
 | :--- | :--- | :--- | :--- | :--- |
 | **[[00 ASSI]]** | **Administração Segura de Sistemas Informáticos** | Patrício Domingues | S1 | Concluído (Capítulo 1 — 328 slides, 53 notas) |
+| **[[00 AFD1]]** | **Análise Forense Digital I** | Miguel Frade e Baltazar Rodrigues | S1 | Em progresso (Capítulos 1 e 3 concluídos — 84 slides, 19 notas; Cap. 2 planeado) |
 | **PARSI** | Políticas e Análise de Risco na Segurança de Informação | Nuno Salvador | S1 | Planeado |
-| **AFD1** | Análise Forense Digital I | Miguel Frade | S1 | Planeado |
 | **SRC** | Segurança em Redes de Computadores | Luís Frazão | S1 | Planeado |
 | **COD1** | Cibersegurança Ofensiva e Defensiva I | Leonel Santos | S1 | Planeado |
 
