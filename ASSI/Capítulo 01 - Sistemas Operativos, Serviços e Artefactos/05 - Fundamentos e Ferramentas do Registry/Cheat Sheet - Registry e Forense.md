@@ -415,3 +415,6 @@ sysmon.exe -accepteula -i sysmonconfig-export.xml
 - [[Marcadores Temporais no Windows (Timestamps)]]
 - [[Registry em Aplicações Modernas (MSIX e Helium)]]
 - [[Salvaguarda e Monitorização do Registry]]
+- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
+- [[Endianness e Ordem de Armazenamento]]
+- [[Organização de Estruturas de Dados em Binário]]

@@ -128,11 +128,14 @@ REM Saída: 153240 17:46:40.0000000 - 2020-07-23 5:46:40 PM
 
 ## Implicações Forenses
 
-* **Linha Temporal (*Timeline*)**: A reconstrução fidedigna de um incidente depende de correlacionar artefactos em múltiplos formatos temporais sem desvios de fuso horário. Todos os timestamps internos de baixo nível do Windows devem ser convertidos e normalizados para **UTC**.
-* **Endianness**: A inversão incorreta dos bytes de um valor Little-Endian (ex.: inverter bytes num FILETIME64 ou nos campos individuais de um `SYSTEMTIME`) produz datas totalmente corrompidas ou séculos no passado/futuro.
+* **Linha Temporal (*Timeline*)**: A reconstrução fidedigna de um incidente depende de correlacionar artefactos em múltiplos formatos temporais sem desvios de fuso horário. Todos os timestamps internos de baixo nível do Windows devem ser convertidos e normalizados para **UTC** (ver [[Representação Forense de Data e Hora (Timestamps e SQLite)]]).
+* **Endianness**: A inversão incorreta dos bytes de um valor [[Endianness e Ordem de Armazenamento|Little-Endian]] (ex.: inverter bytes num FILETIME64 ou nos campos individuais da estrutura C `SYSTEMTIME` — ver [[Organização de Estruturas de Dados em Binário]]) produz datas totalmente corrompidas ou séculos no passado/futuro.
 
 ## Notas relacionadas
 
+- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
+- [[Endianness e Ordem de Armazenamento]]
+- [[Organização de Estruturas de Dados em Binário]]
 - [[Estrutura e Hives do Windows Registry]]
 - [[Artefacto Forense UserAssist]]
 - [[Artefactos Forenses de Execução e Persistência no Registry]]

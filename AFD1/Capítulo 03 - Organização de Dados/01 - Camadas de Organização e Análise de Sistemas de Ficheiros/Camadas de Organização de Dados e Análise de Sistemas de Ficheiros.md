@@ -140,6 +140,18 @@ flowchart LR
 
 ---
 
+## Além da aula
+
+* **Mapeamento das 4 Camadas nos Artefactos do Windows ([[00 ASSI|ASSI]])**:
+  * **Camada 2 (Análise de Volumes e Memória)**: O [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento|Volume Shadow Service (VSS)]] opera ao nível dos blocos do volume em `System Volume Information`, permitindo recuperar estados anteriores do sistema de ficheiros através de [[Acesso Forense e Montagem de Shadow Copies]].
+  * **Camada 3 (Sistema de Ficheiros, Swap e Bases de Dados)**:
+    * **Recuperação de Ficheiros Apagados (*Carving*) e `$MFT`**: Quando um ficheiro é apagado do NTFS, é possível recuperar entradas de [[Jump Lists - Arquitetura, AppIDs e Carving|Jump Lists Customizadas]] no espaço não alocado através do trailer hexadecimal `AB FB BF BA`, ou extrair o número da entrada `$MFT Entry / Sequence Number` e datas MAC originais a partir de [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário|atalhos LNK]].
+    * **Análise de Espaço de Troca (*Swap / Pagefile*)**: No Windows moderno, aplicações UWP suspensas descarregam páginas de memória para `C:\swapfile.sys` ([[UWP - Artefactos Forenses e Estrutura de Dados]]).
+    * **Análise de Bases de Dados de Sistema**: O Windows recorre intensivamente aos motores **ESE** (`SRUDB.dat` em [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]], `Windows.edb` em [[Windows Search]] e `qmgr.db` em [[Serviço BITS]]) e **SQLite 3** (`ActivitiesCache.db` em [[Windows Activity Timeline - Arquitetura e Base SQLite]], `Windows.db` e `StateRepository-*.srd`).
+  * **Camada 4 (Análise de SO e Aplicações)**: Inclui a análise dos ficheiros de configuração centralizados na [[Estrutura e Hives do Windows Registry]] e de artefactos específicos de aplicações como os ficheiros `TabState` do [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]].
+
+---
+
 ## Perguntas de revisão
 
 - Quais são as quatro camadas de organização de dados e que tipo de análise ocorre em cada uma?
@@ -151,4 +163,11 @@ flowchart LR
 - [[Sistemas de Numeração e Conversão entre Bases]]
 - [[Organização de Estruturas de Dados em Binário]]
 - [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
+- [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
+- [[UWP - Artefactos Forenses e Estrutura de Dados]]
+- [[Jump Lists - Arquitetura, AppIDs e Carving]]
+- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
+- [[Estrutura e Hives do Windows Registry]]
+- [[Windows Search]]
+- [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
 - [[Capítulo 3 - Organização de Dados]]

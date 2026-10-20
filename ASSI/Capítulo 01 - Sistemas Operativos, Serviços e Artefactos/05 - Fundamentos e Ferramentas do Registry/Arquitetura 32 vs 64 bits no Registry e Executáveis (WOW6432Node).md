@@ -91,4 +91,6 @@ Permite distinguir binários desenvolvidos em FreeBASIC, MS Visual C++, Delphi, 
 - [[Estrutura e Hives do Windows Registry]]
 - [[Ferramentas de Análise e Extração do Registry]]
 - [[Registry em Aplicações Modernas (MSIX e Helium)]]
+- [[Endianness e Ordem de Armazenamento]]
+- [[Sistemas de Numeração e Conversão entre Bases]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

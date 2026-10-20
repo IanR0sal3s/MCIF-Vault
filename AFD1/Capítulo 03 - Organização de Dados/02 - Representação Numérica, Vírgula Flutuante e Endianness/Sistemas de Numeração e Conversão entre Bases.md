@@ -101,6 +101,14 @@ Agrupando os bits de 4 em 4:
 
 ---
 
+## Além da aula
+
+* **Aplicações Diretas de Conversão Binário/Hexadecimal em Artefactos do Windows ([[00 ASSI|ASSI]])**:
+  * **Codificação de Inteiros de Comprimento Variável ([[Codificação uLEB128 em Estruturas de Dados do Windows]])**: Utilizada nos ficheiros `TabState` do [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]], exige converter o número decimal para binário, agrupá-lo em blocos de 7 bits (usando o *MSB* — Bit 7 — como bit de continuação) e representar o resultado em hexadecimal (ex.: $301_d = 100101101_b \rightarrow \text{0xAD 0x02}$).
+  * **Assinaturas Mágicas (*Magic Bytes*) e Trailers de Carving**: A leitura hexadecimal ao nível do byte permite validar cabeçalhos de executáveis e bases de dados no editor HxD, tais como `4D 5A` / `50 45 00 00` em cabeçalhos PE ([[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]]), `53 51 4C 69 74 65...` em [[Windows Search|SQLite 3]], `4D 41 4D 04` (`MAM`) ou `53 43 43 41` (`SCCA`) em [[Estrutura Interna e Algoritmo de Hashing do Prefetch|ficheiros Prefetch]], `4C 00 00 00` em [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário|atalhos LNK]], `57 69 6E 34` (`Win4`) na [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)|IconCache]], `4E 50` (`NP`) no Bloco de Notas e o trailer `AB FB BF BA` nas [[Jump Lists - Arquitetura, AppIDs e Carving|Jump Lists Customizadas]].
+
+---
+
 ## Perguntas de revisão
 
 - Qual é a fórmula genérica para converter um número de qualquer base $b$ para a base decimal?
@@ -112,4 +120,8 @@ Agrupando os bits de 4 em 4:
 - [[Números em Vírgula Flutuante (IEEE 754)]]
 - [[Endianness e Ordem de Armazenamento]]
 - [[Organização de Estruturas de Dados em Binário]]
+- [[Codificação uLEB128 em Estruturas de Dados do Windows]]
+- [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]]
+- [[Estrutura Interna e Algoritmo de Hashing do Prefetch]]
+- [[Jump Lists - Arquitetura, AppIDs e Carving]]
 - [[Capítulo 3 - Organização de Dados]]

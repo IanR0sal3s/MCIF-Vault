@@ -208,3 +208,6 @@ notepad_parser.exe -f csv -o "C:\Temp\notepad_conteudo.csv"
 - [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
 - [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]
 - [[Codificação uLEB128 em Estruturas de Dados do Windows]]
+- [[Pesquisa de Evidências e Reconstrução de Eventos]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+- [[Capítulo 3 - Organização de Dados]]

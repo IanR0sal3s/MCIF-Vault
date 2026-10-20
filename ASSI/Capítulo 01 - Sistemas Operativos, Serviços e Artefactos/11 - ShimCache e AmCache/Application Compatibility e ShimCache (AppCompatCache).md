@@ -171,3 +171,6 @@ O comando exporta um ficheiro CSV estruturado com as seguintes colunas essenciai
 - [[Extração da AmCache e Comparação Forense com a ShimCache]]
 - [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
+- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
+- [[Pesquisa de Evidências e Reconstrução de Eventos]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]

@@ -80,7 +80,10 @@ flowchart TD
 
 ## Além da aula
 
-Os quatro princípios apresentados correspondem aos célebres **Princípios ACPO (*Association of Chief Police Officers*)** do Reino Unido para evidência digital, os quais serviram igualmente de base à norma internacional **ISO/IEC 27037** (*Guidelines for identification, collection, acquisition, and preservation of digital evidence*).
+* **Normas Internacionais**: Os quatro princípios apresentados correspondem aos célebres **Princípios ACPO (*Association of Chief Police Officers*)** do Reino Unido para evidência digital, os quais serviram igualmente de base à norma internacional **ISO/IEC 27037** (*Guidelines for identification, collection, acquisition, and preservation of digital evidence*).
+* **Aplicação na Cadeia de Custódia e Triagem em Windows ([[00 ASSI|ASSI]])**:
+  * **Validação de Ferramentas Periciais (Princípio 3 — Repetibilidade)**: No exame a artefactos do Windows, o uso de ferramentas determinísticas de código aberto da suite de Eric Zimmerman (ex.: `PECmd`, `AmcacheParser`, `LECmd`, `JLECmd`, `SrumECmd`, `SBECmd`), devidamente validadas com `sigcheck.exe -i` ([[Análise Forense e Criação a Pedido do Prefetch]]), garante que qualquer terceira parte independente obtenha exatamente os mesmos relatórios CSV/JSON a partir dos mesmos ficheiros de origem.
+  * **Acesso Excecional em *First Response* (Princípio 2)**: Quando é necessário recolher dados de um sistema Windows vivo (ex.: executar [[LastActivityView e Reconstituição Temporal Live|LastActivityView]], `powercfg /srumutil` em [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]] ou montar [[Acesso Forense e Montagem de Shadow Copies|Shadow Copies com mklink/VSCMount]]), o perito tem de saber explicar em tribunal que artefactos foram criados pela própria intervenção (como o ficheiro `.pf` da ferramenta lançada).
 
 ---
 
@@ -102,4 +105,7 @@ Os quatro princípios apresentados correspondem aos célebres **Princípios ACPO
 - [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
 - [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
 - [[Fases da Investigação Forense Digital]]
+- [[Análise Forense e Criação a Pedido do Prefetch]]
+- [[LastActivityView e Reconstituição Temporal Live]]
+- [[Acesso Forense e Montagem de Shadow Copies]]
 - [[Capítulo 1 - Método de Investigação]]

@@ -69,6 +69,7 @@ flowchart LR
 ## Implicações Forenses
 
 * **Iteratividade do Processo**: As setas bidirecionais entre as 4 fases demonstram que a descoberta de um novo artefacto durante a *Pesquisa de Evidências* (Fase 3) ou *Reconstrução de Eventos* (Fase 4) pode obrigar o investigador a voltar à *Preservação* (Fase 2) ou a *Identificar novas fontes de evidência* (Fase 1), como um segundo servidor ou dispositivo móvel.
+* **Exemplo Prático de Descoberta Iterativa em Windows ([[00 ASSI|ASSI]])**: Se durante a Fase 3 (Pesquisa) o exame à chave `USBSTOR` ([[Artefactos Forenses de Dispositivos USB]]) ou aos metadados de [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário|atalhos LNK]] revelar que documentos críticos foram abertos a partir de uma pen USB externa não recolhida inicialmente, o perito tem de regressar à Fase 1 e Fase 2 para localizar, apreender e preservar esse novo suporte físico. De igual modo, a Fase 4 apoia-se diretamente na [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] para testar hipóteses temporais.
 
 ---
 
@@ -85,4 +86,6 @@ flowchart LR
 - [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
 - [[Preservação do Sistema e Integridade de Dados]]
 - [[Pesquisa de Evidências e Reconstrução de Eventos]]
+- [[Artefactos Forenses de Dispositivos USB]]
+- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
 - [[Capítulo 1 - Método de Investigação]]

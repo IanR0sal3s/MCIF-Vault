@@ -72,4 +72,6 @@ Para apoiar o preenchimento consistente das tabelas de catalogação pedidas no 
 
 - [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
 - [[Princípios e Rota do Manuseamento de Evidência Digital]]
+- [[Artefactos Forenses de Dispositivos USB]]
+- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
 - [[Capítulo 1 - Método de Investigação]]

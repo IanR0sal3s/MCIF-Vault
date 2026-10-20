@@ -109,6 +109,15 @@ WHERE urls.id = visits.url;
 
 ---
 
+## Além da aula
+
+* **Convergência com os Marcadores Temporais e Bases SQLite do Windows ([[00 ASSI|ASSI]])**:
+  * **FILETIME64, SYSTEMTIME e Utilitários (`w32tm`, `DCODE`)**: Na nota [[Marcadores Temporais no Windows (Timestamps)]], aprofunda-se a conversão de Microsoft `FILETIME64` (intervalos de 100 nanossegundos desde `1601-01-01`, onde se subtrai `116444736000000000` e se divide por `10000000`), o problema do ano 2038 (`int32`) e a estrutura de 128 bits `SYSTEMTIME`.
+  * **Queries SQL sobre Bases SQLite do Windows 11**: Exatamente a mesma técnica SQLite `datetime(..., 'unixepoch')` estudada para o Chrome é aplicada na nova geração da [[AmCache - Arquitetura, Hives e Evolução para SQLite|AmCache em SQLite (`DeviceCensus.db`)]] no Windows 11 (`datetime((LastModified - 116444736000000000) / 10000000, 'unixepoch')`), bem como na exploração de `ActivitiesCache.db` ([[Windows Activity Timeline - Arquitetura e Base SQLite]]), `Windows.db` ([[Windows Search]]) e `StateRepository-*.srd` ([[UWP - Artefactos Forenses e Estrutura de Dados]]).
+  * **Artefactos com Timestamps FILETIME64**: O formato de 64 bits da época de 1601 está presente no offset `60` do [[Artefacto Forense UserAssist]], no array das últimas 8 execuções (`Time01`–`Time08`) do [[Estrutura Interna e Algoritmo de Hashing do Prefetch|Prefetch]], nos metadados MAC dos [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário|atalhos LNK]] e comprimido em `uLEB128` no campo `LastWriteTimestamp` do [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]].
+
+---
+
 ## Perguntas de revisão
 
 - Quais são as desvantagens de armazenar datas como strings de texto face à representação binária?
@@ -117,7 +126,13 @@ WHERE urls.id = visits.url;
 
 ## Notas relacionadas
 
-- [[Marcadores Temporais no Windows (Timestamps)]] *(nota complementar da UC de ASSI)*
+- [[Marcadores Temporais no Windows (Timestamps)]]
+- [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
+- [[Windows Activity Timeline - Arquitetura e Base SQLite]]
+- [[Windows Search]]
+- [[UWP - Artefactos Forenses e Estrutura de Dados]]
+- [[Artefacto Forense UserAssist]]
+- [[Estrutura Interna e Algoritmo de Hashing do Prefetch]]
 - [[Endianness e Ordem de Armazenamento]]
 - [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
 - [[Capítulo 3 - Organização de Dados]]

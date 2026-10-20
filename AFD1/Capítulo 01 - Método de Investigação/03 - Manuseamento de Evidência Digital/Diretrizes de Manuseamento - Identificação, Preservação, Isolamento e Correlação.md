@@ -114,6 +114,19 @@ Na recolha de evidências, deve dar-se prioridade aos dados mais voláteis para 
 
 ---
 
+## Além da aula
+
+* **Mapeamento das Diretrizes de Manuseamento em Sistemas Windows ([[00 ASSI|ASSI]])**:
+  * **1. Identificação e Fontes Temporárias/Estruturadas**: No Windows, os *dados complexos/estruturados* incluem os ficheiros de [[Estrutura e Hives do Windows Registry|Hives do Registry]] (`REGF`), bases de dados **ESE** (`Windows.edb` em [[Windows Search]], `SRUDB.dat` em [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]] e `qmgr.db` em [[Serviço BITS]]) e bases **SQLite** (`ActivitiesCache.db` em [[Windows Activity Timeline - Arquitetura e Base SQLite]]). Já as *localizações temporárias* abrangem o ficheiro de paginação de aplicações modernas `C:\swapfile.sys` ([[UWP - Artefactos Forenses e Estrutura de Dados]]), as caches gráficas ([[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]]) e a área de transferência ([[Recuperação de Clipboard e Sincronização na Timeline]]).
+  * **2. Preservação e Ordem de Volatilidade (Níveis 2 a 7)**:
+    * **Nível 2 e 3 (Tabela de Processos e RAM)**: Processos ativos inspecionados via [[Processos e linha de comandos no Windows|`tasklist` / `pslist`]], hives voláteis (`HKLM\HARDWARE`) e a [[Application Compatibility e ShimCache (AppCompatCache)|ShimCache]] da sessão em curso.
+    * **Nível 4 (Espaço de Swap)**: O ficheiro `swapfile.sys` das aplicações UWP ([[UWP - Artefactos Forenses e Estrutura de Dados]]).
+    * **Nível 5 (Armazenamento Local)**: Artefactos persistidos em disco, cuja janela de gravação obedece à [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] ($T_0 \to$ [[Artefacto Forense UserAssist|UserAssist]] $\approx 3\text{s} \to$ [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento|Prefetch]] $\approx 10\text{s} \to$ [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE|SRUM]] ao minuto 30).
+    * **Nível 7 (Suportes de Arquivo / Backups)**: Cópias de sombra do [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento|VSS]] e cópias de segurança do Registry em `RegBack` ([[Salvaguarda e Monitorização do Registry]]).
+  * **4. Correlação Multi-Fonte**: Como os marcadores temporais padrão do sistema de ficheiros podem ser manipulados, a confirmação pericial num sistema Windows exige cruzar fontes independentes segundo a [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] (por exemplo, cruzar a execução no [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento|Prefetch]] com o consumo de rede/CPU no [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)|SRUM]] e os metadados preservados em [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário|atalhos LNK]] e [[Jump Lists - Arquitetura, AppIDs e Carving|Jump Lists]]).
+
+---
+
 ## Perguntas de revisão
 
 - Quais são os quatro estados possíveis dos dados na fase de Identificação?
@@ -126,4 +139,10 @@ Na recolha de evidências, deve dar-se prioridade aos dados mais voláteis para 
 - [[Princípios e Rota do Manuseamento de Evidência Digital]]
 - [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
 - [[Preservação do Sistema e Integridade de Dados]]
+- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
+- [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
+- [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]]
+- [[UWP - Artefactos Forenses e Estrutura de Dados]]
+- [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
+- [[Salvaguarda e Monitorização do Registry]]
 - [[Capítulo 1 - Método de Investigação]]

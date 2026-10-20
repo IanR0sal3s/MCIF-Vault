@@ -125,3 +125,6 @@ A taxonomia estabelece uma linha de demarcação crítica que orienta o trabalho
 - [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
 - [[Application Compatibility e ShimCache (AppCompatCache)]]
 - [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
+- [[Investigação Digital e Evidência Digital]]
+- [[Pesquisa de Evidências e Reconstrução de Eventos]]
+- [[Código de Ética na Investigação Forense Digital (ISFCE)]]

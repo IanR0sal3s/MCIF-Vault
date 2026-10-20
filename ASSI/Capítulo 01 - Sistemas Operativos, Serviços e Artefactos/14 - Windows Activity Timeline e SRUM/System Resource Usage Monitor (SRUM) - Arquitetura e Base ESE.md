@@ -153,3 +153,6 @@ A estrutura do `SRUDB.dat`, extração de métricas de rede e processos, e anál
 - [[Recuperação de Clipboard e Sincronização na Timeline]]
 - [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
+- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
+- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]

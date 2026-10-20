@@ -126,4 +126,6 @@ O `pslist` disponibiliza opções avançadas de depuração em linha de comandos
 - [[Serviços Windows]]
 - [[svchost.exe]]
 - [[Aplicações UWP (Universal Windows Platform) - Visão Geral]]
+- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

@@ -147,6 +147,15 @@ Atributos essenciais a registar: `tag ID`, tipo de dispositivo, marca e modelo, 
 
 ---
 
+## Além da aula
+
+* **Correlação entre a Catalogação Física (LabCIF) e os Vestígios Lógicos no Windows ([[00 ASSI|ASSI]])**:
+  * **Pens USB e Discos Externos (`PENxx` / `HDDxx`)**: Ao catalogar a Marca, Modelo e Número de Série físico de uma pen USB apreendida, o perito pode comprovar se esse dispositivo específico esteve ligado ao computador do suspeito cruzando os dados com a chave `USBSTOR` e o ficheiro `setupapi.dev.log` ([[Artefactos Forenses de Dispositivos USB]]) ou com o relatório `DevicePnps.csv` da [[Extração da AmCache e Comparação Forense com a ShimCache|AmCache]]. Deve ter-se especial cuidado com a armadilha forense do *Windows Assigned Device ID* (quando o identificador tem um `&` na 2.ª posição, significando que a pen não possui número de série de fábrica).
+  * **Identificadores de Volume e Rede em Atalhos**: Mesmo que um suporte externo `HDDxx` ou `PENxx` não tenha sido apreendido no local, os [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário|ficheiros LNK]] e as [[Jump Lists - Arquitetura, AppIDs e Carving|Jump Lists]] preservam o *Volume Serial Number*, o rótulo do volume, o nome NetBIOS e o endereço físico MAC da placa de rede do computador original.
+  * **Inventário de Hardware do Próprio Computador (`PCxx` / `LAPxx`)**: Os atributos de fabricante (`DeviceMake`), modelo (`DeviceModel`) e nome da máquina (`DeviceName`) ficam igualmente registados na chave `TaskFlow\DeviceCache` da [[Windows Activity Timeline - Arquitetura e Base SQLite]] e na base `DeviceCensus.db` da [[AmCache - Arquitetura, Hives e Evolução para SQLite]].
+
+---
+
 ## Perguntas de revisão
 
 - Qual é a sintaxe completa de uma etiqueta (*tag*) segundo as regras do LabCIF? Como seriam etiquetados um portátil e os seus dois discos internos pertencentes ao suspeito B?
@@ -158,4 +167,7 @@ Atributos essenciais a registar: `tag ID`, tipo de dispositivo, marca e modelo, 
 - [[Princípios e Rota do Manuseamento de Evidência Digital]]
 - [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
 - [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]]
+- [[Artefactos Forenses de Dispositivos USB]]
+- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
+- [[Windows Activity Timeline - Arquitetura e Base SQLite]]
 - [[Capítulo 1 - Método de Investigação]]

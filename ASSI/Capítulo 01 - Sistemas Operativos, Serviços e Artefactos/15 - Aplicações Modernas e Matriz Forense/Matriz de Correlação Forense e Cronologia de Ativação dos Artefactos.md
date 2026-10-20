@@ -112,3 +112,8 @@ Conforme compilado na síntese de pastas críticas de sistema (Slide 157):
 - [[Codificação uLEB128 em Estruturas de Dados do Windows]]
 - [[Cheat Sheet - Artefactos de Execução e Sistema no Windows]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
+- [[Investigação Digital e Evidência Digital]]
+- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
+- [[Fases da Investigação Forense Digital]]
+- [[Pesquisa de Evidências e Reconstrução de Eventos]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]

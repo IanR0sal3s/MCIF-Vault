@@ -122,3 +122,5 @@ A existência de cópias sombra altera drasticamente a eficácia de uma perícia
 - [[LastActivityView e Reconstituição Temporal Live]]
 - [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]]
 - [[Acesso Forense e Montagem de Shadow Copies]]
+- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]

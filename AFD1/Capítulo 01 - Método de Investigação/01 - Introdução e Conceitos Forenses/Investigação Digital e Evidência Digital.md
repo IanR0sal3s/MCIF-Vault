@@ -72,8 +72,17 @@ Complementarmente, a evidência digital define-se como:
 
 ## Implicações Forenses
 
-* **Evitar o Viés de Confirmação**: O rigor científico exige que o perito não procure apenas artefactos que confirmem a sua teoria inicial, mas tente refutá-la através de fontes independentes (como registos de firewall ou logs de rede).
+* **Evitar o Viés de Confirmação**: O rigor científico exige que o perito não procure apenas artefactos que confirmem a sua teoria inicial, mas tente refutá-la através de fontes independentes (como registos de firewall, logs de rede ou a [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos|correlação cruzada de artefactos do sistema operativo]]).
 * **Fragilidade Probatória**: Qualquer manuseamento incorreto sem isolamento e preservação adequados pode invalidar a autenticidade ou a admissibilidade da prova em sede judicial.
+
+---
+
+## Além da aula
+
+* **Materialização das Questões Fundamentais em Sistemas Windows ([[00 ASSI|ASSI]])**: Na análise prática de um posto de trabalho Windows, as questões científicas desta fase mapeiam-se diretamente na [[Taxonomia dos Artefactos de Execução no Windows]]:
+  * **O quê (*what*) e Quando (*when*)**: comprovados por artefactos de sistema como [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento|Prefetch]] (últimas 8 execuções) e [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE|SRUM]].
+  * **Quem (*who*) e Como (*how*)**: apurados através de artefactos do perfil do utilizador (hive `NTUSER.DAT`/`USRCLASS.DAT`), tais como [[Artefacto Forense UserAssist|UserAssist]], [[Artefacto Forense ShellBags|ShellBags]], [[Jump Lists - Arquitetura, AppIDs e Carving|Jump Lists]] e [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário|atalhos LNK]].
+  * **Refutação de Hipóteses de Execução**: encontrar um executável registado na [[Application Compatibility e ShimCache (AppCompatCache)|ShimCache]] ou na [[AmCache - Arquitetura, Hives e Evolução para SQLite|AmCache]] prova apenas a *existência* do ficheiro no sistema, sendo insuficiente para sustentar a hipótese de que o programa foi *executado* (ver [[Extração da AmCache e Comparação Forense com a ShimCache]]).
 
 ---
 
@@ -89,4 +98,7 @@ Complementarmente, a evidência digital define-se como:
 - [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
 - [[Fases da Investigação Forense Digital]]
 - [[Princípios e Rota do Manuseamento de Evidência Digital]]
+- [[Taxonomia dos Artefactos de Execução no Windows]]
+- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
+- [[Extração da AmCache e Comparação Forense com a ShimCache]]
 - [[Capítulo 1 - Método de Investigação]]

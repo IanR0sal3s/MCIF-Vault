@@ -111,3 +111,5 @@ O utilitário exporta a totalidade das entradas para um ficheiro CSV estruturado
 - [[Windows Activity Timeline - Arquitetura e Base SQLite]]
 - [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
 - [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]]
+- [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]

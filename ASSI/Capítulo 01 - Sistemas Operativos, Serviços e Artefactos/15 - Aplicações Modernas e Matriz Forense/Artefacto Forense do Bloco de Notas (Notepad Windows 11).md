@@ -142,3 +142,7 @@ A aquisição física da pasta `LocalState`, dissecação da estrutura binária 
 - [[Codificação uLEB128 em Estruturas de Dados do Windows]]
 - [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
 - [[Registry em Aplicações Modernas (MSIX e Helium)]]
+- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
+- [[Organização de Estruturas de Dados em Binário]]
+- [[Preservação do Sistema e Integridade de Dados]]
+- [[Endianness e Ordem de Armazenamento]]

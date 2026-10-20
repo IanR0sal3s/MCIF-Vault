@@ -89,6 +89,18 @@ A maior parte da pesquisa de evidências é realizada num sistema de ficheiros e
 
 ---
 
+## Além da aula
+
+* **Articulação com os Artefactos do Windows Estudados em [[00 ASSI|ASSI]]**:
+  * **Pesquisa por Palavras-Chave e Metadados (Fase 3)**: Além da pesquisa bruta no sistema de ficheiros, o índice do [[Windows Search]] (`Windows.edb` em ESE no W10 ou `Windows.db` em SQLite3 no W11) preserva nomes, caminhos, conteúdos indexados e metadados temporais mesmo após a eliminação dos ficheiros originais. De igual modo, os hashes `SHA-1` guardados na [[AmCache - Arquitetura, Hives e Evolução para SQLite|AmCache]] permitem cruzar executáveis apagados ou renomeados contra bases de reputação ([[Extração da AmCache e Comparação Forense com a ShimCache]]).
+  * **Existência vs. Execução e Interação Consciente (Fase 4 — Reconstrução de Eventos)**: A advertência de que *"a mera existência do ficheiro não responde a questões sobre os eventos que lhe deram origem"* corresponde exatamente à **Regra de Ouro** estudada na [[Taxonomia dos Artefactos de Execução no Windows]]:
+    * **Mera Presença/Existência**: Entradas na [[Application Compatibility e ShimCache (AppCompatCache)|ShimCache]] ou na [[AmCache - Arquitetura, Hives e Evolução para SQLite|AmCache]] provam apenas que o ficheiro existiu no disco, e miniaturas na [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)|Thumbcache]] provam apenas que a pasta foi enumerada pelo Explorer (não provando visualização consciente).
+    * **Prova de Ação Deliberada do Utilizador (*Refutação de Trojan Defense*)**: Para demonstrar interação humana direta na interface gráfica (em oposição a uma descarga/execução automática em segundo plano por *malware*), o perito correlaciona o [[Artefacto Forense UserAssist]] (contadores de execução GUI e tempo de foco da janela), [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)|RunMRU, RecentDocs, ComDlg32 e TypedPaths]], [[Artefacto Forense ShellBags|ShellBags]] (navegação interativa em pastas e arquivos comprimidos), [[Jump Lists - Arquitetura, AppIDs e Carving|Jump Lists]] e [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário|atalhos LNK na pasta Recent]].
+    * **Análise de Vetores de Engenharia Social**: Quando a defesa alega ação de *malware*, a inspeção de [[Abuso e Vetores de Ataque com Ficheiros LNK|atalhos LNK maliciosos]] (ex.: campanhas *Emotet* com ícones forjados e comandos truncados a 256 caracteres na GUI) permite esclarecer exatamente como a infeção foi despoletada.
+  * **Diferenças entre Versões do Windows (XP, 7, 8, 10, 11)**: O impacto da versão do SO na reconstrução de eventos é exemplificado pela evolução da [[Application Compatibility e ShimCache (AppCompatCache)|ShimCache]] (que provava execução no Windows XP, tinha `InsertFlag` no Vista–8.1 e deixou de provar execução no Windows 10/11), pela migração do [[Windows Search]] e da [[AmCache - Arquitetura, Hives e Evolução para SQLite|AmCache]] para SQLite no Windows 11, pela perda de relevância da [[Windows Activity Timeline - Arquitetura e Base SQLite|Windows Activity Timeline]] no Windows 11 e pelo novo formato `TabState` do [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]].
+
+---
+
 ## Perguntas de revisão
 
 - Que artefactos devem ser prioritariamente inspecionados num caso de análise de hábitos de navegação Web versus uma intrusão em Linux?
@@ -101,4 +113,14 @@ A maior parte da pesquisa de evidências é realizada num sistema de ficheiros e
 - [[Fases da Investigação Forense Digital]]
 - [[Preservação do Sistema e Integridade de Dados]]
 - [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+- [[Taxonomia dos Artefactos de Execução no Windows]]
+- [[Extração da AmCache e Comparação Forense com a ShimCache]]
+- [[Application Compatibility e ShimCache (AppCompatCache)]]
+- [[Windows Search]]
+- [[Artefacto Forense UserAssist]]
+- [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]]
+- [[Artefacto Forense ShellBags]]
+- [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]]
+- [[Abuso e Vetores de Ataque com Ficheiros LNK]]
+- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
 - [[Capítulo 1 - Método de Investigação]]

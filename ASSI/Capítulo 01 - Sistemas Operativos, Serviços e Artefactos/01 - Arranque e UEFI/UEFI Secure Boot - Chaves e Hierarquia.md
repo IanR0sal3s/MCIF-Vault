@@ -85,4 +85,5 @@ A posse da chave privada da Platform Key anula completamente a eficácia do Secu
 - [[UEFI Secure Boot]]
 - [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
 - [[PKfail - Cadeia de Ataque e Deteção Forense]]
+- [[Preservação do Sistema e Integridade de Dados]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

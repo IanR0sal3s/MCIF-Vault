@@ -145,3 +145,6 @@ flowchart LR
 - [[Windows Activity Timeline - Arquitetura e Base SQLite]]
 - [[Recuperação de Clipboard e Sincronização na Timeline]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
+- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+- [[Princípios e Rota do Manuseamento de Evidência Digital]]

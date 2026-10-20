@@ -97,4 +97,6 @@ A resolução definitiva da vulnerabilidade exige que os fabricantes OEM publiqu
 - [[UEFI Secure Boot]]
 - [[UEFI Secure Boot - Chaves e Hierarquia]]
 - [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
+- [[Preservação do Sistema e Integridade de Dados]]
+- [[Exercícios Práticos - Integridade de Dados e Hashes]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

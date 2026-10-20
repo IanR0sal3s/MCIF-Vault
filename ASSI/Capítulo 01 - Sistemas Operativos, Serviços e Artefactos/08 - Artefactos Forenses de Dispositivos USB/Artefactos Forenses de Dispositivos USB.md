@@ -129,4 +129,7 @@ Ferramenta utilizada por atores maliciosos para eliminar vestígios:
 - [[Estrutura e Hives do Windows Registry]]
 - [[Marcadores Temporais no Windows (Timestamps)]]
 - [[Artefacto Forense ShellBags]]
+- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
+- [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]]
+- [[Fases da Investigação Forense Digital]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

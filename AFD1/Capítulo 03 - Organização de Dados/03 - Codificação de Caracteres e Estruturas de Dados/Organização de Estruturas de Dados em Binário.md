@@ -97,6 +97,17 @@ partners[0].quota=1.238;
 
 ---
 
+## Além da aula
+
+* **Exemplos Reais de Estruturas Binárias (`struct`) Analisadas em [[00 ASSI|ASSI]]**:
+  * **Estrutura `SYSTEMTIME` (16 bytes)**: Definida na API Win32 como `typedef struct _SYSTEMTIME` com 8 campos `WORD` (2 bytes em Little-endian cada), estudada e descodificada manualmente em [[Marcadores Temporais no Windows (Timestamps)]].
+  * **Estrutura Binária `Count` do UserAssist (72 bytes)**: Armazenada em `REG_BINARY` no Windows 7/10/11, mapeia por *offsets* fixos o *Session ID* (`0–3`), *Run Counter* (`4–7`), *Focus Count* (`8–11`), *Focus Time* (`12–15`), 44 bytes reservados (`16–59`), o timestamp `FILETIME64` (`60–67`) e 4 bytes de *padding* `0x00000000` (`68–71`) — ver [[Artefacto Forense UserAssist]].
+  * **Cabeçalho `SHELL_LINK_HEADER` (76 bytes)**: Estrutura inicial dos [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário|atalhos LNK]] (`4C 00 00 00`, CLSID, flags, timestamps MAC e tamanho do alvo).
+  * **Cabeçalho `IconCache.db` (16 bytes)**: Estrutura com tamanho do cabeçalho (`0x00`), assinatura `Win4` (`0x04`), versão (`0x08`) e *build* (`0x0C`) em [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]].
+  * **Estruturas com Campos de Tamanho Variável (`TabState`)**: Ao contrário das `struct` C com *offsets* estáticos e *padding*, os ficheiros `.bin` do [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] utilizam inteiros comprimidos em [[Codificação uLEB128 em Estruturas de Dados do Windows|uLEB128]], onde os *offsets* seguintes se deslocam dinamicamente consoante o tamanho do caminho e do texto.
+
+---
+
 ## Perguntas de revisão
 
 - Porque é que na análise do *hex dump* as strings `"Miguel Frade"` e `"2411-901"` se leem da esquerda para a direita sem inversão, mas os campos `partner_num` e `quota` têm os bytes invertidos?
@@ -109,4 +120,10 @@ partners[0].quota=1.238;
 - [[Números em Vírgula Flutuante (IEEE 754)]]
 - [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
 - [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
+- [[Marcadores Temporais no Windows (Timestamps)]]
+- [[Artefacto Forense UserAssist]]
+- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
+- [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]]
+- [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]
+- [[Codificação uLEB128 em Estruturas de Dados do Windows]]
 - [[Capítulo 3 - Organização de Dados]]

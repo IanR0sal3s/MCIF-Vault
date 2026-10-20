@@ -174,3 +174,7 @@ A análise prática de ficheiros `AutomaticDestinations-ms`, identificação de 
 - [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
 - [[Abuso e Vetores de Ataque com Ficheiros LNK]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
+- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
+- [[Sistemas de Numeração e Conversão entre Bases]]
+- [[Pesquisa de Evidências e Reconstrução de Eventos]]
+- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]

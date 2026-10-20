@@ -151,3 +151,6 @@ Na base `InventoryApplicationFile.db`, cada registo preserva:
 - [[Extração da AmCache e Comparação Forense com a ShimCache]]
 - [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
+- [[Preservação do Sistema e Integridade de Dados]]
+- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
+- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]

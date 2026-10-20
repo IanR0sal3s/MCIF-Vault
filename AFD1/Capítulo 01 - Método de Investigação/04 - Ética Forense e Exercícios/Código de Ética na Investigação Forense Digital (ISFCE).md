@@ -65,6 +65,7 @@ A existência de um **Código de Ética** é indispensável para proteger a inte
 
 * **Factos vs. Juízo de Culpa**: Ao perito forense compete exclusivamente relatar factos técnicos verificáveis (ex.: *"o ficheiro X foi descarregado às 14:32 através de uma sessão interativa da conta Y"*), cabendo exclusivamente ao juiz ou ao tribunal pronunciar-se sobre a culpa ou inocência jurídica do arguido.
 * **Respeito pelo Mandado (*Scope*)**: Exceder o âmbito da autorização judicial (analisando períodos temporais, pastas ou dispositivos não abrangidos pelo mandado) viola simultaneamente o código ético e a lei processual penal, gerando prova nula.
+* **Rigor e Objetividade na Interpretação de Artefactos do Windows ([[00 ASSI|ASSI]])**: O dever ético de *"apresentar as conclusões com precisão"* e de *"nunca demonstrar enviesamento"* proíbe extrapolações técnicas abusivas — por exemplo, nunca afirmar que uma entrada na [[Application Compatibility e ShimCache (AppCompatCache)|ShimCache]] ou [[Extração da AmCache e Comparação Forense com a ShimCache|AmCache]] prova a execução de um programa no Windows 10/11, nunca declarar que uma miniatura na [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)|Thumbcache]] prova visualização consciente pelo arguido, nem ignorar o risco de falsos positivos de incremento na chave [[Artefacto Forense UserAssist|UserAssist]].
 
 ---
 
@@ -78,4 +79,8 @@ A existência de um **Código de Ética** é indispensável para proteger a inte
 
 - [[Investigação Digital e Evidência Digital]]
 - [[Princípios e Rota do Manuseamento de Evidência Digital]]
+- [[Taxonomia dos Artefactos de Execução no Windows]]
+- [[Extração da AmCache e Comparação Forense com a ShimCache]]
+- [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]]
+- [[Artefacto Forense UserAssist]]
 - [[Capítulo 1 - Método de Investigação]]

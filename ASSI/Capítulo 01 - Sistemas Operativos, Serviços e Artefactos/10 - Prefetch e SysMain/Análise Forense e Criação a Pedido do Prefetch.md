@@ -172,3 +172,6 @@ Os procedimentos práticos de extração de ficheiros `.pf`, descompressão `MAM
 - [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
 - [[Estrutura Interna e Algoritmo de Hashing do Prefetch]]
 - [[Application Compatibility e ShimCache (AppCompatCache)]]
+- [[Preservação do Sistema e Integridade de Dados]]
+- [[Princípios e Rota do Manuseamento de Evidência Digital]]
+- [[Exercícios Práticos - Integridade de Dados e Hashes]]

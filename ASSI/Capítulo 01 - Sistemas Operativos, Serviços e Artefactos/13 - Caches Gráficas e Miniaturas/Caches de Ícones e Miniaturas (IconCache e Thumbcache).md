@@ -165,3 +165,6 @@ Os procedimentos de análise da pasta Explorer, extração de imagens com `thumb
 - [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
 - [[Windows Search]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
+- [[Pesquisa de Evidências e Reconstrução de Eventos]]
+- [[Código de Ética na Investigação Forense Digital (ISFCE)]]
+- [[Organização de Estruturas de Dados em Binário]]

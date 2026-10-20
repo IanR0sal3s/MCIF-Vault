@@ -153,3 +153,8 @@ Os procedimentos práticos de extração com `AmcacheParser`, `AppCompatCachePar
 - [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
 - [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
+- [[Investigação Digital e Evidência Digital]]
+- [[Pesquisa de Evidências e Reconstrução de Eventos]]
+- [[Preservação do Sistema e Integridade de Dados]]
+- [[Exercícios Práticos - Integridade de Dados e Hashes]]
+- [[Código de Ética na Investigação Forense Digital (ISFCE)]]

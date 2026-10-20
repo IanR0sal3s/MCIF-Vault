@@ -132,3 +132,6 @@ Action Time         Description   Filename              Full Path
 - [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
 - [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]]
 - [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
+- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
+- [[Princípios e Rota do Manuseamento de Evidência Digital]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]

@@ -99,4 +99,6 @@ WMP11.AssocFile.MP3="%ProgramFiles(x86)%\Windows Media Player\wmplayer.exe" /pre
 - [[Estrutura e Hives do Windows Registry]]
 - [[Ferramentas de Análise e Extração do Registry]]
 - [[Artefactos Forenses de Execução e Persistência no Registry]]
+- [[Endianness e Ordem de Armazenamento]]
+- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

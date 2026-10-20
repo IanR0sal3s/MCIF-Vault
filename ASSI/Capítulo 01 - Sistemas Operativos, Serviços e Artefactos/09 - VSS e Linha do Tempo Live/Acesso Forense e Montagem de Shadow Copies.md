@@ -170,3 +170,6 @@ Os procedimentos de inspeção com `vssadmin`, criação de atalhos simbólicos 
 - [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
 - [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]]
 - [[LastActivityView e Reconstituição Temporal Live]]
+- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
+- [[Princípios e Rota do Manuseamento de Evidência Digital]]
+- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]

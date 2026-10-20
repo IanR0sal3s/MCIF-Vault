@@ -152,3 +152,7 @@ Saída de exemplo do LECmd:
 - [[Abuso e Vetores de Ataque com Ficheiros LNK]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
 - [[Artefactos Forenses de Dispositivos USB]]
+- [[Organização de Estruturas de Dados em Binário]]
+- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
+- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
+- [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]]

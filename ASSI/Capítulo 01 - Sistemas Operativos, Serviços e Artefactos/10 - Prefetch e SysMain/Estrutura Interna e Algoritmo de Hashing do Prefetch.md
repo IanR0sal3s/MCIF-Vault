@@ -167,3 +167,7 @@ A lista de DLLs armazenada no Prefetch é crucial para investigar ameaças avan�
 - [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
 - [[Análise Forense e Criação a Pedido do Prefetch]]
 - [[Artefacto Forense UserAssist]]
+- [[Preservação do Sistema e Integridade de Dados]]
+- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
+- [[Sistemas de Numeração e Conversão entre Bases]]
+- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]

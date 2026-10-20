@@ -132,3 +132,6 @@ def read_uleb128(stream):
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
 - [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]
 - [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
+- [[Sistemas de Numeração e Conversão entre Bases]]
+- [[Endianness e Ordem de Armazenamento]]
+- [[Organização de Estruturas de Dados em Binário]]

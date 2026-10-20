@@ -85,4 +85,7 @@ A consulta desta chave (via `reg query` ou ferramenta pericial) revela o mapeame
 - [[Tipos de Dados e Associação de Ficheiros no Registry]]
 - [[Ferramentas de Análise e Extração do Registry]]
 - [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]]
+- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

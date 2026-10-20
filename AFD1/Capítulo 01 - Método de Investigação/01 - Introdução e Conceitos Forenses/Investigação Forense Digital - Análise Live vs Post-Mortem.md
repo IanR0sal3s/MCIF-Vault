@@ -75,6 +75,16 @@ Cenário: **Um servidor foi comprometido — como ocorreu o incidente e quem foi
 
 ---
 
+## Além da aula
+
+* **Impacto Prático de *Live* vs. *Post-Mortem* nos Artefactos do Windows ([[00 ASSI|ASSI]])**:
+  * **Triagem *Live* e Invasividade**: Ferramentas como o [[LastActivityView e Reconstituição Temporal Live|LastActivityView]] ou utilitários de inspeção de [[Processos e linha de comandos no Windows|processos na linha de comandos]] (`tasklist`, `pslist`) permitem reconstruir rapidamente a atividade num sistema ligado, mas a sua própria execução altera o estado da máquina (gera entradas no [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento|Prefetch]] e modifica timestamps).
+  * **Artefactos Exclusivos da RAM ou de Persistência Diferida**: Na [[Estrutura e Hives do Windows Registry]], o hive `HKLM\HARDWARE` existe apenas em memória RAM volátil, e vistas como `HKCU` são pontes dinâmicas que, em análise *post-mortem*, obrigam a carregar manualmente os ficheiros brutos `NTUSER.DAT` e `USRCLASS.DAT` em analisadores como o [[Ferramentas de Análise e Extração do Registry|RegistryExplorer]].
+  * **Perda de Dados no Corte Abrupto de Energia (*Pull the Plug*)**: Conforme documentado na [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]], desligar um computador da tomada para análise *post-mortem* impede a gravação das entradas da sessão corrente da [[Application Compatibility e ShimCache (AppCompatCache)|ShimCache]] (que reside em RAM até ao *shutdown* ordenado) e deixa a base ESE do [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE|SRUM]] sem a descarga da última hora e em estado *Dirty Shutdown*.
+  * **Ficheiros Bloqueados em Análise *Live***: Enquanto numa análise *post-mortem* os ficheiros `SYSTEM`, `SAM` ou `Amcache.hve` são lidos diretamente da imagem forense, numa análise *live* encontram-se bloqueados pelo *kernel*, exigindo o recurso a [[Acesso Forense e Montagem de Shadow Copies|Shadow Copies (VSS)]] ou acesso bruto ao volume.
+
+---
+
 ## Perguntas de revisão
 
 - O que distingue uma investigação forense digital de uma investigação digital genérica?
@@ -88,4 +98,10 @@ Cenário: **Um servidor foi comprometido — como ocorreu o incidente e quem foi
 - [[Fases da Investigação Forense Digital]]
 - [[Preservação do Sistema e Integridade de Dados]]
 - [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+- [[LastActivityView e Reconstituição Temporal Live]]
+- [[Estrutura e Hives do Windows Registry]]
+- [[Application Compatibility e ShimCache (AppCompatCache)]]
+- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
+- [[Acesso Forense e Montagem de Shadow Copies]]
+- [[Processos e linha de comandos no Windows]]
 - [[Capítulo 1 - Método de Investigação]]

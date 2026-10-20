@@ -113,4 +113,7 @@ Numa análise a aplicações UWP, a recolha deve seguir uma sequência lógica e
 
 - [[Aplicações UWP (Universal Windows Platform) - Visão Geral]]
 - [[Registry em Aplicações Modernas (MSIX e Helium)]]
+- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

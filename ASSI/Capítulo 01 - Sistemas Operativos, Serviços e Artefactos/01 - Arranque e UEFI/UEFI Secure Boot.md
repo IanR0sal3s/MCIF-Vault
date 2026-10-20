@@ -51,4 +51,5 @@ Em ambientes corporativos com requisitos estritos de segurança, o Secure Boot t
 
 - [[UEFI Secure Boot - Chaves e Hierarquia]]
 - [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
+- [[Preservação do Sistema e Integridade de Dados]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

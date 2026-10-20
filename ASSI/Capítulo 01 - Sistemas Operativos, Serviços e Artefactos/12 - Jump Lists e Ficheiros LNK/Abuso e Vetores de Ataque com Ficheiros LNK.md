@@ -159,3 +159,5 @@ Para neutralizar esta tentativa de ocultação, os investigadores forenses nunca
 - [[Jump Lists - Arquitetura, AppIDs e Carving]]
 - [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
+- [[Pesquisa de Evidências e Reconstrução de Eventos]]
+- [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]

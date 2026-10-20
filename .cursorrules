@@ -87,8 +87,25 @@ O repositório adota uma taxonomia modular em 4 níveis:
 
 ---
 
-## 6. Procedimento de Verificação após Modificações
-Sempre que criares, renomeares ou moveres notas no repositório:
+## 6. Sistema de Indexação Semântica e Descoberta de Conexões (`_index/` e `_scripts/vault_indexer.py`)
+Para evitar ler dezenas de ficheiros sempre que for necessário contextualizar uma matéria ou estabelecer ligações inter-UCs, o repositório dispõe de um indexador automático (Python 3 standard library):
+1. **Consulta Inicial de Contexto (Obrigatória antes de criar/ligar notas)**:
+   * Antes de varrer o vault, lê o catálogo compacto em `_index/vault_catalog.jsonl` (1 linha JSON por nota com `id`, `uc`, `capitulo`, `bloco`, `tags`, `aliases`, `summary` e `cross_uc_links`) ou o índice humano/LLM em `_index/Vault-Index.md`.
+   * Podes também pesquisar diretamente via linha de comandos:
+     ```bash
+     python3 _scripts/vault_indexer.py --query <termo_ou_tag>
+     ```
+2. **Motor de Sugestões Inter-UCs**:
+   * O ficheiro `_index/Vault-Index.md` (Secção 3) e `_index/vault_index.json` listam automaticamente *Unlinked Mentions* (menções no texto a títulos/aliases de outra UC ainda sem `[[wikilink]]`), notas com tags técnicas partilhadas e ligações inter-UCs unidirecionais que podem ser tornadas recíprocas.
+   * **Regra para o Graph View**: O ficheiro `_index/Vault-Index.md` usa formatação de código inline (`` `Nome da Nota` ``) em vez de `[[wikilinks]]` para nunca criar um super-nó artificial no Graph View do Obsidian. Mantém sempre esta convenção em ficheiros de índice global de sistema.
+
+---
+
+## 7. Procedimento de Verificação após Modificações
+Sempre que criares, editares, renomeares ou ligares notas no repositório:
 1. Atualiza a MOC do capítulo e/ou da UC correspondente.
-2. Valida que todas as novas ligações internas (`[[...]]`) apontam para ficheiros existentes ou aliases válidos.
-3. Garante que não foram criados ficheiros com 0 bytes ou ficheiros vazios na raiz do vault.
+2. Executa obrigatoriamente o indexador e validador de integridade:
+   ```bash
+   python3 _scripts/vault_indexer.py --check
+   ```
+3. Confirma que o comando retorna `0` links quebrados, `0` notas órfãs, `0` avisos de YAML Frontmatter e `0` ficheiros com 0 bytes, mantendo os ficheiros em `_index/` sempre sincronizados com o estado atual do vault.

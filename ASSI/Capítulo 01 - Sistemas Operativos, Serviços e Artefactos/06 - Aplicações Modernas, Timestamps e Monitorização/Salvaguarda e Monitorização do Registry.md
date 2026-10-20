@@ -115,4 +115,5 @@ sysmon.exe -u
 - [[Estrutura e Hives do Windows Registry]]
 - [[Ferramentas de Análise e Extração do Registry]]
 - [[Artefactos Forenses de Execução e Persistência no Registry]]
+- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

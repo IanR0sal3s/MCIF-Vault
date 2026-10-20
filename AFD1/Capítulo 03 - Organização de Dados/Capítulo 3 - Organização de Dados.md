@@ -72,4 +72,5 @@ As notas encontram-se organizadas em **4 blocos temáticos numerados** na pasta 
 
 * [[00 AFD1|Voltar ao Índice de AFD1]]
 * [[Capítulo 1 - Método de Investigação|Recuar para o Capítulo 1 — Método de Investigação]]
+* [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Pontes com ASSI — Capítulo 1 (Estruturas Binárias, Timestamps e SQLite no Windows)]]
 * [[Home|Voltar ao Hub Central do MCIF]]

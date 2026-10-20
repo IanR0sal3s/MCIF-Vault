@@ -88,4 +88,7 @@ echo -n "Miguel" | sha256sum    # comando Linux
 
 - [[Preservação do Sistema e Integridade de Dados]]
 - [[Fases da Investigação Forense Digital]]
+- [[Extração da AmCache e Comparação Forense com a ShimCache]]
+- [[Análise Forense e Criação a Pedido do Prefetch]]
+- [[PKfail - Cadeia de Ataque e Deteção Forense]]
 - [[Capítulo 1 - Método de Investigação]]

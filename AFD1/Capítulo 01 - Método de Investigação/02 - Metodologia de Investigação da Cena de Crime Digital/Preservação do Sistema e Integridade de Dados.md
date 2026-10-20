@@ -109,6 +109,15 @@ Os valores de *hash*, por si sós, **não são suficientes** para garantir a int
 
 ---
 
+## Além da aula
+
+* **Assinaturas Digitais e Hashes Criptográficos na Segurança e Forense do Windows ([[00 ASSI|ASSI]])**:
+  * **Cadeia de Confiança no Arranque ([[UEFI Secure Boot]])**: Tal como uma assinatura digital protege a integridade e autenticidade de uma evidência pericial através de um par de chaves assimétricas, o processo de arranque UEFI valida cada binário (`bootmgr.efi`, `winload.efi`, `ntoskrnl.exe`) recorrendo a certificados e chaves públicas/privadas ([[UEFI Secure Boot - Chaves e Hierarquia]]). Se a chave privada de topo for exposta — como sucedeu na vulnerabilidade [[PKfail - Vulnerabilidade do UEFI Secure Boot|PKfail]] — um atacante consegue assinar *bootkits* maliciosos que passam na verificação criptográfica ([[PKfail - Cadeia de Ataque e Deteção Forense]]).
+  * **Validação de Assinaturas de Ferramentas Forenses (`sigcheck`)**: Antes de utilizar binários de extração (como a suite de Eric Zimmerman), a integridade e a assinatura digital do executável podem ser verificadas com o utilitário `sigcheck.exe` da Sysinternals (ver [[Análise Forense e Criação a Pedido do Prefetch]] e [[PKfail - Cadeia de Ataque e Deteção Forense]]).
+  * **Hashes Criptográficos Nativos em Artefactos do Windows**: O próprio sistema operativo calcula e guarda resumos criptográficos em artefactos forenses — destacando-se o hash **`SHA-1`** de todos os executáveis inventariados na [[AmCache - Arquitetura, Hives e Evolução para SQLite|AmCache]] (essencial para triagem no VirusTotal em [[Extração da AmCache e Comparação Forense com a ShimCache]]) e o hash **`SHA-256`** (32 bytes) do ficheiro aberto nos separadores `TabState` do [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]. Pelo contrário, a hash de 8 caracteres no nome dos ficheiros `.pf` ([[Estrutura Interna e Algoritmo de Hashing do Prefetch]]) **não é um hash criptográfico**, mas apenas uma função de dispersão rápida baseada no caminho.
+
+---
+
 ## Perguntas de revisão
 
 - Porque se recomenda ligar o cabo de rede a um *hub* ou *switch* vazio durante a preservação em análise *live*?
@@ -121,4 +130,12 @@ Os valores de *hash*, por si sós, **não são suficientes** para garantir a int
 - [[Pesquisa de Evidências e Reconstrução de Eventos]]
 - [[Exercícios Práticos - Integridade de Dados e Hashes]]
 - [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+- [[UEFI Secure Boot]]
+- [[UEFI Secure Boot - Chaves e Hierarquia]]
+- [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
+- [[PKfail - Cadeia de Ataque e Deteção Forense]]
+- [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
+- [[Extração da AmCache e Comparação Forense com a ShimCache]]
+- [[Análise Forense e Criação a Pedido do Prefetch]]
+- [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]
 - [[Capítulo 1 - Método de Investigação]]

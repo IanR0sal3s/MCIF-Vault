@@ -96,4 +96,6 @@ Interface interativa que reconstrói a árvore de diretórios exata que o utiliz
 - [[Ferramentas de Análise e Extração do Registry]]
 - [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]]
 - [[Artefactos Forenses de Dispositivos USB]]
+- [[Pesquisa de Evidências e Reconstrução de Eventos]]
+- [[Investigação Digital e Evidência Digital]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

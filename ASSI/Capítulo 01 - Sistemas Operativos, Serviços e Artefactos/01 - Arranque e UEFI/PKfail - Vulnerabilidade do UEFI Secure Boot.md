@@ -78,4 +78,5 @@ Em julho de 2024, a empresa de segurança Binarly reabriu a investigação do PK
 - [[UEFI Secure Boot]]
 - [[UEFI Secure Boot - Chaves e Hierarquia]]
 - [[PKfail - Cadeia de Ataque e Deteção Forense]]
+- [[Preservação do Sistema e Integridade de Dados]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

@@ -61,6 +61,16 @@ A **codificação binário-para-texto (*binary-to-text encoding*)** transforma d
 
 ---
 
+## Além da aula
+
+* **Casos Práticos de Codificação (`Base64`, `Base16` e `ROT13`) em Artefactos do Windows ([[00 ASSI|ASSI]])**:
+  * **Extração de Área de Transferência em Base64 ([[Recuperação de Clipboard e Sincronização na Timeline]])**: Quando o histórico do Clipboard (`Win+V`) e o *Cloud Sync* estão ativos, o serviço `CDPUserSvc` grava o texto copiado na coluna `ClipboardPayload` de `ActivitiesCache.db` dentro de um JSON cujo campo `"content"` está codificado em **Base64** (ex.: `"SXN0byDDqSB1bSB0ZXN0ZSE="` $\rightarrow$ `"Isto é um teste!"`).
+  * **Identificador `PlatformDeviceId` em Base64 ([[Windows Activity Timeline - Arquitetura e Base SQLite]])**: Na mesma base `ActivitiesCache.db`, o identificador da máquina sincronizada é uma string **Base64** terminada no carácter de *padding* `=` (ex.: `0Yb2A9Xf+CNQxR57p1SOcH0DmUwpLCcqY/PUKTzth/Q=`), mapeada na chave `TaskFlow\DeviceCache`.
+  * **Payloads PowerShell em Base64 Ocultos em Atalhos ([[Abuso e Vetores de Ataque com Ficheiros LNK]])**: Grupos APT (como o *APT10*) exploram o limite visual de 256 caracteres das propriedades do Windows Explorer para esconder, até aos 4096 caracteres do ficheiro `.lnk`, chamadas a `powershell -enc <Base64>`.
+  * **Ofuscação por Substituição Reversível (`ROT13`) vs. Encriptação**: No [[Artefacto Forense UserAssist]], o Windows aplica a cifra de César **ROT13** aos nomes dos executáveis e atalhos (`.exe` $\rightarrow$ `.RKR`, `.lnk` $\rightarrow$ `.YAX`). Tal como o Base64, o ROT13 **não utiliza chave secreta**, funcionando apenas como ofuscação ligeira facilmente reversível por ferramentas como o `RegistryExplorer`.
+
+---
+
 ## Perguntas de revisão
 
 - Qual é a finalidade da codificação binário-para-texto e porque não pode ser considerada uma forma de encriptação?
@@ -72,4 +82,8 @@ A **codificação binário-para-texto (*binary-to-text encoding*)** transforma d
 - [[Sistemas de Numeração e Conversão entre Bases]]
 - [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
 - [[Preservação do Sistema e Integridade de Dados]]
+- [[Recuperação de Clipboard e Sincronização na Timeline]]
+- [[Windows Activity Timeline - Arquitetura e Base SQLite]]
+- [[Abuso e Vetores de Ataque com Ficheiros LNK]]
+- [[Artefacto Forense UserAssist]]
 - [[Capítulo 3 - Organização de Dados]]

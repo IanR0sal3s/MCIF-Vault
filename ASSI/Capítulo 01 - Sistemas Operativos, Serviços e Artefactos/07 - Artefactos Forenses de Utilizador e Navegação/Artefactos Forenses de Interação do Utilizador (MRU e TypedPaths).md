@@ -127,4 +127,7 @@ url4    REG_SZ    powershell
 - [[Ferramentas de Análise e Extração do Registry]]
 - [[Artefacto Forense UserAssist]]
 - [[Artefacto Forense ShellBags]]
+- [[Pesquisa de Evidências e Reconstrução de Eventos]]
+- [[Endianness e Ordem de Armazenamento]]
+- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
