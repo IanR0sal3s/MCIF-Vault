@@ -51,5 +51,7 @@ Em ambientes corporativos com requisitos estritos de segurança, o Secure Boot t
 
 - [[UEFI Secure Boot - Chaves e Hierarquia]]
 - [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
+- [[Processo de Arranque UEFI, Secure Boot e Fluxo do Windows]]
+- [[Arranque Forense e Processo de Boot (BIOS e Código Máquina)]]
 - [[Preservação do Sistema e Integridade de Dados]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

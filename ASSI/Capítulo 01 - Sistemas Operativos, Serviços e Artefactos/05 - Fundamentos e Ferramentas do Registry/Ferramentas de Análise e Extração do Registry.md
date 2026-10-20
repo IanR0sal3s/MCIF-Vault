@@ -101,4 +101,7 @@ O executável de linha de comandos (`rip.exe`) recebe o ficheiro de hive bruto e
 - [[Estrutura e Hives do Windows Registry]]
 - [[Artefacto Forense UserAssist]]
 - [[Artefactos Forenses de Execução e Persistência no Registry]]
+- [[Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)]]
+- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
+- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

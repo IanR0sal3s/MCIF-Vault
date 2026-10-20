@@ -210,4 +210,6 @@ notepad_parser.exe -f csv -o "C:\Temp\notepad_conteudo.csv"
 - [[Codificação uLEB128 em Estruturas de Dados do Windows]]
 - [[Pesquisa de Evidências e Reconstrução de Eventos]]
 - [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+- [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]
+- [[Capítulo 2 - Arranque e Aquisição Forense]]
 - [[Capítulo 3 - Organização de Dados]]

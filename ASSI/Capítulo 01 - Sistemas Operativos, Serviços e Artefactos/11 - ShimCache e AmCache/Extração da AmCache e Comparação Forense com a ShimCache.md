@@ -158,3 +158,6 @@ Os procedimentos práticos de extração com `AmcacheParser`, `AppCompatCachePar
 - [[Preservação do Sistema e Integridade de Dados]]
 - [[Exercícios Práticos - Integridade de Dados e Hashes]]
 - [[Código de Ética na Investigação Forense Digital (ISFCE)]]
+- [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]]
+- [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]
+- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]

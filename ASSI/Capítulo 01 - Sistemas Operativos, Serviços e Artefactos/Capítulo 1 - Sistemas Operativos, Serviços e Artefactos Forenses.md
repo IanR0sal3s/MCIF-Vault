@@ -205,6 +205,7 @@ Guiões laboratoriais integrados com exercícios práticos e questionários de e
 
 - [[00 ASSI|Voltar ao MOC Geral de ASSI]]
 - [[Capítulo 1 - Método de Investigação|Pontes com AFD1 — Capítulo 1 (Método de Investigação Forense)]]
+- [[Capítulo 2 - Arranque e Aquisição Forense|Pontes com AFD1 — Capítulo 2 (Arranque e Aquisição Forense)]]
 - [[Capítulo 3 - Organização de Dados|Pontes com AFD1 — Capítulo 3 (Organização de Dados, Endianness e Timestamps)]]
 - [[Home|Voltar ao Hub Central do MCIF]]
 

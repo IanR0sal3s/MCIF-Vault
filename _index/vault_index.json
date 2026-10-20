@@ -1,14 +1,14 @@
 {
   "generated_at": "2026-10-20",
   "stats": {
-    "total_notes": 79,
+    "total_notes": 92,
     "notes_by_uc": {
-      "AFD1": 22,
+      "AFD1": 35,
       "ASSI": 56,
       "GERAL": 1
     },
-    "total_internal_links": 751,
-    "total_cross_uc_links": 266,
+    "total_internal_links": 938,
+    "total_cross_uc_links": 332,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
     "yaml_warnings_count": 0,
@@ -56,6 +56,48 @@
         "target_id": "Jump Lists - Arquitetura, AppIDs e Carving",
         "target_uc": "ASSI",
         "matched_term": "JLECmd"
+      },
+      {
+        "source_id": "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "source_uc": "AFD1",
+        "target_id": "UEFI Secure Boot",
+        "target_uc": "ASSI",
+        "matched_term": "Secure Boot"
+      },
+      {
+        "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "source_uc": "AFD1",
+        "target_id": "Estrutura e Hives do Windows Registry",
+        "target_uc": "ASSI",
+        "matched_term": "Windows Registry"
+      },
+      {
+        "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "source_uc": "AFD1",
+        "target_id": "Serviço Prefetch e SysMain - Arquitetura e Funcionamento",
+        "target_uc": "ASSI",
+        "matched_term": "Prefetch"
+      },
+      {
+        "source_id": "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "source_uc": "AFD1",
+        "target_id": "Estrutura e Hives do Windows Registry",
+        "target_uc": "ASSI",
+        "matched_term": "Hives do Registry"
+      },
+      {
+        "source_id": "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+        "source_uc": "AFD1",
+        "target_id": "Serviço Prefetch e SysMain - Arquitetura e Funcionamento",
+        "target_uc": "ASSI",
+        "matched_term": "Prefetch"
+      },
+      {
+        "source_id": "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+        "source_uc": "AFD1",
+        "target_id": "Ferramentas de Análise e Extração do Registry",
+        "target_uc": "ASSI",
+        "matched_term": "RegRipper"
       },
       {
         "source_id": "Endianness e Ordem de Armazenamento",
@@ -116,12 +158,111 @@
     ],
     "shared_tag_bridges": [
       {
+        "note_a": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "uc_a": "AFD1",
+        "note_b": "Estrutura Interna e Algoritmo de Hashing do Prefetch",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "hash"
+        ]
+      },
+      {
+        "note_a": "Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)",
+        "uc_a": "ASSI",
+        "note_b": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "uc_b": "AFD1",
+        "shared_tags": [
+          "registry"
+        ]
+      },
+      {
+        "note_a": "Artefacto Forense ShellBags",
+        "uc_a": "ASSI",
+        "note_b": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "uc_b": "AFD1",
+        "shared_tags": [
+          "registry"
+        ]
+      },
+      {
+        "note_a": "Artefactos Forenses de Dispositivos USB",
+        "uc_a": "ASSI",
+        "note_b": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "uc_b": "AFD1",
+        "shared_tags": [
+          "registry"
+        ]
+      },
+      {
         "note_a": "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "uc_a": "AFD1",
         "note_b": "Ficha Prática e Questionário - Shell, Atividade e Matriz Forense",
         "uc_b": "ASSI",
         "shared_tags": [
           "correlacao"
+        ]
+      },
+      {
+        "note_a": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "uc_a": "AFD1",
+        "note_b": "Ficha Prática e Questionário - Shell, Atividade e Matriz Forense",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "jumplists"
+        ]
+      },
+      {
+        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "uc_a": "AFD1",
+        "note_b": "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "registry"
+        ]
+      },
+      {
+        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "uc_a": "AFD1",
+        "note_b": "LastActivityView e Reconstituição Temporal Live",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "triagem"
+        ]
+      },
+      {
+        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "uc_a": "AFD1",
+        "note_b": "Registry em Aplicações Modernas (MSIX e Helium)",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "registry"
+        ]
+      },
+      {
+        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "uc_a": "AFD1",
+        "note_b": "Salvaguarda e Monitorização do Registry",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "registry"
+        ]
+      },
+      {
+        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "uc_a": "AFD1",
+        "note_b": "Tipos de Dados e Associação de Ficheiros no Registry",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "registry"
+        ]
+      },
+      {
+        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "uc_a": "AFD1",
+        "note_b": "svchost.exe",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "registry"
         ]
       }
     ],
@@ -166,12 +307,6 @@
         "from_id": "Investigação Digital e Evidência Digital",
         "from_uc": "AFD1",
         "to_id": "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
-        "to_uc": "ASSI"
-      },
-      {
-        "from_id": "Investigação Forense Digital - Análise Live vs Post-Mortem",
-        "from_uc": "AFD1",
-        "to_id": "Ferramentas de Análise e Extração do Registry",
         "to_uc": "ASSI"
       },
       {
@@ -277,88 +412,100 @@
         "to_uc": "ASSI"
       },
       {
-        "from_id": "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
+        "from_id": "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "from_uc": "AFD1",
-        "to_id": "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
+        "to_id": "Estrutura e Hives do Windows Registry",
         "to_uc": "ASSI"
       },
       {
-        "from_id": "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
+        "from_id": "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "from_uc": "AFD1",
-        "to_id": "Serviço BITS",
+        "to_id": "Serviço Prefetch e SysMain - Arquitetura e Funcionamento",
         "to_uc": "ASSI"
       },
       {
-        "from_id": "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
+        "from_id": "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "from_uc": "AFD1",
-        "to_id": "Windows Activity Timeline - Arquitetura e Base SQLite",
+        "to_id": "Serviços Windows",
         "to_uc": "ASSI"
       },
       {
-        "from_id": "Sistemas de Numeração e Conversão entre Bases",
+        "from_id": "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "from_uc": "AFD1",
-        "to_id": "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
+        "to_id": "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
         "to_uc": "ASSI"
       },
       {
-        "from_id": "Sistemas de Numeração e Conversão entre Bases",
+        "from_id": "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "from_uc": "AFD1",
+        "to_id": "Volume Shadow Service (VSS) - Arquitetura e Funcionamento",
+        "to_uc": "ASSI"
+      },
+      {
+        "from_id": "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "from_uc": "AFD1",
+        "to_id": "Windows Search",
+        "to_uc": "ASSI"
+      },
+      {
+        "from_id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+        "from_uc": "AFD1",
+        "to_id": "PKfail - Cadeia de Ataque e Deteção Forense",
+        "to_uc": "ASSI"
+      },
+      {
+        "from_id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+        "from_uc": "AFD1",
+        "to_id": "PKfail - Vulnerabilidade do UEFI Secure Boot",
+        "to_uc": "ASSI"
+      },
+      {
+        "from_id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+        "from_uc": "AFD1",
+        "to_id": "Serviços Windows",
+        "to_uc": "ASSI"
+      },
+      {
+        "from_id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+        "from_uc": "AFD1",
+        "to_id": "UEFI Secure Boot - Chaves e Hierarquia",
+        "to_uc": "ASSI"
+      },
+      {
+        "from_id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+        "from_uc": "AFD1",
+        "to_id": "svchost.exe",
+        "to_uc": "ASSI"
+      },
+      {
+        "from_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "from_uc": "AFD1",
         "to_id": "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
         "to_uc": "ASSI"
       },
       {
-        "from_id": "Sistemas de Numeração e Conversão entre Bases",
+        "from_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "from_uc": "AFD1",
         "to_id": "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
         "to_uc": "ASSI"
       },
       {
-        "from_id": "Representação Forense de Data e Hora (Timestamps e SQLite)",
+        "from_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "from_uc": "AFD1",
-        "to_id": "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
+        "to_id": "Jump Lists - Arquitetura, AppIDs e Carving",
         "to_uc": "ASSI"
       },
       {
-        "from_id": "Representação Forense de Data e Hora (Timestamps e SQLite)",
+        "from_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "from_uc": "AFD1",
-        "to_id": "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
+        "to_id": "LastActivityView e Reconstituição Temporal Live",
         "to_uc": "ASSI"
       },
       {
-        "from_id": "Cheat Sheet - Registry e Forense",
-        "from_uc": "ASSI",
-        "to_id": "Endianness e Ordem de Armazenamento",
-        "to_uc": "AFD1"
-      },
-      {
-        "from_id": "Cheat Sheet - Registry e Forense",
-        "from_uc": "ASSI",
-        "to_id": "Organização de Estruturas de Dados em Binário",
-        "to_uc": "AFD1"
-      },
-      {
-        "from_id": "Cheat Sheet - Registry e Forense",
-        "from_uc": "ASSI",
-        "to_id": "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "to_uc": "AFD1"
-      },
-      {
-        "from_id": "LastActivityView e Reconstituição Temporal Live",
-        "from_uc": "ASSI",
-        "to_id": "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
-        "to_uc": "AFD1"
-      },
-      {
-        "from_id": "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
-        "from_uc": "ASSI",
-        "to_id": "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
-        "to_uc": "AFD1"
-      },
-      {
-        "from_id": "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
-        "from_uc": "ASSI",
-        "to_id": "Pesquisa de Evidências e Reconstrução de Eventos",
-        "to_uc": "AFD1"
+        "from_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "from_uc": "AFD1",
+        "to_id": "Windows Search",
+        "to_uc": "ASSI"
       }
     ]
   },
@@ -385,14 +532,19 @@
       "summary": "Unidade curricular do Mestrado em Cibersegurança e Informática Forense (MCIF) da Escola Superior de Tecnologia e Gestão (ESTG) do Politécnico de Leiria.",
       "out_links": [
         "Capítulo 1 - Método de Investigação",
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
         "Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços",
         "Exercícios Práticos - Integridade de Dados e Hashes",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
         "Home"
       ],
       "in_links": [
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 1 - Método de Investigação",
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Home"
       ],
       "cross_uc_links": []
@@ -504,12 +656,17 @@
       "in_links": [
         "Acesso Forense e Montagem de Shadow Copies",
         "Application Compatibility e ShimCache (AppCompatCache)",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 1 - Método de Investigação",
         "Estrutura e Hives do Windows Registry",
         "Fases da Investigação Forense Digital",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Ferramentas de Análise e Extração do Registry",
         "Investigação Digital e Evidência Digital",
         "LastActivityView e Reconstituição Temporal Live",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
         "Processos e linha de comandos no Windows"
       ],
       "cross_uc_links": [
@@ -558,6 +715,8 @@
       "in_links": [
         "00 AFD1",
         "Análise Forense e Criação a Pedido do Prefetch",
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
         "Capítulo 1 - Método de Investigação",
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "PKfail - Cadeia de Ataque e Deteção Forense",
@@ -609,6 +768,7 @@
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Preservação do Sistema e Integridade de Dados",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "Princípios e Rota do Manuseamento de Evidência Digital"
       ],
       "cross_uc_links": [
@@ -674,6 +834,7 @@
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Fases da Investigação Forense Digital",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Jump Lists - Arquitetura, AppIDs e Carving",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Preservação do Sistema e Integridade de Dados",
@@ -730,6 +891,8 @@
         "00 ASSI",
         "AmCache - Arquitetura, Hives e Evolução para SQLite",
         "Análise Forense e Criação a Pedido do Prefetch",
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
         "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
         "Capítulo 1 - Método de Investigação",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
@@ -740,12 +903,17 @@
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
         "UEFI Secure Boot",
         "UEFI Secure Boot - Chaves e Hierarquia"
       ],
       "in_links": [
         "AmCache - Arquitetura, Hives e Evolução para SQLite",
         "Análise Forense e Criação a Pedido do Prefetch",
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
         "Capítulo 1 - Método de Investigação",
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
@@ -758,6 +926,9 @@
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "UEFI Secure Boot",
         "UEFI Secure Boot - Chaves e Hierarquia"
       ],
@@ -829,11 +1000,14 @@
         "Capítulo 1 - Método de Investigação",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "Estrutura e Hives do Windows Registry",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "LastActivityView e Reconstituição Temporal Live",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Preservação do Sistema e Integridade de Dados",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "Princípios e Rota do Manuseamento de Evidência Digital",
         "Processos e linha de comandos no Windows",
         "Recuperação de Clipboard e Sincronização na Timeline",
@@ -902,12 +1076,14 @@
         "Acesso Forense e Montagem de Shadow Copies",
         "Análise Forense do SRUM e Ferramentas Nativas (powercfg)",
         "Análise Forense e Criação a Pedido do Prefetch",
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
         "Capítulo 1 - Método de Investigação",
         "Código de Ética na Investigação Forense Digital (ISFCE)",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços",
         "Investigação Digital e Evidência Digital",
         "LastActivityView e Reconstituição Temporal Live",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)"
       ],
       "cross_uc_links": [
@@ -957,12 +1133,15 @@
       ],
       "in_links": [
         "AmCache - Arquitetura, Hives e Evolução para SQLite",
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
         "Artefactos Forenses de Dispositivos USB",
         "Capítulo 1 - Método de Investigação",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
         "Jump Lists - Arquitetura, AppIDs e Carving",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "Princípios e Rota do Manuseamento de Evidência Digital",
         "Windows Activity Timeline - Arquitetura e Base SQLite"
       ],
@@ -1055,8 +1234,10 @@
       ],
       "in_links": [
         "00 AFD1",
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
         "Artefactos Forenses de Dispositivos USB",
         "Capítulo 1 - Método de Investigação",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)"
       ],
@@ -1090,6 +1271,7 @@
       "out_links": [
         "00 AFD1",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
         "Código de Ética na Investigação Forense Digital (ISFCE)",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
@@ -1107,6 +1289,7 @@
       "in_links": [
         "00 AFD1",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
         "Código de Ética na Investigação Forense Digital (ISFCE)",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
@@ -1119,6 +1302,766 @@
         "Preservação do Sistema e Integridade de Dados",
         "Princípios e Rota do Manuseamento de Evidência Digital",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)"
+      ],
+      "cross_uc_links": [
+        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses"
+      ]
+    },
+    {
+      "id": "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+      "title": "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/01 - Processo de Arranque e Arranque Forense/Arranque Forense e Processo de Boot (BIOS e Código Máquina).md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 1,
+      "tipo": "conceito",
+      "tags": [
+        "afd1",
+        "forense",
+        "forensic-boot",
+        "bios",
+        "mbr",
+        "boot-code",
+        "machine-code"
+      ],
+      "aliases": [
+        "Forensic Boot",
+        "Arranque Forense",
+        "Boot Process",
+        "Boot Code",
+        "Arranque BIOS"
+      ],
+      "summary": "A prática forense padrão consiste em remover fisicamente o disco rígido do computador suspeito, protegê-lo com um bloqueador de escrita (write-blocker) e criar a sua imagem forense; contudo, quando o armazenamento...",
+      "out_links": [
+        "00 AFD1",
+        "00 ASSI",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Endianness e Ordem de Armazenamento",
+        "Estrutura e Hives do Windows Registry",
+        "Investigação Forense Digital - Análise Live vs Post-Mortem",
+        "Organização de Estruturas de Dados em Binário",
+        "Preservação do Sistema e Integridade de Dados",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+        "Serviço Prefetch e SysMain - Arquitetura e Funcionamento",
+        "Serviços Windows",
+        "Sistemas de Numeração e Conversão entre Bases",
+        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "UEFI Secure Boot",
+        "Volume Shadow Service (VSS) - Arquitetura e Funcionamento",
+        "Windows Search"
+      ],
+      "in_links": [
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+        "UEFI Secure Boot"
+      ],
+      "cross_uc_links": [
+        "00 ASSI",
+        "Estrutura e Hives do Windows Registry",
+        "Serviço Prefetch e SysMain - Arquitetura e Funcionamento",
+        "Serviços Windows",
+        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "UEFI Secure Boot",
+        "Volume Shadow Service (VSS) - Arquitetura e Funcionamento",
+        "Windows Search"
+      ]
+    },
+    {
+      "id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+      "title": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/01 - Processo de Arranque e Arranque Forense/Processo de Arranque UEFI, Secure Boot e Fluxo do Windows.md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 1,
+      "tipo": "conceito",
+      "tags": [
+        "afd1",
+        "forense",
+        "uefi",
+        "secure-boot",
+        "esp",
+        "windows-boot",
+        "bootmgr",
+        "winload",
+        "hiberfil"
+      ],
+      "aliases": [
+        "Secure Boot Process",
+        "Windows Boot Process",
+        "EFI System Partition",
+        "ESP",
+        "Bootmgr.exe",
+        "Winload.exe",
+        "Winresume.exe"
+      ],
+      "summary": "A arquitetura *UEFI (Unified Extensible Firmware Interface) supera as limitações históricas da BIOS ao carregar ficheiros executáveis `.efi` diretamente a partir de uma partição dedicada — a EFI System Partition...",
+      "out_links": [
+        "00 ASSI",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "PKfail - Cadeia de Ataque e Deteção Forense",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot",
+        "Preservação do Sistema e Integridade de Dados",
+        "Serviços Windows",
+        "UEFI Secure Boot",
+        "UEFI Secure Boot - Chaves e Hierarquia",
+        "svchost.exe"
+      ],
+      "in_links": [
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "UEFI Secure Boot"
+      ],
+      "cross_uc_links": [
+        "00 ASSI",
+        "PKfail - Cadeia de Ataque e Deteção Forense",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot",
+        "Serviços Windows",
+        "UEFI Secure Boot",
+        "UEFI Secure Boot - Chaves e Hierarquia",
+        "svchost.exe"
+      ]
+    },
+    {
+      "id": "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+      "title": "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/02 - Dispositivos e Ambientes de Arranque Forense/Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB.md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 2,
+      "tipo": "procedimento",
+      "tags": [
+        "afd1",
+        "forense",
+        "forensic-boot",
+        "msdos",
+        "paladin",
+        "deft",
+        "winfe",
+        "ventoy",
+        "rufus",
+        "dd"
+      ],
+      "aliases": [
+        "Forensic Boot Tools",
+        "Bootable Diskette",
+        "WinFE",
+        "Windows Forensic Environment",
+        "Paladin Linux",
+        "DEFT Linux",
+        "Ventoy",
+        "Bootable USB Devices"
+      ],
+      "summary": "Os *dispositivos de arranque forense (Forensic Boot Tools) evoluíram desde as disquetes de arranque em MS-DOS (hoje obsoletas, mas ocasionalmente necessárias em sistemas legados) para os CD-ROMs/DVDs Live* baseados...",
+      "out_links": [
+        "00 ASSI",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Estrutura e Hives do Windows Registry",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+        "Extração da AmCache e Comparação Forense com a ShimCache",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Ferramentas de Análise e Extração do Registry",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows"
+      ],
+      "in_links": [
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Estrutura e Hives do Windows Registry",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+        "Extração da AmCache e Comparação Forense com a ShimCache",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Ferramentas de Análise e Extração do Registry",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows"
+      ],
+      "cross_uc_links": [
+        "00 ASSI",
+        "Estrutura e Hives do Windows Registry",
+        "Extração da AmCache e Comparação Forense com a ShimCache",
+        "Ferramentas de Análise e Extração do Registry"
+      ]
+    },
+    {
+      "id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+      "title": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/03 - Ferramentas de Triagem Forense/Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite.md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 3,
+      "tipo": "ferramenta",
+      "tags": [
+        "afd1",
+        "forense",
+        "triagem",
+        "ransack",
+        "portable-tools",
+        "ftk-imager",
+        "ads",
+        "jumplists"
+      ],
+      "aliases": [
+        "Agent Ransack",
+        "RanSack",
+        "Portable Forensic Tools",
+        "DataProtectionDecryptor",
+        "JumpListsView",
+        "FTK Imager Lite",
+        "Alternate Data Stream"
+      ],
+      "summary": "Para além da análise focada no Windows Registry, a triagem forense em ambientes de arranque como o WinFE (ou em intervenções live controladas) recorre a ferramentas de pesquisa rápida de ficheiros (Agent Ransack),...",
+      "out_links": [
+        "00 AFD1",
+        "00 ASSI",
+        "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
+        "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Endianness e Ordem de Armazenamento",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
+        "Investigação Forense Digital - Análise Live vs Post-Mortem",
+        "Jump Lists - Arquitetura, AppIDs e Carving",
+        "LastActivityView e Reconstituição Temporal Live",
+        "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Representação Forense de Data e Hora (Timestamps e SQLite)",
+        "Sistemas de Numeração e Conversão entre Bases",
+        "Windows Search"
+      ],
+      "in_links": [
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+        "Extração da AmCache e Comparação Forense com a ShimCache",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)"
+      ],
+      "cross_uc_links": [
+        "00 ASSI",
+        "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
+        "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
+        "Jump Lists - Arquitetura, AppIDs e Carving",
+        "LastActivityView e Reconstituição Temporal Live",
+        "Windows Search"
+      ]
+    },
+    {
+      "id": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+      "title": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/03 - Ferramentas de Triagem Forense/Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR).md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 3,
+      "tipo": "ferramenta",
+      "tags": [
+        "afd1",
+        "forense",
+        "triagem",
+        "registry",
+        "sam",
+        "ntuser",
+        "registryreport",
+        "forensicuserinfo",
+        "mitec-wrr"
+      ],
+      "aliases": [
+        "Triage Tools Windows Registry",
+        "RegistryReport",
+        "ForensicUserInfo",
+        "Mitec WRR",
+        "Windows Registry Recovery"
+      ],
+      "summary": "As *ferramentas de triagem forense para o Windows Registry (Forensic Triage Tools — Windows Registry) permitem analisar rapidamente os ficheiros de hive extraídos de um sistema (`SAM`, `SOFTWARE`, `SYSTEM` e...",
+      "out_links": [
+        "00 ASSI",
+        "Artefacto Forense UserAssist",
+        "Artefactos Forenses de Execução e Persistência no Registry",
+        "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Cheat Sheet - Registry e Forense",
+        "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Estrutura e Hives do Windows Registry",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Ferramentas de Análise e Extração do Registry",
+        "Marcadores Temporais no Windows (Timestamps)",
+        "Representação Forense de Data e Hora (Timestamps e SQLite)"
+      ],
+      "in_links": [
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Estrutura e Hives do Windows Registry",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Ferramentas de Análise e Extração do Registry"
+      ],
+      "cross_uc_links": [
+        "00 ASSI",
+        "Artefacto Forense UserAssist",
+        "Artefactos Forenses de Execução e Persistência no Registry",
+        "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
+        "Cheat Sheet - Registry e Forense",
+        "Estrutura e Hives do Windows Registry",
+        "Ferramentas de Análise e Extração do Registry",
+        "Marcadores Temporais no Windows (Timestamps)"
+      ]
+    },
+    {
+      "id": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+      "title": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/04 - Fundamentos e Procedimentos de Aquisição Forense/Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes.md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 4,
+      "tipo": "conceito",
+      "tags": [
+        "afd1",
+        "forense",
+        "aquisicao",
+        "cloning",
+        "imaging",
+        "raw",
+        "ewf",
+        "gnupg",
+        "assinatura-digital",
+        "hash"
+      ],
+      "aliases": [
+        "Cloning vs Imaging",
+        "Clonagem vs Imagem Forense",
+        "Image File Formats",
+        "RAW Image",
+        "Embedded Image",
+        "Local vs Remote Acquisition",
+        "GnuPG Hash Signature"
+      ],
+      "summary": "Os dados adquiridos de um suporte suspeito podem ser guardados através de duas abordagens: a *clonagem (cloning) direta para outro disco físico ou a criação de um ficheiro de imagem (imaging the drive) — sendo a...",
+      "out_links": [
+        "Acesso Forense e Montagem de Shadow Copies",
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Exercícios Práticos - Integridade de Dados e Hashes",
+        "Preservação do Sistema e Integridade de Dados",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Representação Forense de Data e Hora (Timestamps e SQLite)",
+        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "Windows Activity Timeline - Arquitetura e Base SQLite",
+        "Windows Search"
+      ],
+      "in_links": [
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+        "Preservação do Sistema e Integridade de Dados",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers"
+      ],
+      "cross_uc_links": [
+        "Acesso Forense e Montagem de Shadow Copies",
+        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "Windows Activity Timeline - Arquitetura e Base SQLite",
+        "Windows Search"
+      ]
+    },
+    {
+      "id": "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
+      "title": "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/04 - Fundamentos e Procedimentos de Aquisição Forense/Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração.md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 4,
+      "tipo": "conceito",
+      "tags": [
+        "afd1",
+        "forense",
+        "aquisicao",
+        "first-response",
+        "camadas-aquisicao",
+        "block-size",
+        "sector-size",
+        "hpa",
+        "dco"
+      ],
+      "aliases": [
+        "Forensic Acquisition",
+        "Data Acquisition",
+        "Collecting Digital Evidence Flow Chart",
+        "Information Analysis Layers",
+        "Block Size vs Sector Size"
+      ],
+      "summary": "A *aquisição de dados (Data Acquisition) ocorre tipicamente durante a fase de preservação do sistema (embora também possa ser realizada num sistema em execução), constituindo uma etapa crítica: se não for conduzida...",
+      "out_links": [
+        "00 ASSI",
+        "Acesso Forense e Montagem de Shadow Copies",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
+        "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Fases da Investigação Forense Digital",
+        "Investigação Forense Digital - Análise Live vs Post-Mortem",
+        "Jump Lists - Arquitetura, AppIDs e Carving",
+        "Preservação do Sistema e Integridade de Dados",
+        "Princípios e Rota do Manuseamento de Evidência Digital",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Processos e linha de comandos no Windows",
+        "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
+        "Volume Shadow Service (VSS) - Arquitetura e Funcionamento"
+      ],
+      "in_links": [
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Preservação do Sistema e Integridade de Dados",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers"
+      ],
+      "cross_uc_links": [
+        "00 ASSI",
+        "Acesso Forense e Montagem de Shadow Copies",
+        "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
+        "Jump Lists - Arquitetura, AppIDs e Carving",
+        "Processos e linha de comandos no Windows",
+        "Volume Shadow Service (VSS) - Arquitetura e Funcionamento"
+      ]
+    },
+    {
+      "id": "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+      "title": "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/04 - Fundamentos e Procedimentos de Aquisição Forense/Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers.md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 4,
+      "tipo": "procedimento",
+      "tags": [
+        "afd1",
+        "forense",
+        "aquisicao",
+        "post-mortem",
+        "live-analysis",
+        "bad-sectors",
+        "hpa",
+        "dco",
+        "hdparm",
+        "write-blocker",
+        "cftt"
+      ],
+      "aliases": [
+        "Dealing with media errors",
+        "Bad Sectors",
+        "Host Protected Area",
+        "HPA",
+        "Device Configuration Overlay",
+        "DCO",
+        "Hardware vs Software Write Blockers"
+      ],
+      "summary": "A execução técnica de uma cópia forense exige controlar como a ferramenta lê o dispositivo (acesso direto em vez de chamadas à BIOS antiga), decidir entre aquisição post-mortem (com um sistema operativo de confiança,...",
+      "out_links": [
+        "00 ASSI",
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Investigação Forense Digital - Análise Live vs Post-Mortem",
+        "Organização de Estruturas de Dados em Binário",
+        "PKfail - Cadeia de Ataque e Deteção Forense",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot",
+        "Preservação do Sistema e Integridade de Dados",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração"
+      ],
+      "in_links": [
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Preservação do Sistema e Integridade de Dados",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração"
+      ],
+      "cross_uc_links": [
+        "00 ASSI",
+        "PKfail - Cadeia de Ataque e Deteção Forense",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot"
+      ]
+    },
+    {
+      "id": "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+      "title": "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição Forense e Exercícios/Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount).md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 5,
+      "tipo": "procedimento",
+      "tags": [
+        "afd1",
+        "forense",
+        "aquisicao",
+        "linux",
+        "ewf",
+        "e01",
+        "ewf-tools",
+        "ewfacquire",
+        "ewfmount",
+        "xmount",
+        "udisksctl",
+        "cftt"
+      ],
+      "aliases": [
+        "Expert Witness Format",
+        "EWF",
+        "E01",
+        "ewf-tools",
+        "ewfacquire",
+        "ewfmount",
+        "xmount"
+      ],
+      "summary": "As ferramentas de aquisição de dados dividem-se entre utilitários gráficos para Windows (FTK Imager, Tableau Imager) e Linux (Guymager) e ferramentas de linha de comandos em Linux (`ewf-tools`, `dd` e derivados),...",
+      "out_links": [
+        "00 ASSI",
+        "AmCache - Arquitetura, Hives e Evolução para SQLite",
+        "Análise Forense e Criação a Pedido do Prefetch",
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Estrutura e Hives do Windows Registry",
+        "Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas de Análise e Extração do Registry",
+        "Princípios e Rota do Manuseamento de Evidência Digital",
+        "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
+        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE"
+      ],
+      "in_links": [
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)"
+      ],
+      "cross_uc_links": [
+        "00 ASSI",
+        "AmCache - Arquitetura, Hives e Evolução para SQLite",
+        "Análise Forense e Criação a Pedido do Prefetch",
+        "Estrutura e Hives do Windows Registry",
+        "Ferramentas de Análise e Extração do Registry",
+        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE"
+      ]
+    },
+    {
+      "id": "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+      "title": "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição Forense e Exercícios/Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd.md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 5,
+      "tipo": "procedimento",
+      "tags": [
+        "afd1",
+        "forense",
+        "aquisicao",
+        "linux",
+        "dcfldd",
+        "dd",
+        "dc3dd",
+        "ddrescue",
+        "hashwindow",
+        "sha256"
+      ],
+      "aliases": [
+        "dcfldd",
+        "dc3dd",
+        "ddrescue",
+        "dd_rescue",
+        "rdd",
+        "dcfldd usage example"
+      ],
+      "summary": "O `dcfldd` — desenvolvido pelo Department of Defense Computer Forensics Lab (DCFL) — é uma ferramenta de linha de comandos derivada do clássico utilitário Unix `dd`, especificamente melhorada para aquisição forense...",
+      "out_links": [
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Exercícios Práticos - Integridade de Dados e Hashes",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Preservação do Sistema e Integridade de Dados",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers"
+      ],
+      "in_links": [
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Preservação do Sistema e Integridade de Dados",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+      "title": "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição Forense e Exercícios/Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager.md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 5,
+      "tipo": "exercicio",
+      "tags": [
+        "afd1",
+        "forense",
+        "exercicio",
+        "winfe",
+        "ftk-imager",
+        "write-blocker",
+        "fat32",
+        "projeto"
+      ],
+      "aliases": [
+        "Lab 01 WinFE",
+        "Project Case Study Acquisition",
+        "Exercício de Aquisição FTK Imager"
+      ],
+      "summary": "O Capítulo 2 (Forensic Boot) contempla dois momentos práticos laboratoriais: o Laboratório 01, focado na construção de um ambiente de arranque *WinFE (Windows Forensic Environment) e no arranque de uma máquina...",
+      "out_links": [
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)"
+      ],
+      "in_links": [
+        "00 AFD1",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+      "title": "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição Forense e Exercícios/Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager).md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": 5,
+      "tipo": "ferramenta",
+      "tags": [
+        "afd1",
+        "forense",
+        "aquisicao",
+        "guymager",
+        "paladin",
+        "tableau-imager",
+        "ftk-imager",
+        "ssd",
+        "file-slack"
+      ],
+      "aliases": [
+        "Guymager",
+        "Paladin Toolbox",
+        "Tableau Imager",
+        "FTK Imager",
+        "Aquisição Lógica em SSDs"
+      ],
+      "summary": "Para além das ferramentas de linha de comandos, a aquisição forense dispõe de aplicações com interface gráfica (GUI) de alto desempenho: em Linux, o Guymager é a opção recomendada para aquisições físicas...",
+      "out_links": [
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Organização de Estruturas de Dados em Binário",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Sistemas de Numeração e Conversão entre Bases"
+      ],
+      "in_links": [
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Capítulo 2 - Arranque e Aquisição Forense",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+        "Extração da AmCache e Comparação Forense com a ShimCache",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Capítulo 2 - Arranque e Aquisição Forense",
+      "title": "Capítulo 2 - Arranque e Aquisição Forense",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/Capítulo 2 - Arranque e Aquisição Forense.md",
+      "uc": "AFD1",
+      "capitulo": 2,
+      "bloco": null,
+      "tipo": "indice",
+      "tags": [
+        "moc",
+        "afd1",
+        "forense",
+        "forensic-boot",
+        "aquisicao",
+        "triagem",
+        "winfe",
+        "ewf",
+        "dcfldd"
+      ],
+      "aliases": [
+        "Capítulo 2 AFD1",
+        "Forensic Boot",
+        "Arranque e Aquisição Forense"
+      ],
+      "summary": "Índice temático e encadeamento pedagógico do *Capítulo 2 (Forensic Boot) da unidade curricular de Análise Forense Digital I (AFD1), lecionada pelos docentes Miguel Frade e Baltazar Rodrigues* (LabCIF).",
+      "out_links": [
+        "00 AFD1",
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "Capítulo 1 - Método de Investigação",
+        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Capítulo 3 - Organização de Dados",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "Home",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows"
+      ],
+      "in_links": [
+        "00 AFD1",
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "Capítulo 1 - Método de Investigação",
+        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Capítulo 3 - Organização de Dados",
+        "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows"
       ],
       "cross_uc_links": [
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses"
@@ -1170,6 +2113,7 @@
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
         "Jump Lists - Arquitetura, AppIDs e Carving",
         "Organização de Estruturas de Dados em Binário",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
         "UWP - Artefactos Forenses e Estrutura de Dados",
@@ -1232,6 +2176,7 @@
       ],
       "in_links": [
         "Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Artefacto Forense UserAssist",
         "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
         "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
@@ -1239,6 +2184,7 @@
         "Cheat Sheet - Registry e Forense",
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Codificação uLEB128 em Estruturas de Dados do Windows",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Marcadores Temporais no Windows (Timestamps)",
         "Números em Vírgula Flutuante (IEEE 754)",
         "Organização de Estruturas de Dados em Binário",
@@ -1330,12 +2276,15 @@
       ],
       "in_links": [
         "Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 3 - Organização de Dados",
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
         "Codificação uLEB128 em Estruturas de Dados do Windows",
         "Endianness e Ordem de Armazenamento",
         "Estrutura Interna e Algoritmo de Hashing do Prefetch",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Jump Lists - Arquitetura, AppIDs e Carving",
         "Números em Vírgula Flutuante (IEEE 754)",
         "Windows Search"
@@ -1394,12 +2343,15 @@
       ],
       "in_links": [
         "Análise Forense do SRUM e Ferramentas Nativas (powercfg)",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
         "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
         "Capítulo 3 - Organização de Dados",
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
         "Endianness e Ordem de Armazenamento",
         "Estrutura Interna e Algoritmo de Hashing do Prefetch",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Organização de Estruturas de Dados em Binário",
         "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
         "Tipos de Dados e Associação de Ficheiros no Registry"
@@ -1450,6 +2402,7 @@
         "Números em Vírgula Flutuante (IEEE 754)"
       ],
       "in_links": [
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Artefacto Forense UserAssist",
         "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
         "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
@@ -1459,9 +2412,11 @@
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Codificação uLEB128 em Estruturas de Dados do Windows",
         "Endianness e Ordem de Armazenamento",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
         "Marcadores Temporais no Windows (Timestamps)",
         "Números em Vírgula Flutuante (IEEE 754)",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
         "Sistemas de Numeração e Conversão entre Bases"
       ],
       "cross_uc_links": [
@@ -1566,11 +2521,14 @@
       ],
       "in_links": [
         "AmCache - Arquitetura, Hives e Evolução para SQLite",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
         "Artefacto Forense UserAssist",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 3 - Organização de Dados",
         "Cheat Sheet - Registry e Forense",
         "Estrutura Interna e Algoritmo de Hashing do Prefetch",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Marcadores Temporais no Windows (Timestamps)",
         "UWP - Artefactos Forenses e Estrutura de Dados",
         "Windows Activity Timeline - Arquitetura e Base SQLite",
@@ -1617,6 +2575,7 @@
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Método de Investigação",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Endianness e Ordem de Armazenamento",
@@ -1631,6 +2590,7 @@
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Método de Investigação",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
@@ -1673,21 +2633,29 @@
         "Home"
       ],
       "in_links": [
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Código de Ética na Investigação Forense Digital (ISFCE)",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
         "Endianness e Ordem de Armazenamento",
         "Fases da Investigação Forense Digital",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Home",
         "Investigação Digital e Evidência Digital",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "Organização de Estruturas de Dados em Binário",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Preservação do Sistema e Integridade de Dados",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "Princípios e Rota do Manuseamento de Evidência Digital",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
         "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Sistemas de Numeração e Conversão entre Bases"
@@ -1727,6 +2695,8 @@
         "Exercícios Práticos - Integridade de Dados e Hashes",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Preservação do Sistema e Integridade de Dados",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "UEFI Secure Boot - Chaves e Hierarquia"
       ],
       "cross_uc_links": [
@@ -1765,6 +2735,8 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "Preservação do Sistema e Integridade de Dados",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "UEFI Secure Boot",
         "UEFI Secure Boot - Chaves e Hierarquia"
       ],
@@ -1805,6 +2777,7 @@
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Preservação do Sistema e Integridade de Dados",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "UEFI Secure Boot"
       ],
       "cross_uc_links": [
@@ -1831,20 +2804,26 @@
       ],
       "summary": "No processo de arranque do Windows assente em arquiteturas UEFI, todos os componentes da cadeia de boot são validados através de assinaturas digitais antes da sua execução pelo processador. O mecanismo de Secure Boot...",
       "out_links": [
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Preservação do Sistema e Integridade de Dados",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "UEFI Secure Boot - Chaves e Hierarquia"
       ],
       "in_links": [
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Preservação do Sistema e Integridade de Dados",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "UEFI Secure Boot - Chaves e Hierarquia"
       ],
       "cross_uc_links": [
-        "Preservação do Sistema e Integridade de Dados"
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "Preservação do Sistema e Integridade de Dados",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows"
       ]
     },
     {
@@ -1919,6 +2898,7 @@
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Ficha Prática e Questionário - Serviços e Windows Search",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "svchost.exe"
       ],
       "cross_uc_links": [
@@ -2075,9 +3055,11 @@
         "svchost.exe"
       ],
       "in_links": [
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Comando forfiles",
         "Ficha Prática e Questionário - Serviços e Windows Search",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "Processos e linha de comandos no Windows",
         "Serviço BITS",
         "Serviço Delivery Optimization",
@@ -2120,10 +3102,13 @@
         "Sistemas de Numeração e Conversão entre Bases"
       ],
       "in_links": [
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Ficha Prática e Questionário - Serviços e Windows Search",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Processos e linha de comandos no Windows",
@@ -2172,6 +3157,7 @@
       "in_links": [
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Ficha Prática e Questionário - Serviços e Windows Search",
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "Processos e linha de comandos no Windows",
         "Serviço BITS",
         "Serviço Delivery Optimization",
@@ -2352,6 +3338,7 @@
         "00 ASSI",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses"
       ],
       "cross_uc_links": [
@@ -2388,12 +3375,16 @@
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
         "Ferramentas de Análise e Extração do Registry",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "Tipos de Dados e Associação de Ficheiros no Registry"
       ],
       "in_links": [
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
         "Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Artefacto Forense ShellBags",
         "Artefacto Forense UserAssist",
         "Artefactos Forenses de Dispositivos USB",
@@ -2403,7 +3394,9 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Registry e Forense",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
         "Ferramentas de Análise e Extração do Registry",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "Marcadores Temporais no Windows (Timestamps)",
@@ -2414,6 +3407,8 @@
       "cross_uc_links": [
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Investigação Forense Digital - Análise Live vs Post-Mortem"
       ]
     },
@@ -2447,23 +3442,33 @@
         "Artefacto Forense UserAssist",
         "Artefactos Forenses de Execução e Persistência no Registry",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "Estrutura e Hives do Windows Registry"
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Estrutura e Hives do Windows Registry",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "Investigação Forense Digital - Análise Live vs Post-Mortem"
       ],
       "in_links": [
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
         "Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)",
         "Artefacto Forense ShellBags",
         "Artefacto Forense UserAssist",
         "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Registry e Forense",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
         "Estrutura e Hives do Windows Registry",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "Registry em Aplicações Modernas (MSIX e Helium)",
         "Salvaguarda e Monitorização do Registry",
         "Tipos de Dados e Associação de Ficheiros no Registry"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "Investigação Forense Digital - Análise Live vs Post-Mortem"
+      ]
     },
     {
       "id": "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
@@ -2593,6 +3598,7 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Registry e Forense",
         "Endianness e Ordem de Armazenamento",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Organização de Estruturas de Dados em Binário",
         "Representação Forense de Data e Hora (Timestamps e SQLite)"
@@ -2787,6 +3793,7 @@
         "Estrutura Interna e Algoritmo de Hashing do Prefetch",
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Ferramentas de Análise e Extração do Registry",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Investigação Digital e Evidência Digital",
         "LastActivityView e Reconstituição Temporal Live",
@@ -2849,6 +3856,7 @@
         "Cheat Sheet - Registry e Forense",
         "Estrutura e Hives do Windows Registry",
         "Ferramentas de Análise e Extração do Registry",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Marcadores Temporais no Windows (Timestamps)",
         "Salvaguarda e Monitorização do Registry",
         "Tipos de Dados e Associação de Ficheiros no Registry"
@@ -2900,6 +3908,7 @@
         "Cheat Sheet - Registry e Forense",
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Endianness e Ordem de Armazenamento",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "LastActivityView e Reconstituição Temporal Live",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Taxonomia dos Artefactos de Execução no Windows"
@@ -3000,11 +4009,13 @@
         "Volume Shadow Service (VSS) - Arquitetura e Funcionamento"
       ],
       "in_links": [
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "Princípios e Rota do Manuseamento de Evidência Digital",
         "Volume Shadow Service (VSS) - Arquitetura e Funcionamento"
       ],
@@ -3091,6 +4102,7 @@
       "in_links": [
         "Acesso Forense e Montagem de Shadow Copies",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "Princípios e Rota do Manuseamento de Evidência Digital",
@@ -3136,6 +4148,7 @@
       ],
       "in_links": [
         "Acesso Forense e Montagem de Shadow Copies",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
@@ -3144,7 +4157,8 @@
         "Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)",
         "Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)",
         "LastActivityView e Reconstituição Temporal Live",
-        "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos"
+        "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração"
       ],
       "cross_uc_links": [
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
@@ -3190,6 +4204,7 @@
         "Taxonomia dos Artefactos de Execução no Windows"
       ],
       "in_links": [
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Estrutura Interna e Algoritmo de Hashing do Prefetch",
         "Exercícios Práticos - Integridade de Dados e Hashes",
@@ -3291,6 +4306,7 @@
       "in_links": [
         "Análise Forense e Criação a Pedido do Prefetch",
         "Application Compatibility e ShimCache (AppCompatCache)",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
@@ -3407,6 +4423,7 @@
       ],
       "in_links": [
         "Application Compatibility e ShimCache (AppCompatCache)",
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "Extração da AmCache e Comparação Forense com a ShimCache",
@@ -3521,7 +4538,10 @@
         "Artefacto Forense UserAssist",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Código de Ética na Investigação Forense Digital (ISFCE)",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
         "Exercícios Práticos - Integridade de Dados e Hashes",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Investigação Digital e Evidência Digital",
         "Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)",
         "Pesquisa de Evidências e Reconstrução de Eventos",
@@ -3536,6 +4556,7 @@
         "Application Compatibility e ShimCache (AppCompatCache)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Código de Ética na Investigação Forense Digital (ISFCE)",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
         "Exercícios Práticos - Integridade de Dados e Hashes",
         "Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)",
         "Investigação Digital e Evidência Digital",
@@ -3546,7 +4567,10 @@
       ],
       "cross_uc_links": [
         "Código de Ética na Investigação Forense Digital (ISFCE)",
+        "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
         "Exercícios Práticos - Integridade de Dados e Hashes",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Investigação Digital e Evidência Digital",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Preservação do Sistema e Integridade de Dados"
@@ -3737,6 +4761,7 @@
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços",
         "Fases da Investigação Forense Digital",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Ficha Prática e Questionário - Shell, Atividade e Matriz Forense",
         "Investigação Digital e Evidência Digital",
         "Jump Lists - Arquitetura, AppIDs e Carving",
@@ -3800,11 +4825,13 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Ficha Prática e Questionário - Shell, Atividade e Matriz Forense",
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
         "Investigação Digital e Evidência Digital",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
         "Sistemas de Numeração e Conversão entre Bases",
         "Taxonomia dos Artefactos de Execução no Windows"
@@ -3857,10 +4884,12 @@
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "Código de Ética na Investigação Forense Digital (ISFCE)",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Ficha Prática e Questionário - Shell, Atividade e Matriz Forense",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Organização de Estruturas de Dados em Binário",
         "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "Sistemas de Numeração e Conversão entre Bases",
         "Taxonomia dos Artefactos de Execução no Windows",
         "Windows Search"
@@ -4008,6 +5037,9 @@
       ],
       "in_links": [
         "Análise Forense do SRUM e Ferramentas Nativas (powercfg)",
+        "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
@@ -4067,6 +5099,7 @@
       ],
       "in_links": [
         "Análise Forense do SRUM e Ferramentas Nativas (powercfg)",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
@@ -4178,10 +5211,12 @@
         "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
         "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
         "Cheat Sheet - Registry e Forense",
         "Codificação uLEB128 em Estruturas de Dados do Windows",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
         "Jump Lists - Arquitetura, AppIDs e Carving",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
@@ -4199,8 +5234,10 @@
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos"
       ],
       "cross_uc_links": [
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Pesquisa de Evidências e Reconstrução de Eventos"
       ]
     },
@@ -4402,6 +5439,7 @@
         "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
         "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
         "Capítulo 1 - Método de Investigação",
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "Cheat Sheet - Registry e Forense",
@@ -4462,6 +5500,7 @@
         "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
         "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
         "Capítulo 1 - Método de Investigação",
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "Cheat Sheet - Registry e Forense",
@@ -4505,6 +5544,7 @@
       ],
       "cross_uc_links": [
         "Capítulo 1 - Método de Investigação",
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados"
       ]
     },
@@ -4531,6 +5571,7 @@
         "00 ASSI",
         "Capítulo 1 - Método de Investigação",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados"
       ],
       "cross_uc_links": []

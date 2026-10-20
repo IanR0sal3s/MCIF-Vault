@@ -70,6 +70,7 @@ As notas encontram-se organizadas em **4 blocos temáticos numerados** na pasta 
 ## 🧭 Navegação
 
 * [[00 AFD1|Voltar ao Índice de AFD1]]
+* [[Capítulo 2 - Arranque e Aquisição Forense|Avançar para o Capítulo 2 — Arranque e Aquisição Forense]]
 * [[Capítulo 3 - Organização de Dados|Avançar para o Capítulo 3 — Organização de Dados]]
 * [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Pontes com ASSI — Capítulo 1 (Artefactos Forenses no Windows)]]
 * [[Home|Voltar ao Hub Central do MCIF]]
