@@ -20,18 +20,27 @@ aliases:
   - Unix Epoch Time
   - 400-year Gregorian calendar cycle
   - Histórico SQLite Firefox e Chrome
-atualizado: 2026-10-19
+atualizado: 2026-11-11
 ---
 
 # Representação Forense de Data e Hora (Timestamps e SQLite)
 
-As datas e horas podem ser armazenadas como **strings de texto** (fáceis de ler por humanos, mas ambíguas quanto ao idioma/região e ineficientes para operações computacionais) ou em **binário/hexadecimal** (eficientes para o computador, mas dependentes da época de referência e resolução de cada software). Na análise forense destacam-se duas contagens fundamentais: o **Unix Epoch Time** (segundos desde `1970-01-01 00:00:00`) e o **Ciclo do Calendário Gregoriano de 400 anos** (microssegundos ou intervalos de 100ns desde `1601-01-01 00:00:00`).
+Datas e horas surgem em texto ou em formatos numéricos indexados a uma época, destacando-se na forense o Unix Epoch (1970) e o ciclo gregoriano de 1601 usado no Windows e no Google Chrome.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Sistema)**: Strings legíveis por humanos são ambíguas entre idiomas e lentas para ordenar ou comparar; sistemas operativos e bases de dados armazenam tempo como contadores numéricos de segundos, microssegundos ou intervalos de 100 ns desde uma origem fixa (*epoch*).
+> * **Porque importa (Forense)**: Cada navegador, sistema de ficheiros e plataforma móvel usa uma época e resolução próprias; converter incorretamente um inteiro `FILETIME` ou SQLite desloca a cronologia do incidente em séculos ou décadas.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Diferença de épocas**: Firefox (`places.sqlite`) conta em **microssegundos desde `1970-01-01`** (Unix Epoch); Google Chrome (`History`) conta em **microssegundos desde `1601-01-01`** (Ciclo Gregoriano de 400 anos).
+>   * **Constante mágica `11644473600`**: corresponde ao número exato de segundos entre `1601-01-01` e `1970-01-01` ($369\text{ anos} = 134\,774\text{ dias}$).
+>   * **Ambiguidade regional**: datas textuais com dia $\le 12$ (ex.: `04-05-2019`) não permitem distinguir `DD-MM` (PT) de `MM-DD` (US) sem contexto adicional.
 
 ---
 
 ## Formas de Armazenamento de Data e Hora
 
-### 1. Como String de Texto (*as a string*)
+### 1. Como String de Texto
+
 * **Vantagem**: fácil de ler diretamente por humanos.
 * **Desvantagens**:
   * Difícil para as operações do computador (por exemplo, para comparar ou ordenar datas numa base de dados).
@@ -42,6 +51,7 @@ As datas e horas podem ser armazenadas como **strings de texto** (fáceis de ler
     * `12-23-2018 08:23:55` (formato US — `MM-DD-YYYY`)
 
 ### 2. Como Binário Representado com Números ou Hexadecimal
+
 * **Vantagem**: mais fácil e eficiente para as operações do computador.
 * **Desvantagem**: difícil de ler diretamente por humanos e, infelizmente, **nem todo o software utiliza a mesma representação**.
 
@@ -77,6 +87,7 @@ Tabela comparativa de representações equivalentes em diferentes sistemas e apl
 ## Ferramentas de Conversão e Automação com SQL
 
 ### 1. Ferramentas Gráficas
+
 * **MFT Stampede**: ferramenta GUI para Windows, muito simples de utilizar para converter múltiplos formatos temporais.
 * **NirSoft `BrowsingHistoryView`**: extrai e converte automaticamente o histórico de navegação do *Internet Explorer*, *Mozilla Firefox*, *Google Chrome* e *Safari*.
 
@@ -100,6 +111,16 @@ FROM urls, visits
 WHERE urls.id = visits.url;
 ```
 
+### 3. Anatomia das Queries SQLite (Firefox e Chrome)
+
+| Elemento da Query | Função na Conversão Forense | Firefox (`places.sqlite`) | Google Chrome (`History`) |
+| :--- | :--- | :--- | :--- |
+| **`/ 1000000`** | Converte o timestamp armazenado em **microssegundos** ($10^{-6}\text{ s}$) para **segundos inteiros**, preparando o argumento numérico esperado por `datetime()`. | Aplicado a `visit_date` (16 dígitos). | Aplicado a `visit_time` (17 dígitos). |
+| **`- 11644473600`** | Subtrai os exatos $369\text{ anos}$ ($134\,774\text{ dias}$) que separam `1601-01-01` de `1970-01-01`, alinhando a contagem com a época Unix. | **Não necessário** (já usa `1970-01-01`). | **Obrigatório** após `/ 1000000`. |
+| **`'unixepoch'`** | Instrui a função `datetime()` do SQLite a interpretar o número como segundos desde `1970-01-01 00:00:00 UTC` (em vez do padrão de dia juliano). | Presente. | Presente. |
+| **`'localtime'`** | Modificador opcional que converte a hora resultante em UTC para o fuso horário local da máquina onde a query corre. | Incluído na query. | Omitido (devolve data/hora em **UTC**). |
+| **Junção `WHERE`** | Relaciona cada visita temporal à respetiva página web através das chaves estrangeiras. | `moz_places.id = moz_historyvisits.place_id` | `urls.id = visits.url` |
+
 ---
 
 ## Implicações Forenses
@@ -120,9 +141,29 @@ WHERE urls.id = visits.url;
 
 ## Perguntas de revisão
 
-- Quais são as desvantagens de armazenar datas como strings de texto face à representação binária?
-- Qual é a época inicial (*Epoch*) utilizada pelo Unix/Firefox e qual é a época inicial utilizada pelo Google Chrome/Windows/NTFS?
-- Nas queries SQLite do Firefox e do Google Chrome, porque se divide o timestamp por `1000000` e porque é que no Chrome se subtrai adicionalmente `11644473600`?
+1. **Quais são as desvantagens de armazenar datas como strings de texto face à representação binária ou numérica?**
+
+> [!success]- Ver Resposta
+> As datas em texto dificultam operações computacionais de comparação e ordenação em bases de dados e variam consoante o idioma ou convenção nacional (`DD-MM-YYYY` em PT vs. `MM-DD-YYYY` em US), gerando ambiguidades. Os formatos binários/numéricos são eficientes para o sistema, embora exijam conhecer a época e a resolução de cada software.
+
+2. **Qual é a época inicial e a unidade de contagem utilizadas pelo Unix/Firefox e pelo Google Chrome/Windows NTFS?**
+
+> [!success]- Ver Resposta
+> * **Unix / POSIX / Firefox**: época inicial em **`1970-01-01 00:00:00`** (*Unix Epoch*), contada em **segundos** (no SQLite do Firefox em **microssegundos**).
+> * **Google Chrome / Windows / NTFS**: época inicial em **`1601-01-01 00:00:00`** (*400-year Gregorian calendar cycle*), contada em **microssegundos** no Chrome ou em **intervalos de 100 nanossegundos** no Win64/NTFS.
+
+3. **Nas queries SQLite do Firefox (`places.sqlite`) e do Google Chrome (`History`), qual é a função de `/ 1000000`, `- 11644473600`, `'unixepoch'` e `'localtime'`?**
+
+> [!success]- Ver Resposta
+> * **`/ 1000000`**: converte os timestamps de microssegundos para segundos inteiros.
+> * **`- 11644473600`**: aplicado apenas no Chrome para deslocar a origem de `1601-01-01` para `1970-01-01` ($134\,774\text{ dias} = 11\,644\,473\,600\text{ segundos}$).
+> * **`'unixepoch'`**: indica ao `datetime()` do SQLite que o valor numérico representa segundos desde `1970-01-01 00:00:00 UTC`.
+> * **`'localtime'`**: modificador opcional (usado na query do Firefox) que ajusta o resultado UTC para o fuso horário local do sistema de análise; sem ele, a saída permanece em UTC.
+
+4. **Como se resolve pericialmente a ambiguidade de uma data textual como `04-05-2019` num registo de log?**
+
+> [!success]- Ver Resposta
+> Quando o dia é $\le 12$, não é possível distinguir isoladamente entre 4 de maio (PT `DD-MM`) e 5 de abril (US `MM-DD`). É necessário inspecionar entradas adjacentes no mesmo log onde um dos campos ultrapasse `12` ou verificar a configuração regional (*locale*) do serviço ou sistema operativo.
 
 ## Notas relacionadas
 

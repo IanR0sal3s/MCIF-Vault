@@ -20,18 +20,26 @@ aliases:
   - Lab 01 WinFE
   - Project Case Study Acquisition
   - Exercício de Aquisição FTK Imager
-atualizado: 2026-10-20
+atualizado: 2026-11-11
 ---
 
 # Exercícios Práticos e de Projeto — WinFE e Aquisição Forense com FTK Imager
 
-O Capítulo 2 (*Forensic Boot*) contempla dois momentos práticos laboratoriais: o **Laboratório 01**, focado na construção de um ambiente de arranque **WinFE (*Windows Forensic Environment*)** e no arranque de uma máquina virtual com esse suporte, e o **Estudo de Caso do Projeto (*Project Case Study*)**, que consiste na extração física do disco rígido (HDD) do computador atribuído ao grupo, ligação a um bloqueador de escrita e aquisição da imagem forense com o **FTK Imager**.
+Os exercícios do Capítulo 2 consolidam a construção e arranque de uma máquina virtual com WinFE (**Lab 01**) e a aquisição física de um HDD com *write-blocker* e **FTK Imager** no projeto (*split* de `4 096 MB`).
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Método / Prática)**: Aplicar em laboratório e em hardware real as duas estratégias centrais de recolha forense do capítulo: arranque forense controlado em software (**Lab 01 — WinFE**) e aquisição física com bloqueador de escrita em hardware (**Estudo de Caso do Projeto — FTK Imager**).
+> * **Porque importa (Forense)**: Treina o perito a garantir preservação total da evidência — quer impedindo o *auto-mount* ao arrancar uma máquina sem desmontar discos (**WinFE**), quer assegurando cadeia de custódia, espaço de destino suficiente, compatibilidade `FAT32` (`4 096 MB`) e compressão eficiente ao adquirir um disco extraído.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Lab 01 (Slide 23)**: Construir uma imagem de arranque **WinFE** (*Windows Forensic Environment*) e arrancar com ela uma máquina virtual contendo ferramentas portáteis Windows (`FTK Imager Lite`, `RegRipper`, etc.).
+>   * **Project Case Study (Slide 54)**: (1) Extrair o **HDD** do PC da equipa; (2) ligar ao **write-blocker** físico; (3) adquirir com **FTK Imager** verificando **espaço livre**, **split de `4 096 MB`** (limite máximo de ficheiro em `FAT32`: $2^{32}-1\text{ bytes} \approx 4\text{ GiB}$) e **compressão ativa** (mais lenta, ocupa menos espaço).
 
 ---
 
 ## 1. Exercício Laboratorial — *Lab 01: Build WinFE and Boot a Virtual Machine* (Slide 23)
 
 ### Enunciado Oficial nos Diapositivos
+
 * **Objetivo**: Construir uma imagem de arranque **WinFE (*Windows Forensic Environment*)** e arrancar uma máquina virtual através dela (*Lab 01 - Build WinFE and boot a virtual machine with it*).
 
 > [!NOTE] Contexto Técnico (Secções 2 e 3 da Aula)
@@ -49,14 +57,14 @@ Este exercício dá continuidade prática ao trabalho de grupo iniciado no Capí
 ### Procedimento Obrigatório Passo a Passo
 
 1. **Extração Física do Disco**:
-   * Extrair o disco rígido (**HDD**) do interior do computador (**PC**) atribuído à equipa (*extract the HDD inside the PC assigned to your team*).
+   * Extrair o disco rígido (**HDD**) do interior do computador (**PC**) atribuído à equipa.
 2. **Proteção contra Escrita**:
-   * Ligar o disco rígido extraído ao **bloqueador de escrita (*write-blocker*)** (*connect the HDD to the write-blocker*).
+   * Ligar o disco rígido extraído ao **bloqueador de escrita (*write-blocker*)**.
 3. **Execução da Aquisição Forense com o FTK Imager**:
-   * Iniciar a aquisição forense recorrendo à ferramenta **FTK Imager** (*start the forensic acquisition with FTK Imager*), cumprindo os três requisitos de configuração seguintes:
-     * **Verificação de espaço**: Garantir previamente que existe **espaço em disco suficiente** no suporte de destino para armazenar a aquisição (*make sure you have enough disk space for the acquisition*).
-     * **Fragmentação (*Splitting*) para compatibilidade FAT32**: Configurar a divisão da imagem em ficheiros de **`4 096 MB` (`4 GB`)** para que possam ser armazenados em sistemas de ficheiros **`FAT32`** se necessário (*split into 4 096 MB files to fit into FAT32 file systems if needed*).
-     * **Compressão**: **Ativar a compressão (*enable compression*)** — o processo de aquisição torna-se mais lento, mas ocupa substancialmente menos espaço em disco (*it's slower, but takes less space*).
+   * Iniciar a aquisição forense recorrendo à ferramenta **FTK Imager**, cumprindo os três requisitos de configuração seguintes:
+     * **Verificação de espaço**: Garantir previamente que existe **espaço em disco suficiente** no suporte de destino para armazenar a aquisição.
+     * **Fragmentação (*Splitting*) para compatibilidade FAT32**: Configurar a divisão da imagem em ficheiros de **`4 096 MB` (`4 GB`)** para que possam ser armazenados em sistemas de ficheiros **`FAT32`** se necessário.
+     * **Compressão**: **Ativar a compressão** — o processo de aquisição torna-se mais lento, mas ocupa substancialmente menos espaço em disco.
 
 ```mermaid
 flowchart LR
@@ -75,9 +83,27 @@ flowchart LR
 
 ## Perguntas de revisão
 
-- Quais são as três etapas principais do estudo de caso do projeto (*Project case study*) para a aquisição do disco atribuído à equipa?
-- Porque se deve configurar a divisão (*split*) da imagem em ficheiros de `4 096 MB` no FTK Imager?
-- Qual é o compromisso técnico de ativar a compressão durante a criação da imagem forense no FTK Imager?
+1. **Quais são as três etapas principais do estudo de caso do projeto (*Project Case Study*) para a aquisição do disco atribuído à equipa?**
+
+> [!success]- Ver Resposta
+> 1. **Extrair fisicamente o HDD** do interior do computador atribuído à equipa.
+> 2. **Ligar o HDD ao bloqueador de escrita (*write-blocker*)**.
+> 3. **Adquirir a imagem forense com o FTK Imager**, verificando previamente o espaço livre no destino, configurando o *split* para `4 096 MB` e ativando a compressão.
+
+2. **Porque se deve configurar a divisão (*split*) da imagem em ficheiros de `4 096 MB` no FTK Imager?**
+
+> [!success]- Ver Resposta
+> Para garantir compatibilidade caso os segmentos precisem de ser armazenados ou transportados num sistema de ficheiros **`FAT32`**, cujo limite matemático por ficheiro (campo de tamanho de `32 bits` na entrada de diretório) é $2^{32}-1\text{ bytes} \approx 4\text{ GiB}$ (`4 096 MB`).
+
+3. **Qual é o compromisso técnico de ativar a compressão durante a criação da imagem forense no FTK Imager?**
+
+> [!success]- Ver Resposta
+> A aquisição torna-se **mais lenta** devido ao processamento de CPU exigido pela compressão, mas o ficheiro de imagem resultante **ocupa substancialmente menos espaço em disco**.
+
+4. **Qual é o objetivo do *Lab 01* e por que razão o arranque da máquina virtual com WinFE protege os discos virtuais internos?**
+
+> [!success]- Ver Resposta
+> O *Lab 01* consiste em construir uma imagem de arranque **WinFE (*Windows Forensic Environment*)** e arrancar uma máquina virtual através dela. Como o WinFE é um Windows PE modificado sem *auto-mount* em escrita para unidades locais, os discos virtuais internos não são montados nem modificados ao iniciar, permitindo usar ferramentas portáteis Windows (`FTK Imager Lite`, `RegRipper`) sem alterar a evidência.
 
 ## Notas relacionadas
 

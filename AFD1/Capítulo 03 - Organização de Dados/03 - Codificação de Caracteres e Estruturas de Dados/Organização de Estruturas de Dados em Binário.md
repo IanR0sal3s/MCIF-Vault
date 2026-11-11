@@ -17,18 +17,26 @@ tags:
 aliases:
   - Data Structures Organization
   - Análise de Struct em Hexadecimal
-atualizado: 2026-10-19
+atualizado: 2026-11-11
 ---
 
 # Organização de Estruturas de Dados em Binário
 
-Uma **estrutura de dados (*data structure*)** especifica como os diferentes campos são dispostos em memória ou em disco, funcionando como um **mapa interpretativo**: a definição da estrutura em si (nomes de campos e tipos de dados) **não é gravada** no ficheiro binário. Através de um caso de estudo de uma `struct` em linguagem C de 64 bytes, demonstra-se como mapear *offsets* hexadecimais, identificar bytes de alinhamento (*padding*) e determinar o *endianness* do sistema analisando inteiros de 32 bits (`uint32_t`) e números em vírgula flutuante (`float` IEEE 754).
+Uma estrutura de dados funciona como mapa interpretativo dos bytes em disco ou memória, pois a definição de campos e tipos não é gravada no ficheiro, exigindo análise de offsets, padding e endianness.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Sistema)**: Para poupar espaço e acelerar o acesso em memória, os compiladores gravam apenas os valores brutos da `struct` em posições sequenciais (alinhadas com *padding*), omitindo os nomes e tipos dos campos.
+> * **Porque importa (Forense)**: Sem a definição da estrutura ou engenharia inversa, um *hex dump* é apenas uma massa opaca de bytes; cruzar *offsets* com a plausibilidade semântica dos valores revela tanto o layout como o *endianness* do sistema de origem.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Strings vs. Inteiros/Floats na mesma `struct`**: `char name[32]` (`4d 69 67 75...`) lê-se sempre da esquerda para a direita sem inversão; apenas campos numéricos multi-byte (`uint32_t`, `float`) sofrem inversão em Little-endian.
+>   * **Prova do *endianness* pela plausibilidade**: interpretar `c9 76 9e 3f` como Big-endian dá um valor negativo absurdo (`-1 010 147,94`), ao passo que invertido para Little-endian (`0x3f9e76c9`) produz `1,238`.
+>   * **Alinhamento (*padding*)**: o campo `char empty[8]` preenche a `struct` até 64 bytes (`0x40`), múltiplo de 16 bytes.
 
 ---
 
-## Conceito de Estrutura de Dados (*Data Structures*)
+## Conceito de Estrutura de Dados
 
-* Especifica a forma como os dados são posicionados (*placed*) em memória ou armazenamento.
+* Especifica a forma como os dados são posicionados em memória ou armazenamento.
 * Funciona exatamente como um **mapa**.
 * **A estrutura de dados em si não é gravada** no suporte — apenas os bytes brutos dos valores são armazenados sequencialmente.
 
@@ -37,6 +45,7 @@ Uma **estrutura de dados (*data structure*)** especifica como os diferentes camp
 ## Caso de Estudo: `struct` em Linguagem C e Análise em Hexadecimal
 
 ### 1. Definição da Estrutura (64 Bytes)
+
 ```c
 typedef struct {
     char name[32];         // 32 bytes (Offsets 0x00 a 0x1F)
@@ -48,6 +57,7 @@ typedef struct {
 ```
 
 ### 2. Dados Registados em Hexadecimal (*Hex Dump*)
+
 ```text
 0000000: 4d69 6775 656c 2046 7261 6465 0000 0000  Miguel Frade....
 0000010: 0000 0000 0000 0000 0000 0000 0000 0000  ................
@@ -68,11 +78,13 @@ typedef struct {
 | `char empty[8]` | `0x38` – `0x3F` | 8 B | `00 00 00 00 00 00 00 00` | *Padding* para alinhar a estrutura a múltiplos de 16 bytes |
 
 ### Questões de Análise Forense
+
 1. **Qual é o número de sócio (`partner_num`) em hexadecimal?** É `0xb300 0d00` ou `0x000d 00b3`?
 2. **Qual é o valor da quota (`quota`) em hexadecimal?** É `0xc976 9e3f` ou `0x3f9e 76c9`?
 3. **Este sistema é *Little-endian* ou *Big-endian*?**
 
 ### Comparação das Duas Hipóteses de Endianness
+
 * **Hipótese 1 — Se o sistema fosse *Big-endian***:
   * `partner_num`: `0xb3000d00` $= 3\,003\,124\,992_d$
   * `quota`: `0xc9769e3f` $= -1\,010\,147{,}94_d$ (valor negativo absurdo para uma quota de sócio)
@@ -81,12 +93,14 @@ typedef struct {
   * `quota`: `c9 76 9e 3f` $\rightarrow$ **`0x3f9e76c9`** $= 1{,}238_d$
 
 ### Confirmação pelo Código-Fonte Original
+
 ```c
 strcpy(partners[0].name, "Miguel Frade");
 strcpy(partners[0].postalcode, "2411-901");
 partners[0].partner_num=852147;
 partners[0].quota=1.238;
 ```
+
 * **Conclusão**: O sistema onde a estrutura foi gravada é **Little-endian**. Note-se que os arrays de caracteres (`name` e `postalcode`) mantêm sempre a ordem normal de leitura byte a byte (`4d 69...` = `'M'`, `'i'`, ...), enquanto os campos numéricos multi-byte (`uint32_t` e `float` de 4 bytes) têm os seus bytes invertidos em memória.
 
 ---
@@ -110,9 +124,25 @@ partners[0].quota=1.238;
 
 ## Perguntas de revisão
 
-- Porque é que na análise do *hex dump* as strings `"Miguel Frade"` e `"2411-901"` se leem da esquerda para a direita sem inversão, mas os campos `partner_num` e `quota` têm os bytes invertidos?
-- Qual é a finalidade do campo `char empty[8]` na estrutura apresentada?
-- Como é que a análise do valor `float quota` (`c9 76 9e 3f`) permite concluir se o sistema é Little-endian ou Big-endian mesmo sem conhecer o código-fonte?
+1. **Porque é que os nomes e os tipos dos campos de uma `struct` em C não surgem gravados no ficheiro binário?**
+
+> [!success]- Ver Resposta
+> Porque a definição da estrutura funciona apenas como um **mapa interpretativo** em tempo de compilação: em memória e em disco são armazenados apenas os bytes brutos dos valores em sequência nos respetivos *offsets*.
+
+2. **Porque é que na análise do *hex dump* as strings `"Miguel Frade"` e `"2411-901"` se leem da esquerda para a direita sem inversão, mas os campos `partner_num` e `quota` têm os bytes invertidos?**
+
+> [!success]- Ver Resposta
+> Porque `name` e `postalcode` são arrays de caracteres (`char`, 1 byte por elemento em ASCII), lidos sequencialmente byte a byte sem dependência de *endianness*. Já `partner_num` (`uint32_t`) e `quota` (`float`) são tipos numéricos multi-byte de 4 bytes, cujos bytes são invertidos em sistemas **Little-endian**.
+
+3. **Qual é a finalidade do campo `char empty[8]` nos offsets `0x38` a `0x3F` da estrutura apresentada?**
+
+> [!success]- Ver Resposta
+> Serve como **alinhamento (*padding*)** de 8 bytes para ajustar o tamanho total da `struct` de 56 para **64 bytes (`0x40`)**, garantindo que a estrutura fica alinhada a múltiplos de 16 bytes.
+
+4. **Como é que a análise dos bytes `b3 00 0d 00` (`partner_num`) e `c9 76 9e 3f` (`quota`) permite concluir o *endianness* do sistema mesmo sem conhecer o código-fonte?**
+
+> [!success]- Ver Resposta
+> Interpretando diretamente em Big-endian (`0xb3000d00` e `0xc9769e3f`), obtêm-se valores implausíveis para um registo de sócio: `3 003 124 992` e `-1 010 147,94`. Invertendo os 4 bytes de cada campo para **Little-endian**, obtêm-se **`0x000d00b3` (`852 147`)** e **`0x3f9e76c9` (`1,238`)**, valores semanticamente coerentes.
 
 ## Notas relacionadas
 

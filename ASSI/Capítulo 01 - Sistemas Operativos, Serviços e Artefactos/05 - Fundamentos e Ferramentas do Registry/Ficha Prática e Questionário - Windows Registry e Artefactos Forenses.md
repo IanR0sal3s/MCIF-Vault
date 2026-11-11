@@ -33,86 +33,114 @@ Guião prático de consolidação laboratorial e questionário de avaliação pa
 ## 1. Guião Prático de Laboratório
 
 ### Exercício 1: Extração e Inspeção de Chaves via CLI
-1. **Consultar chaves de arranque automático no Registry**:
-   ```cmd
-   reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /s
-   reg query "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /s
-   ```
-2. **Exportar a subchave de serviços em formato texto legível**:
-   ```cmd
-   reg export "HKLM\SYSTEM\CurrentControlSet\Services\Spooler" C:\Temp\Spooler_Config.reg /y
-   ```
+
+**1. Consultar chaves de arranque automático no Registry:**
+
+```cmd
+reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /s
+reg query "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /s
+```
+
+**2. Exportar a subchave de serviços em formato texto legível:**
+
+```cmd
+reg export "HKLM\SYSTEM\CurrentControlSet\Services\Spooler" C:\Temp\Spooler_Config.reg /y
+```
 
 ---
 
 ### Exercício 2: Análise da Arquitetura e o Nó `WOW6432Node`
-1. **Verificar a visão dividida do Registry em sistemas de 64 bits**:
-   ```cmd
-   REM Consultar software instalado nativo (64 bits)
-   reg query "HKLM\SOFTWARE" /k /f "Microsoft"
-   
-   REM Consultar software legado redirecionado (32 bits)
-   reg query "HKLM\SOFTWARE\WOW6432Node" /k /f "Microsoft"
-   ```
-2. **Identificação da arquitetura de binários PE com `exiftool` e `trid`**:
-   ```cmd
-   exiftool.exe trid.exe | findstr /i "Machine PE"
-   trid.exe executavel_suspeito.exe
-   ```
-   * *Verificação no cabeçalho binário (HxD)*: Inspecione o offset `+4` após a assinatura `PE\0\0`:
-     * `4C 01` $\to$ `IMAGE_FILE_MACHINE_I386` (32 bits).
-     * `64 86` $\to$ `IMAGE_FILE_MACHINE_AMD64` (64 bits).
+
+**1. Verificar a visão dividida do Registry em sistemas de 64 bits:**
+
+```cmd
+REM Consultar software instalado nativo (64 bits)
+reg query "HKLM\SOFTWARE" /k /f "Microsoft"
+
+REM Consultar software legado redirecionado (32 bits)
+reg query "HKLM\SOFTWARE\WOW6432Node" /k /f "Microsoft"
+```
+
+**2. Identificação da arquitetura de binários PE com `exiftool` e `trid`:**
+
+```cmd
+exiftool.exe trid.exe | findstr /i "Machine PE"
+trid.exe executavel_suspeito.exe
+```
+
+* *Verificação no cabeçalho binário (HxD)*: Inspecione o offset `+4` após a assinatura `PE\0\0`:
+  * `4C 01` $\to$ `IMAGE_FILE_MACHINE_I386` (32 bits).
+  * `64 86` $\to$ `IMAGE_FILE_MACHINE_AMD64` (64 bits).
 
 ---
 
 ### Exercício 3: Conversão e Cálculo de Marcas Temporais (Timestamps)
 O Windows Registry utiliza predominantemente o formato **FILETIME** (inteiro de 64 bits que conta intervalos de 100 nanossegundos decorridos desde 1 de janeiro de 1601 UTC).
 
-1. **Converter um valor FILETIME hexadecimal via linha de comandos**:
-   ```cmd
-   REM Converter FILETIME com w32tm
-   w32tm /ntte 0x01db1f349c258000
-   ```
-2. **Fórmula de conversão para UNIX Epoch (segundos desde 1970)**:
-   $$\text{Unix Timestamp} = \frac{\text{FILETIME} - 116444736000000000}{10000000}$$
+**1. Converter um valor FILETIME hexadecimal via linha de comandos:**
+
+```cmd
+REM Converter FILETIME com w32tm
+w32tm /ntte 0x01db1f349c258000
+```
+
+**2. Fórmula de conversão para UNIX Epoch (segundos desde 1970):**
+
+$$\text{Unix Timestamp} = \frac{\text{FILETIME} - 116444736000000000}{10000000}$$
 
 ---
 
 ### Exercício 4: Parsing do Artefacto `UserAssist` (ROT13 e Estrutura `Count`)
-1. **Localizar a chave no *hive* do utilizador**:
-   ```text
-   HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count
-   ```
-2. **Desofuscação manual**:
-   * O nome do valor encontra-se cifrado com **ROT13** (ex.: `P:\Jvaqbjf\flfgrz32\pzq.rkr` $\to$ `C:\Windows\system32\cmd.exe`).
-3. **Análise pericial da estrutura binária `Count` (72 bytes no Windows 10/11)**:
-   * **Offsets 4 a 7 (DWORD)**: Contador de execuções (*Session Count*).
-   * **Offsets 12 a 15 (DWORD)**: Duração do foco da aplicação (*Focus Time* em milissegundos).
-   * **Offsets 60 a 67 (FILETIME)**: Carimbo de data/hora da última execução da aplicação.
+
+**1. Localizar a chave no *hive* do utilizador:**
+
+```text
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count
+```
+
+**2. Desofuscação manual:**
+
+* O nome do valor encontra-se cifrado com **ROT13** (ex.: `P:\Jvaqbjf\flfgrz32\pzq.rkr` $\to$ `C:\Windows\system32\cmd.exe`).
+
+**3. Análise pericial da estrutura binária `Count` (72 bytes no Windows 10/11):**
+
+* **Offsets 4 a 7 (DWORD)**: Contador de execuções (*Session Count*).
+* **Offsets 12 a 15 (DWORD)**: Duração do foco da aplicação (*Focus Time* em milissegundos).
+* **Offsets 60 a 67 (FILETIME)**: Carimbo de data/hora da última execução da aplicação.
 
 ---
 
 ### Exercício 5: Reconstituição de Navegação de Pastas com `ShellBags` (`SBECmd`)
-1. **Localização física dos hives envolvidos**:
-   * Pastas do sistema: `C:\Users\<User>\NTUSER.DAT` (`Software\Microsoft\Windows\Shell\Bags`).
-   * Pastas e arquivos ZIP: `C:\Users\<User>\AppData\Local\Microsoft\Windows\UsrClass.dat` (`Local Settings\Software\Microsoft\Windows\Shell\Bags`).
-2. **Processamento em lote com a ferramenta `SBECmd` (Eric Zimmerman)**:
-   ```cmd
-   SBECmd.exe -d "C:\Users\<User>\AppData\Local\Microsoft\Windows" --csv "C:\Forensics\ShellBags_Out"
-   ```
-   * *Objetivo*: Provar que o utilizador navegou visualmente numa pasta específica ou acedeu a um arquivo `.zip` ou `.rar`, mesmo após as pastas terem sido eliminadas do disco.
+
+**1. Localização física dos hives envolvidos:**
+
+* Pastas do sistema: `C:\Users\<User>\NTUSER.DAT` (`Software\Microsoft\Windows\Shell\Bags`).
+* Pastas e arquivos ZIP: `C:\Users\<User>\AppData\Local\Microsoft\Windows\UsrClass.dat` (`Local Settings\Software\Microsoft\Windows\Shell\Bags`).
+
+**2. Processamento em lote com a ferramenta `SBECmd` (Eric Zimmerman):**
+
+```cmd
+SBECmd.exe -d "C:\Users\<User>\AppData\Local\Microsoft\Windows" --csv "C:\Forensics\ShellBags_Out"
+```
+
+* *Objetivo*: Provar que o utilizador navegou visualmente numa pasta específica ou acedeu a um arquivo `.zip` ou `.rar`, mesmo após as pastas terem sido eliminadas do disco.
 
 ---
 
 ### Exercício 6: Investigação Pericial de Dispositivos USB (`USBSTOR`)
-1. **Consultar dispositivos de armazenamento registados**:
-   ```cmd
-   reg query "HKLM\SYSTEM\CurrentControlSet\Enum\USBSTOR" /s
-   ```
-2. **Distinguir Número de Série Real vs. Windows Assigned ID**:
-   * **Número de Série Real**: O segundo caractere do número de série **NÃO** contém o símbolo `&` (ex.: `001428573194`).
-   * **Número Atribuído pelo Sistema Operativo**: Se o segundo caractere for `&` (ex.: `7&2b8c91&0`), o fabricante da pen USB não gravou um número de série único de fábrica; o Windows gerou um identificador baseado no barramento local.
-3. **Validar a data da primeira inserção do dispositivo**: Inspecionar o ficheiro de log `%WINDIR%\inf\setupapi.dev.log` procurando pelo Vendor ID (`VEN_`) e Product ID (`PROD_`).
+
+**1. Consultar dispositivos de armazenamento registados:**
+
+```cmd
+reg query "HKLM\SYSTEM\CurrentControlSet\Enum\USBSTOR" /s
+```
+
+**2. Distinguir Número de Série Real vs. Windows Assigned ID:**
+
+* **Número de Série Real**: O segundo caractere do número de série **NÃO** contém o símbolo `&` (ex.: `001428573194`).
+* **Número Atribuído pelo Sistema Operativo**: Se o segundo caractere for `&` (ex.: `7&2b8c91&0`), o fabricante da pen USB não gravou um número de série único de fábrica; o Windows gerou um identificador baseado no barramento local.
+
+**3. Validar a data da primeira inserção do dispositivo:** Inspecionar o ficheiro de log `%WINDIR%\inf\setupapi.dev.log` procurando pelo Vendor ID (`VEN_`) e Product ID (`PROD_`).
 
 ---
 
@@ -120,6 +148,7 @@ O Windows Registry utiliza predominantemente o formato **FILETIME** (inteiro de 
 
 ### Questão 1
 Um perito forense está a realizar triagem em tempo real (*live triage*) numa máquina suspeita com Windows 11 de 64 bits. Para extrair as chaves do Registry, o perito executa uma ferramenta forense compilada em **32 bits**. Que erro metodológico grave irá ocorrer durante esta extração?
+
 * **A)** A ferramenta irá causar um ecrã azul da morte (*BSOD*) devido a incompatibilidade de instruções de CPU.
 * **B)** Devido ao redirecionamento automático do WOW64, as chamadas a `HKLM\Software` serão redirecionadas para `HKLM\Software\WOW6432Node`, deixando o perito cego a todas as chaves nativas de 64 bits.
 * **C)** O Windows 11 bloqueia a execução de binários de 32 bits a menos que estejam assinados digitalmente pela Microsoft.
@@ -129,6 +158,7 @@ Um perito forense está a realizar triagem em tempo real (*live triage*) numa m�
 
 ### Questão 2
 Ao analisar a subchave `UserAssist` (`{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}\Count`) de um utilizador no ficheiro `NTUSER.DAT`, o perito descobre uma entrada com o nome cifrado `{0139Q44R-6NSR-49S2-8690-3QNSPNR6SSO8}\Fxlcr cnen Rzcerfnf.yax`. Aplicando a cifra ROT13, a que atalho corresponde esta entrada e o que representa o identificador inicial entre chavetas?
+
 * **A)** `C:\Program Files\Skype\Skype.exe`; o GUID identifica a placa de rede utilizada na ligação.
 * **B)** `{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\Skype para Empresas.lnk`; o GUID inicial é um *KnownFolderID* (`FOLDERID_CommonPrograms`, correspondente a `%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs`), mecanismo que substituiu os antigos prefixos `UEME_RUNPATH` (`HRZR_EHACNGU`) usados no Windows XP.
 * **C)** `C:\Temp\malware.exe`; o GUID indica que o executável residia numa partilha de rede UNC.
@@ -138,6 +168,7 @@ Ao analisar a subchave `UserAssist` (`{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}\Cou
 
 ### Questão 3
 Em relação à estrutura binária do `UserAssist` (bloco `Count` de 72 bytes utilizado desde o Windows 7 até ao Windows 10/11), qual das seguintes afirmações sobre o valor do contador de execuções (*Run Counter*, offsets 4 a 7) está correta?
+
 * **A)** O contador de execuções regista todos os processos criados no sistema, quer sejam invocados por serviços quer por linha de comandos.
 * **B)** Na estrutura moderna de 72 bytes (Windows 7, 10 e 11), o contador de execuções inicia no valor `0` (ao contrário do Windows XP, onde iniciava em `5`), mas apenas contabiliza programas e atalhos acionados pela interface gráfica (`explorer.exe`), ignorando comandos lançados via terminal CLI (`cmd.exe`/`PowerShell`).
 * **C)** O contador de execuções apenas regista processos que falharam no encerramento.
@@ -147,10 +178,12 @@ Em relação à estrutura binária do `UserAssist` (bloco `Count` de 72 bytes ut
 
 ### Questão 4
 Ao examinar a chave `HKLM\SYSTEM\CurrentControlSet\Enum\USBSTOR` numa investigação de fuga de informação, o analista depara-se com as seguintes instâncias de números de série para dois dispositivos amovíveis:
+
 1. Dispositivo A: `0707297390184042`
 2. Dispositivo B: `7&19a58b0&0`
 
 Qual a conclusão técnica rigorosa a incluir no relatório pericial?
+
 * **A)** O Dispositivo A e o Dispositivo B possuem ambos números de série únicos gravados pelo fabricante.
 * **B)** O Dispositivo A possui um número de série de fábrica único e identificável; o Dispositivo B não possui número de série de fábrica, tendo o sistema atribuído um identificador temporário (indicado pelo `&` no 2.º caractere).
 * **C)** O Dispositivo B foi inserido através de uma porta USB 3.0, daí a presença do símbolo `&`.
@@ -160,6 +193,7 @@ Qual a conclusão técnica rigorosa a incluir no relatório pericial?
 
 ### Questão 5
 Qual o papel do artefacto **ShellBags** (`BagMRU` e `Bags`) na reconstituição da atividade humana num computador investigado?
+
 * **A)** Provar que ficheiros executáveis foram lançados com privilégios de administrador.
 * **B)** Reconstituir o histórico de navegação e visualização de pastas no Windows Explorer (incluindo dimensões de janela, modo de visualização e caminhos de pastas), mesmo que as pastas ou unidades externas já tenham sido eliminadas do disco.
 * **C)** Registar as credenciais NTLM de utilizadores que acederam a pastas partilhadas na rede.
@@ -169,6 +203,7 @@ Qual o papel do artefacto **ShellBags** (`BagMRU` e `Bags`) na reconstituição 
 
 ### Questão 6
 A partir da compilação **Windows 10 versão 1803**, a tarefa agendada `RegIdleBackup` deixou de criar cópias de segurança automáticas dos hives do Registry na pasta `C:\Windows\System32\config\RegBack\`. Qual foi a motivação de engenharia da Microsoft para esta alteração e qual o impacto para a resposta a incidentes?
+
 * **A)** A pasta causava conflito com o antivírus; agora o perito deve usar o VSS (*Volume Shadow Copies*) para recuperar versões históricas dos hives.
 * **B)** A Microsoft reduziu o espaço em disco ocupado pelo SO (os ficheiros passaram a apresentar tamanho de 0 bytes); para obter cópias históricas de hives sem VSS, o administrador tem de ativar explicitamente o valor DWORD `EnablePeriodicBackup = 1`.
 * **C)** O Registry passou a ser gravado em formato SQLite e não suporta cópias de segurança em disco.
@@ -178,6 +213,7 @@ A partir da compilação **Windows 10 versão 1803**, a tarefa agendada `RegIdle
 
 ### Questão 7
 Aplicações modernas empacotadas no formato **MSIX** (como o Bloco de Notas no Windows 11) não gravam as suas configurações diretamente no hive `NTUSER.DAT` tradicional. Onde reside o registo virtualizado destas aplicações?
+
 * **A)** Num ficheiro SQLite em `%APPDATA%\MSIX\database.db`.
 * **B)** No contentor isolado da aplicação, especificamente no ficheiro de hive virtualizado `User.dat` localizado sob `%LOCALAPPDATA%\Packages\<PackageFamilyName>\SystemAppData\Helium\`.
 * **C)** Na partição reservada de arranque UEFI.
@@ -187,6 +223,7 @@ Aplicações modernas empacotadas no formato **MSIX** (como o Bloco de Notas no 
 
 ### Questão 8
 Qual é a fórmula de cálculo e a resolução temporal nativa do formato **FILETIME** utilizado pelo Windows para carimbos de data/hora no Registry e no sistema de ficheiros NTFS?
+
 * **A)** Segundos decorridos desde 1 de janeiro de 1970 UTC com precisão de 1 segundo.
 * **B)** Contagem de intervalos de **100 nanossegundos** decorridos desde **1 de janeiro de 1601 UTC**.
 * **C)** Milissegundos decorridos desde o último arranque do sistema operativo (*System Uptime*).

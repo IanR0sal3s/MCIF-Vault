@@ -17,7 +17,7 @@ aliases:
   - Capítulo 1 AFD1
   - Investigation Method
   - Método de Investigação Forense
-atualizado: 2026-10-19
+atualizado: 2026-11-11
 ---
 
 # Capítulo 1 — Método de Investigação (*Investigation Method*)
@@ -26,14 +26,24 @@ atualizado: 2026-10-19
 
 As notas encontram-se organizadas em **4 blocos temáticos numerados** na pasta `AFD1/Capítulo 01 - Método de Investigação/`, cobrindo a totalidade dos 50 diapositivos da apresentação oficial.
 
+> [!TIP] Guia de Consulta Rápida para Exame
+> Para tabelas comparativas (*Live* vs. *Post-Mortem*, `MD5` vs. `SHA-2`/`SHA-3` e Assinatura Digital, Ordem de Volatilidade de 7 níveis), regras de etiquetagem e fotografia do LabCIF, comandos `sha256sum` e armadilhas de exame dos Capítulos 1 e 2, consulta a **[[Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense]]**.
+
+```mermaid
+flowchart LR
+    B1["Bloco 01<br/>Conceitos, Evidência Digital<br/>e Live vs. Post-Mortem"] --> B2["Bloco 02<br/>4 Fases, Preservação, Hashes<br/>e Reconstrução de Eventos"]
+    B2 --> B3["Bloco 03<br/>Princípios, Ordem de Volatilidade<br/>e Regras LabCIF"]
+    B3 --> B4["Bloco 04<br/>Código de Ética ISFCE<br/>e Exercício de Catalogação"]
+```
+
 ---
 
 ## 1. Introdução e Conceitos Forenses (`01 - Introdução e Conceitos Forenses`)
 
 | Nota | Descrição e Foco Técnico |
 | :--- | :--- |
-| [[Investigação Digital e Evidência Digital]] | Foco da investigação (crimes físicos vs. eventos digitais), questões fundamentais (*what, who, when, how, where, why*), método científico (formulação e refutação de hipóteses), propriedades da evidência digital (*admissible, authentic, accurate, complete*) e desafios (*hard to control*, *diversity and complexity*) |
-| [[Investigação Forense Digital - Análise Live vs Post-Mortem]] | Requisito legal de admissibilidade em tribunal, definições formais (Brian Carrier), comparação entre **Live Analysis** e **Post-Mortem Analysis** (vantagens, desvantagens e perda de dados na RAM) e caso prático de servidor comprometido |
+| [[Investigação Digital e Evidência Digital]] | Método científico na refutação de hipóteses, questões fundamentais, quatro propriedades da evidência digital e desafios. |
+| [[Investigação Forense Digital - Análise Live vs Post-Mortem]] | Admissibilidade legal segundo Brian Carrier, comparação entre análise live e post-mortem e caso do servidor comprometido. |
 
 ---
 
@@ -41,10 +51,10 @@ As notas encontram-se organizadas em **4 blocos temáticos numerados** na pasta 
 
 | Nota | Descrição e Foco Técnico |
 | :--- | :--- |
-| [[Fases da Investigação Forense Digital]] | As 4 fases cíclicas baseadas na investigação criminal física: **Preparação / Identificação da fonte**, **Preservação do sistema**, **Pesquisa de evidências** e **Reconstrução de eventos e relatório** |
-| [[Preservação do Sistema e Integridade de Dados]] | Objetivos e técnicas de preservação em *post-mortem* (*pull the plug*, cópias, *write blockers*) e *live analysis* (suspensão de processos, hub/switch vazio, filtros de rede); famílias de *hash* criptográfico (`SHA-1/2/3`, `MD5/6`, `RIPEMD`, `Whirlpool`), colisões no `MD5` (quebrado desde 2004), vulnerabilidade do *hash* isolado ($H(M)=h$) e **Assinaturas Digitais** (Cartão de Cidadão) |
-| [[Pesquisa de Evidências e Reconstrução de Eventos]] | Pesquisa orientada ao incidente (hábitos web vs. intrusão Linux), técnicas de pesquisa por nome, conteúdo, metadados temporais, base de *hashes* **NSRL (NIST)** e tráfego de rede; reconstrução de eventos (defesa de malware vs. ação do utilizador e impacto da versão do SO/aplicação) |
-| [[Exercícios Práticos - Integridade de Dados e Hashes]] | Exercícios práticos (Slide 24): verificação automatizada em lote com `sha256sum` no Linux (`-c`), `HashCalc` no Windows e teste de inversão de *hashes* de palavras comuns no *CrackStation* |
+| [[Fases da Investigação Forense Digital]] | As quatro fases iterativas e bidirecionais da investigação: identificação da fonte, preservação, pesquisa e reconstrução. |
+| [[Preservação do Sistema e Integridade de Dados]] | Preservação post-mortem e live, famílias de hash, colisões MD5 desde 2004 e assinaturas digitais. |
+| [[Pesquisa de Evidências e Reconstrução de Eventos]] | Pesquisa em ficheiros e rede com base NSRL, reconstrução de eventos e refutação da Trojan defense. |
+| [[Exercícios Práticos - Integridade de Dados e Hashes]] | Verificação em lote com sha256sum no Linux, HashCalc no Windows e inversão no CrackStation. |
 
 ---
 
@@ -52,9 +62,9 @@ As notas encontram-se organizadas em **4 blocos temáticos numerados** na pasta 
 
 | Nota | Descrição e Foco Técnico |
 | :--- | :--- |
-| [[Princípios e Rota do Manuseamento de Evidência Digital]] | Os 4 princípios fundamentais de manuseamento (*first responders*, acesso excecional qualificado, cadeia de custódia/repetibilidade e responsabilidade legal) e fluxograma completo da **Rota da Evidência Digital** |
-| [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] | Diretrizes 1 a 4: estados dos dados (*stored, in transit, in reception, in creation*), fontes e tipos de dados; regras de preservação, **Ordem de Volatilidade** (7 níveis) e **Triagem (*Data Sorting*)**; isolamento laboratorial (VMs e redes isoladas) e correlação multi-fonte |
-| [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] | Diretriz 5 (*Log*): documentação de ações, receção em processos de grande escala (30+ suspeitos, 200+ dispositivos), **regras de etiquetagem do LabCIF** (`ownerID.deviceID[.inside_deviceID]`), **regras de fotografia pericial** (escala/régua, caixa 3D `Top/Bottom/Left/Right/Front/Back`, nomenclatura de ficheiros, erros comuns) e **templates de catalogação** (`PC01.HD03`, `DNS01`, `A.SPH01`) |
+| [[Princípios e Rota do Manuseamento de Evidência Digital]] | Quatro princípios ACPO de primeira resposta, cadeia de custódia, repetibilidade e fluxograma da Rota da Evidência. |
+| [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] | Estados e fontes de dados, Ordem de Volatilidade em 7 níveis, triagem, isolamento e correlação. |
+| [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] | Diretriz de registo, sintaxe hierárquica de etiquetas LabCIF, fotografia com escala, caixa 3D e templates. |
 
 ---
 
@@ -62,14 +72,15 @@ As notas encontram-se organizadas em **4 blocos temáticos numerados** na pasta 
 
 | Nota | Descrição e Foco Técnico |
 | :--- | :--- |
-| [[Código de Ética na Investigação Forense Digital (ISFCE)]] | Propósito do código de ética na proteção da integridade pericial e diretrizes da *International Society of Forensic Computer Examiners (ISFCE)* (*will always* vs. *will never*) |
-| [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]] | Guião do exercício de preparação para o Relatório do Projeto em Equipa (Slide 48): matriz de atributos para dispositivos e serviços (`web`, `DNS`, `POP3`, `IMAP`, `SMTP`, `SSH`), sistema de etiquetagem hierárquica e tabelas com fotografia pericial |
+| [[Código de Ética na Investigação Forense Digital (ISFCE)]] | Propósito deontológico e diretrizes da ISFCE com deveres obrigatórios e proibições absolutas do perito. |
+| [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]] | Guião para o Projeto em Equipa: atributos de dispositivos e serviços, etiquetagem e fotografia com escala. |
 
 ---
 
-## 🧭 Navegação
+## Navegação
 
 * [[00 AFD1|Voltar ao Índice de AFD1]]
+* [[Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense|Consultar a Cheat Sheet de Exame (Capítulos 1 e 2)]]
 * [[Capítulo 2 - Arranque e Aquisição Forense|Avançar para o Capítulo 2 — Arranque e Aquisição Forense]]
 * [[Capítulo 3 - Organização de Dados|Avançar para o Capítulo 3 — Organização de Dados]]
 * [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Pontes com ASSI — Capítulo 1 (Artefactos Forenses no Windows)]]

@@ -23,12 +23,20 @@ aliases:
   - Tableau Imager
   - FTK Imager
   - Aquisição Lógica em SSDs
-atualizado: 2026-10-20
+atualizado: 2026-11-11
 ---
 
 # Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)
 
-Para além das ferramentas de linha de comandos, a aquisição forense dispõe de aplicações com interface gráfica (GUI) de alto desempenho: em **Linux**, o **Guymager** é a opção recomendada para aquisições físicas ultrarrápidas (`RAW`, `EWF`, `AFF`), enquanto a **Paladin Toolbox** se destaca por suportar aquisições lógicas (recomendadas para unidades **SSD**); em **Windows**, o **Tableau Imager** opera em conjunto com bloqueadores de escrita Tableau (lendo HPA e DCO), e o **FTK Imager** constitui a opção recomendada para Windows pela sua versatilidade na aquisição física/lógica, pré-visualização de *File Slack* e recuperação da Reciclagem.
+Em ambiente gráfico, o **Guymager** e a **Paladin Toolbox** lideram a aquisição em Linux, enquanto o **Tableau Imager** (HPA/DCO) e o **FTK Imager** (física e lógica) se destacam em Windows.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Sistema / Método)**: As ferramentas GUI reúnem seleção de suporte, registo de cadeia de custódia, cálculo de *hashes*, segmentação e pré-visualização numa interface intuitiva e auditável.
+> * **Porque importa (Forense)**: Cada ferramenta tem limitações decisivas — o **Guymager** e o **Tableau Imager** não suportam aquisições lógicas (recomendadas para SSDs com TRIM), o **Tableau Imager** exige *hardware write-blocker* Tableau (mas lê HPA/DCO), e configurar incorretamente `/etc/guymager/guymager.cfg` em vez de `local.cfg` perde alterações em atualizações.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Recomendadas**: **Guymager** para Linux (`RAW`, `EWF`, `AFF`, mais rápido que imagers comerciais em Windows) e **FTK Imager** para Windows (adquire físico/lógico, lê `File Slack`, recupera da Reciclagem, monta *read-only*, tem versão portátil *Lite*).
+>   * **Configuração do Guymager**: **NÃO alterar** `/etc/guymager/guymager.cfg`; guardar personalizações (ex.: `EwfCompression=BEST`) em **`/etc/guymager/local.cfg`**.
+>   * **Aquisição Lógica (SSDs)**: Suportada por **Paladin Toolbox** (Linux) e **FTK Imager** (Windows); não suportada por **Guymager** nem **Tableau Imager**.
 
 ---
 
@@ -46,16 +54,18 @@ Para além das ferramentas de linha de comandos, a aquisição forense dispõe d
 ## 1. Linux GUI — *Guymager* (Opção Recomendada para Linux)
 
 * **Perfil e Desempenho**:
-  * Interface gráfica extremamente intuitiva (*very user friendly*).
+  * Interface gráfica extremamente intuitiva.
   * Suporta os formatos de ficheiro de imagem **`RAW`**, **`EWF`** (`.E01`) e **`AFF`** (*Advanced Forensic Format*).
-  * **Mais rápido do que os *imagers* comerciais conhecidos a correr sobre Windows** (*faster than known commercial imagers running under Windows* — devido à arquitetura multithread em C++ sobre Linux).
-  * **Limitação em SSDs**: **Não suporta aquisições lógicas (*logical acquisitions*), que são a opção recomendada para unidades SSD**.
+  * **Mais rápido do que os *imagers* comerciais conhecidos a correr sobre Windows** (devido à arquitetura multithread em C++ sobre Linux).
+  * **Limitação em SSDs**: **Não suporta aquisições lógicas, que são a opção recomendada para unidades SSD**.
 * **Ficheiros de Configuração no Linux**:
-  * `/etc/guymager/guymager.cfg` $\rightarrow$ ficheiro de configuração por omissão — **NÃO alterar!** (*default configuration file, do not change!*).
+  * `/etc/guymager/guymager.cfg` $\rightarrow$ ficheiro de configuração por omissão — **NÃO alterar!**
   * `/etc/guymager/local.cfg` $\rightarrow$ **realizar todas as configurações personalizadas neste ficheiro**, por exemplo:
-    ```ini
-    EwfCompression=BEST
-    ```
+
+```ini
+EwfCompression=BEST
+```
+
 * **Informação Visível na Interface**: Lista o número de série (`Serial nr.`), dispositivo Linux (`/dev/sda`, `/dev/sdb`), modelo, estado, tamanho, presença de áreas ocultas (`Hidden areas`, ex.: `HPA:No / DCO:Unknown`), contagem de `Bad sectors`, velocidade média em `MB/s` e tempo restante, oferecendo no menu de contexto as ações **`Acquire image`** e **`Clone device`**.
 
 ---
@@ -64,16 +74,16 @@ Para além das ferramentas de linha de comandos, a aquisição forense dispõe d
 
 * **Origem e Licenciamento**:
   * Incluída na distribuição forense Live Linux **Paladin** da **Sumuri**.
-  * É gratuita (*free*), mas **não é de código aberto (*not open source*)** e exige registo prévio para descarregar.
+  * É gratuita, mas **não é de código aberto** e exige registo prévio para descarregar.
 * **Vantagem Técnica**:
-  * **Suporta aquisições lógicas (*supports logical acquisitions*), que constituem a opção recomendada para unidades SSD** (disponibilizando na barra lateral módulos dedicados: *Imager*, *Image Converter*, *Find*, *Unallocated*, *Disk Manager* e *Network Share*).
+  * **Suporta aquisições lógicas, que constituem a opção recomendada para unidades SSD** (disponibilizando na barra lateral módulos dedicados: *Imager*, *Image Converter*, *Find*, *Unallocated*, *Disk Manager* e *Network Share*).
 
 ---
 
 ## 3. Windows GUI — *Tableau Imager*
 
 * **Requisitos e Licenciamento**:
-  * **Funciona exclusivamente com bloqueadores de escrita da marca Tableau** (*works only with Tableau write blockers*).
+  * **Funciona exclusivamente com bloqueadores de escrita da marca Tableau**.
   * É gratuito, mas **não é de código aberto** e requer registo para descarga.
 * **Capacidades e Limitações**:
   * Conforme visto na secção de áreas ocultas ([[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]]), é capaz de **identificar e ler tanto áreas HPA como DCO**.
@@ -83,22 +93,22 @@ Para além das ferramentas de linha de comandos, a aquisição forense dispõe d
 
 ## 4. Windows GUI — *FTK Imager* (Opção Recomendada para Windows)
 
-O **FTK Imager** é destacado na aula como a **opção recomendada para ambientes Windows** (*Recommended option for Windows*), reunindo um conjunto abrangente de funcionalidades de aquisição e inspeção:
+O **FTK Imager** é destacado na aula como a **opção recomendada para ambientes Windows**, reunindo um conjunto abrangente de funcionalidades de aquisição e inspeção:
 
 1. **Criação de imagens forenses Físicas e Lógicas**:
-   * Cria imagens forenses de discos rígidos locais, CDs e DVDs, pens USB (*thumb drives*) ou outros dispositivos USB, bem como de **pastas inteiras (*entire folders*) ou ficheiros individuais (*individual files*)** a partir de vários locais do suporte (aquisição lógica).
+   * Cria imagens forenses de discos rígidos locais, CDs e DVDs, pens USB ou outros dispositivos USB, bem como de **pastas inteiras ou ficheiros individuais** a partir de vários locais do suporte (aquisição lógica).
 2. **Pré-visualização imediata (*Preview*)**:
    * Pré-visualiza ficheiros e pastas diretamente no disco ou dentro de imagens forenses já criadas.
    * Na interface (*Evidence Tree* + *File List* + *Hex Value Interpreter*), permite inspecionar em hexadecimal tanto ficheiros regulares como o espaço de sobra de cluster (**`File Slack`**), o espaço não alocado (**`[unallocated space]`**) e o espaço não particionado (**`Unpartitioned Space`**).
 3. **Montagem e Exportação**:
-   * **Monta uma imagem** para visualização em modo estritamente só de leitura (*read-only view*).
+   * **Monta uma imagem** para visualização em modo estritamente só de leitura.
    * **Exporta ficheiros e pastas** a partir de imagens forenses.
 4. **Recuperação de Ficheiros Eliminados**:
    * Permite visualizar e **recuperar ficheiros que foram eliminados da Reciclagem (*Recycle Bin*)**.
 5. **Integridade Criptográfica**:
-   * Cria *hashes* de ficheiros para verificar a integridade dos dados e **gera relatórios de *hash* (*hash reports*)** tanto para ficheiros regulares como para imagens de disco completas.
+   * Cria *hashes* de ficheiros para verificar a integridade dos dados e **gera relatórios de *hash*** tanto para ficheiros regulares como para imagens de disco completas.
 6. **Portabilidade**:
-   * A versão **Lite** corre como aplicação portátil (*portable application* — ver [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]).
+   * A versão **Lite** corre como aplicação portátil (ver [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]).
 
 ---
 
@@ -118,10 +128,25 @@ O **FTK Imager** é destacado na aula como a **opção recomendada para ambiente
 
 ## Perguntas de revisão
 
-- Qual é a ferramenta gráfica de aquisição recomendada para Linux e em que ficheiro devem ser guardadas as alterações de configuração (como `EwfCompression=BEST`)?
-- Que limitação partilham o *Guymager* e o *Tableau Imager* no que respeita à aquisição de unidades SSD e que ferramentas gráficas apresentadas na aula superam essa limitação?
-- Que requisito de hardware específico exige o *Tableau Imager* para funcionar e que vantagem oferece na deteção de áreas ocultas?
-- Enumere as principais funcionalidades do *FTK Imager* que justificam a sua recomendação como ferramenta padrão em ambientes Windows.
+1. **Qual é a ferramenta gráfica de aquisição recomendada para Linux e em que ficheiro devem ser guardadas as alterações de configuração (como `EwfCompression=BEST`)?**
+
+> [!success]- Ver Resposta
+> A opção recomendada para Linux é o **Guymager** (suporta `RAW`, `EWF` e `AFF` e é mais rápido do que *imagers* comerciais em Windows). Todas as configurações personalizadas devem ser gravadas em **`/etc/guymager/local.cfg`**, nunca alterando o ficheiro padrão `/etc/guymager/guymager.cfg`.
+
+2. **Que limitação partilham o *Guymager* e o *Tableau Imager* no que respeita à aquisição de unidades SSD e que ferramentas gráficas apresentadas na aula superam essa limitação?**
+
+> [!success]- Ver Resposta
+> Nem o **Guymager** nem o **Tableau Imager** suportam **aquisições lógicas**, que são a opção recomendada para unidades SSD. A **Paladin Toolbox** (em Linux) e o **FTK Imager** (em Windows) superam essa limitação ao suportarem aquisições lógicas.
+
+3. **Que requisito de hardware específico exige o *Tableau Imager* para funcionar e que vantagem oferece na deteção de áreas ocultas?**
+
+> [!success]- Ver Resposta
+> O **Tableau Imager** funciona **exclusivamente com bloqueadores de escrita da marca Tableau**, oferecendo como grande vantagem técnica a capacidade de **identificar e ler tanto áreas ocultas HPA como DCO**.
+
+4. **Enumere as principais funcionalidades do *FTK Imager* que justificam a sua recomendação como ferramenta padrão em ambientes Windows.**
+
+> [!success]- Ver Resposta
+> Cria imagens físicas e lógicas (de discos, CD/DVDs, pens USB, pastas ou ficheiros individuais), pré-visualiza conteúdos (incluindo **`File Slack`** e espaço não alocado em hexadecimal), monta imagens em modo *read-only*, exporta ficheiros/pastas, recupera ficheiros eliminados da Reciclagem (*Recycle Bin*), calcula *hashes* gerando relatórios e possui versão portátil (**Lite**).
 
 ## Notas relacionadas
 

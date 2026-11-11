@@ -90,6 +90,7 @@ flowchart LR
 ## 4. Guia Rápido de Linha de Comandos (CLI Cheat Sheet)
 
 ### 1. Volume Shadow Service (VSS)
+
 ```cmd
 REM Listar todas as cópias de sombra e caminhos de dispositivo
 vssadmin.exe list shadows
@@ -110,6 +111,7 @@ icacls "C:\System Volume Information" /remove UTILIZADOR /t
 ```
 
 ### 2. Prefetch e SysMain
+
 ```cmd
 REM Desativação efetiva do Prefetch (o Registry não funciona no W10/W11)
 sc config SysMain start=disabled
@@ -123,6 +125,7 @@ PECmd.exe -f "C:\Windows\Prefetch\CMD.EXE-4A81B364.pf" -o "C:\Temp\Decompressed"
 ```
 
 ### 3. ShimCache e AmCache
+
 ```cmd
 REM Exportar a chave de ShimCache do Registry em formato texto
 reg export "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache" C:\Temp\shim.txt
@@ -135,6 +138,7 @@ AmcacheParser.exe -i --csv "C:\Temp\Amcache_Export" -f "C:\Windows\AppCompat\Pro
 ```
 
 ### 4. Jump Lists e Atalhos LNK
+
 ```cmd
 REM Extrair Jump Lists automáticas e customizadas com JLECmd
 JLECmd.exe -d "%APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations" --csv "C:\Temp\JL_Export" --mp -q
@@ -147,6 +151,7 @@ lnkparse3 "C:\Users\user\Desktop\suspeito.lnk"
 ```
 
 ### 5. Caches Gráficas, Timeline e SRUM
+
 ```cmd
 REM Extrair miniaturas da pasta Explorer para galeria HTML com Thumbcache Viewer
 thumbcache_viewer_cmd.exe -o "C:\Temp\Thumb_Export" -w -d "%LOCALAPPDATA%\Microsoft\Windows\Explorer"
@@ -165,6 +170,7 @@ esentutl.exe /r sru /d
 ```
 
 ### 6. Bloco de Notas (Windows 11)
+
 ```cmd
 REM Extrair texto não gravado dos separadores do Bloco de Notas para CSV e JSONL
 notepad_parser.exe -f csv -o "C:\Temp\notepad_conteudo.csv"

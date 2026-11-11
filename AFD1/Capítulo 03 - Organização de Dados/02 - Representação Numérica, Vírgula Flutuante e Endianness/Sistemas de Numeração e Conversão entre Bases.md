@@ -17,22 +17,33 @@ aliases:
   - Numerical Representation
   - Binário e Hexadecimal
   - Conversão de Bases
-atualizado: 2026-10-19
+atualizado: 2026-11-11
 ---
 
 # Sistemas de Numeração e Conversão entre Bases
 
-Enquanto os humanos utilizam o sistema **decimal** (10 símbolos) e os computadores operam internamente em **binário** (2 níveis de tensão: `0` e `1`), a análise forense de baixo nível recorre extensivamente ao sistema **hexadecimal** (16 símbolos, `0` a `F`) como representação compacta do binário, onde **1 dígito hexadecimal corresponde exatamente a 4 bits (*nibble*)** e **1 Byte (8 bits) é representado por 2 dígitos hexadecimais**.
+Enquanto os computadores operam em binário, a análise forense utiliza o sistema hexadecimal como notação compacta, onde cada dígito representa quatro bits e dois dígitos formam um Byte.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Representação)**: Circuitos digitais distinguem apenas dois níveis de tensão (`0` e `1`), mas sequências binárias extensas são ilegíveis para humanos; a base 16 agrupa exatamente 4 bits por símbolo (*nibble*), comprimindo 1 Byte em dois caracteres.
+> * **Porque importa (Forense)**: Editores hexadecimais expõem discos, registos de memória e pacotes de rede em pares de dígitos hexadecimais, permitindo localizar *magic bytes*, calcular *offsets* e descodificar campos inteiros manualmente.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Regra de tamanho**: $\text{1 Byte} = \text{8 bits} = \text{2 dígitos hexadecimais}$ (intervalo `0x00` a `0xFF`, ou `0` a `255`).
+>   * **Notação posicional**: na fórmula $\sum s_p \times b^p$, a posição $p$ começa em **`0` à direita** (*LSD/LSB*) e cresce para a esquerda (*MSD/MSB*).
+>   * **Conversão direta**: para passar de binário para hexadecimal (e vice-versa) **não é necessário converter para decimal**; basta agrupar os bits em blocos de 4 da direita para a esquerda.
 
 ---
 
 ## Sistemas de Representação Numérica
 
 Os números podem ser representados em diferentes bases:
+
 * **Decimal (base 10)**: sistema humano (10 dedos), composto por 10 símbolos: `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`.
 * **Binário (base 2)**: representação computacional (2 níveis de tensão elétrica), composto por 2 símbolos: `[0, 1]`.
 * **Hexadecimal (base 16)**: representação compacta de números binários, composta por 16 símbolos: `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F]`, onde:
-  $$A = 10,\quad B = 11,\quad C = 12,\quad D = 13,\quad E = 14,\quad F = 15$$
+
+$$A = 10,\quad B = 11,\quad C = 12,\quad D = 13,\quad E = 14,\quad F = 15$$
+
 * Existem outros sistemas numéricos utilizados em computação, como o **octal** (base 8).
 
 ---
@@ -41,12 +52,15 @@ Os números podem ser representados em diferentes bases:
 
 Cada símbolo possui um peso que depende da sua posição no número.
 
-* **Símbolo mais significativo (*most significant symbol / digit*)**: o valor mais à **esquerda** (*leftmost value*).
-* **Símbolo menos significativo (*less significant symbol / digit*)**: o valor mais à **direita** (*rightmost value*).
+* **Símbolo mais significativo (*MSD / MSB*)**: o valor mais à **esquerda**.
+* **Símbolo menos significativo (*LSD / LSB*)**: o valor mais à **direita**.
 
 ### Fórmula Genérica (Qualquer Base $b \rightarrow$ Decimal)
+
 $$s_p \times b^p + \dots + s_1 \times b^1 + s_0 \times b^0$$
+
 Onde:
+
 * $s$ — valor numérico do símbolo.
 * $b$ — base original (binária $2$, octal $8$, hexadecimal $16$, etc.).
 * $p$ — posição do símbolo, que começa em zero ($0$) e aumenta da direita para a esquerda.
@@ -56,17 +70,25 @@ Onde:
 ## Exemplos Práticos de Conversão
 
 ### 1. Decomposição Decimal ($35\,812_d$)
+
 $$3 \times 10^4 + 5 \times 10^3 + 8 \times 10^2 + 1 \times 10^1 + 2 \times 10^0$$
+
 $$= 3 \times 10\,000 + 5 \times 1\,000 + 8 \times 100 + 1 \times 10 + 2 \times 1 = 30\,000 + 5\,000 + 800 + 10 + 2 = 35\,812$$
+
 * Símbolo mais significativo: `3` (esquerda); menos significativo: `2` (direita).
 
 ### 2. Binário para Decimal ($1001\,0011_b$)
+
 $$1 \times 2^7 + 0 \times 2^6 + 0 \times 2^5 + 1 \times 2^4 + 0 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0$$
+
 $$= 128 + 0 + 0 + 16 + 0 + 0 + 2 + 1 = 147_d$$
+
 * Dígito mais significativo: o `1` na posição $p=7$ (peso $128$); menos significativo: o `1` na posição $p=0$ (peso $1$).
 
 ### 3. Hexadecimal para Decimal ($8\text{BE}4_h$ ou `0x8BE4`)
+
 $$8 \times 16^3 + 11 \times 16^2 + 14 \times 16^1 + 4 \times 16^0$$
+
 $$= 8 \times 4\,096 + 11 \times 256 + 14 \times 16 + 4 \times 1 = 32\,768 + 2\,816 + 224 + 4 = 35\,812_d$$
 
 ---
@@ -86,6 +108,7 @@ $$= 8 \times 4\,096 + 11 \times 256 + 14 \times 16 + 4 \times 1 = 32\,768 + 2\,8
 
 ### Exemplo de Conversão Direta ($1001\,0011_b \rightarrow \text{0x93}$)
 Agrupando os bits de 4 em 4:
+
 * $1001_b = \text{0x9}$
 * $0011_b = \text{0x3}$
 * Resultado: $1001\,0011_b = \text{0x93}$
@@ -111,9 +134,25 @@ Agrupando os bits de 4 em 4:
 
 ## Perguntas de revisão
 
-- Qual é a fórmula genérica para converter um número de qualquer base $b$ para a base decimal?
-- Como se converte diretamente um byte em binário ($1001\,0011_b$) para hexadecimal sem passar pela base decimal?
-- Quantos bits e quantos dígitos hexadecimais compõem 1 Byte?
+1. **Qual é a fórmula genérica para converter um número de qualquer base $b$ para a base decimal e como se atribui o índice $p$?**
+
+> [!success]- Ver Resposta
+> A fórmula polinomial é $s_p \times b^p + \dots + s_1 \times b^1 + s_0 \times b^0$, onde $s$ é o valor numérico de cada símbolo, $b$ é a base original (ex.: $2$, $8$ ou $16$) e $p$ é a posição do dígito, começando em **`0` à direita** e aumentando para a esquerda.
+
+2. **Converta o valor hexadecimal `0x8BE4` para decimal mostrando o cálculo posicional completo.**
+
+> [!success]- Ver Resposta
+> Substituindo $B = 11$ e $E = 14$: $8 \times 16^3 + 11 \times 16^2 + 14 \times 16^1 + 4 \times 16^0 = 32\,768 + 2\,816 + 224 + 4 = \mathbf{35\,812_d}$.
+
+3. **Como se converte diretamente o byte binário `1001 0011` para hexadecimal sem passar pela base decimal?**
+
+> [!success]- Ver Resposta
+> Agrupam-se os bits em blocos de **4 bits** da direita para a esquerda: $1001_b = \text{0x9}$ e $0011_b = \text{0x3}$, resultando diretamente em **`0x93`**.
+
+4. **Quantos bits e quantos dígitos hexadecimais compõem 1 Byte, e porque é o sistema hexadecimal preferido em editores forenses?**
+
+> [!success]- Ver Resposta
+> **1 Byte equivale a 8 bits e a exatamente 2 dígitos hexadecimais**. O sistema hexadecimal representa diretamente blocos de 4 bits (*nibbles*) sem o comprimento excessivo do binário nem a falta de alinhamento posicional da base 10.
 
 ## Notas relacionadas
 

@@ -20,71 +20,76 @@ aliases:
   - Ordem de Volatilidade
   - Order of Volatility
   - Data Sorting
-atualizado: 2026-10-19
+atualizado: 2026-11-11
 ---
 
 # Diretrizes de Manuseamento — Identificação, Preservação, Isolamento e Correlação
 
-As diretrizes práticas de manuseamento de evidência digital desdobram-se em cinco pilares: **1. Identificação** (compreender estados, fontes, localizações e tipos de dados), **2. Preservação** (proteger os originais, respeitar a **Ordem de Volatilidade** de 7 níveis e realizar triagem apenas sob autorização legal), **3. Isolamento** (analisar dados suspeitos em máquinas virtuais e redes isoladas), **4. Correlação** (cruzar artefactos com fontes independentes para detetar manipulações temporais) e **5. Registo (*Log*)**.
+As diretrizes operacionais de manuseamento organizam-se em cinco pilares — **Identificação**, **Preservação** (com a **Ordem de Volatilidade** de 7 níveis e **Data Sorting**), **Isolamento**, **Correlação** e **Registo**.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Método / Sistema)**: Os dados transitam por diferentes estados de persistência e artefactos suspeitos podem executar código destrutivo ou exibir *timestamps* falsificados; estas diretrizes ordenam a recolha do mais volátil para o mais persistente e isolam a estação forense.
+> * **Porque importa (Forense / Tribunal)**: Recolher o disco antes da RAM destrói vestígios voláteis, criar ficheiros numa máquina ativa sobrescreve espaço não alocado e triar dados sem cobertura legal invalida a prova.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Ordem de Volatilidade (Níveis 1 a 7)**: recolher estritamente do mais volátil (**1. CPU/cache/registos** $\to$ **2. routing/ARP/processos/kernel** $\to$ **3. RAM**) até ao menos volátil (**7. suportes de arquivo/*backups***).
+>   * **Triagem (*Data Sorting*) condicionada**: pré-analisar no local por limites de tempo, lei ou exequibilidade técnica **só é permitido com autorização legal**.
+>   * **Perigo de ficheiros HTML suspeitos**: abrir um HTML fora de ambiente isolado pode disparar *scripts* no browser do perito e estabelecer ligações remotas.
 
 ---
 
-## 1 — Identificação (*Identification*)
+## 1 — Identificação
 
-### Estados dos Dados (*Data States*)
-* **Armazenados (*stored*)**: dados guardados permanentemente num dispositivo de armazenamento (ex.: disco rígido).
-* **Em trânsito (*in transit*)**: dados a serem enviados através de uma rede local ou da Internet para um dispositivo recetor.
-* **Em receção (*in reception*)**: dados a serem recebidos num dispositivo, mas ainda não disponíveis para o utilizador.
-* **Em criação (*in creation*)**: dados a serem produzidos localmente e apenas parcialmente disponíveis para o utilizador.
+### Estados e Principais Tipos de Dados
 
-### Fontes de Dados (*Data Sources*)
-* **Dispositivos de armazenamento (*storage devices*)**: discos rígidos (HDD), SSD, pen drives USB, fitas magnéticas (*tapes*), etc.
-* **Localizações temporárias (*temporary location*)**: memória RAM, ficheiros de paginação (*page files*), partições de *swap*, ficheiros de *cache*, etc.
-* **Dispositivos periféricos (*peripheral devices*)**: impressoras, *plotters*, leitores de cartões de memória, etc.
-* **Dispositivos de rede ativos (*active network devices*)**: *switches*, *routers*, *modems*, servidores de impressão (*print servers*), etc.
+| Dimensão | Categorias e Exemplos |
+| :--- | :--- |
+| **Estados dos dados** | **Armazenados** (disco rígido); **Em trânsito** (rede local ou Internet); **Em receção** (a ser recebidos, ainda indisponíveis ao utilizador); **Em criação** (produzidos localmente, apenas parcialmente disponíveis) |
+| **Tipos de dados** | **Simples e legíveis por humanos** (fotografias, documentos de texto, folhas de cálculo); **Complexos e/ou estruturados** (bases de dados, sistemas de ficheiros); **Dados em bruto / fluxos** |
 
-### Localização Lógica e Física e Principais Tipos de Dados
-* **Localização lógica e física**:
-  * Dispositivos locais ou remotos.
-  * Sistemas de armazenamento dedicados (habitualmente em centros de dados / *data centers*).
-  * Sistemas computacionais (ex.: PC, portátil), que possuem pelo menos um dispositivo de armazenamento.
-* **Principais tipos de dados (*main data types*)**:
-  * **Simples e legíveis por humanos (*simple and human readable*)**: ex.: fotografias, documentos de texto, folhas de cálculo (*spreadsheets*).
-  * **Complexos e/ou estruturados (*complex and/or structured data*)**: ex.: bases de dados, sistemas de ficheiros.
-  * **Dados em bruto / fluxos (*raw data, streams of data*)**.
+### Fontes de Dados e Localização
+
+* **Dispositivos de armazenamento**: discos rígidos (HDD), SSD, pen drives USB, fitas magnéticas, etc.
+* **Localizações temporárias**: memória RAM, ficheiros de paginação, partições de *swap*, ficheiros de *cache*, etc.
+* **Dispositivos periféricos**: impressoras, *plotters*, leitores de cartões de memória, etc.
+* **Dispositivos de rede ativos**: *switches*, *routers*, *modems*, servidores de impressão, etc.
+* **Localização lógica e física**: dispositivos locais ou remotos; sistemas de armazenamento dedicados (habitualmente em *data centers*); sistemas computacionais (ex.: PC, portátil) com pelo menos um dispositivo de armazenamento.
 
 ---
 
-## 2 — Preservação (*Preservation*)
+## 2 — Preservação
 
 ### Regras Fundamentais para Não Modificar Dados
+
 * **Copiar dados importantes**, guardar o original num local seguro e **analisar sempre a cópia**, de modo a poder restaurar o original caso a cópia seja modificada.
 * **Calcular valores de *hash*** dos dados importantes para provar posteriormente que não foram alterados — **melhor ainda se for realizada uma assinatura digital**.
-* **Utilizar um dispositivo bloqueador de escrita (*write-blocking device*)** durante procedimentos que possam escrever nos dados suspeitos.
-* **Minimizar o número de ficheiros criados durante uma análise *live***, pois novos ficheiros podem sobrescrever evidências residentes no espaço não alocado (*unallocated space*).
+* **Utilizar um *Write Blocker*** durante procedimentos que possam escrever nos dados suspeitos.
+* **Minimizar o número de ficheiros criados durante uma análise *live***, pois novos ficheiros podem sobrescrever evidências residentes no **espaço não alocado** (*unallocated space*).
 * **Ter extremo cuidado ao abrir ficheiros numa análise *live***, pois essa ação pode modificar metadados, tais como a data/hora do último acesso (*last access time*).
 
 ### Ordem de Volatilidade (*Order of Volatility*)
-Na recolha de evidências, deve dar-se prioridade aos dados mais voláteis para os menos voláteis:
 
-| Prioridade | Nível de Volatilidade (do mais volátil ao menos volátil) |
-| :---: | :--- |
-| **1** | Conteúdo do **CPU, *cache* e registos (*registers*)** |
-| **2** | **Tabela de encaminhamento (*routing table*), *cache* ARP, tabela de processos, estatísticas do *kernel*** |
-| **3** | Memória **RAM** |
-| **4** | **Sistema de ficheiros temporário, espaço de *swap*** |
-| **5** | **Dados em suportes de armazenamento local** (*local storage media*) |
-| **6** | **Dados registados remotamente** (*remotely logged data*) |
-| **7** | **Dados contidos em suportes de arquivo (*archival media / backups*)** |
+Na recolha de evidências, deve dar-se prioridade rigorosa dos dados **mais voláteis** para os **menos voláteis**:
 
-### Triagem (*Sorting / Data Sorting*)
+| Prioridade | Nível de Volatilidade (Ordem Oficial) | Persistência / Risco de Perda | Exemplos Concretos |
+| :---: | :--- | :--- | :--- |
+| **1** | Conteúdo do **CPU, *cache* e registos** | Volatilidade extrema (ciclos de relógio) | Registos da CPU, linhas de *cache* L1/L2/L3 |
+| **2** | **Tabela de encaminhamento, *cache* ARP, tabela de processos, estatísticas do *kernel*** | Estado dinâmico do SO em tempo real | Rotas ativas, mapeamentos MAC-IP, PIDs em curso |
+| **3** | Memória **RAM** | Perde-se integralmente ao cortar a energia | Chaves de encriptação em claro, código injetado |
+| **4** | **Sistema de ficheiros temporário e espaço de *swap*** | Sobrescrito continuamente em operação | `pagefile.sys`, `swapfile.sys`, `/tmp` |
+| **5** | **Dados em suportes de armazenamento local** | Persistente, mas vulnerável a escritas locais | HDD, SSD, cartões de memória, pens USB |
+| **6** | **Dados registados remotamente** | Dependente de políticas de retenção externas | Servidores de *syslog*, SIEM, *firewalls* remotas |
+| **7** | **Dados contidos em suportes de arquivo (*backups*)** | Mais persistente e imutável a curto prazo | Fitas magnéticas, *snapshots* ou cópias *offline* |
+
+### Triagem (*Data Sorting*)
+
 * Por vezes não é possível transportar todos os dispositivos para o laboratório devido a várias restrições: **legais, de tempo, inexequibilidade técnica**, etc.
-* > [!WARNING] Condição Legal para Triagem (*Data Sorting*)
-  > Nestas situações é necessária uma **pré-análise (*pre-analysis*)**, mas esta **só pode ser realizada se for devidamente autorizada de acordo com as leis do país**.
+
+> [!WARNING] Condição Legal para Triagem (*Data Sorting*)
+> Nestas situações é necessária uma **pré-análise**, mas esta **só pode ser realizada se for devidamente autorizada de acordo com as leis do país**.
 
 ---
 
-## 3 — Isolamento (*Isolate*)
+## 3 — Isolamento
 
 * **Isolar o sistema do investigador dos dados suspeitos**, uma vez que se desconhece o que esses dados podem fazer:
   * Um **executável** oriundo do sistema suspeito pode apagar todos os ficheiros do computador do perito ou comunicar com um sistema remoto.
@@ -96,14 +101,15 @@ Na recolha de evidências, deve dar-se prioridade aos dados mais voláteis para 
 
 ---
 
-## 4 — Correlação (*Correlate*)
+## 4 — Correlação
 
 * **Correlacionar dados com outras fontes independentes**:
-  * Ajuda a reduzir o risco de **dados forjados (*forged data*)**.
+  * Ajuda a reduzir o risco de **dados forjados**.
   * Os marcadores temporais (*timestamps*) podem ser facilmente alterados na maioria dos sistemas.
-  * Deve-se procurar entradas de registo (*log entries*), tráfego de rede ou outros eventos que confirmem os tempos de atividade dos ficheiros.
-* > [!NOTE] Esforço Computacional
-  > Esta tarefa é muito morosa (*time consuming*), especialmente se for realizada sem o auxílio de software especializado.
+  * Deve-se procurar entradas de registo, tráfego de rede ou outros eventos que confirmem os tempos de atividade dos ficheiros.
+
+> [!NOTE] Esforço Computacional
+> Esta tarefa é muito morosa, especialmente se for realizada sem o auxílio de software especializado.
 
 ---
 
@@ -129,10 +135,25 @@ Na recolha de evidências, deve dar-se prioridade aos dados mais voláteis para 
 
 ## Perguntas de revisão
 
-- Quais são os quatro estados possíveis dos dados na fase de Identificação?
-- Qual é a sequência exata dos 7 níveis da Ordem de Volatilidade?
-- Porque se deve minimizar a criação e abertura de ficheiros durante uma análise *live*?
-- Que riscos concretos existem ao inspecionar executáveis ou ficheiros HTML de um sistema suspeito fora de um ambiente isolado?
+1. **Quais são os quatro estados possíveis dos dados na fase de Identificação?**
+
+> [!success]- Ver Resposta
+> **Armazenados** (guardados permanentemente num suporte), **Em trânsito** (em envio pela rede), **Em receção** (a ser recebidos, ainda indisponíveis ao utilizador) e **Em criação** (em produção local, apenas parcialmente disponíveis).
+
+2. **Qual é a sequência exata dos 7 níveis da Ordem de Volatilidade?**
+
+> [!success]- Ver Resposta
+> Do mais volátil ao menos volátil: **1.** CPU, *cache* e registos; **2.** Tabela de encaminhamento, *cache* ARP, tabela de processos e estatísticas do *kernel*; **3.** Memória RAM; **4.** Sistema de ficheiros temporário e espaço de *swap*; **5.** Dados em suportes de armazenamento local; **6.** Dados registados remotamente; **7.** Dados contidos em suportes de arquivo (*backups*).
+
+3. **Porque se deve minimizar a criação e abertura de ficheiros durante uma análise *live*?**
+
+> [!success]- Ver Resposta
+> Criar novos ficheiros pode sobrescrever evidências residentes no **espaço não alocado**, e abrir ficheiros pode alterar metadados como a data/hora do último acesso (*last access time*).
+
+4. **Que riscos concretos existem ao inspecionar executáveis ou ficheiros HTML de um sistema suspeito fora de um ambiente isolado?**
+
+> [!success]- Ver Resposta
+> Um **executável** pode apagar ficheiros no computador do investigador ou comunicar com um servidor remoto; um **ficheiro HTML** pode executar *scripts* no navegador do perito e descarregar conteúdos externos, exigindo máquinas virtuais e redes isoladas.
 
 ## Notas relacionadas
 

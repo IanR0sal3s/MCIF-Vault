@@ -16,12 +16,20 @@ aliases:
   - Metodologia de Investigação Forense
   - 4 Fases da Investigação Digital
   - Digital Crime Scene Investigation Methodology
-atualizado: 2026-10-19
+atualizado: 2026-11-11
 ---
 
 # Fases da Investigação Forense Digital
 
-Embora não exista uma única forma rígida de conduzir uma investigação — desde que se identifique o responsável sem violar qualquer lei no processo —, certas metodologias são mais eficientes do que outras. O processo de investigação da cena de crime digital estrutura-se em **quatro fases principais e bidirecionais**, inspiradas na investigação criminal física: **Identificação da fonte (Preparação)**, **Preservação do sistema**, **Pesquisa de evidências** e **Reconstrução de eventos e relatório**.
+A investigação da cena de crime digital segue **quatro fases iterativas e bidirecionais**: identificação da fonte, preservação do sistema, pesquisa de evidências e reconstrução de eventos com relatório.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Método / Sistema)**: Inspirada no exame físico da cena do crime, esta estrutura organiza a investigação num fluxo bidirecional onde descobertas posteriores podem exigir recuar para identificar novas fontes ou preservar suportes adicionais.
+> * **Porque importa (Forense / Tribunal)**: Adapta o nível de intervenção ao enquadramento do caso (processo judicial vs. incidente interno) mantendo duas condições invariáveis: encontrar o responsável correto e não violar a lei.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Bidirecionalidade das fases**: identificar uma pen USB durante a Fase 3 (Pesquisa) obriga a regressar à Fase 1 e Fase 2 para localizar e preservar esse suporte.
+>   * **Preservação proporcional ao contexto**: processos judiciais exigem desligar e copiar tudo integralmente; infeções por *spyware* ou *honeypots* podem dispensar preservação formal.
+>   * **Escolha da abordagem na Fase 1**: é logo na preparação inicial que se decide entre análise *live* ou *post-mortem*.
 
 ---
 
@@ -44,24 +52,35 @@ flowchart LR
     P3 <--> P4["4. Event reconstruction (test hypothesis) and report"]
 ```
 
-### Fase 1 — Identificar a Fonte da Evidência Digital (*1 – Preparation*)
+| Fase | Designação | Objetivo Central e Ações-Chave |
+| :---: | :--- | :--- |
+| **1** | **Identificar a Fonte (Preparação)** | Identificar fisicamente a origem da evidência digital, escolher a abordagem (*live* vs. *post-mortem*) e apreender o equipamento |
+| **2** | **Preservação do Sistema** | Preservar o estado da cena de crime digital e minimizar a perda de evidência consoante requisitos legais, de negócio ou operacionais |
+| **3** | **Pesquisa de Evidências** | Localizar dados que suportem ou refutem hipóteses sobre o incidente (*logs*, ficheiros, vulnerabilidades, tráfego de rede) |
+| **4** | **Reconstrução de Eventos e Relatório** | Testar hipóteses respondendo às questões sobre eventos digitais, correlacioná-los com eventos físicos e redigir o relatório pericial |
+
+### Fase 1 — Identificar a Fonte da Evidência Digital (Preparação)
+
 * **Identificar fisicamente a origem** da evidência digital.
 * **Escolher a melhor abordagem** para a analisar (ex.: *live* vs. *post-mortem*).
-* **Apreensão de equipamento** (*equipment seizure*).
+* **Apreensão de equipamento**.
 
-### Fase 2 — Preservação do Sistema (*2 – System Preservation*)
+### Fase 2 — Preservação do Sistema
+
 * **Objetivos**:
   * Preservar o estado da cena de crime digital.
   * Reduzir a quantidade de evidência que possa ser perdida.
 * **Adequação ao contexto**: As ações variam consoante os requisitos **legais, de negócio ou operacionais** da investigação:
-  * *Requisitos legais*: podem exigir desligar o sistema da tomada (*unplug*) e efetuar uma cópia integral de todos os dados.
+  * *Requisitos legais*: podem exigir desligar o sistema da tomada e efetuar uma cópia integral de todos os dados.
   * *Infeção por spyware ou honeypot*: pode não ser realizada qualquer preservação formal.
   * *Casos que não seguem para tribunal*: podem ser aplicadas técnicas intermédias.
 
-### Fase 3 — Pesquisa de Evidências (*3 – Evidence Searching*)
+### Fase 3 — Pesquisa de Evidências
+
 * **Objetivo**: Encontrar dados que suportem ou refutem hipóteses sobre o incidente (ex.: logs, ficheiros, vulnerabilidades, tráfego de rede).
 
-### Fase 4 — Reconstrução de Eventos e Relatório (*4 – Event Reconstruction and Report*)
+### Fase 4 — Reconstrução de Eventos e Relatório
+
 * **Objetivo**: Tentar responder às questões sobre os eventos digitais ocorridos no sistema (testar as hipóteses formuladas), correlacionando-os com eventos físicos e elaborando o relatório pericial final.
 
 ---
@@ -75,10 +94,25 @@ flowchart LR
 
 ## Perguntas de revisão
 
-- Quais são as duas condições essenciais que qualquer processo de investigação tem de respeitar?
-- Quais são as quatro fases principais da metodologia de investigação da cena de crime digital?
-- Que tarefas compõem a Fase 1 (Preparação / Identificação da fonte)?
-- De que forma os requisitos legais, de negócio ou operacionais alteram as ações tomadas na Fase 2 (Preservação)?
+1. **Quais são as duas condições essenciais que qualquer processo de investigação tem de respeitar?**
+
+> [!success]- Ver Resposta
+> O processo adotado é flexível, mas tem obrigatoriamente de **encontrar a pessoa certa** e **não infringir nenhuma lei durante a investigação**.
+
+2. **Quais são as quatro fases principais da metodologia de investigação da cena de crime digital e porque têm ligações bidirecionais?**
+
+> [!success]- Ver Resposta
+> São: **1. Identificação da fonte da evidência (Preparação)**, **2. Preservação do sistema**, **3. Pesquisa de evidências** e **4. Reconstrução de eventos e relatório**. São bidirecionais porque novas descobertas na pesquisa ou reconstrução (ex.: outro servidor ou dispositivo USB) obrigam a recuar para identificar e preservar essas novas fontes.
+
+3. **Que tarefas compõem a Fase 1 (Preparação / Identificação da fonte)?**
+
+> [!success]- Ver Resposta
+> Identificar fisicamente a origem da evidência digital, escolher a melhor abordagem de análise (*live* vs. *post-mortem*) e proceder à apreensão do equipamento.
+
+4. **De que forma os requisitos legais, de negócio ou operacionais alteram as ações tomadas na Fase 2 (Preservação)?**
+
+> [!success]- Ver Resposta
+> Casos com **requisitos legais** podem exigir desligar o sistema da tomada e copiar integralmente todos os dados; numa infeção por *spyware* ou em *honeypots* pode não haver preservação formal; e em casos que não seguem para tribunal aplicam-se técnicas intermédias.
 
 ## Notas relacionadas
 

@@ -20,12 +20,20 @@ aliases:
   - Tagging rules at LabCIF
   - Fotografia Forense
   - Catalogação de Dispositivos
-atualizado: 2026-10-19
+atualizado: 2026-11-11
 ---
 
 # Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)
 
-A quinta diretriz de manuseamento (**5 – Log**) exige a documentação exaustiva de todas as ações periciais, a atribuição de etiquetas únicas hierárquicas aos dispositivos e serviços analisados e o registo fotográfico rigoroso com escala métrica. No **LabCIF**, a nomenclatura de etiquetagem segue o formato `ownerID.deviceID[.inside_deviceID]` e as fotografias obedecem às vistas padronizadas de uma caixa tridimensional (`Top`, `Bottom`, `Left`, `Right`, `Front`, `Back`) com nomes de ficheiro estruturados (`tagID-view_name[-detail].jpg`).
+A diretriz **Registo** (*Log*) exige documentar todas as ações e seguir as normas **LabCIF** de etiquetagem (`ownerID.deviceID[.inside_deviceID]`) e fotografia com escala métrica e vistas 3D.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Método / Sistema)**: Processos reais chegam a envolver mais de 30 suspeitos e 200 dispositivos; sem etiquetagem hierárquica única e registo fotográfico padronizado, cartões SIM, discos e telemóveis idênticos misturam-se facilmente em laboratório.
+> * **Porque importa (Forense / Tribunal)**: Documentar cada comando em análise *live* permite justificar alterações causadas pelo perito, enquanto fotografar com etiqueta formal e régua prova inequivocamente a identidade física e dimensões do objeto.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Ordem obrigatória**: colocar a etiqueta identificadora **sempre antes** de fotografar (e nunca usar *post-its* ou notas manuscritas informais sobre a prova).
+>   * **Sintaxe LabCIF**: `ownerID` em maiúscula (`A`, `B`, `C`), acrónimo + 2 dígitos (`SPH01`, `SIM02`), e ficheiros `.jpg` como `tagID-view_name[-detail].jpg`.
+>   * **Erros fotográficos a evitar**: ausência de régua/escala métrica, falta de `tag ID` visível, reflexos de *flash* e distância sem legibilidade do número de série/IMEI.
 
 ---
 
@@ -41,67 +49,68 @@ A quinta diretriz de manuseamento (**5 – Log**) exige a documentação exausti
 ## Identificação Física, Receção e Etiquetagem
 
 Na receção de material para análise:
+
 1. **Verificar a lista de dispositivos entregues** para análise.
-2. **Etiquetar os dispositivos (*tagging*)**, tendo em atenção que um único processo judicial pode envolver:
+2. **Etiquetar os dispositivos**, tendo em atenção que um único processo judicial pode envolver:
    * Um único suspeito com vários dispositivos, ou
    * Vários suspeitos e múltiplos dispositivos (*existem processos reais com mais de 30 suspeitos e mais de 200 dispositivos!*).
 
 ### Regras Gerais de Fotografia Após Etiquetagem
-* Criar etiquetas (*tags*) para identificar univocamente os dispositivos (ex.: `PC01`, `PC01.1`, `PC01.2`, ...).
+
+* Criar etiquetas para identificar univocamente os dispositivos (ex.: `PC01`, `PC01.1`, `PC01.2`, ...).
 * **Tirar fotografias sempre depois de colocar as etiquetas**.
-* Deve ser fácil ler qualquer informação relevante: se necessário, tirar uma **fotografia geral (*overview photo*)** e depois uma **fotografia de pormenor (*close-up shot*)** (marca, modelo, número de série, ligações de cabos de rede, etc.).
+* Deve ser fácil ler qualquer informação relevante: se necessário, tirar uma **fotografia geral** e depois uma **fotografia de pormenor** (marca, modelo, número de série, ligações de cabos de rede, etc.).
 
 > [!WARNING] Problemas Comuns em Fotografias Periciais
 > Na análise crítica de exemplos fotográficos incorretos identificam-se quatro erros periciais a evitar:
-> 1. **Cartão SIM (`tmn`)**: ausência de etiqueta identificadora (*tag*) e ausência de régua/escala métrica.
-> 2. **Telemóvel com etiqueta manuscrita colada**: ausência de régua/escala, etiqueta improvisada difícil de ler e reflexo de luz (*flash*) sobre a câmara/ecrã.
-> 3. **Telemóvel Nokia com esquadro**: embora possua escala, não tem etiqueta identificadora (*tag ID*) visível e os detalhes do número de série/IMEI não são legíveis àquela distância.
+> 1. **Cartão SIM (`tmn`)**: ausência de etiqueta identificadora e ausência de régua/escala métrica.
+> 2. **Telemóvel com etiqueta manuscrita colada**: ausência de régua/escala, etiqueta improvisada difícil de ler e reflexo de *flash* sobre a câmara/ecrã.
+> 3. **Telemóvel Nokia com esquadro**: embora possua escala, não tem etiqueta identificadora (`tag ID`) visível e os detalhes do número de série/IMEI não são legíveis àquela distância.
 > 4. **Disco rígido com post-it manuscrito ("TABELAS PARTIÇÃO")**: colocação de notas manuscritas informais diretamente sobre a prova em vez de uma etiqueta formal padronizada, e resolução insuficiente para ler o número de série no rótulo técnico.
 
 ---
 
-## Regras de Etiquetagem no LabCIF (*Tagging Rules at LabCIF*)
+## Regras de Etiquetagem no LabCIF
 
-1. **Identificação dos proprietários (*owners*)**: utilizam-se **letras maiúsculas** para identificar os proprietários dos dispositivos num determinado processo:
-   * `A`, `B`, `C`, ...
-2. **Identificação do tipo de dispositivo**: utiliza-se um **acrónimo** para cada tipo de dispositivo, seguido de um **número de 2 dígitos**:
-   * `FPHxx` (*Feature Phone*), `SPHxx` (*Smartphone*), `SIMxx` (*SIM card*), `MCxx` (*Memory Card*), `GPSxx` (*GPS device*), `CAMxx` (*Camera*), `PCxx` (*Desktop PC*), `LAPxx` (*Laptop*), `HDDxx` (*Hard Disk Drive*), `SSDxx` (*Solid State Drive*), `PENxx` (*USB Pen Drive*), ...
-3. **Estrutura da etiqueta (*Tag*)**:
-   ```text
-   ownerID.deviceID[.inside_deviceID]
-   ```
+### Sintaxe e Componentes
 
-### Exemplo Prático (Smartphone do Suspeito A com 2 Cartões SIM e 1 Cartão de Memória)
-* `A.SPH01` — o equipamento principal (*handset*) pertencente ao proprietário `A`
-* `A.SPH01.SIM01` — primeiro cartão SIM no interior do smartphone
-* `A.SPH01.SIM02` — segundo cartão SIM no interior do smartphone
-* `A.SPH01.MC01` — cartão de memória no interior do smartphone
+```text
+ownerID.deviceID[.inside_deviceID]
+```
+
+1. **Identificação dos proprietários (`ownerID`)**: utilizam-se **letras maiúsculas** para identificar os proprietários num processo (`A`, `B`, `C`, ...).
+2. **Identificação do dispositivo (`deviceID` / `inside_deviceID`)**: utiliza-se um **acrónimo** para cada tipo de dispositivo seguido de um **número de 2 dígitos**.
+
+| Acrónimo | Tipo de Dispositivo (Origem EN / PT) | Exemplo Prático (`Suspeito A`) |
+| :--- | :--- | :--- |
+| **`FPHxx`** | *Feature Phone* (telemóvel clássico) | `A.FPH01` — telemóvel clássico do suspeito `A` |
+| **`SPHxx`** | *Smartphone* | `A.SPH01` — equipamento principal do suspeito `A` |
+| **`SIMxx`** | *SIM card* (cartão SIM) | `A.SPH01.SIM01`, `A.SPH01.SIM02` — 1.º e 2.º SIM dentro do smartphone |
+| **`MCxx`** | *Memory Card* (cartão de memória) | `A.SPH01.MC01` — cartão de memória dentro do smartphone |
+| **`GPSxx`** | *GPS device* (dispositivo GPS) | `A.GPS01` — recetor GPS autónomo |
+| **`CAMxx`** | *Camera* (câmara fotográfica/vídeo) | `A.CAM01` — câmara digital |
+| **`PCxx`** | *Desktop PC* (computador de secretária) | `A.PC01` — computador fixo |
+| **`LAPxx`** | *Laptop* (computador portátil) | `A.LAP01` — portátil |
+| **`HDDxx`** | *Hard Disk Drive* (disco rígido) | `A.PC01.HDD01` — disco rígido interno |
+| **`SSDxx`** | *Solid State Drive* (unidade SSD) | `A.LAP01.SSD01` — unidade SSD interna |
+| **`PENxx`** | *USB Pen Drive* (memória USB) | `A.PEN01` — pen USB externa |
 
 ---
 
-## Regras de Fotografia Pericial no LabCIF (*Our Photograph Rules*)
+## Regras de Fotografia Pericial no LabCIF
 
-1. **Incluir sempre a escala de uma régua** (*scale of a ruler*) na fotografia.
-2. **Fotografar todas as vistas importantes**:
-   * Existem vistas obrigatórias por tipo de dispositivo e algumas opcionais.
-   * Especial atenção aos detalhes, como números de série, IMEI, etc.
-3. **Aplicar os nomes das vistas de acordo com a caixa 3D (*3D box*)**:
-   * As 6 faces padronizadas são: `Top` (Topo), `Bottom` (Base), `Left` (Esquerda), `Right` (Direita), `Front` (Frente) e `Back` (Traseira).
-   * A **posição do dispositivo** dentro da caixa imaginária 3D é fundamental (para alguns objetos pode ser ambíguo qual é a frente, ex.: cartão SIM, pen USB, cartão SD, câmara fotográfica). Nos diagramas de referência de posicionamento, a face com o ecrã, lente principal, contactos/logótipo principal ou conector frontal voltado para o observador define a vista `Front`.
-4. **Nomenclatura dos ficheiros de imagem**:
-   ```text
-   tagID-view_name[-detail].jpg
-   ```
-   * **Exemplos**:
-     * `A.SPH01-front.jpg`
-     * `A.SPH01-back-serial.jpg`
-     * `A.SPH01.MC01-front.jpg`
+| Regra LabCIF | Norma Obrigatória | Detalhes Técnicos e Exemplos |
+| :--- | :--- | :--- |
+| **1. Escala métrica** | **Incluir sempre a escala de uma régua** | Permite comprovar as dimensões reais do dispositivo e pormenores |
+| **2. Vistas e pormenor** | **Fotografar todas as vistas importantes** | Combinar vistas obrigatórias (por tipo de dispositivo) e opcionais; focar números de série, IMEI, etc. |
+| **3. Nomes de vista (Caixa 3D)** | **Aplicar as 6 faces padronizadas da caixa 3D** | `Top` (Topo), `Bottom` (Base), `Left` (Esquerda), `Right` (Direita), `Front` (Frente), `Back` (Traseira). A **posição do dispositivo** dentro da caixa imaginária 3D define a face `Front` (ecrã, lente principal, contactos/logótipo principal ou conector frontal voltado para o observador em objetos ambíguos como cartão SIM, pen USB, cartão SD ou câmara) |
+| **4. Nomenclatura de ficheiros** | **`tagID-view_name[-detail].jpg`** | Exemplos: `A.SPH01-front.jpg`, `A.SPH01-back-serial.jpg`, `A.SPH01.MC01-front.jpg` |
 
 ---
 
 ## Templates de Catalogação de Dispositivos e Serviços
 
-Devem ser criados modelos (*templates*) padronizados para catalogar e identificar univocamente cada dispositivo físico ou serviço lógico analisado.
+Devem ser criados modelos padronizados para catalogar e identificar univocamente cada dispositivo físico ou serviço lógico analisado.
 
 ### Exemplo 1: Disco Rígido (`PC01.HD03`) e Serviço DNS (`DNS01`)
 
@@ -121,7 +130,7 @@ Devem ser criados modelos (*templates*) padronizados para catalogar e identifica
 | **Observations** | None | | |
 
 ### Exemplo 2: Catalogação Completa de Smartphone (`A.SPH01`)
-Atributos essenciais a registar: `tag ID`, tipo de dispositivo, marca e modelo, número de série / `IMEI` / `UICCID`, tipo de intervenção (aquisição lógica ou física), estado de funcionamento (*working / non-working*), conteúdos internos (cartões SIM ou de memória), fotografias e observações relevantes:
+Atributos essenciais a registar: `tag ID`, tipo de dispositivo, marca e modelo, número de série / `IMEI` / `UICCID`, tipo de intervenção (aquisição lógica ou física), estado de funcionamento, conteúdos internos (cartões SIM ou de memória), fotografias e observações relevantes:
 
 | Atributo | Registo Pericial (`A.SPH01`) |
 | :--- | :--- |
@@ -158,9 +167,25 @@ Atributos essenciais a registar: `tag ID`, tipo de dispositivo, marca e modelo, 
 
 ## Perguntas de revisão
 
-- Qual é a sintaxe completa de uma etiqueta (*tag*) segundo as regras do LabCIF? Como seriam etiquetados um portátil e os seus dois discos internos pertencentes ao suspeito B?
-- Que regras devem ser seguidas na realização de fotografias periciais e na atribuição do nome aos respetivos ficheiros `.jpg`?
-- Que campos obrigatórios constam na tabela de catalogação de um smartphone apreendido?
+1. **Qual é a sintaxe completa de uma etiqueta segundo as regras do LabCIF e como seriam etiquetados um portátil e os seus dois discos internos pertencentes ao suspeito B?**
+
+> [!success]- Ver Resposta
+> A sintaxe completa é `ownerID.deviceID[.inside_deviceID]`. Um portátil do suspeito `B` seria `B.LAP01` e os seus dois discos internos seriam, por exemplo, `B.LAP01.HDD01` e `B.LAP01.HDD02` (ou `SSD01`/`SSD02`, consoante o tipo de unidade).
+
+2. **Que regras devem ser seguidas na realização de fotografias periciais e na atribuição do nome aos respetivos ficheiros `.jpg`?**
+
+> [!success]- Ver Resposta
+> Fotografar **sempre depois de colocar a etiqueta**, incluir **sempre a escala de uma régua**, captar todas as vistas obrigatórias e detalhes legíveis (S/N, IMEI), usar as 6 vistas padronizadas da caixa 3D (`Top`, `Bottom`, `Left`, `Right`, `Front`, `Back`) e nomear cada imagem segundo **`tagID-view_name[-detail].jpg`** (ex.: `A.SPH01-back-serial.jpg`).
+
+3. **Que campos essenciais constam na tabela de catalogação de um smartphone apreendido?**
+
+> [!success]- Ver Resposta
+> `Tag ID`, tipo de dispositivo, marca e modelo, número de série / `IMEI` / `UICCID`, cartões SIM e cartões de memória associados, referências fotográficas, estado de funcionamento, observações relevantes e tipo de intervenção (aquisição lógica ou física).
+
+4. **Quais são os quatro erros fotográficos clássicos identificados nos diapositivos da aula e porque é crítica a diretriz `Log` numa análise *live*?**
+
+> [!success]- Ver Resposta
+> Os erros são: ausência de etiqueta identificadora (`tag ID`), ausência de régua/escala métrica, reflexo de *flash* / baixa legibilidade dos números de série e colocação de notas manuscritas informais (ex.: *post-it*) sobre a prova. Registar todas as ações (`Log`) em análise *live* permite justificar posteriormente quais as alterações no sistema causadas pelo próprio investigador.
 
 ## Notas relacionadas
 
@@ -168,6 +193,8 @@ Atributos essenciais a registar: `tag ID`, tipo de dispositivo, marca e modelo, 
 - [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
 - [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]]
 - [[Artefactos Forenses de Dispositivos USB]]
+- [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]]
+- [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]]
 - [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
 - [[Windows Activity Timeline - Arquitetura e Base SQLite]]
 - [[Capítulo 1 - Método de Investigação]]

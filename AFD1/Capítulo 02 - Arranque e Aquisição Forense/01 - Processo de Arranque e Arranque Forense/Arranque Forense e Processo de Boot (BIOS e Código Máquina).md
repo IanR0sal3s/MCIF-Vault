@@ -21,38 +21,49 @@ aliases:
   - Boot Process
   - Boot Code
   - Arranque BIOS
-atualizado: 2026-10-20
+atualizado: 2026-11-11
 ---
 
 # Arranque Forense e Processo de Boot (BIOS e Código Máquina)
 
-A prática forense padrão consiste em remover fisicamente o disco rígido do computador suspeito, protegê-lo com um bloqueador de escrita (*write-blocker*) e criar a sua imagem forense; contudo, quando o armazenamento está soldado à *motherboard* ou utiliza uma interface proprietária sem adaptador disponível, a aquisição tem de ser realizada com o disco ligado ao próprio equipamento. Como o arranque normal de um computador altera dados no disco primário, o perito deve recorrer a um **dispositivo de arranque forense (*Forensic Boot Device*)**, intercetando o processo de arranque antes de o hardware transferir o controlo para o suporte de armazenamento original.
+O arranque forense interceta o processo de *boot* através de um dispositivo externo para impedir alterações no disco primário quando não é possível extraí-lo fisicamente.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Hardware / Sistema)**: Antes de o firmware transferir o controlo para o disco interno, nenhuma operação de escrita ocorre no armazenamento; em portáteis ultrafinos com SSD soldado ou interfaces proprietárias, redirecionar o arranque é a única via para preservar o disco sem extração.
+> * **Porque importa (Forense)**: Um arranque normal do sistema operativo residente altera de imediato artefactos críticos no disco (Registry, Prefetch, VSS, SRUM e `Hiberfil.sys`), comprometendo a integridade e admissibilidade da prova em tribunal.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Fronteira de Intocabilidade**: O firmware (ROM/BIOS/UEFI) sonda e configura o hardware durante o *POST* sem escrever no disco; as alterações só começam após a transferência de controlo para o *boot device*.
+>   * **Encadeamento BIOS**: `ROM/POST` $\rightarrow$ 1.º setor do disco (`MBR`, 512 bytes partilhados com a tabela de partições) $\rightarrow$ 1.º setor da partição ativa (`VBR`) $\rightarrow$ carregamento do sistema operativo.
+>   * **Código Máquina (`0xB400` / `MOV AH, 00`)**: Em disco, é difícil distinguir código máquina executável de dados aleatórios, tornando setores reservados de arranque alvos clássicos para ocultação e *bootkits*.
 
 ---
 
 ## Motivação para o Arranque Forense (*Forensic Boot*)
 
 ### 1. Limitações à Remoção Física do Disco
-Embora a extração física do suporte de armazenamento seguida de bloqueio de escrita e criação de imagem seja o procedimento normal, nem sempre é viável:
-* Alguns portáteis ultrafinos (*thin laptops*) possuem **chips SSD soldados diretamente à *motherboard***.
-* O dispositivo de armazenamento pode utilizar uma **interface de dados não padronizada (*non-standard data interface*)** para a qual o perito não dispõe do conector ou adaptador adequado.
-* Nestes cenários, a criação da imagem forense (*imaging*) do dispositivo de armazenamento **tem obrigatoriamente de ser realizada com o disco ligado ao computador suspeito**.
+Embora a prática forense padrão consista na extração física do suporte de armazenamento seguida de bloqueio de escrita (*write-blocker*) e criação de imagem, nem sempre é viável:
+
+* Alguns portáteis ultrafinos possuem **chips SSD soldados diretamente à *motherboard***.
+* O dispositivo de armazenamento pode utilizar uma **interface de dados não padronizada** para a qual o perito não dispõe do conector ou adaptador adequado.
+* Nestes cenários, a criação da imagem forense do dispositivo de armazenamento **tem obrigatoriamente de ser realizada com o disco ligado ao computador suspeito**.
 
 ### 2. Impacto do Arranque Normal na Evidência
-* O arranque normal (*normal startup*) de um computador **altera dados na unidade de armazenamento primária** durante o processo de *boot*.
+
+* O arranque normal de um computador **altera dados na unidade de armazenamento primária** durante o processo de *boot*.
 * Para proteger a integridade da evidência original (ver [[Preservação do Sistema e Integridade de Dados]]), é indispensável **modificar o processo de arranque** de modo a impedir quaisquer alterações aos dados residentes no disco.
 
 > [!IMPORTANT] Definição e Regra de Ouro do Arranque Forense
-> * **Dispositivo de Arranque Forense (*Forensic Boot Device*)**: Disquete de arranque (*boot diskette*), CD-ROM/DVD de arranque ou dispositivo USB de arranque utilizado no computador suspeito para garantir que a unidade de armazenamento **não é alterada nem durante a fase de arranque (*boot*) nem durante a fase de aquisição (*acquisition*)**.
+> * **Dispositivo de Arranque Forense (*Forensic Boot Device*)**: Disquete de arranque, CD-ROM/DVD de arranque ou dispositivo USB de arranque utilizado no computador suspeito para garantir que a unidade de armazenamento **não é alterada nem durante a fase de arranque nem durante a fase de aquisição**.
 > * **Fronteira de Intocabilidade no Hardware**: O processo normal de arranque inicia-se no hardware do computador e transita posteriormente para o dispositivo de arranque (*boot device*). **Não são efetuadas quaisquer alterações no disco até ao momento em que o computador transfere o controlo para o dispositivo de arranque**.
 
 ---
 
-## Fases do Processo de Arranque (*Boot Process Steps*)
+## Fases do Processo de Arranque
 
 A maioria dos sistemas informáticos divide o processo de arranque em **duas fases fundamentais**:
-1. **Configurar e iniciar o hardware** (*configure and start the hardware*).
-2. **Localizar o sistema operativo e executá-lo** (*find the operating system and run it*).
+
+1. **Configurar e iniciar o hardware**.
+2. **Localizar o sistema operativo e executá-lo**.
 
 ```mermaid
 flowchart TD
@@ -64,24 +75,25 @@ flowchart TD
 ```
 
 ### Sequência Detalhada desde a Alimentação da CPU
-* **Código de Arranque (*Boot Code*)**: Conjunto de instruções máquina (*machine instructions*) utilizadas pelo computador quando está a iniciar.
+
+* **Código de Arranque (*Boot Code*)**: Conjunto de instruções máquina utilizadas pelo computador quando está a iniciar.
 * Quando é aplicada energia elétrica a uma CPU:
   1. A CPU lê instruções a partir de uma localização específica em memória — tipicamente memória **ROM** (*Read-Only Memory*).
-  2. As instruções residentes na ROM forçam o sistema a **sondar (*probe*) e configurar o hardware** instalado.
+  2. As instruções residentes na ROM forçam o sistema a **sondar e configurar o hardware** instalado.
   3. De seguida, o sistema **procura um dispositivo que possa conter código de arranque adicional**.
   4. Os discos reservam espaço específico para código de arranque (embora esse espaço nem sempre seja utilizado).
   5. O código de arranque desse dispositivo é executado e tenta localizar e carregar um sistema operativo.
-  6. Todo o processo subsequente à localização do disco de arranque é **específico de cada plataforma (*platform-specific*)**.
+  6. Todo o processo subsequente à localização do disco de arranque é **específico de cada plataforma**.
 
 ---
 
-## Características do Código de Arranque (*Boot Code Characteristics*)
+## Características do Código de Arranque
 
 * **Localização específica**: O código de arranque reside num endereço ou setor estritamente predefinido para que o firmware o consiga localizar sem conhecer o sistema de ficheiros.
-* **Instruções em código máquina (*machine code*)**:
+* **Instruções em código máquina**:
   * Exemplo em código máquina (hexadecimal): `0xB400`
   * Representação equivalente em linguagem *Assembly*: `MOV AH, 00`
-* **Desafio Forense de Identificação**: Num dispositivo de armazenamento, é **difícil distinguir dados aleatórios (*random data*) de código máquina executável** apenas pela observação direta dos bytes brutos.
+* **Desafio Forense de Identificação**: Num dispositivo de armazenamento, é **difícil distinguir dados aleatórios de código máquina executável** apenas pela observação direta dos bytes brutos.
 
 ---
 
@@ -92,7 +104,7 @@ Nos sistemas baseados em firmware **BIOS** tradicional, o arranque opera por enc
 | Etapa | Mecanismo Técnico no Arranque BIOS |
 | :--- | :--- |
 | **1. Primeiro Setor do Disco (MBR)** | A BIOS arranca lendo o **primeiro setor do disco rígido** (*Master Boot Record*) e executando o código aí contido — o qual possui **fortes limitações de espaço** (512 bytes no total, partilhados com a tabela de partições). |
-| **2. Primeiro Setor da Partição (VBR)** | Esse código do setor de arranque (*boot sector code*), por sua vez, localiza e executa **código adicional situado no primeiro setor da partição ativa** (*Volume Boot Record*). |
+| **2. Primeiro Setor da Partição (VBR)** | Esse código do setor de arranque, por sua vez, localiza e executa **código adicional situado no primeiro setor da partição ativa** (*Volume Boot Record*). |
 | **3. Carregamento do SO** | O código de arranque da partição localiza e carrega o **sistema operativo propriamente dito**. |
 
 ---
@@ -114,10 +126,26 @@ Nos sistemas baseados em firmware **BIOS** tradicional, o arranque opera por enc
 
 ## Perguntas de revisão
 
-- Em que circunstâncias técnicas não é possível seguir a prática forense normal de remover o disco rígido do computador suspeito para o ligar a um bloqueador de escrita externo?
-- Em que momento exato do processo de arranque começam a ocorrer alterações aos dados na unidade de armazenamento primária?
-- Quais são as duas fases gerais do processo de arranque na maioria dos sistemas informáticos?
-- Como funciona o encadeamento de arranque num sistema equipado com BIOS face às limitações de espaço do primeiro setor do disco?
+1. **Em que circunstâncias técnicas não é possível seguir a prática forense normal de remover o disco rígido do computador suspeito para o ligar a um bloqueador de escrita externo?**
+
+> [!success]- Ver Resposta
+> Quando o portátil ou sistema possui **chips SSD soldados diretamente à *motherboard*** ou quando a unidade utiliza uma **interface de dados não padronizada** para a qual o perito não dispõe de adaptador, obrigando a realizar a aquisição com o disco ligado ao computador suspeito.
+
+2. **Em que momento exato do processo de arranque começam a ocorrer alterações aos dados na unidade de armazenamento primária?**
+
+> [!success]- Ver Resposta
+> Apenas **após o computador transferir o controlo para o dispositivo de arranque (*boot device*)**. Durante a leitura da ROM, o *POST* e a sondagem de hardware pelo firmware, não são efetuadas alterações no disco; ao intercetar o arranque antes do *handoff* e redirecioná-lo para um dispositivo de arranque forense, a unidade original permanece intacta.
+
+3. **Quais são as duas fases gerais do processo de arranque na maioria dos sistemas informáticos?**
+
+> [!success]- Ver Resposta
+> 1. **Configurar e iniciar o hardware** (a CPU lê a ROM/firmware e executa a sondagem e inicialização dos dispositivos).
+> 2. **Localizar o sistema operativo e executá-lo** (procurando o código de arranque no dispositivo selecionado).
+
+4. **Como funciona o encadeamento de arranque num sistema equipado com BIOS face às limitações de espaço do primeiro setor do disco?**
+
+> [!success]- Ver Resposta
+> A BIOS lê e executa o primeiro setor físico do disco (**MBR**, limitado a 512 bytes partilhados com a tabela de partições). Como esse espaço é insuficiente para carregar um sistema operativo completo, o código do MBR localiza e transfere a execução para código adicional no primeiro setor da partição ativa (**VBR**), o qual carrega finalmente o sistema operativo.
 
 ## Notas relacionadas
 

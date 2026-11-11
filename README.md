@@ -12,6 +12,7 @@ Este repositório foi construído para ser utilizado nativamente com o [Obsidian
 
 ### O Conceito de MOC (*Map of Content*)
 Em vez de depender apenas de árvores de pastas profundas e rígidas, a navegação assenta no conceito de **MOC (*Map of Content* / Mapa de Conteúdo)**:
+
 * Uma **MOC** é uma nota-índice ou mapa de navegação que reúne, contextualiza e encadeia ligações (`[[...]]`) para notas atómicas.
 * Cada MOC funciona como o plano de estudos ou o índice de um livro, fornecendo a **ordem cronológica e pedagógica** dos tópicos lecionados.
 
@@ -60,17 +61,21 @@ Em vez de depender apenas de árvores de pastas profundas e rígidas, a navegaç
 Para assegurar que o repositório mantém um nível elevado de rigor académico e consistência estrutural, qualquer contribuição deve observar as seguintes regras:
 
 ### 1. Fidelidade Estrita às Fontes (Regra de Ouro)
+
 * **Nunca inventar ou extrapolar**: os apontamentos devem basear-se fielmente nas apresentações de slides, demonstrações laboratoriais e bibliografia oficial da UC.
 * Caso pretendas adicionar aprofundamentos, investigações pessoais ou ferramentas alternativas, fá-lo obrigatoriamente sob uma secção designada `## Além da aula`, preservando o núcleo lecionado sem ruído.
 
 ### 2. Princípio da Atomicidade
+
 * Desenvolve notas pequenas, focadas e especializadas (*uma ideia por nota*). Notas atómicas são muito mais fáceis de ligar e reutilizar entre diferentes disciplinas (por exemplo, um artefacto do Windows estudado em ASSI pode ser referenciado em AFD1).
 
 ### 3. Uso do Modelo Padrão (*Template*)
+
 * Todas as novas notas devem ser criadas a partir do modelo existente em `_templates/Nota de estudo.md`.
 * Mantém o cabeçalho YAML preenchido (`mestrado`, `uc`, `sigla_uc`, `capitulo`, `tipo`, `tags`, `fonte_aula`, `atualizado`).
 
 ### 4. Convenções Visuais e de Escrita
+
 * **Sem emojis decorativos** no corpo de notas técnicas.
 * Callouts (`> [!NOTE]`, `> [!WARNING]`, `> [!IMPORTANT]`, `> [!CAUTION]`) apenas para avisos factuais, armadilhas forenses ou boas práticas de segurança.
 * As ligações internas devem usar o formato de wikilink: `[[Nome Exato do Ficheiro]]`.
@@ -80,6 +85,7 @@ Para assegurar que o repositório mantém um nível elevado de rigor académico 
 ## ⚙️ Configuração Recomendada no Obsidian
 
 Ao clonares este repositório para o teu computador e abrires a pasta no Obsidian:
+
 1. Acede a **Definições (Settings)** $\rightarrow$ **Ficheiros e Ligações (Files and links)**.
 2. Em **Local predefinido para novas notas (Default location for new notes)**, seleciona:
    * **"Mesma pasta do ficheiro atual" (Same folder as current file)**.
@@ -94,6 +100,7 @@ Ao clonares este repositório para o teu computador e abrires a pasta no Obsidia
 Se utilizares assistentes ou agentes de IA para criar ou editar notas neste repositório, estão incluídos na raiz os ficheiros de instruções [`.agentrules`](.agentrules) e [`.cursorrules`](.cursorrules). 
 
 Estes ficheiros instruem automaticamente os agentes a:
+
 * Seguir escrupulosamente a taxonomia de pastas e o modelo `_templates/Nota de estudo.md`.
 * **Zero alucinações**: proibir a invenção de passos práticos, enunciados ou informações inexistentes nos materiais oficiais fornecidos.
 * Preservar o estilo sóbrio (sem emojis) e validar a integridade de todas as ligações internas.

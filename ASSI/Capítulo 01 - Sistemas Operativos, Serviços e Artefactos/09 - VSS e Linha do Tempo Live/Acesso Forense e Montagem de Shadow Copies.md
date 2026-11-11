@@ -28,24 +28,31 @@ atualizado: 2026-10-16
 
 # Acesso Forense e Montagem de Shadow Copies
 
-Uma vez identificadas as cópias de sombra através do [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)|vssadmin]], surge o desafio prático de aceder e navegar na árvore de ficheiros contida no snapshot.
+O acesso forense às cópias de sombra identificadas via [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)|vssadmin]] exige a sua exposição no sistema de ficheiros Win32 através de `mklink /d`, `VSCMount` ou `ShadowCopyView`.
 
-Por desenho de segurança do Windows NT, os volumes de sombra não recebem automaticamente uma letra de unidade (`C:`, `D:`) e não são visíveis no Windows Explorer comum. Residem no *namespace* interno do *kernel* acessíveis sob a rota de dispositivo:
-
-```text
-\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy[N]
-```
-
-Existem três metodologias principais para montar e explorar estes volumes em perícia forense:
-1. **Método Nativo**: Criação de ligações simbólicas de diretório com `mklink /d`.
-2. **Método CLI Automatizado**: Montagem em massa com **`VSCMount`** (Eric Zimmerman).
-3. **Método Gráfico (GUI)**: Navegação e extração com **`ShadowCopyView`** (NirSoft).
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> - **Porque existe (Sistema)**: Por desenho de segurança do Windows NT, os volumes de sombra residem apenas no *namespace* interno do kernel (`\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy[N]`) e não recebem uma letra de unidade (`C:`, `D:`), evitando que utilizadores ou programas modifiquem acidentalmente backups históricos.
+> - **Porque importa (Forense)**: Como o Windows Explorer e as ferramentas de linha de comandos normais não navegam diretamente em caminhos `GLOBALROOT`, o perito precisa de mapear esses volumes para extrair versões antigas de ficheiros apagados ou copiar *hives* bloqueados no sistema ativo (`SYSTEM`, `SOFTWARE`, `NTUSER.DAT`, `Amcache.hve`).
+> - **Pontos Críticos e Armadilhas para Exame**:
+>   1. **A Barra Invertida Final (`\`) Obrigatória no `mklink /d`**: No comando `mklink /d C:\Atalho \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2\`, omitir a barra invertida final (`\`) faz com que o subsistema Win32 não reconheça o destino como a raiz de um diretório, tornando o atalho inacessível!
+>   2. **Remoção Segura com `rmdir`**: Para desmontar o atalho criado com `mklink /d`, usa-se `rmdir <nome_atalho>`, que apaga apenas o apontador simbólico sem destruir os dados da Shadow Copy.
+>   3. **3 Metodologias de Montagem**: Nativa (`mklink /d` para um snapshot específico), CLI em massa (`VSCMount --dl C --mp C:\DEMO` de Eric Zimmerman para montar todos os snapshots de uma vez) e GUI (`ShadowCopyView` da NirSoft, extração com tecla `F8`).
 
 ---
 
-## 1. Método Nativo: Ligações Simbólicas (`mklink /d`)
+## 1. Comparação das 3 Metodologias de Acesso Forense
 
-O método mais direto e que não requer instalação de software externo assenta na criação de uma ligação simbólica (*symbolic link*) no interpretador de comandos (`cmd.exe`).
+| Metodologia | Ferramenta | Vantagem Principal | Comando / Ação Chave |
+| :--- | :--- | :--- | :--- |
+| **1. Método Nativo** | `mklink /d` (`cmd.exe`) | Não requer binários externos (*Living off the Land*). | `mklink /d SHADOW.shortcut \\?\GLOBALROOT\...\HarddiskVolumeShadowCopy2\` |
+| **2. CLI Automatizado** | **`VSCMount`** (Eric Zimmerman) | Monta **todas** as Shadow Copies do volume de uma só vez com timestamps UTC no nome da pasta. | `vscmount --dl C --mp c:\DEMO` |
+| **3. Gráfico (GUI)** | **`ShadowCopyView`** (NirSoft) | Navegação visual em árvore e extração preservando metadados. | Selecionar ficheiros $\to$ **Copy Selected Files To... (`F8`)** |
+
+---
+
+## 2. Método Nativo: Ligações Simbólicas (`mklink /d`)
+
+O método mais direto e que não requer instalação de software externo assenta na criação de uma ligação simbólica de diretório (*directory symbolic link*) no interpretador de comandos (`cmd.exe`) executado como Administrador.
 
 ```mermaid
 flowchart LR
@@ -54,50 +61,63 @@ flowchart LR
     Target --> VSS["Blocos Diferenciais do VSS<br/>(Versão Congelada do Volume C:\\)"]
 ```
 
-### Procedimento Passo a Passo
-1. **Descobrir o caminho do dispositivo**:
-   ```cmd
-   vssadmin.exe list shadows
-   ```
-   *Identificar o campo `Shadow Copy Volume` (ex.: `\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2`).*
+### Procedimento Passo a Passo e Anatomia do Comando
 
-2. **Criar a ligação simbólica (Soft Link)**:
-   ```cmd
-   mklink /d SHADOW.shortcut \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2\
-   ```
+**1. Descobrir o caminho do dispositivo no kernel:**
 
-> [!CAUTION] Armadilha Prática: A Barra Final Obrigatória `\`
-> Ao invocar o comando `mklink /d`, é **estritamente obrigatório incluir a barra invertida final (`\`)** no caminho do `GLOBALROOT`. Se a barra for omitida, o subsistema Win32 não reconhece o destino como a raiz de um volume/diretório e a criação da ligação falha ou torna o atalho inacessível.
+```cmd
+vssadmin.exe list shadows
+```
 
-3. **Exploração e Extração**:
-   * O perito pode agora aceder à pasta `SHADOW.shortcut` como se fosse um diretório comum do Windows.
-   * Permite copiar ficheiros bloqueados no sistema corrente, tais como os hives em:
-     `SHADOW.shortcut\Windows\System32\config\SYSTEM`
-     `SHADOW.shortcut\Windows\System32\config\SOFTWARE`
-     `SHADOW.shortcut\Users\<User>\NTUSER.DAT`
+*Identificar o campo `Shadow Copy Volume` (ex.: `\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2`).*
 
-4. **Remoção da Ligação**:
-   ```cmd
-   rmdir SHADOW.shortcut
-   ```
-   *O comando `rmdir` elimina apenas o apontador simbólico, sem afetar a cópia de sombra subjacente.*
+**2. Criar a ligação simbólica de diretório (Soft Link):**
+
+```cmd
+mklink /d SHADOW.shortcut \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2\
+```
+
+* **`mklink`**: Comando interno do `cmd.exe` para criação de ligações simbólicas ou físicas.
+* **`/d`**: Especifica que o destino é um **diretório/volume** (por omissão, o `mklink` tenta criar uma ligação para um ficheiro individual).
+* **`SHADOW.shortcut`**: Nome da pasta virtual criada no diretório atual.
+* **`\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2\`**: Caminho do dispositivo de sombra terminado obrigatoriamente por `\`.
+
+> [!CAUTION] Armadilha Clássica de Exame: A Barra Final Obrigatória (`\`)
+> Ao invocar o comando `mklink /d`, é **estritamente obrigatório incluir a barra invertida final (`\`)** no caminho do `GLOBALROOT`. Se a barra for omitida (`...HarddiskVolumeShadowCopy2`), o subsistema Win32 interpreta o destino como um objeto de dispositivo bruto em vez do diretório raiz do sistema de ficheiros NTFS contido nele, e qualquer tentativa de abrir o atalho falha!
+
+**3. Exploração e Extração de Ficheiros Bloqueados:**
+
+* O perito pode agora aceder à pasta `SHADOW.shortcut` como se fosse um diretório comum do Windows.
+* Permite copiar ficheiros bloqueados no sistema corrente (*live*), tais como os hives do Registry em:
+  * `SHADOW.shortcut\Windows\System32\config\SYSTEM`
+  * `SHADOW.shortcut\Windows\System32\config\SOFTWARE`
+  * `SHADOW.shortcut\Users\<User>\NTUSER.DAT`
+
+**4. Remoção Segura da Ligação:**
+
+```cmd
+rmdir SHADOW.shortcut
+```
+
+*O comando `rmdir` elimina apenas o apontador simbólico (`SHADOW.shortcut`), sem afetar nem apagar a cópia de sombra subjacente.*
 
 ---
 
-## 2. Método Automatizado em Linha de Comandos: `VSCMount` (Eric Zimmerman)
+## 3. Método Automatizado em CLI: `VSCMount` (Eric Zimmerman)
 
-O **VSCMount** é um utilitário desenvolvido pelo investigador forense **Eric Zimmerman**, desenhado especificamente para ambientes de triagem pericial.
+O **VSCMount** é um utilitário desenvolvido pelo investigador forense **Eric Zimmerman**, desenhado especificamente para ambientes de triagem pericial rápida. A ferramenta automatiza a descoberta e montagem, criando atalhos simbólicos simultâneos para **todas as cópias de sombra** existentes numa partição.
 
-A ferramenta automatiza o processo de descoberta e montagem, criando atalhos simbólicos simultâneos para **todas as cópias de sombra** existentes numa determinada partição.
+### Sintaxe e Anatomia dos Parâmetros
 
-### Sintaxe e Parâmetros
 ```cmd
 vscmount --dl <Drive_Letter> --mp <Mount_Point>
 ```
-* `--dl <Letra>`: Letra da unidade a auditar (ex.: `C`).
-* `--mp <Caminho>`: Diretório base onde as cópias serão montadas (ex.: `C:\DEMO`).
+
+* **`--dl <Letra>`** (*Drive Letter*): Letra da unidade de disco a auditar (ex.: `C`).
+* **`--mp <Caminho>`** (*Mount Point*): Diretório base onde as ligações simbólicas das cópias sombra serão criadas (ex.: `c:\DEMO`).
 
 ### Exemplo Prático de Execução
+
 ```cmd
 vscmount --dl C --mp c:\DEMO
 ```
@@ -120,26 +140,27 @@ To remove VSC access, delete individual VSC directories or the main mountpoint d
 ```
 
 ### Estrutura de Pastas Gerada
-O utilitário cria o diretório `c:\DEMO_C` com pastas nomeadas com carimbos temporais UTC:
+O utilitário anexa a letra do volume ao ponto de montagem (`c:\DEMO_C`) e cria subpastas nomeadas com o índice do snapshot e o respetivo carimbo temporal em **UTC**:
+
 * `c:\DEMO_C\vss003-2023-09-26_22-24-14\`
 * `c:\DEMO_C\vss004-2023-10-01_22-37-53\`
 
-Para terminar a análise, basta apagar a pasta `c:\DEMO_C`.
+Para terminar a análise e limpar os pontos de montagem, basta apagar a pasta `c:\DEMO_C`.
 
 ---
 
-## 3. Método Gráfico: `ShadowCopyView` (NirSoft)
+## 4. Método Gráfico: `ShadowCopyView` (NirSoft)
 
-Para investigadores que preferem inspeção visual interativa, o **ShadowCopyView** da NirSoft disponibiliza uma interface dedicada:
+Para investigadores que preferem inspeção visual interativa sem criar atalhos no disco, o **ShadowCopyView** da NirSoft disponibiliza uma interface dividida em dois painéis:
 
-* **Painel Superior**: Lista todos os snapshots presentes no sistema, indicando o respetivo carimbo de data/hora de criação (*Creation Time*), caminho do dispositivo de bloco e caminho UNC da partição administrativa (`\\localhost\C$\@GMT-YYYY.MM.DD-HH.MM.SS`).
+* **Painel Superior**: Lista todos os snapshots presentes no sistema, indicando o carimbo de data/hora de criação (*Creation Time*), o nome do snapshot e o caminho UNC da partição administrativa com token temporal (`\\localhost\C$\@GMT-YYYY.MM.DD-HH.MM.SS`).
 * **Painel Inferior**: Navegador de ficheiros integrado que reconstitui a árvore de diretórios do snapshot selecionado.
 
 ```text
 +-----------------------------------------------------------------------------------------+
-| Snapshot Name           Explorer Path                       Creation Time               |
-| HarddiskVolumeShadowCopy2 \\localhost\C$\@GMT-2021.09.23-14.31 23/09/2021 15:31:31     |
-| HarddiskVolumeShadowCopy3 \\localhost\C$\@GMT-2021.09.30-12.54 30/09/2021 13:54:10     |
+| Snapshot Name             Explorer Path                       Creation Time             |
+| HarddiskVolumeShadowCopy2 \\localhost\C$\@GMT-2021.09.23-14.31 23/09/2021 15:31:31       |
+| HarddiskVolumeShadowCopy3 \\localhost\C$\@GMT-2021.09.30-12.54 30/09/2021 13:54:10       |
 +-----------------------------------------------------------------------------------------+
 | \Users\user                                                                             |
 | Filename        Modified Time        Created Time         File Size   Attributes        |
@@ -148,19 +169,45 @@ Para investigadores que preferem inspeção visual interativa, o **ShadowCopyVie
 +-----------------------------------------------------------------------------------------+
 ```
 
-### Funcionalidade Chave: Recuperação de Ficheiros
-* Ao selecionar um ou mais ficheiros/pastas, o comando **Copy Selected Files To... (tecla `F8`)** permite extrair cópias íntegras dos dados para o disco da estação pericial sem alterar as marcas temporais nem corromper metadados.
+### Funcionalidade Chave: Recuperação de Ficheiros (`F8`)
+
+* Ao selecionar um ou mais ficheiros/pastas, a opção **Copy Selected Files To... (tecla `F8`)** permite extrair cópias íntegras dos dados para a estação pericial sem alterar as marcas temporais nem corromper metadados.
 
 ---
 
-## 4. Enquadramento Laboratorial e Bibliografia
+## 5. Enquadramento Laboratorial e Bibliografia
 
 ### Ficha Laboratorial
 Os procedimentos de inspeção com `vssadmin`, criação de atalhos simbólicos e utilização das ferramentas `VSCMount` e `ShadowCopyView` constituem a base prática da **Ficha 3 VSS** lecionada em contexto de laboratório.
 
 ### Referência Académica
+
 * **Ghafarian, A., & Hills, E. D. (2018)**. *Forensic Analysis of Windows 10 Volume Shadow Copy Service*. Proceedings of the 9th International Multi-Conferences on Complexity, Informatics and Cybernetics: IMCIC 2018.
   * O artigo demonstra a eficácia do VSS para reconstruir linhas de tempo de intrusão, recuperação de artefactos anti-forenses e validação de alterações em ficheiros de sistema ao longo de múltiplos snapshots.
+
+---
+
+## Perguntas de revisão
+
+1. **Porque é que o comando `mklink /d C:\VSS_Link \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1` falha ao tentar abrir a pasta `C:\VSS_Link`?**
+
+> [!success]- Ver Resposta
+> Porque falta a **barra invertida final (`\`)** no caminho do destino (`...HarddiskVolumeShadowCopy1\`). Sem a barra final, o subsistema Win32 aponta para o objeto bruto do dispositivo em vez de montar o diretório raiz do sistema de ficheiros contido na Shadow Copy.
+
+2. **Como se deve remover em segurança um atalho criado com `mklink /d SHADOW.shortcut ...` sem pôr em risco os ficheiros dentro da Shadow Copy?**
+
+> [!success]- Ver Resposta
+> Utilizando o comando `rmdir SHADOW.shortcut`, que remove apenas o diretório simbólico (apontador) sem apagar os ficheiros ou blocos da cópia de sombra subjacente.
+
+3. **Qual a vantagem do utilitário `VSCMount` de Eric Zimmerman face ao comando nativo `mklink /d` e qual o significado dos seus parâmetros `--dl` e `--mp`?**
+
+> [!success]- Ver Resposta
+> Enquanto o `mklink /d` monta apenas uma cópia sombra de cada vez, o `VSCMount` descobre e monta automaticamente **todas** as cópias sombra existentes no volume indicado por `--dl` (*Drive Letter*, ex.: `C`) dentro da pasta base definida em `--mp` (*Mount Point*, ex.: `c:\DEMO`), incluindo a data de criação em UTC no nome de cada atalho.
+
+4. **No utilitário gráfico `ShadowCopyView` da NirSoft, que tecla de atalho permite extrair ficheiros selecionados de um snapshot para um diretório externo?**
+
+> [!success]- Ver Resposta
+> A tecla **`F8`** (*Copy Selected Files To...*), que extrai os ficheiros preservando a integridade dos dados e metadados.
 
 ---
 

@@ -18,12 +18,20 @@ aliases:
   - Live Analysis
   - Post-Mortem Analysis
   - Análise Live vs Post-Mortem
-atualizado: 2026-10-19
+atualizado: 2026-11-11
 ---
 
 # Investigação Forense Digital — Análise Live vs. Post-Mortem
 
-O termo **forense** implica o cumprimento de requisitos legais para que os resultados possam ser aceites num tribunal (*court of law*), tornando a **investigação forense digital** uma forma mais restrita de investigação digital. Na recolha e exame de vestígios, distinguem-se duas abordagens: a **análise *live*** (executada sobre o sistema em funcionamento para aceder a dados voláteis na RAM, mas vulnerável a manipulação por software malicioso) e a **análise *post-mortem*** (realizada em ambiente laboratorial controlado com ferramentas fidedignas, sendo o método ideal sempre que exequível).
+A **investigação forense digital** impõe requisitos legais para aceitação em tribunal, dividindo-se entre **análise live** (sobre o sistema ativo e a RAM) e **análise post-mortem** (em laboratório isolado).
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Método / Sistema)**: Desligar um equipamento preserva o disco mas destrói o conteúdo volátil da memória RAM; manter a máquina ligada permite aceder a processos e chaves em claro, mas submete a recolha à mediação de um sistema potencialmente comprometido.
+> * **Porque importa (Forense / Tribunal)**: Define quando se deve capturar primeiro o estado volátil ou avançar para aquisição estática controlada em laboratório, garantindo que as teorias construídas cumprem os critérios legais de prova judicial.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Regra geral de preferência**: a **análise *post-mortem*** é a mais ideal do ponto de vista pericial por usar ferramentas e sistema operativo de confiança em ambiente isolado, mas nem sempre é exequível.
+>   * **Risco da *Live Analysis***: *rootkits* ou software malicioso no sistema investigado podem ocultar ou falsificar os dados devolvidos pelas ferramentas.
+>   * **Perda na RAM em *Post-Mortem***: chaves criptográficas residentes apenas em memória perdem-se ao desligar o sistema.
 
 ---
 
@@ -38,12 +46,15 @@ O termo **forense** implica o cumprimento de requisitos legais para que os resul
 
 ---
 
-## Tipos de Análise para Encontrar Evidências
+## Comparação: Análise *Live* vs. Análise *Post-Mortem*
 
-| Tipo de Análise | Definição | Vantagens | Desvantagens |
-| :--- | :--- | :--- | :--- |
-| **Análise *Live*** (*Live analysis*) | Utiliza o próprio sistema operativo ou outros recursos do sistema sob investigação para procurar evidências | Permite obter dados da memória **RAM** de processos em execução | Risco de obter **informação falsa**, pois o software no sistema pode ocultar ou falsificar dados maliciosamente (ex.: *rootkits*) |
-| **Análise *Post-Mortem*** (*Post-mortem analysis*) | Utiliza aplicações de confiança (*trusted applications*) num sistema operativo de confiança em **ambiente de laboratório** | Ambiente **totalmente controlado** e isolado de interferências do sistema suspeito | A informação contida na **RAM é perdida** (ex.: chaves criptográficas necessárias para desencriptar um ficheiro ou volume) |
+| Critério Técnico e Forense | Análise *Live* (*Live Analysis*) | Análise *Post-Mortem* (*Post-Mortem Analysis*) |
+| :--- | :--- | :--- |
+| **Ambiente e Ferramentas** | Utiliza o próprio sistema operativo e recursos do sistema sob investigação para procurar evidências | Utiliza aplicações de confiança num sistema operativo de confiança em **ambiente de laboratório** |
+| **Acesso à Memória RAM** | **Vantagem**: permite obter dados da memória **RAM** de processos em execução | **Desvantagem**: a informação contida na **RAM é perdida** (ex.: chaves criptográficas necessárias para desencriptar ficheiros ou volumes) |
+| **Controlo e Fiabilidade** | **Desvantagem**: risco de obter **informação falsa**, pois o software no sistema pode ocultar ou falsificar dados maliciosamente (ex.: *rootkits*) | **Vantagem**: ambiente **totalmente controlado** e isolado de interferências do sistema suspeito |
+| **Invasividade sobre o Sistema** | A execução de utilitários altera o estado do sistema ativo (*Prefetch*, registos, *timestamps*) | Preserva os discos originais sem interferência da execução local do sistema suspeito |
+| **Aplicabilidade Prática** | Necessária em servidores críticos de alta disponibilidade ou perante volumes cifrados abertos em RAM | Abordagem pericial ideal sempre que seja exequível desligar e examinar em laboratório |
 
 > [!NOTE] Regra Geral de Escolha
 > Uma análise *post-mortem* é mais ideal do ponto de vista pericial, mas nem sempre é possível na prática (por exemplo, em servidores críticos de alta disponibilidade ou perante volumes cifrados cujas chaves residem apenas em RAM).
@@ -56,8 +67,8 @@ Cenário: **Um servidor foi comprometido — como ocorreu o incidente e quem foi
 
 1. **Recolha de vestígios iniciais no servidor**:
    * Encontrar dados criados por eventos relacionados com o incidente.
-   * Recuperar entradas de registos (*log entries*) apagadas do servidor.
-   * Localizar ferramentas de ataque (*attack tools*) deixadas no sistema.
+   * Recuperar entradas de registos apagadas do servidor.
+   * Localizar ferramentas de ataque deixadas no sistema.
    * Identificar as vulnerabilidades que existiam no servidor.
 2. **Desenvolvimento de hipóteses**:
    * Com base nestes dados, formulam-se hipóteses sobre **qual a vulnerabilidade explorada** pelo atacante para ganhar acesso e **o que fez posteriormente**.
@@ -87,10 +98,25 @@ Cenário: **Um servidor foi comprometido — como ocorreu o incidente e quem foi
 
 ## Perguntas de revisão
 
-- O que distingue uma investigação forense digital de uma investigação digital genérica?
-- Segundo Brian Carrier, qual é a definição de investigação forense digital?
-- Quais são as principais vantagens e desvantagens da análise *live* face à análise *post-mortem*?
-- No exemplo do servidor comprometido, de que forma a análise da *firewall* ilustra o método científico?
+1. **O que distingue uma investigação forense digital de uma investigação digital genérica?**
+
+> [!success]- Ver Resposta
+> O termo **forense** implica requisitos legais específicos para que os resultados obtidos possam ser aceites num **tribunal de justiça**, tornando a investigação forense digital uma forma mais restrita da investigação digital.
+
+2. **Segundo Brian Carrier, qual é a definição de investigação forense digital?**
+
+> [!success]- Ver Resposta
+> É o processo que utiliza a ciência e a tecnologia para analisar objetos digitais e que desenvolve e testa teorias, as quais podem ser apresentadas num tribunal de justiça, para responder a questões sobre eventos que ocorreram.
+
+3. **Quais são as principais vantagens e desvantagens da análise *live* face à análise *post-mortem*?**
+
+> [!success]- Ver Resposta
+> A **análise *live*** permite aceder a dados voláteis na memória **RAM** de processos em execução (ex.: chaves de cifra), mas corre o risco de obter informação falsa ou ocultada por *rootkits* no sistema comprometido. A **análise *post-mortem*** oferece um ambiente totalmente controlado com ferramentas fidedignas em laboratório, mas perde toda a informação residente em **RAM**.
+
+4. **No exemplo do servidor comprometido, de que forma a análise da *firewall* ilustra o método científico?**
+
+> [!success]- Ver Resposta
+> Ao verificar nos registos e na configuração da *firewall* que determinado tráfego de rede não poderia ter existido, o perito obtém evidência objetiva que **refuta** hipóteses iniciais impossíveis, aplicando o princípio científico da falsificabilidade.
 
 ## Notas relacionadas
 

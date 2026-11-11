@@ -25,12 +25,21 @@ aliases:
   - dd_rescue
   - rdd
   - dcfldd usage example
-atualizado: 2026-10-20
+atualizado: 2026-11-11
 ---
 
 # Aquisição em Linha de Comandos no Linux — `dcfldd` e Derivados do `dd`
 
-O **`dcfldd`** — desenvolvido pelo *Department of Defense Computer Forensics Lab (DCFL)* — é uma ferramenta de linha de comandos derivada do clássico utilitário Unix `dd`, especificamente melhorada para aquisição forense por calcular e verificar múltiplos *hashes* em tempo real (`md5`, `sha1`, `sha256`, `sha512`), registar e agregar erros de *bad sectors*, preencher setores defeituosos com zeros para garantir reprodutibilidade, exibir o progresso da cópia e dividir (*split*) automaticamente a imagem `RAW` em segmentos mais pequenos.
+O `dcfldd` (DCFL) adapta o utilitário Unix `dd` para aquisição forense ao calcular múltiplos *hashes* em tempo real por janelas, agregar erros, preencher *bad sectors* com zeros e dividir imagens `RAW`.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Sistema / Método)**: O utilitário Unix clássico `dd` copia blocos binários sem calcular resumos criptográficos, sem reportar progresso e sem mecanismos periciais nativos para registar e padronizar erros de leitura.
+> * **Porque importa (Forense)**: Sem `conv=noerror,sync` + `hashconv=after`, um disco com setores defeituosos produziria um *hash* de aquisição diferente do ficheiro gravado em disco e desalinharia as partições seguintes; além disso, janelas `hashwindow=1G` isolam eventuais corrupções futuras sem invalidar a imagem inteira.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **7 Melhorias face ao `dd`**: (1) *hashes* em tempo real (`md5`, `sha1`, `sha256`, `sha512`); (2) ficheiro separado de *bad sectors*; (3) agregação de erros consecutivos; (4) verificação automática (`vf=`); (5) progresso em tempo real; (6) *splitting* nativo; (7) preenchimento de *bad sectors* com zeros para reprodutibilidade.
+>   * **Outros Derivados Forenses do `dd`**: `dc3dd` (DoD Cyber Crime Center), `ddrescue`, `dd_rescue` e `rdd`.
+>   * **`hashconv=after`**: Calcula o resumo **após** a substituição de setores ilegíveis por zeros (`sync`), garantindo correspondência exata com o `sha256sum` posterior.
+>   * **Janelas Iguais no `SHA256.txt`**: O mesmo valor `30e14955...` repetido em várias janelas consecutivas de `1 MB` indica blocos compostos exclusivamente por zeros (`0x00`).
 
 ---
 
@@ -40,22 +49,25 @@ O **`dcfldd`** — desenvolvido pelo *Department of Defense Computer Forensics L
 * **Natureza**: Ferramenta forense diretamente derivada do utilitário de linha de comandos `dd`.
 
 ### Sete Diferenças Fundamentais do `dcfldd` face ao `dd`
+
 1. **Cálculo integrado de *hashes***: Calcula valores de *hash* durante a própria transferência de dados e suporta os algoritmos **`md5`**, **`sha1`**, **`sha256`** e **`sha512`**.
 2. **Registo separado de setores defeituosos**: Consegue escrever os *bad sectors* identificados para um ficheiro separado.
 3. **Agregação de erros de leitura**: Consegue agregar mensagens de erros de setores defeituosos consecutivos (ex.: `Had 1,023 'Input/output errors' between blocks 17-233`).
 4. **Verificação de integridade**: Verifica automaticamente os valores de *hash* (`vf=` / *verify*).
 5. **Relatório de progresso**: Apresenta no ecrã o progresso da aquisição em tempo real (blocos/megabytes copiados e tempo estimado).
 6. **Divisão (*splitting*) de ficheiros**: Permite dividir nativamente o ficheiro de imagem em ficheiros mais pequenos (sem depender do comando externo `split`).
-7. **Reprodutibilidade pericial nos erros**: Para garantir a reprodutibilidade (*reproducibility*) e o alinhamento, **os setores defeituosos (*bad sectors*) são preenchidos com zeros no ficheiro de imagem**.
+7. **Reprodutibilidade pericial nos erros**: Para garantir a reprodutibilidade e o alinhamento, **os setores defeituosos são preenchidos com zeros no ficheiro de imagem**.
 
 ### Outros Derivados Forenses do `dd`
 Para além do `dcfldd`, existem diversas ferramentas forenses derivadas do `dd`:
+
 * **`dc3dd`** (muito semelhante ao `dcfldd`, mantido pelo *DoD Cyber Crime Center*), **`ddrescue`**, **`dd_rescue`**, **`rdd`**, entre outros.
 
 ### Comandos de Ajuda e Documentação no Linux
+
 * `dcfldd --version` $\rightarrow$ verifica a versão instalada.
 * `dcfldd --help` $\rightarrow$ lista todas as opções suportadas.
-* `man dcfldd` $\rightarrow$ abre o manual completo (*man page*).
+* `man dcfldd` $\rightarrow$ abre o manual completo.
 * Fontes complementares recomendadas: página do `dcfldd` em `forensicswiki.org` e artigo do `dd` na Wikipédia.
 
 ---
@@ -72,15 +84,15 @@ dcfldd if=/dev/sourcedrive hash=md5,sha256 hashwindow=1G md5log=md5.txt sha256lo
 
 | Parâmetro | Significado e Função Pericial |
 | :--- | :--- |
-| **`if=/dev/sourcedrive`** | Ficheiro de dispositivo (*input file*) que representa a unidade física de origem a adquirir. |
+| **`if=/dev/sourcedrive`** | Ficheiro de dispositivo de entrada que representa a unidade física de origem a adquirir. |
 | **`hash=md5,sha256`** | Solicita o cálculo simultâneo dos valores de *hash* **`md5`** e **`sha256`**. |
 | **`hashwindow=1G`** | Calcula valores de *hash* parciais a cada **`1 GB`** de dados lidos (*hash blocks* para evitar que um erro único invalide todo o disco). |
 | **`md5log=md5.txt`**<br/>**`sha256log=sha256.txt`** | Define o nome dos ficheiros de texto onde serão guardados os valores de *hash* calculados para cada algoritmo. |
-| **`hashconv=after`** | Determina que os valores de *hash* são calculados **após o tratamento de erros (*after error checking*)** — garantindo que o *hash* calculado durante a aquisição inclui os zeros inseridos pelo `sync` e coincide exatamente com o *hash* do ficheiro de imagem final escrito em disco! |
-| **`bs=512`** | Utiliza um tamanho de bloco (*block size*) de **`512 bytes`** (igual ao tamanho do setor físico de um HDD). |
-| **`conv=noerror,sync`** | • **`noerror`**: Não interrompe a execução em caso de erros de leitura (*reading errors*).<br/>• **`sync`**: Mantém a imagem sincronizada/alinhada quando surgem erros, preenchendo o bloco ilegível com zeros (`0x00`). |
+| **`hashconv=after`** | Determina que os valores de *hash* são calculados **após o tratamento de erros** — garantindo que o *hash* calculado durante a aquisição inclui os zeros inseridos pelo `sync` e coincide exatamente com o *hash* do ficheiro de imagem final escrito em disco! |
+| **`bs=512`** | Utiliza um tamanho de bloco de **`512 bytes`** (igual ao tamanho do setor físico de um HDD). |
+| **`conv=noerror,sync`** | • **`noerror`**: Não interrompe a execução em caso de erros de leitura.<br/>• **`sync`**: Mantém a imagem sincronizada/alinhada quando surgem erros, preenchendo o bloco ilegível com zeros (`0x00`). |
 | **`split=10G`** | Divide a imagem `RAW` resultante em ficheiros individuais de **`10 GB`**. |
-| **`of=image.dd`** | Nome base (*base filename*) do ficheiro de saída (*output file*). |
+| **`of=image.dd`** | Nome base do ficheiro de saída. |
 | **`splitformat=aa`** | Formato dos sufixos dos ficheiros individuais gerados pela divisão: `image.dd.aa`, `image.dd.ab`, `image.dd.ac`, ... |
 
 ---
@@ -120,9 +132,27 @@ Total (sha256): 5767d9dcd2e48b3a0dce1b9a143ecf7a664364660637c5f348d1054afb4a1784
 
 ## Perguntas de revisão
 
-- Que melhorias forenses introduz a ferramenta `dcfldd` em relação ao utilitário `dd` padrão do Unix?
-- Explique detalhadamente a função dos argumentos `hashwindow=1G`, `hashconv=after` e `conv=noerror,sync` num comando de aquisição com `dcfldd`.
-- Porque é que num ficheiro `SHA256.txt` gerado com `hashwindow` aparecem frequentemente várias linhas consecutivas com exatamente o mesmo valor de hash?
+1. **Que melhorias forenses introduz a ferramenta `dcfldd` em relação ao utilitário `dd` padrão do Unix?**
+
+> [!success]- Ver Resposta
+> Sete melhorias fundamentais: (1) cálculo de *hashes* em tempo real (`md5`, `sha1`, `sha256`, `sha512`); (2) escrita de *bad sectors* para ficheiro separado; (3) agregação de erros consecutivos de leitura; (4) verificação automática de *hash* (`vf=`); (5) relatório de progresso em tempo real; (6) divisão (*splitting*) nativa em segmentos menores; e (7) preenchimento de *bad sectors* com zeros para garantir reprodutibilidade.
+
+2. **Explique detalhadamente a função dos argumentos `hashwindow=1G`, `hashconv=after` e `conv=noerror,sync` num comando de aquisição com `dcfldd`.**
+
+> [!success]- Ver Resposta
+> * **`hashwindow=1G`**: calcula e regista *hashes* parciais a cada `1 GB`, evitando que um único erro futuro invalide a imagem inteira.
+> * **`conv=noerror,sync`**: `noerror` impede a paragem do comando perante erros de leitura, e `sync` preenche os blocos ilegíveis com zeros (`0x00`) para manter o alinhamento da imagem.
+> * **`hashconv=after`**: garante que o *hash* é calculado **depois** da substituição dos erros por zeros, assegurando que o *hash* de aquisição coincide com o do ficheiro de imagem gravado em disco.
+
+3. **Porque é que num ficheiro `SHA256.txt` gerado com `hashwindow` aparecem frequentemente várias linhas consecutivas com exatamente o mesmo valor de hash?**
+
+> [!success]- Ver Resposta
+> Porque essas janelas (ex.: de `1 MB` = `1048576 bytes`) contêm exclusivamente bytes a zero (`0x00`), típicas de áreas vazias ou não alocadas do disco, produzindo sempre exatamente o mesmo resumo criptográfico (no exemplo da aula, `30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58`).
+
+4. **Para que servem os argumentos `bs=512`, `split=10G` e `splitformat=aa` no comando `dcfldd`, e que outros derivados forenses do `dd` existem em Linux?**
+
+> [!success]- Ver Resposta
+> `bs=512` alinha o bloco de aquisição com o setor físico padrão de `512 bytes` de um HDD; `split=10G` e `splitformat=aa` dividem a imagem `RAW` em ficheiros de `10 GB` com sufixos alfabéticos (`image.dd.aa`, `image.dd.ab`, ...). Outros derivados forenses do `dd` incluem **`dc3dd`**, **`ddrescue`**, **`dd_rescue`** e **`rdd`**.
 
 ## Notas relacionadas
 

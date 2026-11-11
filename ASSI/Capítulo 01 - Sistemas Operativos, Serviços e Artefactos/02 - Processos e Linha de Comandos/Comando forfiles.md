@@ -21,21 +21,33 @@ atualizado: 2026-09-24
 
 # O Comando `forfiles`
 
-O **`forfiles`** é um utilitário nativo de linha de comandos do Windows concebido para selecionar ficheiros ou diretórios com base em critérios de filtragem (como máscaras de extensão e datas de modificação) e **executar automaticamente um comando arbitrário em cada elemento selecionado**.
+O **`forfiles`** é um utilitário nativo de linha de comandos do Windows que seleciona ficheiros ou pastas segundo critérios de caminho, máscara e data de modificação, executando automaticamente um comando em cada item.
 
-Em administração de sistemas e triagem forense inicial, o `forfiles` é amplamente utilizado para identificar ficheiros modificados recentemente, localizar artefactos criados em datas suspeitas ou realizar tarefas de manutenção em lote sem necessidade de scripts complexos de PowerShell ou Python.
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Sistema)**: Comandos simples como `dir` apenas listam ficheiros; o `forfiles` funciona como um motor de iteração nativo em lote (*batch*) que filtra elementos na árvore de diretórios e invoca uma ação (`cmd /c ...`) sobre cada resultado sem exigir scripts PowerShell.
+> * **Porque importa (Forense / Segurança)**: Na triagem forense *live*, permite localizar rapidamente binários ou scripts modificados num intervalo temporal suspeito (`/D`). Em segurança ofensiva/defensiva, é monitorizado como **LOLBIN**, pois permite invocar comandos arbitrários em cascata através de `/C`.
+> * **Pontos Críticos para Exame**:
+>   * Filtro `/D`: **`-n`** seleciona ficheiros com **mais de *n* dias** (mais antigos); **`+n`** ou `+DD/MM/YYYY` seleciona ficheiros modificados **há menos de *n* dias / após a data** (mais recentes).
+>   * Para filtrar apenas ficheiros (excluindo diretórios), usa-se a condição `if @isdir==FALSE` dentro do bloco `/C "cmd /c ..."`.
 
 ---
 
-## Sintaxe e Parâmetros Principais
+## Anatomia do Comando e Parâmetros Principais
 
-A estrutura geral do comando é:
+Em administração de sistemas e triagem forense inicial, o `forfiles` é amplamente utilizado para identificar ficheiros modificados recentemente, localizar artefactos criados em datas suspeitas ou realizar tarefas de manutenção em lote sem necessidade de scripts complexos de PowerShell ou Python.
 
 ```cmd
-forfiles [/P <Caminho>] [/S] [/M <Mascara>] [/D <Data>] [/C <Comando>]
+forfiles [/P <Caminho>] [/S] [/M <Mascara>] [/D <Data>] [/C "<Comando>"]
 ```
 
-| Parâmetro | Função | Descrição |
+```text
+forfiles  /P C:\Users\  /S  /M *.txt  /D -30  /C "cmd /c echo @file"
+          └───┬──────┘  └┬┘ └───┬───┘ └──┬──┘ └──────────┬─────────┘
+        1. Onde procurar │  3. O quê  4. Quando    5. O que executar
+                   2. Recursivo                    em cada resultado
+```
+
+| Parâmetro | Função | Descrição Detalhada e Comportamento |
 | :---: | :--- | :--- |
 | **`/P`** | *Path* | Diretório de partida a partir do qual é efetuada a pesquisa (por omissão é a pasta atual). |
 | **`/S`** | *Subdirectories* | Instrui o comando a percorrer recursivamente todas as subpastas. |
@@ -46,12 +58,15 @@ forfiles [/P <Caminho>] [/S] [/M <Mascara>] [/D <Data>] [/C <Comando>]
 ### Variáveis Especiais de Substituição no Parâmetro `/C`
 
 Ao definir a instrução a executar em cada ficheiro, podem utilizar-se as seguintes variáveis internas:
-* **`@file`**: Nome do ficheiro ou pasta atual com a respetiva extensão.
-* **`@fname`**: Nome do ficheiro sem a extensão.
-* **`@ext`**: Apenas a extensão do ficheiro.
-* **`@path`**: Caminho absoluto completo do elemento (ex.: `"C:\Windows\System32\cmd.exe"`).
-* **`@isdir`**: Retorna `TRUE` se o elemento atual for um diretório e `FALSE` se for um ficheiro.
-* **`@fdate`** / **`@ftime`**: Data e hora da última modificação do ficheiro.
+
+| Variável | Valor Retornado | Exemplo de Saída |
+| :--- | :--- | :--- |
+| **`@file`** | Nome do ficheiro ou pasta atual com a respetiva extensão (entre aspas). | `"cmd.exe"` |
+| **`@fname`** | Nome do ficheiro sem a extensão. | `"cmd"` |
+| **`@ext`** | Apenas a extensão do ficheiro. | `"exe"` |
+| **`@path`** | Caminho absoluto completo do elemento. | `"C:\Windows\System32\cmd.exe"` |
+| **`@isdir`** | Retorna `TRUE` se o elemento atual for um diretório e `FALSE` se for um ficheiro. | `FALSE` |
+| **`@fdate`** / **`@ftime`** | Data e hora da última modificação do ficheiro. | `24/09/2026` / `14:30:00` |
 
 ---
 
@@ -85,10 +100,35 @@ Inspecionar o conteúdo de pastas de ficheiros temporários filtrando por fichei
 forfiles /p "C:\Temp" /d -7 /c "cmd /c dir @file"
 ```
 
+---
+
 ## Implicações Forenses
 
 * **Identificação Rápida de *Timestomping* e Alterações Recentes**: O `forfiles` permite a um analista pericial listar imediatamente ficheiros executáveis ou scripts (`.ps1`, `.bat`, `.vbs`) modificados nas últimas 24 ou 48 horas numa máquina sem necessitar de instalar ferramentas externas.
 * **Uso Legítimo vs. Abuso por Malware**: A capacidade do `forfiles` de executar comandos arbitrários em cascata através de `cmd /c` é por vezes abusada por atores maliciosos como técnica de *Living off the Land* (LOLBIN) para evadir deteção baseada em linhas de comando convencionais.
+
+---
+
+## Perguntas de revisão
+
+1. **No comando `forfiles`, qual é a diferença entre usar o filtro `/D -30` e `/D +30` (ou `/D 01/01/2026`)?**
+
+> [!success]- Ver Resposta
+> * **`/D -30`**: seleciona ficheiros cuja data de última modificação é anterior ou igual a hoje menos 30 dias (ou seja, ficheiros com **mais de 30 dias** de antiguidade).
+> * **`/D +30`** (ou `/D 01/01/2026`): seleciona ficheiros modificados recentemente (nos últimos 30 dias ou em data posterior/igual a `01/01/2026`).
+
+2. **Como se constrói um comando `forfiles` que ignore pastas e imprima apenas o caminho completo (`@path`) dos ficheiros modificados após `01/01/2026`?**
+
+> [!success]- Ver Resposta
+> Utilizando a variável booleana `@isdir` numa condição `if` dentro do parâmetro `/C`:
+> `forfiles /D 01/01/2026 /C "cmd /c if @isdir==FALSE echo '@path' - +recente 2026.01.01"`
+
+3. **Qual é a diferença entre as variáveis internas `@file`, `@fname` e `@path` no parâmetro `/C` do `forfiles`?**
+
+> [!success]- Ver Resposta
+> * **`@file`**: devolve o nome do ficheiro com a extensão.
+> * **`@fname`**: devolve apenas o nome do ficheiro sem a extensão.
+> * **`@path`**: devolve o caminho absoluto completo do ficheiro no disco (incluindo diretório, nome e extensão).
 
 ## Notas relacionadas
 

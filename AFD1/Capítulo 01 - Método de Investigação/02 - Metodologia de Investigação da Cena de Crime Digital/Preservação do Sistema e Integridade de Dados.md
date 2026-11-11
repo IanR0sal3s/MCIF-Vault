@@ -23,28 +23,34 @@ aliases:
   - Funções de Hash Criptográficas
   - Colisões MD5
   - Write Blocker
-atualizado: 2026-10-19
+atualizado: 2026-11-11
 ---
 
 # Preservação do Sistema e Integridade de Dados
 
-Na **Fase 2 (Preservação do Sistema)** aplicam-se técnicas específicas consoante a análise seja *post-mortem* (desligar da corrente, cópias duplicadas e bloqueadores de escrita) ou *live* (suspensão de processos, isolamento subtil de rede e cópia de segurança seletiva). Para garantir a **integridade dos dados** recolhidos, calcula-se um **hash criptográfico**; contudo, como um *hash* isolado não depende de um segredo e pode ser substituído juntamente com a mensagem, a proteção robusta da autenticidade requer **Assinaturas Digitais** baseadas numa chave privada (ex.: Cartão de Cidadão).
+A **preservação do sistema** protege vestígios em análises *post-mortem* e *live*, recorrendo a **hashes** resistentes a colisões (`SHA-2`/`SHA-3`) e **assinaturas digitais** para provar integridade e autenticidade.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Método / Sistema)**: Suportes digitais são alterados pelo próprio funcionamento do sistema operativo; bloqueadores de escrita (*Write Blockers*), cópias duplicadas e funções de *hash* criptográficas fixam o estado binário exato da evidência recolhida.
+> * **Porque importa (Forense / Tribunal)**: Um *hash* isolado ($H(M)=h$) não depende de segredo e pode ser recalculado se alguém adulterar ficheiro e manifesto; só algoritmos sem colisões conhecidos aliados a **assinaturas digitais** (ex.: Cartão de Cidadão) asseguram integridade e não-repúdio em juízo.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Isolamento em *live analysis***: ligar o cabo a um *hub* ou *switch* vazio mantém o sinal elétrico de *link up*, evitando mensagens de ligação morta (*dead link*) nos registos.
+>   * **`MD5` quebrado desde 2004**: permite gerar **colisões** (dois ficheiros distintos ou um certificado digital forjado com o mesmo resumo); usar **apenas para retrocompatibilidade**.
+>   * **Vulnerabilidade do *hash* isolado**: um adversário pode substituir $(M, h)$ por $(M', H(M'))$, exigindo chave privada em dispositivo seguro para assinatura digital.
 
 ---
 
-## Técnicas de Preservação (*Preservation Techniques*)
+## Técnicas de Preservação: *Post-Mortem* vs. *Live Analysis*
 
-### 1. Em Análise *Post-Mortem*
-* **Desligar a ficha (*pull the plug*)**: cortar imediatamente a alimentação elétrica para reduzir a quantidade de evidência que possa ser sobrescrita no armazenamento.
-* **Efetuar cópias duplicadas (*make duplicate copies*)** de todos os dados (trabalhando sempre sobre as cópias).
-* **Utilizar bloqueadores de escrita (*write blockers*)**: dispositivos que impedem que qualquer dado seja escrito ou sobrescrito no suporte original de evidência.
-
-### 2. Em Análise *Live*
-* **Terminar (*kill*) ou suspender processos suspeitos**.
-* **Desligar ou limitar a ligação de rede**:
-  * Utilizar um *hub* ou *switch* vazio (*empty hub or switch*) para manter o sinal elétrico de *link up* e **evitar mensagens de registo (*logs*) sobre uma ligação morta (*dead link*)** que poderiam alertar software malicioso ou sobrescrever logs.
-  * Utilizar **filtros de rede** para impedir que o perpetrador estabeleça uma ligação remota para apagar dados.
-* **Efetuar *backup* de dados importantes** (logs, ficheiros críticos, etc.).
+| Abordagem | Técnica de Preservação | Mecanismo e Finalidade Pericial |
+| :--- | :--- | :--- |
+| **Análise *Post-Mortem*** | **Desligar a ficha (*pull the plug*)** | Cortar imediatamente a alimentação elétrica para reduzir a quantidade de evidência sobrescrita no armazenamento |
+| **Análise *Post-Mortem*** | **Efetuar cópias duplicadas** | Duplicar integralmente todos os dados e trabalhar exclusivamente sobre as cópias |
+| **Análise *Post-Mortem*** | **Bloqueadores de escrita (*Write Blockers*)** | Impedir fisicamente ou logicamente que qualquer dado seja escrito ou sobrescrito no suporte original |
+| **Análise *Live*** | **Terminar ou suspender processos suspeitos** | Interromper execução maliciosa ativa antes que destrua ou exfiltre dados |
+| **Análise *Live*** | ***Hub* ou *switch* vazio** | Isolar da rede mantendo o sinal elétrico de *link up*, evitando registos de *dead link* que alertem malware ou sobrescrevam logs |
+| **Análise *Live*** | **Filtros de rede** | Impedir que o atacante estabeleça ligação remota para apagar vestígios |
+| **Análise *Live*** | **Backup de dados importantes** | Salvaguardar logs críticos e ficheiros voláteis essenciais |
 
 ---
 
@@ -67,12 +73,12 @@ flowchart LR
     MDF --> MD6["MD6 - SHA3 competitor - 2008"]
 ```
 
-| Família / Padrão | Algoritmo | Tamanho do Resumo (*Digest*) | Ano | Observações Técnicas |
+| Família / Padrão | Algoritmo | Tamanho do Resumo | Ano | Observações Técnicas |
 | :--- | :--- | :--- | :---: | :--- |
 | **SHA Standard** | `SHA-1` | 160 bits | 1995 | Primeira geração padrão SHA |
 | **SHA Standard** | `SHA-2` | 224, 256, 384 ou 512 bits | 2002 | Largamente utilizado (`SHA-256`, `SHA-512`) |
 | **SHA Standard** | `SHA-3` (*Keccak*) | 224, 256, 384 ou 512 bits | 2008 | Vencedor da competição SHA-3 |
-| **MD Family** | `MD5` | 128 bits | 1992 | **Quebrado desde 2004** (*Broken since 2004*) |
+| **MD Family** | `MD5` | 128 bits | 1992 | **Quebrado desde 2004** |
 | **MD Family** | `MD6` | Variável | 2008 | Concorrente ao padrão SHA-3 |
 | **Outros** | `RIPEMD` | 160, 256 ou 320 bits | 1996 | Alternativa europeia |
 | **Outros** | `Whirlpool` | 512 bits | 2004 | Resumo de 512 bits |
@@ -83,22 +89,26 @@ flowchart LR
 
 > [!WARNING] MD5 Quebrado desde 2004
 > * O algoritmo `MD5` encontra-se **quebrado desde 2004**, devendo ser utilizado **apenas para efeitos de retrocompatibilidade**.
-> * É possível gerar **colisões** (*collisions*): criar ficheiros diferentes que produzem exatamente o mesmo valor de *hash*.
+> * É possível gerar **colisões**: criar ficheiros diferentes que produzem exatamente o mesmo valor de *hash*.
 > * **Exemplos clássicos de colisão**:
->   * Demonstração de colisões em executáveis/ficheiros de Peter Selinger (`http://www.mscs.dal.ca/~selinger/md5collision/`).
->   * Criação de um **certificado digital forjado** (*forged digital certificate* — `http://cryptocrats.com/crypto/md5-the-hash-algorithm-is-now-broken/`).
+>   * [Demonstração de colisões MD5 em executáveis/ficheiros por Peter Selinger](http://www.mscs.dal.ca/~selinger/md5collision/).
+>   * [Análise da criação de um certificado digital forjado via colisão MD5](http://cryptocrats.com/crypto/md5-the-hash-algorithm-is-now-broken/).
 
 ---
 
-## Limitação dos Valores de Hash Isolados e Assinaturas Digitais
+## Comparação: `MD5` vs. `SHA-2 / SHA-3` vs. Assinatura Digital
 
 Os valores de *hash*, por si sós, **não são suficientes** para garantir a integridade perante um adversário com acesso ao local onde o *hash* é guardado:
+
 * Dada uma mensagem $M$, o seu valor de *hash* é $H(M) = h$.
 * Alguém mal-intencionado pode **alterar tanto a mensagem $M$ como o resumo $h$** (substituindo $M$ por $M'$ e $h$ por $H(M')$), uma vez que o cálculo de $h$ **não depende de nenhum segredo**.
+* **Solução — Assinaturas Digitais**: dependem de uma **chave privada** conhecida apenas pelo signatário, sendo a segurança substancialmente superior quando a assinatura é realizada através de um **dispositivo físico seguro**, como o **Cartão de Cidadão** português.
 
-### Solução: Assinaturas Digitais (*Digital Signatures*)
-* Dependem de uma **chave privada** (*private key*) conhecida apenas pelo signatário.
-* A segurança é substancialmente superior quando a assinatura é realizada através de um **dispositivo físico seguro** (*secure device*), como o **Cartão de Cidadão** português.
+| Mecanismo de Proteção | Tamanho / Base Criptográfica | Resistência a Colisões | Depende de Segredo? | Valor Probatório e Recomendação |
+| :--- | :--- | :--- | :---: | :--- |
+| **`MD5` isolado** | 128 bits (função pública) | **Quebrado desde 2004** | Não | Apenas para retrocompatibilidade; vulnerável a colisões intencionais |
+| **`SHA-2` / `SHA-3` isolado** | 224–512 bits (função pública) | **Forte** (padrão atual) | Não ($H(M)=h$) | Deteta corrupção acidental, mas permite substituir $M \to M'$ e $h \to H(M')$ |
+| **Hash (`SHA-2`/`SHA-3`) + Assinatura Digital** | Digest + chave privada assimétrica | **Forte** + autenticidade | **Sim** (chave privada; ex.: **Cartão de Cidadão**) | Garante integridade, autenticidade do perito e não-repúdio em tribunal |
 
 ---
 
@@ -120,9 +130,25 @@ Os valores de *hash*, por si sós, **não são suficientes** para garantir a int
 
 ## Perguntas de revisão
 
-- Porque se recomenda ligar o cabo de rede a um *hub* ou *switch* vazio durante a preservação em análise *live*?
-- Porque é que o algoritmo `MD5` só deve ser utilizado para retrocompatibilidade? O que significa existir uma colisão?
-- Porque é que guardar apenas o par $(M, H(M))$ não impede a adulteração intencional dos dados? Como é que as assinaturas digitais resolvem este problema?
+1. **Porque se recomenda ligar o cabo de rede a um *hub* ou *switch* vazio durante a preservação em análise *live*?**
+
+> [!success]- Ver Resposta
+> Para isolar o sistema da rede mantendo ativo o sinal elétrico de *link up*, evitando mensagens de registo (*logs*) sobre uma ligação morta (*dead link*) que poderiam alertar software malicioso ou sobrescrever registos relevantes.
+
+2. **Que técnicas principais distinguem a preservação em análise *post-mortem* da preservação em análise *live*?**
+
+> [!success]- Ver Resposta
+> Na análise *post-mortem* recorre-se a cortar a corrente (*pull the plug*), efetuar cópias duplicadas e usar **Write Blockers**. Na análise *live* suspendem-se ou terminam-se processos suspeitos, isola-se a rede com *hub/switch* vazio ou filtros de rede e faz-se *backup* dos dados críticos.
+
+3. **Porque é que o algoritmo `MD5` só deve ser utilizado para retrocompatibilidade e o que significa existir uma colisão?**
+
+> [!success]- Ver Resposta
+> O `MD5` encontra-se **quebrado desde 2004**. Uma colisão significa que é possível criar dois ficheiros distintos (como executáveis diferentes ou certificados digitais forjados) que produzem exatamente o mesmo valor de *hash* de 128 bits.
+
+4. **Porque é que guardar apenas o par $(M, H(M))$ não impede a adulteração intencional dos dados, e como resolvem esse problema as assinaturas digitais?**
+
+> [!success]- Ver Resposta
+> Como o cálculo de $H(M)=h$ não depende de nenhum segredo, um atacante com acesso ao local de armazenamento pode alterar $M$ para $M'$ e substituir $h$ por $H(M')$. As **assinaturas digitais** dependem de uma **chave privada** conhecida apenas pelo signatário (especialmente robusta num dispositivo físico seguro como o **Cartão de Cidadão**), impedindo a falsificação do resumo.
 
 ## Notas relacionadas
 

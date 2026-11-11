@@ -17,12 +17,20 @@ aliases:
   - Camadas de Organização de Dados
   - File System Analysis
   - Dados Essenciais vs Não Essenciais
-atualizado: 2026-10-19
+atualizado: 2026-11-11
 ---
 
 # Camadas de Organização de Dados e Análise de Sistemas de Ficheiros
 
-Os sistemas de armazenamento de dados estruturam-se em **quatro camadas de abstração** (desde os meios físicos e de rede até às aplicações e sistemas operativos), sendo o foco central de **AFD1** a **Análise de Sistemas de Ficheiros (*File System Analysis*)**. Na inspeção de um sistema de ficheiros, distingue-se entre **dados essenciais** (nomes de ficheiros e localização física em *clusters*, nos quais o sistema tem de confiar para aceder ao conteúdo) e **dados não essenciais** (metadados como o último acesso, que podem estar incorretos ou adulterados sem invalidar o conteúdo do ficheiro).
+O armazenamento organiza-se em quatro camadas de abstração, centrando-se AFD1 na análise de sistemas de ficheiros e na distinção entre dados essenciais e dados não essenciais.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Sistema)**: O sistema operativo empilha abstrações desde os sinais físicos e setores de disco até às aplicações, usando estruturas lógicas do sistema de ficheiros para mapear nomes a *clusters*.
+> * **Porque importa (Forense)**: Isolar cada camada permite localizar ficheiros apagados, recuperar dados ocultos fora das partições e validar se metadados temporais foram adulterados (*timestomping*).
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Dados essenciais vs. não essenciais**: nomes e ponteiros de *clusters* são fiáveis porque o SO depende deles para ler o ficheiro; datas como o último acesso podem estar erradas sem invalidar o conteúdo.
+>   * **Limitação da recuperação**: mesmo um ponteiro de *cluster* fidedigno num ficheiro apagado pode apontar para blocos entretanto sobrescritos por novos ficheiros.
+>   * **Camada 2 (Volumes)**: analisar dados ao nível do volume revela dados ocultos entre partições ou além dos limites declarados pelo sistema de ficheiros.
 
 ---
 
@@ -61,22 +69,26 @@ flowchart BT
     APP --> NET
 ```
 
-### Camada 1 (*Layer 1*) — Meios Físicos e Comunicação
-* Exige **laboratórios especializados** (*requires specialized laboratories*).
-* **Dispositivos de comunicação**: Ethernet, 3G, UMTS, etc.
-* **Suportes de armazenamento físico (*physical store mediums*)**: discos rígidos (*hard disks*), chips de memória, CD-ROMs, etc.
+### Camada 1 — Meios Físicos e Comunicação
 
-### Camada 2 (*Layer 2*) — Leitura de Dados Lógicos (Fluxos de `0`s e `1`s)
+* Exige **laboratórios especializados**.
+* **Dispositivos de comunicação**: Ethernet, 3G, UMTS, etc.
+* **Suportes de armazenamento físico**: discos rígidos, chips de memória, CD-ROMs, etc.
+
+### Camada 2 — Leitura de Dados Lógicos (Fluxos de `0`s e `1`s)
+
 * **Memória volátil (RAM)**: dados tipicamente organizados por processos.
 * **Armazenamento não volátil**: dados tipicamente organizados em **volumes** (partições, matrizes RAID, etc.).
-  * Analisar dados ao nível do volume permite encontrar possíveis **dados ocultos** (*hidden data* — por exemplo, entre partições ou fora dos limites declarados pelo sistema de ficheiros).
+  * Analisar dados ao nível do volume permite encontrar possíveis **dados ocultos** (por exemplo, entre partições ou fora dos limites declarados pelo sistema de ficheiros).
 
-### Camada 3 (*Layer 3*) — Estruturas de Armazenamento Lógico
+### Camada 3 — Estruturas de Armazenamento Lógico
+
 * **Sistema de ficheiros (*File System*)**: o conteúdo mais comum e **foco central desta unidade curricular**.
-* **Espaço temporário (*Temporary space*)**: espaço de *swap* no Linux ou *pagefile* no Windows.
-* **Bases de dados diretas (*Direct database*)**: armazenamento sem sistema de ficheiros tradicional (ex.: *Google File System*, etc.).
+* **Espaço temporário**: espaço de *swap* no Linux ou *pagefile* no Windows.
+* **Bases de dados diretas**: armazenamento sem sistema de ficheiros tradicional (ex.: *Google File System*, etc.).
 
-### Camada 4 (*Layer 4*) — Sistema Operativo e Aplicações
+### Camada 4 — Sistema Operativo e Aplicações
+
 * **Sistemas operativos**: Windows, Mac OSX, Linux, Android, iOS, etc.
 * **Aplicações**: dependentes do sistema operativo.
 
@@ -87,13 +99,13 @@ flowchart BT
 Um sistema de ficheiros consiste numa **coleção de estruturas de dados** que permite a uma aplicação criar, ler e escrever ficheiros.
 
 * **Objetivos da análise forense do sistema de ficheiros**:
-  1. Encontrar ficheiros (*find files*).
-  2. Recuperar ficheiros apagados (*recover deleted files*).
-  3. Encontrar dados ocultos (*find hidden data*).
+  1. Encontrar ficheiros.
+  2. Recuperar ficheiros apagados.
+  3. Encontrar dados ocultos.
 * **Resultados obtidos**:
-  * Conteúdo de ficheiros (*file content*).
-  * Fragmentos de dados (*data fragments*).
-  * Metadados associados aos ficheiros (*metadata associated with files*).
+  * Conteúdo de ficheiros.
+  * Fragmentos de dados.
+  * Metadados associados aos ficheiros.
 
 ---
 
@@ -103,10 +115,11 @@ O sistema de ficheiros organiza os dados dentro de um volume, associando nomes d
 
 | Categoria | Exemplos | Fiabilidade e Implicações Forenses |
 | :--- | :--- | :--- |
-| **Dados Essenciais** (*Essential data*) | **Nomes de ficheiros** e **localização do conteúdo** (*cluster* inicial e tamanho) | **Dados fidedignos (*trustful data*)**, pois o sistema operativo depende deles para ler o ficheiro; contudo, o conteúdo apontado pode já ser inválido (ex.: ficheiros apagados cujos *clusters* foram reutilizados). |
-| **Dados Não Essenciais** (*Non-essential data*) | **Data/hora do último acesso** (*last access time*) | Mesmo que este dado esteja errado, **o conteúdo do ficheiro continua a ser válido**. Não podemos confiar cegamente em dados não essenciais (o relógio do sistema pode estar incorreto ou o utilizador pode ter alterado a hora), pelo que devemos procurar fontes de dados adicionais para suportar uma hipótese de incidente. |
+| **Dados Essenciais** | **Nomes de ficheiros** e **localização do conteúdo** (*cluster* inicial e tamanho) | **Dados fidedignos**, pois o sistema operativo depende deles para ler o ficheiro; contudo, o conteúdo apontado pode já ser inválido (ex.: ficheiros apagados cujos *clusters* foram reutilizados). |
+| **Dados Não Essenciais** | **Data/hora do último acesso** | Mesmo que este dado esteja errado, **o conteúdo do ficheiro continua a ser válido**. Não podemos confiar cegamente em dados não essenciais (o relógio do sistema pode estar incorreto ou o utilizador pode ter alterado a hora), pelo que devemos procurar fontes de dados adicionais para suportar uma hipótese de incidente. |
 
 ### Exemplo de Mapeamento de Entrada de Diretório para Clusters
+
 * **Registo de metadados**: `Filename: 01-Lab2.txt` | `Cluster: 345` | `Size: 56` | `Last accessed: 2015-01-03`
 * **Clusters de dados no volume**:
   * `Cluster 343`: `"Instituto Politécnico de Leiria"`
@@ -154,9 +167,28 @@ flowchart LR
 
 ## Perguntas de revisão
 
-- Quais são as quatro camadas de organização de dados e que tipo de análise ocorre em cada uma?
-- Qual é a diferença entre dados essenciais e dados não essenciais num sistema de ficheiros? Dê exemplos de ambos.
-- Qual é a sequência completa de análise de dados desde o disco rígido físico (`HD`) até à análise aplicacional (`App. analysis`)?
+1. **Quais são as quatro camadas de organização de dados e que tipo de análise ocorre em cada uma?**
+
+> [!success]- Ver Resposta
+> * **Camada 1 (Meios Físicos e Comunicação)**: análise de suportes físicos em laboratório especializado (discos rígidos, chips, CD-ROMs) e dispositivos de comunicação/rede.
+> * **Camada 2 (Dados Lógicos)**: análise de memória volátil (RAM organizada por processos) e análise de volumes não voláteis (partições, RAID), útil para detetar dados ocultos.
+> * **Camada 3 (Armazenamento Lógico)**: análise de sistemas de ficheiros (foco central de AFD1), espaço temporário (*swap*/*pagefile*) e bases de dados diretas.
+> * **Camada 4 (SO e Aplicações)**: análise do sistema operativo e dos formatos internos/ficheiros de configuração de cada aplicação.
+
+2. **Quais são os três objetivos e os três resultados obtidos na análise forense de um sistema de ficheiros?**
+
+> [!success]- Ver Resposta
+> Os objetivos são **encontrar ficheiros**, **recuperar ficheiros apagados** e **encontrar dados ocultos**. Como resultados, a análise permite extrair o **conteúdo de ficheiros**, **fragmentos de dados** e **metadados associados**.
+
+3. **Qual é a diferença entre dados essenciais e dados não essenciais num sistema de ficheiros e porque é que os dados essenciais nem sempre garantem conteúdo válido?**
+
+> [!success]- Ver Resposta
+> Os **dados essenciais** (nomes de ficheiros, *cluster* inicial e tamanho) são necessários para que o sistema operativo consiga localizar e ler o ficheiro; os **dados não essenciais** (como a data de último acesso) podem estar errados ou adulterados sem impedir a leitura nem invalidar o conteúdo. Ainda assim, nos ficheiros apagados o ponteiro do *cluster* pode já apontar para blocos reutilizados por novos dados.
+
+4. **Qual é a sequência completa de análise desde o disco rígido físico (`HD`) até à análise aplicacional e que vantagem traz inspecionar a camada de volume?**
+
+> [!success]- Ver Resposta
+> A sequência segue: `HD` $\rightarrow$ **Physical analysis** $\rightarrow$ `Sectors of data` $\rightarrow$ **Volume analysis** $\rightarrow$ `Volume` $\rightarrow$ **File System analysis** $\rightarrow$ `File` $\rightarrow$ **Application analysis**. Analisar ao nível do **volume** permite identificar dados ocultos colocados entre partições ou fora dos limites declarados pelo sistema de ficheiros.
 
 ## Notas relacionadas
 

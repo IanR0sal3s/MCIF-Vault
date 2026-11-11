@@ -38,6 +38,7 @@ atualizado: 2026-10-16
 Num sistema em execução o Registry aparenta ser uma árvore única unificada, mas fisicamente está fragmentado em múltiplos ficheiros protegidos pelo *kernel* (**Configuration Manager**). 
 
 Para compreender a sua arquitetura sem ambiguidades, importa distinguir três níveis bem demarcados:
+
 1. **Vistas Virtuais / Atalhos em Memória**: Hives que não são ficheiros físicos, mas sim pontes dinâmicas criadas pelo SO na RAM (`HKCR`, `HKCU`, `HKCC`).
 2. **Hives Lógicos Base**: As duas raízes estruturais permanentes (`HKLM` para o sistema global e `HKU` para os perfis de utilizador).
 3. **Ficheiros Físicos no Disco**: Onde os dados residem permanentemente (divididos entre a pasta do sistema `\System32\config\` e a pasta de cada utilizador `C:\Users\<User>\`).
@@ -106,15 +107,13 @@ flowchart TB
 ```
 
 > [!NOTE] Desmistificando a "Fusão Virtual" do `HKCR` e as Vistas Dinâmicas
-> * **Por que é que o `HKCR` não tem ficheiro físico no disco?**
->   O `HKCR` é uma vista composta sintetizada em tempo real pelo kernel para gerir tipos de ficheiros (`.pdf`, `.docx`, etc.) e registo de componentes COM. Quando o sistema consulta o `HKCR`, faz uma leitura em duas camadas:
+> * **Por que é que o `HKCR` não tem ficheiro físico no disco?** O `HKCR` é uma vista composta sintetizada em tempo real pelo kernel para gerir tipos de ficheiros (`.pdf`, `.docx`, etc.) e registo de componentes COM. Quando o sistema consulta o `HKCR`, faz uma leitura em duas camadas:
 >   1. **Base da Máquina**: Lê `HKLM\SOFTWARE\Classes` (gravado fisicamente no ficheiro `SOFTWARE` no disco).
 >   2. **Sobreposição do Utilizador**: Lê `HKCU\Software\Classes` (gravado fisicamente no ficheiro `USRCLASS.DAT` do utilizador).
 >   * **Regra de Prioridade Pericial**: Se existir uma definição personalizada no utilizador, **esta prevalece sobre a global**. Isto explica como um atacante sem privilégios de administrador consegue sequestrar associações de ficheiros (*File Association Hijacking*) gravando apenas no seu `USRCLASS.DAT`.
 > * **Por que é que `HKCU` e `HKCC` são atalhos?**
 >   * `HKCU` é apenas um apontador para a chave do utilizador com sessão aberta (`HKU\<SID>`), que foi carregada a partir do ficheiro `NTUSER.DAT`.
 >   * `HKCC` é um apontador direto para o perfil de hardware corrente em `HKLM\SYSTEM\CurrentControlSet\Hardware Profiles\Current`.
-
 
 ### Tabela de Correspondência Direta
 
@@ -131,8 +130,8 @@ flowchart TB
 | **`HKCC`** | *(Alias para `HKLM\SYSTEM\...\Hardware Profiles\Current`)* | Dinâmico | Perfil de hardware ativo |
 
 > [!IMPORTANT] Chave `hivelist`
-> Para auditar o mapeamento exato de hives para ficheiros físicos num sistema ativo:
-> `HKLM\SYSTEM\CurrentControlSet\Control\hivelist`
+> Para auditar o mapeamento exato de hives para ficheiros físicos num sistema ativo: `HKLM\SYSTEM\CurrentControlSet\Control\hivelist`
+>
 > Consulta CLI: `reg query HKLM\SYSTEM\CurrentControlSet\Control\hivelist`
 
 ---
@@ -221,11 +220,14 @@ flowchart TD
 ### Ficheiros de Registo de Instalação (`setupapi.dev.log`)
 
 * **Caminho**: `C:\Windows\INF\setupapi.dev.log` (e rotações históricas `setupapi.dev.YYYYMMDD_HHMMSS.log`).
-* **Registo Chave**:
-  ```text
-  >>> [Device Install (Hardware initiated) - SWD\WPDBUSENUM\_??_USBSTOR#Disk&Ven_Lexar...#{...}]
-  >>> Section start 2024/01/21 02:06:40.028
-  ```
+
+**Registo Chave:**
+
+```text
+>>> [Device Install (Hardware initiated) - SWD\WPDBUSENUM\_??_USBSTOR#Disk&Ven_Lexar...#{...}]
+>>> Section start 2024/01/21 02:06:40.028
+```
+
 * **O que prova**: Determina a data e milissegundo exato da **primeira vez** que o dispositivo foi fisicamente encaixado na porta USB da máquina.
 
 ---
@@ -233,6 +235,7 @@ flowchart TD
 ## 5. UserAssist & ShellBags: Peculiaridades Críticas
 
 ### 1. UserAssist
+
 * **Hive**: `NTUSER.DAT`
 * **GUIDs Estáticos Chave (Win 7 a 11)**:
   * `{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}` $\rightarrow$ Execução direta de ficheiro executável (`.exe`).
@@ -246,6 +249,7 @@ flowchart TD
   2. A simples abertura de uma pasta no Explorador que contenha atalhos pode incrementar o contador `Run Counter` de certos `.lnk` **sem que o utilizador tenha clicado ou corrido a app** (falso positivo de execução!).
 
 ### 2. ShellBags
+
 * **Hive**: `USRCLASS.DAT` (`C:\Users\<user>\AppData\Local\Microsoft\Windows\UsrClass.dat`)
 * **Chaves**:
   * `BagMRU`: árvore de diretórios indexada com estruturas binárias `SHITEMID`.
@@ -264,8 +268,7 @@ flowchart TD
 ### Nó `WOW6432Node`
 
 * Em Windows de 64 bits, chaves de software nativo de 64 bits ficam em `HKLM\Software`.
-* Chaves de software legado de 32 bits sofrem **redirecionamento** transparente para:
-  `HKEY_LOCAL_MACHINE\Software\WOW6432Node`
+* Chaves de software legado de 32 bits sofrem **redirecionamento** transparente para `HKEY_LOCAL_MACHINE\Software\WOW6432Node`
 
 > [!CAUTION] Cegueira de Ferramentas Forenses de 32 bits
 > Ferramentas de análise forense compiladas em 32 bits que corram num SO de 64 bits são redirecionadas automaticamente pelo WOW64 para o `WOW6432Node`, ficando **cegas às chaves nativas de 64 bits** (a menos que usem `KEY_WOW64_64KEY`). Em triagem *live*, use sempre ferramentas nativas de 64 bits!
@@ -281,6 +284,7 @@ Todo o executável tem cabeçalho DOS (`MZ` / `4D 5A`), ponteiro no offset `0x3C
 | **ARM64 (Little-Endian)** | `PE....` | `64 AA` | `IMAGE_FILE_MACHINE_ARM64` (`AA64`) |
 
 Comandos CLI:
+
 * `exiftool.exe binario.exe` $\rightarrow$ inspecionar `File Type`, `PE Type` (PE32 vs PE32+) e `Machine Type`.
 * `trid.exe binario.exe` $\rightarrow$ identificação heurística do compilador e empacotador (*packer*).
 
@@ -289,12 +293,9 @@ Comandos CLI:
 ## 7. Aplicações Modernas (MSIX / Helium)
 
 * **Contentorização**: Aplicações empacotadas em **MSIX** (Microsoft Store) não escrevem no `NTUSER.DAT` tradicional.
-* **Pasta `Helium`**: Mantêm hives privados e virtualizados em:
-  `%LocalAppData%\Packages\<APPID>\SystemAppData\Helium\`
+* **Pasta `Helium`**: Mantêm hives privados e virtualizados em `%LocalAppData%\Packages\<APPID>\SystemAppData\Helium\`
 * **Ficheiro Central**: **`User.dat`** (e ficheiros transacionais `User.dat.LOG1` / `.LOG2`).
-* **Caso Prático**: No Windows 11, o **Bloco de Notas (Notepad)** armazena a lista de ficheiros recentemente abertos exclusivamente em:
-  `...\Packages\Microsoft.WindowsNotepad_8wekyb3d8bbwe\SystemAppData\Helium\User.dat`
-  Sob a chave: `Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDMru`
+* **Caso Prático**: No Windows 11, o **Bloco de Notas (Notepad)** armazena a lista de ficheiros recentemente abertos exclusivamente em `...\Packages\Microsoft.WindowsNotepad_8wekyb3d8bbwe\SystemAppData\Helium\User.dat`, sob a chave `Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDMru`
 * **Impacto Pericial**: Analisar apenas os hives padrão resulta em **falsos negativos** sobre a atividade em apps modernas.
 
 ---
@@ -302,15 +303,15 @@ Comandos CLI:
 ## 8. Salvaguarda, Auditoria e Monitorização
 
 ### 1. O Fim do `RegBack` Automático
+
 * Histórico: `C:\Windows\System32\config\RegBack\` continha cópias dos hives a cada 10 dias via tarefa `RegIdleBackup`.
 * **Alteração Crítica**: Desde o **Windows 10 v1803**, a Microsoft **desativou** o backup por defeito. Os ficheiros existem mas têm tamanho **0 KB**!
-* Reativação: Requer a criação do valor DWORD `EnablePeriodicBackup = 1` sob:
-  `HKLM\System\CurrentControlSet\Control\Session Manager\Configuration Manager`
+* Reativação: Requer a criação do valor DWORD `EnablePeriodicBackup = 1` sob `HKLM\System\CurrentControlSet\Control\Session Manager\Configuration Manager`
 
 ### 2. Sysmon (System Monitor) vs. Procmon
+
 * **Procmon**: Análise dinâmica interativa; regista em memória em tempo real.
-* **Sysmon**: Serviço persistente + driver de kernel; regista continuamente no Windows Event Log:
-  `Applications and Services Logs\Microsoft\Windows\Sysmon\Operational`
+* **Sysmon**: Serviço persistente + driver de kernel; regista continuamente no Windows Event Log: `Applications and Services Logs\Microsoft\Windows\Sysmon\Operational`
 * **Event IDs do Sysmon para o Registry**:
   * **Event ID 12**: Criação ou eliminação de chaves e valores (*Object create and delete*).
   * **Event ID 13**: Alteração do dado de um valor (*Value Set*).
@@ -337,6 +338,7 @@ Comandos CLI:
 ## 10. Cheat Sheet de Comandos CLI (Guia de Terminal)
 
 ### Interrogação e Exportação Nativa (`reg.exe`)
+
 ```cmd
 REM Consultar valor específico
 reg query "HKLM\SYSTEM\CurrentControlSet\Control\hivelist"
@@ -349,6 +351,7 @@ reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" run_
 ```
 
 ### Associações de Ficheiros (`assoc` e `ftype`)
+
 ```cmd
 REM Verificar o tipo associado a uma extensão
 assoc .txt
@@ -360,6 +363,7 @@ REM Resultado: VLC.mp3="C:\Program Files\VideoLAN\VLC\vlc.exe" --started-from-fi
 ```
 
 ### Conversão de Timestamps e Auditoria USB
+
 ```cmd
 REM Converter valor decimal FILETIME64 para data/hora UTC legível
 w32tm.exe /ntte 132487968980000000
@@ -369,6 +373,7 @@ gwmi win32_diskdrive | ? {$_.interfacetype -eq 'USB'} | Select-Object model, pnp
 ```
 
 ### Ferramentas Forenses Especializadas
+
 ```bash
 # RegRipper: Executar plugin userassist sobre hive NTUSER.DAT offline
 ./rip.exe -r C:\Forensics\NTUSER.DAT -p userassist

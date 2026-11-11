@@ -137,10 +137,10 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 
 | Nota | Descrição e Foco Técnico |
 | :--- | :--- |
+| [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]] | Síntese e visão integrada: pirâmide de compatibilidade (WOW64, Shims/sysmain.sdb, PcaSvc, ShimCache, AmCache), fluxo de execução e correlação forense |
 | [[Application Compatibility e ShimCache (AppCompatCache)]] | Infraestrutura de shims, `PcaSvc` e `sysmain.sdb`, retenção na RAM e escrita no shutdown (`SYSTEM`), buffer circular (1024), remoção da InsertFlag no W10/W11 |
 | [[AmCache - Arquitetura, Hives e Evolução para SQLite]] | Histórico (`RecentFileCache.bcf` W7 vs `Amcache.hve` REGF W8+), tarefas agendadas, hash SHA-1 e VirusTotal, evolução para SQLite3 no Windows 11 (>25H2) |
 | [[Extração da AmCache e Comparação Forense com a ShimCache]] | Extração de ficheiros bloqueados, parsing com `AmcacheParser` (Zimmerman) e `RegRipper`, tabela comparativa, regra de ouro (prova de existência vs. execução); Ficha 05 |
-| [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]] | Síntese e visão integrada: pirâmide de compatibilidade (WOW64, Shims/sysmain.sdb, PcaSvc, ShimCache, AmCache), fluxo de execução e correlação forense |
 | [[Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)]] | Guião prático e questionário de avaliação sobre VSS, Prefetch, ShimCache e AmCache (Fichas 3, 4 e 5) |
 
 ---
@@ -204,14 +204,10 @@ Guiões laboratoriais integrados com exercícios práticos e questionários de e
 ## Navegação
 
 - [[00 ASSI|Voltar ao MOC Geral de ASSI]]
+- [[Capítulo 2 - Administração de Sistemas|Avançar para o Capítulo 2 de ASSI (Administração de Sistemas e Controlo de Acessos)]]
+- [[Capítulo 3 - YARA - MOTW - Strings|Avançar para o Capítulo 3 de ASSI (YARA, LOKI, ADS/MOTW e Strings)]]
 - [[Capítulo 1 - Método de Investigação|Pontes com AFD1 — Capítulo 1 (Método de Investigação Forense)]]
 - [[Capítulo 2 - Arranque e Aquisição Forense|Pontes com AFD1 — Capítulo 2 (Arranque e Aquisição Forense)]]
 - [[Capítulo 3 - Organização de Dados|Pontes com AFD1 — Capítulo 3 (Organização de Dados, Endianness e Timestamps)]]
 - [[Home|Voltar ao Hub Central do MCIF]]
-
-
-
-
-
-
 

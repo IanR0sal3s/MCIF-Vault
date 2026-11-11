@@ -23,12 +23,20 @@ aliases:
   - Collecting Digital Evidence Flow Chart
   - Information Analysis Layers
   - Block Size vs Sector Size
-atualizado: 2026-10-20
+atualizado: 2026-11-11
 ---
 
 # Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração
 
-A **aquisição de dados (*Data Acquisition*)** ocorre tipicamente durante a fase de **preservação do sistema** (embora também possa ser realizada num sistema em execução), constituindo uma etapa crítica: se não for conduzida corretamente, os dados podem perder-se para sempre ou ver a sua validade legal comprometida em tribunal. A recolha deve ser efetuada, sempre que possível, ao **nível físico** (do primeiro ao último bit do suporte, incluindo setores não alocados e áreas ocultas HPA/DCO), ajustando o tamanho do bloco de leitura ao tamanho do setor físico do dispositivo.
+A aquisição forense preserva dados digitais segundo o protocolo de primeira intervenção, priorizando a camada física de ponta a ponta com blocos ajustados ao tamanho de setor do disco.
+
+> [!TIP] Lógica de Funcionamento e Valor Forense
+> * **Porque existe (Método / Hardware)**: Erros na primeira intervenção (como reiniciar um servidor crítico ou copiar apenas ficheiros ativos) destroem provas voláteis e metadados de baixo nível, comprometendo a validade legal em tribunal.
+> * **Porque importa (Forense)**: Seguir a árvore de decisão do DOJ garante o equilíbrio entre preservar a RAM e travar processos destrutivos; adquirir ao nível físico garante acesso a espaço não alocado, ficheiros apagados, tabela de partições e áreas ocultas **HPA/DCO**.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **Árvore de Primeira Intervenção (U.S. DOJ)**: Desligado $\rightarrow$ não ligar e remover cabo; Ligado + rede empresarial $\rightarrow$ parar e chamar especialista; Ligado + processos destrutivos (`format`, `delete`, `remove`, `wipe`) $\rightarrow$ documentar/fotografar e cortar alimentação imediatamente.
+>   * **4 Camadas de Abstração**: **Physical** > **Volume** > **File** > **Application** — *quanto mais elevada a camada de aquisição, menos informação pode ser recuperada*.
+>   * **Tamanho de Bloco (`bs`)**: Blocos maiores aceleram a cópia, mas um único *bad sector* invalida o bloco inteiro; alinhar com o setor (`512 bytes` em HDD padrão, `4096 bytes` em *Advanced Format*; variável por marca/modelo/capacidade em SSD).
 
 ---
 
@@ -36,17 +44,17 @@ A **aquisição de dados (*Data Acquisition*)** ocorre tipicamente durante a fas
 
 Na chegada à cena do crime digital, a atuação sobre o equipamento depende do seu estado elétrico e operacional (com base no guia *Electronic Crime Scene Investigation: A Guide for First Responders, Second Edition — U.S. Department of Justice*):
 
-* **Se o computador estiver desligado (*off*)** $\rightarrow$ **Remover o cabo de alimentação elétrica** (*remove power cord*) e **NÃO ligar** o computador ou dispositivo.
-* **Se o computador estiver ligado (*on*)**:
-  1. **Fotografar o ecrã** (*take a picture of the screen*) e documentar toda a informação visível com valor probatório.
+* **Se o computador estiver desligado** $\rightarrow$ **Remover o cabo de alimentação elétrica** e **NÃO ligar** o computador ou dispositivo.
+* **Se o computador estiver ligado**:
+  1. **Fotografar o ecrã** e documentar toda a informação visível com valor probatório.
   2. **Verificar se estão em execução processos destrutivos (*destructive processes*)**:
      * *Processos destrutivos*: quaisquer funções destinadas a obliterar dados no disco rígido ou dispositivo de armazenamento (termos visíveis no ecrã como `"format"`, `"delete"`, `"remove"` e `"wipe"` são indicadores de processos destrutivos e devem ser documentados no relatório).
-     * **Se existirem processos destrutivos a correr** $\rightarrow$ **Remover imediatamente o cabo de alimentação elétrica** (*remove power cord*).
-  3. **Realizar um *dump* da memória RAM e recolher o estado das ligações de rede** (*do a memory dump and get network connections status*):
-     * **Atenção**: esta operação **pode destruir ou contaminar evidências** (*may destroy or contaminate evidences*), pelo que deve ser ponderada e executada por pessoal qualificado nas seguintes situações:
-       * Quando **não é possível desligar um servidor** (*when you cannot turn off a server* — ex.: ambiente empresarial em rede).
-       * Para **obter palavras-passe ou chaves de cifragem armazenadas na RAM** (*to get passwords or encryption keys stored in RAM*).
-       * Para **monitorizar atividades de rede de software malicioso** (*to monitor malicious software network activities*).
+     * **Se existirem processos destrutivos a correr** $\rightarrow$ **Remover imediatamente o cabo de alimentação elétrica**.
+  3. **Realizar um *dump* da memória RAM e recolher o estado das ligações de rede**:
+     * **Atenção**: esta operação **pode destruir ou contaminar evidências**, pelo que deve ser ponderada e executada por pessoal qualificado nas seguintes situações:
+       * Quando **não é possível desligar um servidor** (ex.: ambiente empresarial em rede).
+       * Para **obter palavras-passe ou chaves de cifragem armazenadas na RAM**.
+       * Para **monitorizar atividades de rede de software malicioso**.
 
 ```mermaid
 flowchart TD
@@ -77,13 +85,13 @@ Os dados num suporte de armazenamento podem ser analisados e adquiridos em **qua
 
 | Camada (do nível mais baixo ao mais alto) | Âmbito e Limitações Forenses |
 | :--- | :--- |
-| **1. Física (*Physical*)** | Abrange **desde o primeiro até ao último bit** do suporte de armazenamento (*from the first to the last bit of the storage media*). |
+| **1. Física (*Physical*)** | Abrange **desde o primeiro até ao último bit** do suporte de armazenamento. |
 | **2. Volume (*Volume* / Lógica)** | Ao adquirir apenas ao nível do volume/partição, **não é possível obter setores não alocados (*unallocated sectors*), a tabela de partições (*partition table*) nem áreas ocultas (*hidden areas*)**. |
 | **3. Ficheiro (*File*)** | Cópias de ficheiros individuais (ex.: ferramentas de *backup*), tornando **muito menos provável recuperar ficheiros apagados (*deleted files*)** ou espaço *slack*. |
 | **4. Aplicação (*Application*)** | Cada aplicação possui a sua própria codificação ou formato de ficheiro interno. |
 
 > [!IMPORTANT] Regra Fundamental da Camada de Aquisição
-> **Quanto mais elevada for a camada de aquisição, menos informação poderá ser recuperada** (*The higher the acquisition layer, the less information can be retrieved*).
+> **Quanto mais elevada for a camada de aquisição, menos informação poderá ser recuperada**.
 > **Sempre que possível, a aquisição de dados deve ser realizada ao nível físico (*physical level*)**.
 > *(Nota: Outros meios, como tráfego de rede e memória volátil RAM, possuem os seus próprios procedimentos recomendados específicos).*
 
@@ -92,10 +100,12 @@ Os dados num suporte de armazenamento podem ser analisados e adquiridos em **qua
 ## 3. Cópia de Suportes de Armazenamento: Tamanho de Bloco (*Block Size*) vs. Setor
 
 Durante a cópia física de um suporte de armazenamento, a escolha do **tamanho de bloco de aquisição (*acquisition block size*)** envolve um compromisso direto entre velocidade e tolerância a erros de leitura:
+
 * **Quanto maior for o tamanho do bloco (`bs`), mais rápida será a aquisição**.
-* Contudo, **se existirem setores com erros (*bad sectors*), todo o bloco que contém o setor defeituoso ficará inválido** (*the all block will be invalid*).
+* Contudo, **se existirem setores com erros (*bad sectors*), todo o bloco que contém o setor defeituoso ficará inválido**.
 
 ### Diretrizes de Configuração da Cópia Física
+
 1. **Alinhamento do Tamanho de Bloco com o Tamanho do Setor**:
    * O tamanho de bloco de aquisição **deve coincidir com o tamanho do setor (*sector size*)** do dispositivo:
      * Para discos rígidos magnéticos (**HDD**), o tamanho padrão do setor é de **`512 bytes`** (ou `4096 bytes` em discos *Advanced Format* modernos).
@@ -110,7 +120,7 @@ Durante a cópia física de um suporte de armazenamento, a escolha do **tamanho 
 ## Implicações Forenses
 
 * **Consequência de um `bs` Excessivo em Discos Danificados**: Se um perito configurar `bs=1M` (1 Megabyte) num disco rígido antigo que tenha apenas 1 setor físico de `512 bytes` ilegível no meio desse megabyte, a ferramenta de aquisição descartará e preencherá com zeros a totalidade do bloco de `1 MB` (perdendo 2047 setores bons adjacentes!). Reduzir `bs=512` (ou usar ferramentas que reduzem automaticamente o bloco perante erros) limita a perda estritamente aos `512 bytes` defeituosos.
-* **Articulação com as Regras LabCIF**: Os passos finais do fluxograma do DOJ (*etiquetar todas as ligações, cabos e fontes de alimentação; documentar e fotografar*) materializam-se diretamente nos procedimentos laboratoriais de etiquetagem e fotografia pericial ([[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]).
+* **Articulação com as Regras LabCIF**: Os passos finais do fluxograma do DOJ (etiquetar todas as ligações, cabos e fontes de alimentação; documentar e fotografar) materializam-se diretamente nos procedimentos laboratoriais de etiquetagem e fotografia pericial ([[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]).
 
 ---
 
@@ -127,10 +137,27 @@ Durante a cópia física de um suporte de armazenamento, a escolha do **tamanho 
 
 ## Perguntas de revisão
 
-- Perante um computador encontrado ligado na cena do crime, que verificação crítica deve ser feita no ecrã antes de decidir entre realizar um *memory dump* ou desligar imediatamente o cabo de alimentação?
-- Em que três situações específicas se justifica realizar um *dump* de memória e recolha de estado de rede num sistema ligado, apesar do risco de contaminação?
-- Quais são as quatro camadas de análise de informação num suporte de armazenamento e porque é que a aquisição deve ser feita, sempre que possível, ao nível físico?
-- Qual é o compromisso entre velocidade e perda de dados na escolha do tamanho de bloco (`block size`) durante a aquisição de um disco com setores defeituosos?
+1. **Perante um computador encontrado ligado na cena do crime, que verificação crítica deve ser feita no ecrã antes de decidir entre realizar um *memory dump* ou desligar imediatamente o cabo de alimentação?**
+
+> [!success]- Ver Resposta
+> Deve fotografar-se o ecrã, documentar a informação visível com valor probatório e verificar se existem **processos destrutivos** em execução (indicados por termos como `"format"`, `"delete"`, `"remove"` ou `"wipe"`). Se estiverem a correr processos destrutivos e não se tratar de um ambiente empresarial crítico que exija intervenção especializada de rede, deve **remover-se imediatamente o cabo de alimentação**.
+
+2. **Em que três situações específicas se justifica realizar um *dump* de memória e recolha de estado de rede num sistema ligado, apesar do risco de contaminação?**
+
+> [!success]- Ver Resposta
+> 1. Quando **não é possível desligar um servidor** (ex.: ambiente empresarial em rede de alta disponibilidade).
+> 2. Para **obter palavras-passe ou chaves de cifragem armazenadas na RAM**.
+> 3. Para **monitorizar atividades de rede de software malicioso**.
+
+3. **Quais são as quatro camadas de análise de informação num suporte de armazenamento e porque é que a aquisição deve ser feita, sempre que possível, ao nível físico?**
+
+> [!success]- Ver Resposta
+> De baixo para cima: **Physical** (Física), **Volume**, **File** (Ficheiro) e **Application** (Aplicação). Como **quanto mais elevada for a camada de aquisição, menos informação pode ser recuperada**, a aquisição deve ser realizada ao **nível físico** (do primeiro ao último bit), pois só assim se preservam a tabela de partições, os setores não alocados, o espaço *slack*, ficheiros eliminados e eventuais áreas ocultas (`HPA`/`DCO`).
+
+4. **Qual é o compromisso entre velocidade e perda de dados na escolha do tamanho de bloco (`block size`) durante a aquisição de um disco com setores defeituosos?**
+
+> [!success]- Ver Resposta
+> Um tamanho de bloco maior acelera a aquisição, mas **um único setor defeituoso invalida o bloco inteiro** que o contém. Por isso, o tamanho de bloco deve coincidir com o tamanho do setor do dispositivo (`512 bytes` ou `4096 bytes` em HDDs; dependente de marca, modelo e capacidade em SSDs).
 
 ## Notas relacionadas
 
