@@ -27,6 +27,7 @@ aliases:
   - Administração de Sistemas
   - System and Data Management e Access Control
 atualizado: 2026-11-11
+custom-width: 44
 ---
 
 # Capítulo 2 — Administração de Sistemas (*System and Data Management & Access Control*)

@@ -1,14 +1,16 @@
 {
-  "generated_at": "2026-11-11",
+  "generated_at": "2026-11-15",
   "stats": {
-    "total_notes": 136,
+    "total_notes": 198,
     "notes_by_uc": {
       "AFD1": 37,
       "ASSI": 98,
-      "GERAL": 1
+      "COD1": 31,
+      "GERAL": 1,
+      "SRC": 31
     },
-    "total_internal_links": 1397,
-    "total_cross_uc_links": 427,
+    "total_internal_links": 1673,
+    "total_cross_uc_links": 433,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
     "yaml_warnings_count": 0,
@@ -27,7 +29,35 @@
         "source_uc": "AFD1",
         "target_id": "AmCache - Arquitetura, Hives e Evolução para SQLite",
         "target_uc": "ASSI",
-        "matched_term": "AmCache"
+        "matched_term": "Amcache.hve"
+      },
+      {
+        "source_id": "Pesquisa de Evidências e Reconstrução de Eventos",
+        "source_uc": "AFD1",
+        "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+        "target_uc": "SRC",
+        "matched_term": "SHA-1"
+      },
+      {
+        "source_id": "Preservação do Sistema e Integridade de Dados",
+        "source_uc": "AFD1",
+        "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "target_uc": "SRC",
+        "matched_term": "Assinatura Digital"
+      },
+      {
+        "source_id": "Preservação do Sistema e Integridade de Dados",
+        "source_uc": "AFD1",
+        "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+        "target_uc": "SRC",
+        "matched_term": "SHA-1"
+      },
+      {
+        "source_id": "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "source_uc": "AFD1",
+        "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "target_uc": "SRC",
+        "matched_term": "Assinatura Digital"
       },
       {
         "source_id": "Princípios e Rota do Manuseamento de Evidência Digital",
@@ -62,7 +92,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -79,11 +109,39 @@
         "matched_term": "Prefetch"
       },
       {
+        "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
+        "source_uc": "AFD1",
+        "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "target_uc": "SRC",
+        "matched_term": "Assinatura Digital"
+      },
+      {
+        "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
+        "source_uc": "AFD1",
+        "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+        "target_uc": "SRC",
+        "matched_term": "SHA-1"
+      },
+      {
+        "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
+        "source_uc": "AFD1",
+        "target_id": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "target_uc": "SRC",
+        "matched_term": "GnuPG"
+      },
+      {
+        "source_id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+        "source_uc": "AFD1",
+        "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "target_uc": "SRC",
+        "matched_term": "Assinatura Digital"
+      },
+      {
         "source_id": "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -98,6 +156,20 @@
         "target_id": "Serviço Prefetch e SysMain - Arquitetura e Funcionamento",
         "target_uc": "ASSI",
         "matched_term": "Prefetch"
+      },
+      {
+        "source_id": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "source_uc": "AFD1",
+        "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "target_uc": "SRC",
+        "matched_term": "Assinatura Digital"
+      },
+      {
+        "source_id": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "source_uc": "AFD1",
+        "target_id": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "target_uc": "SRC",
+        "matched_term": "GnuPG"
       },
       {
         "source_id": "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
@@ -128,6 +200,13 @@
         "matched_term": "Unix Epoch"
       },
       {
+        "source_id": "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
+        "source_uc": "AFD1",
+        "target_id": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "target_uc": "SRC",
+        "matched_term": "GnuPG"
+      },
+      {
         "source_id": "Endianness e Ordem de Armazenamento",
         "source_uc": "AFD1",
         "target_id": "Estrutura e Hives do Windows Registry",
@@ -156,11 +235,39 @@
         "matched_term": "RegistryExplorer"
       },
       {
+        "source_id": "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
+        "source_uc": "AFD1",
+        "target_id": "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
+        "target_uc": "SRC",
+        "matched_term": "Cifra de César"
+      },
+      {
         "source_id": "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "source_uc": "AFD1",
         "target_id": "Codificação uLEB128 em Estruturas de Dados do Windows",
         "target_uc": "ASSI",
         "matched_term": "uLEB128"
+      },
+      {
+        "source_id": "PKfail - Vulnerabilidade do UEFI Secure Boot",
+        "source_uc": "ASSI",
+        "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "target_uc": "SRC",
+        "matched_term": "Assinatura Digital"
+      },
+      {
+        "source_id": "UEFI Secure Boot",
+        "source_uc": "ASSI",
+        "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "target_uc": "SRC",
+        "matched_term": "Assinatura Digital"
+      },
+      {
+        "source_id": "Serviços Windows",
+        "source_uc": "ASSI",
+        "target_id": "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
+        "target_uc": "SRC",
+        "matched_term": "IPSec"
       },
       {
         "source_id": "Estrutura e Hives do Windows Registry",
@@ -177,112 +284,49 @@
         "matched_term": "Investigação Digital"
       },
       {
+        "source_id": "Registry em Aplicações Modernas (MSIX e Helium)",
+        "source_uc": "ASSI",
+        "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "target_uc": "SRC",
+        "matched_term": "Assinatura Digital"
+      },
+      {
+        "source_id": "Artefacto Forense UserAssist",
+        "source_uc": "ASSI",
+        "target_id": "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
+        "target_uc": "SRC",
+        "matched_term": "Cifra de César"
+      },
+      {
         "source_id": "Artefactos Forenses de Execução e Persistência no Registry",
         "source_uc": "ASSI",
         "target_id": "Endianness e Ordem de Armazenamento",
         "target_uc": "AFD1",
         "matched_term": "Little-endian"
-      },
-      {
-        "source_id": "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
-        "source_uc": "ASSI",
-        "target_id": "Endianness e Ordem de Armazenamento",
-        "target_uc": "AFD1",
-        "matched_term": "Little-endian"
-      },
-      {
-        "source_id": "Recuperação de Clipboard e Sincronização na Timeline",
-        "source_uc": "ASSI",
-        "target_id": "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
-        "target_uc": "AFD1",
-        "matched_term": "UTF-8"
-      },
-      {
-        "source_id": "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
-        "source_uc": "ASSI",
-        "target_id": "Endianness e Ordem de Armazenamento",
-        "target_uc": "AFD1",
-        "matched_term": "Little-endian"
-      },
-      {
-        "source_id": "Ficha Prática e Questionário - Shell, Atividade e Matriz Forense",
-        "source_uc": "ASSI",
-        "target_id": "Endianness e Ordem de Armazenamento",
-        "target_uc": "AFD1",
-        "matched_term": "Little-endian"
-      },
-      {
-        "source_id": "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
-        "source_uc": "ASSI",
-        "target_id": "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
-        "target_uc": "AFD1",
-        "matched_term": "Base64"
-      },
-      {
-        "source_id": "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
-        "source_uc": "ASSI",
-        "target_id": "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
-        "target_uc": "AFD1",
-        "matched_term": "UTF-16"
-      },
-      {
-        "source_id": "Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking",
-        "source_uc": "ASSI",
-        "target_id": "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
-        "target_uc": "AFD1",
-        "matched_term": "Base64"
-      },
-      {
-        "source_id": "Cheat Sheet - YARA, MOTW e Extração de Strings",
-        "source_uc": "ASSI",
-        "target_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
-        "target_uc": "AFD1",
-        "matched_term": "Alternate Data Stream"
-      },
-      {
-        "source_id": "Cheat Sheet - YARA, MOTW e Extração de Strings",
-        "source_uc": "ASSI",
-        "target_id": "Endianness e Ordem de Armazenamento",
-        "target_uc": "AFD1",
-        "matched_term": "Little-endian"
-      },
-      {
-        "source_id": "Cheat Sheet - YARA, MOTW e Extração de Strings",
-        "source_uc": "ASSI",
-        "target_id": "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
-        "target_uc": "AFD1",
-        "matched_term": "UTF-16"
-      },
-      {
-        "source_id": "Cheat Sheet - YARA, MOTW e Extração de Strings",
-        "source_uc": "ASSI",
-        "target_id": "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
-        "target_uc": "AFD1",
-        "matched_term": "Base64"
-      },
-      {
-        "source_id": "YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex",
-        "source_uc": "ASSI",
-        "target_id": "Endianness e Ordem de Armazenamento",
-        "target_uc": "AFD1",
-        "matched_term": "Little-endian"
-      },
-      {
-        "source_id": "Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell",
-        "source_uc": "ASSI",
-        "target_id": "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
-        "target_uc": "AFD1",
-        "matched_term": "FTK Imager"
-      },
-      {
-        "source_id": "Conceito de Strings e Comando strings em Unix-Linux",
-        "source_uc": "ASSI",
-        "target_id": "Endianness e Ordem de Armazenamento",
-        "target_uc": "AFD1",
-        "matched_term": "Big-endian"
       }
     ],
     "shared_tag_bridges": [
+      {
+        "note_a": "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "uc_a": "ASSI",
+        "note_b": "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação",
+        "uc_b": "COD1",
+        "shared_tags": [
+          "cve",
+          "cvss",
+          "nvd"
+        ]
+      },
+      {
+        "note_a": "Capítulo 6 - Análise de Vulnerabilidades",
+        "uc_a": "COD1",
+        "note_b": "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "cve",
+          "cvss"
+        ]
+      },
       {
         "note_a": "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
         "uc_a": "AFD1",
@@ -304,6 +348,52 @@
         ]
       },
       {
+        "note_a": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+        "uc_a": "SRC",
+        "note_b": "Preservação do Sistema e Integridade de Dados",
+        "uc_b": "AFD1",
+        "shared_tags": [
+          "hash",
+          "md5"
+        ]
+      },
+      {
+        "note_a": "Abuso e Vetores de Ataque com Ficheiros LNK",
+        "uc_a": "ASSI",
+        "note_b": "WHOIS, DNS, Networking Footprinting e Engenharia Social",
+        "uc_b": "COD1",
+        "shared_tags": [
+          "engenharia-social"
+        ]
+      },
+      {
+        "note_a": "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
+        "uc_a": "COD1",
+        "note_b": "Ferramentas de Análise e Extração do Registry",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "ferramentas"
+        ]
+      },
+      {
+        "note_a": "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
+        "uc_a": "COD1",
+        "note_b": "Cheat Sheet - Criptografia, Hash, PKI e VPNs",
+        "uc_b": "SRC",
+        "shared_tags": [
+          "vpn"
+        ]
+      },
+      {
+        "note_a": "Análise Forense e Criação a Pedido do Prefetch",
+        "uc_a": "ASSI",
+        "note_b": "Laboratório Scapy - Envio e Resposta de Pacotes ICMP",
+        "uc_b": "SRC",
+        "shared_tags": [
+          "python"
+        ]
+      },
+      {
         "note_a": "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
         "uc_a": "AFD1",
         "note_b": "Conceito de Strings e Comando strings em Unix-Linux",
@@ -315,10 +405,37 @@
       {
         "note_a": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
         "uc_a": "AFD1",
+        "note_b": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "uc_b": "SRC",
+        "shared_tags": [
+          "assinatura-digital"
+        ]
+      },
+      {
+        "note_a": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "uc_a": "AFD1",
         "note_b": "Estrutura Interna e Algoritmo de Hashing do Prefetch",
         "uc_b": "ASSI",
         "shared_tags": [
           "hash"
+        ]
+      },
+      {
+        "note_a": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "uc_a": "AFD1",
+        "note_b": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+        "uc_b": "SRC",
+        "shared_tags": [
+          "hash"
+        ]
+      },
+      {
+        "note_a": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "uc_a": "AFD1",
+        "note_b": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "uc_b": "SRC",
+        "shared_tags": [
+          "gnupg"
         ]
       },
       {
@@ -349,6 +466,60 @@
         ]
       },
       {
+        "note_a": "Ataques e Contramedidas por Camada em IoT (Sharma)",
+        "uc_a": "SRC",
+        "note_b": "Contramedidas de Enumeração e Metodologia Pentest",
+        "uc_b": "COD1",
+        "shared_tags": [
+          "contramedidas"
+        ]
+      },
+      {
+        "note_a": "Ataques e Contramedidas por Camada em IoT (Sharma)",
+        "uc_a": "SRC",
+        "note_b": "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "uc_b": "COD1",
+        "shared_tags": [
+          "contramedidas"
+        ]
+      },
+      {
+        "note_a": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "uc_a": "SRC",
+        "note_b": "Preservação do Sistema e Integridade de Dados",
+        "uc_b": "AFD1",
+        "shared_tags": [
+          "assinatura-digital"
+        ]
+      },
+      {
+        "note_a": "Capítulo 3 - Rastreamento e Reconhecimento",
+        "uc_a": "COD1",
+        "note_b": "Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin)",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "osint"
+        ]
+      },
+      {
+        "note_a": "Capítulo 5 - Enumeração",
+        "uc_a": "COD1",
+        "note_b": "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
+        "uc_b": "SRC",
+        "shared_tags": [
+          "dns"
+        ]
+      },
+      {
+        "note_a": "Capítulo 6 - Análise de Vulnerabilidades",
+        "uc_a": "COD1",
+        "note_b": "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "cve"
+        ]
+      },
+      {
         "note_a": "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "uc_a": "ASSI",
         "note_b": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -367,6 +538,24 @@
         ]
       },
       {
+        "note_a": "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
+        "uc_a": "ASSI",
+        "note_b": "Contramedidas de Enumeração e Metodologia Pentest",
+        "uc_b": "COD1",
+        "shared_tags": [
+          "hardening"
+        ]
+      },
+      {
+        "note_a": "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
+        "uc_a": "ASSI",
+        "note_b": "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação",
+        "uc_b": "COD1",
+        "shared_tags": [
+          "cve"
+        ]
+      },
+      {
         "note_a": "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "uc_a": "ASSI",
         "note_b": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -382,6 +571,24 @@
         "uc_b": "AFD1",
         "shared_tags": [
           "resumo"
+        ]
+      },
+      {
+        "note_a": "Cheat Sheet - Enumeração de Serviços e Portos",
+        "uc_a": "COD1",
+        "note_b": "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
+        "uc_b": "SRC",
+        "shared_tags": [
+          "dns"
+        ]
+      },
+      {
+        "note_a": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
+        "uc_a": "AFD1",
+        "note_b": "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "uc_b": "COD1",
+        "shared_tags": [
+          "metodologia"
         ]
       },
       {
@@ -430,6 +637,15 @@
         ]
       },
       {
+        "note_a": "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "uc_a": "COD1",
+        "note_b": "Fases da Investigação Forense Digital",
+        "uc_b": "AFD1",
+        "shared_tags": [
+          "metodologia"
+        ]
+      },
+      {
         "note_a": "Cheat Sheet - YARA, MOTW e Extração de Strings",
         "uc_a": "ASSI",
         "note_b": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -439,75 +655,21 @@
         ]
       },
       {
-        "note_a": "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
-        "uc_a": "AFD1",
-        "note_b": "Ficha Prática e Questionário - Shell, Atividade e Matriz Forense",
+        "note_a": "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
+        "uc_a": "SRC",
+        "note_b": "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
         "uc_b": "ASSI",
         "shared_tags": [
-          "correlacao"
+          "aes"
         ]
       },
       {
-        "note_a": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
-        "uc_a": "AFD1",
-        "note_b": "Ficha Prática e Questionário - Shell, Atividade e Matriz Forense",
-        "uc_b": "ASSI",
+        "note_a": "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "uc_a": "SRC",
+        "note_b": "Pesquisa de Evidências e Reconstrução de Eventos",
+        "uc_b": "AFD1",
         "shared_tags": [
-          "jumplists"
-        ]
-      },
-      {
-        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "uc_a": "AFD1",
-        "note_b": "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "registry"
-        ]
-      },
-      {
-        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "uc_a": "AFD1",
-        "note_b": "LastActivityView e Reconstituição Temporal Live",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "triagem"
-        ]
-      },
-      {
-        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "uc_a": "AFD1",
-        "note_b": "Registry em Aplicações Modernas (MSIX e Helium)",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "registry"
-        ]
-      },
-      {
-        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "uc_a": "AFD1",
-        "note_b": "Salvaguarda e Monitorização do Registry",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "registry"
-        ]
-      },
-      {
-        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "uc_a": "AFD1",
-        "note_b": "Tipos de Dados e Associação de Ficheiros no Registry",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "registry"
-        ]
-      },
-      {
-        "note_a": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "uc_a": "AFD1",
-        "note_b": "svchost.exe",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "registry"
+          "nist"
         ]
       }
     ],
@@ -984,6 +1146,7 @@
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Extração da AmCache e Comparação Forense com a ShimCache",
+        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "Preservação do Sistema e Integridade de Dados"
       ],
@@ -8256,6 +8419,1106 @@
       "cross_uc_links": []
     },
     {
+      "id": "00 COD1",
+      "title": "COD1 — Cibersegurança Ofensiva e Defensiva I",
+      "path": "COD1/00 COD1.md",
+      "uc": "COD1",
+      "capitulo": null,
+      "bloco": null,
+      "tipo": "indice",
+      "tags": [
+        "moc",
+        "cod1",
+        "pentesting",
+        "footprinting",
+        "scanning",
+        "enumeracao"
+      ],
+      "aliases": [
+        "COD1",
+        "00 COD1",
+        "Cibersegurança Ofensiva e Defensiva I"
+      ],
+      "summary": "Unidade curricular do Mestrado em Cibersegurança e Informática Forense (MCIF) da Escola Superior de Tecnologia e Gestão (ESTG) do Politécnico de Leiria.",
+      "out_links": [
+        "Capítulo 1 - Introdução à Cibersegurança",
+        "Capítulo 2 - Preparação do Ambiente Laboratorial",
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Capítulo 4 - Scanning de Redes",
+        "Capítulo 5 - Enumeração",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Cheat Sheet - Enumeração de Serviços e Portos",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Cheat Sheet - Scanning de Redes e Nmap",
+        "Home"
+      ],
+      "in_links": [
+        "Capítulo 1 - Introdução à Cibersegurança",
+        "Capítulo 2 - Preparação do Ambiente Laboratorial",
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Capítulo 4 - Scanning de Redes",
+        "Capítulo 5 - Enumeração",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Cheat Sheet - Enumeração de Serviços e Portos",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Cheat Sheet - Scanning de Redes e Nmap",
+        "Home"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+      "title": "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+      "path": "COD1/Capítulo 01 - Introdução à Cibersegurança/01 - Conceitos e Vetores de Ataque/Conceitos de Cibersegurança, Terminologia e Vetores de Ataque.md",
+      "uc": "COD1",
+      "capitulo": 1,
+      "bloco": 1,
+      "tipo": "conceito",
+      "tags": [
+        "cod1",
+        "ciberseguranca",
+        "vetores-de-ataque",
+        "terminologia"
+      ],
+      "aliases": [
+        "Terminologia Hacking",
+        "Pivoting",
+        "Daisy Chaining",
+        "Vetores de Ataque COD1"
+      ],
+      "summary": "Um ataque informático resulta da conjunção de três fatores — Objetivo (motivo) + Método + Vulnerabilidade — visando explorar ativos com hack value através de vetores de rede, máquina ou aplicação.",
+      "out_links": [
+        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Fases do Hacking e Âmbito do Ethical Hacking",
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
+      ],
+      "in_links": [
+        "Capítulo 1 - Introdução à Cibersegurança",
+        "Fases do Hacking e Âmbito do Ethical Hacking"
+      ],
+      "cross_uc_links": [
+        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949"
+      ]
+    },
+    {
+      "id": "Fases do Hacking e Âmbito do Ethical Hacking",
+      "title": "Fases do Hacking e Âmbito do Ethical Hacking",
+      "path": "COD1/Capítulo 01 - Introdução à Cibersegurança/02 - Ethical Hacking e Fases do Hacking/Fases do Hacking e Âmbito do Ethical Hacking.md",
+      "uc": "COD1",
+      "capitulo": 1,
+      "bloco": 2,
+      "tipo": "conceito",
+      "tags": [
+        "cod1",
+        "ethical-hacking",
+        "fases-hacking",
+        "reconhecimento"
+      ],
+      "aliases": [
+        "Fases do Hacking",
+        "Ethical Hacking",
+        "Reconhecimento Passivo e Ativo"
+      ],
+      "summary": "O Ethical Hacking replica de forma controlada e com autorização expressa da organização as cinco fases utilizadas por atacantes reais — *Reconhecimento, Scanning, Ganhar acesso, Manter acesso e Limpar rasto* — para...",
+      "out_links": [
+        "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+        "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
+      ],
+      "in_links": [
+        "Capítulo 1 - Introdução à Cibersegurança",
+        "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
+      "title": "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
+      "path": "COD1/Capítulo 01 - Introdução à Cibersegurança/03 - Testes de Penetração, Relatórios e Legislação/Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF).md",
+      "uc": "COD1",
+      "capitulo": 1,
+      "bloco": 3,
+      "tipo": "conceito",
+      "tags": [
+        "cod1",
+        "nis2",
+        "iso27001",
+        "nist-csf",
+        "controlos-seguranca"
+      ],
+      "aliases": [
+        "NIS 2",
+        "ISO 27001",
+        "NIST CSF",
+        "Segurança por Zonas"
+      ],
+      "summary": "A postura defensiva de uma organização assenta em políticas de segurança, segurança física, segmentação de rede por zonas e soluções técnicas (`Firewall`, `IDS`/`IPS`, `EDR`/`XDR`, `SIEM`/`SOAR`), enquadradas por...",
+      "out_links": [
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios",
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "in_links": [
+        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+        "Capítulo 1 - Introdução à Cibersegurança",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+      ],
+      "cross_uc_links": [
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ]
+    },
+    {
+      "id": "Testes de Penetração - Metodologia, Pentest Request e Relatórios",
+      "title": "Testes de Penetração - Metodologia, Pentest Request e Relatórios",
+      "path": "COD1/Capítulo 01 - Introdução à Cibersegurança/03 - Testes de Penetração, Relatórios e Legislação/Testes de Penetração - Metodologia, Pentest Request e Relatórios.md",
+      "uc": "COD1",
+      "capitulo": 1,
+      "bloco": 3,
+      "tipo": "procedimento",
+      "tags": [
+        "cod1",
+        "pentesting",
+        "pentest-request",
+        "relatorios",
+        "red-team",
+        "blue-team"
+      ],
+      "aliases": [
+        "Pentest Request",
+        "Testes de Penetração",
+        "Red Team vs Blue Team",
+        "Relatório de Pentest"
+      ],
+      "summary": "Um *teste de penetração (pentest) avalia ativamente a segurança de uma organização simulando ataques reais para descobrir vulnerabilidades, demonstrar como podem ser exploradas e documentar o respetivo impacto e...",
+      "out_links": [
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Fases do Hacking e Âmbito do Ethical Hacking",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)"
+      ],
+      "in_links": [
+        "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
+        "Capítulo 1 - Introdução à Cibersegurança",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+        "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
+        "Fases do Hacking e Âmbito do Ethical Hacking",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Capítulo 1 - Introdução à Cibersegurança",
+      "title": "Capítulo 1 - Introdução à Cibersegurança",
+      "path": "COD1/Capítulo 01 - Introdução à Cibersegurança/Capítulo 1 - Introdução à Cibersegurança.md",
+      "uc": "COD1",
+      "capitulo": 1,
+      "bloco": null,
+      "tipo": "indice",
+      "tags": [
+        "moc",
+        "cod1",
+        "pentesting",
+        "ethical-hacking",
+        "nis2"
+      ],
+      "aliases": [
+        "Capítulo 1 COD1",
+        "MOC Capítulo 1 COD1",
+        "Introdução à Cibersegurança"
+      ],
+      "summary": "Mapa de estudo do Capítulo 1 de COD1 (Prof. Leonel Santos), cobrindo 82 diapositivos organizados em 4 notas atómicas na pasta `COD1/Capítulo 01 - Introdução à Cibersegurança/`, com foco na estruturação legal,...",
+      "out_links": [
+        "00 COD1",
+        "Capítulo 2 - Preparação do Ambiente Laboratorial",
+        "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+        "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
+        "Fases do Hacking e Âmbito do Ethical Hacking",
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
+      ],
+      "in_links": [
+        "00 COD1",
+        "Capítulo 2 - Preparação do Ambiente Laboratorial"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
+      "title": "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
+      "path": "COD1/Capítulo 02 - Preparação do Ambiente Laboratorial/01 - Ambiente de Hacking e Virtualização/Ambiente de Hacking - Kali Linux, Commando VM e Virtualização.md",
+      "uc": "COD1",
+      "capitulo": 2,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "kali-linux",
+        "virtualizacao",
+        "commando-vm",
+        "ferramentas"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 2 - Preparação do Ambiente Laboratorial",
+      "out_links": [
+        "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
+        "Capítulo 2 - Preparação do Ambiente Laboratorial",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
+      ],
+      "in_links": [
+        "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
+        "Capítulo 2 - Preparação do Ambiente Laboratorial",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
+      "title": "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
+      "path": "COD1/Capítulo 02 - Preparação do Ambiente Laboratorial/02 - Anonimização e Segurança Operacional/Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix.md",
+      "uc": "COD1",
+      "capitulo": 2,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "anonimizacao",
+        "macchanger",
+        "tor",
+        "proxychains",
+        "vpn",
+        "whonix",
+        "anonsurf"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 2 - Preparação do Ambiente Laboratorial",
+      "out_links": [
+        "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
+        "Capítulo 2 - Preparação do Ambiente Laboratorial",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN"
+      ],
+      "in_links": [
+        "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
+        "Capítulo 2 - Preparação do Ambiente Laboratorial",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional"
+      ],
+      "cross_uc_links": [
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN"
+      ]
+    },
+    {
+      "id": "Capítulo 2 - Preparação do Ambiente Laboratorial",
+      "title": "Capítulo 2 - Preparação do Ambiente Laboratorial",
+      "path": "COD1/Capítulo 02 - Preparação do Ambiente Laboratorial/Capítulo 2 - Preparação do Ambiente Laboratorial.md",
+      "uc": "COD1",
+      "capitulo": 2,
+      "bloco": null,
+      "tipo": "MOC",
+      "tags": [
+        "cod1",
+        "moc",
+        "ambiente-laboratorial",
+        "kali-linux",
+        "anonimizacao"
+      ],
+      "aliases": [],
+      "summary": "Voltar a: 00 COD1",
+      "out_links": [
+        "00 COD1",
+        "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
+        "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
+        "Capítulo 1 - Introdução à Cibersegurança",
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional"
+      ],
+      "in_links": [
+        "00 COD1",
+        "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
+        "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
+        "Capítulo 1 - Introdução à Cibersegurança",
+        "Capítulo 3 - Rastreamento e Reconhecimento"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
+      "title": "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
+      "path": "COD1/Capítulo 03 - Rastreamento e Reconhecimento/01 - Conceitos e Motores de Pesquisa/Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking).md",
+      "uc": "COD1",
+      "capitulo": 3,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "footprinting",
+        "google-hacking",
+        "shodan",
+        "censys",
+        "netcraft"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 3 - Rastreamento e Reconhecimento",
+      "out_links": [
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
+        "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+      ],
+      "in_links": [
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Fases do Hacking e Âmbito do Ethical Hacking",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
+        "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
+      "title": "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
+      "path": "COD1/Capítulo 03 - Rastreamento e Reconhecimento/02 - OSINT, Redes Sociais, Web e Email/OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail.md",
+      "uc": "COD1",
+      "capitulo": 3,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "osint",
+        "github",
+        "redes-sociais",
+        "website-footprinting",
+        "email-footprinting"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 3 - Rastreamento e Reconhecimento",
+      "out_links": [
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+      ],
+      "in_links": [
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
+        "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "WHOIS, DNS, Networking Footprinting e Engenharia Social",
+      "title": "WHOIS, DNS, Networking Footprinting e Engenharia Social",
+      "path": "COD1/Capítulo 03 - Rastreamento e Reconhecimento/03 - WHOIS, DNS, Rede e Engenharia Social/WHOIS, DNS, Networking Footprinting e Engenharia Social.md",
+      "uc": "COD1",
+      "capitulo": 3,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "whois",
+        "dns",
+        "traceroute",
+        "engenharia-social",
+        "maltego",
+        "amass",
+        "recon-ng"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 3 - Rastreamento e Reconhecimento",
+      "out_links": [
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
+        "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP"
+      ],
+      "in_links": [
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
+        "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+      "title": "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+      "path": "COD1/Capítulo 03 - Rastreamento e Reconhecimento/04 - Metodologia Pentest e Contramedidas/Footprinting Pentest e Contramedidas (Metodologia Prática).md",
+      "uc": "COD1",
+      "capitulo": 3,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "footprinting",
+        "pentest",
+        "relatorio",
+        "contramedidas"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 3 - Rastreamento e Reconhecimento",
+      "out_links": [
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Capítulo 4 - Scanning de Redes",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios",
+        "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+      ],
+      "in_links": [
+        "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
+        "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios",
+        "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Capítulo 3 - Rastreamento e Reconhecimento",
+      "title": "Capítulo 3 - Rastreamento e Reconhecimento",
+      "path": "COD1/Capítulo 03 - Rastreamento e Reconhecimento/Capítulo 3 - Rastreamento e Reconhecimento.md",
+      "uc": "COD1",
+      "capitulo": 3,
+      "bloco": null,
+      "tipo": "MOC",
+      "tags": [
+        "cod1",
+        "moc",
+        "footprinting",
+        "osint",
+        "reconhecimento"
+      ],
+      "aliases": [],
+      "summary": "Voltar a: 00 COD1",
+      "out_links": [
+        "00 COD1",
+        "Capítulo 2 - Preparação do Ambiente Laboratorial",
+        "Capítulo 4 - Scanning de Redes",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
+        "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+      ],
+      "in_links": [
+        "00 COD1",
+        "Capítulo 2 - Preparação do Ambiente Laboratorial",
+        "Capítulo 4 - Scanning de Redes",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Contramedidas de Enumeração e Metodologia Pentest",
+        "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
+        "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP",
+      "title": "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP",
+      "path": "COD1/Capítulo 04 - Scanning de Redes/01 - Conceitos e Host Discovery/Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP.md",
+      "uc": "COD1",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "scanning",
+        "host-discovery",
+        "icmp",
+        "arp",
+        "ipv6",
+        "nmap"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 4 - Scanning de Redes",
+      "out_links": [
+        "Capítulo 4 - Scanning de Redes",
+        "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
+        "Técnicas de Port Scanning TCP, UDP e IDLE Scan",
+        "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+      ],
+      "in_links": [
+        "Capítulo 4 - Scanning de Redes",
+        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
+        "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
+        "Técnicas de Port Scanning TCP, UDP e IDLE Scan",
+        "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Técnicas de Port Scanning TCP, UDP e IDLE Scan",
+      "title": "Técnicas de Port Scanning TCP, UDP e IDLE Scan",
+      "path": "COD1/Capítulo 04 - Scanning de Redes/02 - Técnicas de Port Scanning/Técnicas de Port Scanning TCP, UDP e IDLE Scan.md",
+      "uc": "COD1",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "port-scanning",
+        "tcp",
+        "udp",
+        "idle-scan",
+        "nmap"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 4 - Scanning de Redes",
+      "out_links": [
+        "Capítulo 4 - Scanning de Redes",
+        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
+        "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
+        "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP"
+      ],
+      "in_links": [
+        "Capítulo 4 - Scanning de Redes",
+        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
+        "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
+        "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
+      "title": "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
+      "path": "COD1/Capítulo 04 - Scanning de Redes/03 - Nmap Avançado e Hping3/Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão.md",
+      "uc": "COD1",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "nmap",
+        "nse",
+        "ndiff",
+        "hping3",
+        "masscan",
+        "unicornscan"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 4 - Scanning de Redes",
+      "out_links": [
+        "Capítulo 4 - Scanning de Redes",
+        "Cheat Sheet - Scanning de Redes e Nmap",
+        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
+        "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP",
+        "Técnicas de Port Scanning TCP, UDP e IDLE Scan"
+      ],
+      "in_links": [
+        "Capítulo 4 - Scanning de Redes",
+        "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP",
+        "Técnicas de Port Scanning TCP, UDP e IDLE Scan"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
+      "title": "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
+      "path": "COD1/Capítulo 04 - Scanning de Redes/04 - Evasão, Banners e Metodologia Pentest/Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest.md",
+      "uc": "COD1",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "evasao-ids",
+        "firewall",
+        "banner-grabbing",
+        "scanning-pentest"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 4 - Scanning de Redes",
+      "out_links": [
+        "Capítulo 4 - Scanning de Redes",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Cheat Sheet - Scanning de Redes e Nmap",
+        "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
+        "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP",
+        "Técnicas de Port Scanning TCP, UDP e IDLE Scan"
+      ],
+      "in_links": [
+        "Capítulo 4 - Scanning de Redes",
+        "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
+        "Técnicas de Port Scanning TCP, UDP e IDLE Scan"
+      ],
+      "cross_uc_links": [
+        "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)"
+      ]
+    },
+    {
+      "id": "Capítulo 4 - Scanning de Redes",
+      "title": "Capítulo 4 - Scanning de Redes",
+      "path": "COD1/Capítulo 04 - Scanning de Redes/Capítulo 4 - Scanning de Redes.md",
+      "uc": "COD1",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "MOC",
+      "tags": [
+        "cod1",
+        "moc",
+        "scanning",
+        "nmap",
+        "hping3"
+      ],
+      "aliases": [],
+      "summary": "Voltar a: 00 COD1",
+      "out_links": [
+        "00 COD1",
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Capítulo 5 - Enumeração",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Cheat Sheet - Scanning de Redes e Nmap",
+        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
+        "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
+        "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP",
+        "Técnicas de Port Scanning TCP, UDP e IDLE Scan"
+      ],
+      "in_links": [
+        "00 COD1",
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Capítulo 5 - Enumeração",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Cheat Sheet - Scanning de Redes e Nmap",
+        "Contramedidas de Enumeração e Metodologia Pentest",
+        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
+        "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP",
+        "Técnicas de Port Scanning TCP, UDP e IDLE Scan"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Cheat Sheet - Scanning de Redes e Nmap",
+      "title": "Cheat Sheet - Scanning de Redes e Nmap",
+      "path": "COD1/Capítulo 04 - Scanning de Redes/Cheat Sheet - Scanning de Redes e Nmap.md",
+      "uc": "COD1",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "cheat-sheet",
+      "tags": [
+        "cod1",
+        "cheat-sheet",
+        "nmap",
+        "hping3",
+        "scanning"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 4 - Scanning de Redes | UC: 00 COD1",
+      "out_links": [
+        "00 COD1",
+        "Capítulo 4 - Scanning de Redes"
+      ],
+      "in_links": [
+        "00 COD1",
+        "Capítulo 4 - Scanning de Redes",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
+        "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
+      "title": "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
+      "path": "COD1/Capítulo 05 - Enumeração/01 - Conceitos, NetBIOS, SMB e LDAP/Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP.md",
+      "uc": "COD1",
+      "capitulo": 5,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "enumeracao",
+        "netbios",
+        "smb",
+        "ldap",
+        "active-directory",
+        "rpcclient",
+        "netexec"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 5 - Enumeração",
+      "out_links": [
+        "Capítulo 5 - Enumeração",
+        "Cheat Sheet - Enumeração de Serviços e Portos",
+        "Contramedidas de Enumeração e Metodologia Pentest",
+        "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
+        "Enumeração SNMP (Community Strings, MIB e OIDs)"
+      ],
+      "in_links": [
+        "Capítulo 5 - Enumeração",
+        "Contramedidas de Enumeração e Metodologia Pentest",
+        "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
+        "Enumeração SNMP (Community Strings, MIB e OIDs)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Enumeração SNMP (Community Strings, MIB e OIDs)",
+      "title": "Enumeração SNMP (Community Strings, MIB e OIDs)",
+      "path": "COD1/Capítulo 05 - Enumeração/02 - Enumeração SNMP/Enumeração SNMP (Community Strings, MIB e OIDs).md",
+      "uc": "COD1",
+      "capitulo": 5,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "enumeracao",
+        "snmp",
+        "mib",
+        "oid",
+        "snmpwalk",
+        "onesixtyone"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 5 - Enumeração",
+      "out_links": [
+        "Capítulo 5 - Enumeração",
+        "Cheat Sheet - Enumeração de Serviços e Portos",
+        "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
+        "Contramedidas de Enumeração e Metodologia Pentest"
+      ],
+      "in_links": [
+        "Capítulo 5 - Enumeração",
+        "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
+        "Contramedidas de Enumeração e Metodologia Pentest",
+        "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
+      "title": "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
+      "path": "COD1/Capítulo 05 - Enumeração/03 - Enumeração SMTP, DNS, FTP, IPsec e VoIP/Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP).md",
+      "uc": "COD1",
+      "capitulo": 5,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "enumeracao",
+        "smtp",
+        "dns",
+        "ftp",
+        "ipsec",
+        "voip",
+        "sip",
+        "autorecon"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 5 - Enumeração",
+      "out_links": [
+        "Capítulo 5 - Enumeração",
+        "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
+        "Contramedidas de Enumeração e Metodologia Pentest",
+        "Enumeração SNMP (Community Strings, MIB e OIDs)",
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN"
+      ],
+      "in_links": [
+        "Capítulo 5 - Enumeração",
+        "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
+        "Contramedidas de Enumeração e Metodologia Pentest"
+      ],
+      "cross_uc_links": [
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN"
+      ]
+    },
+    {
+      "id": "Contramedidas de Enumeração e Metodologia Pentest",
+      "title": "Contramedidas de Enumeração e Metodologia Pentest",
+      "path": "COD1/Capítulo 05 - Enumeração/04 - Contramedidas e Metodologia Pentest/Contramedidas de Enumeração e Metodologia Pentest.md",
+      "uc": "COD1",
+      "capitulo": 5,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "enumeracao",
+        "contramedidas",
+        "hardening",
+        "pentest"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 5 - Enumeração",
+      "out_links": [
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Capítulo 4 - Scanning de Redes",
+        "Capítulo 5 - Enumeração",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Cheat Sheet - Enumeração de Serviços e Portos",
+        "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
+        "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
+        "Enumeração SNMP (Community Strings, MIB e OIDs)"
+      ],
+      "in_links": [
+        "Capítulo 5 - Enumeração",
+        "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
+        "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
+        "Enumeração SNMP (Community Strings, MIB e OIDs)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Capítulo 5 - Enumeração",
+      "title": "Capítulo 5 - Enumeração",
+      "path": "COD1/Capítulo 05 - Enumeração/Capítulo 5 - Enumeração.md",
+      "uc": "COD1",
+      "capitulo": 5,
+      "bloco": null,
+      "tipo": "MOC",
+      "tags": [
+        "cod1",
+        "moc",
+        "enumeracao",
+        "netbios",
+        "smb",
+        "snmp",
+        "ldap",
+        "dns",
+        "smtp"
+      ],
+      "aliases": [],
+      "summary": "Voltar a: 00 COD1",
+      "out_links": [
+        "00 COD1",
+        "Capítulo 4 - Scanning de Redes",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Cheat Sheet - Enumeração de Serviços e Portos",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
+        "Contramedidas de Enumeração e Metodologia Pentest",
+        "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
+        "Enumeração SNMP (Community Strings, MIB e OIDs)"
+      ],
+      "in_links": [
+        "00 COD1",
+        "Capítulo 4 - Scanning de Redes",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Cheat Sheet - Enumeração de Serviços e Portos",
+        "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
+        "Contramedidas de Enumeração e Metodologia Pentest",
+        "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
+        "Enumeração SNMP (Community Strings, MIB e OIDs)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Cheat Sheet - Enumeração de Serviços e Portos",
+      "title": "Cheat Sheet - Enumeração de Serviços e Portos",
+      "path": "COD1/Capítulo 05 - Enumeração/Cheat Sheet - Enumeração de Serviços e Portos.md",
+      "uc": "COD1",
+      "capitulo": 5,
+      "bloco": null,
+      "tipo": "cheat-sheet",
+      "tags": [
+        "cod1",
+        "cheat-sheet",
+        "enumeracao",
+        "smb",
+        "snmp",
+        "ldap",
+        "dns",
+        "smtp"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 5 - Enumeração | UC: 00 COD1",
+      "out_links": [
+        "00 COD1",
+        "Capítulo 5 - Enumeração"
+      ],
+      "in_links": [
+        "00 COD1",
+        "Capítulo 5 - Enumeração",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
+        "Contramedidas de Enumeração e Metodologia Pentest",
+        "Enumeração SNMP (Community Strings, MIB e OIDs)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+      "title": "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+      "path": "COD1/Capítulo 06 - Análise de Vulnerabilidades/01 - Conceitos e Ciclo de Vida/Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação.md",
+      "uc": "COD1",
+      "capitulo": 6,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "vulnerabilidades",
+        "ciclo-vida",
+        "baseline",
+        "remediacao",
+        "siem",
+        "soar"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 6 - Análise de Vulnerabilidades",
+      "out_links": [
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
+        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
+        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+      ],
+      "in_links": [
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
+        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação",
+      "title": "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação",
+      "path": "COD1/Capítulo 06 - Análise de Vulnerabilidades/02 - Sistemas de Pontuação e Abordagens/Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação.md",
+      "uc": "COD1",
+      "capitulo": 6,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "cvss",
+        "cve",
+        "nvd",
+        "euvd",
+        "gestao-vulnerabilidades"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 6 - Análise de Vulnerabilidades",
+      "out_links": [
+        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
+        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)"
+      ],
+      "in_links": [
+        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
+      "title": "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
+      "path": "COD1/Capítulo 06 - Análise de Vulnerabilidades/03 - Ferramentas Nessus, OpenVAS e Relatórios/Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup).md",
+      "uc": "COD1",
+      "capitulo": 6,
+      "bloco": null,
+      "tipo": "nota",
+      "tags": [
+        "cod1",
+        "nessus",
+        "openvas",
+        "gvm",
+        "nikto",
+        "nmap-nse",
+        "relatorios"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 6 - Análise de Vulnerabilidades",
+      "out_links": [
+        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+      ],
+      "in_links": [
+        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Capítulo 6 - Análise de Vulnerabilidades",
+      "title": "Capítulo 6 - Análise de Vulnerabilidades",
+      "path": "COD1/Capítulo 06 - Análise de Vulnerabilidades/Capítulo 6 - Análise de Vulnerabilidades.md",
+      "uc": "COD1",
+      "capitulo": 6,
+      "bloco": null,
+      "tipo": "MOC",
+      "tags": [
+        "cod1",
+        "moc",
+        "vulnerabilidades",
+        "cvss",
+        "cve",
+        "nessus",
+        "openvas"
+      ],
+      "aliases": [],
+      "summary": "Voltar a: 00 COD1",
+      "out_links": [
+        "00 COD1",
+        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Capítulo 4 - Scanning de Redes",
+        "Capítulo 5 - Enumeração",
+        "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
+        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+      ],
+      "in_links": [
+        "00 COD1",
+        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+        "Capítulo 5 - Enumeração",
+        "Contramedidas de Enumeração e Metodologia Pentest",
+        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
+        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
+        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+      "title": "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+      "path": "COD1/Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional.md",
+      "uc": "COD1",
+      "capitulo": null,
+      "bloco": null,
+      "tipo": "cheat-sheet",
+      "tags": [
+        "cod1",
+        "cheat-sheet",
+        "playbook",
+        "pentest",
+        "footprinting",
+        "metodologia"
+      ],
+      "aliases": [],
+      "summary": "Voltar a: 00 COD1",
+      "out_links": [
+        "00 COD1",
+        "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
+        "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
+        "Cheat Sheet - Enumeração de Serviços e Portos",
+        "Cheat Sheet - Scanning de Redes e Nmap",
+        "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
+      ],
+      "in_links": [
+        "00 COD1",
+        "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
+        "Capítulo 2 - Preparação do Ambiente Laboratorial",
+        "Capítulo 3 - Rastreamento e Reconhecimento",
+        "Capítulo 4 - Scanning de Redes",
+        "Capítulo 5 - Enumeração",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
+      ],
+      "cross_uc_links": []
+    },
+    {
       "id": "Home",
       "title": "Home",
       "path": "Home.md",
@@ -8271,17 +9534,1109 @@
       "summary": "Repositório aberto e colaborativo de notas de estudo e investigação para o Mestrado em Cibersegurança e Informática Forense (MCIF).",
       "out_links": [
         "00 AFD1",
-        "00 ASSI"
+        "00 ASSI",
+        "00 COD1",
+        "00 SRC"
       ],
       "in_links": [
         "00 AFD1",
         "00 ASSI",
+        "00 COD1",
+        "00 SRC",
         "Capítulo 1 - Método de Investigação",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Capítulo 2 - Administração de Sistemas",
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
         "Capítulo 3 - YARA - MOTW - Strings"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "00 SRC",
+      "title": "SRC — Segurança em Redes de Computadores",
+      "path": "SRC/00 SRC.md",
+      "uc": "SRC",
+      "capitulo": null,
+      "bloco": null,
+      "tipo": "indice",
+      "tags": [
+        "moc",
+        "src",
+        "redes",
+        "seguranca"
+      ],
+      "aliases": [
+        "SRC",
+        "00 SRC",
+        "Segurança em Redes de Computadores",
+        "Security in Computer Networks"
+      ],
+      "summary": "Unidade curricular do Mestrado em Cibersegurança e Informática Forense (MCIF) da Escola Superior de Tecnologia e Gestão (ESTG) do Politécnico de Leiria.",
+      "out_links": [
+        "Capítulo 1 - Fundamentos de Redes e Segurança",
+        "Capítulo 2 - Criptografia Aplicada",
+        "Capítulo 3 - Segurança em IoT",
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "Cheat Sheet - Criptografia, Hash, PKI e VPNs",
+        "Cheat Sheet - Segurança em IoT (BLE, LoRaWAN e MQTT)",
+        "Home"
+      ],
+      "in_links": [
+        "Capítulo 1 - Fundamentos de Redes e Segurança",
+        "Capítulo 2 - Criptografia Aplicada",
+        "Capítulo 3 - Segurança em IoT",
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "Cheat Sheet - Criptografia, Hash, PKI e VPNs",
+        "Cheat Sheet - Segurança em IoT (BLE, LoRaWAN e MQTT)",
+        "Home"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
+      "title": "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
+      "path": "SRC/Capítulo 01 - Fundamentos de Redes e Segurança/01 - Arquitetura TCP-IP e Governação da Internet/Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs.md",
+      "uc": "SRC",
+      "capitulo": 1,
+      "bloco": 1,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "redes",
+        "ixp",
+        "dns",
+        "rfc",
+        "normalizacao"
+      ],
+      "aliases": [
+        "Governação da Internet",
+        "IXP",
+        "GigaPIX",
+        "RFC"
+      ],
+      "summary": "A operacionalidade global da Internet assenta em quatro pilares de governação e infraestrutura: pontos de troca de tráfego (IXPs), cablagem submarina, gestão hierárquica de nomes/endereços (DNS, IP, AS) e...",
+      "out_links": [
+        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
+        "Serviços e Mecanismos de Segurança (ITU-T X.800)"
+      ],
+      "in_links": [
+        "Capítulo 1 - Fundamentos de Redes e Segurança",
+        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
+        "Serviços e Mecanismos de Segurança (ITU-T X.800)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
+      "title": "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
+      "path": "SRC/Capítulo 01 - Fundamentos de Redes e Segurança/01 - Arquitetura TCP-IP e Governação da Internet/Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS.md",
+      "uc": "SRC",
+      "capitulo": 1,
+      "bloco": 1,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "redes",
+        "tcp-ip",
+        "https",
+        "encapsulamento"
+      ],
+      "aliases": [
+        "Modelo TCP/IP",
+        "Encapsulamento TCP/IP",
+        "Visibilidade de Tráfego HTTPS"
+      ],
+      "summary": "A Internet interliga redes autónomas através da família de protocolos IP, organizando a comunicação em camadas onde cada protocolo adiciona informação de controlo (encapsulamento) à medida que os dados descem na pilha.",
+      "out_links": [
+        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs"
+      ],
+      "in_links": [
+        "Capítulo 1 - Fundamentos de Redes e Segurança",
+        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
+        "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
+        "Laboratório Scapy - Envio e Resposta de Pacotes ICMP"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+      "title": "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+      "path": "SRC/Capítulo 01 - Fundamentos de Redes e Segurança/02 - Conceitos, Serviços e Mecanismos de Segurança/Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949.md",
+      "uc": "SRC",
+      "capitulo": 1,
+      "bloco": 2,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "seguranca",
+        "cia",
+        "rfc4949",
+        "nist"
+      ],
+      "aliases": [
+        "Tríade CIA",
+        "Vulnerabilidade Ameaça Ataque",
+        "Ataques Passivos e Ativos"
+      ],
+      "summary": "A segurança em redes visa preservar a confidencialidade, integridade e disponibilidade (CIA) dos recursos de um sistema de informação através da identificação rigorosa de ativos, vulnerabilidades, ameaças e ataques.",
+      "out_links": [
+        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
+        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
+        "Serviços e Mecanismos de Segurança (ITU-T X.800)"
+      ],
+      "in_links": [
+        "Capítulo 1 - Fundamentos de Redes e Segurança",
+        "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+        "Laboratório Scapy - Envio e Resposta de Pacotes ICMP",
+        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
+        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
+        "Serviços e Mecanismos de Segurança (ITU-T X.800)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
+      "title": "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
+      "path": "SRC/Capítulo 01 - Fundamentos de Redes e Segurança/02 - Conceitos, Serviços e Mecanismos de Segurança/Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees.md",
+      "uc": "SRC",
+      "capitulo": 1,
+      "bloco": 2,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "seguranca",
+        "design-principles",
+        "attack-surface",
+        "attack-tree"
+      ],
+      "aliases": [
+        "Princípios de Saltzer e Schroeder",
+        "Attack Surface",
+        "Attack Tree"
+      ],
+      "summary": "A construção de sistemas e redes resilientes assenta em princípios clássicos de desenho seguro (Saltzer & Schroeder, 1975, e NCAE), complementados pela redução da superfície de ataque e pela *modelação hierárquica...",
+      "out_links": [
+        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Serviços e Mecanismos de Segurança (ITU-T X.800)"
+      ],
+      "in_links": [
+        "Capítulo 1 - Fundamentos de Redes e Segurança",
+        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Serviços e Mecanismos de Segurança (ITU-T X.800)",
+      "title": "Serviços e Mecanismos de Segurança (ITU-T X.800)",
+      "path": "SRC/Capítulo 01 - Fundamentos de Redes e Segurança/02 - Conceitos, Serviços e Mecanismos de Segurança/Serviços e Mecanismos de Segurança (ITU-T X.800).md",
+      "uc": "SRC",
+      "capitulo": 1,
+      "bloco": 2,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "seguranca",
+        "x800",
+        "itu-t"
+      ],
+      "aliases": [
+        "ITU-T X.800",
+        "Serviços de Segurança X.800",
+        "Mecanismos de Segurança X.800"
+      ],
+      "summary": "A recomendação ITU-T X.800 (Security Architecture for OSI) separa os serviços de segurança (o que o sistema deve garantir nas comunicações) dos mecanismos de segurança (os blocos técnicos usados para implementar...",
+      "out_links": [
+        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs"
+      ],
+      "in_links": [
+        "Capítulo 1 - Fundamentos de Redes e Segurança",
+        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
+        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Laboratório Scapy - Envio e Resposta de Pacotes ICMP",
+      "title": "Laboratório Scapy - Envio e Resposta de Pacotes ICMP",
+      "path": "SRC/Capítulo 01 - Fundamentos de Redes e Segurança/03 - Laboratório Scapy e ICMP/Laboratório Scapy - Envio e Resposta de Pacotes ICMP.md",
+      "uc": "SRC",
+      "capitulo": 1,
+      "bloco": 3,
+      "tipo": "procedimento",
+      "tags": [
+        "src",
+        "scapy",
+        "icmp",
+        "python",
+        "redes"
+      ],
+      "aliases": [
+        "Scapy ICMP",
+        "1scapy.py",
+        "pinging.py"
+      ],
+      "summary": "Os scripts laboratoriais `pinging.py` e `1scapy.py` demonstram a manipulação programática de pacotes ICMP em Python utilizando a biblioteca `scapy` para envio de probes com payload personalizado e resposta automática...",
+      "out_links": [
+        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS"
+      ],
+      "in_links": [
+        "Capítulo 1 - Fundamentos de Redes e Segurança"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Capítulo 1 - Fundamentos de Redes e Segurança",
+      "title": "Capítulo 1 - Fundamentos de Redes e Segurança",
+      "path": "SRC/Capítulo 01 - Fundamentos de Redes e Segurança/Capítulo 1 - Fundamentos de Redes e Segurança.md",
+      "uc": "SRC",
+      "capitulo": 1,
+      "bloco": null,
+      "tipo": "indice",
+      "tags": [
+        "moc",
+        "src",
+        "redes",
+        "tcp-ip",
+        "x800",
+        "seguranca"
+      ],
+      "aliases": [
+        "Capítulo 1 SRC",
+        "MOC Capítulo 1 SRC",
+        "Fundamentos de Redes e Segurança"
+      ],
+      "summary": "Mapa de estudo do Capítulo 1 de SRC, cobrindo os 26 diapositivos de `1_fundamentals.pdf`, o Capítulo 1 de Stallings (Computer and Network Security Concepts, 27 páginas) e os scripts laboratoriais `1scapy.py` e...",
+      "out_links": [
+        "00 SRC",
+        "Capítulo 2 - Criptografia Aplicada",
+        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
+        "Laboratório Scapy - Envio e Resposta de Pacotes ICMP",
+        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
+        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
+        "Serviços e Mecanismos de Segurança (ITU-T X.800)"
+      ],
+      "in_links": [
+        "00 SRC",
+        "Capítulo 2 - Criptografia Aplicada"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
+      "title": "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
+      "path": "SRC/Capítulo 02 - Criptografia Aplicada/01 - Criptografia Clássica e Cifras Simétricas/Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4.md",
+      "uc": "SRC",
+      "capitulo": 2,
+      "bloco": 1,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "criptografia",
+        "cifras-de-blocos",
+        "feistel",
+        "des",
+        "aes"
+      ],
+      "aliases": [
+        "Cifras de Blocos",
+        "Cifras Stream",
+        "Cifra de Feistel",
+        "DES",
+        "AES"
+      ],
+      "summary": "As cifras simétricas modernas classificam-se em *cifras de stream (processam um bit, byte ou palavra de cada vez) e cifras de blocos (processam blocos de tamanho fixo de cada vez, aplicando difusão e confusão* de...",
+      "out_links": [
+        "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "in_links": [
+        "Capítulo 2 - Criptografia Aplicada",
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
+      "title": "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
+      "path": "SRC/Capítulo 02 - Criptografia Aplicada/01 - Criptografia Clássica e Cifras Simétricas/Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas.md",
+      "uc": "SRC",
+      "capitulo": 2,
+      "bloco": 1,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "criptografia",
+        "criptanalise",
+        "cifras-classicas"
+      ],
+      "aliases": [
+        "Modelo Convencional",
+        "Cifra de César",
+        "Cifras Monoalfabéticas",
+        "Criptanálise"
+      ],
+      "summary": "A criptologia divide-se em criptografia (construção de sistemas de cifragem e decifragem) e criptanálise (estudo de técnicas para decifrar mensagens sem conhecimento da chave ou dos detalhes secretos da cifra).",
+      "out_links": [
+        "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
+        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees"
+      ],
+      "in_links": [
+        "Capítulo 2 - Criptografia Aplicada",
+        "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+      "title": "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+      "path": "SRC/Capítulo 02 - Criptografia Aplicada/02 - Criptografia Assimétrica e RSA/Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA.md",
+      "uc": "SRC",
+      "capitulo": 2,
+      "bloco": 2,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "criptografia",
+        "criptografia-assimetrica",
+        "rsa",
+        "diffie-hellman",
+        "ecc"
+      ],
+      "aliases": [
+        "Criptografia Assimétrica",
+        "Diffie-Hellman",
+        "RSA",
+        "Curvas Elípticas"
+      ],
+      "summary": "A criptografia assimétrica (ou de chave pública) utiliza pares de chaves matematicamente relacionados — uma chave pública (`KU` / `PU`) divulgada e uma chave privada (`KR` / `PR`) secreta — para resolver o problema...",
+      "out_links": [
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
+        "SSH (Secure Shell), Port Forwarding e TLS 1.3",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "in_links": [
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Capítulo 2 - Criptografia Aplicada",
+        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "SSH (Secure Shell), Port Forwarding e TLS 1.3",
+        "Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+      "title": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+      "path": "SRC/Capítulo 02 - Criptografia Aplicada/03 - Integridade, Hash, MAC e Assinaturas/Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais.md",
+      "uc": "SRC",
+      "capitulo": 2,
+      "bloco": 3,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "criptografia",
+        "mac",
+        "hmac",
+        "assinatura-digital"
+      ],
+      "aliases": [
+        "MAC",
+        "HMAC",
+        "Assinatura Digital",
+        "Autenticação de Mensagens"
+      ],
+      "summary": "A autenticação de mensagens garante ao recetor que a mensagem provém da origem alegada e não foi alterada em trânsito, recorrendo a esquemas combinados com hash, a Códigos de Autenticação de Mensagem (`MAC` / `HMAC`)...",
+      "out_links": [
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "in_links": [
+        "Capítulo 2 - Criptografia Aplicada",
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+      "title": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+      "path": "SRC/Capítulo 02 - Criptografia Aplicada/03 - Integridade, Hash, MAC e Assinaturas/Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD).md",
+      "uc": "SRC",
+      "capitulo": 2,
+      "bloco": 3,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "criptografia",
+        "hash",
+        "md5",
+        "sha"
+      ],
+      "aliases": [
+        "Funções de Hash",
+        "MD5",
+        "SHA-1",
+        "SHA-2",
+        "SHA-3"
+      ],
+      "summary": "Uma função de hash criptográfica $h = H(M)$ transforma uma mensagem $M$ de tamanho variável (arbitrário) num resumo (message digest) de tamanho fixo, garantindo integridade dos dados.",
+      "out_links": [
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Exercícios Práticos - Integridade de Dados e Hashes",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "in_links": [
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Capítulo 2 - Criptografia Aplicada",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "cross_uc_links": [
+        "Exercícios Práticos - Integridade de Dados e Hashes"
+      ]
+    },
+    {
+      "id": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+      "title": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+      "path": "SRC/Capítulo 02 - Criptografia Aplicada/04 - PKI, Aplicações Criptográficas e VPNs/PKI, Autoridades de Certificação (OpenSSL) e GnuPG.md",
+      "uc": "SRC",
+      "capitulo": 2,
+      "bloco": 4,
+      "tipo": "procedimento",
+      "tags": [
+        "src",
+        "pki",
+        "x509",
+        "openssl",
+        "gnupg",
+        "ca"
+      ],
+      "aliases": [
+        "PKI",
+        "Autoridade de Certificação",
+        "OpenSSL CA",
+        "GnuPG"
+      ],
+      "summary": "A Infraestrutura de Chave Pública (`PKI`) e o ecossistema `OpenPGP` / `GnuPG` resolvem o problema da confiança na distribuição de chaves públicas, quer através de Autoridades de Certificação (`CA`) hierárquicas...",
+      "out_links": [
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
+        "SSH (Secure Shell), Port Forwarding e TLS 1.3"
+      ],
+      "in_links": [
+        "Capítulo 2 - Criptografia Aplicada",
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
+        "SSH (Secure Shell), Port Forwarding e TLS 1.3",
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
+      "title": "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
+      "path": "SRC/Capítulo 02 - Criptografia Aplicada/04 - PKI, Aplicações Criptográficas e VPNs/Redes Privadas Virtuais (VPN) - IPSec e OpenVPN.md",
+      "uc": "SRC",
+      "capitulo": 2,
+      "bloco": 4,
+      "tipo": "procedimento",
+      "tags": [
+        "src",
+        "vpn",
+        "ipsec",
+        "openvpn",
+        "tls"
+      ],
+      "aliases": [
+        "VPN",
+        "IPSec",
+        "OpenVPN"
+      ],
+      "summary": "As VPNs estendem redes privadas através de infraestruturas públicas (Internet) usando túneis cifrados e autenticados, destacando-se na UC duas abordagens complementares: `IPSec` e `OpenVPN`.",
+      "out_links": [
+        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "SSH (Secure Shell), Port Forwarding e TLS 1.3"
+      ],
+      "in_links": [
+        "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
+        "Capítulo 2 - Criptografia Aplicada",
+        "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
+        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "SSH (Secure Shell), Port Forwarding e TLS 1.3"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "SSH (Secure Shell), Port Forwarding e TLS 1.3",
+      "title": "SSH (Secure Shell), Port Forwarding e TLS 1.3",
+      "path": "SRC/Capítulo 02 - Criptografia Aplicada/04 - PKI, Aplicações Criptográficas e VPNs/SSH (Secure Shell), Port Forwarding e TLS 1.3.md",
+      "uc": "SRC",
+      "capitulo": 2,
+      "bloco": 4,
+      "tipo": "procedimento",
+      "tags": [
+        "src",
+        "ssh",
+        "port-forwarding",
+        "tls",
+        "criptografia"
+      ],
+      "aliases": [
+        "SSH",
+        "Secure Shell",
+        "SSH Port Forwarding",
+        "TLS 1.3"
+      ],
+      "summary": "O `SSH` é um protocolo de comunicação segura (não é uma shell) que garante autenticação, confidencialidade e integridade, combinando cifragem assimétrica na negociação/autenticação com cifragem simétrica na sessão;...",
+      "out_links": [
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN"
+      ],
+      "in_links": [
+        "Capítulo 2 - Criptografia Aplicada",
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "TBL 2 - Fundamentos de Criptografia",
+      "title": "TBL 2 - Fundamentos de Criptografia",
+      "path": "SRC/Capítulo 02 - Criptografia Aplicada/05 - TBL 2 - Criptografia/TBL 2 - Fundamentos de Criptografia.md",
+      "uc": "SRC",
+      "capitulo": 2,
+      "bloco": 5,
+      "tipo": "exercicio",
+      "tags": [
+        "src",
+        "tbl",
+        "criptografia",
+        "exercicio"
+      ],
+      "aliases": [
+        "TBL 2 SRC",
+        "TBL Cryptography"
+      ],
+      "summary": "Mapeamento e fundamentação das 10 questões do Team-Based Learning (`TBL_Cryptography_EN_202627.pdf`) sobre criptografia simétrica, assimétrica, funções de hash e `MAC`.",
+      "out_links": [
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
+        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)"
+      ],
+      "in_links": [
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Capítulo 2 - Criptografia Aplicada",
+        "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Capítulo 2 - Criptografia Aplicada",
+      "title": "Capítulo 2 - Criptografia Aplicada",
+      "path": "SRC/Capítulo 02 - Criptografia Aplicada/Capítulo 2 - Criptografia Aplicada.md",
+      "uc": "SRC",
+      "capitulo": 2,
+      "bloco": null,
+      "tipo": "indice",
+      "tags": [
+        "moc",
+        "src",
+        "criptografia",
+        "pki",
+        "ssh",
+        "vpn"
+      ],
+      "aliases": [
+        "Capítulo 2 SRC",
+        "MOC Capítulo 2 SRC",
+        "Criptografia Aplicada"
+      ],
+      "summary": "Mapa de estudo do Capítulo 2 de SRC, cobrindo os 68 diapositivos de `aula_02_update.pdf` (Prof. Mário Antunes), os 9 diapositivos de `2_crypto_projectKickoff.pdf`, os excertos de Stallings...",
+      "out_links": [
+        "00 SRC",
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Capítulo 1 - Fundamentos de Redes e Segurança",
+        "Capítulo 3 - Segurança em IoT",
+        "Cheat Sheet - Criptografia, Hash, PKI e VPNs",
+        "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
+        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
+        "SSH (Secure Shell), Port Forwarding e TLS 1.3",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "in_links": [
+        "00 SRC",
+        "Capítulo 1 - Fundamentos de Redes e Segurança",
+        "Capítulo 3 - Segurança em IoT",
+        "Cheat Sheet - Criptografia, Hash, PKI e VPNs"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Cheat Sheet - Criptografia, Hash, PKI e VPNs",
+      "title": "Cheat Sheet - Criptografia, Hash, PKI e VPNs",
+      "path": "SRC/Capítulo 02 - Criptografia Aplicada/Cheat Sheet - Criptografia, Hash, PKI e VPNs.md",
+      "uc": "SRC",
+      "capitulo": 2,
+      "bloco": null,
+      "tipo": "cheatsheet",
+      "tags": [
+        "cheatsheet",
+        "src",
+        "criptografia",
+        "openssl",
+        "ssh",
+        "vpn"
+      ],
+      "aliases": [
+        "Cheat Sheet Capítulo 2 SRC",
+        "Cheat Sheet Criptografia SRC"
+      ],
+      "summary": "Guia de consulta rápida do Capítulo 2 - Criptografia Aplicada de SRC.",
+      "out_links": [
+        "00 SRC",
+        "Capítulo 2 - Criptografia Aplicada"
+      ],
+      "in_links": [
+        "00 SRC",
+        "Capítulo 2 - Criptografia Aplicada"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Ataques e Contramedidas por Camada em IoT (Sharma)",
+      "title": "Ataques e Contramedidas por Camada em IoT (Sharma)",
+      "path": "SRC/Capítulo 03 - Segurança em IoT/01 - Arquitetura, Requisitos e Ameaças em IoT/Ataques e Contramedidas por Camada em IoT (Sharma).md",
+      "uc": "SRC",
+      "capitulo": 3,
+      "bloco": 1,
+      "tipo": "analise",
+      "tags": [
+        "src",
+        "iot",
+        "ataques-iot",
+        "contramedidas",
+        "rpl",
+        "ids"
+      ],
+      "aliases": [
+        "Ataques por Camada IoT",
+        "Contramedidas IoT"
+      ],
+      "summary": "Nenhuma política ou algoritmo único protege todas as camadas IoT: cada camada (Perception, Network e Application) apresenta vetores de ataque próprios que exigem contramedidas específicas e combinadas (defense in depth).",
+      "out_links": [
+        "Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)",
+        "Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)",
+        "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)"
+      ],
+      "in_links": [
+        "Capítulo 3 - Segurança em IoT",
+        "Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)",
+        "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+        "Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)",
+      "title": "Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)",
+      "path": "SRC/Capítulo 03 - Segurança em IoT/01 - Arquitetura, Requisitos e Ameaças em IoT/Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma).md",
+      "uc": "SRC",
+      "capitulo": 3,
+      "bloco": 1,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "iot",
+        "arquitetura-iot",
+        "seguranca-iot"
+      ],
+      "aliases": [
+        "Arquitetura IoT Sharma",
+        "Desafios de Segurança IoT",
+        "Requisitos de Segurança IoT"
+      ],
+      "summary": "Os ecossistemas IoT organizam-se numa arquitetura de cinco camadas (Perception, Network, Application, Processing e Business), cada qual com protocolos e desafios de segurança específicos condicionados por restrições...",
+      "out_links": [
+        "Ataques e Contramedidas por Camada em IoT (Sharma)",
+        "LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)",
+        "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)"
+      ],
+      "in_links": [
+        "Ataques e Contramedidas por Camada em IoT (Sharma)",
+        "Capítulo 3 - Segurança em IoT",
+        "LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)",
+        "Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)",
+        "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)",
+      "title": "Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)",
+      "path": "SRC/Capítulo 03 - Segurança em IoT/02 - Segurança em Bluetooth Low Energy (BLE)/Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava).md",
+      "uc": "SRC",
+      "capitulo": 3,
+      "bloco": 2,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "iot",
+        "ble",
+        "bluetooth",
+        "pairing"
+      ],
+      "aliases": [
+        "Segurança BLE",
+        "LE Legacy Pairing",
+        "LE Secure Connections",
+        "Pairing Feature Exchange"
+      ],
+      "summary": "No Bluetooth Low Energy (`BLE`), o emparelhamento (pairing) estabelece chaves para cifrar a ligação e autenticar dispositivos, distinguindo-se dois métodos principais: LE Legacy Pairing (baseado em `TK`/`STK`) e LE...",
+      "out_links": [
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)",
+        "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)"
+      ],
+      "in_links": [
+        "Capítulo 3 - Segurança em IoT",
+        "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)",
+      "title": "LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)",
+      "path": "SRC/Capítulo 03 - Segurança em IoT/03 - Segurança em LPWAN e LoRaWAN/LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco).md",
+      "uc": "SRC",
+      "capitulo": 3,
+      "bloco": 3,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "iot",
+        "lpwan",
+        "lorawan",
+        "seguranca-iot"
+      ],
+      "aliases": [
+        "LPWAN",
+        "LoRaWAN",
+        "AppSKey e NwkSKey"
+      ],
+      "summary": "As redes `LPWAN` (Low Power Wide Area Networks, como `LoRaWAN`, `Sigfox` e `NB-IoT`) combinam longo alcance (quilómetros) com baixo consumo energético e baixo débito, distinguindo-se das redes de curto alcance...",
+      "out_links": [
+        "Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)",
+        "Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)",
+        "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)"
+      ],
+      "in_links": [
+        "Capítulo 3 - Segurança em IoT",
+        "Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)",
+        "Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)",
+        "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)",
+      "title": "Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)",
+      "path": "SRC/Capítulo 03 - Segurança em IoT/03 - Segurança em LPWAN e LoRaWAN/Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco).md",
+      "uc": "SRC",
+      "capitulo": 3,
+      "bloco": 3,
+      "tipo": "analise",
+      "tags": [
+        "src",
+        "iot",
+        "lpwan",
+        "threat-model",
+        "lorawan"
+      ],
+      "aliases": [
+        "Modelo de Ameaças LPWAN",
+        "Vetores de Ataque LPWAN"
+      ],
+      "summary": "Uma arquitetura `LPWAN` apresenta uma superfície de ataque distribuída — desde os dispositivos finais no terreno até às aplicações na cloud — exigindo a proteção das propriedades `CIAA` (Confidentiality, Integrity,...",
+      "out_links": [
+        "Ataques e Contramedidas por Camada em IoT (Sharma)",
+        "LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)",
+        "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)"
+      ],
+      "in_links": [
+        "Ataques e Contramedidas por Camada em IoT (Sharma)",
+        "Capítulo 3 - Segurança em IoT",
+        "LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)",
+        "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)",
+      "title": "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)",
+      "path": "SRC/Capítulo 03 - Segurança em IoT/04 - TBL 3 - Internet of Things/TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT).md",
+      "uc": "SRC",
+      "capitulo": 3,
+      "bloco": 4,
+      "tipo": "exercicio",
+      "tags": [
+        "src",
+        "tbl",
+        "iot",
+        "ble",
+        "lorawan",
+        "mqtt"
+      ],
+      "aliases": [
+        "TBL 3 SRC",
+        "TBL IoT"
+      ],
+      "summary": "Síntese e fundamentação dos 10 cenários práticos do `TBL #3` (`TBL_3_EN_IoT.pdf`) aplicados a sensores, `LoRaWAN`, `BLE` e `MQTT`.",
+      "out_links": [
+        "Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)",
+        "LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)",
+        "Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)",
+        "Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)"
+      ],
+      "in_links": [
+        "Ataques e Contramedidas por Camada em IoT (Sharma)",
+        "Capítulo 3 - Segurança em IoT",
+        "Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)",
+        "LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)",
+        "Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)",
+        "Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Capítulo 3 - Segurança em IoT",
+      "title": "Capítulo 3 - Segurança em IoT",
+      "path": "SRC/Capítulo 03 - Segurança em IoT/Capítulo 3 - Segurança em IoT.md",
+      "uc": "SRC",
+      "capitulo": 3,
+      "bloco": null,
+      "tipo": "indice",
+      "tags": [
+        "moc",
+        "src",
+        "iot",
+        "ble",
+        "lorawan",
+        "mqtt"
+      ],
+      "aliases": [
+        "Capítulo 3 SRC",
+        "MOC Capítulo 3 SRC",
+        "Segurança em IoT"
+      ],
+      "summary": "Mapa de estudo do Capítulo 3 de SRC, cobrindo estritamente as secções destacadas a amarelo dos três artigos científicos (`Sharma_yellow.pdf`, `Lacava_yellow.pdf` e `Stanco_yellow.pdf`) e os 10 cenários do `TBL #3`...",
+      "out_links": [
+        "00 SRC",
+        "Ataques e Contramedidas por Camada em IoT (Sharma)",
+        "Capítulo 2 - Criptografia Aplicada",
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "Cheat Sheet - Segurança em IoT (BLE, LoRaWAN e MQTT)",
+        "Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)",
+        "LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)",
+        "Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)",
+        "Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)",
+        "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)"
+      ],
+      "in_links": [
+        "00 SRC",
+        "Capítulo 2 - Criptografia Aplicada",
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "Cheat Sheet - Segurança em IoT (BLE, LoRaWAN e MQTT)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Cheat Sheet - Segurança em IoT (BLE, LoRaWAN e MQTT)",
+      "title": "Cheat Sheet - Segurança em IoT (BLE, LoRaWAN e MQTT)",
+      "path": "SRC/Capítulo 03 - Segurança em IoT/Cheat Sheet - Segurança em IoT (BLE, LoRaWAN e MQTT).md",
+      "uc": "SRC",
+      "capitulo": 3,
+      "bloco": null,
+      "tipo": "cheatsheet",
+      "tags": [
+        "cheatsheet",
+        "src",
+        "iot",
+        "ble",
+        "lorawan",
+        "mqtt"
+      ],
+      "aliases": [
+        "Cheat Sheet Capítulo 3 SRC",
+        "Cheat Sheet IoT SRC"
+      ],
+      "summary": "Guia de consulta rápida do Capítulo 3 - Segurança em IoT de SRC.",
+      "out_links": [
+        "00 SRC",
+        "Capítulo 3 - Segurança em IoT"
+      ],
+      "in_links": [
+        "00 SRC",
+        "Capítulo 3 - Segurança em IoT"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
+      "title": "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
+      "path": "SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/01 - Sistemas de Deteção de Intrusões (IDS)/IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat).md",
+      "uc": "SRC",
+      "capitulo": 4,
+      "bloco": 1,
+      "tipo": "analise",
+      "tags": [
+        "src",
+        "ids",
+        "evasao",
+        "matriz-confusao",
+        "scada"
+      ],
+      "aliases": [
+        "Evasão de IDS",
+        "Matriz de Confusão IDS",
+        "Desafios IDS"
+      ],
+      "summary": "A eficácia de um `IDS` é avaliada através da matriz de confusão, mas a sua operação prática enfrenta quatro grandes técnicas de evasão (Fragmentation, Flooding, Obfuscation e Encryption) e desafios críticos em...",
+      "out_links": [
+        "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "in_links": [
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
+        "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+      "title": "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+      "path": "SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/01 - Sistemas de Deteção de Intrusões (IDS)/IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat).md",
+      "uc": "SRC",
+      "capitulo": 4,
+      "bloco": 1,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "ids",
+        "sids",
+        "aids",
+        "hids",
+        "nids"
+      ],
+      "aliases": [
+        "Intrusion Detection System",
+        "SIDS vs AIDS",
+        "HIDS vs NIDS"
+      ],
+      "summary": "Um Sistema de Deteção de Intrusões (`IDS`) é um sistema de software ou hardware que identifica atividades maliciosas em redes ou sistemas informáticos — algo que uma firewall tradicional não consegue detetar — para...",
+      "out_links": [
+        "Ataques e Contramedidas por Camada em IoT (Sharma)",
+        "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "in_links": [
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos",
+      "title": "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos",
+      "path": "SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/02 - Zero Trust Architecture (NIST SP 800-207)/Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos.md",
+      "uc": "SRC",
+      "capitulo": 4,
+      "bloco": 2,
+      "tipo": "conceito",
+      "tags": [
+        "src",
+        "zero-trust",
+        "zta",
+        "nist",
+        "pki",
+        "pep"
+      ],
+      "aliases": [
+        "Zero Trust Architecture",
+        "ZTA",
+        "NIST SP 800-207",
+        "Control Plane vs Data Plane"
+      ],
+      "summary": "O **Zero Trust (`ZT`) é um paradigma de cibersegurança focado na proteção de recursos sob a premissa de que a confiança nunca é concedida implicitamente (nem pela localização física ou de rede), devendo ser...",
+      "out_links": [
+        "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees"
+      ],
+      "in_links": [
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
+        "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
+        "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+      "title": "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+      "path": "SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/Capítulo 4 - Deteção de Intrusões e Zero Trust.md",
+      "uc": "SRC",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "indice",
+      "tags": [
+        "moc",
+        "src",
+        "ids",
+        "zero-trust",
+        "nist"
+      ],
+      "aliases": [
+        "Capítulo 4 SRC",
+        "MOC Capítulo 4 SRC",
+        "Deteção de Intrusões e Zero Trust"
+      ],
+      "summary": "Mapa de estudo do Capítulo 4 de SRC, cobrindo estritamente as secções destacadas a amarelo do survey sobre Sistemas de Deteção de Intrusões (`s42400-019-0038-7.pdf`, Khraisat et al., 2019) e da norma `NIST SP...",
+      "out_links": [
+        "00 SRC",
+        "Capítulo 3 - Segurança em IoT",
+        "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
+        "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "in_links": [
+        "00 SRC",
+        "Capítulo 3 - Segurança em IoT"
       ],
       "cross_uc_links": []
     }

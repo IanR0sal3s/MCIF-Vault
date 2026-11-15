@@ -25,8 +25,8 @@ Este espaço foi desenhado para ser partilhado e expandido pela comunidade de es
 | **ASSI** | [[00 ASSI]] (Administração Segura de Sistemas Informáticos) | Patrício Domingues                    | S1       | Concluído (Capítulos 1, 2 e 3 — 585 slides, 97 notas)                    |
 | **AFD1** | [[00 AFD1]] (Análise Forense Digital I)                     | Miguel Frade e Baltazar Rodrigues     | S1       | Em progresso (Capítulos 1, 2 e 3 concluídos — 139 slides, 33 notas)      |
 | *PARSI*  | *Políticas e Análise de Risco na Segurança de Informação*   | Nuno Salvador                         | S1       | Planeado                                                                 |
-| *SRC*    | *Segurança em Redes de Computadores*                        | Luís Frazão                           | S1       | Planeado                                                                 |
-| *COD1*   | *Cibersegurança Ofensiva e Defensiva I*                     | Leonel Santos                         | S1       | Planeado                                                                 |
+| **SRC**  | [[00 SRC]] (Segurança em Redes de Computadores)             | Luís Frazão                           | S1       | Concluído (Capítulos 1 a 4 — 24 notas + 2 Cheat Sheets)                  |
+| **[[00 COD1]]** | **Cibersegurança Ofensiva e Defensiva I**                  | Leonel Santos                         | S1       | Em Curso                                                                 |
 
 ---
 

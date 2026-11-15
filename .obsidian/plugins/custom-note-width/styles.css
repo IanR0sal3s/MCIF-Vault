@@ -1,0 +1,340 @@
+/* Sentinels: let the diagnostics report confirm styles.css is loaded and detect
+   a stale copy, via getComputedStyle(document.body).getPropertyValue(...).
+   --cnw-styles-version MUST be kept in sync with manifest.json "version"; the
+   report compares it to the plugin version and flags a mismatch as stale. */
+:root {
+	--cnw-styles-loaded: 1;
+	--cnw-styles-version: "3.1.0";
+}
+
+/* Prevent CSS transitions on width-related elements during tab switch.
+   Uses a specific selector chain so we do not need !important; the plugin
+   only touches leaves it has tagged with data-cnw-id. */
+.workspace-leaf-content[data-cnw-id] .cm-sizer,
+.workspace-leaf-content[data-cnw-id] .cm-content,
+.workspace-leaf-content[data-cnw-id] .markdown-preview-sizer {
+	transition: max-width 0s;
+}
+
+/* The width itself is no longer bridged through a stylesheet rule. The plugin
+   writes `--file-line-width` inline WITH priority `!important` onto each leaf's
+   `.markdown-source-view` and `.markdown-preview-view` (see NoteWidthManager),
+   restoring the 2.4.1 behaviour. An inline `!important` declaration beats every
+   selector-based rule, including a theme or snippet that marks
+   `--file-line-width` `!important`, and the width no longer depends on this
+   stylesheet being loaded. The only thing that can still win is a rule that sets
+   `max-width` directly on the sizer with `!important` (bypassing the variable);
+   the diagnostics report identifies exactly that rule. */
+
+/* Code block width. Modes (reading / source / live preview) are global settings,
+   so they are represented as body-scoped classes toggled once per settings
+   change instead of embedded in a per-leaf rule. */
+body.cnw-cb-reading .workspace-leaf-content[data-cnw-id] .markdown-preview-view pre {
+	width: var(--cnw-code-block-width);
+	max-width: var(--cnw-code-block-width);
+	box-sizing: border-box;
+}
+
+body.cnw-cb-source.cnw-cb-livepreview .workspace-leaf-content[data-cnw-id] .cm-line.HyperMD-codeblock {
+	width: var(--cnw-code-block-width);
+	max-width: var(--cnw-code-block-width);
+	box-sizing: border-box;
+}
+
+body.cnw-cb-source:not(.cnw-cb-livepreview) .workspace-leaf-content[data-cnw-id] .markdown-source-view:not(.is-live-preview) .cm-line.HyperMD-codeblock {
+	width: var(--cnw-code-block-width);
+	max-width: var(--cnw-code-block-width);
+	box-sizing: border-box;
+}
+
+body:not(.cnw-cb-source).cnw-cb-livepreview .workspace-leaf-content[data-cnw-id] .markdown-source-view.is-live-preview .cm-line.HyperMD-codeblock {
+	width: var(--cnw-code-block-width);
+	max-width: var(--cnw-code-block-width);
+	box-sizing: border-box;
+}
+
+/* Note width modal (command-triggered) */
+#nwm-container {
+	width: 18%;
+}
+
+#nwm-input-container {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+}
+
+#nwm-button-container {
+	text-align: right;
+}
+
+.cnw-nwm-input {
+	flex: 1;
+}
+
+/* UI Elements */
+#custom-note-width-wrapper {
+	display: inline-flex;
+	align-items: center;
+	margin: 0px;
+	padding: 0px;
+	height: 12px;
+}
+
+#custom-note-width-slider {
+	margin: 0px;
+	padding: 0px;
+	margin-right: 5px;
+}
+
+#custom-note-width-slider-value {
+	text-align: center;
+	margin-top: 0px;
+	padding: 0px;
+	min-width: 3ch;
+}
+
+/* Status-bar slider text field (editable input) */
+.cnw-slider-text-input {
+	height: 160%;
+	width: 50px;
+	font-size: 108%;
+}
+
+/* Status-bar slider text (readonly span) */
+.cnw-slider-text-span {
+	font-size: 102.5%;
+	margin-bottom: -0.5px;
+}
+
+#custom-note-width-unit-selector {
+	background: transparent;
+	border: none;
+	color: var(--text-muted);
+	font-size: 102.5%;
+	padding: 0 2px;
+	margin-left: 2px;
+	cursor: pointer;
+	outline: none;
+	height: auto;
+}
+
+#custom-note-width-unit-selector:hover {
+	color: var(--text-normal);
+}
+
+#custom-note-width-unit-selector option {
+	background-color: var(--background-primary);
+	color: var(--text-normal);
+}
+
+#nwm-unit-selector {
+	background-color: var(--background-modifier-form-field);
+	border: 1px solid var(--background-modifier-border);
+	color: var(--text-normal);
+	border-radius: var(--radius-s);
+	padding: 4px 6px;
+	cursor: pointer;
+	outline: none;
+}
+
+#nwm-unit-selector option {
+	background-color: var(--background-primary);
+	color: var(--text-normal);
+}
+
+#dummy {
+	display: none;
+}
+
+/* Pills control */
+#custom-note-width-pills {
+	display: inline-flex;
+	align-items: stretch;
+	height: 16px;
+	margin-right: 5px;
+	border-radius: var(--radius-s);
+	overflow: hidden;
+	line-height: 1;
+}
+
+.custom-note-width-pill {
+	display: inline-flex;
+	align-items: center;
+	background: transparent;
+	border: 1px solid var(--background-modifier-border);
+	color: var(--text-muted);
+	cursor: pointer;
+	font-size: 11px;
+	line-height: 1;
+	height: 16px;
+	padding: 0 6px;
+	margin: 0;
+	border-radius: 0;
+	box-shadow: none;
+	min-height: 0;
+}
+
+.custom-note-width-pill + .custom-note-width-pill {
+	border-left: none;
+}
+
+.custom-note-width-pill:first-child {
+	border-top-left-radius: var(--radius-s);
+	border-bottom-left-radius: var(--radius-s);
+}
+
+.custom-note-width-pill:last-child {
+	border-top-right-radius: var(--radius-s);
+	border-bottom-right-radius: var(--radius-s);
+}
+
+.custom-note-width-pill:hover {
+	color: var(--text-normal);
+	background: var(--background-modifier-hover);
+	box-shadow: none;
+}
+
+.custom-note-width-pill.is-active {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-color: var(--interactive-accent);
+}
+
+/* Donation button */
+#custom-note-width-donation-button {
+	margin-top: 5%;
+}
+
+#custom-note-width-donation-button p {
+	text-align: center;
+	font-size: var(--font-smallest);
+	font-style: italic;
+	font-weight: bold;
+	margin-top: -0.5%;
+}
+
+#custom-note-width-donation-button div {
+	display: flex;
+	justify-content: center;
+}
+
+.cnw-donation-image {
+	height: auto;
+	width: 100%;
+}
+
+/* Progress bar */
+.progress-bar-outer {
+	background-color: var(--background-modifier-border);
+	width: 100%;
+	height: 30px;
+	border-radius: var(--radius-m);
+}
+
+.progress-bar-inner {
+	background-color: var(--interactive-accent);
+	width: 0%;
+	height: 30px;
+	border-radius: var(--radius-m);
+}
+
+.cnw-progress-cancel {
+	margin-top: 20px;
+	float: right;
+}
+
+/* Version info shown at the bottom of the settings tab */
+.cnw-version-info {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 11px;
+	color: var(--text-muted);
+}
+
+/* Status bar item (wrapper of the plugin's controls) */
+.cnw-statusbar-item {
+	padding-left: 0;
+	display: flex;
+}
+
+.cnw-statusbar-item.cnw-hidden {
+	display: none;
+}
+
+/* Reset local overrides modal */
+.cnw-reset-search {
+	width: 100%;
+	margin-bottom: 8px;
+	padding: 6px 8px;
+}
+
+.cnw-reset-select-all {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 4px;
+	border-bottom: 1px solid var(--background-modifier-border);
+	margin-bottom: 6px;
+	font-weight: 500;
+}
+
+.cnw-reset-select-all-label {
+	cursor: pointer;
+	user-select: none;
+}
+
+.cnw-reset-list {
+	height: 320px;
+	overflow-y: auto;
+	margin: 0 0 8px;
+	padding-right: 6px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+}
+
+.cnw-reset-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 8px;
+	border-bottom: 1px solid var(--background-modifier-border-hover);
+}
+
+.cnw-reset-row.cnw-hidden {
+	display: none;
+}
+
+.cnw-reset-row-label {
+	cursor: pointer;
+	user-select: none;
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.cnw-reset-value {
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
+	font-variant-numeric: tabular-nums;
+	min-width: 48px;
+	text-align: right;
+}
+
+.cnw-reset-empty {
+	padding: 12px;
+	text-align: center;
+	color: var(--text-muted);
+	display: none;
+}
+
+.cnw-reset-empty.cnw-visible {
+	display: block;
+}
+
+.cnw-reset-button-row {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+}
