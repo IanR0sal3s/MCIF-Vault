@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador — Cifras Stream vs. Blocos &amp; Feistel (SRC)</title>
+  <style>
+    :root {
+      --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --muted: #475569;
+      --border: #cbd5e1; --primary: #2563eb; --primary-fg: #ffffff;
+      --accent: #059669; --chip: #f1f5f9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --muted: #94a3b8;
+        --border: #334155; --primary: #3b82f6; --primary-fg: #ffffff;
+        --accent: #10b981; --chip: #0f172a;
+      }
+    }
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+    body { margin: 0; padding: 24px; background: var(--bg); color: var(--text); }
+    .container { max-width: 860px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    h1 { margin: 0; font-size: 18px; }
+    .sub { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+    .tabs { display: flex; flex-wrap: wrap; gap: 6px; background: var(--chip); padding: 4px; border-radius: 10px; border: 1px solid var(--border); }
+    button { cursor: pointer; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 7px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; }
+    button.active { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
+    button.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .panel { display: none; padding-top: 16px; }
+    .panel.active { display: block; }
+    .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 12px; }
+    .box { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    input { padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-family: monospace; font-size: 13px; width: 170px; }
+    .byte-chip { padding: 6px 9px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); text-align: center; font-family: monospace; font-size: 12px; }
+    .card-tile { width: 48px; height: 54px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; }
+    .card-tile small { font-size: 11px; color: var(--muted); font-weight: 400; }
+    .note { margin-top: 12px; padding: 12px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .half { padding: 16px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); text-align: center; }
+    .half-val { font-size: 24px; font-weight: 700; letter-spacing: 4px; margin-top: 6px; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>Cifras Stream vs. Blocos &amp; Estrutura de Feistel</h1>
+        <p class="sub">Simulador offline interativo — SRC Capítulo 2</p>
+      </div>
+      <div class="tabs">
+        <button class="active" onclick="openTab('t1', this)">1. Stream vs. Blocos</button>
+        <button onclick="openTab('t2', this)">2. Confusão vs. Difusão</button>
+        <button onclick="openTab('t3', this)">3. Truque de Feistel</button>
+      </div>
+    </div>
+
+    <!-- TAB 1 -->
+    <div id="t1" class="panel active">
+      <div class="row">
+        <label for="txtIn" style="font-size:13px;color:var(--muted)">Texto claro:</label>
+        <input id="txtIn" type="text" maxlength="12" value="Never gonna give you up" oninput="renderStreamBlock()" />
+        <span style="font-size:12px;color:var(--muted)">Escreve para ver a diferença em tempo real.</span>
+      </div>
+      <div class="grid2">
+        <div class="box">
+          <strong style="color:var(--primary);font-size:13px">Cifra STREAM (ex.: RC4) — 1 byte de cada vez</strong>
+          <p class="sub">Cada letra é cifrada imediatamente via XOR com 1 byte da <em>keystream</em>, sem esperar pelas restantes.</p>
+          <div id="sOut" class="row" style="margin-top:10px"></div>
+        </div>
+        <div class="box">
+          <strong style="color:var(--accent);font-size:13px">Cifra de BLOCOS (ex.: DES 64 bits = 8 bytes)</strong>
+          <p class="sub">Agrupa em blocos fixos de 8 bytes (completa com <em>padding</em> se faltar) e mistura tudo junto.</p>
+          <div id="bOut" style="margin-top:10px;display:flex;flex-direction:column;gap:8px"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2 -->
+    <div id="t2" class="panel">
+      <div class="row" style="justify-content:space-between">
+        <div id="cards" class="row"></div>
+        <div class="row">
+          <button class="active" onclick="doConf()">1. Trocar letras (Confusão)</button>
+          <button class="btn-accent" onclick="doDiff()">2. Baralhar lugares (Difusão)</button>
+          <button onclick="resetCD()">Reset</button>
+        </div>
+      </div>
+      <div id="cdMsg" class="note">Imagina 4 cartas na mesa (<strong>C · A · F · E</strong>). Clica nos botões acima para ver o que uma cifra de blocos repete em cada ronda.</div>
+    </div>
+
+    <!-- TAB 3 -->
+    <div id="t3" class="panel">
+      <div class="row" style="justify-content:space-between">
+        <span style="font-size:13px;color:var(--muted)">Bloco partido ao meio: <strong>Esquerda</strong> + <strong>Direita</strong></span>
+        <div class="row">
+          <button class="active" onclick="nextFeistel()">Fazer 1 Ronda</button>
+          <button onclick="resetFeistel()">Reset</button>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="half"><div style="font-size:12px;color:var(--muted)">Metade Esquerda</div><div id="fL" class="half-val" style="color:var(--primary)">CA</div></div>
+        <div class="half"><div style="font-size:12px;color:var(--muted)">Metade Direita</div><div id="fR" class="half-val" style="color:var(--accent)">FE</div></div>
+      </div>
+      <div id="fMsg" class="note"><strong>Porquê partir ao meio?</strong> Em cada ronda, a metade Direita passa intacta para a Esquerda enquanto serve de ingrediente (+ chave) para transformar a antiga Esquerda. Assim a <strong>mesma máquina</strong> consegue voltar atrás para decifrar!</div>
+    </div>
+  </div>
+
+  <script>
+    const ks = [0xA3, 0x1F, 0x7C, 0x2B, 0x91, 0x0E, 0x55, 0xD4, 0x3A, 0x88, 0x6F, 0x12];
+    function openTab(id, btn) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
+    }
+    function renderStreamBlock() {
+      const txt = document.getElementById('txtIn').value || ' ';
+      document.getElementById('sOut').innerHTML = [...txt].map((ch, i) => {
+        const hex = (ch.charCodeAt(0) ^ ks[i % ks.length]).toString(16).toUpperCase().padStart(2, '0');
+        return `<div class="byte-chip"><div>${ch === ' ' ? '␣' : ch}</div><div style="color:var(--primary)">${hex}</div></div>`;
+      }).join('');
+      let html = '';
+      for (let i = 0; i < txt.length; i += 8) {
+        const s = txt.slice(i, i + 8);
+        const pad = s + '·'.repeat(8 - s.length);
+        let h = 0x5A3C;
+        for (let j = 0; j < pad.length; j++) h = ((h * 33) ^ pad.charCodeAt(j)) & 0xFFFF;
+        html += `<div class="byte-chip" style="display:flex;justify-content:space-between"><span>Bloco ${i/8+1}: [${pad.replace(/ /g,'␣')}]</span><span style="color:var(--accent)">→ 0x${h.toString(16).toUpperCase().padStart(4,'0')}...</span></div>`;
+      }
+      document.getElementById('bOut').innerHTML = html;
+    }
+    let cards = ['C','A','F','E'], step = 0;
+    const sub = { C:'X', A:'Q', F:'M', E:'Z', X:'K', Q:'R', M:'T', Z:'P', K:'C', R:'A', T:'F', P:'E' };
+    function renderCD() {
+      document.getElementById('cards').innerHTML = cards.map((c, i) => `<div class="card-tile"><span>${c}</span><small>#${i+1}</small></div>`).join('');
+    }
+    function doConf() {
+      cards = cards.map(c => sub[c] || 'W'); step++; renderCD();
+      document.getElementById('cdMsg').innerHTML = `<strong>Passo ${step} — Confusão (Substituição):</strong> Cada letra foi trocada por outra usando a chave secreta. Quem olha para a saída não consegue adivinhar a chave.`;
+    }
+    function doDiff() {
+      cards = [cards[2], cards[0], cards[3], cards[1]]; step++; renderCD();
+      document.getElementById('cdMsg').innerHTML = `<strong>Passo ${step} — Difusão (Permutação):</strong> As posições foram baralhadas (#3 foi para #1, etc.). Mudar 1 letra espalha o efeito pelo bloco todo!`;
+    }
+    function resetCD() {
+      cards = ['C','A','F','E']; step = 0; renderCD();
+      document.getElementById('cdMsg').innerHTML = 'Imagina 4 cartas na mesa (<strong>C · A · F · E</strong>). Clica nos botões acima para ver o que uma cifra de blocos repete em cada ronda.';
+    }
+    let r = 0, l = 'CA', rt = 'FE';
+    const mix = ['XZ','KP','MT','QR'];
+    function nextFeistel() {
+      r++; const ol = l, or = rt; l = or; rt = mix[(r - 1) % mix.length];
+      document.getElementById('fL').textContent = l; document.getElementById('fR').textContent = rt;
+      document.getElementById('fMsg').innerHTML = `<strong>Ronda ${r}:</strong> A antiga Direita (<strong>${or}</strong>) passou intacta para a Esquerda. A antiga Esquerda (<strong>${ol}</strong>) foi misturada com <strong>${or}</strong> + chave e virou <strong>${rt}</strong>.`;
+    }
+    function resetFeistel() {
+      r = 0; l = 'CA'; rt = 'FE';
+      document.getElementById('fL').textContent = 'CA'; document.getElementById('fR').textContent = 'FE';
+      document.getElementById('fMsg').innerHTML = '<strong>Porquê partir ao meio?</strong> Em cada ronda, a metade Direita passa intacta para a Esquerda enquanto serve de ingrediente (+ chave) para transformar a antiga Esquerda. Assim a <strong>mesma máquina</strong> consegue voltar atrás para decifrar!';
+    }
+    renderStreamBlock(); renderCD();
+  </script>
+</body>
+</html>

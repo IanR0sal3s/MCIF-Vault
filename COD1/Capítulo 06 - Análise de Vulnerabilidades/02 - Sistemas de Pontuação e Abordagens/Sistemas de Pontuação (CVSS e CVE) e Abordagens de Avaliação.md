@@ -1,18 +1,28 @@
 ---
-title: "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+title: Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação
+tipo: conceito
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 6
-topico: cvss-cve-abordagens
+bloco: 2
+fonte_aula: 2026.27_MCIF_COD1_06_Analise_Vulnerabilidades.pdf (Slides 20–29)
 tags: [cod1, cvss, cve, nvd, euvd, gestao-vulnerabilidades]
+aliases: [CVSS v4.0, CVE, Abordagens de Avaliação]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação
 
-**Capítulo:** [[Capítulo 6 - Análise de Vulnerabilidades]]
+Os referenciais `CVE` (identificação padronizada) e `CVSS v4.0` (pontuação quantitativa de severidade) permitem classificar achados obtidos por diferentes abordagens e ferramentas de avaliação.
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> Um achado técnico só se torna acionável quando é identificado de forma padronizada (`CVE`) e pontuado objetivamente (`CVSS`). Saber combinar estes referenciais com a abordagem certa (árvore vs. dedução, *product-based* vs. *service-based*) garante relatórios consistentes e comparáveis entre auditorias.
+> * **Porque existe (Sistema)**: Padroniza a comunicação técnica de vulnerabilidades entre fornecedores, scanners (`Nessus`/`OpenVAS`) e equipas de resposta.
+> * **Porque importa (Pentesting / Segurança)**: Garante relatórios consistentes e permite priorizar a remediação com base em métricas auditáveis.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * Avaliação baseada em **árvore** (estratégia escolhida com info prévia do *sysadmin*) vs. **dedução** (inventaria protocolos/portos primeiro e deduz testes).
+>   * Bases principais de CVE: **`MITRE` (`cve.org`)**, **`EUVD-ENISA`**, **`NVD-NIST`**, **`CVEdetails`** e **`MSRC`**.
 
 ## 1. Abordagens e Tipos de Ferramentas de Análise
 

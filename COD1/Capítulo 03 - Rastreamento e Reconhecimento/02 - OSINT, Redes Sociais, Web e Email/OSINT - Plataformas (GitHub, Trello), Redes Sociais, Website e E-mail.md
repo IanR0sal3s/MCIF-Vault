@@ -1,18 +1,28 @@
 ---
-title: "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail"
+title: OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail
+tipo: tecnica
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 3
-topico: osint-plataformas-web-email
+bloco: 2
+fonte_aula: 2026.27_MCIF_COD1_03_Reconhecimento_Footprinting.pdf (Slides 26–40)
 tags: [cod1, osint, github, redes-sociais, website-footprinting, email-footprinting]
+aliases: [OSINT GitHub, Website Footprinting, E-mail Footprinting]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail
 
-**Capítulo:** [[Capítulo 3 - Rastreamento e Reconhecimento]]
+A recolha OSINT em plataformas colaborativas (`GitHub`, `Trello`, `Pastebin`), redes sociais, websites e cabeçalhos de e-mail expõe segredos em código, tecnologias web e rotinas internas da organização.
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> Grande parte da superfície de ataque moderna expõe-se fora da infraestrutura principal: credenciais esquecidas em commits no `GitHub`, quadros públicos no `Trello`, comentários de programadores no HTML, metadados de PDFs e cabeçalhos de e-mail revelam arquitetura interna, tecnologias exatas e identidades reais.
+> * **Porque existe (Sistema)**: Ferramentas de colaboração pública, cabeçalhos HTTP/SMTP e arquivos históricos (`archive.org`) preservam metadados técnicos e organizacionais.
+> * **Porque importa (Pentesting / Segurança)**: Revela credenciais esquecidas em commits, versões de CMS/servidores (`Server`, `X-Powered-By`), estrutura de ficheiros offline (`HTTrack`/`wget`) e vetores de *spear phishing*.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * Apagar uma chave num commit posterior do `GitHub` não a remove do histórico (ferramentas: `gitleaks`, `gitrob`, `keyhacks`).
+>   * Cabeçalhos `Received:` em e-mails revelam IPs de origem e servidores SMTP intermédios.
 
 ## 1. Plataformas de Partilha de Código e Informação (`GitHub`, `Trello`, `Pastebin`)
 

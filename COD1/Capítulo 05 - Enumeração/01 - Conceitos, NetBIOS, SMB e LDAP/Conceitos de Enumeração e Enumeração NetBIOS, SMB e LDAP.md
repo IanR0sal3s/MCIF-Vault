@@ -1,18 +1,28 @@
 ---
-title: "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP"
+title: Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP
+tipo: tecnica
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 5
-topico: enumeracao-netbios-smb-ldap
+bloco: 1
+fonte_aula: 2026.27_MCIF_COD1_05_Enumeracao.pdf (Slides 3–14, 26–29)
 tags: [cod1, enumeracao, netbios, smb, ldap, active-directory, rpcclient, netexec]
+aliases: [Enumeração NetBIOS, Enumeração SMB, Enumeração LDAP]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP
 
-**Capítulo:** [[Capítulo 5 - Enumeração]]
+A enumeração estabelece ligações ativas aos serviços descobertos (`NetBIOS`, `SMB`, `LDAP`, `RPC`) para extrair contas de utilizador, grupos, partilhas de rede e políticas de domínio.
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> Numa rede corporativa (sobretudo em ambientes Windows / Active Directory), `NetBIOS`, `SMB` e `LDAP` são as fontes mais ricas de inteligência interna: uma única sessão nula (*null session*) ou consulta LDAP anónima pode revelar toda a lista de utilizadores, políticas de bloqueio de contas e partilhas acessíveis antes mesmo de tentar qualquer ataque de credenciais.
+> * **Porque existe (Sistema)**: Serviços de diretório e partilha corporativa (`AD`, `SMB`, `NetBIOS`) expõem metadados de rede para interoperabilidade e gestão interna.
+> * **Porque importa (Pentesting / Segurança)**: Uma única sessão nula (*null session*) ou consulta LDAP anónima revela listas completas de utilizadores, partilhas e políticas de bloqueio antes de qualquer ataque de credenciais.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * O nome **NetBIOS** tem **16 carateres ASCII** (15 para o nome + 16.º byte para o tipo de registo).
+>   * **`139/TCP`** = SMB sobre NetBIOS; **`445/TCP`** = SMB direto sobre TCP; **`389`** = LDAP (codificado em `BER`); **`3268`** = Global Catalog AD.
 
 ## 1. Conceito de Enumeração e Portos Críticos
 

@@ -1,18 +1,28 @@
 ---
-title: "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)"
+title: Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)
+tipo: tecnica
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 5
-topico: enumeracao-smtp-dns-ftp-ipsec-voip
+bloco: 3
+fonte_aula: 2026.27_MCIF_COD1_05_Enumeracao.pdf (Slides 31–46)
 tags: [cod1, enumeracao, smtp, dns, ftp, ipsec, voip, sip, autorecon]
+aliases: [Enumeração SMTP, DNS Zone Transfer, Enumeração IPsec, Enumeração VoIP]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)
 
-**Capítulo:** [[Capítulo 5 - Enumeração]]
+A enumeração de serviços de perímetro e infraestrutura (`SMTP`, `DNS`, `FTP`, `IPsec`, `VoIP/SIP`) extrai contas válidas, zonas DNS completas (`AXFR`), ficheiros anónimos, parâmetros de VPN e extensões telefónicas.
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> Além da infraestrutura Windows/SNMP, serviços de perímetro como `SMTP` (25), `DNS` (53), `FTP` (21), `IPsec/ISAKMP` (500/UDP) e `VoIP/SIP` revelam utilizadores válidos para ataques de phishing/password spraying, mapas internos inteiros via transferência de zona, ficheiros anónimos e configurações criptográficas de túneis VPN.
+> * **Porque existe (Sistema)**: Protocolos de correio, resolução de nomes, transferência de ficheiros, VPN e telefonia IP expõem comandos de diagnóstico ou negociação.
+> * **Porque importa (Pentesting / Segurança)**: Revela utilizadores válidos para *phishing*/*password spraying*, mapas internos via `AXFR` e algoritmos fracos em gateways VPN (`ike-scan`).
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * Os 3 comandos SMTP de enumeração são **`VRFY`**, **`EXPN`** e **`RCPT TO`**.
+>   * **`500/UDP` (`ISAKMP`)** identifica gateways VPN IPsec enumeráveis com `ike-scan`; **`SIP`** usa tipicamente `2000`, `2001`, `5050` e `5061` TCP/UDP.
 
 ## 1. Enumeração SMTP (`TCP 25`)
 

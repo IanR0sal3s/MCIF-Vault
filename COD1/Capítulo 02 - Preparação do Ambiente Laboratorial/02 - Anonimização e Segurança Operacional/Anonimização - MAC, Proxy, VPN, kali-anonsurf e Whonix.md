@@ -1,18 +1,28 @@
 ---
-title: "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix"
+title: Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix
+tipo: tecnica
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 2
-topico: anonimizacao-opsec
+bloco: 2
+fonte_aula: 2026.27_MCIF_COD1_02_Preparação_Ambiente.pdf (Slides 10–13)
 tags: [cod1, anonimizacao, macchanger, tor, proxychains, vpn, whonix, anonsurf]
+aliases: [Anonimização OpSec, Whonix, kali-anonsurf, ProxyChains]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix
 
-**Capítulo:** [[Capítulo 2 - Preparação do Ambiente Laboratorial]]
+A anonimização operacional (*OpSec*) oculta a identidade física (`MAC`), o endereço `IP` de origem e metadados do auditor através de `macchanger`, `ProxyChains`, `Tor`, `VPN`, `kali-anonsurf` e arquiteturas isoladas como o `Whonix`.
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> Em operações de reconhecimento passivo/ativo ou investigação, expor o endereço físico (`MAC`), o endereço `IP` de origem ou metadados de identidade compromete a segurança operacional (OpSec) do auditor e pode invalidar testes de deteção realistas (ou expor o investigador em análises OSINT/ameaças).
+> * **Porque existe (Sistema)**: Protege a origem e a identidade do operador em investigações OSINT, testes *Red Team* ou análise de infraestrutura hostil.
+> * **Porque importa (Pentesting / Segurança)**: Evita fugas de IP real ou de DNS que correlacionariam o auditor com a operação ou invalidariam cenários de deteção realistas.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * `ProxyChains` + `Tor` só transporta **TCP** (não suporta `ICMP` nem `UDP` crus) e exige `proxy_dns` ativo para evitar fugas DNS.
+>   * O **`Whonix`** usa **2 VMs** (`Whonix-Gateway` + `Whonix-Workstation`) para impedir que mesmo um atacante com `root` na Workstation descubra o IP real.
 
 ## 1. Camada de Ligação: Spoofing de Endereço MAC (`macchanger`)
 

@@ -1,18 +1,29 @@
 ---
-title: "Técnicas de Port Scanning TCP, UDP e IDLE Scan"
+title: Técnicas de Port Scanning TCP, UDP e IDLE Scan
+tipo: tecnica
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 4
-topico: tecnicas-port-scanning
+bloco: 2
+fonte_aula: 2026.27_MCIF_COD1_04_Scanning.pdf (Slides 16–24); nmap_avancado.pdf (Slides 18–28)
 tags: [cod1, port-scanning, tcp, udp, idle-scan, nmap]
+aliases: [Port Scanning, IDLE Scan, SYN Scan, ACK Scan]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Técnicas de Port Scanning TCP, UDP e IDLE Scan
 
-**Capítulo:** [[Capítulo 4 - Scanning de Redes]]
+As técnicas de *port scanning* exploram as regras das flags `TCP` (RFC 793), respostas `ICMP` em `UDP` e previsibilidade de `IPID` (`IDLE Scan`) para classificar portos entre `open`, `closed`, `filtered` e `unfiltered`.
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> Escolher a técnica certa de *port scanning* determina se o pentester precisa de privilégios `root`, se o scan será registado nos logs aplicacionais do alvo, se consegue inferir regras de firewall (*stateful* vs. *stateless*) ou até se consegue varrer um alvo de forma totalmente anónima através de um *zombie* (`IDLE Scan`).
+> * **Porque existe (Sistema)**: Cada pilha TCP/IP e regra de firewall reage de forma previsível a combinações específicas de flags (`SYN`, `ACK`, `FIN`, `NULL`, `Xmas`).
+> * **Porque importa (Pentesting / Segurança)**: Determina se o scan exige `root`, se deixa rasto nos logs aplicacionais, se mapeia regras *stateful* vs. *stateless* (`-sA`) ou se varre anonimamente via *zombie* (`-sI`).
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **`-sT` (TCP Connect)** é a única opção sem privilégios `root` (e via `ProxyChains`).
+>   * **`-sA` (ACK Scan)** não distingue `open` de `closed` — distingue **`unfiltered` vs. `filtered`**.
+>   * No **`IDLE Scan` (`-sI`)**, incremento de `+2` no `IPID` do *zombie* = porto **aberto**; `+1` = **fechado ou filtrado**.
 
 ## 1. Estados de Portos no `Nmap`
 

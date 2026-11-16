@@ -1,18 +1,29 @@
 ---
-title: "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização"
+title: Ambiente de Hacking - Kali Linux, Commando VM e Virtualização
+tipo: ferramenta
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 2
-topico: ambiente-hacking
+bloco: 1
+fonte_aula: 2026.27_MCIF_COD1_02_Preparação_Ambiente.pdf (Slides 2–9)
 tags: [cod1, kali-linux, virtualizacao, commando-vm, ferramentas]
+aliases: [Kali Linux COD1, Commando-VM, Ambiente de Hacking]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Ambiente de Hacking - Kali Linux, Commando VM e Virtualização
 
-**Capítulo:** [[Capítulo 2 - Preparação do Ambiente Laboratorial]]
+Um laboratório de *pentesting* isolado recorre a máquinas virtuais (`VMware`, `VirtualBox`, `Hyper-V`), contentores (`Docker`) e distribuições ofensivas dedicadas como `Kali Linux` ou `Commando-VM`.
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> Um ambiente de pentesting dedicado isola ferramentas ofensivas do sistema anfitrião, permite reverter estados através de *snapshots* antes de testes arriscados e facilita a simulação de redes inteiras (atacante + alvos) sem expor infraestruturas reais.
+> * **Porque existe (Sistema)**: Isola ferramentas ofensivas potencialmente destrutivas ou ruidosas do sistema anfitrião e permite reverter estados limpos através de *snapshots*.
+> * **Porque importa (Pentesting / Segurança)**: Permite testar exploits, simular redes inteiras (atacante + alvos) e manter separação entre auditorias de clientes diferentes.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * Credenciais padrão da VM oficial de Kali Linux: **`kali` / `kali`** (alterar após o primeiro arranque).
+>   * Em `Hyper-V`, problemas de resolução/clipboard resolvem-se verificando o **Enhanced Session Mode** e daemons de integração.
+>   * `Commando-VM` complementa o `Kali` quando o alvo depende de ferramentas nativas Windows / `PowerShell` / Active Directory.
 
 ## 1. Requisitos, Virtualização e Contentores
 

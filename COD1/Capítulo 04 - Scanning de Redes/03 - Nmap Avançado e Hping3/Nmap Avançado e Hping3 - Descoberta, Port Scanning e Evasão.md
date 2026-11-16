@@ -1,18 +1,28 @@
 ---
-title: "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão"
+title: Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão
+tipo: ferramenta
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 4
-topico: nmap-avancado-hping3
+bloco: 3
+fonte_aula: 2026.27_MCIF_COD1_04_Scanning.pdf (Slides 26–29); nmap_avancado.pdf (Slides 17, 29–36)
 tags: [cod1, nmap, nse, ndiff, hping3, masscan, unicornscan]
+aliases: [Nmap Avançado, NSE, ndiff, Hping3]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão
 
-**Capítulo:** [[Capítulo 4 - Scanning de Redes]]
+O uso avançado do `Nmap` combina temporização (`-T0`–`-T5`, RTT timeouts), scripts `NSE`, interseção de scans (`-sS` + `-sF` + `-sA`), comparação com `ndiff` e ferramentas de alto débito (`Masscan`, `Unicornscan`, `Hping3`).
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> Saber ler os estados do `Nmap` não chega quando uma firewall devolve `filtered` ou `open|filtered`. Cruzando scans diferentes (`-sS` + `-sF` + `-sA`), afinando temporizações (`-T4`, `--max-rtt-timeout`), usando scripts `NSE` e comparando resultados com `ndiff`, o pentester extrai a topologia real da filtragem e deteta serviços anómalos ou backdoors.
+> * **Porque existe (Sistema)**: Firewalls e redes congestionadas mascaram o estado real dos portos se o auditor usar apenas o scan padrão.
+> * **Porque importa (Pentesting / Segurança)**: Cruzar `-sS`, `-sF` e `-sA` separa portos realmente fechados de portos abertos atrás de filtros, enquanto `-sV` e `NSE` detetam serviços anómalos e backdoors.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **`open|filtered`** no `-sF` + **`unfiltered`** no `-sA` = porto **aberto**; **`open|filtered`** + **`filtered`** = porto **filtrado**.
+>   * `-oA` grava simultaneamente `.nmap`, `.xml` (para `ndiff`) e `.gnmap` (para `grep`/`awk`).
 
 ## 1. Controlo de Alvos, Portos, Temporização e Output no `Nmap`
 

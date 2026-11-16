@@ -1,46 +1,76 @@
 ---
-title: "Capítulo 4 - Scanning de Redes"
+title: Capítulo 4 - Scanning de Redes
+tipo: indice
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: MOC
 capitulo: 4
-tags: [cod1, moc, scanning, nmap, hping3]
+fonte_aula: 2026.27_MCIF_COD1_04_Scanning.pdf; nmap_avancado.pdf
+tags:
+  - moc
+  - cod1
+  - scanning
+  - nmap
+  - hping3
+aliases:
+  - Capítulo 4 COD1
+  - MOC Capítulo 4 COD1
+  - Scanning de Redes
+atualizado: 2026-11-16
 ---
-# Capítulo 4 - Scanning de Redes
 
-**Voltar a:** [[00 COD1]]
+# Capítulo 4 — Scanning de Redes
 
-> [!ABSTRACT] Visão Geral do Capítulo
-> Após mapear domínios e blocos de rede no [[Capítulo 3 - Rastreamento e Reconhecimento]], a fase de **Scanning** interage ativamente com os alvos para descobrir hosts ativos, portos abertos/filtrados, serviços em execução, sistemas operativos e regras de filtragem de firewalls/IDS.
+Mapa de estudo do **Capítulo 4** de [[00 COD1|COD1]] (Profs. Leonel Santos e Miguel Frade), cobrindo **40 + 38 diapositivos** (`2026.27_MCIF_COD1_04_Scanning.pdf` e `nmap_avancado.pdf`) organizados em **4 notas atómicas** e **1 Cheat Sheet** na pasta `COD1/Capítulo 04 - Scanning de Redes/`.
 
-## Estrutura do Capítulo
+> [!TIP] Guia de Consulta Rápida
+> Para comandos prontos a executar de *Host Discovery*, *Port Scanning*, `NSE`, evasão e `ndiff`, consulta a **[[Cheat Sheet - Scanning de Redes e Nmap]]**.
 
-### 1. Conceitos, Flags TCP e Host Discovery
-- [[Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP]]
-  - Objetivos do scanning, construção de pacotes raw (`packETH`, `Ostinato`, `Hping`, `Scapy`, `Yersinia`) e desafios em redes IPv6.
-  - Descoberta de hosts (`ICMP Echo`, `Ping Sweep`, `TCP SYN -PS`, `TCP ACK -PA`, `UDP -PU`, `ICMP Timestamp/Netmask -PP/-PM`, `ARP -PR`, `Protocol -PO`).
+```mermaid
+flowchart LR
+    B1["Bloco 01<br/>Conceitos, Flags TCP<br/>e Host Discovery"] --> B2["Bloco 02<br/>Técnicas Port Scan<br/>TCP, UDP e IDLE"]
+    B2 --> B3["Bloco 03<br/>Nmap Avançado, NSE,<br/>ndiff e Hping3"]
+    B3 --> B4["Bloco 04<br/>Evasão IDS/Firewall,<br/>Banners e Pentest"]
+```
 
-### 2. Técnicas de Port Scanning
-- [[Técnicas de Port Scanning TCP, UDP e IDLE Scan]]
-  - Estados de portos no `Nmap` (`open`, `closed`, `filtered`, `unfiltered`, `open|filtered`, `closed|filtered`).
-  - `TCP Connect (-sT)`, `SYN Stealth (-sS)`, `NULL/FIN/Xmas (-sN/-sF/-sX)`, `ACK (-sA)`, `Window (-sW)`, `Maimon (-sM)`, `UDP (-sU)`, `IDLE Scan (-sI)` e `IP Protocol (-sO)`.
+---
 
-### 3. Nmap Avançado e Hping3
-- [[Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão]]
-  - Temporização (`-T0` a `-T5`, `--max-rtt-timeout`, `--initial-rtt-timeout`), scripts NSE (`/usr/share/nmap/scripts`, `-sC`, `--script`), formatos de output (`-oN`, `-oX`, `-oG`, `-oA`) e comparação com `ndiff`.
-  - Interseção de scans (`-sS` + `-sF` + `-sA`) para distinguir portos abertos de filtrados atrás de firewalls.
-  - Sintaxe prática de `Hping3`, `Netcat`, `Netdiscover`, `Unicornscan`, `Masscan` e `JFScan`.
+## 1. Conceitos e Host Discovery (`01 - Conceitos e Host Discovery`)
 
-### 4. Evasão a IDS/Firewall, Banner Grabbing e Metodologia Pentest
-- [[Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest]]
-  - Fragmentação (`-f`), decoys (`-D`), spoofing de IP/porto (`-S`, `--source-port`), temporização lenta (`-T0`/`-T1`) e `ProxyChains`.
-  - Banner grabbing ativo (`telnet`, `nc`, `nmap -sV --script=banner`) e passivo (mensagens de erro, sniffing TTL, extensões web).
-  - Contramedidas, passos do **Scanning Pentest** e recomendações defensivas.
+| Nota | Fonte | O que vais estudar |
+| :--- | :---: | :--- |
+| [[Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP]] | Scanning 3–15; Nmap 1–16 | Pacotes RAW, IPv6 multicast, e descoberta de hosts (`ICMP -PE/-PP/-PM`, `TCP SYN -PS`, `ACK -PA`, `UDP -PU`, `ARP -PR`, `Protocol -PO`). |
 
-### 5. Referência Rápida
-- [[Cheat Sheet - Scanning de Redes e Nmap]]
+---
+
+## 2. Técnicas de Port Scanning (`02 - Técnicas de Port Scanning`)
+
+| Nota | Fonte | O que vais estudar |
+| :--- | :---: | :--- |
+| [[Técnicas de Port Scanning TCP, UDP e IDLE Scan]] | Scanning 16–24; Nmap 18–28 | Os 6 estados de portos no Nmap e técnicas `-sT`, `-sS`, `-sN/-sF/-sX`, `-sA`, `-sW`, `-sM`, `-sU`, `-sO` e `IDLE Scan (-sI)`. |
+
+---
+
+## 3. Nmap Avançado e Hping3 (`03 - Nmap Avançado e Hping3`)
+
+| Nota | Fonte | O que vais estudar |
+| :--- | :---: | :--- |
+| [[Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão]] | Scanning 26–29; Nmap 17, 29–36 | Temporização (`-T0`–`-T5`), scripts NSE, outputs (`-oA`/`-oG`/`-oX`), comparação `ndiff`, interseção `-sS`/`-sF`/`-sA` e `Hping3`/`Masscan`/`Unicornscan`. |
+
+---
+
+## 4. Evasão, Banners e Metodologia Pentest (`04 - Evasão, Banners e Metodologia Pentest`)
+
+| Nota | Fonte | O que vais estudar |
+| :--- | :---: | :--- |
+| [[Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest]] | Scanning 25, 31–40 | Fragmentação (`-f`), decoys (`-D`), spoofing (`-S`/`-g`), *banner grabbing* ativo/passivo, contramedidas e passos do *Scanning Pentest*. |
+
+---
 
 ## Ligações Transversais
+
 - **Anterior:** [[Capítulo 3 - Rastreamento e Reconhecimento]]
 - **Seguinte:** [[Capítulo 5 - Enumeração]]
+- **Cheat Sheet:** [[Cheat Sheet - Scanning de Redes e Nmap]]
 - **Playbook Prático:** [[Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional]]
+- **Índice da UC:** [[00 COD1]]

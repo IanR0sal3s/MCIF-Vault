@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-15",
+  "generated_at": "2026-11-16",
   "stats": {
-    "total_notes": 198,
+    "total_notes": 205,
     "notes_by_uc": {
-      "AFD1": 37,
+      "AFD1": 44,
       "ASSI": 98,
       "COD1": 31,
       "GERAL": 1,
       "SRC": 31
     },
-    "total_internal_links": 1673,
+    "total_internal_links": 1688,
     "total_cross_uc_links": 433,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
@@ -50,7 +50,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
         "target_uc": "SRC",
-        "matched_term": "SHA-1"
+        "matched_term": "SHA-3"
       },
       {
         "source_id": "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
@@ -92,7 +92,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -120,7 +120,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
         "target_uc": "SRC",
-        "matched_term": "SHA-1"
+        "matched_term": "SHA-3"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -141,7 +141,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -318,13 +318,13 @@
         ]
       },
       {
-        "note_a": "Capítulo 6 - Análise de Vulnerabilidades",
-        "uc_a": "COD1",
-        "note_b": "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "note_a": "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "uc_a": "AFD1",
+        "note_b": "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "uc_b": "ASSI",
         "shared_tags": [
-          "cve",
-          "cvss"
+          "nvme",
+          "ssd"
         ]
       },
       {
@@ -448,6 +448,42 @@
         ]
       },
       {
+        "note_a": "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "uc_a": "AFD1",
+        "note_b": "Artefactos Forenses de Dispositivos USB",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "usb"
+        ]
+      },
+      {
+        "note_a": "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "uc_a": "AFD1",
+        "note_b": "Cheat Sheet - Registry e Forense",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "usb"
+        ]
+      },
+      {
+        "note_a": "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "uc_a": "AFD1",
+        "note_b": "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "usb"
+        ]
+      },
+      {
+        "note_a": "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "uc_a": "AFD1",
+        "note_b": "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "usb"
+        ]
+      },
+      {
         "note_a": "Artefacto Forense ShellBags",
         "uc_a": "ASSI",
         "note_b": "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
@@ -490,33 +526,6 @@
         "uc_b": "AFD1",
         "shared_tags": [
           "assinatura-digital"
-        ]
-      },
-      {
-        "note_a": "Capítulo 3 - Rastreamento e Reconhecimento",
-        "uc_a": "COD1",
-        "note_b": "Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin)",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "osint"
-        ]
-      },
-      {
-        "note_a": "Capítulo 5 - Enumeração",
-        "uc_a": "COD1",
-        "note_b": "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
-        "uc_b": "SRC",
-        "shared_tags": [
-          "dns"
-        ]
-      },
-      {
-        "note_a": "Capítulo 6 - Análise de Vulnerabilidades",
-        "uc_a": "COD1",
-        "note_b": "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "cve"
         ]
       },
       {
@@ -574,6 +583,42 @@
         ]
       },
       {
+        "note_a": "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
+        "uc_a": "AFD1",
+        "note_b": "Cheat Sheet - Enumeração de Serviços e Portos",
+        "uc_b": "COD1",
+        "shared_tags": [
+          "cheat-sheet"
+        ]
+      },
+      {
+        "note_a": "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
+        "uc_a": "AFD1",
+        "note_b": "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "uc_b": "COD1",
+        "shared_tags": [
+          "cheat-sheet"
+        ]
+      },
+      {
+        "note_a": "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
+        "uc_a": "AFD1",
+        "note_b": "Cheat Sheet - Scanning de Redes e Nmap",
+        "uc_b": "COD1",
+        "shared_tags": [
+          "cheat-sheet"
+        ]
+      },
+      {
+        "note_a": "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
+        "uc_a": "AFD1",
+        "note_b": "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "ssd"
+        ]
+      },
+      {
         "note_a": "Cheat Sheet - Enumeração de Serviços e Portos",
         "uc_a": "COD1",
         "note_b": "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
@@ -625,51 +670,6 @@
         "uc_b": "ASSI",
         "shared_tags": [
           "timestamps"
-        ]
-      },
-      {
-        "note_a": "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
-        "uc_a": "AFD1",
-        "note_b": "Recuperação de Clipboard e Sincronização na Timeline",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "base64"
-        ]
-      },
-      {
-        "note_a": "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
-        "uc_a": "COD1",
-        "note_b": "Fases da Investigação Forense Digital",
-        "uc_b": "AFD1",
-        "shared_tags": [
-          "metodologia"
-        ]
-      },
-      {
-        "note_a": "Cheat Sheet - YARA, MOTW e Extração de Strings",
-        "uc_a": "ASSI",
-        "note_b": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
-        "uc_b": "AFD1",
-        "shared_tags": [
-          "ads"
-        ]
-      },
-      {
-        "note_a": "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
-        "uc_a": "SRC",
-        "note_b": "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "aes"
-        ]
-      },
-      {
-        "note_a": "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
-        "uc_a": "SRC",
-        "note_b": "Pesquisa de Evidências e Reconstrução de Eventos",
-        "uc_b": "AFD1",
-        "shared_tags": [
-          "nist"
         ]
       }
     ],
@@ -941,6 +941,8 @@
         "Capítulo 1 - Método de Investigação",
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
         "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
         "Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços",
@@ -954,6 +956,8 @@
         "Capítulo 1 - Método de Investigação",
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
         "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
         "Conceito de Strings e Comando strings em Unix-Linux",
@@ -2301,12 +2305,15 @@
         "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 2 - Arranque e Aquisição Forense",
+        "Capítulo 4 - Dispositivos de Armazenamento",
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
         "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
         "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
         "Preservação do Sistema e Integridade de Dados",
-        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração"
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
+        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
       ],
       "cross_uc_links": [
         "00 ASSI",
@@ -2714,6 +2721,7 @@
       ],
       "in_links": [
         "Acesso Forense e Montagem de Shadow Copies",
+        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
         "Capítulo 3 - Organização de Dados",
         "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
         "Estrutura e Hives do Windows Registry",
@@ -3231,12 +3239,14 @@
       ],
       "in_links": [
         "00 AFD1",
+        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Método de Investigação",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Capítulo 2 - Administração de Sistemas",
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - YARA - MOTW - Strings",
+        "Capítulo 4 - Dispositivos de Armazenamento",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
@@ -3294,6 +3304,244 @@
         "00 AFD1",
         "Capítulo 3 - Organização de Dados",
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+      "title": "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+      "path": "AFD1/Capítulo 04 - Dispositivos de Armazenamento/01 - Tecnologia HDD e Geometria/Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA).md",
+      "uc": "AFD1",
+      "capitulo": 4,
+      "bloco": 1,
+      "tipo": "nota",
+      "tags": [
+        "afd1",
+        "forense",
+        "hdd",
+        "geometria",
+        "chs",
+        "lba",
+        "bios"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 4 - Dispositivos de Armazenamento",
+      "out_links": [
+        "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
+        "Capítulo 3 - Organização de Dados",
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Interface SCSI, SAS e Comparação SCSI vs ATA",
+        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)"
+      ],
+      "in_links": [
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Interface SCSI, SAS e Comparação SCSI vs ATA",
+        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
+        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Interface SCSI, SAS e Comparação SCSI vs ATA",
+      "title": "Interface SCSI, SAS e Comparação SCSI vs ATA",
+      "path": "AFD1/Capítulo 04 - Dispositivos de Armazenamento/01 - Tecnologia HDD e Geometria/Interface SCSI, SAS e Comparação SCSI vs ATA.md",
+      "uc": "AFD1",
+      "capitulo": 4,
+      "bloco": 1,
+      "tipo": "nota",
+      "tags": [
+        "afd1",
+        "forense",
+        "scsi",
+        "sas",
+        "ata"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 4 - Dispositivos de Armazenamento",
+      "out_links": [
+        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)"
+      ],
+      "in_links": [
+        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
+      "title": "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
+      "path": "AFD1/Capítulo 04 - Dispositivos de Armazenamento/01 - Tecnologia HDD e Geometria/Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO).md",
+      "uc": "AFD1",
+      "capitulo": 4,
+      "bloco": 1,
+      "tipo": "nota",
+      "tags": [
+        "afd1",
+        "forense",
+        "ata",
+        "sata",
+        "hpa",
+        "dco",
+        "hdparm"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 4 - Dispositivos de Armazenamento",
+      "out_links": [
+        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Interface SCSI, SAS e Comparação SCSI vs ATA",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers"
+      ],
+      "in_links": [
+        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Interface SCSI, SAS e Comparação SCSI vs ATA"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+      "title": "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+      "path": "AFD1/Capítulo 04 - Dispositivos de Armazenamento/02 - Tecnologia SSD e Memória NAND/Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD.md",
+      "uc": "AFD1",
+      "capitulo": 4,
+      "bloco": 2,
+      "tipo": "nota",
+      "tags": [
+        "afd1",
+        "forense",
+        "ssd",
+        "usb",
+        "m2",
+        "nvme",
+        "pcie",
+        "apple-ssd"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 4 - Dispositivos de Armazenamento",
+      "out_links": [
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Interface SCSI, SAS e Comparação SCSI vs ATA",
+        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
+        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
+      ],
+      "in_links": [
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Interface SCSI, SAS e Comparação SCSI vs ATA",
+        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)",
+      "title": "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)",
+      "path": "AFD1/Capítulo 04 - Dispositivos de Armazenamento/02 - Tecnologia SSD e Memória NAND/SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection).md",
+      "uc": "AFD1",
+      "capitulo": 4,
+      "bloco": 2,
+      "tipo": "nota",
+      "tags": [
+        "afd1",
+        "forense",
+        "ssd",
+        "nand",
+        "nor",
+        "wear-leveling",
+        "garbage-collection"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 4 - Dispositivos de Armazenamento",
+      "out_links": [
+        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers"
+      ],
+      "in_links": [
+        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "Capítulo 4 - Dispositivos de Armazenamento"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Capítulo 4 - Dispositivos de Armazenamento",
+      "title": "Capítulo 4 - Dispositivos de Armazenamento",
+      "path": "AFD1/Capítulo 04 - Dispositivos de Armazenamento/Capítulo 4 - Dispositivos de Armazenamento.md",
+      "uc": "AFD1",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "indice",
+      "tags": [
+        "moc",
+        "afd1",
+        "forense",
+        "storage-devices",
+        "hdd",
+        "ssd",
+        "hpa",
+        "dco"
+      ],
+      "aliases": [
+        "Capítulo 4 AFD1",
+        "Storage Devices",
+        "Dispositivos de Armazenamento"
+      ],
+      "summary": "Mapa de estudo do Capítulo 4 de AFD1 (Docentes Miguel Frade e Baltazar Rodrigues), cobrindo os módulos *04.1 (Hard Drive Technology, 26 slides) e 04.2 (Solid State Drive Technology, 28 slides) em 5 notas temáticas e...",
+      "out_links": [
+        "00 AFD1",
+        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "Capítulo 3 - Organização de Dados",
+        "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
+        "Interface SCSI, SAS e Comparação SCSI vs ATA",
+        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
+      ],
+      "in_links": [
+        "00 AFD1",
+        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
+        "Interface SCSI, SAS e Comparação SCSI vs ATA",
+        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
+        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
+      "title": "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
+      "path": "AFD1/Capítulo 04 - Dispositivos de Armazenamento/Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2).md",
+      "uc": "AFD1",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "cheat-sheet",
+      "tags": [
+        "afd1",
+        "cheat-sheet",
+        "forense",
+        "hdd",
+        "ssd",
+        "hpa",
+        "dco",
+        "hdparm"
+      ],
+      "aliases": [],
+      "summary": "Capítulo: Capítulo 4 - Dispositivos de Armazenamento | UC: 00 AFD1",
+      "out_links": [
+        "00 AFD1",
+        "Capítulo 4 - Dispositivos de Armazenamento"
+      ],
+      "in_links": [
+        "00 AFD1",
+        "Capítulo 4 - Dispositivos de Armazenamento"
       ],
       "cross_uc_links": []
     },
@@ -8648,8 +8896,8 @@
       "path": "COD1/Capítulo 02 - Preparação do Ambiente Laboratorial/01 - Ambiente de Hacking e Virtualização/Ambiente de Hacking - Kali Linux, Commando VM e Virtualização.md",
       "uc": "COD1",
       "capitulo": 2,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 1,
+      "tipo": "ferramenta",
       "tags": [
         "cod1",
         "kali-linux",
@@ -8657,11 +8905,14 @@
         "commando-vm",
         "ferramentas"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 2 - Preparação do Ambiente Laboratorial",
+      "aliases": [
+        "Kali Linux COD1",
+        "Commando-VM",
+        "Ambiente de Hacking"
+      ],
+      "summary": "Um laboratório de pentesting isolado recorre a máquinas virtuais (`VMware`, `VirtualBox`, `Hyper-V`), contentores (`Docker`) e distribuições ofensivas dedicadas como `Kali Linux` ou `Commando-VM`.",
       "out_links": [
         "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
-        "Capítulo 2 - Preparação do Ambiente Laboratorial",
         "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
         "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
       ],
@@ -8678,8 +8929,8 @@
       "path": "COD1/Capítulo 02 - Preparação do Ambiente Laboratorial/02 - Anonimização e Segurança Operacional/Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix.md",
       "uc": "COD1",
       "capitulo": 2,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 2,
+      "tipo": "tecnica",
       "tags": [
         "cod1",
         "anonimizacao",
@@ -8690,11 +8941,15 @@
         "whonix",
         "anonsurf"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 2 - Preparação do Ambiente Laboratorial",
+      "aliases": [
+        "Anonimização OpSec",
+        "Whonix",
+        "kali-anonsurf",
+        "ProxyChains"
+      ],
+      "summary": "A anonimização operacional (OpSec) oculta a identidade física (`MAC`), o endereço `IP` de origem e metadados do auditor através de `macchanger`, `ProxyChains`, `Tor`, `VPN`, `kali-anonsurf` e arquiteturas isoladas...",
       "out_links": [
         "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
-        "Capítulo 2 - Preparação do Ambiente Laboratorial",
         "Footprinting Pentest e Contramedidas (Metodologia Prática)",
         "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN"
       ],
@@ -8714,16 +8969,20 @@
       "uc": "COD1",
       "capitulo": 2,
       "bloco": null,
-      "tipo": "MOC",
+      "tipo": "indice",
       "tags": [
-        "cod1",
         "moc",
+        "cod1",
         "ambiente-laboratorial",
         "kali-linux",
         "anonimizacao"
       ],
-      "aliases": [],
-      "summary": "Voltar a: 00 COD1",
+      "aliases": [
+        "Capítulo 2 COD1",
+        "MOC Capítulo 2 COD1",
+        "Preparação do Ambiente Laboratorial"
+      ],
+      "summary": "Mapa de estudo do Capítulo 2 de COD1 (Prof. Leonel Santos), cobrindo 13 diapositivos de `2026.27_MCIF_COD1_02_Preparação_Ambiente.pdf` organizados em 2 notas atómicas na pasta `COD1/Capítulo 02 - Preparação do...",
       "out_links": [
         "00 COD1",
         "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
@@ -8734,8 +8993,6 @@
       ],
       "in_links": [
         "00 COD1",
-        "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
-        "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
         "Capítulo 1 - Introdução à Cibersegurança",
         "Capítulo 3 - Rastreamento e Reconhecimento"
       ],
@@ -8747,8 +9004,8 @@
       "path": "COD1/Capítulo 03 - Rastreamento e Reconhecimento/01 - Conceitos e Motores de Pesquisa/Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking).md",
       "uc": "COD1",
       "capitulo": 3,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 1,
+      "tipo": "conceito",
       "tags": [
         "cod1",
         "footprinting",
@@ -8757,10 +9014,14 @@
         "censys",
         "netcraft"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 3 - Rastreamento e Reconhecimento",
+      "aliases": [
+        "Footprinting",
+        "Google Hacking",
+        "Google Dorks",
+        "Shodan"
+      ],
+      "summary": "O footprinting é a primeira fase de recolha passiva de informação pública sobre a rede, sistemas e organização alvo através de motores de pesquisa (`Google`, `Netcraft`, `Shodan`, `Censys`) e operadores avançados...",
       "out_links": [
-        "Capítulo 3 - Rastreamento e Reconhecimento",
         "Footprinting Pentest e Contramedidas (Metodologia Prática)",
         "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
         "WHOIS, DNS, Networking Footprinting e Engenharia Social"
@@ -8780,8 +9041,8 @@
       "path": "COD1/Capítulo 03 - Rastreamento e Reconhecimento/02 - OSINT, Redes Sociais, Web e Email/OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail.md",
       "uc": "COD1",
       "capitulo": 3,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 2,
+      "tipo": "tecnica",
       "tags": [
         "cod1",
         "osint",
@@ -8790,10 +9051,13 @@
         "website-footprinting",
         "email-footprinting"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 3 - Rastreamento e Reconhecimento",
+      "aliases": [
+        "OSINT GitHub",
+        "Website Footprinting",
+        "E-mail Footprinting"
+      ],
+      "summary": "A recolha OSINT em plataformas colaborativas (`GitHub`, `Trello`, `Pastebin`), redes sociais, websites e cabeçalhos de e-mail expõe segredos em código, tecnologias web e rotinas internas da organização.",
       "out_links": [
-        "Capítulo 3 - Rastreamento e Reconhecimento",
         "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
         "Footprinting Pentest e Contramedidas (Metodologia Prática)",
         "WHOIS, DNS, Networking Footprinting e Engenharia Social"
@@ -8811,8 +9075,8 @@
       "path": "COD1/Capítulo 03 - Rastreamento e Reconhecimento/03 - WHOIS, DNS, Rede e Engenharia Social/WHOIS, DNS, Networking Footprinting e Engenharia Social.md",
       "uc": "COD1",
       "capitulo": 3,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 3,
+      "tipo": "tecnica",
       "tags": [
         "cod1",
         "whois",
@@ -8823,10 +9087,13 @@
         "amass",
         "recon-ng"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 3 - Rastreamento e Reconhecimento",
+      "aliases": [
+        "WHOIS Footprinting",
+        "DNS Footprinting",
+        "Networking Footprinting"
+      ],
+      "summary": "O reconhecimento técnico de infraestrutura combina consultas `WHOIS` (RIRs), registos `DNS`, mapeamento de caminho (`traceroute`), engenharia social e suítes agregadoras (`Maltego`, `Amass`, `theHarvester`, `Recon-ng`).",
       "out_links": [
-        "Capítulo 3 - Rastreamento e Reconhecimento",
         "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
         "Footprinting Pentest e Contramedidas (Metodologia Prática)",
         "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
@@ -8847,8 +9114,8 @@
       "path": "COD1/Capítulo 03 - Rastreamento e Reconhecimento/04 - Metodologia Pentest e Contramedidas/Footprinting Pentest e Contramedidas (Metodologia Prática).md",
       "uc": "COD1",
       "capitulo": 3,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 4,
+      "tipo": "metodologia",
       "tags": [
         "cod1",
         "footprinting",
@@ -8856,10 +9123,12 @@
         "relatorio",
         "contramedidas"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 3 - Rastreamento e Reconhecimento",
+      "aliases": [
+        "Footprinting Pentest",
+        "Contramedidas Footprinting"
+      ],
+      "summary": "Um Footprinting Pentest executa de forma estruturada todas as técnicas de recolha pública para inventariar a exposição externa da organização, gerar um relatório por fonte e propor contramedidas de redução de superfície.",
       "out_links": [
-        "Capítulo 3 - Rastreamento e Reconhecimento",
         "Capítulo 4 - Scanning de Redes",
         "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
         "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
@@ -8884,16 +9153,20 @@
       "uc": "COD1",
       "capitulo": 3,
       "bloco": null,
-      "tipo": "MOC",
+      "tipo": "indice",
       "tags": [
-        "cod1",
         "moc",
+        "cod1",
         "footprinting",
         "osint",
         "reconhecimento"
       ],
-      "aliases": [],
-      "summary": "Voltar a: 00 COD1",
+      "aliases": [
+        "Capítulo 3 COD1",
+        "MOC Capítulo 3 COD1",
+        "Rastreamento e Reconhecimento"
+      ],
+      "summary": "Mapa de estudo do Capítulo 3 de COD1 (Prof. Leonel Santos), cobrindo 64 diapositivos de `2026.27_MCIF_COD1_03_Reconhecimento_Footprinting.pdf` organizados em 4 notas atómicas na pasta `COD1/Capítulo 03 - Rastreamento...",
       "out_links": [
         "00 COD1",
         "Capítulo 2 - Preparação do Ambiente Laboratorial",
@@ -8908,12 +9181,7 @@
         "00 COD1",
         "Capítulo 2 - Preparação do Ambiente Laboratorial",
         "Capítulo 4 - Scanning de Redes",
-        "Capítulo 6 - Análise de Vulnerabilidades",
-        "Contramedidas de Enumeração e Metodologia Pentest",
-        "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
-        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
-        "OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail",
-        "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+        "Contramedidas de Enumeração e Metodologia Pentest"
       ],
       "cross_uc_links": []
     },
@@ -8923,8 +9191,8 @@
       "path": "COD1/Capítulo 04 - Scanning de Redes/01 - Conceitos e Host Discovery/Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP.md",
       "uc": "COD1",
       "capitulo": 4,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 1,
+      "tipo": "tecnica",
       "tags": [
         "cod1",
         "scanning",
@@ -8934,10 +9202,13 @@
         "ipv6",
         "nmap"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 4 - Scanning de Redes",
+      "aliases": [
+        "Host Discovery",
+        "ICMP Scanning",
+        "ARP Scan"
+      ],
+      "summary": "O scanning de redes identifica hosts ativos, portos, serviços e sistemas operativos através de pacotes `ICMP`, `TCP` (`-PS`/`-PA`), `UDP` (`-PU`), `ARP` (`-PR`) e protocolos IP (`-PO`).",
       "out_links": [
-        "Capítulo 4 - Scanning de Redes",
         "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
         "Técnicas de Port Scanning TCP, UDP e IDLE Scan",
         "WHOIS, DNS, Networking Footprinting e Engenharia Social"
@@ -8957,8 +9228,8 @@
       "path": "COD1/Capítulo 04 - Scanning de Redes/02 - Técnicas de Port Scanning/Técnicas de Port Scanning TCP, UDP e IDLE Scan.md",
       "uc": "COD1",
       "capitulo": 4,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 2,
+      "tipo": "tecnica",
       "tags": [
         "cod1",
         "port-scanning",
@@ -8967,10 +9238,14 @@
         "idle-scan",
         "nmap"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 4 - Scanning de Redes",
+      "aliases": [
+        "Port Scanning",
+        "IDLE Scan",
+        "SYN Scan",
+        "ACK Scan"
+      ],
+      "summary": "As técnicas de port scanning exploram as regras das flags `TCP` (RFC 793), respostas `ICMP` em `UDP` e previsibilidade de `IPID` (`IDLE Scan`) para classificar portos entre `open`, `closed`, `filtered` e `unfiltered`.",
       "out_links": [
-        "Capítulo 4 - Scanning de Redes",
         "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
         "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
         "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP"
@@ -8989,8 +9264,8 @@
       "path": "COD1/Capítulo 04 - Scanning de Redes/03 - Nmap Avançado e Hping3/Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão.md",
       "uc": "COD1",
       "capitulo": 4,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 3,
+      "tipo": "ferramenta",
       "tags": [
         "cod1",
         "nmap",
@@ -9000,10 +9275,14 @@
         "masscan",
         "unicornscan"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 4 - Scanning de Redes",
+      "aliases": [
+        "Nmap Avançado",
+        "NSE",
+        "ndiff",
+        "Hping3"
+      ],
+      "summary": "O uso avançado do `Nmap` combina temporização (`-T0`–`-T5`, RTT timeouts), scripts `NSE`, interseção de scans (`-sS` + `-sF` + `-sA`), comparação com `ndiff` e ferramentas de alto débito (`Masscan`, `Unicornscan`,...",
       "out_links": [
-        "Capítulo 4 - Scanning de Redes",
         "Cheat Sheet - Scanning de Redes e Nmap",
         "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
         "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP",
@@ -9022,8 +9301,8 @@
       "path": "COD1/Capítulo 04 - Scanning de Redes/04 - Evasão, Banners e Metodologia Pentest/Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest.md",
       "uc": "COD1",
       "capitulo": 4,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 4,
+      "tipo": "tecnica",
       "tags": [
         "cod1",
         "evasao-ids",
@@ -9031,10 +9310,13 @@
         "banner-grabbing",
         "scanning-pentest"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 4 - Scanning de Redes",
+      "aliases": [
+        "Evasão IDS-Firewall",
+        "Banner Grabbing",
+        "Scanning Pentest"
+      ],
+      "summary": "A evasão a `IDS`/firewalls (fragmentação, decoys, spoofing, temporização lenta) e o banner grabbing ativo/passivo permitem identificar versões reais de software e validar a eficácia dos controlos de perímetro num...",
       "out_links": [
-        "Capítulo 4 - Scanning de Redes",
         "Capítulo 6 - Análise de Vulnerabilidades",
         "Cheat Sheet - Scanning de Redes e Nmap",
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
@@ -9057,16 +9339,20 @@
       "uc": "COD1",
       "capitulo": 4,
       "bloco": null,
-      "tipo": "MOC",
+      "tipo": "indice",
       "tags": [
-        "cod1",
         "moc",
+        "cod1",
         "scanning",
         "nmap",
         "hping3"
       ],
-      "aliases": [],
-      "summary": "Voltar a: 00 COD1",
+      "aliases": [
+        "Capítulo 4 COD1",
+        "MOC Capítulo 4 COD1",
+        "Scanning de Redes"
+      ],
+      "summary": "Mapa de estudo do Capítulo 4 de COD1 (Profs. Leonel Santos e Miguel Frade), cobrindo 40 + 38 diapositivos (`2026.27_MCIF_COD1_04_Scanning.pdf` e `nmap_avancado.pdf`) organizados em 4 notas atómicas e 1 Cheat Sheet na...",
       "out_links": [
         "00 COD1",
         "Capítulo 3 - Rastreamento e Reconhecimento",
@@ -9082,14 +9368,9 @@
         "00 COD1",
         "Capítulo 3 - Rastreamento e Reconhecimento",
         "Capítulo 5 - Enumeração",
-        "Capítulo 6 - Análise de Vulnerabilidades",
         "Cheat Sheet - Scanning de Redes e Nmap",
         "Contramedidas de Enumeração e Metodologia Pentest",
-        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
-        "Footprinting Pentest e Contramedidas (Metodologia Prática)",
-        "Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão",
-        "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP",
-        "Técnicas de Port Scanning TCP, UDP e IDLE Scan"
+        "Footprinting Pentest e Contramedidas (Metodologia Prática)"
       ],
       "cross_uc_links": []
     },
@@ -9108,7 +9389,10 @@
         "hping3",
         "scanning"
       ],
-      "aliases": [],
+      "aliases": [
+        "Cheat Sheet Nmap",
+        "Scanning Cheat Sheet"
+      ],
       "summary": "Capítulo: Capítulo 4 - Scanning de Redes | UC: 00 COD1",
       "out_links": [
         "00 COD1",
@@ -9129,8 +9413,8 @@
       "path": "COD1/Capítulo 05 - Enumeração/01 - Conceitos, NetBIOS, SMB e LDAP/Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP.md",
       "uc": "COD1",
       "capitulo": 5,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 1,
+      "tipo": "tecnica",
       "tags": [
         "cod1",
         "enumeracao",
@@ -9141,10 +9425,13 @@
         "rpcclient",
         "netexec"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 5 - Enumeração",
+      "aliases": [
+        "Enumeração NetBIOS",
+        "Enumeração SMB",
+        "Enumeração LDAP"
+      ],
+      "summary": "A enumeração estabelece ligações ativas aos serviços descobertos (`NetBIOS`, `SMB`, `LDAP`, `RPC`) para extrair contas de utilizador, grupos, partilhas de rede e políticas de domínio.",
       "out_links": [
-        "Capítulo 5 - Enumeração",
         "Cheat Sheet - Enumeração de Serviços e Portos",
         "Contramedidas de Enumeração e Metodologia Pentest",
         "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
@@ -9164,8 +9451,8 @@
       "path": "COD1/Capítulo 05 - Enumeração/02 - Enumeração SNMP/Enumeração SNMP (Community Strings, MIB e OIDs).md",
       "uc": "COD1",
       "capitulo": 5,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 2,
+      "tipo": "tecnica",
       "tags": [
         "cod1",
         "enumeracao",
@@ -9175,10 +9462,14 @@
         "snmpwalk",
         "onesixtyone"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 5 - Enumeração",
+      "aliases": [
+        "Enumeração SNMP",
+        "MIB",
+        "OIDs",
+        "Community Strings"
+      ],
+      "summary": "A enumeração `SNMP` (`161/UDP`) interroga agentes de gestão através de community strings e identificadores `OID` da `MIB` para obter utilizadores, processos, software instalado e tabelas de rede.",
       "out_links": [
-        "Capítulo 5 - Enumeração",
         "Cheat Sheet - Enumeração de Serviços e Portos",
         "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
         "Contramedidas de Enumeração e Metodologia Pentest"
@@ -9197,8 +9488,8 @@
       "path": "COD1/Capítulo 05 - Enumeração/03 - Enumeração SMTP, DNS, FTP, IPsec e VoIP/Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP).md",
       "uc": "COD1",
       "capitulo": 5,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 3,
+      "tipo": "tecnica",
       "tags": [
         "cod1",
         "enumeracao",
@@ -9210,10 +9501,14 @@
         "sip",
         "autorecon"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 5 - Enumeração",
+      "aliases": [
+        "Enumeração SMTP",
+        "DNS Zone Transfer",
+        "Enumeração IPsec",
+        "Enumeração VoIP"
+      ],
+      "summary": "A enumeração de serviços de perímetro e infraestrutura (`SMTP`, `DNS`, `FTP`, `IPsec`, `VoIP/SIP`) extrai contas válidas, zonas DNS completas (`AXFR`), ficheiros anónimos, parâmetros de VPN e extensões telefónicas.",
       "out_links": [
-        "Capítulo 5 - Enumeração",
         "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
         "Contramedidas de Enumeração e Metodologia Pentest",
         "Enumeração SNMP (Community Strings, MIB e OIDs)",
@@ -9234,8 +9529,8 @@
       "path": "COD1/Capítulo 05 - Enumeração/04 - Contramedidas e Metodologia Pentest/Contramedidas de Enumeração e Metodologia Pentest.md",
       "uc": "COD1",
       "capitulo": 5,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 4,
+      "tipo": "metodologia",
       "tags": [
         "cod1",
         "enumeracao",
@@ -9243,12 +9538,14 @@
         "hardening",
         "pentest"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 5 - Enumeração",
+      "aliases": [
+        "Contramedidas Enumeração",
+        "Enumeração Pentest"
+      ],
+      "summary": "A Enumeração Pentest segue uma sequência de 10 passos para identificar contas válidas e partilhas expostas, servindo de base para aplicar contramedidas específicas por protocolo (`SNMPv3`, `LDAPS`, `AXFR`,...",
       "out_links": [
         "Capítulo 3 - Rastreamento e Reconhecimento",
         "Capítulo 4 - Scanning de Redes",
-        "Capítulo 5 - Enumeração",
         "Capítulo 6 - Análise de Vulnerabilidades",
         "Cheat Sheet - Enumeração de Serviços e Portos",
         "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
@@ -9270,10 +9567,10 @@
       "uc": "COD1",
       "capitulo": 5,
       "bloco": null,
-      "tipo": "MOC",
+      "tipo": "indice",
       "tags": [
-        "cod1",
         "moc",
+        "cod1",
         "enumeracao",
         "netbios",
         "smb",
@@ -9282,8 +9579,12 @@
         "dns",
         "smtp"
       ],
-      "aliases": [],
-      "summary": "Voltar a: 00 COD1",
+      "aliases": [
+        "Capítulo 5 COD1",
+        "MOC Capítulo 5 COD1",
+        "Enumeração"
+      ],
+      "summary": "Mapa de estudo do Capítulo 5 de COD1 (Prof. Leonel Santos), cobrindo 54 diapositivos de `2026.27_MCIF_COD1_05_Enumeracao.pdf` organizados em 4 notas atómicas e 1 Cheat Sheet na pasta `COD1/Capítulo 05 - Enumeração/`.",
       "out_links": [
         "00 COD1",
         "Capítulo 4 - Scanning de Redes",
@@ -9299,11 +9600,7 @@
         "00 COD1",
         "Capítulo 4 - Scanning de Redes",
         "Capítulo 6 - Análise de Vulnerabilidades",
-        "Cheat Sheet - Enumeração de Serviços e Portos",
-        "Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP",
-        "Contramedidas de Enumeração e Metodologia Pentest",
-        "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
-        "Enumeração SNMP (Community Strings, MIB e OIDs)"
+        "Cheat Sheet - Enumeração de Serviços e Portos"
       ],
       "cross_uc_links": []
     },
@@ -9325,7 +9622,9 @@
         "dns",
         "smtp"
       ],
-      "aliases": [],
+      "aliases": [
+        "Cheat Sheet Enumeração"
+      ],
       "summary": "Capítulo: Capítulo 5 - Enumeração | UC: 00 COD1",
       "out_links": [
         "00 COD1",
@@ -9347,8 +9646,8 @@
       "path": "COD1/Capítulo 06 - Análise de Vulnerabilidades/01 - Conceitos e Ciclo de Vida/Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação.md",
       "uc": "COD1",
       "capitulo": 6,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 1,
+      "tipo": "conceito",
       "tags": [
         "cod1",
         "vulnerabilidades",
@@ -9358,10 +9657,12 @@
         "siem",
         "soar"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 6 - Análise de Vulnerabilidades",
+      "aliases": [
+        "Gestão de Vulnerabilidades",
+        "Ciclo de Vida Vulnerabilidades"
+      ],
+      "summary": "A análise e gestão de vulnerabilidades organiza a deteção, classificação e remediação de falhas num ciclo contínuo — da criação da baseline (pré-avaliação) à monitorização contínua em `SIEM`/`SOAR`.",
       "out_links": [
-        "Capítulo 6 - Análise de Vulnerabilidades",
         "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
         "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
         "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
@@ -9379,8 +9680,8 @@
       "path": "COD1/Capítulo 06 - Análise de Vulnerabilidades/02 - Sistemas de Pontuação e Abordagens/Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação.md",
       "uc": "COD1",
       "capitulo": 6,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 2,
+      "tipo": "conceito",
       "tags": [
         "cod1",
         "cvss",
@@ -9389,11 +9690,14 @@
         "euvd",
         "gestao-vulnerabilidades"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 6 - Análise de Vulnerabilidades",
+      "aliases": [
+        "CVSS v4.0",
+        "CVE",
+        "Abordagens de Avaliação"
+      ],
+      "summary": "Os referenciais `CVE` (identificação padronizada) e `CVSS v4.0` (pontuação quantitativa de severidade) permitem classificar achados obtidos por diferentes abordagens e ferramentas de avaliação.",
       "out_links": [
         "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
-        "Capítulo 6 - Análise de Vulnerabilidades",
         "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
         "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)"
       ],
@@ -9410,8 +9714,8 @@
       "path": "COD1/Capítulo 06 - Análise de Vulnerabilidades/03 - Ferramentas Nessus, OpenVAS e Relatórios/Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup).md",
       "uc": "COD1",
       "capitulo": 6,
-      "bloco": null,
-      "tipo": "nota",
+      "bloco": 3,
+      "tipo": "ferramenta",
       "tags": [
         "cod1",
         "nessus",
@@ -9421,11 +9725,16 @@
         "nmap-nse",
         "relatorios"
       ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 6 - Análise de Vulnerabilidades",
+      "aliases": [
+        "Nessus",
+        "OpenVAS",
+        "GVM",
+        "Nikto",
+        "Nmap NSE Vulners"
+      ],
+      "summary": "`Nessus`, `OpenVAS` (`GVM`), `Nikto` e scripts `Nmap NSE` (`vulners`, `vulscan`) automatizam a deteção de vulnerabilidades conhecidas, configurações fracas e patches em falta em redes e aplicações web.",
       "out_links": [
         "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
-        "Capítulo 6 - Análise de Vulnerabilidades",
         "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
         "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
       ],
@@ -9443,23 +9752,25 @@
       "uc": "COD1",
       "capitulo": 6,
       "bloco": null,
-      "tipo": "MOC",
+      "tipo": "indice",
       "tags": [
-        "cod1",
         "moc",
+        "cod1",
         "vulnerabilidades",
         "cvss",
         "cve",
         "nessus",
         "openvas"
       ],
-      "aliases": [],
-      "summary": "Voltar a: 00 COD1",
+      "aliases": [
+        "Capítulo 6 COD1",
+        "MOC Capítulo 6 COD1",
+        "Análise de Vulnerabilidades"
+      ],
+      "summary": "Mapa de estudo do Capítulo 6 de COD1 (Prof. Leonel Santos), cobrindo 36 diapositivos de `2026.27_MCIF_COD1_06_Analise_Vulnerabilidades.pdf` e os 2 guias práticos de instalação (`Nessus` e `OpenVAS`), organizados em 3...",
       "out_links": [
         "00 COD1",
         "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
-        "Capítulo 3 - Rastreamento e Reconhecimento",
-        "Capítulo 4 - Scanning de Redes",
         "Capítulo 5 - Enumeração",
         "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
         "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
@@ -9467,12 +9778,9 @@
       ],
       "in_links": [
         "00 COD1",
-        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
         "Capítulo 5 - Enumeração",
         "Contramedidas de Enumeração e Metodologia Pentest",
-        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
-        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
-        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+        "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest"
       ],
       "cross_uc_links": []
     },
@@ -9492,7 +9800,10 @@
         "footprinting",
         "metodologia"
       ],
-      "aliases": [],
+      "aliases": [
+        "Playbook Pentesting COD1",
+        "Playbook Footprinting"
+      ],
       "summary": "Voltar a: 00 COD1",
       "out_links": [
         "00 COD1",

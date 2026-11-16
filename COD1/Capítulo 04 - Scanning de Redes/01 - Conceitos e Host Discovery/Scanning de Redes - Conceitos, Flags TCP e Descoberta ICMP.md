@@ -1,18 +1,29 @@
 ---
-title: "Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP"
+title: Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP
+tipo: tecnica
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 4
-topico: scanning-conceitos-host-discovery
+bloco: 1
+fonte_aula: 2026.27_MCIF_COD1_04_Scanning.pdf (Slides 3–15); nmap_avancado.pdf (Slides 1–16)
 tags: [cod1, scanning, host-discovery, icmp, arp, ipv6, nmap]
+aliases: [Host Discovery, ICMP Scanning, ARP Scan]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP
 
-**Capítulo:** [[Capítulo 4 - Scanning de Redes]]
+O *scanning* de redes identifica hosts ativos, portos, serviços e sistemas operativos através de pacotes `ICMP`, `TCP` (`-PS`/`-PA`), `UDP` (`-PU`), `ARP` (`-PR`) e protocolos IP (`-PO`).
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> O `Nmap` executa por omissão **duas fases**: primeiro descobre que endereços IP estão ativos (*Host Discovery*) e só depois varre os portos desses hosts. Dominar múltiplos métodos de descoberta (ICMP, TCP SYN/ACK, UDP, ARP) evita perder máquinas reais apenas porque uma firewall bloqueia `ping`.
+> * **Porque existe (Sistema)**: O `Nmap` executa *Host Discovery* antes do *Port Scan* para não perder tempo a varrer milhares de IPs inativos.
+> * **Porque importa (Pentesting / Segurança)**: Combinar múltiplos métodos de descoberta evita falsos negativos quando uma firewall bloqueia `ICMP Echo` (`ping`).
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * Na mesma LAN Ethernet, **`ARP Scan (-PR)`** é o método mais rápido e fiável (usado por omissão pelo Nmap).
+>   * Combinar `-PS` (SYN) e `-PA` (ACK) maximiza a deteção atrás de firewalls *stateless*.
+>   * Em **IPv6**, o varrimento completo é inviável (128 bits), mas dentro da sub-rede pode usar-se *link-local multicast*.
 
 ## 1. Conceito e Objetivos do Scanning de Redes
 

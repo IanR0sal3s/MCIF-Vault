@@ -1,18 +1,29 @@
 ---
-title: "WHOIS, DNS, Networking Footprinting e Engenharia Social"
+title: WHOIS, DNS, Networking Footprinting e Engenharia Social
+tipo: tecnica
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 3
-topico: whois-dns-rede-engenharia-social
+bloco: 3
+fonte_aula: 2026.27_MCIF_COD1_03_Reconhecimento_Footprinting.pdf (Slides 41–53)
 tags: [cod1, whois, dns, traceroute, engenharia-social, maltego, amass, recon-ng]
+aliases: [WHOIS Footprinting, DNS Footprinting, Networking Footprinting]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # WHOIS, DNS, Networking Footprinting e Engenharia Social
 
-**Capítulo:** [[Capítulo 3 - Rastreamento e Reconhecimento]]
+O reconhecimento técnico de infraestrutura combina consultas `WHOIS` (RIRs), registos `DNS`, mapeamento de caminho (`traceroute`), engenharia social e suítes agregadoras (`Maltego`, `Amass`, `theHarvester`, `Recon-ng`).
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> O `WHOIS` e o `DNS` traduzem nomes de domínio comerciais em blocos de IP reais, servidores de correio, registos de verificação e relações entre sistemas. Combinados com `traceroute` e ferramentas agregadoras (`Amass`, `theHarvester`, `Maltego`), permitem construir o mapa técnico da rede alvo antes de qualquer scan de portos.
+> * **Porque existe (Sistema)**: O registo público de blocos IP/domínios nos RIRs e a resolução DNS são necessários para o encaminhamento global na Internet.
+> * **Porque importa (Pentesting / Segurança)**: Traduz nomes comerciais em blocos CIDR reais, servidores de correio (`MX`), registos `TXT` (SaaS/SPF) e topologia de firewalls intermédias antes do scanning.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * Os 5 RIRs são **`RIPE NCC`**, **`ARIN`**, **`APNIC`**, **`AFRINIC`** e **`LACNIC`**.
+>   * `traceroute -T` (TCP SYN) atravessa firewalls que bloqueiam `traceroute -I` (ICMP).
+>   * Transferência de zona `AXFR` mal restringida expõe todos os registos da zona DNS.
 
 ## 1. WHOIS Footprinting e Regional Internet Registries (RIR)
 

@@ -43,6 +43,23 @@ As cifras simétricas modernas classificam-se em **cifras de *stream*** (process
 | **Cifra *Stream*** | 1 bit ou 1 byte/palavra de cada vez | César, Vigenère, Vernam, **`RC4`** |
 | **Cifra de Blocos** | Bloco de tamanho fixo (ex.: `64` ou `128` bits) | **`Feistel`**, **`DES`**, **`3DES`**, **`AES`**, **`RC5`** |
 
+```mermaid
+flowchart LR
+    subgraph STREAM["Cifra Stream (ex.: RC4) — 1 byte de cada vez"]
+        P1["Byte 1: 'O'"] --> X1((XOR))
+        K1["Keystream K1"] --> X1
+        X1 --> C1["Byte cifrado 1"]
+        P2["Byte 2: 'L'"] --> X2((XOR))
+        K2["Keystream K2"] --> X2
+        X2 --> C2["Byte cifrado 2"]
+    end
+
+    subgraph BLOCK["Cifra de Blocos (ex.: DES / AES) — Blocos fixos"]
+        PB["Bloco completo (64 ou 128 bits)<br/>+ padding se incompleto"] --> R["N Rondas<br/>(Substituição + Permutação + Chave K)"]
+        R --> CB["Bloco cifrado (64 ou 128 bits)"]
+    end
+```
+
 ---
 
 ## 2. Estrutura de Feistel e Parâmetros de Desenho
@@ -52,6 +69,16 @@ Proposta como aplicação prática dos princípios de **difusão** e **confusão
 2. Executa $n$ rondas (*rounds*), combinando em cada ronda uma função de substituição $F(R_{i-1}, K_i)$ com `XOR` sobre a outra metade e trocando as metades (permutação).
 3. A decifragem usa exatamente a mesma estrutura com as subchaves $K_i$ aplicadas por ordem inversa.
 
+```mermaid
+flowchart TD
+    L0["L(i-1)"] --> XOR((XOR))
+    R0["R(i-1)"] --> F["Função F(R, Ki)"]
+    K["Subchave Ki"] --> F
+    F --> XOR
+    XOR --> R1["R(i) = L(i-1) XOR F(R(i-1), Ki)"]
+    R0 --> L1["L(i) = R(i-1)"]
+```
+
 **7 parâmetros fundamentais de uma cifra de Feistel (Slide 15 / Stallings 4.1):**
 1. Tamanho do bloco;
 2. Número de *rounds*;
@@ -60,6 +87,26 @@ Proposta como aplicação prática dos princípios de **difusão** e **confusão
 5. Função de substituição $F$;
 6. Rapidez de cifragem/decifragem;
 7. Facilidade de análise do resultado.
+
+### Explicação Intuitiva por Fases (Analogia das 4 Cartas `C · A · F · E`)
+
+Para visualizar o diagrama acima sem matemática, imagina que o bloco é formado por **4 cartas na mesa (`C · A · F · E`)**:
+
+> [!example]- Fase 1 — Confusão (Substituição): trocar cada carta segundo a chave
+> Trocas cada letra por outra usando uma regra secreta ligada à chave (ex.: `C` $\rightarrow$ `X`, `A` $\rightarrow$ `Q`, `F` $\rightarrow$ `M`, `E` $\rightarrow$ `Z`, ficando `X · Q · M · Z`).
+> **Objetivo:** quem olha para a saída não consegue adivinhar a chave usada.
+
+> [!example]- Fase 2 — Difusão (Permutação): baralhar os lugares
+> Mudas as posições das cartas (ex.: a 3.ª vai para 1.ª, a 1.ª vai para 2.ª $\rightarrow$ `M · X · Z · Q`).
+> **Objetivo:** se mudares uma única carta antes de começar, essa mudança espalha-se pelo bloco inteiro (*avalanche effect*). Fazer as Fases 1 e 2 **10 a 16 vezes seguidas** são as **rondas** (*rounds*) de uma cifra de blocos.
+
+> [!example]- Fase 3 — Truque de Feistel (`CA | FE`): porque partir o bloco ao meio?
+> 1. Partes o bloco em duas metades: **Esquerda (`CA`)** e **Direita (`FE`)**.
+> 2. Guardas a **Direita (`FE`) intacta** (passa para a nova Esquerda) e usas-na + a chave para baralhar a **Esquerda (`CA`)** (que vira a nova Direita, ex.: `XZ`).
+> 3. **Porque funciona:** como metade do bloco não foi destruída em cada ronda, na hora de **decifrar** basta passar pela **mesma máquina ao contrário** com as subchaves invertidas!
+
+> [!TIP] Simulador Interativo Offline
+> Para testar visualmente no navegador a diferença entre *Stream* vs. *Blocos*, Confusão vs. Difusão e o truque de Feistel passo a passo, abre [cripto_intuicao.html](file:///home/ian/MCIF-Vault/_assets/cripto_intuicao.html).
 
 ---
 

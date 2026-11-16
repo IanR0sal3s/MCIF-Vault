@@ -1,18 +1,28 @@
 ---
-title: "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)"
+title: Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)
+tipo: conceito
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 3
-topico: footprinting-motores-pesquisa
+bloco: 1
+fonte_aula: 2026.27_MCIF_COD1_03_Reconhecimento_Footprinting.pdf (Slides 3–25)
 tags: [cod1, footprinting, google-hacking, shodan, censys, netcraft]
+aliases: [Footprinting, Google Hacking, Google Dorks, Shodan]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)
 
-**Capítulo:** [[Capítulo 3 - Rastreamento e Reconhecimento]]
+O *footprinting* é a primeira fase de recolha passiva de informação pública sobre a rede, sistemas e organização alvo através de motores de pesquisa (`Google`, `Netcraft`, `Shodan`, `Censys`) e operadores avançados (*Google Dorks*).
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> Antes de enviar um único pacote de *port scan* contra um cliente, o pentester já consegue descobrir domínios, subdomínios, intervalos IP, tecnologias de servidor, painéis expostos e documentos internos indexados recorrendo apenas a motores de pesquisa e indexadores da Internet como o `Google`, `Shodan` e `Censys`.
+> * **Porque existe (Sistema)**: Motores web e indexadores da Internet (`Shodan`, `Censys`) indexam continuamente páginas, documentos e serviços expostos sem interação direta do auditor.
+> * **Porque importa (Pentesting / Segurança)**: Permite desenhar o mapa da rede, reduzir áreas de foco, descobrir páginas de login, tecnologias e fugas de ficheiros antes de enviar um único pacote de *port scan*.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * `Google` indexa conteúdo web/documentos (`site:`, `inurl:`, `intitle:`, `filetype:`), enquanto `Shodan`/`Censys` indexam **IPs, portos, banners e certificados**.
+>   * Anúncios de emprego revelam a pilha tecnológica interna; caches de pesquisa preservam páginas já apagadas.
 
 ## 1. Conceito e Valor do Footprinting
 

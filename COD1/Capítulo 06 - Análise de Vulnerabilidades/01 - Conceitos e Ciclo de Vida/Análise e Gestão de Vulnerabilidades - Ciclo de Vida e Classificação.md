@@ -1,18 +1,28 @@
 ---
-title: "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação"
+title: Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação
+tipo: conceito
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 6
-topico: gestao-vulnerabilidades-ciclo-vida
+bloco: 1
+fonte_aula: 2026.27_MCIF_COD1_06_Analise_Vulnerabilidades.pdf (Slides 3–18)
 tags: [cod1, vulnerabilidades, ciclo-vida, baseline, remediacao, siem, soar]
+aliases: [Gestão de Vulnerabilidades, Ciclo de Vida Vulnerabilidades]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação
 
-**Capítulo:** [[Capítulo 6 - Análise de Vulnerabilidades]]
+A análise e gestão de vulnerabilidades organiza a deteção, classificação e remediação de falhas num ciclo contínuo — da criação da *baseline* (pré-avaliação) à monitorização contínua em `SIEM`/`SOAR`.
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> Correr um scanner de vulnerabilidades sem inventário de ativos nem processo de pós-avaliação gera apenas listas longas de alertas ignorados. A gestão de vulnerabilidades trata a deteção como um ciclo contínuo — da criação da *baseline* à remediação, verificação e monitorização em `SIEM`/`SOAR`.
+> * **Porque existe (Sistema)**: Infraestruturas evoluem constantemente com novos patches, configurações e serviços expostos.
+> * **Porque importa (Pentesting / Segurança)**: Sem inventário de ativos críticos e processo de pós-avaliação, um scanner gera apenas alertas ignorados sem redução real do risco.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * Avaliação **ativa** (envia sondas, pode impactar rede) vs. **passiva** (*sniffing* sem interferência).
+>   * O ciclo inclui **Pré-avaliação (*baseline*) $\rightarrow$ Avaliação $\rightarrow$ Pós-avaliação (Risco, Remediação, Verificação, Monitorização `SIEM`/`SOAR`)**.
 
 ## 1. Conceitos e Classificação de Vulnerabilidades
 

@@ -1,33 +1,54 @@
 ---
-title: "Capítulo 2 - Preparação do Ambiente Laboratorial"
+title: Capítulo 2 - Preparação do Ambiente Laboratorial
+tipo: indice
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: MOC
 capitulo: 2
-tags: [cod1, moc, ambiente-laboratorial, kali-linux, anonimizacao]
+fonte_aula: 2026.27_MCIF_COD1_02_Preparação_Ambiente.pdf
+tags:
+  - moc
+  - cod1
+  - ambiente-laboratorial
+  - kali-linux
+  - anonimizacao
+aliases:
+  - Capítulo 2 COD1
+  - MOC Capítulo 2 COD1
+  - Preparação do Ambiente Laboratorial
+atualizado: 2026-11-16
 ---
-# Capítulo 2 - Preparação do Ambiente Laboratorial
 
-**Voltar a:** [[00 COD1]]
+# Capítulo 2 — Preparação do Ambiente Laboratorial
 
-> [!ABSTRACT] Visão Geral do Capítulo
-> Antes de executar qualquer fase de footprinting, scanning ou enumeração, um pentester precisa de um laboratório isolado, reprodutível e operacionalmente seguro (OpSec). Este capítulo cobre a preparação de máquinas virtuais, distribuições especializadas (Linux e Windows) e mecanismos de anonimização de tráfego e identidade.
+Mapa de estudo do **Capítulo 2** de [[00 COD1|COD1]] (Prof. Leonel Santos), cobrindo **13 diapositivos** de `2026.27_MCIF_COD1_02_Preparação_Ambiente.pdf` organizados em **2 notas atómicas** na pasta `COD1/Capítulo 02 - Preparação do Ambiente Laboratorial/`, focadas na montagem de um laboratório de *pentesting* isolado e operacionalmente seguro (*OpSec*).
 
-## Estrutura do Capítulo
+```mermaid
+flowchart LR
+    B1["Bloco 01<br/>Ambiente de Hacking<br/>VMs, Kali e Commando-VM"] --> B2["Bloco 02<br/>Anonimização e OpSec<br/>MAC, Tor, VPN e Whonix"]
+```
 
-### 1. Ambiente de Hacking e Virtualização
-- [[Ambiente de Hacking - Kali Linux, Commando VM e Virtualização]]
-  - Requisitos de hardware, virtualização (`VMware`, `VirtualBox`, `Hyper-V`) e contentores (`Docker`).
-  - Distribuições Linux especializadas (`Kali Linux`, `Parrot OS`, `BackBox`, `SamuraiWTF`, `Wifislax`, `ArchStrike`, `NST`, `Attify OS`) e suítes Windows (`Commando-VM`, `Pentestbox`).
-  - Ferramentas essenciais pré-instaladas e linguagens de scripting (`Python`, `Bash`, `PowerShell`).
+---
 
-### 2. Anonimização e Segurança Operacional (OpSec)
-- [[Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix]]
-  - Spoofing de endereço MAC com `macchanger`.
-  - Encaminhamento via Proxies, `ProxyChains`, `Tor` e VPNs.
-  - `kali-anonsurf`, serviços de e-mail temporário/privado (`temp-mail`, `tuta.com`) e arquitetura de duas VMs do `Whonix`.
+## 1. Ambiente de Hacking e Virtualização (`01 - Ambiente de Hacking e Virtualização`)
+
+| Nota | Fonte | O que vais estudar |
+| :--- | :---: | :--- |
+| [[Ambiente de Hacking - Kali Linux, Commando VM e Virtualização]] | Slides 2–9 | Hardware/VMs/Docker, distribuições Linux (`Kali`, `Parrot`, `BackBox`, `Attify OS`, etc.), `Commando-VM`/`Pentestbox`, credenciais `kali/kali`, Hyper-V e ferramentas base. |
+
+---
+
+## 2. Anonimização e Segurança Operacional (`02 - Anonimização e Segurança Operacional`)
+
+| Nota | Fonte | O que vais estudar |
+| :--- | :---: | :--- |
+| [[Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix]] | Slides 10–13 | Spoofing MAC (`macchanger`), `ProxyChains`, `Tor`, VPNs, `kali-anonsurf`, e-mails descartáveis e arquitetura de 2 VMs do `Whonix`. |
+
+---
 
 ## Ligações Transversais
+
 - **Anterior:** [[Capítulo 1 - Introdução à Cibersegurança]]
 - **Seguinte:** [[Capítulo 3 - Rastreamento e Reconhecimento]]
 - **Playbook Prático:** [[Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional]]
+- **Índice da UC:** [[00 COD1]]

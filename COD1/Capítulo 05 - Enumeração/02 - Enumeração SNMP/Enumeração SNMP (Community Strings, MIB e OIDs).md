@@ -1,18 +1,28 @@
 ---
-title: "Enumeração SNMP (Community Strings, MIB e OIDs)"
+title: Enumeração SNMP (Community Strings, MIB e OIDs)
+tipo: tecnica
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 5
-topico: enumeracao-snmp
+bloco: 2
+fonte_aula: 2026.27_MCIF_COD1_05_Enumeracao.pdf (Slides 16–24)
 tags: [cod1, enumeracao, snmp, mib, oid, snmpwalk, onesixtyone]
+aliases: [Enumeração SNMP, MIB, OIDs, Community Strings]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Enumeração SNMP (Community Strings, MIB e OIDs)
 
-**Capítulo:** [[Capítulo 5 - Enumeração]]
+A enumeração `SNMP` (`161/UDP`) interroga agentes de gestão através de *community strings* e identificadores `OID` da `MIB` para obter utilizadores, processos, software instalado e tabelas de rede.
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> O `SNMP` (`UDP 161`) é frequentemente esquecido pelos administradores com versões antigas (`v1`/`v2c`) e *community strings* padrão (`public` / `private`). Quando exposto, funciona como um raio-X completo do sistema: devolve utilizadores locais, processos em execução, software instalado, portos abertos e tabelas de encaminhamento sem precisar de credenciais de sistema operativo.
+> * **Porque existe (Sistema)**: O protocolo `SNMP` permite a gestores centrais monitorizar e configurar routers, switches e servidores através da árvore hierárquica `MIB`.
+> * **Porque importa (Pentesting / Segurança)**: Versões antigas (`v1`/`v2c`) com *community strings* padrão (`public`/`private`) expõem um raio-X completo do sistema sem credenciais de SO.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **`public`** = *read-only* (consulta); **`private`** = *read/write* (permite alterar configurações remotamente).
+>   * A **`MIB`** traduz identificadores numéricos **`OID`** para formato legível por humanos (ex.: `1.3.6.1.4.1.77.1.2.25` = utilizadores Windows).
 
 ## 1. Arquitetura SNMP e *Community Strings*
 

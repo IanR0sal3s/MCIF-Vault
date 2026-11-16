@@ -1,18 +1,28 @@
 ---
-title: "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)"
+title: Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)
+tipo: ferramenta
+mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
-tipo: nota
 capitulo: 6
-topico: ferramentas-nessus-openvas
+bloco: 3
+fonte_aula: 2026.27_MCIF_COD1_06_Analise_Vulnerabilidades.pdf (Slides 31–36); nessus_instalacao_setup.txt; openvas_instalacao_setup.txt
 tags: [cod1, nessus, openvas, gvm, nikto, nmap-nse, relatorios]
+aliases: [Nessus, OpenVAS, GVM, Nikto, Nmap NSE Vulners]
+criado: 2026-11-15
+atualizado: 2026-11-16
 ---
+
 # Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)
 
-**Capítulo:** [[Capítulo 6 - Análise de Vulnerabilidades]]
+`Nessus`, `OpenVAS` (`GVM`), `Nikto` e scripts `Nmap NSE` (`vulners`, `vulscan`) automatizam a deteção de vulnerabilidades conhecidas, configurações fracas e patches em falta em redes e aplicações web.
 
 > [!TIP] Lógica de Funcionamento e Valor Operacional
-> O `Nessus` e o `OpenVAS` (`Greenbone Vulnerability Management`) automatizam milhares de verificações de vulnerabilidades conhecidas, configurações fracas e patches em falta, enquanto o `Nikto` e os scripts `NSE` do `Nmap` oferecem verificação rápida via linha de comandos.
+> * **Porque existe (Sistema)**: Automatiza milhares de verificações baseadas em assinaturas, banners e checks autenticados que seriam inviáveis manualmente.
+> * **Porque importa (Pentesting / Segurança)**: Acelera a descoberta de vetores exploráveis e gera relatórios estruturados com severidade `CVSS` e passos de remediação.
+> * **Pontos Críticos e Armadilhas para Exame**:
+>   * **`Nessus`** escuta em `https://127.0.0.1:8834`; **`OpenVAS` (`GVM`)** escuta em `https://127.0.0.1:9392`.
+>   * Scripts `Nmap NSE` **`safe`** (só recolhem dados) vs. **`intrusive`** (podem explorar falhas ou causar instabilidade).
 
 ## 1. Panorama de Ferramentas de Análise de Vulnerabilidades
 
