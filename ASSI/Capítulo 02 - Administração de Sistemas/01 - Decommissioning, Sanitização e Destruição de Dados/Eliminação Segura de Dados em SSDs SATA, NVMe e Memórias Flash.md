@@ -25,6 +25,7 @@ aliases:
   - Format NVM
   - Sanitização de Memória Flash
 atualizado: 2026-11-11
+custom-width: 55
 ---
 
 # Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash

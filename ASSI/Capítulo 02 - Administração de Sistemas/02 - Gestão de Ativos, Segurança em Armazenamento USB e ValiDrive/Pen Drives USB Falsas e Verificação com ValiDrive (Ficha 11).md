@@ -41,16 +41,12 @@ As **pen drives USB falsas** adulteram o firmware para reportar `1 TB` ou `2 TB`
 
 Unidades USB fraudulentas — frequentemente comercializadas online a preços irrealisticamente baixos (ex.: **`$19.99 USD` por `1 TB` ou `2 TB`**) — possuem o firmware do controlador manipulado para enganar o sistema operativo ([Vídeo Demonstrativo](https://www.youtube.com/watch?v=xMgEHy1A9QA)):
 
-```text
-Capacidade Declarada ao SO ("reported capacity"): 1 TB – 2 TB
-┌──────────────────────────────┬───────────────────────────────────────────────────────────┐
-│  Parte Real (Real Part)      │  Parte Falsa (Fake Part — ex.: 950 GB+)                   │
-│  50 GB – 64 GB físicos       │  Sem chips de memória flash físicos                       │
-├──────────────────────────────┼───────────────────────────────────────────────────────────┤
-│  Armazenamento funcional     │  Escritas descartadas silenciosamente ou em               │
-│  até ao limite físico real   │  sobreposição cíclica sobre o início do disco/tabela FAT   │
-└──────────────────────────────┴───────────────────────────────────────────────────────────┘
-```
+**Capacidade Declarada ao SO (*reported capacity*):** `1 TB – 2 TB`
+
+| Região Lógica do Dispositivo | Parte Real (*Real Part*) | Parte Falsa (*Fake Part* — ex.: `950 GB+`) |
+| :--- | :--- | :--- |
+| **Hardware físico** | `50 GB – 64 GB` físicos reais | Sem chips de memória flash físicos |
+| **Comportamento na escrita** | Armazenamento funcional até ao limite físico real | Escritas descartadas silenciosamente ou em **sobreposição cíclica** sobre o início do disco / tabela FAT |
 
 1. **Capacidade anunciada vs. real**: o controlador declara ao sistema operativo (`reported capacity`) o valor fraudado (ex.: `2 TB`), mas a placa contém apenas um chip pequeno correspondente à **Parte Real (*Real Part*, ex.: `50 GB` ou `64 GB`)** e uma extensa **Parte Falsa (*Fake Part*, ex.: `950 GB`)** sem memória física;
 2. **Corrupção silenciosa dos dados**: a unidade aceita escritas aparentemente normais muito além do seu limite físico; na prática, os dados enviados para a *Fake Part* são descartados ou **sobrescrevem ciclicamente os blocos iniciais**, destruindo a própria tabela de alocação de ficheiros e corrompendo ficheiros gravados anteriormente — falha que apenas se descobre ao tentar ler os ficheiros mais tarde.

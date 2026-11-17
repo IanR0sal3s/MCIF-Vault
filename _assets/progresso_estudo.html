@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progresso de Estudo — MCIF Vault</title>
+  <style>
+    :root {
+      --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --muted: #475569;
+      --border: #cbd5e1; --primary: #2563eb; --primary-fg: #ffffff;
+      --ok: #10b981; --mid: #f59e0b; --todo: #94a3b8; --chip: #f1f5f9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --muted: #94a3b8;
+        --border: #334155; --primary: #3b82f6; --primary-fg: #ffffff;
+        --ok: #10b981; --mid: #f59e0b; --todo: #64748b; --chip: #0f172a;
+      }
+    }
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+    body { margin: 0; padding: 18px; background: var(--bg); color: var(--text); }
+    .app { max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
+    .top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+    h1 { margin: 0; font-size: 19px; }
+    .sub { margin: 3px 0 0; font-size: 12px; color: var(--muted); }
+    button, select, input[type="text"] {
+      border: 1px solid var(--border); background: var(--bg); color: var(--text);
+      padding: 6px 10px; border-radius: 8px; font-size: 13px;
+    }
+    button { cursor: pointer; font-weight: 500; }
+    .bar { height: 7px; border-radius: 99px; background: var(--chip); border: 1px solid var(--border); overflow: hidden; margin: 6px 0; }
+    .bar > div { height: 100%; background: var(--ok); transition: width .2s; }
+    .layout { display: grid; grid-template-columns: 300px 1fr; gap: 14px; align-items: start; }
+    @media (max-width: 820px) { .layout { grid-template-columns: 1fr; } }
+
+    /* Árvore lateral estilo Obsidian */
+    .sidebar { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 12px; max-height: 75vh; overflow-y: auto; }
+    .tree-title { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; padding: 0 4px; }
+    .t-item { display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 5px 8px; border-radius: 7px; cursor: pointer; font-size: 13px; }
+    .t-item:hover { background: var(--chip); }
+    .t-item.active { background: var(--primary); color: var(--primary-fg); }
+    .t-item.active .t-pct { color: var(--primary-fg); opacity: .9; }
+    .t-left { display: flex; align-items: center; gap: 5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .t-pct { font-size: 11px; color: var(--muted); flex-shrink: 0; }
+    .t-children { padding-left: 14px; border-left: 1px dashed var(--border); margin-left: 9px; }
+    .t-children.hidden { display: none; }
+
+    /* Área principal drill-down */
+    .main { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; min-height: 420px; }
+    .crumb { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+    .crumb span.link { color: var(--primary); cursor: pointer; font-weight: 600; }
+    .crumb span.link:hover { text-decoration: underline; }
+    .crumb span.sep { color: var(--muted); }
+    .folder-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+    .folder-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px; cursor: pointer; transition: border-color .15s, transform .1s; }
+    .folder-card:hover { border-color: var(--primary); transform: translateY(-1px); }
+    .folder-name { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+    .meta { font-size: 12px; color: var(--muted); }
+
+    .note-list { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-top: 12px; }
+    .note-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .note-row:last-child { border-bottom: none; }
+    .pill-group { display: flex; gap: 4px; }
+    .st-btn { padding: 5px 10px; font-size: 12px; border-radius: 99px; background: var(--card); }
+    .st-btn.s0 { background: var(--todo); color: #fff; border-color: var(--todo); }
+    .st-btn.s1 { background: var(--mid); color: #fff; border-color: var(--mid); }
+    .st-btn.s2 { background: var(--ok); color: #fff; border-color: var(--ok); }
+    a.obs-link { color: var(--primary); text-decoration: none; font-size: 12px; font-weight: 600; }
+    a.obs-link:hover { text-decoration: underline; }
+    .sec-label { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); margin: 14px 0 8px; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="card">
+      <div class="top">
+        <div>
+          <h1>Progresso de Estudo — MCIF Vault</h1>
+          <p class="sub">Navega pelas pastas como no Obsidian (UC &rarr; Capítulo &rarr; Módulo) e marca o teu domínio local.</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+          <input id="searchBox" type="text" placeholder="Pesquisa rápida de nota..." style="width:210px" oninput="renderAll()" />
+          <select id="statusFilter" onchange="renderAll()">
+            <option value="ALL">Todos os estados</option>
+            <option value="0">Por estudar</option>
+            <option value="1">Mais ou menos</option>
+            <option value="2">Dominado</option>
+          </select>
+          <button onclick="exportProgress()">Exportar JSON</button>
+          <button onclick="document.getElementById('impFile').click()">Importar JSON</button>
+          <input id="impFile" type="file" accept=".json" style="display:none" onchange="importProgress(event)" />
+          <button onclick="resetProgress()" style="color:#ef4444">Limpar</button>
+        </div>
+      </div>
+      <div style="margin-top:10px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600">
+          <span>Progresso Global do Mestrado</span>
+          <span id="globalPct">0%</span>
+        </div>
+        <div class="bar"><div id="globalBar" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="tree-title">Explorador de Pastas</div>
+        <div id="treeRoot"></div>
+      </aside>
+
+      <main class="main">
+        <div id="breadcrumb" class="crumb"></div>
+        <div id="mainContent"></div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../_index/vault_catalog.js"></script>
+  <script>
+    const STORAGE_KEY = 'mcif_study_progress_v1';
+    const VAULT_NAME = 'MCIF-Vault';
+    const rawNotes = (window.MCIF_VAULT || []).filter(n => n.tipo !== 'indice' && n.uc !== 'GERAL');
+    let progress = {};
+    try { progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (_) { progress = {}; }
+
+    // Caminho atual selecionado na árvore: [] = raiz, ['AFD1'], ['AFD1', 'Capítulo 01...'], etc.
+    let currentPath = [];
+    const expandedTree = new Set();
+
+    // Construir árvore de pastas a partir de n.path
+    function buildTree(list) {
+      const root = { name: 'Início', pathArr: [], children: new Map(), notes: [] };
+      for (const n of list) {
+        const parts = n.path.split('/');
+        parts.pop(); // remove nome do ficheiro .md
+        let node = root;
+        const acc = [];
+        for (const folder of parts) {
+          acc.push(folder);
+          if (!node.children.has(folder)) {
+            node.children.set(folder, { name: folder, pathArr: [...acc], children: new Map(), notes: [] });
+          }
+          node = node.children.get(folder);
+        }
+        node.notes.push(n);
+      }
+      return root;
+    }
+
+    const vaultTree = buildTree(rawNotes);
+
+    function collectNotes(node) {
+      let arr = [...node.notes];
+      for (const ch of node.children.values()) arr = arr.concat(collectNotes(ch));
+      return arr;
+    }
+
+    function getState(path) { return progress[path] !== undefined ? progress[path] : 0; }
+
+    function setState(path, val) {
+      if (val === 0) delete progress[path];
+      else progress[path] = val;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+      renderAll();
+    }
+
+    function calcStats(list) {
+      if (!list.length) return { pct: 0, done: 0, mid: 0, todo: 0, total: 0 };
+      let pts = 0, done = 0, mid = 0, todo = 0;
+      for (const n of list) {
+        const s = getState(n.path);
+        if (s === 2) { pts += 1; done++; }
+        else if (s === 1) { pts += 0.5; mid++; }
+        else todo++;
+      }
+      return { pct: Math.round((pts / list.length) * 100), done, mid, todo, total: list.length };
+    }
+
+    function navigateTo(pathArr) {
+      currentPath = [...pathArr];
+      // Expandir automaticamente os ancestrais na árvore
+      const acc = [];
+      for (const p of pathArr) {
+        acc.push(p);
+        expandedTree.add(acc.join('/'));
+      }
+      renderAll();
+    }
+
+    function toggleExpand(key, ev) {
+      ev.stopPropagation();
+      if (expandedTree.has(key)) expandedTree.delete(key);
+      else expandedTree.add(key);
+      renderTree();
+    }
+
+    function getNodeAt(pathArr) {
+      let node = vaultTree;
+      for (const p of pathArr) {
+        if (!node.children.has(p)) return vaultTree;
+        node = node.children.get(p);
+      }
+      return node;
+    }
+
+    function renderTreeNode(node) {
+      const key = node.pathArr.join('/');
+      const isRoot = node.pathArr.length === 0;
+      const isActive = currentPath.join('/') === key;
+      const hasChildren = node.children.size > 0;
+      const isOpen = isRoot || expandedTree.has(key);
+      const st = calcStats(collectNotes(node));
+
+      let html = '';
+      if (!isRoot) {
+        const arrow = hasChildren ? (isOpen ? '▾' : '▸') : '•';
+        const pathJson = JSON.stringify(node.pathArr).replace(/"/g, '&quot;');
+        html += `<div class="t-item ${isActive ? 'active' : ''}" onclick="navigateTo(${pathJson})">
+          <span class="t-left">
+            <span onclick="toggleExpand('${key.replace(/'/g,"\\'")}', event)" style="width:12px;display:inline-block;text-align:center">${arrow}</span>
+            <span title="${node.name}">${node.name}</span>
+          </span>
+          <span class="t-pct">${st.pct}%</span>
+        </div>`;
+      }
+
+      if (hasChildren) {
+        const sortedChildren = [...node.children.values()].sort((a, b) => a.name.localeCompare(b.name));
+        html += `<div class="${isRoot ? '' : 't-children'} ${isOpen ? '' : 'hidden'}">`;
+        for (const ch of sortedChildren) html += renderTreeNode(ch);
+        html += `</div>`;
+      }
+      return html;
+    }
+
+    function renderTree() {
+      const rootActive = currentPath.length === 0 ? 'active' : '';
+      const gst = calcStats(rawNotes);
+      document.getElementById('treeRoot').innerHTML =
+        `<div class="t-item ${rootActive}" onclick="navigateTo([])">
+          <span class="t-left">🏠 <strong>Todas as UCs</strong></span>
+          <span class="t-pct">${gst.pct}%</span>
+        </div>` + renderTreeNode(vaultTree);
+    }
+
+    function renderNoteRows(list) {
+      return `<div class="note-list">` + list.map(n => {
+        const s = getState(n.path);
+        const obsUrl = `obsidian://open?vault=${encodeURIComponent(VAULT_NAME)}&file=${encodeURIComponent(n.path)}`;
+        return `<div class="note-row">
+          <div style="flex:1;min-width:240px">
+            <div style="font-weight:600">${n.title}</div>
+            <div class="meta">${n.uc}${n.cap ? ' · Cap. ' + n.cap : ''} · ${n.tipo || 'nota'} · <a class="obs-link" href="${obsUrl}">Abrir no Obsidian</a></div>
+          </div>
+          <div class="pill-group">
+            <button class="st-btn ${s===0?'s0':''}" onclick="setState('${n.path.replace(/'/g,"\\'")}', 0)">Por estudar</button>
+            <button class="st-btn ${s===1?'s1':''}" onclick="setState('${n.path.replace(/'/g,"\\'")}', 1)">Mais ou menos</button>
+            <button class="st-btn ${s===2?'s2':''}" onclick="setState('${n.path.replace(/'/g,"\\'")}', 2)">Dominado</button>
+          </div>
+        </div>`;
+      }).join('') + `</div>`;
+    }
+
+    function renderMain() {
+      const q = document.getElementById('searchBox').value.trim().toLowerCase();
+      const stF = document.getElementById('statusFilter').value;
+
+      // Breadcrumb
+      let crumbHtml = `<span class="link" onclick="navigateTo([])">Início (UCs)</span>`;
+      const acc = [];
+      for (const part of currentPath) {
+        acc.push(part);
+        const pj = JSON.stringify(acc).replace(/"/g, '&quot;');
+        crumbHtml += `<span class="sep">&rsaquo;</span><span class="link" onclick="navigateTo(${pj})">${part}</span>`;
+      }
+      document.getElementById('breadcrumb').innerHTML = crumbHtml;
+
+      const main = document.getElementById('mainContent');
+
+      // Se houver pesquisa ou filtro de estado ativo, mostrar resultados dentro do nó atual
+      const curNode = getNodeAt(currentPath);
+      if (q || stF !== 'ALL') {
+        const scope = collectNotes(curNode);
+        const found = scope.filter(n => {
+          if (stF !== 'ALL' && String(getState(n.path)) !== stF) return false;
+          if (q && !n.title.toLowerCase().includes(q) && !n.path.toLowerCase().includes(q)) return false;
+          return true;
+        });
+        main.innerHTML = found.length
+          ? `<div class="meta">${found.length} nota(s) encontrada(s) neste âmbito</div>` + renderNoteRows(found)
+          : `<div class="meta" style="padding:20px;text-align:center">Nenhuma nota corresponde ao filtro atual.</div>`;
+        return;
+      }
+
+      let html = '';
+      // Subpastas (UCs, Capítulos ou Módulos)
+      if (curNode.children.size > 0) {
+        const children = [...curNode.children.values()].sort((a, b) => a.name.localeCompare(b.name));
+        const label = currentPath.length === 0 ? 'Unidades Curriculares' : currentPath.length === 1 ? 'Capítulos' : 'Módulos / Subpastas';
+        html += `<div class="sec-label">${label}</div><div class="folder-grid">`;
+        for (const ch of children) {
+          const st = calcStats(collectNotes(ch));
+          const pj = JSON.stringify(ch.pathArr).replace(/"/g, '&quot;');
+          html += `<div class="folder-card" onclick="navigateTo(${pj})">
+            <div class="folder-name">📁 ${ch.name}</div>
+            <div class="bar"><div style="width:${st.pct}%"></div></div>
+            <div class="meta"><strong>${st.pct}%</strong> · ${st.done}/${st.total} dominadas · ${st.mid} médias</div>
+          </div>`;
+        }
+        html += `</div>`;
+      }
+
+      // Notas diretas desta pasta (ex.: Cheat Sheets do capítulo ou notas do módulo)
+      if (curNode.notes.length > 0) {
+        html += `<div class="sec-label">Notas (${curNode.notes.length})</div>` + renderNoteRows(curNode.notes);
+      }
+
+      main.innerHTML = html || '<div class="meta">Pasta vazia.</div>';
+    }
+
+    function renderAll() {
+      const gst = calcStats(rawNotes);
+      document.getElementById('globalPct').textContent = `${gst.pct}% (${gst.done} dominadas · ${gst.mid} mais ou menos · ${gst.todo} por estudar / ${gst.total})`;
+      document.getElementById('globalBar').style.width = gst.pct + '%';
+      renderTree();
+      renderMain();
+    }
+
+    function exportProgress() {
+      const blob = new Blob([JSON.stringify(progress, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'mcif_progresso_estudo.json';
+      a.click();
+    }
+
+    function importProgress(ev) {
+      const file = ev.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try { progress = JSON.parse(reader.result); localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); renderAll(); }
+        catch (e) { alert('Ficheiro JSON inválido.'); }
+      };
+      reader.readAsText(file);
+    }
+
+    function resetProgress() {
+      if (confirm('Tens a certeza que queres reiniciar todo o teu progresso local?')) {
+        progress = {};
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+        renderAll();
+      }
+    }
+
+    renderAll();
+  </script>
+</body>
+</html>

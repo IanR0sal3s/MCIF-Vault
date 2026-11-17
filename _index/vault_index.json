@@ -50,7 +50,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
         "target_uc": "SRC",
-        "matched_term": "SHA-1"
+        "matched_term": "SHA-3"
       },
       {
         "source_id": "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
@@ -120,7 +120,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
         "target_uc": "SRC",
-        "matched_term": "SHA-1"
+        "matched_term": "SHA-3"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -7057,7 +7057,7 @@
         "CVE-2026-45585",
         "KB5089549"
       ],
-      "summary": "O Hardening protege firmware, portas físicas, FDE (BitLocker, `LUKS2`, `FileVault`) e configuração do SO; contudo, o BitLocker YellowKey (`CVE-2026-45585`) contorna o modo `TPM-only` via WinRE.",
+      "summary": "k",
       "out_links": [
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Capítulo 2 - Administração de Sistemas",

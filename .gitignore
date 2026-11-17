@@ -13,6 +13,10 @@
 Thumbs.db
 desktop.ini
 
+# Progresso pessoal e backups locais de estudo
+_local/
+_scripts/__pycache__/
+
 # Ficheiros temporários e backups de editores
 *~
 *.swp

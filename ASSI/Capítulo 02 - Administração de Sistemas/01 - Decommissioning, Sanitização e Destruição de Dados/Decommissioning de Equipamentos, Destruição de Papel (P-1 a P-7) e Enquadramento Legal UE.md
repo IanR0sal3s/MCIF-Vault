@@ -79,15 +79,15 @@ As organizações devem instituir **armazenamento seguro prévio à destruição
 
 As trituradoras de papel classificam-se segundo sete níveis crescentes de segurança, de **`P-1`** (menor segurança) a **`P-7`** (máxima segurança):
 
-| Classe | Nível de Criticidade dos Dados | Dimensão Máxima da Partícula / Largura da Tira |
-| :---: | :--- | :--- |
-| **`P-1`** | Dados gerais (*General data* — menos segura) | Área $\le 2000\text{ mm}^2$ **ou** largura de tira $\le 12\text{ mm}$ (comprimento ilimitado) |
-| **`P-2`** | Dados internos (*Internal data*) | Área $\le 800\text{ mm}^2$ **ou** largura de tira $\le 6\text{ mm}$ (comprimento ilimitado) |
-| **`P-3`** | Dados sensíveis e confidenciais | Área $\le 320\text{ mm}^2$ (ex.: $6 \times 50\text{ mm}$) **ou** largura de tira $\le 2\text{ mm}$ |
-| **`P-4`** | Dados particularmente sensíveis e confidenciais | Área $\le 160\text{ mm}^2$ **e** largura de tira $\le 6\text{ mm}$ (ex.: $4 \times 40\text{ mm}$) |
-| **`P-5`** | Dados secretos (*Secret data*) | Área $\le 30\text{ mm}^2$ **e** largura de tira $\le 2\text{ mm}$ (ex.: $2 \times 15\text{ mm}$) |
-| **`P-6`** | Dados secretos com padrões elevados de segurança | Área $\le 10\text{ mm}^2$ **e** largura de tira $\le 1\text{ mm}$ (ex.: $0.8 \times 12\text{ mm}$) |
-| **`P-7`** | Dados estritamente secretos (*Top Secret* — ex.: DoD `K-12.2P7`) | Área $\le 5\text{ mm}^2$ **e** largura de tira $\le 1\text{ mm}$ (ex.: $0.8 \times 5\text{ mm}$) |
+|  Classe   | Nível de Criticidade dos Dados                                   | Dimensão Máxima da Partícula / Largura da Tira                                                     |
+| :-------: | :--------------------------------------------------------------- | :------------------------------------------------------------------------------------------------- |
+| **`P-1`** | Dados gerais (*General data* — menos segura)                     | Área $\le 2000\text{ mm}^2$ **ou** largura de tira $\le 12\text{ mm}$ (comprimento ilimitado)      |
+| **`P-2`** | Dados internos (*Internal data*)                                 | Área $\le 800\text{ mm}^2$ **ou** largura de tira $\le 6\text{ mm}$ (comprimento ilimitado)        |
+| **`P-3`** | Dados sensíveis e confidenciais                                  | Área $\le 320\text{ mm}^2$ (ex.: $6 \times 50\text{ mm}$) **ou** largura de tira $\le 2\text{ mm}$ |
+| **`P-4`** | Dados particularmente sensíveis e confidenciais                  | Área $\le 160\text{ mm}^2$ **e** largura de tira $\le 6\text{ mm}$ (ex.: $4 \times 40\text{ mm}$)  |
+| **`P-5`** | Dados secretos (*Secret data*)                                   | Área $\le 30\text{ mm}^2$ **e** largura de tira $\le 2\text{ mm}$ (ex.: $2 \times 15\text{ mm}$)   |
+| **`P-6`** | Dados secretos com padrões elevados de segurança                 | Área $\le 10\text{ mm}^2$ **e** largura de tira $\le 1\text{ mm}$ (ex.: $0.8 \times 12\text{ mm}$) |
+| **`P-7`** | Dados estritamente secretos (*Top Secret* — ex.: DoD `K-12.2P7`) | Área $\le 5\text{ mm}^2$ **e** largura de tira $\le 1\text{ mm}$ (ex.: $0.8 \times 5\text{ mm}$)   |
 
 * **Outros métodos de destruição de papel**:
   * **Água com lixívia**: dissolve quimicamente as fibras de celulose reduzindo o papel a uma pasta ilegível;

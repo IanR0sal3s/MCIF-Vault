@@ -659,16 +659,19 @@ def main() -> int:
 
     json_path = index_dir / "vault_index.json"
     jsonl_path = index_dir / "vault_catalog.jsonl"
+    js_path = index_dir / "vault_catalog.js"
     md_path = index_dir / "Vault-Index.md"
 
     json_path.write_text(
         json.dumps(index_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
+    compact_notes = []
     with jsonl_path.open("w", encoding="utf-8") as fp:
         for n in index_data["notes"]:
             compact = {
                 "id": n["id"],
+                "title": n["title"],
                 "uc": n["uc"],
                 "cap": n["capitulo"],
                 "bloco": n["bloco"],
@@ -679,7 +682,23 @@ def main() -> int:
                 "cross_uc_links": n["cross_uc_links"],
                 "path": n["path"],
             }
+            compact_notes.append({
+                "id": n["id"],
+                "title": n["title"],
+                "uc": n["uc"],
+                "cap": n["capitulo"],
+                "bloco": n["bloco"],
+                "tipo": n["tipo"],
+                "path": n["path"],
+            })
             fp.write(json.dumps(compact, ensure_ascii=False) + "\n")
+
+    js_path.write_text(
+        "window.MCIF_VAULT = "
+        + json.dumps(compact_notes, ensure_ascii=False)
+        + ";\n",
+        encoding="utf-8",
+    )
 
     md_path.write_text(render_markdown_index(index_data), encoding="utf-8")
 

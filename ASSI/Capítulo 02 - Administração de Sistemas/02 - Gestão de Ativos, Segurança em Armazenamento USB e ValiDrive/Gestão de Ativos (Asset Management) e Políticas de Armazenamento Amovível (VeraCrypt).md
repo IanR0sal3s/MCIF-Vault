@@ -25,6 +25,7 @@ aliases:
   - VeraCrypt Armazenamento Amovível
   - Proibição de USB na IBM
 atualizado: 2026-11-11
+custom-width: 59
 ---
 
 # Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)

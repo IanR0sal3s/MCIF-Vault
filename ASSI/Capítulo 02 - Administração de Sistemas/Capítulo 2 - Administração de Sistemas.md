@@ -58,13 +58,13 @@ flowchart LR
 
 ### 1. Decommissioning, Sanitização e Destruição de Dados (`01 - Decommissioning, Sanitização e Destruição de Dados`)
 
-| Nota | O que vais estudar |
-| :--- | :--- |
-| [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]] | Abate técnico, *Dumpster Diving*, trituração `P-1` a `P-7`, impressoras, caso Morgan Stanley e leis UE (`WEEE`, `RoHS`, `RGPD`). |
-| [[Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones]] | Ataques físicos em hotéis (caso `FlowCloud` 2026), regras para *Burner Phones*, alfândega e torres `StingRay`. |
-| [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]] | Níveis de Jones & Afrifa, *wiping* (`Eraser`, `DBAN`), *degaussing*, trituração (`IL4`–`IL6`) e `DiskMantler`. |
-| [[Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados]] | Certificados individuais (`Active@ KillDisk`), rasto de auditoria (*when/what/who/where/how*) e guia NCSC de compra/venda. |
-| [[Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash]] | Estudo Alnaqbi (2025), *over-provisioning* NAND, *Cryptographic Erasure*, SATA `Secure Erase` e `nvme sanitize -a 2`. |
+| Nota                                                                                              | O que vais estudar                                                                                                               |
+| :------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------- |
+| [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]]     | Abate técnico, *Dumpster Diving*, trituração `P-1` a `P-7`, impressoras, caso Morgan Stanley e leis UE (`WEEE`, `RoHS`, `RGPD`). |
+| [[Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones]]                            | Ataques físicos em hotéis (caso `FlowCloud` 2026), regras para *Burner Phones*, alfândega e torres `StingRay`.                   |
+| [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]] | Níveis de Jones & Afrifa, *wiping* (`Eraser`, `DBAN`), *degaussing*, trituração (`IL4`–`IL6`) e `DiskMantler`.                   |
+| [[Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados]]                 | Certificados individuais (`Active@ KillDisk`), rasto de auditoria (*when/what/who/where/how*) e guia NCSC de compra/venda.       |
+| [[Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash]]                                | Estudo Alnaqbi (2025), *over-provisioning* NAND, *Cryptographic Erasure*, SATA `Secure Erase` e `nvme sanitize -a 2`.            |
 
 ---
 
