@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador Forense Registry — UserAssist (ROT13) &amp; USBSTOR (ASSI)</title>
+  <style>
+    :root {
+      --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --muted: #475569;
+      --border: #cbd5e1; --primary: #2563eb; --primary-fg: #ffffff;
+      --accent: #059669; --warn: #d97706; --chip: #f1f5f9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --muted: #94a3b8;
+        --border: #334155; --primary: #3b82f6; --primary-fg: #ffffff;
+        --accent: #10b981; --warn: #f59e0b; --chip: #0f172a;
+      }
+    }
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+    body { margin: 0; padding: 24px; background: var(--bg); color: var(--text); }
+    .container { max-width: 920px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    h1 { margin: 0; font-size: 18px; }
+    .sub { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+    .tabs { display: flex; gap: 6px; background: var(--chip); padding: 4px; border-radius: 10px; border: 1px solid var(--border); }
+    button { cursor: pointer; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 7px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; }
+    button.active { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
+    .panel { display: none; padding-top: 16px; }
+    .panel.active { display: block; }
+    input[type="text"], input[type="number"] { padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-family: monospace; font-size: 13px; }
+    .box { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-top: 12px; }
+    .mono { font-family: monospace; word-break: break-all; }
+    .bytes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-top: 12px; }
+    .byte-blk { border: 1px solid var(--border); border-radius: 8px; padding: 10px; background: var(--card); font-size: 12px; }
+    .byte-blk.crit { border-color: var(--primary); }
+    .byte-blk .off { font-family: monospace; color: var(--muted); font-size: 11px; }
+    .byte-blk .lbl { font-weight: 700; margin: 4px 0; }
+    .byte-blk .val { font-family: monospace; color: var(--primary); font-weight: 600; }
+    .chain { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin-top: 12px; }
+    .step-card { border: 1px solid var(--border); border-radius: 10px; padding: 12px; background: var(--card); font-size: 12px; cursor: pointer; }
+    .step-card.hi { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+    .hive { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>Registry Forense Interativo — UserAssist &amp; Correlação USB</h1>
+        <p class="sub">Simulador offline — ASSI Capítulo 1 (Blocos 07 e 08)</p>
+      </div>
+      <div class="tabs">
+        <button class="active" onclick="openTab('u1', this)">1. UserAssist (ROT13 + 72 Bytes)</button>
+        <button onclick="openTab('u2', this)">2. Correlação USB (4 Hives)</button>
+      </div>
+    </div>
+
+    <!-- TAB 1: USERASSIST -->
+    <div id="u1" class="panel active">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <label style="font-size:13px;color:var(--muted)">Caminho executado:</label>
+        <input id="uaPath" type="text" value="C:\Tools\mimikatz.exe" style="width:280px" oninput="renderUA()" />
+        <label style="font-size:13px;color:var(--muted)">Execuções:</label>
+        <input id="uaRuns" type="number" min="0" max="999" value="3" style="width:72px" oninput="renderUA()" />
+        <label style="font-size:13px;color:var(--muted)">Foco (s):</label>
+        <input id="uaFocus" type="number" min="0" max="9999" value="45" style="width:82px" oninput="renderUA()" />
+      </div>
+
+      <div class="box">
+        <div style="font-size:12px;color:var(--muted)">Nome da chave gravada no Registry (<span class="mono">NTUSER.DAT\...\UserAssist\{CEBFF5CD-...}\Count</span>) com <strong>ROT13</strong>:</div>
+        <div id="uaRot" class="mono" style="margin-top:6px;font-size:14px;font-weight:700;color:var(--primary)"></div>
+      </div>
+
+      <div class="bytes-grid">
+        <div class="byte-blk">
+          <div class="off">Offset 0–3 (0x00–0x03) · 4 B</div>
+          <div class="lbl">Session ID</div>
+          <div class="val">0x00000000</div>
+        </div>
+        <div class="byte-blk crit">
+          <div class="off">Offset 4–7 (0x04–0x07) · 4 B</div>
+          <div class="lbl">Run Counter (LE)</div>
+          <div id="uaRunsHex" class="val"></div>
+        </div>
+        <div class="byte-blk">
+          <div class="off">Offset 8–11 (0x08–0x0B) · 4 B</div>
+          <div class="lbl">Focus Count</div>
+          <div class="val">0x00000005</div>
+        </div>
+        <div class="byte-blk crit">
+          <div class="off">Offset 12–15 (0x0C–0x0F) · 4 B</div>
+          <div class="lbl">Focus Time (ms, LE)</div>
+          <div id="uaFocusHex" class="val"></div>
+        </div>
+        <div class="byte-blk">
+          <div class="off">Offset 16–59 (0x10–0x3B) · 44 B</div>
+          <div class="lbl">Dados internos UEME</div>
+          <div class="val" style="color:var(--muted)">Float / ponderação</div>
+        </div>
+        <div class="byte-blk crit">
+          <div class="off">Offset 60–67 (0x3C–0x43) · 8 B</div>
+          <div class="lbl">Última Execução</div>
+          <div class="val">FILETIME64 (UTC)</div>
+        </div>
+        <div class="byte-blk">
+          <div class="off">Offset 68–71 (0x44–0x47) · 4 B</div>
+          <div class="lbl">Padding</div>
+          <div class="val">0x00000000</div>
+        </div>
+      </div>
+      <p class="sub" style="margin-top:10px">Nota: A GUID <code>{CEBFF5CD-...}</code> regista executáveis diretos; <code>{F4E57C4B-...}</code> regista atalhos <code>.lnk</code>. O contador conta execuções por GUI (Explorer), não via CMD/PowerShell.</p>
+    </div>
+
+    <!-- TAB 2: USB CORRELATION -->
+    <div id="u2" class="panel">
+      <p class="sub">Clica em qualquer passo da cadeia para destacar como o perito liga um dispositivo físico a uma letra de unidade e a um utilizador específico:</p>
+      <div class="chain">
+        <div class="step-card hi" onclick="selUSB(0, this)">
+          <div class="hive">1. SYSTEM\...\USBSTOR</div>
+          <div style="font-weight:700;margin:4px 0">Identificação Física</div>
+          <div class="mono" style="font-size:11px;color:var(--primary)">Ven_SanDisk&amp;Prod_Ultra<br/>Serial: 4C530001234567&amp;0</div>
+          <div style="margin-top:6px;color:var(--muted)">Prova marca, modelo e nº de série único (ou <code>7&amp;19a58b0&amp;0</code> com <code>&amp;</code> na 2.ª posição se gerado pelo Windows).</div>
+        </div>
+        <div class="step-card" onclick="selUSB(1, this)">
+          <div class="hive">2. SYSTEM\MountedDevices</div>
+          <div style="font-weight:700;margin:4px 0">Letra &amp; Volume GUID</div>
+          <div class="mono" style="font-size:11px;color:var(--primary)">\DosDevices\E:<br/>Volume{8a2f...}</div>
+          <div style="margin-top:6px;color:var(--muted)">Associa o serial/assinatura do volume à letra (ex.: <code>E:</code>) e ao <code>Volume GUID</code>.</div>
+        </div>
+        <div class="step-card" onclick="selUSB(2, this)">
+          <div class="hive">3. SOFTWARE\...\EMDMgmt</div>
+          <div style="font-weight:700;margin:4px 0">Nome &amp; Serial do Volume</div>
+          <div class="mono" style="font-size:11px;color:var(--primary)">DISK_BACKUP_2026<br/>VSN: 0x1A2B3C4D</div>
+          <div style="margin-top:6px;color:var(--muted)">Guarda o rótulo legível do volume e o Volume Serial Number (VSN).</div>
+        </div>
+        <div class="step-card" onclick="selUSB(3, this)">
+          <div class="hive">4. NTUSER.DAT\MountPoints2</div>
+          <div style="font-weight:700;margin:4px 0">Atribuição ao Utilizador</div>
+          <div class="mono" style="font-size:11px;color:var(--primary)">\{8a2f...} (SID: S-1-5-21-...)</div>
+          <div style="margin-top:6px;color:var(--muted)">Usa o mesmo <code>Volume GUID</code> para provar <strong>qual utilizador</strong> acedeu à pen USB!</div>
+        </div>
+      </div>
+      <div id="usbDetail" class="box" style="font-size:13px;color:var(--muted)">
+        <strong>Passo 1 — USBSTOR:</strong> Ponto de partida físico. Extrai <em>Vendor</em>, <em>Product</em> e <em>Serial Number</em>. Se o identificador da instância tiver um <code>&amp;</code> na <strong>2.ª posição</strong> (ex.: <code>7&amp;19a58b0&amp;0</code>), o dispositivo não tem serial de fábrica e o Windows gerou um ID local.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openTab(id, btn) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
+    }
+    function rot13(s) {
+      return s.replace(/[a-zA-Z]/g, c => {
+        const base = c <= 'Z' ? 65 : 97;
+        return String.fromCharCode(((c.charCodeAt(0) - base + 13) % 26) + base);
+      });
+    }
+    function toLE32(n) {
+      const v = Math.max(0, Number(n) || 0) >>> 0;
+      const b = [v & 0xFF, (v >> 8) & 0xFF, (v >> 16) & 0xFF, (v >> 24) & 0xFF];
+      return `${v} (LE: ${b.map(x => x.toString(16).toUpperCase().padStart(2,'0')).join(' ')})`;
+    }
+    function renderUA() {
+      const p = document.getElementById('uaPath').value;
+      const runs = document.getElementById('uaRuns').value;
+      const focus = (Number(document.getElementById('uaFocus').value) || 0) * 1000;
+      document.getElementById('uaRot').textContent = rot13(p);
+      document.getElementById('uaRunsHex').textContent = toLE32(runs);
+      document.getElementById('uaFocusHex').textContent = toLE32(focus);
+    }
+    const usbMsgs = [
+      '<strong>Passo 1 — USBSTOR:</strong> Ponto de partida físico. Extrai <em>Vendor</em>, <em>Product</em> e <em>Serial Number</em>. Se o identificador da instância tiver <code>&amp;</code> na <strong>2.ª posição</strong> (ex.: <code>7&amp;19a58b0&amp;0</code>), foi gerado localmente pelo Windows porque o hardware não reportou serial de fábrica.',
+      '<strong>Passo 2 — MountedDevices:</strong> Liga o identificador do dispositivo USB à última letra de unidade atribuída (ex.: <code>E:</code>) e ao <code>Volume{GUID}</code> usado em todo o sistema.',
+      '<strong>Passo 3 — EMDMgmt &amp; Event Logs:</strong> Associa o dispositivo ao rótulo do volume (<em>Volume Label</em>) e ao VSN hexadecimal, útil também para cruzar com ficheiros <code>.lnk</code>.',
+      '<strong>Passo 4 — NTUSER.DAT\\MountPoints2:</strong> Como <code>SYSTEM</code> é global para toda a máquina, só cruzando o <code>Volume{GUID}</code> com a hive <code>NTUSER.DAT</code> de uma conta específica se prova <strong>quem</strong> usou a pen.'
+    ];
+    function selUSB(idx, el) {
+      document.querySelectorAll('.step-card').forEach(c => c.classList.remove('hi'));
+      el.classList.add('hi');
+      document.getElementById('usbDetail').innerHTML = usbMsgs[idx];
+    }
+    renderUA();
+  </script>
+</body>
+</html>

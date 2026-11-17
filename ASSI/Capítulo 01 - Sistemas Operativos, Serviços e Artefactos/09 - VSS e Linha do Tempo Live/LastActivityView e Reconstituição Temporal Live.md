@@ -130,7 +130,7 @@ Action Time         Description   Filename               Full Path
 | Dimensão | Vantagens em Triagem | Limitações e Cuidados Forenses |
 | :--- | :--- | :--- |
 | **Operacionalidade** | **Velocidade de Triagem**: Panorama imediato do que o utilizador fez nos últimos minutos sem montar imagens de disco. | **Invasividade Live**: A própria execução altera o sistema (cria chaves de Registry, gera `.pf` para `lastactivityview.exe` e altera *timestamps*). |
-| **Profundidade** | **Agregação Heurística**: Poupa o esforço inicial de cruzar manualmente chaves de Registry e ficheiros `.pf`. | **Superficialidade em Fontes Específicas**: Não substitui a análise profunda de [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento|VSS]], [[Estrutura Interna e Algoritmo de Hashing do Prefetch|Prefetch binário]] ou [[AmCache - Arquitetura, Hives e Evolução para SQLite|Amcache]]. |
+| **Profundidade** | **Agregação Heurística**: Poupa o esforço inicial de cruzar manualmente chaves de Registry e ficheiros `.pf`. | **Superficialidade em Fontes Específicas**: Não substitui a análise profunda de [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento\|VSS]], [[Estrutura Interna e Algoritmo de Hashing do Prefetch\|Prefetch binário]] ou [[AmCache - Arquitetura, Hives e Evolução para SQLite\|Amcache]]. |
 | **Fiabilidade Temporal** | Ordenação cronológica instantânea numa única tabela. | **Dependência do Relógio Local**: Vulnerável a manipulação do relógio do sistema (*timestomping*). |
 
 ---

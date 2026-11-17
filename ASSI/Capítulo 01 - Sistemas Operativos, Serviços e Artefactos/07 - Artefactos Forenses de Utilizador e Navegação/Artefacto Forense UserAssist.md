@@ -74,6 +74,9 @@ Para evitar a leitura casual dos nomes dos programas na subchave `Count`, o Wind
 
 ## Mapa Binário do Valor `Count` (72 Bytes no Windows 7 a 11)
 
+> [!TIP] Simulador Interativo Offline (`UserAssist` ROT13 + 72 Bytes)
+> Para testar ao vivo a conversão **ROT13** de qualquer caminho (`C:\Tools\app.exe`) e ver os campos **Little-Endian** preenchidos nos 72 bytes, abre [assi_registry_forense.html](file:///home/ian/MCIF-Vault/_assets/assi_registry_forense.html).
+
 No Windows 7, 8, 10 e 11, cada entrada dentro da subchave `Count` possui um valor do tipo `REG_BINARY` com um comprimento exato de **72 bytes**. Todos os campos numéricos encontram-se em formato [[Endianness e Ordem de Armazenamento|Little-Endian]]:
 
 | Offset (Bytes) | Offset (Hex) | Tamanho | Campo da Estrutura | Importância Forense |
@@ -83,7 +86,7 @@ No Windows 7, 8, 10 e 11, cada entrada dentro da subchave `Count` possui um valo
 | **`8–11`** | `0x08–0x0B` | 4 bytes | Contador de Foco (*Focus Count*) | Número de vezes que a janela da aplicação recebeu foco. |
 | **`12–15`** | `0x0C–0x0F` | 4 bytes | **Tempo Total de Foco (*Focus Time*)** | **Crítico**: Duração acumulada em que a janela esteve ativa em 1.º plano (em **milissegundos**). |
 | **`16–59`** | `0x10–0x3B` | 44 bytes | Dados reservados / não documentados | Valores de ponto flutuante internos de ponderação do Menu Iniciar. |
-| **`60–67`** | `0x3C–0x43` | 8 bytes | **Data/Hora da Última Execução** | **Crítico**: Carimbo [[Marcadores Temporais no Windows (Timestamps)|Microsoft FILETIME64]] (64 bits LE, intervalos de 100 ns desde `01/01/1601 UTC`). |
+| **`60–67`** | `0x3C–0x43` | 8 bytes | **Data/Hora da Última Execução** | **Crítico**: Carimbo [[Marcadores Temporais no Windows (Timestamps)\|Microsoft FILETIME64]] (64 bits LE, intervalos de 100 ns desde `01/01/1601 UTC`). |
 | **`68–71`** | `0x44–0x47` | 4 bytes | Constante de preenchimento (*Padding*) | Sempre preenchido com `0x00000000`. |
 
 ### Exemplo Prático de Descodificação do Timestamp (Offset `60–67`)

@@ -55,6 +55,9 @@ Perante a inevitabilidade de fugas de dados, as passwords exigem um salt único 
 
 ## 2. `Per-Credential Salt` e `Key Stretching` (Slides 106, 108–109)
 
+> [!TIP] Simulador Interativo Offline (`Salting` &amp; `Key Stretching`)
+> Para comparar visualmente um hash sem salt (vulnerável a *Rainbow Tables*) com um hash com *per-credential salt*, abre [assi_passwords_entropia.html](file:///home/ian/MCIF-Vault/_assets/assi_passwords_entropia.html) (separador **1. Salting vs. Sem Salt**).
+
 ### 2.1. Regra do `Per-Credential Salt` (Sal Único por Credencial)
 
 * **Proibição Absoluta**: as palavras-passe **NUNCA DEVEM (*SHALL NEVER*)** ser guardadas em texto limpo (*clear text*), e aplicar apenas um hash criptográfico rápido como **`MD5`** oferece proteção residual quase nula.

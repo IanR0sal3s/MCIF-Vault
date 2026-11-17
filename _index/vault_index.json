@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16",
+  "generated_at": "2026-11-17",
   "stats": {
     "total_notes": 205,
     "notes_by_uc": {
@@ -50,7 +50,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
         "target_uc": "SRC",
-        "matched_term": "SHA-3"
+        "matched_term": "SHA-1"
       },
       {
         "source_id": "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
@@ -92,7 +92,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -120,7 +120,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
         "target_uc": "SRC",
-        "matched_term": "SHA-3"
+        "matched_term": "SHA-1"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -141,7 +141,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",

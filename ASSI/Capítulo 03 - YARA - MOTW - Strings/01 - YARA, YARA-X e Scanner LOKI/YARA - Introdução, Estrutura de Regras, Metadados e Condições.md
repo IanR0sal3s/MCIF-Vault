@@ -138,7 +138,7 @@ A secção `meta:` **identifica e documenta a regra**, não interferindo na lóg
 | **`date_last_modified`** | Data da última modificação da regra. |
 | **`description`** | Descrição sumária do alvo da regra (ex.: `"Auto-generated rule - file HRDG022184_certclint.dll"`). |
 | **`filetype`** | Tipo de ficheiro visado pela regra. |
-| **`hash` / `hash1`** | Resumo criptográfico ([[Preservação do Sistema e Integridade de Dados|MD5, SHA-1 ou SHA-256]]) da amostra maliciosa de referência (ex.: `hash1 = "9f918fb741e951a10e68ce6874b839aef5a26d60486db31e509f8dcaa13acec5"`). |
+| **`hash` / `hash1`** | Resumo criptográfico ([[Preservação do Sistema e Integridade de Dados\|MD5, SHA-1 ou SHA-256]]) da amostra maliciosa de referência (ex.: `hash1 = "9f918fb741e951a10e68ce6874b839aef5a26d60486db31e509f8dcaa13acec5"`). |
 | **`source` / `reference`** | URL ou referência externa sobre a ameaça (ex.: `reference = "https://goo.gl/WVflzO"`). |
 | **`TLP`** | Classificação *Traffic Light Protocol* (ex.: `TLP = "WHITE"`). |
 | **`license`** | Licença aplicável à regra. |

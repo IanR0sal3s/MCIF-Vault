@@ -39,20 +39,12 @@ A exploração da vulnerabilidade [[PKfail - Vulnerabilidade do UEFI Secure Boot
 
 O impacto central da vulnerabilidade [[PKfail - Vulnerabilidade do UEFI Secure Boot|PKfail]] reside no facto de que **o conhecimento da chave privada da Platform Key permite a um atacante substituir o software de arranque legítimo por software malicioso**. Para consolidar a persistência abaixo do sistema operativo sem despoletar erros de validação no arranque, o atacante segue uma cadeia de quatro passos:
 
-```text
-[Chave Privada da PK de Teste AMI]
-                │
-                ▼ (1) Assina e acrescenta nova KEK
-       [KEK do Atacante]
-                │
-                ▼ (2) Assina e adiciona certificado à Signature Database (db)
- [Certificado do Atacante na 'db']
-                │
-                ▼ (3) Assina módulo malicioso (bootkit) e copia para a partição ESP
-         [Bootkit na ESP]
-                │
-                ▼ (4) Reinício do sistema alvo
-   [UEFI Secure Boot valida bootkit com sucesso contra a 'db' -> Execução]
+```mermaid
+flowchart TD
+    A["1. Chave Privada da PK de Teste AMI<br/>(exposta publicamente)"] -->|"Assina atualização NVRAM"| B["2. KEK do Atacante<br/>injetada no firmware"]
+    B -->|"Assina certificado próprio"| C["3. Certificado do Atacante na 'db'"]
+    C -->|"Valida assinatura"| D["4. Bootkit copiado para a partição ESP"]
+    D -->|"Reinício do sistema"| E["UEFI Secure Boot aceita bootkit<br/>Execução pré-kernel oculta"]
 ```
 
 ### Requisitos Operacionais do Ataque

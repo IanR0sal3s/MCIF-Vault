@@ -81,7 +81,7 @@ Ao dissecar um ficheiro `.lnk`, o investigador consegue demonstrar factos perici
 | **Tipo de Unidade (*Drive Type*)** | `LINKINFO` | Identifica se o alvo residia num disco fixo local (`DRIVE_FIXED`), numa unidade amovível (`DRIVE_REMOVABLE` — pen USB/disco externo) ou numa partilha de rede (`DRIVE_REMOTE`). |
 | **Nome e Serial do Volume** | `LINKINFO` | Rótulo do volume (*Volume Label*) e o **Volume Serial Number** hexadecimal de 32 bits (permite correlacionar o atalho diretamente com a chave `USBSTOR` e com pens USB apreendidas). |
 | **Caminho Absoluto Local / Rede** | `LINKINFO` | O caminho de diretórios exato onde o documento estava guardado (ex.: `E:\Documentos_Confidenciais\Balanco.xlsx` ou caminho UNC `\\Servidor\Partilha`). |
-| **Argumentos de Linha de Comandos** | `STRING_DATA` | Parâmetros passados ao executável alvo (`COMMAND_LINE_ARGUMENTS`), essenciais na deteção de [[Abuso e Vetores de Ataque com Ficheiros LNK|atalhos maliciosos]]. |
+| **Argumentos de Linha de Comandos** | `STRING_DATA` | Parâmetros passados ao executável alvo (`COMMAND_LINE_ARGUMENTS`), essenciais na deteção de [[Abuso e Vetores de Ataque com Ficheiros LNK\|atalhos maliciosos]]. |
 | **Identificadores da Máquina** | `EXTRA_DATA` (`TrackerDataBlock`) | Nome NetBIOS do computador anfitrião e endereço físico MAC da placa de rede contido no UUID v1. |
 
 ---

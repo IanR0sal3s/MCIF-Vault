@@ -42,6 +42,15 @@ Arquivos compactados extraídos pelo **7-Zip** e transferências por CLI (**`cer
 
 ## 1. Matriz Comparativa das Exceções à MOTW
 
+```mermaid
+flowchart TD
+    SRC["Ficheiro Externo (Internet)"] -->|"Download pelo Browser"| ZIP["Ficheiro .zip com MOTW (ZoneId=3)"]
+    SRC -->|"Download via CLI<br/>(certutil / curl / wget)"| NOMOTW["Ficheiro no disco SEM Zone.Identifier"]
+    ZIP -->|"Extração Explorer (Nativo Windows)"| KEEP["Mantém MOTW (ZoneId=3)<br/>SmartScreen + Bloqueio Office ativos"]
+    ZIP -->|"Extração 7-Zip (padrão: *No)"| NOMOTW
+    NOMOTW -->|"Execução"| SS["Depende apenas de SmartScreen<br/>(Reputação Cloud) / Windows Defender"]
+```
+
 | Ferramenta / Mecanismo | Cenário de Uso | Cria / Propaga `Zone.Identifier`? | Comportamento Padrão e Mitigação |
 | :--- | :--- | :---: | :--- |
 | **Descompactador Nativo (Windows)** | Extração de `.zip` com MOTW (`ZoneId=3`) | **Sim** | Propaga automaticamente a `Zone.Identifier` para todos os ficheiros extraídos. |

@@ -51,6 +51,12 @@ A **Mark of the Web (MOTW)** identifica a proveniência de ficheiros descarregad
 
 ## 2. Verbosidade entre Browsers (Edge/IE/Chrome vs. Brave) e Geolocalização Forense
 
+```mermaid
+flowchart LR
+    DL["Download na Internet<br/>(Zona 3 — URLZONE_INTERNET)"] -->|"Chrome / Edge / IE"| V["Stream Zone.Identifier Verbosa<br/>ZoneId=3 + ReferrerUrl + HostUrl completo"]
+    DL -->|"Brave (Privacidade)"| A["Stream Zone.Identifier Anonimizada<br/>ZoneId=3 + HostUrl=about:internet (sem Referrer)"]
+```
+
 Embora os principais navegadores criem a stream `Zone.Identifier` com `ZoneId=3`, **a quantidade de informação forense registada varia significativamente consoante o browser utilizado** (Slides 15 e 16):
 
 | Propriedade / Comportamento | Microsoft Edge / IE / Chrome (Verboso) | Brave (Anonimizado / Privacidade) |

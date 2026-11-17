@@ -3,7 +3,7 @@ title: Índice Semântico e Mapa de Contexto do Vault
 tipo: indice
 tags:
   - indice-sistema
-atualizado: 2026-11-16
+atualizado: 2026-11-17
 ---
 
 # Índice Semântico e Mapa de Contexto do Vault (MCIF)
@@ -276,20 +276,20 @@ atualizado: 2026-11-16
 | `Investigação Forense Digital - Análise Live vs Post-Mortem` | `AFD1` | `Amcache.hve` | `AmCache - Arquitetura, Hives e Evolução para SQLite` | `ASSI` |
 | `Pesquisa de Evidências e Reconstrução de Eventos` | `AFD1` | `SHA-1` | `Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)` | `SRC` |
 | `Preservação do Sistema e Integridade de Dados` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
-| `Preservação do Sistema e Integridade de Dados` | `AFD1` | `SHA-3` | `Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)` | `SRC` |
+| `Preservação do Sistema e Integridade de Dados` | `AFD1` | `SHA-1` | `Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)` | `SRC` |
 | `Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
 | `Princípios e Rota do Manuseamento de Evidência Digital` | `AFD1` | `SBECmd` | `Artefacto Forense ShellBags` | `ASSI` |
 | `Princípios e Rota do Manuseamento de Evidência Digital` | `AFD1` | `AmcacheParser` | `Extração da AmCache e Comparação Forense com a ShimCache` | `ASSI` |
 | `Princípios e Rota do Manuseamento de Evidência Digital` | `AFD1` | `LECmd` | `Ficheiros LNK (Shell Links) - Metadados e Formato Binário` | `ASSI` |
 | `Princípios e Rota do Manuseamento de Evidência Digital` | `AFD1` | `JLECmd` | `Jump Lists - Arquitetura, AppIDs e Carving` | `ASSI` |
-| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Arranque do Windows` | `UEFI Secure Boot` | `ASSI` |
+| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Secure Boot` | `UEFI Secure Boot` | `ASSI` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `RegRipper` | `Ferramentas de Análise e Extração do Registry` | `ASSI` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Prefetch` | `Serviço Prefetch e SysMain - Arquitetura e Funcionamento` | `ASSI` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
-| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `SHA-3` | `Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)` | `SRC` |
+| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `SHA-1` | `Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)` | `SRC` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `GnuPG` | `PKI, Autoridades de Certificação (OpenSSL) e GnuPG` | `SRC` |
 | `Processo de Arranque UEFI, Secure Boot e Fluxo do Windows` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
-| `Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB` | `AFD1` | `Arranque do Windows` | `UEFI Secure Boot` | `ASSI` |
+| `Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB` | `AFD1` | `Secure Boot` | `UEFI Secure Boot` | `ASSI` |
 | `Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite` | `AFD1` | `Windows Registry` | `Estrutura e Hives do Windows Registry` | `ASSI` |
 | `Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite` | `AFD1` | `Prefetch` | `Serviço Prefetch e SysMain - Arquitetura e Funcionamento` | `ASSI` |
 | `Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |

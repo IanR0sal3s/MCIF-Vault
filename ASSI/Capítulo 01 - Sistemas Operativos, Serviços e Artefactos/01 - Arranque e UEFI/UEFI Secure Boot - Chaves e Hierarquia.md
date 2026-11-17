@@ -37,19 +37,13 @@ A integridade do [[UEFI Secure Boot]] baseia-se numa relação de confiança hie
 
 Embora frequentemente referidas de forma agregada como chaves de validação, no firmware do dispositivo residem essencialmente **certificados públicos e *hashes***; as correspondentes **chaves privadas** permanecem na posse dos respetivos emissores (fabricantes OEM e Microsoft) para autorizar atualizações e assinar binários.
 
-```text
-          ┌──────────────────────────────────┐
-          │      Platform Key (PK)           │  Hardware / Firmware
-          └────────────────┬─────────────────┘
-                           │ Autoriza e valida modificações na KEK
-          ┌────────────────▼─────────────────┐
-          │    Key Exchange Key (KEK)        │  Firmware / Sistema Operativo
-          └────────────────┬─────────────────┘
-                 ┌─────────┴─────────┐
-                 ▼                   ▼
-    ┌────────────────────────┐  ┌───────────────────────────┐
-    │ Signature Database (db)│  │ Forbidden Database (dbx)  │
-    └────────────────────────┘  └───────────────────────────┘
+```mermaid
+flowchart TD
+    PK["1. Platform Key (PK)<br/>Raiz de hardware (OEM)"] -->|"Autoriza e valida alterações"| KEK["2. Key Exchange Key (KEK)<br/>Intermediária (OEM / Microsoft)"]
+    KEK -->|"Atualiza lista branca"| DB["3. Signature Database (db)<br/>Bootloaders e drivers EFI autorizados"]
+    KEK -->|"Atualiza lista negra"| DBX["4. Forbidden Database (dbx)<br/>Certificados e hashes revogados"]
+    DBX -.->|"Prioridade absoluta sobre db"| EXEC["Execução no Arranque UEFI"]
+    DB --> EXEC
 ```
 
 | Base / Chave | Âmbito de Aplicação | Entidade Gestora Típica | Função Primária e Regra de Prevalência |

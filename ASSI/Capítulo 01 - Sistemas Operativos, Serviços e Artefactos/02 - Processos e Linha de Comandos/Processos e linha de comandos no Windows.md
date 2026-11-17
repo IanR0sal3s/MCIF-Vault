@@ -82,7 +82,7 @@ tasklist [/V | /SVC | /M | /APPS] [/FI "<Filtro>"]
 | **`/V`** | Modo Verboso (*Verbose*) | Exibe informações estendidas: estado, conta de utilizador que executa o processo, tempo de CPU e título da janela. |
 | **`/SVC`** | Mapeamento de Serviços | Lista os serviços de sistema alojados em cada processo (indispensável para auditar instâncias de [[svchost.exe]]). |
 | **`/M`** | Módulos e Bibliotecas DLL | Lista todas as bibliotecas DLL carregadas em memória por cada processo ativo. |
-| **`/APPS`** | Aplicações Modernas UWP | Filtra e exibe os processos associados a pacotes [[Aplicações UWP (Universal Windows Platform) - Visão Geral|UWP]]. |
+| **`/APPS`** | Aplicações Modernas UWP | Filtra e exibe os processos associados a pacotes [[Aplicações UWP (Universal Windows Platform) - Visão Geral\|UWP]]. |
 | **`/FI "..."`** | Filtro Condicional (*Filter*) | Restringe a saída com operadores (`eq`, `ne`, `gt`, `lt`, `ge`, `le`) sobre propriedades como `MEMUSAGE` (em KB) ou `IMAGENAME`. |
 
 ### Exemplos Práticos do `tasklist`
