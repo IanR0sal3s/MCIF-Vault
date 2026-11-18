@@ -162,7 +162,7 @@ O *wiping* por software sobrescreve todos os setores endereçáveis do disco atr
 - [[Capítulo 2 - Administração de Sistemas]]
 - [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]]
 - [[Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados]]
-- [[Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash]]
+- [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]
 - [[Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell]]
 - [[Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker]]
 - [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]]

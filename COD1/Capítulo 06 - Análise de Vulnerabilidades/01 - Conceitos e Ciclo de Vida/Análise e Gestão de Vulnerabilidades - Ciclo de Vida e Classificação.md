@@ -102,6 +102,6 @@ flowchart LR
    > Porque sem saber quais os ativos que suportam processos críticos de negócio e qual o âmbito exato, não é possível priorizar corretamente o risco nem interpretar o impacto real dos resultados obtidos pelo scanner.
 
 ## Notas relacionadas
-- [[Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação]]
+- [[Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)]]
 - [[Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)]]
 - [[Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)]]

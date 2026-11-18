@@ -45,7 +45,7 @@ flowchart LR
 
 | Nota | Fonte | O que vais estudar |
 | :--- | :---: | :--- |
-| [[Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949]] | Slides 14–20; Stallings 1.1–1.3 | Definição NIST, tríade CIA + Autenticidade/Responsabilização, distinção Vulnerabilidade/Ameaça/Ataque (cenário da câmara de rede) e ataques passivos vs. ativos (`RFC 4949`). |
+| [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]] | Slides 14–20; Stallings 1.1–1.3 | Definição NIST, tríade CIA + Autenticidade/Responsabilização, distinção Vulnerabilidade/Ameaça/Ataque (cenário da câmara de rede) e ataques passivos vs. ativos (`RFC 4949`). |
 | [[Serviços e Mecanismos de Segurança (ITU-T X.800)]] | Slides 22–24; Stallings 1.4–1.5 | Os 5 serviços de segurança `X.800` (Confidencialidade, Integridade, Controlo de Acesso, Autenticação, Não-Repúdio + Disponibilidade) e mecanismos específicos vs. pervasivos. |
 | [[Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees]] | Slides 25–26; Stallings 1.6–1.7 | Os 13 princípios de desenho seguro (*Saltzer & Schroeder* + NCAE), redução de *attack surfaces* (rede, software, humana) e modelação com *attack trees* (`AND`/`OR`). |
 

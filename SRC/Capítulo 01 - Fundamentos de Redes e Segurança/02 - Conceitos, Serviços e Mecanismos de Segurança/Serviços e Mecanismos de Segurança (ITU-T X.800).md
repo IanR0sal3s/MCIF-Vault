@@ -84,5 +84,5 @@ Não estão associados a nenhum serviço ou camada protocolar em particular (nos
 
 ## Notas relacionadas
 
-- [[Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949]]
+- [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]]
 - [[Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs]]

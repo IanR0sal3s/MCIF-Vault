@@ -101,5 +101,5 @@ ifconfig
 
 ## Notas relacionadas
 
-- [[PKI, Autoridades de Certificação (OpenSSL) e GnuPG]]
+- [[Assinaturas Digitais, PKI e GnuPG]]
 - [[SSH (Secure Shell), Port Forwarding e TLS 1.3]]

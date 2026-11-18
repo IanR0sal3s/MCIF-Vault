@@ -49,5 +49,5 @@ Mapeamento e fundamentação das **10 questões** do *Team-Based Learning* (`TBL
 - [[Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas]]
 - [[Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4]]
 - [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]]
-- [[Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)]]
+- [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]]
 - [[Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais]]

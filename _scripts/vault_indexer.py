@@ -237,7 +237,7 @@ def scan_vault(vault_root: Path) -> dict[str, Any]:
                 yaml_warnings.append({"path": rel_path, "issue": "Sem cabeçalho YAML frontmatter"})
             else:
                 missing_fields = [k for k in ("title", "tipo", "tags") if k not in yaml_data]
-                if top_folder in ("ASSI", "AFD1", "PARSI", "SRC", "COD1") and "sigla_uc" not in yaml_data:
+                if top_folder in ("ASSI", "AFD1", "PARSI", "SRC", "COD1", "Comum") and "sigla_uc" not in yaml_data:
                     missing_fields.append("sigla_uc")
                 if missing_fields:
                     yaml_warnings.append(
@@ -297,12 +297,13 @@ def scan_vault(vault_root: Path) -> dict[str, Any]:
             if dst_id in notes:
                 if note_id not in notes[dst_id]["in_links"]:
                     notes[dst_id]["in_links"].append(note_id)
-                if info["uc"] in ("ASSI", "AFD1", "PARSI", "SRC", "COD1") and notes[dst_id]["uc"] in (
+                if info["uc"] in ("ASSI", "AFD1", "PARSI", "SRC", "COD1", "COMUM") and notes[dst_id]["uc"] in (
                     "ASSI",
                     "AFD1",
                     "PARSI",
                     "SRC",
                     "COD1",
+                    "COMUM",
                 ):
                     if info["uc"] != notes[dst_id]["uc"]:
                         info["cross_uc_links"].append(dst_id)

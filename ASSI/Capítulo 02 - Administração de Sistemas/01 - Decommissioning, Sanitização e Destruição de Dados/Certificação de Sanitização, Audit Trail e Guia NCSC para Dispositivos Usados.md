@@ -89,7 +89,7 @@ O *National Cyber Security Centre* ([NCSC — ncsc.gov.uk](https://www.ncsc.gov.
 ## Além da aula
 
 * **Rasto de Auditoria no Abate vs. Regras de Catalogação e Fotografia do LabCIF (`AFD1` Cap. 1)**: A exigência de registar no arquivo do sistema o número de série, método, responsável e fotografia(s) — respondendo a *When, what, who, where, how?* — aplica na administração de sistemas exatamente os mesmos princípios de integridade, etiquetagem hierárquica e registo fotográfico em escala pericial estudados em [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]], [[Princípios e Rota do Manuseamento de Evidência Digital]] e [[Investigação Digital e Evidência Digital]].
-* **Articulação com o Bloco 01**: As técnicas concretas de sanitização que alimentam este processo de certificação estão detalhadas em [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]] e [[Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash]], enquanto o enquadramento legal (WEEE, RoHS, RGPD) e o caso Morgan Stanley constam em [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]].
+* **Articulação com o Bloco 01**: As técnicas concretas de sanitização que alimentam este processo de certificação estão detalhadas em [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]] e [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]], enquanto o enquadramento legal (WEEE, RoHS, RGPD) e o caso Morgan Stanley constam em [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]].
 
 ---
 
@@ -117,7 +117,7 @@ O *National Cyber Security Centre* ([NCSC — ncsc.gov.uk](https://www.ncsc.gov.
 - [[Capítulo 2 - Administração de Sistemas]]
 - [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]]
 - [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]]
-- [[Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash]]
+- [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]
 - [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
 - [[Princípios e Rota do Manuseamento de Evidência Digital]]
 - [[Investigação Digital e Evidência Digital]]

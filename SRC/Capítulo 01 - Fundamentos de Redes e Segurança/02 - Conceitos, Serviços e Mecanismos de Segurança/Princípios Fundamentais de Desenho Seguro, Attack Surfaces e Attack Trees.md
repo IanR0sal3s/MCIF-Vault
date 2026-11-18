@@ -86,5 +86,5 @@ Estrutura hierárquica em árvore que representa técnicas potenciais para explo
 
 ## Notas relacionadas
 
-- [[Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949]]
+- [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]]
 - [[Serviços e Mecanismos de Segurança (ITU-T X.800)]]

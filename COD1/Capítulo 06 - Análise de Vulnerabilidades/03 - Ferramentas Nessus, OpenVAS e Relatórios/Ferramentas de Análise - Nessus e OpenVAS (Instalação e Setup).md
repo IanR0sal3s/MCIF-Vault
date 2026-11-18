@@ -102,5 +102,5 @@ Os relatórios gerados por ferramentas como `Nessus` e `OpenVAS` revelam os risc
 
 ## Notas relacionadas
 - [[Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação]]
-- [[Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação]]
+- [[Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)]]
 - [[Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional]]

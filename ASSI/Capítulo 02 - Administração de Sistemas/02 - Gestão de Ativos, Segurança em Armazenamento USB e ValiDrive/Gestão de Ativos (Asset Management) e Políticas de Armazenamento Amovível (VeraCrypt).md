@@ -96,7 +96,7 @@ Quando a organização autoriza armazenamento amovível, tem de articular os tr�
 ## Além da aula
 
 * **Articulação com a Perícia Forense a Dispositivos USB (`ASSI` Cap. 1 e `AFD1` Cap. 1)**: Quando um dispositivo amovível viola a política organizacional ou é usado na exfiltração de informação, a investigação recorre aos artefactos do Windows Registry (`USBSTOR`, `MountedDevices`, `VolumeSerialNumber` e `setupapi.dev.log`) analisados em [[Artefactos Forenses de Dispositivos USB]] e às regras de catalogação hierárquica (ex.: `PC01.PEN01`) de [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]].
-* **Cifragem `VeraCrypt` e *Cryptographic Erasure* (`ASSI` Cap. 2 Bloco 01)**: A adoção obrigatória do `VeraCrypt` em suportes amovíveis suporta também o método de *Cryptographic Erasure* na sanitização de unidades flash e SSDs detalhado em [[Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash]].
+* **Cifragem `VeraCrypt` e *Cryptographic Erasure* (`ASSI` Cap. 2 Bloco 01)**: A adoção obrigatória do `VeraCrypt` em suportes amovíveis suporta também o método de *Cryptographic Erasure* na sanitização de unidades flash e SSDs detalhado em [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]].
 
 ---
 
@@ -124,7 +124,7 @@ Quando a organização autoriza armazenamento amovível, tem de articular os tr�
 - [[Capítulo 2 - Administração de Sistemas]]
 - [[Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)]]
 - [[Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)]]
-- [[Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash]]
+- [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]
 - [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]]
 - [[Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação]]
 - [[Artefactos Forenses de Dispositivos USB]]

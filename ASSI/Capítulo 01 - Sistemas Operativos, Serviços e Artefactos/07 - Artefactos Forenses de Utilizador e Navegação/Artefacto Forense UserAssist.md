@@ -158,13 +158,12 @@ O comportamento do `UserAssist` pode ser alterado ou desativado através da subc
 ## Notas relacionadas
 
 - [[Estrutura e Hives do Windows Registry]]
-- [[Marcadores Temporais no Windows (Timestamps)]]
+- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
 - [[Ferramentas de Análise e Extração do Registry]]
 - [[Artefactos Forenses de Execução e Persistência no Registry]]
 - [[Organização de Estruturas de Dados em Binário]]
 - [[Endianness e Ordem de Armazenamento]]
 - [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
-- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
 - [[Pesquisa de Evidências e Reconstrução de Eventos]]
 - [[Código de Ética na Investigação Forense Digital (ISFCE)]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

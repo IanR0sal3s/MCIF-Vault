@@ -84,7 +84,7 @@ Localizada no hive pessoal do utilizador (`NTUSER.DAT`):
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\LogonStats
 ```
 
-Armazena em formato binário [[Marcadores Temporais no Windows (Timestamps)|SYSTEMTIME]] (128 bits / 16 bytes em Little-Endian):
+Armazena em formato binário [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)|SYSTEMTIME]] (128 bits / 16 bytes em Little-Endian):
 
 * **`FirstLogonTime`**: data e hora em que o utilizador iniciou sessão pela primeira vez naquele computador.
 * **`FirstLogonTimeOnCurrentInstallation`**: data e hora do primeiro início de sessão na versão/instalação atual do sistema operativo (atualizado após *feature updates* / atualizações de versão do Windows).
@@ -164,7 +164,7 @@ HKCU\Software\Microsoft\Windows\CurrentVersion\Search\RecentApps
 ## Notas relacionadas
 
 - [[Estrutura e Hives do Windows Registry]]
-- [[Marcadores Temporais no Windows (Timestamps)]]
+- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
 - [[Salvaguarda e Monitorização do Registry]]
 - [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]]
 - [[Artefacto Forense UserAssist]]

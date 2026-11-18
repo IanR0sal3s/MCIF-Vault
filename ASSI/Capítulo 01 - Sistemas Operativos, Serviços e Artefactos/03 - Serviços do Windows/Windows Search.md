@@ -202,6 +202,6 @@ O programa da unidade curricular integra a aplicação prática destes conceitos
 - [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]]
 - [[Pesquisa de Evidências e Reconstrução de Eventos]]
 - [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
-- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
+- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
 - [[Sistemas de Numeração e Conversão entre Bases]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]

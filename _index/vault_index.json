@@ -1,16 +1,17 @@
 {
-  "generated_at": "2026-11-17",
+  "generated_at": "2026-11-18",
   "stats": {
-    "total_notes": 205,
+    "total_notes": 202,
     "notes_by_uc": {
-      "AFD1": 44,
-      "ASSI": 98,
-      "COD1": 31,
+      "AFD1": 42,
+      "ASSI": 95,
+      "COD1": 29,
+      "COMUM": 7,
       "GERAL": 1,
-      "SRC": 31
+      "SRC": 28
     },
-    "total_internal_links": 1688,
-    "total_cross_uc_links": 433,
+    "total_internal_links": 1703,
+    "total_cross_uc_links": 521,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
     "yaml_warnings_count": 0,
@@ -29,13 +30,13 @@
         "source_uc": "AFD1",
         "target_id": "AmCache - Arquitetura, Hives e Evolução para SQLite",
         "target_uc": "ASSI",
-        "matched_term": "Amcache.hve"
+        "matched_term": "AmCache"
       },
       {
         "source_id": "Pesquisa de Evidências e Reconstrução de Eventos",
         "source_uc": "AFD1",
-        "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
-        "target_uc": "SRC",
+        "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+        "target_uc": "COMUM",
         "matched_term": "SHA-1"
       },
       {
@@ -44,13 +45,6 @@
         "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
         "target_uc": "SRC",
         "matched_term": "Assinatura Digital"
-      },
-      {
-        "source_id": "Preservação do Sistema e Integridade de Dados",
-        "source_uc": "AFD1",
-        "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
-        "target_uc": "SRC",
-        "matched_term": "SHA-3"
       },
       {
         "source_id": "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
@@ -111,23 +105,23 @@
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
         "source_uc": "AFD1",
+        "target_id": "Assinaturas Digitais, PKI e GnuPG",
+        "target_uc": "COMUM",
+        "matched_term": "GnuPG"
+      },
+      {
+        "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
+        "source_uc": "AFD1",
+        "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+        "target_uc": "COMUM",
+        "matched_term": "SHA-1"
+      },
+      {
+        "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
+        "source_uc": "AFD1",
         "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
         "target_uc": "SRC",
         "matched_term": "Assinatura Digital"
-      },
-      {
-        "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
-        "source_uc": "AFD1",
-        "target_id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
-        "target_uc": "SRC",
-        "matched_term": "SHA-3"
-      },
-      {
-        "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
-        "source_uc": "AFD1",
-        "target_id": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
-        "target_uc": "SRC",
-        "matched_term": "GnuPG"
       },
       {
         "source_id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
@@ -165,13 +159,6 @@
         "matched_term": "Assinatura Digital"
       },
       {
-        "source_id": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
-        "source_uc": "AFD1",
-        "target_id": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
-        "target_uc": "SRC",
-        "matched_term": "GnuPG"
-      },
-      {
         "source_id": "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
         "source_uc": "AFD1",
         "target_id": "Estrutura e Hives do Windows Registry",
@@ -193,17 +180,10 @@
         "matched_term": "RegRipper"
       },
       {
-        "source_id": "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
-        "source_uc": "AFD1",
-        "target_id": "Marcadores Temporais no Windows (Timestamps)",
-        "target_uc": "ASSI",
-        "matched_term": "Unix Epoch"
-      },
-      {
         "source_id": "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "source_uc": "AFD1",
-        "target_id": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
-        "target_uc": "SRC",
+        "target_id": "Assinaturas Digitais, PKI e GnuPG",
+        "target_uc": "COMUM",
         "matched_term": "GnuPG"
       },
       {
@@ -242,13 +222,6 @@
         "matched_term": "Cifra de César"
       },
       {
-        "source_id": "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "source_uc": "AFD1",
-        "target_id": "Codificação uLEB128 em Estruturas de Dados do Windows",
-        "target_uc": "ASSI",
-        "matched_term": "uLEB128"
-      },
-      {
         "source_id": "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "source_uc": "ASSI",
         "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
@@ -284,6 +257,20 @@
         "matched_term": "Investigação Digital"
       },
       {
+        "source_id": "Ferramentas de Análise e Extração do Registry",
+        "source_uc": "ASSI",
+        "target_id": "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
+        "target_uc": "COMUM",
+        "matched_term": "SYSTEMTIME"
+      },
+      {
+        "source_id": "Tipos de Dados e Associação de Ficheiros no Registry",
+        "source_uc": "ASSI",
+        "target_id": "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
+        "target_uc": "COMUM",
+        "matched_term": "SYSTEMTIME"
+      },
+      {
         "source_id": "Registry em Aplicações Modernas (MSIX e Helium)",
         "source_uc": "ASSI",
         "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
@@ -303,28 +290,31 @@
         "target_id": "Endianness e Ordem de Armazenamento",
         "target_uc": "AFD1",
         "matched_term": "Little-endian"
+      },
+      {
+        "source_id": "Análise Forense e Criação a Pedido do Prefetch",
+        "source_uc": "ASSI",
+        "target_id": "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "target_uc": "SRC",
+        "matched_term": "Assinatura Digital"
+      },
+      {
+        "source_id": "Estrutura Interna e Algoritmo de Hashing do Prefetch",
+        "source_uc": "ASSI",
+        "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+        "target_uc": "COMUM",
+        "matched_term": "SHA-1"
       }
     ],
     "shared_tag_bridges": [
       {
-        "note_a": "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
-        "uc_a": "ASSI",
-        "note_b": "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação",
-        "uc_b": "COD1",
+        "note_a": "Assinaturas Digitais, PKI e GnuPG",
+        "uc_a": "COMUM",
+        "note_b": "Cheat Sheet - Criptografia, Hash, PKI e VPNs",
+        "uc_b": "SRC",
         "shared_tags": [
-          "cve",
-          "cvss",
-          "nvd"
-        ]
-      },
-      {
-        "note_a": "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
-        "uc_a": "AFD1",
-        "note_b": "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "nvme",
-          "ssd"
+          "criptografia",
+          "openssl"
         ]
       },
       {
@@ -348,22 +338,21 @@
         ]
       },
       {
-        "note_a": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
-        "uc_a": "SRC",
-        "note_b": "Preservação do Sistema e Integridade de Dados",
-        "uc_b": "AFD1",
-        "shared_tags": [
-          "hash",
-          "md5"
-        ]
-      },
-      {
         "note_a": "Abuso e Vetores de Ataque com Ficheiros LNK",
         "uc_a": "ASSI",
         "note_b": "WHOIS, DNS, Networking Footprinting e Engenharia Social",
         "uc_b": "COD1",
         "shared_tags": [
           "engenharia-social"
+        ]
+      },
+      {
+        "note_a": "AmCache - Arquitetura, Hives e Evolução para SQLite",
+        "uc_a": "ASSI",
+        "note_b": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+        "uc_b": "COMUM",
+        "shared_tags": [
+          "sha1"
         ]
       },
       {
@@ -423,19 +412,10 @@
       {
         "note_a": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
         "uc_a": "AFD1",
-        "note_b": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
-        "uc_b": "SRC",
+        "note_b": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+        "uc_b": "COMUM",
         "shared_tags": [
           "hash"
-        ]
-      },
-      {
-        "note_a": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
-        "uc_a": "AFD1",
-        "note_b": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
-        "uc_b": "SRC",
-        "shared_tags": [
-          "gnupg"
         ]
       },
       {
@@ -502,6 +482,33 @@
         ]
       },
       {
+        "note_a": "Assinaturas Digitais, PKI e GnuPG",
+        "uc_a": "COMUM",
+        "note_b": "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
+        "uc_b": "SRC",
+        "shared_tags": [
+          "criptografia"
+        ]
+      },
+      {
+        "note_a": "Assinaturas Digitais, PKI e GnuPG",
+        "uc_a": "COMUM",
+        "note_b": "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
+        "uc_b": "SRC",
+        "shared_tags": [
+          "criptografia"
+        ]
+      },
+      {
+        "note_a": "Assinaturas Digitais, PKI e GnuPG",
+        "uc_a": "COMUM",
+        "note_b": "TBL 2 - Fundamentos de Criptografia",
+        "uc_b": "SRC",
+        "shared_tags": [
+          "criptografia"
+        ]
+      },
+      {
         "note_a": "Ataques e Contramedidas por Camada em IoT (Sharma)",
         "uc_a": "SRC",
         "note_b": "Contramedidas de Enumeração e Metodologia Pentest",
@@ -556,15 +563,6 @@
         ]
       },
       {
-        "note_a": "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
-        "uc_a": "ASSI",
-        "note_b": "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação",
-        "uc_b": "COD1",
-        "shared_tags": [
-          "cve"
-        ]
-      },
-      {
         "note_a": "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "uc_a": "ASSI",
         "note_b": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -580,6 +578,15 @@
         "uc_b": "AFD1",
         "shared_tags": [
           "resumo"
+        ]
+      },
+      {
+        "note_a": "Cheat Sheet - Criptografia, Hash, PKI e VPNs",
+        "uc_a": "SRC",
+        "note_b": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+        "uc_b": "COMUM",
+        "shared_tags": [
+          "criptografia"
         ]
       },
       {
@@ -607,15 +614,6 @@
         "uc_b": "COD1",
         "shared_tags": [
           "cheat-sheet"
-        ]
-      },
-      {
-        "note_a": "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
-        "uc_a": "AFD1",
-        "note_b": "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "ssd"
         ]
       },
       {
@@ -666,10 +664,10 @@
       {
         "note_a": "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
         "uc_a": "AFD1",
-        "note_b": "Marcadores Temporais no Windows (Timestamps)",
+        "note_b": "Recuperação de Clipboard e Sincronização na Timeline",
         "uc_b": "ASSI",
         "shared_tags": [
-          "timestamps"
+          "base64"
         ]
       }
     ],
@@ -951,6 +949,7 @@
         "Home"
       ],
       "in_links": [
+        "00 Comum",
         "Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell",
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 1 - Método de Investigação",
@@ -1150,7 +1149,7 @@
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Extração da AmCache e Comparação Forense com a ShimCache",
-        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "Preservação do Sistema e Integridade de Dados"
       ],
@@ -1350,12 +1349,14 @@
         "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
         "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
         "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
+        "Assinaturas Digitais, PKI e GnuPG",
         "Capítulo 1 - Método de Investigação",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Estrutura Interna e Algoritmo de Hashing do Prefetch",
         "Exercícios Práticos - Integridade de Dados e Hashes",
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Fases da Investigação Forense Digital",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Pesquisa de Evidências e Reconstrução de Eventos",
@@ -1372,6 +1373,7 @@
         "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
+        "Assinaturas Digitais, PKI e GnuPG",
         "Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)",
         "Capítulo 1 - Método de Investigação",
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -1382,6 +1384,7 @@
         "Exercícios Práticos - Integridade de Dados e Hashes",
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Fases da Investigação Forense Digital",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
@@ -1399,8 +1402,10 @@
         "AmCache - Arquitetura, Hives e Evolução para SQLite",
         "Análise Forense e Criação a Pedido do Prefetch",
         "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
+        "Assinaturas Digitais, PKI e GnuPG",
         "Estrutura Interna e Algoritmo de Hashing do Prefetch",
         "Extração da AmCache e Comparação Forense com a ShimCache",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "UEFI Secure Boot",
@@ -1833,11 +1838,11 @@
         "Windows Search"
       ],
       "in_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
         "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "UEFI Secure Boot"
       ],
@@ -2032,9 +2037,9 @@
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
         "Pesquisa de Evidências e Reconstrução de Eventos",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
         "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Windows Search",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições"
       ],
@@ -2066,6 +2071,7 @@
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Windows Search",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições"
       ]
@@ -2109,8 +2115,7 @@
         "Estrutura e Hives do Windows Registry",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Ferramentas de Análise e Extração do Registry",
-        "Marcadores Temporais no Windows (Timestamps)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "Capítulo 2 - Arranque e Aquisição Forense",
@@ -2128,7 +2133,7 @@
         "Cheat Sheet - Registry e Forense",
         "Estrutura e Hives do Windows Registry",
         "Ferramentas de Análise e Extração do Registry",
-        "Marcadores Temporais no Windows (Timestamps)"
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -2170,14 +2175,15 @@
         "Preservação do Sistema e Integridade de Dados",
         "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Windows Activity Timeline - Arquitetura e Base SQLite",
         "Windows Search"
       ],
       "in_links": [
         "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
         "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Assinaturas Digitais, PKI e GnuPG",
         "Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)",
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -2190,6 +2196,7 @@
       "cross_uc_links": [
         "Acesso Forense e Montagem de Shadow Copies",
         "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Windows Activity Timeline - Arquitetura e Base SQLite",
         "Windows Search"
       ]
@@ -2303,17 +2310,16 @@
       "in_links": [
         "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
         "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 4 - Dispositivos de Armazenamento",
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
         "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
         "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
         "Preservação do Sistema e Integridade de Dados",
-        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
-        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
+        "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração"
       ],
       "cross_uc_links": [
         "00 ASSI",
@@ -2444,6 +2450,7 @@
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
         "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "Preservação do Sistema e Integridade de Dados",
         "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers"
       ],
@@ -2534,10 +2541,10 @@
       "in_links": [
         "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
         "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
         "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -2710,10 +2717,10 @@
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
         "Jump Lists - Arquitetura, AppIDs e Carving",
         "Organização de Estruturas de Dados em Binário",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Serviço BITS",
         "Sistemas de Numeração e Conversão entre Bases",
         "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "UWP - Artefactos Forenses e Estrutura de Dados",
         "Volume Shadow Service (VSS) - Arquitetura e Funcionamento",
         "Windows Activity Timeline - Arquitetura e Base SQLite",
@@ -2729,8 +2736,8 @@
         "Jump Lists - Arquitetura, AppIDs e Carving",
         "Organização de Estruturas de Dados em Binário",
         "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "UWP - Artefactos Forenses e Estrutura de Dados",
         "Volume Shadow Service (VSS) - Arquitetura e Funcionamento",
         "Windows Search"
@@ -2744,6 +2751,7 @@
         "Jump Lists - Arquitetura, AppIDs e Carving",
         "Serviço BITS",
         "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "UWP - Artefactos Forenses e Estrutura de Dados",
         "Volume Shadow Service (VSS) - Arquitetura e Funcionamento",
         "Windows Activity Timeline - Arquitetura e Base SQLite",
@@ -2784,10 +2792,10 @@
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Codificação uLEB128 em Estruturas de Dados do Windows",
         "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
-        "Marcadores Temporais no Windows (Timestamps)",
         "Números em Vírgula Flutuante (IEEE 754)",
         "Organização de Estruturas de Dados em Binário",
         "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Tipos de Dados e Associação de Ficheiros no Registry",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições"
       ],
@@ -2803,11 +2811,10 @@
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Codificação uLEB128 em Estruturas de Dados do Windows",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
-        "Marcadores Temporais no Windows (Timestamps)",
         "Números em Vírgula Flutuante (IEEE 754)",
         "Organização de Estruturas de Dados em Binário",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Tipos de Dados e Associação de Ficheiros no Registry",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições"
       ],
@@ -2819,7 +2826,7 @@
         "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
         "Codificação uLEB128 em Estruturas de Dados do Windows",
         "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
-        "Marcadores Temporais no Windows (Timestamps)",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Tipos de Dados e Associação de Ficheiros no Registry",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições"
       ]
@@ -3036,8 +3043,8 @@
         "Codificação uLEB128 em Estruturas de Dados do Windows",
         "Endianness e Ordem de Armazenamento",
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
-        "Marcadores Temporais no Windows (Timestamps)",
-        "Números em Vírgula Flutuante (IEEE 754)"
+        "Números em Vírgula Flutuante (IEEE 754)",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
@@ -3053,10 +3060,10 @@
         "Endianness e Ordem de Armazenamento",
         "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
-        "Marcadores Temporais no Windows (Timestamps)",
         "Números em Vírgula Flutuante (IEEE 754)",
         "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
-        "Sistemas de Numeração e Conversão entre Bases"
+        "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "cross_uc_links": [
         "00 ASSI",
@@ -3065,7 +3072,7 @@
         "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
         "Codificação uLEB128 em Estruturas de Dados do Windows",
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
-        "Marcadores Temporais no Windows (Timestamps)"
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -3131,74 +3138,6 @@
       ]
     },
     {
-      "id": "Representação Forense de Data e Hora (Timestamps e SQLite)",
-      "title": "Representação Forense de Data e Hora (Timestamps e SQLite)",
-      "path": "AFD1/Capítulo 03 - Organização de Dados/04 - Data, Hora e Codificação Binário-para-Texto/Representação Forense de Data e Hora (Timestamps e SQLite).md",
-      "uc": "AFD1",
-      "capitulo": 3,
-      "bloco": 4,
-      "tipo": "conceito",
-      "tags": [
-        "afd1",
-        "forense",
-        "timestamps",
-        "unix-epoch",
-        "sqlite",
-        "firefox",
-        "chrome"
-      ],
-      "aliases": [
-        "Date and Time",
-        "Unix Epoch Time",
-        "400-year Gregorian calendar cycle",
-        "Histórico SQLite Firefox e Chrome"
-      ],
-      "summary": "Datas e horas surgem em texto ou em formatos numéricos indexados a uma época, destacando-se na forense o Unix Epoch (1970) e o ciclo gregoriano de 1601 usado no Windows e no Google Chrome.",
-      "out_links": [
-        "00 ASSI",
-        "AmCache - Arquitetura, Hives e Evolução para SQLite",
-        "Artefacto Forense UserAssist",
-        "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
-        "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
-        "Capítulo 3 - Organização de Dados",
-        "Endianness e Ordem de Armazenamento",
-        "Estrutura Interna e Algoritmo de Hashing do Prefetch",
-        "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
-        "Marcadores Temporais no Windows (Timestamps)",
-        "UWP - Artefactos Forenses e Estrutura de Dados",
-        "Windows Activity Timeline - Arquitetura e Base SQLite",
-        "Windows Search"
-      ],
-      "in_links": [
-        "AmCache - Arquitetura, Hives e Evolução para SQLite",
-        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
-        "Artefacto Forense UserAssist",
-        "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
-        "Capítulo 3 - Organização de Dados",
-        "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
-        "Cheat Sheet - Registry e Forense",
-        "Estrutura Interna e Algoritmo de Hashing do Prefetch",
-        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
-        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "Marcadores Temporais no Windows (Timestamps)",
-        "UWP - Artefactos Forenses e Estrutura de Dados",
-        "Windows Activity Timeline - Arquitetura e Base SQLite",
-        "Windows Search"
-      ],
-      "cross_uc_links": [
-        "00 ASSI",
-        "AmCache - Arquitetura, Hives e Evolução para SQLite",
-        "Artefacto Forense UserAssist",
-        "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
-        "Estrutura Interna e Algoritmo de Hashing do Prefetch",
-        "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
-        "Marcadores Temporais no Windows (Timestamps)",
-        "UWP - Artefactos Forenses e Estrutura de Dados",
-        "Windows Activity Timeline - Arquitetura e Base SQLite",
-        "Windows Search"
-      ]
-    },
-    {
       "id": "Capítulo 3 - Organização de Dados",
       "title": "Capítulo 3 - Organização de Dados",
       "path": "AFD1/Capítulo 03 - Organização de Dados/Capítulo 3 - Organização de Dados.md",
@@ -3234,8 +3173,8 @@
         "Home",
         "Números em Vírgula Flutuante (IEEE 754)",
         "Organização de Estruturas de Dados em Binário",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "Sistemas de Numeração e Conversão entre Bases"
+        "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "00 AFD1",
@@ -3254,11 +3193,12 @@
         "Endianness e Ordem de Armazenamento",
         "Números em Vírgula Flutuante (IEEE 754)",
         "Organização de Estruturas de Dados em Binário",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "Sistemas de Numeração e Conversão entre Bases"
+        "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "cross_uc_links": [
-        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses"
+        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -3297,15 +3237,17 @@
         "Endianness e Ordem de Armazenamento",
         "Números em Vírgula Flutuante (IEEE 754)",
         "Organização de Estruturas de Dados em Binário",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "Sistemas de Numeração e Conversão entre Bases"
+        "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "00 AFD1",
         "Capítulo 3 - Organização de Dados",
         "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
+      ]
     },
     {
       "id": "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
@@ -3334,10 +3276,10 @@
         "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)"
       ],
       "in_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Capítulo 4 - Dispositivos de Armazenamento",
         "Interface SCSI, SAS e Comparação SCSI vs ATA",
-        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
-        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
+        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)"
       ],
       "cross_uc_links": []
     },
@@ -3426,48 +3368,19 @@
       "aliases": [],
       "summary": "Capítulo: Capítulo 4 - Dispositivos de Armazenamento",
       "out_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Capítulo 4 - Dispositivos de Armazenamento",
         "Interface SCSI, SAS e Comparação SCSI vs ATA",
-        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
-        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
+        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)"
       ],
       "in_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Capítulo 4 - Dispositivos de Armazenamento",
-        "Interface SCSI, SAS e Comparação SCSI vs ATA",
-        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
+        "Interface SCSI, SAS e Comparação SCSI vs ATA"
       ],
-      "cross_uc_links": []
-    },
-    {
-      "id": "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)",
-      "title": "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)",
-      "path": "AFD1/Capítulo 04 - Dispositivos de Armazenamento/02 - Tecnologia SSD e Memória NAND/SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection).md",
-      "uc": "AFD1",
-      "capitulo": 4,
-      "bloco": 2,
-      "tipo": "nota",
-      "tags": [
-        "afd1",
-        "forense",
-        "ssd",
-        "nand",
-        "nor",
-        "wear-leveling",
-        "garbage-collection"
-      ],
-      "aliases": [],
-      "summary": "Capítulo: Capítulo 4 - Dispositivos de Armazenamento",
-      "out_links": [
-        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
-        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
-        "Capítulo 4 - Dispositivos de Armazenamento",
-        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers"
-      ],
-      "in_links": [
-        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
-        "Capítulo 4 - Dispositivos de Armazenamento"
-      ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)"
+      ]
     },
     {
       "id": "Capítulo 4 - Dispositivos de Armazenamento",
@@ -3496,13 +3409,13 @@
       "out_links": [
         "00 AFD1",
         "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
         "Capítulo 3 - Organização de Dados",
         "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
         "Interface SCSI, SAS e Comparação SCSI vs ATA",
         "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
-        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
-        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers"
       ],
       "in_links": [
         "00 AFD1",
@@ -3510,10 +3423,11 @@
         "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
         "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
         "Interface SCSI, SAS e Comparação SCSI vs ATA",
-        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)",
-        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)"
+        "Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)"
+      ]
     },
     {
       "id": "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
@@ -3541,6 +3455,7 @@
       ],
       "in_links": [
         "00 AFD1",
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Capítulo 4 - Dispositivos de Armazenamento"
       ],
       "cross_uc_links": []
@@ -3578,6 +3493,7 @@
         "Home"
       ],
       "in_links": [
+        "00 Comum",
         "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
@@ -3605,7 +3521,6 @@
         "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Sistemas de Numeração e Conversão entre Bases"
       ],
       "cross_uc_links": []
@@ -3681,9 +3596,10 @@
         "UEFI Secure Boot - Chaves e Hierarquia"
       ],
       "in_links": [
+        "Assinaturas Digitais, PKI e GnuPG",
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "Preservação do Sistema e Integridade de Dados",
         "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
@@ -3766,6 +3682,7 @@
       ],
       "in_links": [
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "Assinaturas Digitais, PKI e GnuPG",
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "PKfail - Cadeia de Ataque e Deteção Forense",
@@ -4053,10 +3970,10 @@
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Pesquisa de Evidências e Reconstrução de Eventos",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Serviço BITS",
         "Serviços Windows",
-        "Sistemas de Numeração e Conversão entre Bases"
+        "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
@@ -4069,17 +3986,17 @@
         "Ficha Prática e Questionário - Serviços e Windows Search",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Processos e linha de comandos no Windows",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Serviço BITS",
         "Serviços Windows",
         "Sistemas de Numeração e Conversão entre Bases",
-        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE"
+        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "cross_uc_links": [
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Pesquisa de Evidências e Reconstrução de Eventos",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "Sistemas de Numeração e Conversão entre Bases"
+        "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -4185,7 +4102,7 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Registry em Aplicações Modernas (MSIX e Helium)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "Aplicações UWP (Universal Windows Platform) - Visão Geral",
@@ -4195,12 +4112,12 @@
         "Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios",
         "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
         "Registry em Aplicações Modernas (MSIX e Helium)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "cross_uc_links": [
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -4287,11 +4204,10 @@
         "Endianness e Ordem de Armazenamento",
         "Estrutura e Hives do Windows Registry",
         "Ferramentas de Análise e Extração do Registry",
-        "Marcadores Temporais no Windows (Timestamps)",
         "Organização de Estruturas de Dados em Binário",
         "Registry em Aplicações Modernas (MSIX e Helium)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Salvaguarda e Monitorização do Registry",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Tipos de Dados e Associação de Ficheiros no Registry"
       ],
       "in_links": [
@@ -4306,7 +4222,7 @@
       "cross_uc_links": [
         "Endianness e Ordem de Armazenamento",
         "Organização de Estruturas de Dados em Binário",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -4362,9 +4278,9 @@
         "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
-        "Marcadores Temporais no Windows (Timestamps)",
         "Registry em Aplicações Modernas (MSIX e Helium)",
         "Salvaguarda e Monitorização do Registry",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Tipos de Dados e Associação de Ficheiros no Registry"
       ],
       "cross_uc_links": [
@@ -4467,14 +4383,16 @@
         "Cheat Sheet - Registry e Forense",
         "Estrutura e Hives do Windows Registry",
         "Ferramentas de Análise e Extração do Registry",
-        "Marcadores Temporais no Windows (Timestamps)",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Tipos de Dados e Associação de Ficheiros no Registry"
       ],
       "in_links": [
         "00 ASSI",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
+      ]
     },
     {
       "id": "Tipos de Dados e Associação de Ficheiros no Registry",
@@ -4517,59 +4435,6 @@
       "cross_uc_links": [
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Endianness e Ordem de Armazenamento"
-      ]
-    },
-    {
-      "id": "Marcadores Temporais no Windows (Timestamps)",
-      "title": "Marcadores Temporais no Windows (Timestamps)",
-      "path": "ASSI/Capítulo 01 - Sistemas Operativos, Serviços e Artefactos/06 - Aplicações Modernas, Timestamps e Monitorização/Marcadores Temporais no Windows (Timestamps).md",
-      "uc": "ASSI",
-      "capitulo": 1,
-      "bloco": 6,
-      "tipo": "conceito",
-      "tags": [
-        "assi",
-        "windows",
-        "timestamps",
-        "filetime",
-        "systemtime",
-        "epoch",
-        "forense"
-      ],
-      "aliases": [
-        "Timestamps",
-        "FILETIME",
-        "SYSTEMTIME",
-        "Unix Epoch",
-        "w32tm"
-      ],
-      "summary": "Representação binária de data e hora em sistemas operativos e artefactos do Registry (`UNIX Epoch`, `Microsoft FILETIME64`, `WebKit` e estrutura `SYSTEMTIME`) e respetiva descodificação pericial.",
-      "out_links": [
-        "Artefacto Forense UserAssist",
-        "Artefactos Forenses de Dispositivos USB",
-        "Artefactos Forenses de Execução e Persistência no Registry",
-        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "Endianness e Ordem de Armazenamento",
-        "Estrutura e Hives do Windows Registry",
-        "Organização de Estruturas de Dados em Binário",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
-      ],
-      "in_links": [
-        "Artefacto Forense UserAssist",
-        "Artefactos Forenses de Dispositivos USB",
-        "Artefactos Forenses de Execução e Persistência no Registry",
-        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "Cheat Sheet - Registry e Forense",
-        "Endianness e Ordem de Armazenamento",
-        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
-        "Organização de Estruturas de Dados em Binário",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
-      ],
-      "cross_uc_links": [
-        "Endianness e Ordem de Armazenamento",
-        "Organização de Estruturas de Dados em Binário",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
       ]
     },
     {
@@ -4737,10 +4602,9 @@
         "Endianness e Ordem de Armazenamento",
         "Estrutura e Hives do Windows Registry",
         "Ferramentas de Análise e Extração do Registry",
-        "Marcadores Temporais no Windows (Timestamps)",
         "Organização de Estruturas de Dados em Binário",
         "Pesquisa de Evidências e Reconstrução de Eventos",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "Application Compatibility e ShimCache (AppCompatCache)",
@@ -4760,13 +4624,12 @@
         "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Investigação Digital e Evidência Digital",
         "LastActivityView e Reconstituição Temporal Live",
-        "Marcadores Temporais no Windows (Timestamps)",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)",
         "Organização de Estruturas de Dados em Binário",
         "Pesquisa de Evidências e Reconstrução de Eventos",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "Taxonomia dos Artefactos de Execução no Windows"
+        "Taxonomia dos Artefactos de Execução no Windows",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "cross_uc_links": [
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
@@ -4774,7 +4637,7 @@
         "Endianness e Ordem de Armazenamento",
         "Organização de Estruturas de Dados em Binário",
         "Pesquisa de Evidências e Reconstrução de Eventos",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -4810,8 +4673,8 @@
         "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Estrutura e Hives do Windows Registry",
-        "Marcadores Temporais no Windows (Timestamps)",
-        "Salvaguarda e Monitorização do Registry"
+        "Salvaguarda e Monitorização do Registry",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "Artefacto Forense UserAssist",
@@ -4820,11 +4683,13 @@
         "Estrutura e Hives do Windows Registry",
         "Ferramentas de Análise e Extração do Registry",
         "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "Marcadores Temporais no Windows (Timestamps)",
         "Salvaguarda e Monitorização do Registry",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Tipos de Dados e Associação de Ficheiros no Registry"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
+      ]
     },
     {
       "id": "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
@@ -4916,8 +4781,8 @@
         "Estrutura e Hives do Windows Registry",
         "Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços",
         "Fases da Investigação Forense Digital",
-        "Marcadores Temporais no Windows (Timestamps)",
-        "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)"
+        "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "Artefacto Forense ShellBags",
@@ -4929,14 +4794,15 @@
         "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "Marcadores Temporais no Windows (Timestamps)",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
       ],
       "cross_uc_links": [
         "Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços",
         "Fases da Investigação Forense Digital",
-        "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)"
+        "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -5218,10 +5084,10 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Preservação do Sistema e Integridade de Dados",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Serviço Prefetch e SysMain - Arquitetura e Funcionamento",
         "Sistemas de Numeração e Conversão entre Bases",
-        "Taxonomia dos Artefactos de Execução no Windows"
+        "Taxonomia dos Artefactos de Execução no Windows",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "Análise Forense e Criação a Pedido do Prefetch",
@@ -5229,15 +5095,15 @@
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "LastActivityView e Reconstituição Temporal Live",
         "Preservação do Sistema e Integridade de Dados",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Serviço Prefetch e SysMain - Arquitetura e Funcionamento",
-        "Sistemas de Numeração e Conversão entre Bases"
+        "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "cross_uc_links": [
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Preservação do Sistema e Integridade de Dados",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "Sistemas de Numeração e Conversão entre Bases"
+        "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -5389,8 +5255,8 @@
         "Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)",
         "Preservação do Sistema e Integridade de Dados",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "Taxonomia dos Artefactos de Execução no Windows"
+        "Taxonomia dos Artefactos de Execução no Windows",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "Application Compatibility e ShimCache (AppCompatCache)",
@@ -5407,14 +5273,14 @@
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Preservação do Sistema e Integridade de Dados",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Taxonomia dos Artefactos de Execução no Windows",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
       ],
       "cross_uc_links": [
         "Preservação do Sistema e Integridade de Dados",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -5683,7 +5549,7 @@
         "Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen",
         "Ficha Prática e Questionário - Shell, Atividade e Matriz Forense",
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Jump Lists - Arquitetura, AppIDs e Carving",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
@@ -5748,9 +5614,9 @@
         "Organização de Estruturas de Dados em Binário",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
         "Sistemas de Numeração e Conversão entre Bases",
         "Taxonomia dos Artefactos de Execução no Windows",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
       ],
       "cross_uc_links": [
@@ -6076,8 +5942,8 @@
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
         "Recuperação de Clipboard e Sincronização na Timeline",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE"
+        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
         "Análise Forense do SRUM e Ferramentas Nativas (powercfg)",
@@ -6092,13 +5958,13 @@
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Recuperação de Clipboard e Sincronização na Timeline",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE"
+        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "cross_uc_links": [
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)"
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -6149,8 +6015,8 @@
         "Organização de Estruturas de Dados em Binário",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Preservação do Sistema e Integridade de Dados",
-        "Representação Forense de Data e Hora (Timestamps e SQLite)",
-        "Sistemas de Numeração e Conversão entre Bases"
+        "Sistemas de Numeração e Conversão entre Bases",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "cross_uc_links": [
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
@@ -6446,7 +6312,6 @@
         "Home",
         "Jump Lists - Arquitetura, AppIDs e Carving",
         "LastActivityView e Reconstituição Temporal Live",
-        "Marcadores Temporais no Windows (Timestamps)",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)",
         "PKfail - Cadeia de Ataque e Deteção Forense",
@@ -6461,6 +6326,7 @@
         "Serviços Windows",
         "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
         "Taxonomia dos Artefactos de Execução no Windows",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Tipos de Dados e Associação de Ficheiros no Registry",
         "UEFI Secure Boot",
         "UEFI Secure Boot - Chaves e Hierarquia",
@@ -6508,7 +6374,6 @@
         "Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)",
         "Jump Lists - Arquitetura, AppIDs e Carving",
         "LastActivityView e Reconstituição Temporal Live",
-        "Marcadores Temporais no Windows (Timestamps)",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)",
         "PKfail - Cadeia de Ataque e Deteção Forense",
@@ -6523,6 +6388,7 @@
         "Serviços Windows",
         "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
         "Taxonomia dos Artefactos de Execução no Windows",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Tipos de Dados e Associação de Ficheiros no Registry",
         "UEFI Secure Boot",
         "UEFI Secure Boot - Chaves e Hierarquia",
@@ -6535,7 +6401,8 @@
       "cross_uc_links": [
         "Capítulo 1 - Método de Investigação",
         "Capítulo 2 - Arranque e Aquisição Forense",
-        "Capítulo 3 - Organização de Dados"
+        "Capítulo 3 - Organização de Dados",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ]
     },
     {
@@ -6613,22 +6480,23 @@
       ],
       "summary": "A sanitização exige certificação por dispositivo, controlo interno e audit trail (When, what, who, where, how?) com número de série e fotos, complementados pelo guia NCSC de venda e compra segura.",
       "out_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Capítulo 2 - Administração de Sistemas",
         "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Investigação Digital e Evidência Digital",
         "Princípios e Rota do Manuseamento de Evidência Digital",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
         "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física"
       ],
       "in_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Capítulo 2 - Administração de Sistemas",
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física"
       ],
       "cross_uc_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Investigação Digital e Evidência Digital",
         "Princípios e Rota do Manuseamento de Evidência Digital",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)"
@@ -6661,79 +6529,26 @@
       ],
       "summary": "O Decommissioning retira sistemas e equipamentos de operação ativa garantindo remoção segura de peças, eliminação de dados (papel `P-1` a `P-7` e suportes digitais) e conformidade com WEEE, RoHS e RGPD.",
       "out_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Capítulo 2 - Administração de Sistemas",
         "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física"
       ],
       "in_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Capítulo 2 - Administração de Sistemas",
         "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física"
       ],
       "cross_uc_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Pesquisa de Evidências e Reconstrução de Eventos"
-      ]
-    },
-    {
-      "id": "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
-      "title": "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning, Sanitização e Destruição de Dados/Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash.md",
-      "uc": "ASSI",
-      "capitulo": 2,
-      "bloco": 1,
-      "tipo": "procedimento",
-      "tags": [
-        "assi",
-        "administracao-sistemas",
-        "ssd",
-        "nvme",
-        "nand-flash",
-        "secure-erase",
-        "cryptographic-erasure",
-        "photorec",
-        "scalpel"
-      ],
-      "aliases": [
-        "Secure Erase SSD",
-        "Secure Erase NVMe",
-        "nvme sanitize",
-        "Cryptographic Erasure",
-        "Format NVM",
-        "Sanitização de Memória Flash"
-      ],
-      "summary": "Memórias NAND Flash (SSDs SATA/NVMe e pens USB) são imunes ao degaussing e resistem ao overwriting por terem 5%–10% de over-provisioning e wear leveling, exigindo cifragem ou comandos de firmware.",
-      "out_links": [
-        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
-        "Capítulo 2 - Administração de Sistemas",
-        "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
-        "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
-        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
-        "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
-        "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física",
-        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)"
-      ],
-      "in_links": [
-        "Capítulo 2 - Administração de Sistemas",
-        "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
-        "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
-        "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
-        "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
-        "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física"
-      ],
-      "cross_uc_links": [
-        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
-        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
-        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers"
       ]
     },
     {
@@ -6768,22 +6583,23 @@
       "summary": "A sanitização de HDDs abrange os níveis Discarding, Clearing/Purging e Destroying, combinando wiping por software (reutilizável), degaussing (1 min) e trituração física (`6–30 mm`).",
       "out_links": [
         "Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell",
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Capítulo 2 - Administração de Sistemas",
         "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
         "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker",
         "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)"
       ],
       "in_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Capítulo 2 - Administração de Sistemas",
         "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)"
       ],
       "cross_uc_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)"
       ]
     },
@@ -6816,9 +6632,9 @@
       ],
       "summary": "O Asset Management monitoriza licenças, certificados (caso Equifax), garantias, MACs desconhecidos e conformidade, estruturando a segurança USB em Policy, Standard e Procedure com VeraCrypt.",
       "out_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Artefactos Forenses de Dispositivos USB",
         "Capítulo 2 - Administração de Sistemas",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
@@ -6826,9 +6642,10 @@
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
       ],
       "in_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
+        "Assinaturas Digitais, PKI e GnuPG",
         "Capítulo 2 - Administração de Sistemas",
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
@@ -6836,6 +6653,7 @@
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
       ],
       "cross_uc_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)"
       ]
     },
@@ -6865,8 +6683,8 @@
       "summary": "As pen drives USB falsas adulteram o firmware para reportar `1 TB` ou `2 TB` sobre apenas `50–64 GB` reais; o utilitário ValiDrive testa 576 regiões sem destruir dados para expor a fraude.",
       "out_links": [
         "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Capítulo 2 - Administração de Sistemas",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
       ],
@@ -6877,7 +6695,8 @@
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
       ],
       "cross_uc_links": [
-        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes"
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)"
       ]
     },
     {
@@ -6928,60 +6747,12 @@
         "Capítulo 2 - Administração de Sistemas",
         "Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)"
       ],
       "cross_uc_links": [
         "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB"
       ]
-    },
-    {
-      "id": "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
-      "title": "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/03 - Hardening, Vulnerabilidades (CVE, CVSS, CWE), Licenciamento e Fugas de Dados/Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE.md",
-      "uc": "ASSI",
-      "capitulo": 2,
-      "bloco": 3,
-      "tipo": "conceito",
-      "tags": [
-        "assi",
-        "administracao-sistemas",
-        "cve",
-        "cvss",
-        "cwe",
-        "scap",
-        "mitre",
-        "sharepoint",
-        "nvd"
-      ],
-      "aliases": [
-        "CVE",
-        "Common Vulnerabilities and Exposures",
-        "CVSS",
-        "Common Vulnerability Scoring System",
-        "CWE Top 10 2025",
-        "SCAP",
-        "Vulnerability vs Exposure"
-      ],
-      "summary": "O sistema CVE (MITRE, 1999) identifica falhas únicas via SCAP (`CVE-YYYY-NNNNN`), separando Vulnerabilidades de Exposições, quantificadas por CVSS (`0–10`) e classificadas pelo Top CWE.",
-      "out_links": [
-        "Abuso e Vetores de Ataque com Ficheiros LNK",
-        "Capítulo 2 - Administração de Sistemas",
-        "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
-        "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
-        "PKfail - Vulnerabilidade do UEFI Secure Boot",
-        "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
-        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
-        "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)",
-        "YARA - Introdução, Estrutura de Regras, Metadados e Condições"
-      ],
-      "in_links": [
-        "Capítulo 2 - Administração de Sistemas",
-        "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
-        "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
-        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)"
-      ],
-      "cross_uc_links": []
     },
     {
       "id": "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
@@ -7018,7 +6789,7 @@
         "Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios",
         "Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing"
       ],
       "in_links": [
@@ -7026,9 +6797,11 @@
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE"
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
+      ]
     },
     {
       "id": "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
@@ -7062,7 +6835,7 @@
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Capítulo 2 - Administração de Sistemas",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
@@ -7070,15 +6843,16 @@
         "UEFI Secure Boot - Chaves e Hierarquia"
       ],
       "in_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Capítulo 2 - Administração de Sistemas",
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows"
       ],
       "cross_uc_links": [
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows"
       ]
     },
@@ -7560,6 +7334,7 @@
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Exercícios Práticos - Integridade de Dados e Hashes",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking",
         "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
         "Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)"
@@ -7663,6 +7438,7 @@
         "Capítulo 2 - Administração de Sistemas",
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Exercícios Práticos - Integridade de Dados e Hashes",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed"
       ],
       "cross_uc_links": [
@@ -7752,6 +7528,7 @@
       "out_links": [
         "00 ASSI",
         "Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass",
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)",
         "Business Email Compromise (BEC) e Fraudes Executivas com Deepfake de Áudio e Vídeo",
@@ -7767,12 +7544,11 @@
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
         "Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)",
         "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay",
         "Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing",
         "Home",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
@@ -7799,12 +7575,11 @@
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
         "Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)",
         "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay",
         "Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
@@ -7816,9 +7591,11 @@
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
       ],
       "cross_uc_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Capítulo 1 - Método de Investigação",
         "Capítulo 2 - Arranque e Aquisição Forense",
-        "Capítulo 3 - Organização de Dados"
+        "Capítulo 3 - Organização de Dados",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
       ]
     },
     {
@@ -7850,6 +7627,7 @@
       "summary": "Guia de consulta rápida do Capítulo 2 de ASSI, condensando matrizes de sanitização de dados, hardening, gestão de vulnerabilidades, engenharia social, entropia, Passkeys, Hashcat e armadilhas de exame.",
       "out_links": [
         "Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass",
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)",
         "Business Email Compromise (BEC) e Fraudes Executivas com Deepfake de Áudio e Vídeo",
@@ -7861,12 +7639,11 @@
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
         "Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo",
-        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash",
         "Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)",
         "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay",
         "Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
@@ -7885,7 +7662,10 @@
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
+      ]
     },
     {
       "id": "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
@@ -7976,7 +7756,7 @@
         "Capítulo 3 - YARA - MOTW - Strings",
         "Cheat Sheet - YARA, MOTW e Extração de Strings",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
         "YARA-X (Reimplementação em Rust) e Ferramenta CLI yr"
@@ -8027,7 +7807,8 @@
         "Cheat Sheet - YARA, MOTW e Extração de Strings",
         "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições",
@@ -8081,7 +7862,7 @@
         "Endianness e Ordem de Armazenamento",
         "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
-        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
@@ -8701,6 +8482,7 @@
         "Home"
       ],
       "in_links": [
+        "00 Comum",
         "Capítulo 1 - Introdução à Cibersegurança",
         "Capítulo 2 - Preparação do Ambiente Laboratorial",
         "Capítulo 3 - Rastreamento e Reconhecimento",
@@ -8713,40 +8495,6 @@
         "Home"
       ],
       "cross_uc_links": []
-    },
-    {
-      "id": "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
-      "title": "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
-      "path": "COD1/Capítulo 01 - Introdução à Cibersegurança/01 - Conceitos e Vetores de Ataque/Conceitos de Cibersegurança, Terminologia e Vetores de Ataque.md",
-      "uc": "COD1",
-      "capitulo": 1,
-      "bloco": 1,
-      "tipo": "conceito",
-      "tags": [
-        "cod1",
-        "ciberseguranca",
-        "vetores-de-ataque",
-        "terminologia"
-      ],
-      "aliases": [
-        "Terminologia Hacking",
-        "Pivoting",
-        "Daisy Chaining",
-        "Vetores de Ataque COD1"
-      ],
-      "summary": "Um ataque informático resulta da conjunção de três fatores — Objetivo (motivo) + Método + Vulnerabilidade — visando explorar ativos com hack value através de vetores de rede, máquina ou aplicação.",
-      "out_links": [
-        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
-        "Fases do Hacking e Âmbito do Ethical Hacking",
-        "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
-      ],
-      "in_links": [
-        "Capítulo 1 - Introdução à Cibersegurança",
-        "Fases do Hacking e Âmbito do Ethical Hacking"
-      ],
-      "cross_uc_links": [
-        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949"
-      ]
     },
     {
       "id": "Fases do Hacking e Âmbito do Ethical Hacking",
@@ -8769,16 +8517,18 @@
       ],
       "summary": "O Ethical Hacking replica de forma controlada e com autorização expressa da organização as cinco fases utilizadas por atacantes reais — *Reconhecimento, Scanning, Ganhar acesso, Manter acesso e Limpar rasto* — para...",
       "out_links": [
-        "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)",
         "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
       ],
       "in_links": [
         "Capítulo 1 - Introdução à Cibersegurança",
-        "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)"
+      ]
     },
     {
       "id": "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
@@ -8810,7 +8560,7 @@
         "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
         "Capítulo 1 - Introdução à Cibersegurança",
         "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
-        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
       ],
       "cross_uc_links": [
         "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
@@ -8848,7 +8598,7 @@
         "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
         "Capítulo 1 - Introdução à Cibersegurança",
         "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
-        "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
         "Fases do Hacking e Âmbito do Ethical Hacking",
         "Footprinting Pentest e Contramedidas (Metodologia Prática)"
@@ -8879,7 +8629,7 @@
       "out_links": [
         "00 COD1",
         "Capítulo 2 - Preparação do Ambiente Laboratorial",
-        "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
         "Fases do Hacking e Âmbito do Ethical Hacking",
         "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
@@ -8888,7 +8638,9 @@
         "00 COD1",
         "Capítulo 2 - Preparação do Ambiente Laboratorial"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)"
+      ]
     },
     {
       "id": "Ambiente de Hacking - Kali Linux, Commando VM e Virtualização",
@@ -9665,48 +9417,16 @@
       "out_links": [
         "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
         "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
-        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
       ],
       "in_links": [
         "Capítulo 6 - Análise de Vulnerabilidades",
         "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
-        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
       ],
-      "cross_uc_links": []
-    },
-    {
-      "id": "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação",
-      "title": "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação",
-      "path": "COD1/Capítulo 06 - Análise de Vulnerabilidades/02 - Sistemas de Pontuação e Abordagens/Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação.md",
-      "uc": "COD1",
-      "capitulo": 6,
-      "bloco": 2,
-      "tipo": "conceito",
-      "tags": [
-        "cod1",
-        "cvss",
-        "cve",
-        "nvd",
-        "euvd",
-        "gestao-vulnerabilidades"
-      ],
-      "aliases": [
-        "CVSS v4.0",
-        "CVE",
-        "Abordagens de Avaliação"
-      ],
-      "summary": "Os referenciais `CVE` (identificação padronizada) e `CVSS v4.0` (pontuação quantitativa de severidade) permitem classificar achados obtidos por diferentes abordagens e ferramentas de avaliação.",
-      "out_links": [
-        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
-        "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
-        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)"
-      ],
-      "in_links": [
-        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
-        "Capítulo 6 - Análise de Vulnerabilidades",
-        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)"
-      ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
+      ]
     },
     {
       "id": "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
@@ -9736,14 +9456,16 @@
       "out_links": [
         "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
         "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
-        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
       ],
       "in_links": [
         "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
         "Capítulo 6 - Análise de Vulnerabilidades",
-        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
+      ]
     },
     {
       "id": "Capítulo 6 - Análise de Vulnerabilidades",
@@ -9774,7 +9496,7 @@
         "Capítulo 5 - Enumeração",
         "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
         "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
-        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação"
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
       ],
       "in_links": [
         "00 COD1",
@@ -9782,7 +9504,9 @@
         "Contramedidas de Enumeração e Metodologia Pentest",
         "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
+      ]
     },
     {
       "id": "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
@@ -9830,6 +9554,433 @@
       "cross_uc_links": []
     },
     {
+      "id": "00 Comum",
+      "title": "00 Comum",
+      "path": "Comum/00 Comum.md",
+      "uc": "COMUM",
+      "capitulo": null,
+      "bloco": null,
+      "tipo": "indice",
+      "tags": [
+        "moc",
+        "comum",
+        "fundamentos",
+        "transversais"
+      ],
+      "aliases": [
+        "Fundamentos Comuns",
+        "Núcleo Comum MCIF"
+      ],
+      "summary": "Índice central dos nós de conhecimento partilhados entre `AFD1`, `ASSI`, `COD1` e `SRC`, desenhado para eliminar redundância teórica e evidenciar ligações transversais no Graph View do Obsidian.",
+      "out_links": [
+        "00 AFD1",
+        "00 ASSI",
+        "00 COD1",
+        "00 SRC",
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
+        "Assinaturas Digitais, PKI e GnuPG",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+        "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
+        "Home",
+        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
+      ],
+      "in_links": [
+        "Home"
+      ],
+      "cross_uc_links": [
+        "00 AFD1",
+        "00 ASSI",
+        "00 COD1",
+        "00 SRC"
+      ]
+    },
+    {
+      "id": "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
+      "title": "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
+      "path": "Comum/Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection).md",
+      "uc": "COMUM",
+      "capitulo": null,
+      "bloco": null,
+      "tipo": "conceito",
+      "tags": [
+        "comum",
+        "ssd",
+        "nand-flash",
+        "wear-leveling",
+        "garbage-collection",
+        "sanitizacao",
+        "forense"
+      ],
+      "aliases": [
+        "SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)",
+        "Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash"
+      ],
+      "summary": "Os SSDs armazenam dados em células semicondutoras `NAND Flash` geridas por um controlador próprio (FTL), criando assimetrias entre escrita em página e apagamento em bloco que desafiam tanto a aquisição forense como a...",
+      "out_links": [
+        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
+        "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
+        "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física",
+        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)"
+      ],
+      "in_links": [
+        "00 Comum",
+        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "Capítulo 2 - Administração de Sistemas",
+        "Capítulo 4 - Dispositivos de Armazenamento",
+        "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
+        "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
+        "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
+        "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
+        "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
+        "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física"
+      ],
+      "cross_uc_links": [
+        "Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)",
+        "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
+        "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
+        "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
+        "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
+        "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
+        "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
+        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
+        "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física",
+        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)"
+      ]
+    },
+    {
+      "id": "Assinaturas Digitais, PKI e GnuPG",
+      "title": "Assinaturas Digitais, PKI e GnuPG",
+      "path": "Comum/Assinaturas Digitais, PKI e GnuPG.md",
+      "uc": "COMUM",
+      "capitulo": null,
+      "bloco": null,
+      "tipo": "procedimento",
+      "tags": [
+        "comum",
+        "criptografia",
+        "pki",
+        "x509",
+        "openssl",
+        "gnupg",
+        "assinatura-digital",
+        "ca"
+      ],
+      "aliases": [
+        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "PKI",
+        "Autoridade de Certificação",
+        "OpenSSL CA",
+        "GnuPG"
+      ],
+      "summary": "A Infraestrutura de Chave Pública (`PKI`) e o ecossistema `OpenPGP` / `GnuPG` resolvem o problema da confiança na distribuição de chaves públicas e na verificação de assinaturas digitais, quer através de Autoridades...",
+      "out_links": [
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot",
+        "Preservação do Sistema e Integridade de Dados",
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
+        "SSH (Secure Shell), Port Forwarding e TLS 1.3",
+        "UEFI Secure Boot"
+      ],
+      "in_links": [
+        "00 Comum",
+        "Capítulo 2 - Criptografia Aplicada",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+        "Preservação do Sistema e Integridade de Dados",
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
+        "SSH (Secure Shell), Port Forwarding e TLS 1.3",
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "cross_uc_links": [
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
+        "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot",
+        "Preservação do Sistema e Integridade de Dados",
+        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
+        "SSH (Secure Shell), Port Forwarding e TLS 1.3",
+        "UEFI Secure Boot"
+      ]
+    },
+    {
+      "id": "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
+      "title": "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
+      "path": "Comum/Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque).md",
+      "uc": "COMUM",
+      "capitulo": null,
+      "bloco": null,
+      "tipo": "conceito",
+      "tags": [
+        "comum",
+        "cia",
+        "rfc-4949",
+        "ameaca",
+        "vulnerabilidade",
+        "vetores-ataque"
+      ],
+      "aliases": [
+        "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
+        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Tríade CIA",
+        "Vulnerabilidade Ameaça Ataque",
+        "Ataques Passivos e Ativos",
+        "Terminologia Hacking",
+        "Pivoting",
+        "Daisy Chaining",
+        "Vetores de Ataque COD1"
+      ],
+      "summary": "A segurança da informação e de redes visa preservar a confidencialidade, integridade e disponibilidade (CIA) dos recursos de um sistema através da identificação rigorosa de ativos, vulnerabilidades, ameaças e vetores...",
+      "out_links": [
+        "Fases do Hacking e Âmbito do Ethical Hacking",
+        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
+        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
+        "Serviços e Mecanismos de Segurança (ITU-T X.800)",
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
+      ],
+      "in_links": [
+        "00 Comum",
+        "Capítulo 1 - Fundamentos de Redes e Segurança",
+        "Capítulo 1 - Introdução à Cibersegurança",
+        "Fases do Hacking e Âmbito do Ethical Hacking",
+        "Laboratório Scapy - Envio e Resposta de Pacotes ICMP",
+        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
+        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
+        "Serviços e Mecanismos de Segurança (ITU-T X.800)"
+      ],
+      "cross_uc_links": [
+        "Fases do Hacking e Âmbito do Ethical Hacking",
+        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
+        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
+        "Serviços e Mecanismos de Segurança (ITU-T X.800)",
+        "Testes de Penetração - Metodologia, Pentest Request e Relatórios"
+      ]
+    },
+    {
+      "id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+      "title": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+      "path": "Comum/Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3).md",
+      "uc": "COMUM",
+      "capitulo": null,
+      "bloco": null,
+      "tipo": "conceito",
+      "tags": [
+        "comum",
+        "criptografia",
+        "hash",
+        "integridade",
+        "md5",
+        "sha1",
+        "sha2",
+        "sha3",
+        "ripemd"
+      ],
+      "aliases": [
+        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+        "Funções de Hash",
+        "MD5",
+        "SHA-1",
+        "SHA-2",
+        "SHA-3"
+      ],
+      "summary": "Uma função de hash criptográfica $h = H(M)$ transforma uma mensagem $M$ de tamanho variável (arbitrário) num resumo (message digest) de tamanho fixo, permitindo verificar a integridade dos dados.",
+      "out_links": [
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass",
+        "Assinaturas Digitais, PKI e GnuPG",
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
+        "Exercícios Práticos - Integridade de Dados e Hashes",
+        "Preservação do Sistema e Integridade de Dados",
+        "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "in_links": [
+        "00 Comum",
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Capítulo 2 - Criptografia Aplicada",
+        "Preservação do Sistema e Integridade de Dados",
+        "TBL 2 - Fundamentos de Criptografia"
+      ],
+      "cross_uc_links": [
+        "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
+        "Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass",
+        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
+        "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
+        "Exercícios Práticos - Integridade de Dados e Hashes",
+        "Preservação do Sistema e Integridade de Dados",
+        "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
+        "TBL 2 - Fundamentos de Criptografia"
+      ]
+    },
+    {
+      "id": "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
+      "title": "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
+      "path": "Comum/Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE).md",
+      "uc": "COMUM",
+      "capitulo": null,
+      "bloco": null,
+      "tipo": "conceito",
+      "tags": [
+        "comum",
+        "cve",
+        "cvss",
+        "cwe",
+        "scap",
+        "mitre",
+        "nvd",
+        "euvd",
+        "gestao-vulnerabilidades"
+      ],
+      "aliases": [
+        "Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE",
+        "Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação",
+        "CVE",
+        "Common Vulnerabilities and Exposures",
+        "CVSS",
+        "CVSS v4.0",
+        "Common Vulnerability Scoring System",
+        "CWE Top 10 2025",
+        "SCAP",
+        "Vulnerability vs Exposure",
+        "Abordagens de Avaliação"
+      ],
+      "summary": "O sistema CVE (MITRE, 1999) atribui identificadores únicos a falhas conhecidas (`CVE-YYYY-NNNNN`), enquanto o CVSS (`0–10`, atualmente na versão `v4.0`) quantifica a sua severidade técnica e a CWE classifica o padrão...",
+      "out_links": [
+        "Abuso e Vetores de Ataque com Ficheiros LNK",
+        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+        "Capítulo 2 - Administração de Sistemas",
+        "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
+        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
+        "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
+        "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot",
+        "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
+        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
+        "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)",
+        "YARA - Introdução, Estrutura de Regras, Metadados e Condições"
+      ],
+      "in_links": [
+        "00 Comum",
+        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+        "Capítulo 2 - Administração de Sistemas",
+        "Capítulo 6 - Análise de Vulnerabilidades",
+        "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
+        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
+        "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
+        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)"
+      ],
+      "cross_uc_links": [
+        "Abuso e Vetores de Ataque com Ficheiros LNK",
+        "Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação",
+        "Capítulo 2 - Administração de Sistemas",
+        "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
+        "Ferramentas de Análise - Nessus e OpenVAS (Instalação e Setup)",
+        "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
+        "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot",
+        "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
+        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
+        "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)",
+        "YARA - Introdução, Estrutura de Regras, Metadados e Condições"
+      ]
+    },
+    {
+      "id": "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
+      "title": "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
+      "path": "Comum/Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME).md",
+      "uc": "COMUM",
+      "capitulo": null,
+      "bloco": null,
+      "tipo": "conceito",
+      "tags": [
+        "comum",
+        "timestamps",
+        "unix-epoch",
+        "filetime",
+        "systemtime",
+        "sqlite",
+        "forense"
+      ],
+      "aliases": [
+        "Representação Forense de Data e Hora (Timestamps e SQLite)",
+        "Marcadores Temporais no Windows (Timestamps)",
+        "FILETIME",
+        "SYSTEMTIME",
+        "Unix Epoch"
+      ],
+      "summary": "Sistemas operativos e aplicações armazenam data e hora como contadores numéricos indexados a uma época fixa (`1970-01-01` no Unix ou `1601-01-01` no Windows/Chrome) ou como estruturas binárias de campos fixos...",
+      "out_links": [
+        "AmCache - Arquitetura, Hives e Evolução para SQLite",
+        "Artefacto Forense UserAssist",
+        "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
+        "Artefactos Forenses de Dispositivos USB",
+        "Artefactos Forenses de Execução e Persistência no Registry",
+        "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
+        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Capítulo 3 - Organização de Dados",
+        "Endianness e Ordem de Armazenamento",
+        "Estrutura Interna e Algoritmo de Hashing do Prefetch",
+        "Estrutura e Hives do Windows Registry",
+        "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
+        "Organização de Estruturas de Dados em Binário",
+        "UWP - Artefactos Forenses e Estrutura de Dados",
+        "Windows Activity Timeline - Arquitetura e Base SQLite",
+        "Windows Search"
+      ],
+      "in_links": [
+        "00 Comum",
+        "AmCache - Arquitetura, Hives e Evolução para SQLite",
+        "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
+        "Artefacto Forense UserAssist",
+        "Artefactos Forenses de Dispositivos USB",
+        "Artefactos Forenses de Execução e Persistência no Registry",
+        "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
+        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Capítulo 3 - Organização de Dados",
+        "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
+        "Cheat Sheet - Registry e Forense",
+        "Endianness e Ordem de Armazenamento",
+        "Estrutura Interna e Algoritmo de Hashing do Prefetch",
+        "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
+        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
+        "Organização de Estruturas de Dados em Binário",
+        "UWP - Artefactos Forenses e Estrutura de Dados",
+        "Windows Activity Timeline - Arquitetura e Base SQLite",
+        "Windows Search"
+      ],
+      "cross_uc_links": [
+        "AmCache - Arquitetura, Hives e Evolução para SQLite",
+        "Artefacto Forense UserAssist",
+        "Artefacto Forense do Bloco de Notas (Notepad Windows 11)",
+        "Artefactos Forenses de Dispositivos USB",
+        "Artefactos Forenses de Execução e Persistência no Registry",
+        "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
+        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Capítulo 3 - Organização de Dados",
+        "Endianness e Ordem de Armazenamento",
+        "Estrutura Interna e Algoritmo de Hashing do Prefetch",
+        "Estrutura e Hives do Windows Registry",
+        "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
+        "Organização de Estruturas de Dados em Binário",
+        "UWP - Artefactos Forenses e Estrutura de Dados",
+        "Windows Activity Timeline - Arquitetura e Base SQLite",
+        "Windows Search"
+      ]
+    },
+    {
       "id": "Home",
       "title": "Home",
       "path": "Home.md",
@@ -9847,12 +9998,14 @@
         "00 AFD1",
         "00 ASSI",
         "00 COD1",
+        "00 Comum",
         "00 SRC"
       ],
       "in_links": [
         "00 AFD1",
         "00 ASSI",
         "00 COD1",
+        "00 Comum",
         "00 SRC",
         "Capítulo 1 - Método de Investigação",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
@@ -9894,6 +10047,7 @@
         "Home"
       ],
       "in_links": [
+        "00 Comum",
         "Capítulo 1 - Fundamentos de Redes e Segurança",
         "Capítulo 2 - Criptografia Aplicada",
         "Capítulo 3 - Segurança em IoT",
@@ -9960,53 +10114,19 @@
       ],
       "summary": "A Internet interliga redes autónomas através da família de protocolos IP, organizando a comunicação em camadas onde cada protocolo adiciona informação de controlo (encapsulamento) à medida que os dados descem na pilha.",
       "out_links": [
-        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs"
       ],
       "in_links": [
         "Capítulo 1 - Fundamentos de Redes e Segurança",
-        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
         "Laboratório Scapy - Envio e Resposta de Pacotes ICMP"
       ],
-      "cross_uc_links": []
-    },
-    {
-      "id": "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
-      "title": "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
-      "path": "SRC/Capítulo 01 - Fundamentos de Redes e Segurança/02 - Conceitos, Serviços e Mecanismos de Segurança/Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949.md",
-      "uc": "SRC",
-      "capitulo": 1,
-      "bloco": 2,
-      "tipo": "conceito",
-      "tags": [
-        "src",
-        "seguranca",
-        "cia",
-        "rfc4949",
-        "nist"
-      ],
-      "aliases": [
-        "Tríade CIA",
-        "Vulnerabilidade Ameaça Ataque",
-        "Ataques Passivos e Ativos"
-      ],
-      "summary": "A segurança em redes visa preservar a confidencialidade, integridade e disponibilidade (CIA) dos recursos de um sistema de informação através da identificação rigorosa de ativos, vulnerabilidades, ameaças e ataques.",
-      "out_links": [
-        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
-        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
-        "Serviços e Mecanismos de Segurança (ITU-T X.800)"
-      ],
-      "in_links": [
-        "Capítulo 1 - Fundamentos de Redes e Segurança",
-        "Conceitos de Cibersegurança, Terminologia e Vetores de Ataque",
-        "Laboratório Scapy - Envio e Resposta de Pacotes ICMP",
-        "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
-        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
-        "Serviços e Mecanismos de Segurança (ITU-T X.800)"
-      ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)"
+      ]
     },
     {
       "id": "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
@@ -10030,16 +10150,18 @@
       ],
       "summary": "A construção de sistemas e redes resilientes assenta em princípios clássicos de desenho seguro (Saltzer & Schroeder, 1975, e NCAE), complementados pela redução da superfície de ataque e pela *modelação hierárquica...",
       "out_links": [
-        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Serviços e Mecanismos de Segurança (ITU-T X.800)"
       ],
       "in_links": [
         "Capítulo 1 - Fundamentos de Redes e Segurança",
-        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
         "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)"
+      ]
     },
     {
       "id": "Serviços e Mecanismos de Segurança (ITU-T X.800)",
@@ -10062,16 +10184,18 @@
       ],
       "summary": "A recomendação ITU-T X.800 (Security Architecture for OSI) separa os serviços de segurança (o que o sistema deve garantir nas comunicações) dos mecanismos de segurança (os blocos técnicos usados para implementar...",
       "out_links": [
-        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs"
       ],
       "in_links": [
         "Capítulo 1 - Fundamentos de Redes e Segurança",
-        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
         "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)"
+      ]
     },
     {
       "id": "Laboratório Scapy - Envio e Resposta de Pacotes ICMP",
@@ -10095,13 +10219,15 @@
       ],
       "summary": "Os scripts laboratoriais `pinging.py` e `1scapy.py` demonstram a manipulação programática de pacotes ICMP em Python utilizando a biblioteca `scapy` para envio de probes com payload personalizado e resposta automática...",
       "out_links": [
-        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS"
       ],
       "in_links": [
         "Capítulo 1 - Fundamentos de Redes e Segurança"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)"
+      ]
     },
     {
       "id": "Capítulo 1 - Fundamentos de Redes e Segurança",
@@ -10128,7 +10254,7 @@
       "out_links": [
         "00 SRC",
         "Capítulo 2 - Criptografia Aplicada",
-        "Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949",
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)",
         "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
         "Laboratório Scapy - Envio e Resposta de Pacotes ICMP",
         "Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS",
@@ -10139,7 +10265,9 @@
         "00 SRC",
         "Capítulo 2 - Criptografia Aplicada"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)"
+      ]
     },
     {
       "id": "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
@@ -10239,9 +10367,9 @@
         "TBL 2 - Fundamentos de Criptografia"
       ],
       "in_links": [
+        "Assinaturas Digitais, PKI e GnuPG",
         "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
         "Capítulo 2 - Criptografia Aplicada",
-        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
         "SSH (Secure Shell), Port Forwarding e TLS 1.3",
         "Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)",
         "TBL 2 - Fundamentos de Criptografia"
@@ -10272,89 +10400,19 @@
       "summary": "A autenticação de mensagens garante ao recetor que a mensagem provém da origem alegada e não foi alterada em trânsito, recorrendo a esquemas combinados com hash, a Códigos de Autenticação de Mensagem (`MAC` / `HMAC`)...",
       "out_links": [
         "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
-        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "TBL 2 - Fundamentos de Criptografia"
       ],
       "in_links": [
+        "Assinaturas Digitais, PKI e GnuPG",
         "Capítulo 2 - Criptografia Aplicada",
         "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
-        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
-        "TBL 2 - Fundamentos de Criptografia"
-      ],
-      "cross_uc_links": []
-    },
-    {
-      "id": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
-      "title": "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
-      "path": "SRC/Capítulo 02 - Criptografia Aplicada/03 - Integridade, Hash, MAC e Assinaturas/Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD).md",
-      "uc": "SRC",
-      "capitulo": 2,
-      "bloco": 3,
-      "tipo": "conceito",
-      "tags": [
-        "src",
-        "criptografia",
-        "hash",
-        "md5",
-        "sha"
-      ],
-      "aliases": [
-        "Funções de Hash",
-        "MD5",
-        "SHA-1",
-        "SHA-2",
-        "SHA-3"
-      ],
-      "summary": "Uma função de hash criptográfica $h = H(M)$ transforma uma mensagem $M$ de tamanho variável (arbitrário) num resumo (message digest) de tamanho fixo, garantindo integridade dos dados.",
-      "out_links": [
-        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
-        "Exercícios Práticos - Integridade de Dados e Hashes",
-        "TBL 2 - Fundamentos de Criptografia"
-      ],
-      "in_links": [
-        "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
-        "Capítulo 2 - Criptografia Aplicada",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "TBL 2 - Fundamentos de Criptografia"
       ],
       "cross_uc_links": [
-        "Exercícios Práticos - Integridade de Dados e Hashes"
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)"
       ]
-    },
-    {
-      "id": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
-      "title": "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
-      "path": "SRC/Capítulo 02 - Criptografia Aplicada/04 - PKI, Aplicações Criptográficas e VPNs/PKI, Autoridades de Certificação (OpenSSL) e GnuPG.md",
-      "uc": "SRC",
-      "capitulo": 2,
-      "bloco": 4,
-      "tipo": "procedimento",
-      "tags": [
-        "src",
-        "pki",
-        "x509",
-        "openssl",
-        "gnupg",
-        "ca"
-      ],
-      "aliases": [
-        "PKI",
-        "Autoridade de Certificação",
-        "OpenSSL CA",
-        "GnuPG"
-      ],
-      "summary": "A Infraestrutura de Chave Pública (`PKI`) e o ecossistema `OpenPGP` / `GnuPG` resolvem o problema da confiança na distribuição de chaves públicas, quer através de Autoridades de Certificação (`CA`) hierárquicas...",
-      "out_links": [
-        "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
-        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
-        "SSH (Secure Shell), Port Forwarding e TLS 1.3"
-      ],
-      "in_links": [
-        "Capítulo 2 - Criptografia Aplicada",
-        "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
-        "SSH (Secure Shell), Port Forwarding e TLS 1.3",
-        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
-      ],
-      "cross_uc_links": []
     },
     {
       "id": "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
@@ -10378,17 +10436,19 @@
       ],
       "summary": "As VPNs estendem redes privadas através de infraestruturas públicas (Internet) usando túneis cifrados e autenticados, destacando-se na UC duas abordagens complementares: `IPSec` e `OpenVPN`.",
       "out_links": [
-        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "Assinaturas Digitais, PKI e GnuPG",
         "SSH (Secure Shell), Port Forwarding e TLS 1.3"
       ],
       "in_links": [
         "Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix",
+        "Assinaturas Digitais, PKI e GnuPG",
         "Capítulo 2 - Criptografia Aplicada",
         "Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)",
-        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
         "SSH (Secure Shell), Port Forwarding e TLS 1.3"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Assinaturas Digitais, PKI e GnuPG"
+      ]
     },
     {
       "id": "SSH (Secure Shell), Port Forwarding e TLS 1.3",
@@ -10413,17 +10473,19 @@
       ],
       "summary": "O `SSH` é um protocolo de comunicação segura (não é uma shell) que garante autenticação, confidencialidade e integridade, combinando cifragem assimétrica na negociação/autenticação com cifragem simétrica na sessão;...",
       "out_links": [
+        "Assinaturas Digitais, PKI e GnuPG",
         "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
-        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
         "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN"
       ],
       "in_links": [
+        "Assinaturas Digitais, PKI e GnuPG",
         "Capítulo 2 - Criptografia Aplicada",
         "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
-        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
         "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Assinaturas Digitais, PKI e GnuPG"
+      ]
     },
     {
       "id": "TBL 2 - Fundamentos de Criptografia",
@@ -10449,16 +10511,18 @@
         "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
         "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
         "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
-        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)"
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)"
       ],
       "in_links": [
         "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
         "Capítulo 2 - Criptografia Aplicada",
         "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
         "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
-        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)"
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)"
+      ]
     },
     {
       "id": "Capítulo 2 - Criptografia Aplicada",
@@ -10484,6 +10548,7 @@
       "summary": "Mapa de estudo do Capítulo 2 de SRC, cobrindo os 68 diapositivos de `aula_02_update.pdf` (Prof. Mário Antunes), os 9 diapositivos de `2_crypto_projectKickoff.pdf`, os excertos de Stallings...",
       "out_links": [
         "00 SRC",
+        "Assinaturas Digitais, PKI e GnuPG",
         "Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais",
         "Capítulo 1 - Fundamentos de Redes e Segurança",
         "Capítulo 3 - Segurança em IoT",
@@ -10491,8 +10556,7 @@
         "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
         "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
         "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
-        "Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)",
-        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "Redes Privadas Virtuais (VPN) - IPSec e OpenVPN",
         "SSH (Secure Shell), Port Forwarding e TLS 1.3",
         "TBL 2 - Fundamentos de Criptografia"
@@ -10503,7 +10567,10 @@
         "Capítulo 3 - Segurança em IoT",
         "Cheat Sheet - Criptografia, Hash, PKI e VPNs"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Assinaturas Digitais, PKI e GnuPG",
+        "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)"
+      ]
     },
     {
       "id": "Cheat Sheet - Criptografia, Hash, PKI e VPNs",
@@ -10905,8 +10972,8 @@
       ],
       "summary": "O **Zero Trust (`ZT`) é um paradigma de cibersegurança focado na proteção de recursos sob a premissa de que a confiança nunca é concedida implicitamente (nem pela localização física ou de rede), devendo ser...",
       "out_links": [
+        "Assinaturas Digitais, PKI e GnuPG",
         "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
-        "PKI, Autoridades de Certificação (OpenSSL) e GnuPG",
         "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees"
       ],
       "in_links": [
@@ -10915,7 +10982,9 @@
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
         "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)"
       ],
-      "cross_uc_links": []
+      "cross_uc_links": [
+        "Assinaturas Digitais, PKI e GnuPG"
+      ]
     },
     {
       "id": "Capítulo 4 - Deteção de Intrusões e Zero Trust",

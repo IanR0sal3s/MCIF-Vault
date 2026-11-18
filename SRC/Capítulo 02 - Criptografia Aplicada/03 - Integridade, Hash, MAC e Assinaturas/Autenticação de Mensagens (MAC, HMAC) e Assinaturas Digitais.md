@@ -83,6 +83,6 @@ Nos slides 37–38 (e Stallings Fig. 11.3 / 12.1), distinguem-se quatro formas d
 
 ## Notas relacionadas
 
-- [[Funções de Hash Criptográficas (MD5, SHA-1, SHA-2, SHA-3 e RIPEMD)]]
+- [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]]
 - [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]]
 - [[TBL 2 - Fundamentos de Criptografia]]

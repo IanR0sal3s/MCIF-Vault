@@ -102,5 +102,5 @@ Na análise de uma ligação `TLS 1.3` válida (`www.ipleiria.pt`), surgem **3 a
 ## Notas relacionadas
 
 - [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]]
-- [[PKI, Autoridades de Certificação (OpenSSL) e GnuPG]]
+- [[Assinaturas Digitais, PKI e GnuPG]]
 - [[Redes Privadas Virtuais (VPN) - IPSec e OpenVPN]]

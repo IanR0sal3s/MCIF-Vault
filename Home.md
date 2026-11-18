@@ -27,6 +27,7 @@ Este espaço foi desenhado para ser partilhado e expandido pela comunidade de es
 | *PARSI*  | *Políticas e Análise de Risco na Segurança de Informação*   | Nuno Salvador                         | S1       | Planeado                                                                 |
 | **SRC**  | [[00 SRC]] (Segurança em Redes de Computadores)             | Luís Frazão                           | S1       | Concluído (Capítulos 1 a 4 — 24 notas + 2 Cheat Sheets)                  |
 | **[[00 COD1]]** | **Cibersegurança Ofensiva e Defensiva I**                  | Leonel Santos                         | S1       | Em Curso                                                                 |
+| **COMUM** | [[00 Comum]] (Conceitos Transversais entre UCs)            | Transversal                           | S1       | Hubs partilhados (`AFD1`, `ASSI`, `COD1`, `SRC`)                         |
 
 ---
 

@@ -133,7 +133,7 @@ Três erros operacionais recorrentes originam fugas graves de dados pessoais pun
 ## Notas relacionadas
 
 - [[Capítulo 2 - Administração de Sistemas]]
-- [[Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE]]
+- [[Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)]]
 - [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]]
 - [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]]
 - [[Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing]]

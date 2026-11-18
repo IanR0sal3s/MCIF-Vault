@@ -257,4 +257,4 @@ Qual é a fórmula de cálculo e a resolução temporal nativa do formato **FILE
 - [[Artefacto Forense UserAssist]]
 - [[Artefacto Forense ShellBags]]
 - [[Artefactos Forenses de Dispositivos USB]]
-- [[Marcadores Temporais no Windows (Timestamps)]]
+- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]

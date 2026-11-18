@@ -194,7 +194,7 @@ flowchart LR
 
 - [[Sistemas de Numeração e Conversão entre Bases]]
 - [[Organização de Estruturas de Dados em Binário]]
-- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
+- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
 - [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
 - [[UWP - Artefactos Forenses e Estrutura de Dados]]
 - [[Jump Lists - Arquitetura, AppIDs e Carving]]

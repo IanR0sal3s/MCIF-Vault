@@ -178,7 +178,7 @@ typedef struct {
 
 ### 5.1 Texto vs. Binário, Épocas e Constante `11644473600`
 
-* **Strings de texto**: legíveis por humanos, mas ineficientes para ordenar/comparar e frequentemente ambíguas (`23-12-2018` PT `DD-MM-YYYY` vs. `12-23-2018` US `MM-DD-YYYY`) ([[Representação Forense de Data e Hora (Timestamps e SQLite)]]).
+* **Strings de texto**: legíveis por humanos, mas ineficientes para ordenar/comparar e frequentemente ambíguas (`23-12-2018` PT `DD-MM-YYYY` vs. `12-23-2018` US `MM-DD-YYYY`) ([[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]).
 * **Duas Épocas Fundamentais**:
   1. **Unix Time / POSIX / UNIX Epoch**: origem **`1970-01-01 00:00:00`**, em **segundos** (ou **$\mu\text{s}$** no Firefox) — Unix, Linux, **Firefox**, Python, Java, PHP, JavaScript, Ruby, Perl, Tcl.
   2. **Ciclo do Calendário Gregoriano de 400 anos**: origem **`1601-01-01 00:00:00`**, em **microssegundos ($\mu\text{s}$)** no **Google Chrome** ou **intervalos de $100\text{ ns}$** no **Windows 32/64 bits e NTFS** (também Cobol).
@@ -240,5 +240,5 @@ WHERE urls.id = visits.url;
 * [[Endianness e Ordem de Armazenamento]]
 * [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
 * [[Organização de Estruturas de Dados em Binário]]
-* [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
 * [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]

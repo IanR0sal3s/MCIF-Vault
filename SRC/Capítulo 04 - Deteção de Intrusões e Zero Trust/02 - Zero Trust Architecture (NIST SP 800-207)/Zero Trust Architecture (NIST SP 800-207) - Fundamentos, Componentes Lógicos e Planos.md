@@ -97,5 +97,5 @@ flowchart LR
 ## Notas relacionadas
 
 - [[IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)]]
-- [[PKI, Autoridades de Certificação (OpenSSL) e GnuPG]]
+- [[Assinaturas Digitais, PKI e GnuPG]]
 - [[Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees]]

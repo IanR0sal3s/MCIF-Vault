@@ -64,7 +64,7 @@ flowchart LR
 | [[Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones]]                            | Ataques físicos em hotéis (caso `FlowCloud` 2026), regras para *Burner Phones*, alfândega e torres `StingRay`.                   |
 | [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]] | Níveis de Jones & Afrifa, *wiping* (`Eraser`, `DBAN`), *degaussing*, trituração (`IL4`–`IL6`) e `DiskMantler`.                   |
 | [[Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados]]                 | Certificados individuais (`Active@ KillDisk`), rasto de auditoria (*when/what/who/where/how*) e guia NCSC de compra/venda.       |
-| [[Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash]]                                | Estudo Alnaqbi (2025), *over-provisioning* NAND, *Cryptographic Erasure*, SATA `Secure Erase` e `nvme sanitize -a 2`.            |
+| [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]                                | Estudo Alnaqbi (2025), *over-provisioning* NAND, *Cryptographic Erasure*, SATA `Secure Erase` e `nvme sanitize -a 2`.            |
 
 ---
 
@@ -80,10 +80,10 @@ flowchart LR
 
 ### 3. Hardening, Vulnerabilidades (CVE, CVSS, CWE), Licenciamento e Fugas de Dados (`03 - Hardening, Vulnerabilidades (CVE, CVSS, CWE), Licenciamento e Fugas de Dados`)
 
-| Nota | O que vais estudar |
-| :--- | :--- |
-| [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]] | Medidas de *Server* e *OS Hardening* e dissecação em 6 fases do bypass `BitLocker YellowKey` via `WinRE` / `TxF`. |
-| [[Gestão de Vulnerabilidades e Exposições - CVE, SCAP, CVSS e Top CWE]] | Estrutura `CVE`/`SCAP`, *Vulnerability* (`SharePoint 2025`) vs. *Exposure* (`Apollo`/`PDL`), escala `CVSS` e **Top 10 CWE 2025**. |
+| Nota                                                                                       | O que vais estudar                                                                                                                |
+| :----------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
+| [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]]           | Medidas de *Server* e *OS Hardening* e dissecação em 6 fases do bypass `BitLocker YellowKey` via `WinRE` / `TxF`.                 |
+| [[Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)]]                    | Estrutura `CVE`/`SCAP`, *Vulnerability* (`SharePoint 2025`) vs. *Exposure* (`Apollo`/`PDL`), escala `CVSS` e **Top 10 CWE 2025**. |
 | [[Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação]] | Software pirata (casos *Rafael Quinn* e *NSA keygen*), fuga `38 TB` Azure `SAS Tokens` (Wiz), caso `AIMA` e falhas de rasura PDF. |
 
 ---

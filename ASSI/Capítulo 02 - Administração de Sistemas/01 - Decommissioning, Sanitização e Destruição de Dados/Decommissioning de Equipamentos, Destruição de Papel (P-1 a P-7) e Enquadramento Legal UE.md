@@ -171,6 +171,6 @@ A concentração de informação em suportes digitais amplia drasticamente o imp
 - [[Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones]]
 - [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]]
 - [[Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados]]
-- [[Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash]]
+- [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]
 - [[Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação]]
 - [[Pesquisa de Evidências e Reconstrução de Eventos]]

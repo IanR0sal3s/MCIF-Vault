@@ -188,5 +188,5 @@ Na base **`InventoryApplicationFile.db`**, cada registo de executável preserva:
 - [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]]
 - [[Taxonomia dos Artefactos de Execução no Windows]]
 - [[Preservação do Sistema e Integridade de Dados]]
-- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
+- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
 - [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]

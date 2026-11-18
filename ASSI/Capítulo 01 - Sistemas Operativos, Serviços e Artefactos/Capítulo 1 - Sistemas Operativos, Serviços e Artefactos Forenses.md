@@ -87,7 +87,7 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 | Nota | Descrição e Foco Técnico |
 | :--- | :--- |
 | [[Registry em Aplicações Modernas (MSIX e Helium)]] | Pacotes MSIX em contentores, Registry virtualizado em `Helium` (`User.dat`), caso de estudo do Bloco de Notas |
-| [[Marcadores Temporais no Windows (Timestamps)]] | Formatos numéricos: UNIX Epoch, FILETIME64, struct `SYSTEMTIME` (128-bit); ferramentas `w32tm`, `DCODE`, `cyberchef` |
+| [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] | Formatos numéricos: UNIX Epoch, FILETIME64, struct `SYSTEMTIME` (128-bit); ferramentas `w32tm`, `DCODE`, `cyberchef` |
 | [[Salvaguarda e Monitorização do Registry]] | `RegIdleBackup`/`RegBack` (desativação pós-1803), `schtasks`, análise dinâmica com `procmon` e auditoria com `sysmon` |
 
 ---

@@ -231,5 +231,5 @@ A exploração da base de dados SQLite `ActivitiesCache.db`, identificação de 
 - [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
 - [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]]
 - [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
-- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
+- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
 - [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]

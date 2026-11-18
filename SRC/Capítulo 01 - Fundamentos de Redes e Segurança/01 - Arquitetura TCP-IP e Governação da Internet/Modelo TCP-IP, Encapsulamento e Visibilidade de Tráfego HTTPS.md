@@ -100,4 +100,4 @@ Os slides 12–13 listam os conceitos de redes pré-requisito para a disciplina:
 ## Notas relacionadas
 
 - [[Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs]]
-- [[Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949]]
+- [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]]

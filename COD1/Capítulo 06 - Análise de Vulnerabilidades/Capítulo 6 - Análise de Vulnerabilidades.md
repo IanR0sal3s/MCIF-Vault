@@ -45,7 +45,7 @@ flowchart LR
 
 | Nota | Fonte | O que vais estudar |
 | :--- | :---: | :--- |
-| [[Sistemas de Pontuação (CVSS e CVE) e Abordagens de Avaliação]] | Slides 20–29 | Abordagens `product-based` vs. `service-based`, árvore vs. dedução, `CVSS v4.0` e bases `CVE` (`MITRE`, `EUVD-ENISA`, `NVD`, `MSRC`). |
+| [[Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)]] | Slides 20–29 | Abordagens `product-based` vs. `service-based`, árvore vs. dedução, `CVSS v4.0` e bases `CVE` (`MITRE`, `EUVD-ENISA`, `NVD`, `MSRC`). |
 
 ---
 

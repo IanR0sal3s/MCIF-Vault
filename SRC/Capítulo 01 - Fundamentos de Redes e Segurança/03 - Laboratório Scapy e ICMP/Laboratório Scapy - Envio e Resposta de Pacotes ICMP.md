@@ -105,4 +105,4 @@ def icmp_responder():
 ## Notas relacionadas
 
 - [[Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS]]
-- [[Conceitos de Segurança - CIA, Vulnerabilidade, Ameaça, Ataque e RFC 4949]]
+- [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]]

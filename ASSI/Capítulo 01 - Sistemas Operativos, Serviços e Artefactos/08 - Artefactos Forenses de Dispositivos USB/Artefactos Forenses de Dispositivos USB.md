@@ -196,7 +196,7 @@ usbview.exe /sxml list.xml
 ## Notas relacionadas
 
 - [[Estrutura e Hives do Windows Registry]]
-- [[Marcadores Temporais no Windows (Timestamps)]]
+- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
 - [[Artefacto Forense ShellBags]]
 - [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
 - [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]]

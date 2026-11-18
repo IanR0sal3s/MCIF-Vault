@@ -86,7 +86,7 @@ Os sistemas informáticos diferem na ordem pela qual armazenam valores compostos
 
 * **O Papel do *Endianness* nos Artefactos Forenses do Windows ([[00 ASSI|ASSI]])**:
   * **Tipos de Dados no Windows Registry**: Na especificação de [[Tipos de Dados e Associação de Ficheiros no Registry]], o tipo padrão `REG_DWORD` (ID `4`) armazena inteiros de 32 bits em **Little-endian**, existindo um tipo separado `REG_DWORD_BIG_ENDIAN` (ID `5`) para **Big-endian**, enquanto `REG_QWORD` (ID `11`) armazena inteiros de 64 bits em **Little-endian**. De igual forma, na [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)|chave RecentDocs]], o valor `MRUListEx` guarda a ordem de abertura em blocos de 4 bytes Little-endian (ex.: `02 00 00 00` $= 2$).
-  * **Marcadores Temporais (`FILETIME64` e `SYSTEMTIME`)**: Conforme detalhado em [[Marcadores Temporais no Windows (Timestamps)]], tanto os inteiros de 64 bits `FILETIME` (ex.: no offset `60` do [[Artefacto Forense UserAssist]]) como cada palavra `WORD` de 2 bytes da estrutura `SYSTEMTIME` (ex.: `E4 07` $\rightarrow$ `0x07E4` $= 2020$) estão guardados em **Little-endian**.
+  * **Marcadores Temporais (`FILETIME64` e `SYSTEMTIME`)**: Conforme detalhado em [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]], tanto os inteiros de 64 bits `FILETIME` (ex.: no offset `60` do [[Artefacto Forense UserAssist]]) como cada palavra `WORD` de 2 bytes da estrutura `SYSTEMTIME` (ex.: `E4 07` $\rightarrow$ `0x07E4` $= 2020$) estão guardados em **Little-endian**.
   * **Identificação de Arquiteturas de Processador em Cabeçalhos PE**: Em [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]], os *magic bytes* do campo `Machine` no cabeçalho PE estão gravados em Little-endian no disco: `4C 01` (`0x014C` para `x86`), `64 86` (`0x8664` para `x86-64`/`AMD64`) e `64 AA` (`0xAA64` para `ARM64` Little-endian).
   * **Compressão de Inteiros em `uLEB128`, Checksums e Condições YARA (`uint16(0) == 0x5a4d`)**: O algoritmo [[Codificação uLEB128 em Estruturas de Dados do Windows]] (*Unsigned Little Endian Base 128*) dispõe os grupos de 7 bits em ordem **Little-endian**, ao passo que o checksum `CRC32` no final dos ficheiros `TabState` do [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] é gravado em **Big-endian**. Já nas regras [[YARA - Introdução, Estrutura de Regras, Metadados e Condições|YARA]] e casos reais como o WannaCry em [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]], a condição `uint16(0) == 0x5a4d` lê os primeiros 2 bytes do cabeçalho PE (`4D 5A` = `"MZ"`) como um inteiro de 16 bits em **Little-endian** (`0x5A4D`).
 
@@ -122,7 +122,7 @@ Os sistemas informáticos diferem na ordem pela qual armazenam valores compostos
 - [[Números em Vírgula Flutuante (IEEE 754)]]
 - [[Organização de Estruturas de Dados em Binário]]
 - [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Marcadores Temporais no Windows (Timestamps)]]
+- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
 - [[Tipos de Dados e Associação de Ficheiros no Registry]]
 - [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]]
 - [[Artefacto Forense UserAssist]]

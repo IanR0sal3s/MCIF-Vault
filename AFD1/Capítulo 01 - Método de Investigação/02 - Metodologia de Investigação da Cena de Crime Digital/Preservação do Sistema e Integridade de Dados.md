@@ -23,7 +23,7 @@ aliases:
   - Funções de Hash Criptográficas
   - Colisões MD5
   - Write Blocker
-atualizado: 2026-11-11
+atualizado: 2026-11-18
 ---
 
 # Preservação do Sistema e Integridade de Dados
@@ -58,30 +58,7 @@ A **preservação do sistema** protege vestígios em análises *post-mortem* e *
 
 Sempre que dados importantes são guardados durante uma análise *post-mortem* ou *live*, deve ser calculado um **hash criptográfico** para demonstrar posteriormente que os dados não sofreram qualquer alteração.
 
-```mermaid
-flowchart LR
-    CH["Cryptographic Hash algorithms"] --> SHA["SHA standard"]
-    CH --> MDF["MD Family"]
-    CH --> RIP["RIPEMD (160, 256, 320 bits) - 1996"]
-    CH --> WHI["Whirlpool (512 bits) - 2004"]
-
-    SHA --> SHA1["SHA1 (160 bits) - 1995"]
-    SHA --> SHA2["SHA2 (224, 256, 384 or 512 bits) - 2002"]
-    SHA --> SHA3["SHA3 - Keccak (224, 256, 384 or 512 bits) - 2008"]
-
-    MDF --> MD5["MD5 - Broken since 2004 (128 bits) - 1992"]
-    MDF --> MD6["MD6 - SHA3 competitor - 2008"]
-```
-
-| Família / Padrão | Algoritmo | Tamanho do Resumo | Ano | Observações Técnicas |
-| :--- | :--- | :--- | :---: | :--- |
-| **SHA Standard** | `SHA-1` | 160 bits | 1995 | Primeira geração padrão SHA |
-| **SHA Standard** | `SHA-2` | 224, 256, 384 ou 512 bits | 2002 | Largamente utilizado (`SHA-256`, `SHA-512`) |
-| **SHA Standard** | `SHA-3` (*Keccak*) | 224, 256, 384 ou 512 bits | 2008 | Vencedor da competição SHA-3 |
-| **MD Family** | `MD5` | 128 bits | 1992 | **Quebrado desde 2004** |
-| **MD Family** | `MD6` | Variável | 2008 | Concorrente ao padrão SHA-3 |
-| **Outros** | `RIPEMD` | 160, 256 ou 320 bits | 1996 | Alternativa europeia |
-| **Outros** | `Whirlpool` | 512 bits | 2004 | Resumo de 512 bits |
+As propriedades matemáticas e famílias de algoritmos (`MD5` de 128 bits, `SHA-1` de 160 bits, `SHA-2`/`SHA-3` de 224–512 bits, `RIPEMD` e `Whirlpool`) encontram-se detalhadas na nota canónica [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]]. Em contexto forense, deve utilizar-se `SHA-2` (`SHA-256`/`SHA-512`) ou `SHA-3`, evitando `MD5` e `SHA-1` devido a colisões conhecidas.
 
 ---
 
@@ -152,6 +129,8 @@ Os valores de *hash*, por si sós, **não são suficientes** para garantir a int
 
 ## Notas relacionadas
 
+- [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]]
+- [[Assinaturas Digitais, PKI e GnuPG]]
 - [[Fases da Investigação Forense Digital]]
 - [[Pesquisa de Evidências e Reconstrução de Eventos]]
 - [[Exercícios Práticos - Integridade de Dados e Hashes]]

@@ -118,7 +118,7 @@ As ferramentas de triagem do Windows Registry analisam *hives* *offline* (`SAM`,
   * As ferramentas de triagem deste capítulo complementam o ecossistema estudado em [[Ferramentas de Análise e Extração do Registry]] (onde se abordam o **Registry Explorer** de Eric Zimmerman, o **RegRipper** e o **RegScanner** da NirSoft):
     * O módulo **Startup Applications** do *Mitec WRR* inspeciona as chaves `Run` e `RunOnce` detalhadas em [[Artefactos Forenses de Execução e Persistência no Registry]].
     * A secção de **última atividade do utilizador** do *RegistryReport* agrega artefactos residentes no `NTUSER.DAT`, como [[Artefacto Forense UserAssist|UserAssist]] e [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)|Listas MRU e TypedPaths]].
-    * Os metadados temporais de *Last Login Date*, *Password Reset Date* e *InstallDate* extraídos pelo `ForensicUserInfo` e pelo `Mitec WRR` estão armazenados internamente em formato binário `FILETIME` (64 bits Little-Endian) ou *Unix Epoch* (32 bits), cuja descodificação matemática é estudada em [[Marcadores Temporais no Windows (Timestamps)]] (ASSI) e [[Representação Forense de Data e Hora (Timestamps e SQLite)]] (AFD1 Cap. 3).
+    * Os metadados temporais de *Last Login Date*, *Password Reset Date* e *InstallDate* extraídos pelo `ForensicUserInfo` e pelo `Mitec WRR` estão armazenados internamente em formato binário `FILETIME` (64 bits Little-Endian) ou *Unix Epoch* (32 bits), cuja descodificação matemática é estudada em [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] (ASSI) e [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] (AFD1 Cap. 3).
 
 ---
 
@@ -155,6 +155,5 @@ As ferramentas de triagem do Windows Registry analisam *hives* *offline* (`SAM`,
 - [[Artefactos Forenses de Execução e Persistência no Registry]]
 - [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]]
 - [[Artefacto Forense UserAssist]]
-- [[Marcadores Temporais no Windows (Timestamps)]]
-- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
+- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
 - [[Capítulo 2 - Arranque e Aquisição Forense]]

@@ -73,6 +73,6 @@ flowchart LR
 
 ## Notas relacionadas
 
-- [[Conceitos de Cibersegurança, Terminologia e Vetores de Ataque]]
+- [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]]
 - [[Testes de Penetração - Metodologia, Pentest Request e Relatórios]]
 - [[Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)]]

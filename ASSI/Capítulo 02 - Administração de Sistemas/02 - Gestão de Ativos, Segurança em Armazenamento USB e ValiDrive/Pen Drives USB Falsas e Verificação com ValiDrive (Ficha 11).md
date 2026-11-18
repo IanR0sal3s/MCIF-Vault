@@ -68,7 +68,7 @@ Para validar a integridade e a capacidade física genuína de unidades USB antes
 ## Além da aula
 
 * **Integridade de Suportes de Destino na Aquisição Forense (`AFD1` Cap. 2 e `AFD1` Cap. 1)**: Nunca se deve utilizar um suporte externo de origem desconhecida ou não validada para receber imagens forenses ou ficheiros de triagem (`E01`/`dd`), uma vez que a sobreposição cíclica de uma pen falsa destruiria irremediavelmente os ficheiros de imagem e invalidaria os *hashes* descritos em [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]].
-* **Articulação com Políticas e Sanitização USB (`ASSI` Cap. 2 Blocos 01 e 02)**: A verificação com `ValiDrive` complementa a governação segura de dispositivos amovíveis de [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]] e os procedimentos específicos para memórias NAND Flash em [[Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash]].
+* **Articulação com Políticas e Sanitização USB (`ASSI` Cap. 2 Blocos 01 e 02)**: A verificação com `ValiDrive` complementa a governação segura de dispositivos amovíveis de [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]] e os procedimentos específicos para memórias NAND Flash em [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]].
 
 ---
 
@@ -96,5 +96,5 @@ Para validar a integridade e a capacidade física genuína de unidades USB antes
 - [[Capítulo 2 - Administração de Sistemas]]
 - [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]]
 - [[Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)]]
-- [[Eliminação Segura de Dados em SSDs SATA, NVMe e Memórias Flash]]
+- [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]
 - [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]]

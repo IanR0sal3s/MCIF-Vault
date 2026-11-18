@@ -203,4 +203,4 @@ A lista de ficheiros e DLLs armazenada dentro do `.pf` é decisiva em dois cená
 - [[Preservação do Sistema e Integridade de Dados]]
 - [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
 - [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Representação Forense de Data e Hora (Timestamps e SQLite)]]
+- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]

@@ -99,6 +99,6 @@ Para impedir a inserção em slots incompatíveis (SSD, Wi-Fi, modem 4G, etc.), 
    > Não. `M.2` é apenas o **conetor físico** (Layer 1). Um SSD M.2 pode usar interface `SATA` + protocolo `SATA`, interface `PCIe` + protocolo `AHCI`, ou interface `PCIe` + protocolo `NVMe`.
 
 ## Notas relacionadas
-- [[SSD vs HDD - DRAM, Flash NOR vs NAND e Desafios Forenses (Wear Leveling e Garbage Collection)]]
+- [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]
 - [[Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)]]
 - [[Interface SCSI, SAS e Comparação SCSI vs ATA]]
