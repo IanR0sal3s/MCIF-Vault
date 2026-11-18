@@ -68,7 +68,7 @@ flowchart LR
 
 | Nota | O que vais estudar |
 | :--- | :--- |
-| [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] | Épocas de 1970 e 1601, matriz de 14 formatos de software e queries SQLite Firefox/Chrome. |
+| [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · Nota Partilhada: AFD1, ASSI | Épocas de 1970 e 1601, matriz de 14 formatos de software e queries SQLite Firefox/Chrome. |
 | [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]] | Reversibilidade e inflação sem chave secreta em Base16, Base64 com *padding* e Base58 no Bitcoin. |
 
 > [!NOTE] Exercícios Laboratoriais do Capítulo 3 (Slide 34)

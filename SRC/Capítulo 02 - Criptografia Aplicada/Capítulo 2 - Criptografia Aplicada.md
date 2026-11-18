@@ -58,7 +58,7 @@ flowchart LR
 
 | Nota | Fonte | O que vais estudar |
 | :--- | :---: | :--- |
-| [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]] | Slides 34–35, 40–45; Stallings Cap. 11 | Propriedades de funções de *hash*, `MD5` (`128` bits, `md5sum`), família `SHA` (`SHA-1` `160` bits, `SHA-2`, `SHA-3`, `sha256sum`) e `RIPEMD`. |
+| [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]] · Nota Partilhada: AFD1, ASSI, SRC | Slides 34–35, 40–45; Stallings Cap. 11 | Propriedades de funções de *hash*, `MD5` (`128` bits, `md5sum`), família `SHA` (`SHA-1` `160` bits, `SHA-2`, `SHA-3`, `sha256sum`) e `RIPEMD`. |
 | [[Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais]] | Slides 36–39, 46–49; Stallings Cap. 11–12 | Esquemas com/sem confidencialidade ($E(K, M \parallel H(M))$, $M + H(M \parallel S)$), assinatura digital ($H(M)$ cifrado com $PR_A$), `MAC` (`C(K, M)`) e `HMAC` (`RFC 2104`). |
 
 ---
@@ -67,7 +67,7 @@ flowchart LR
 
 | Nota | Fonte | O que vais estudar |
 | :--- | :---: | :--- |
-| [[Assinaturas Digitais, PKI e GnuPG]] | Slides 50–57 | Gestão de chaves públicas, certificados `X.509` e `CA`, configuração de CA privada e revogação com `openssl`, e `GnuPG` (`OpenPGP`, `RFC 4880`, `--gen-key`, `--import`, `--export`). |
+| [[Assinaturas Digitais, PKI e GnuPG]] · Nota Partilhada: AFD1, ASSI, SRC | Slides 50–57 | Gestão de chaves públicas, certificados `X.509` e `CA`, configuração de CA privada e revogação com `openssl`, e `GnuPG` (`OpenPGP`, `RFC 4880`, `--gen-key`, `--import`, `--export`). |
 | [[SSH (Secure Shell), Port Forwarding e TLS 1.3]] | Slides 58–63; Kickoff 2–4 | Arquitetura `SSH` (negociação simétrica AES + autenticação por chaves `ssh-keygen`/`ssh-copy-id`), `scp`/`sshfs`, túneis `-L` (local) e `-R` (remoto), e `TLS 1.3` (`RSA 2048` + `X25519` + `AES-GCM 128`). |
 | [[Redes Privadas Virtuais (VPN) - IPSec e OpenVPN]] | Slides 64–67 | `IPSec` (camada de rede, interligação de redes) vs. `OpenVPN` (camada de transporte sobre SSL/TLS, *road warriors*), setup com `easy-rsa` e interface `tun`. |
 

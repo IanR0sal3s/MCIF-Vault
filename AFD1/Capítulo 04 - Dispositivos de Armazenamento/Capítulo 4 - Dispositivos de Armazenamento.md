@@ -51,7 +51,7 @@ flowchart LR
 
 | Nota | O que vais estudar |
 | :--- | :--- |
-| [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]] | `DRAM` vs. Flash `NOR`/`NAND`, `SLC` vs. `MLC`, hierarquia `Cell`/`Byte`/`Sector`/`Block`, *wear leveling*, *garbage collection* (ativo mesmo com *write blocker*) e impacto forense. |
+| [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]] · Nota Partilhada: AFD1, ASSI | `DRAM` vs. Flash `NOR`/`NAND`, `SLC` vs. `MLC`, hierarquia `Cell`/`Byte`/`Sector`/`Block`, *wear leveling*, *garbage collection* (ativo mesmo com *write blocker*) e impacto forense. |
 | [[Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD]] | Produção *consumer* vs. *industrial*, Pen USB (usa CPU) vs. SSD (processador próprio), camadas conector/interface/protocolo, chaves `M.2`, `PCIe` 1.0–5.0 e conectores Apple. |
 
 ---

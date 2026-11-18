@@ -35,7 +35,7 @@ flowchart LR
 
 | Nota | Slides | O que vais estudar |
 | :--- | :---: | :--- |
-| [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]] | 4–32 | *Data breaches*, terminologia essencial (*hack value*, *vulnerability*, *threat*, *exploit*, *payload*, *zero-day*, *pivoting/daisy chaining*, *bot*), fórmula do ataque e vetores por rede, máquina e aplicação. |
+| [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]] · Nota Partilhada: COD1, SRC | 4–32 | *Data breaches*, terminologia essencial (*hack value*, *vulnerability*, *threat*, *exploit*, *payload*, *zero-day*, *pivoting/daisy chaining*, *bot*), fórmula do ataque e vetores por rede, máquina e aplicação. |
 
 ---
 
