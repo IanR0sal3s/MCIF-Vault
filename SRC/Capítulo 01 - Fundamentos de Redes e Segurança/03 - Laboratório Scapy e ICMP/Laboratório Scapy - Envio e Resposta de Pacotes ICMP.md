@@ -102,7 +102,17 @@ def icmp_responder():
 > [!success]- Ver Resposta
 > `send()` envia um pacote construído na camada 3 sem aguardar resposta; ao especificar explicitamente `src=` no cabeçalho `IP()`, o `scapy` permite definir o endereço IP de origem (útil para responder em nome do destino original ou demonstrar *IP spoofing*).
 
-## Notas relacionadas
+---
 
-- [[Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS]]
-- [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees]] | `Bloco 02` |
+| **Seguinte** | [[Capítulo 1 - Fundamentos de Redes e Segurança]] · [[00 SRC]] | Fim do capítulo |
+| **Índice** | [[Capítulo 1 - Fundamentos de Redes e Segurança]] · [[00 SRC]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS]] · `Bloco 01`
+* [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]] · `Comum/`

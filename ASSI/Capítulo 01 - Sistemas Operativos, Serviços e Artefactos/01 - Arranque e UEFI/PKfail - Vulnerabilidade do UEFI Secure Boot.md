@@ -111,10 +111,17 @@ Em julho de 2024, a empresa de segurança Binarly reabriu a investigação do PK
 > [!success]- Ver Resposta
 > Apesar de o Secure Boot estar formalmente ativo, a proteção é ilusória: qualquer atacante que possua a chave privada pública de teste da AMI pode assinar *bootkits* ou modificar as bases de dados de arranque (`KEK`, `db`), executando código malicioso no arranque sem gerar alertas de violação criptográfica.
 
-## Notas relacionadas
+---
 
-- [[UEFI Secure Boot]]
-- [[UEFI Secure Boot - Chaves e Hierarquia]]
-- [[PKfail - Cadeia de Ataque e Deteção Forense]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[UEFI Secure Boot - Chaves e Hierarquia]] | `mesmo bloco` |
+| **Seguinte** | [[PKfail - Cadeia de Ataque e Deteção Forense]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[UEFI Secure Boot]] · `mesmo bloco`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`

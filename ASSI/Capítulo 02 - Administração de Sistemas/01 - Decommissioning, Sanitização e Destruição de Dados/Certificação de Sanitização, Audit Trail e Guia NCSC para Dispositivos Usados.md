@@ -112,12 +112,17 @@ O *National Cyber Security Centre* ([NCSC — ncsc.gov.uk](https://www.ncsc.gov.
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]]
-- [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]]
-- [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
-- [[Investigação Digital e Evidência Digital]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]] | `mesmo bloco` |
+| **Seguinte** | [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]] | `Comum/` · `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]] · `mesmo bloco`
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `AFD1 · Cap. 1`
+* [[Princípios e Rota do Manuseamento de Evidência Digital]] · `AFD1 · Cap. 1`
+* [[Investigação Digital e Evidência Digital]] · `AFD1 · Cap. 1`

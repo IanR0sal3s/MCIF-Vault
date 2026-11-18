@@ -134,12 +134,20 @@ sbecmd.exe -d C:\Caminho\Onde\Esta\UsrClass.dat --csv C:\Caminho\Relatorio_CSV
 > [!success]- Ver Resposta
 > `sbecmd.exe -d C:\Caminho\Onde\Esta\UsrClass.dat --csv C:\Caminho\Relatorio_CSV` (onde `-d` aponta para o diretório com o hive e `--csv` define o diretório de destino do ficheiro CSV).
 
-## Notas relacionadas
+---
 
-- [[Estrutura e Hives do Windows Registry]]
-- [[Ferramentas de Análise e Extração do Registry]]
-- [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]]
-- [[Artefactos Forenses de Dispositivos USB]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Investigação Digital e Evidência Digital]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Artefacto Forense UserAssist]] | `mesmo bloco` |
+| **Seguinte** | [[Artefactos Forenses de Dispositivos USB]] | `muda para Bloco 08` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 07` |
+
+### Conceitos Relacionados
+
+* [[Estrutura e Hives do Windows Registry]] · `Bloco 05`
+* [[Ferramentas de Análise e Extração do Registry]] · `Bloco 05`
+* [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]] · `mesmo bloco`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`
+* [[Investigação Digital e Evidência Digital]] · `AFD1 · Cap. 1`

@@ -163,12 +163,20 @@ sequenceDiagram
 > [!success]- Ver Resposta
 > (1) O servidor envia um desafio FIDO de uso único ao navegador do computador, que o exibe num **código QR**; (2) o utilizador lê o código QR com o smartphone e desbloqueia o dispositivo (PIN/biometria); (3) o smartphone e o computador comunicam obrigatoriamente por **Bluetooth** para provar proximidade física no mesmo espaço; (4) o smartphone assina o desafio com a chave privada local e o servidor valida a assinatura com a chave pública registada.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay]]
-- [[Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)]]
-- [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]]
-- [[Cheat Sheet - Administração de Sistemas e Controlo de Acessos]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay]] | `mesmo bloco` |
+| **Seguinte** | [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 06` |
+
+### Conceitos Relacionados
+
+* [[Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)]] · `Bloco 04`
+* [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking]] · `Bloco 05`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`
+* [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]] · `AFD1 · Cap. 2`
+* [[Cheat Sheet - Administração de Sistemas e Controlo de Acessos]] · `mesmo cap.`

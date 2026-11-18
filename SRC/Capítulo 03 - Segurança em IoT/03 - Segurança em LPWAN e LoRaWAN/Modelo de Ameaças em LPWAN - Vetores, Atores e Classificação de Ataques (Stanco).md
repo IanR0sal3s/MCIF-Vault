@@ -85,8 +85,16 @@ Uma arquitetura `LPWAN` apresenta uma superfície de ataque distribuída — des
 > [!success]- Ver Resposta
 > No *DoS* dirigido à energia, o atacante acorda repetidamente dispositivos em modo *sleep*; no *Jamming*, o ruído rádio faz o dispositivo percecionar baixa qualidade de canal e aumentar a potência de transmissão, acelerando a descarga da bateria em ambos os casos.
 
-## Notas relacionadas
+---
 
-- [[LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)]]
-- [[Ataques e Contramedidas por Camada em IoT (Sharma)]]
-- [[TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)]] | `mesmo bloco` |
+| **Seguinte** | [[TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)]] | `muda para Bloco 04` |
+| **Índice** | [[Capítulo 3 - Segurança em IoT]] · [[00 SRC]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Ataques e Contramedidas por Camada em IoT (Sharma)]] · `Bloco 01`

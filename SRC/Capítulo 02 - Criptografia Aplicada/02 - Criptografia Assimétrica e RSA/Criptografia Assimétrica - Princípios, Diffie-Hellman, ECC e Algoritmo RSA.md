@@ -94,9 +94,18 @@ A segurança do `RSA` assenta na dificuldade computacional da **fatorização do
 > [!success]- Ver Resposta
 > O `RSA` baseia-se na dificuldade de fatorizar $n = p \cdot q$ (produto de dois primos grandes), enquanto o `Diffie-Hellman` clássico se baseia na dificuldade do problema do logaritmo discreto em aritmética modular.
 
-## Notas relacionadas
+---
 
-- [[Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4]]
-- [[Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais]]
-- [[SSH (Secure Shell), Port Forwarding e TLS 1.3]]
-- [[TBL 2 - Fundamentos de Criptografia]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4]] | `Bloco 01` |
+| **Seguinte** | [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]] | `Comum/` · `muda para Bloco 03` |
+| **Índice** | [[Capítulo 2 - Criptografia Aplicada]] · [[00 SRC]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais]] · `Bloco 03`
+* [[SSH (Secure Shell), Port Forwarding e TLS 1.3]] · `Bloco 04`
+* [[TBL 2 - Fundamentos de Criptografia]] · `Bloco 05`

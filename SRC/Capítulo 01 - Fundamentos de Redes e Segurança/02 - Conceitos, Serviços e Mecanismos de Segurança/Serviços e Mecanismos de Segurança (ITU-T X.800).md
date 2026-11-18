@@ -82,7 +82,16 @@ Não estão associados a nenhum serviço ou camada protocolar em particular (nos
 > [!success]- Ver Resposta
 > *Traffic padding* insere dados fictícios nos intervalos entre transmissões reais para impedir a análise de tráfego (apoiando a confidencialidade de fluxo); *Notarization* recorre a uma terceira entidade de confiança para atestar propriedades como integridade, origem, tempo ou destino de uma comunicação.
 
-## Notas relacionadas
+---
 
-- [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]]
-- [[Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]] | `Comum/` · `mesmo bloco` |
+| **Seguinte** | [[Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Fundamentos de Redes e Segurança]] · [[00 SRC]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs]] · `Bloco 01`

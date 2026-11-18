@@ -102,13 +102,22 @@ A codificação binário-para-texto converte bytes em caracteres imprimíveis pa
 > [!success]- Ver Resposta
 > O **Base58** elimina os caracteres não alfanuméricos (`+` e `/`) e os quatro caracteres visualmente ambíguos quando impressos (**`0`**, **`O`**, **`I`** e **`l`**), reduzindo o alfabeto para 58 símbolos alfanuméricos. É utilizado nas chaves públicas e privadas de **Bitcoin**.
 
-## Notas relacionadas
+---
 
-- [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Recuperação de Clipboard e Sincronização na Timeline]]
-- [[Windows Activity Timeline - Arquitetura e Base SQLite]]
-- [[Abuso e Vetores de Ataque com Ficheiros LNK]]
-- [[Artefacto Forense UserAssist]]
-- [[Capítulo 3 - Organização de Dados]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] | `Comum/` · `mesmo bloco` |
+| **Seguinte** | [[Capítulo 3 - Organização de Dados]] · [[00 AFD1]] | Fim do capítulo |
+| **Índice** | [[Capítulo 3 - Organização de Dados]] · [[00 AFD1]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Sistemas de Numeração e Conversão entre Bases]] · `Bloco 02`
+* [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] · `Bloco 03`
+* [[Preservação do Sistema e Integridade de Dados]] · `Cap. 1`
+* [[Recuperação de Clipboard e Sincronização na Timeline]] · `ASSI · Cap. 1`
+* [[Windows Activity Timeline - Arquitetura e Base SQLite]] · `ASSI · Cap. 1`
+* [[Abuso e Vetores de Ataque com Ficheiros LNK]] · `ASSI · Cap. 1`
+* [[Artefacto Forense UserAssist]] · `ASSI · Cap. 1`

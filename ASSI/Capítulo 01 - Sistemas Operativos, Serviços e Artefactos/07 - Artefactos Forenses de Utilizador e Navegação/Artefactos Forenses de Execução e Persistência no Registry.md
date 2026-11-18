@@ -161,11 +161,18 @@ HKCU\Software\Microsoft\Windows\CurrentVersion\Search\RecentApps
 > [!success]- Ver Resposta
 > (1) A chave `RecentApps` existe no **Windows 10**, mas **foi descontinuada e removida no Windows 11**; (2) A subchave `RecentItems` guarda no máximo **10 ficheiros** recentes por aplicação, mas quando atinge o 10.º ficheiro, as entradas remanescentes são reordenadas **alfabeticamente** e não por ordem cronológica (FIFO), pelo que o número da subchave não reflete a sequência temporal de abertura.
 
-## Notas relacionadas
+---
 
-- [[Estrutura e Hives do Windows Registry]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Salvaguarda e Monitorização do Registry]]
-- [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]]
-- [[Artefacto Forense UserAssist]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Salvaguarda e Monitorização do Registry]] | `Bloco 06` |
+| **Seguinte** | [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 07` |
+
+### Conceitos Relacionados
+
+* [[Estrutura e Hives do Windows Registry]] · `Bloco 05`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`
+* [[Artefacto Forense UserAssist]] · `mesmo bloco`

@@ -211,12 +211,18 @@ Os procedimentos de inspeção com `vssadmin`, criação de atalhos simbólicos 
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
-- [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]]
-- [[LastActivityView e Reconstituição Temporal Live]]
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
-- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]] | `mesmo bloco` |
+| **Seguinte** | [[Taxonomia dos Artefactos de Execução no Windows]] | `muda para Bloco 10` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 09` |
+
+### Conceitos Relacionados
+
+* [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]] · `mesmo bloco`
+* [[LastActivityView e Reconstituição Temporal Live]] · `mesmo bloco`
+* [[Investigação Forense Digital - Análise Live vs Post-Mortem]] · `AFD1 · Cap. 1`
+* [[Princípios e Rota do Manuseamento de Evidência Digital]] · `AFD1 · Cap. 1`
+* [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] · `AFD1 · Cap. 3`

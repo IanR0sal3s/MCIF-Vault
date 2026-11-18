@@ -93,8 +93,17 @@ Quando um `SYN scan` (`-sS`) reporta a maioria dos portos como `filtered`, cruza
    > [!success]- Ver Resposta
    > O porto está **aberto**, pois o `ACK scan` provou que o tráfego atravessa o filtro sem ser bloqueado (`unfiltered`) e o `FIN scan` não recebeu `RST` de volta.
 
-## Notas relacionadas
-- [[Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP]]
-- [[Técnicas de Port Scanning TCP, UDP e IDLE Scan]]
-- [[Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest]]
-- [[Cheat Sheet - Scanning de Redes e Nmap]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Técnicas de Port Scanning TCP, UDP e IDLE Scan]] | `Bloco 02` |
+| **Seguinte** | [[Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest]] | `muda para Bloco 04` |
+| **Índice** | [[Capítulo 4 - Scanning de Redes]] · [[00 COD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP]] · `Bloco 01`
+* [[Cheat Sheet - Scanning de Redes e Nmap]] · `mesmo cap.`

@@ -75,8 +75,17 @@ flowchart LR
 > [!success]- Ver Resposta
 > Porque reutilizar chaves de sessão estáticas com contadores de *frames* reiniciados a zero permite ataques de repetição (*replay*) com pacotes capturados anteriormente; a solução segura é preservar os contadores em memória não volátil ou aprovisionar novas chaves de sessão.
 
-## Notas relacionadas
+---
 
-- [[Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)]]
-- [[TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)]]
-- [[Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)]] | `Bloco 02` |
+| **Seguinte** | [[Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - Segurança em IoT]] · [[00 SRC]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)]] · `Bloco 04`
+* [[Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)]] · `Bloco 01`

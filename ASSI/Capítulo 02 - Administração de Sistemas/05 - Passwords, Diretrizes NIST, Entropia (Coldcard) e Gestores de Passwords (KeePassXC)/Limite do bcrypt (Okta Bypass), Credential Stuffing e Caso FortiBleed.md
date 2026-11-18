@@ -119,10 +119,18 @@ Documentado em [Tech Insider — FortiBleed (2026)](https://tech-insider.org/for
 > [!success]- Ver Resposta
 > O `FortiBleed` (`86,644` firewalls Fortinet em `194` países) não explorou uma vulnerabilidade inédita, mas agregou credenciais antigas vazadas, logins obtidos por força bruta, hashes quebrados e configurações exfiltradas por CVEs conhecidas (como `CVE-2018-13379`). As credenciais continuaram válidas pela ausência de **rotação após compromissos/correções** e falta de **2FA**.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]]
-- [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]]
-- [[Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)]]
-- [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]] | `mesmo bloco` |
+| **Seguinte** | [[Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]] · `Bloco 06`
+* [[Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)]] · `Bloco 06`
+* [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]] · `Bloco 06`

@@ -203,14 +203,22 @@ sudo dd bs=4M if=input.iso of=/dev/sdx conv=fdatasync
 > [!success]- Ver Resposta
 > O comando `sudo dd bs=4M if=input.iso of=/dev/sdx conv=fdatasync`, onde `bs=4M` define blocos de `4 MB`, `of=/dev/sdx` aponta para o dispositivo de bloco da pen USB e **`conv=fdatasync`** força a descarga física integral dos *buffers* para a memória flash antes de o comando terminar.
 
-## Notas relacionadas
+---
 
-- [[Arranque Forense e Processo de Boot (BIOS e Código Máquina)]]
-- [[Processo de Arranque UEFI, Secure Boot e Fluxo do Windows]]
-- [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]
-- [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]]
-- [[Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager]]
-- [[Estrutura e Hives do Windows Registry]]
-- [[Ferramentas de Análise e Extração do Registry]]
-- [[Extração da AmCache e Comparação Forense com a ShimCache]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Processo de Arranque UEFI, Secure Boot e Fluxo do Windows]] | `Bloco 01` |
+| **Seguinte** | [[Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Arranque Forense e Processo de Boot (BIOS e Código Máquina)]] · `Bloco 01`
+* [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]] · `Bloco 03`
+* [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]] · `Bloco 05`
+* [[Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager]] · `Bloco 05`
+* [[Estrutura e Hives do Windows Registry]] · `ASSI · Cap. 1`
+* [[Ferramentas de Análise e Extração do Registry]] · `ASSI · Cap. 1`
+* [[Extração da AmCache e Comparação Forense com a ShimCache]] · `ASSI · Cap. 1`

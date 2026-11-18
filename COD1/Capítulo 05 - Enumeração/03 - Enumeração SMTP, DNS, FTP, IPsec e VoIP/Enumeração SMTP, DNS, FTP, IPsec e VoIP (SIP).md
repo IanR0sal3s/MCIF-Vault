@@ -118,8 +118,17 @@ A ferramenta **`AutoRecon`** (`github.com/Tib3rius/AutoRecon`) automatiza o flux
    > [!success]- Ver Resposta
    > Algoritmos de cifra e hash suportados, tipo de autenticação, algoritmo de distribuição de chaves (Diffie-Hellman) e tempo de vida da Associação de Segurança (SA).
 
-## Notas relacionadas
-- [[Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP]]
-- [[Enumeração SNMP (Community Strings, MIB e OIDs)]]
-- [[Contramedidas de Enumeração e Metodologia Pentest]]
-- [[Redes Privadas Virtuais (VPN) - IPSec e OpenVPN]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Enumeração SNMP (Community Strings, MIB e OIDs)]] | `Bloco 02` |
+| **Seguinte** | [[Contramedidas de Enumeração e Metodologia Pentest]] | `muda para Bloco 04` |
+| **Índice** | [[Capítulo 5 - Enumeração]] · [[00 COD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP]] · `Bloco 01`
+* [[Redes Privadas Virtuais (VPN) - IPSec e OpenVPN]] · `SRC · Cap. 2`

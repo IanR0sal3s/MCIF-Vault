@@ -74,7 +74,16 @@ Na segurança de redes e criptografia, destacam-se quatro entidades principais r
 > [!success]- Ver Resposta
 > Permitem que sistemas desenvolvidos de forma independente interoperem com base em regras públicas e escrutináveis pela comunidade técnica, alinhando-se com o princípio de desenho aberto (*open design*).
 
-## Notas relacionadas
+---
 
-- [[Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS]]
-- [[Serviços e Mecanismos de Segurança (ITU-T X.800)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS]] | `mesmo bloco` |
+| **Seguinte** | [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]] | `Comum/` · `muda para Bloco 02` |
+| **Índice** | [[Capítulo 1 - Fundamentos de Redes e Segurança]] · [[00 SRC]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Serviços e Mecanismos de Segurança (ITU-T X.800)]] · `Bloco 02`

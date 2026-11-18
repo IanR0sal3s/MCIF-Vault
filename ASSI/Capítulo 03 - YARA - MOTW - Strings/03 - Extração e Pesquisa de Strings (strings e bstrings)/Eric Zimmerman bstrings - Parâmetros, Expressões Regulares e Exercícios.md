@@ -239,12 +239,18 @@ bstrings --lr bitcoin -f c:\windows\notepad.exe
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Conceito de Strings e Comando strings em Unix-Linux]]
-- [[Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)]]
-- [[YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex]]
-- [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
-- [[Estrutura e Hives do Windows Registry]]
-- [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)]] | `mesmo bloco` |
+| **Seguinte** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | Fim do capítulo |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Conceito de Strings e Comando strings em Unix-Linux]] · `mesmo bloco`
+* [[YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex]] · `Bloco 01`
+* [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]] · `AFD1 · Cap. 3`
+* [[Estrutura e Hives do Windows Registry]] · `Cap. 1`
+* [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] · `Cap. 1`

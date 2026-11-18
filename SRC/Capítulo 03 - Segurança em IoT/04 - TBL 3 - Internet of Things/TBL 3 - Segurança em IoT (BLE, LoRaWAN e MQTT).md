@@ -43,9 +43,16 @@ Síntese e fundamentação dos **10 cenários práticos** do `TBL #3` (`TBL_3_EN
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)]]
-- [[Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)]]
-- [[LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)]]
-- [[Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)]] | `Bloco 03` |
+| **Seguinte** | [[Capítulo 3 - Segurança em IoT]] · [[00 SRC]] | Fim do capítulo |
+| **Índice** | [[Capítulo 3 - Segurança em IoT]] · [[00 SRC]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)]] · `Bloco 01`
+* [[Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)]] · `Bloco 02`
+* [[LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)]] · `Bloco 03`

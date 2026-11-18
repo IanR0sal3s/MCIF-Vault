@@ -122,12 +122,20 @@ flowchart TD
 > [!success]- Ver Resposta
 > Correspondem aos **Princípios ACPO** (*Association of Chief Police Officers*) do Reino Unido, que também serviram de base à norma internacional **ISO/IEC 27037**.
 
-## Notas relacionadas
+---
 
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
-- [[Fases da Investigação Forense Digital]]
-- [[Análise Forense e Criação a Pedido do Prefetch]]
-- [[LastActivityView e Reconstituição Temporal Live]]
-- [[Acesso Forense e Montagem de Shadow Copies]]
-- [[Capítulo 1 - Método de Investigação]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Exercícios Práticos - Integridade de Dados e Hashes]] | `Bloco 02` |
+| **Seguinte** | [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `mesmo bloco`
+* [[Fases da Investigação Forense Digital]] · `Bloco 02`
+* [[Análise Forense e Criação a Pedido do Prefetch]] · `ASSI · Cap. 1`
+* [[LastActivityView e Reconstituição Temporal Live]] · `ASSI · Cap. 1`
+* [[Acesso Forense e Montagem de Shadow Copies]] · `ASSI · Cap. 1`

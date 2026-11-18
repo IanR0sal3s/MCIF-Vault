@@ -616,6 +616,68 @@ def render_markdown_index(index_data: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def extract_moc_order_and_placements(vault_root: Path, notes: dict[str, dict]) -> tuple[dict[str, dict[str, int]], dict[str, list[str]]]:
+    """Extrai a ordem pedagógica exata das notas nos MOCs de capítulo e os atalhos de Comum/."""
+    alias_lookup: dict[str, str] = {}
+    for nid, info in notes.items():
+        alias_lookup[nid.lower()] = nid
+        alias_lookup[info["title"].lower()] = nid
+        for a in info["aliases"]:
+            alias_lookup[a.lower()] = nid
+
+    order_map: dict[str, dict[str, int]] = {}
+    placements: dict[str, list[str]] = {}
+
+    for uc_name in ("AFD1", "ASSI", "COD1", "SRC"):
+        uc_dir = vault_root / uc_name
+        if not uc_dir.is_dir():
+            continue
+        for moc_path in sorted(uc_dir.glob("Capítulo */Capítulo *.md")):
+            cap_dir = moc_path.parent
+            blk_dirs: dict[int, str] = {}
+            for sub in sorted(cap_dir.iterdir()):
+                if sub.is_dir():
+                    m_sub = re.match(r"^0*(\d+)\s*-\s*", sub.name)
+                    if m_sub:
+                        blk_dirs[int(m_sub.group(1))] = sub.relative_to(vault_root).as_posix()
+
+            cur_folder: str | None = None
+            seq_idx = 0
+            for ln in moc_path.read_text(encoding="utf-8", errors="ignore").splitlines():
+                m_h = re.match(r"^#{2,3}\s+(.+)$", ln)
+                if m_h:
+                    h_txt = m_h.group(1).strip()
+                    if h_txt in ("Navegação", "Ligações Transversais") or "Consulta Rápida" in h_txt:
+                        cur_folder = None
+                    elif "Parte A" in h_txt or "Parte B" in h_txt:
+                        pass
+                    else:
+                        m_num = re.search(r"\(`?0*(\d+)\s*-\s*[^`)]+`?\)", h_txt) or re.match(r"^(?:Bloco\s+)?0*(\d+)\b", h_txt, re.I)
+                        if m_num and int(m_num.group(1)) in blk_dirs:
+                            cur_folder = blk_dirs[int(m_num.group(1))]
+                            seq_idx = 0
+                        else:
+                            cur_folder = cap_dir.relative_to(vault_root).as_posix()
+                            seq_idx = 0
+                    continue
+
+                if ln.lstrip().startswith("|") and cur_folder:
+                    m_lnk = re.search(r"\[\[([^\]|#]+)", ln)
+                    if m_lnk:
+                        target_id = alias_lookup.get(m_lnk.group(1).strip().lower())
+                        if target_id and notes[target_id]["tipo"] != "indice":
+                            seq_idx += 1
+                            order_map.setdefault(target_id, {})
+                            if cur_folder not in order_map[target_id]:
+                                order_map[target_id][cur_folder] = seq_idx
+                            if notes[target_id]["uc"] == "COMUM":
+                                placements.setdefault(target_id, [])
+                                if cur_folder not in placements[target_id]:
+                                    placements[target_id].append(cur_folder)
+
+    return order_map, placements
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="MCIF Vault Indexer & Link Suggester")
     parser.add_argument(
@@ -667,6 +729,8 @@ def main() -> int:
         json.dumps(index_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
+    order_map, placements = extract_moc_order_and_placements(vault_root, notes_by_id := {n["id"]: n for n in index_data["notes"]})
+
     compact_notes = []
     with jsonl_path.open("w", encoding="utf-8") as fp:
         for n in index_data["notes"]:
@@ -683,6 +747,7 @@ def main() -> int:
                 "cross_uc_links": n["cross_uc_links"],
                 "path": n["path"],
             }
+            n_places = placements.get(n["id"], [])
             compact_notes.append({
                 "id": n["id"],
                 "title": n["title"],
@@ -691,6 +756,9 @@ def main() -> int:
                 "bloco": n["bloco"],
                 "tipo": n["tipo"],
                 "path": n["path"],
+                "order_map": order_map.get(n["id"], {}),
+                "placements": n_places,
+                "shared_ucs": sorted({p.split("/")[0] for p in n_places}),
             })
             fp.write(json.dumps(compact, ensure_ascii=False) + "\n")
 

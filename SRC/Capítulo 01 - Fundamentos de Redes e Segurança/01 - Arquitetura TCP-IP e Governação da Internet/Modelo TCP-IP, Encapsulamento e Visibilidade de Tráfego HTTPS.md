@@ -97,7 +97,16 @@ Os slides 12–13 listam os conceitos de redes pré-requisito para a disciplina:
 > [!success]- Ver Resposta
 > A cifragem protege a confidencialidade do *payload* aplicacional, mas não oculta metadados de rede nem padrões temporais e volumétricos (análise de tráfego), que podem ainda inferir comportamentos ou serviços acedidos.
 
-## Notas relacionadas
+---
 
-- [[Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs]]
-- [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 1 - Fundamentos de Redes e Segurança]] | Início do capítulo |
+| **Seguinte** | [[Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Fundamentos de Redes e Segurança]] · [[00 SRC]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]] · `Comum/`

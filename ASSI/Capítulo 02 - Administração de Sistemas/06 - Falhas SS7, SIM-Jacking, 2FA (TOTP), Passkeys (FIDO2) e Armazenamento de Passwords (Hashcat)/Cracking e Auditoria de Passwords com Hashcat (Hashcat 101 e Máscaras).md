@@ -138,12 +138,20 @@ hashcat -m 1000 -a 0 -o cracked_ntlm.txt sam_hashes.txt /usr/share/wordlists/roc
 > [!success]- Ver Resposta
 > **`-m 0`** seleciona hashes `MD5`; **`-a 3`** ativa o ataque de força bruta por máscara; **`-o results.txt`** guarda os resultados recuperados em `results.txt`; **`FileWithHashesToCrack`** fornece os hashes alvo; e **`?a?a?a?a?a?a?a`** testa todas as palavras-passe de 7 caracteres sobre os 95 caracteres ASCII imprimíveis, totalizando **$95^7$ combinações**.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]]
-- [[Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)]]
-- [[Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)]]
-- [[Exercícios Práticos - Integridade de Dados e Hashes]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Cheat Sheet - Administração de Sistemas e Controlo de Acessos]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]] | `mesmo bloco` |
+| **Seguinte** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | Fim do capítulo |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 06` |
+
+### Conceitos Relacionados
+
+* [[Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)]] · `Bloco 05`
+* [[Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)]] · `AFD1 · Cap. 2`
+* [[Exercícios Práticos - Integridade de Dados e Hashes]] · `AFD1 · Cap. 1`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`
+* [[Cheat Sheet - Administração de Sistemas e Controlo de Acessos]] · `mesmo cap.`

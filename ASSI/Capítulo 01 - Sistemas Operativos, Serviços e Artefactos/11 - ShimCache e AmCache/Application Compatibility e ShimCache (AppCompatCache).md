@@ -205,13 +205,18 @@ AppCompatCacheParser.exe --csv C:\Temp\Relatorio_Shim
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
-- [[Extração da AmCache e Comparação Forense com a ShimCache]]
-- [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]] | `mesmo bloco` |
+| **Seguinte** | [[AmCache - Arquitetura, Hives e Evolução para SQLite]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 11` |
+
+### Conceitos Relacionados
+
+* [[Extração da AmCache e Comparação Forense com a ShimCache]] · `mesmo bloco`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `Bloco 10`
+* [[Investigação Forense Digital - Análise Live vs Post-Mortem]] · `AFD1 · Cap. 1`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`

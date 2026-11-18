@@ -143,14 +143,21 @@ Os caracteres ASCII puros (`'O'` = `0x4F` e `'l'` = `0x6C`) têm exatamente a me
 > [!success]- Ver Resposta
 > A pesquisa falhará estruturas e strings do Windows gravadas em **UTF-16LE** (`4F 00 6C 00 E1 00`). Uma pesquisa pericial completa exige configurar a ferramenta para testar simultaneamente ASCII/Latin-1, UTF-8 e UTF-16LE.
 
-## Notas relacionadas
+---
 
-- [[Endianness e Ordem de Armazenamento]]
-- [[Organização de Estruturas de Dados em Binário]]
-- [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
-- [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]
-- [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]]
-- [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
-- [[Tipos de Dados e Associação de Ficheiros no Registry]]
-- [[Estrutura Interna e Algoritmo de Hashing do Prefetch]]
-- [[Capítulo 3 - Organização de Dados]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Endianness e Ordem de Armazenamento]] | `Bloco 02` |
+| **Seguinte** | [[Organização de Estruturas de Dados em Binário]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - Organização de Dados]] · [[00 AFD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]] · `Bloco 04`
+* [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] · `ASSI · Cap. 1`
+* [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]] · `ASSI · Cap. 1`
+* [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]] · `ASSI · Cap. 1`
+* [[Tipos de Dados e Associação de Ficheiros no Registry]] · `ASSI · Cap. 1`
+* [[Estrutura Interna e Algoritmo de Hashing do Prefetch]] · `ASSI · Cap. 1`

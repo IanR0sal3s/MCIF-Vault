@@ -139,10 +139,18 @@ flowchart LR
 > [!success]- Ver Resposta
 > O **`Vishing`** explora a engenharia social em chamadas de voz (como o exemplo da DEF CON com áudio de bebé a chorar para enganar uma operadora), enquanto o **`StingRay`** é uma torre celular falsa que capta ligações rádio locais e força o **downgrade para `2G`/`3G`** porque estas gerações possuem cifragem fraca ou inexistente, permitindo ao intercetor decifrar chamadas de voz e mensagens SMS.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]]
-- [[Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)]]
-- [[Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones]]
-- [[Cheat Sheet - Administração de Sistemas e Controlo de Acessos]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin)]] | `Bloco 05` |
+| **Seguinte** | [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 06` |
+
+### Conceitos Relacionados
+
+* [[Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)]] · `Bloco 04`
+* [[Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones]] · `Bloco 01`
+* [[Cheat Sheet - Administração de Sistemas e Controlo de Acessos]] · `mesmo cap.`

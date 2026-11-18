@@ -183,9 +183,14 @@ sc stop SysMain
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Estrutura Interna e Algoritmo de Hashing do Prefetch]]
-- [[Análise Forense e Criação a Pedido do Prefetch]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Taxonomia dos Artefactos de Execução no Windows]] | `mesmo bloco` |
+| **Seguinte** | [[Estrutura Interna e Algoritmo de Hashing do Prefetch]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 10` |
+
+### Conceitos Relacionados
+
+* [[Análise Forense e Criação a Pedido do Prefetch]] · `mesmo bloco`

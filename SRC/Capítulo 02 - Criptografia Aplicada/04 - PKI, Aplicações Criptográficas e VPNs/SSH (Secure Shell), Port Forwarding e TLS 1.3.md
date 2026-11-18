@@ -99,8 +99,16 @@ Na análise de uma ligação `TLS 1.3` válida (`www.ipleiria.pt`), surgem **3 a
 > [!success]- Ver Resposta
 > `ssh -L` (*Local Port Forwarding*) escuta num porto da máquina cliente e encaminha ligações através do servidor SSH para um serviço remoto; `ssh -R` (*Remote Port Forwarding*) escuta num porto do servidor SSH remoto e encaminha ligações de volta através do cliente SSH para um destino acessível a partir do cliente.
 
-## Notas relacionadas
+---
 
-- [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]]
-- [[Assinaturas Digitais, PKI e GnuPG]]
-- [[Redes Privadas Virtuais (VPN) - IPSec e OpenVPN]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Assinaturas Digitais, PKI e GnuPG]] | `Comum/` · `mesmo bloco` |
+| **Seguinte** | [[Redes Privadas Virtuais (VPN) - IPSec e OpenVPN]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Criptografia Aplicada]] · [[00 SRC]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]] · `Bloco 02`

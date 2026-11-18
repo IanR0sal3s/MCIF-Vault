@@ -159,12 +159,18 @@ Action Time         Description   Filename               Full Path
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
-- [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]]
-- [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Artefactos Forenses de Dispositivos USB]] | `Bloco 08` |
+| **Seguinte** | [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 09` |
+
+### Conceitos Relacionados
+
+* [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]] · `mesmo bloco`
+* [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]] · `Bloco 10`
+* [[Investigação Forense Digital - Análise Live vs Post-Mortem]] · `AFD1 · Cap. 1`
+* [[Princípios e Rota do Manuseamento de Evidência Digital]] · `AFD1 · Cap. 1`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`

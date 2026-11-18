@@ -94,7 +94,17 @@ O **Google Hacking** utiliza operadores avançados de pesquisa para construir *s
    > [!success]- Ver Resposta
    > Os anúncios de emprego revelam frequentemente a pilha tecnológica interna (versões de sistemas operativos, firewalls, SIEMs, linguagens de desenvolvimento, bases de dados, fornecedores cloud) e os perfis de equipa, auxiliando tanto na escolha de vetores técnicos como no desenho de pretextos de engenharia social.
 
-## Notas relacionadas
-- [[OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail]]
-- [[WHOIS, DNS, Networking Footprinting e Engenharia Social]]
-- [[Footprinting Pentest e Contramedidas (Metodologia Prática)]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 3 - Rastreamento e Reconhecimento]] | Início do capítulo |
+| **Seguinte** | [[OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 3 - Rastreamento e Reconhecimento]] · [[00 COD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[WHOIS, DNS, Networking Footprinting e Engenharia Social]] · `Bloco 03`
+* [[Footprinting Pentest e Contramedidas (Metodologia Prática)]] · `Bloco 04`

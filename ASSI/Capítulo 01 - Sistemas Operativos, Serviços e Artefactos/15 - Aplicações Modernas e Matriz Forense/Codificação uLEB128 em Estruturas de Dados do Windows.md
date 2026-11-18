@@ -186,11 +186,16 @@ def read_uleb128(stream):
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]
-- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
-- [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Endianness e Ordem de Armazenamento]]
-- [[Organização de Estruturas de Dados em Binário]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] | `mesmo bloco` |
+| **Seguinte** | [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 15` |
+
+### Conceitos Relacionados
+
+* [[Sistemas de Numeração e Conversão entre Bases]] · `AFD1 · Cap. 3`
+* [[Endianness e Ordem de Armazenamento]] · `AFD1 · Cap. 3`
+* [[Organização de Estruturas de Dados em Binário]] · `AFD1 · Cap. 3`

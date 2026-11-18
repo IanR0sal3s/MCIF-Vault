@@ -81,7 +81,17 @@ O **Whonix** resolve o problema clássico de uma aplicação comprometida descob
    > [!success]- Ver Resposta
    > O `kali-anonsurf` força o encaminhamento global do tráfego do sistema (incluindo DNS) através da rede Tor via `iptables`. Com `ProxyChains`, é essencial garantir que o DNS também passa pelo proxy (`proxy_dns`) e recordar que apenas tráfego TCP é suportado pelo SOCKS/Tor.
 
-## Notas relacionadas
-- [[Ambiente de Hacking - Kali Linux, Commando VM e Virtualização]]
-- [[Redes Privadas Virtuais (VPN) - IPSec e OpenVPN]]
-- [[Footprinting Pentest e Contramedidas (Metodologia Prática)]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ambiente de Hacking - Kali Linux, Commando VM e Virtualização]] | `Bloco 01` |
+| **Seguinte** | [[Capítulo 2 - Preparação do Ambiente Laboratorial]] · [[00 COD1]] | Fim do capítulo |
+| **Índice** | [[Capítulo 2 - Preparação do Ambiente Laboratorial]] · [[00 COD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Redes Privadas Virtuais (VPN) - IPSec e OpenVPN]] · `SRC · Cap. 2`
+* [[Footprinting Pentest e Contramedidas (Metodologia Prática)]] · `Cap. 3`

@@ -152,15 +152,21 @@ Conforme compilado na síntese de pastas críticas de sistema (Slide 157):
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]
-- [[Codificação uLEB128 em Estruturas de Dados do Windows]]
-- [[Cheat Sheet - Artefactos de Execução e Sistema no Windows]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Investigação Digital e Evidência Digital]]
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Fases da Investigação Forense Digital]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Codificação uLEB128 em Estruturas de Dados do Windows]] | `mesmo bloco` |
+| **Seguinte** | [[Ficha Prática e Questionário - Shell, Atividade e Matriz Forense]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 15` |
+
+### Conceitos Relacionados
+
+* [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] · `mesmo bloco`
+* [[Cheat Sheet - Artefactos de Execução e Sistema no Windows]] · `mesmo bloco`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `Bloco 10`
+* [[Investigação Digital e Evidência Digital]] · `AFD1 · Cap. 1`
+* [[Investigação Forense Digital - Análise Live vs Post-Mortem]] · `AFD1 · Cap. 1`
+* [[Fases da Investigação Forense Digital]] · `AFD1 · Cap. 1`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`

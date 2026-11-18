@@ -139,11 +139,18 @@ yr fmt regras_malware.yar
 > [!success]- Ver Resposta
 > O **`yr dump`** despeja todos os atributos estruturais extraídos pelos módulos do YARA-X sobre uma amostra suspeita (como *timestamps*, secções e *imports* PE), facilitando a redação exata da secção `condition:`. Já o **`yr scan --output-format json`** gera resultados estruturados diretamente ingeríveis por SIEMs e pipelines de triagem sem necessidade de *parsing* artesanal de texto.
 
-## Notas relacionadas
+---
 
-- [[YARA - Introdução, Estrutura de Regras, Metadados e Condições]]
-- [[YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex]]
-- [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]]
-- [[Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração]]
-- [[Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]] | `mesmo bloco` |
+| **Seguinte** | [[Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[YARA - Introdução, Estrutura de Regras, Metadados e Condições]] · `mesmo bloco`
+* [[YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex]] · `mesmo bloco`
+* [[Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI]] · `mesmo bloco`

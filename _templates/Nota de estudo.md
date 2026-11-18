@@ -47,6 +47,16 @@ Definição direta e concisa do conceito, serviço, ferramenta ou artefacto (1 a
 > [!success]- Ver Resposta
 > Resposta direta, técnica e completa.
 
-## Notas relacionadas
+---
 
-- 
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo X - Nome do Capítulo]] | Início do capítulo |
+| **Seguinte** | [[Próxima Nota]] | `mesmo bloco` / `muda para Bloco 02` |
+| **Índice** | [[Capítulo X - Nome do Capítulo]] · [[00 SIGLA_UC]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Conceito Relacionado]] · `Comum/` / `AFD1 · Cap. 1`

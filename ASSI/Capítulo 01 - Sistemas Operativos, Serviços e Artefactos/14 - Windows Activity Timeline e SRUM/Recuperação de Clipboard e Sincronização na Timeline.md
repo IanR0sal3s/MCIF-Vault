@@ -153,11 +153,16 @@ Entry | Offset (Dec) | Offset (Hex) | Length (B64) | Copied_Text
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Windows Activity Timeline - Arquitetura e Base SQLite]]
-- [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
-- [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]]
-- [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Windows Activity Timeline - Arquitetura e Base SQLite]] | `mesmo bloco` |
+| **Seguinte** | [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 14` |
+
+### Conceitos Relacionados
+
+* [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]] · `mesmo bloco`
+* [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]] · `AFD1 · Cap. 3`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`

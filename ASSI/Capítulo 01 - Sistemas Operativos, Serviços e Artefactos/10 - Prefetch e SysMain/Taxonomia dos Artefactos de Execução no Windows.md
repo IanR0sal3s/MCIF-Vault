@@ -162,12 +162,18 @@ A taxonomia estabelece uma linha de demarcação probatória crítica que orient
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
-- [[Application Compatibility e ShimCache (AppCompatCache)]]
-- [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
-- [[Investigação Digital e Evidência Digital]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Código de Ética na Investigação Forense Digital (ISFCE)]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Acesso Forense e Montagem de Shadow Copies]] | `Bloco 09` |
+| **Seguinte** | [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 10` |
+
+### Conceitos Relacionados
+
+* [[Application Compatibility e ShimCache (AppCompatCache)]] · `Bloco 11`
+* [[AmCache - Arquitetura, Hives e Evolução para SQLite]] · `Bloco 11`
+* [[Investigação Digital e Evidência Digital]] · `AFD1 · Cap. 1`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`
+* [[Código de Ética na Investigação Forense Digital (ISFCE)]] · `AFD1 · Cap. 1`

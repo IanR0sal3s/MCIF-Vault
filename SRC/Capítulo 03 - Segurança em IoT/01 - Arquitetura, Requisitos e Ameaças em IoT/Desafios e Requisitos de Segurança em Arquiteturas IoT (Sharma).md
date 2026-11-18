@@ -74,8 +74,17 @@ Os ecossistemas IoT organizam-se numa arquitetura de **cinco camadas** (*Percept
 > [!success]- Ver Resposta
 > Os modos *sleep* desativam temporariamente funções de segurança para poupar bateria (abrindo janelas de ataque e alvos de exaustão energética), enquanto a heterogeneidade e a mobilidade dificultam a gestão uniforme de identidades, chaves e políticas entre protocolos distintos.
 
-## Notas relacionadas
+---
 
-- [[Ataques e Contramedidas por Camada em IoT (Sharma)]]
-- [[LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)]]
-- [[TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 3 - Segurança em IoT]] | Início do capítulo |
+| **Seguinte** | [[Ataques e Contramedidas por Camada em IoT (Sharma)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - Segurança em IoT]] · [[00 SRC]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)]] · `Bloco 03`
+* [[TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)]] · `Bloco 04`

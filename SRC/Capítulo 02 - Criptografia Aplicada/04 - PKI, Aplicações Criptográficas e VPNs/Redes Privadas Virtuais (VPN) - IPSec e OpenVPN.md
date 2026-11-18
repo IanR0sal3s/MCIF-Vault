@@ -99,7 +99,16 @@ ifconfig
 > [!success]- Ver Resposta
 > É criada uma interface virtual **`tun`** (verificada com `ifconfig`), responsável por encaminhar o tráfego IP encapsulado pelo túnel TLS.
 
-## Notas relacionadas
+---
 
-- [[Assinaturas Digitais, PKI e GnuPG]]
-- [[SSH (Secure Shell), Port Forwarding e TLS 1.3]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[SSH (Secure Shell), Port Forwarding e TLS 1.3]] | `mesmo bloco` |
+| **Seguinte** | [[TBL 2 - Fundamentos de Criptografia]] | `muda para Bloco 05` |
+| **Índice** | [[Capítulo 2 - Criptografia Aplicada]] · [[00 SRC]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Assinaturas Digitais, PKI e GnuPG]] · `Comum/`

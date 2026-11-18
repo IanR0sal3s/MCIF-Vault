@@ -118,16 +118,23 @@ Cenário: **Um servidor foi comprometido — como ocorreu o incidente e quem foi
 > [!success]- Ver Resposta
 > Ao verificar nos registos e na configuração da *firewall* que determinado tráfego de rede não poderia ter existido, o perito obtém evidência objetiva que **refuta** hipóteses iniciais impossíveis, aplicando o princípio científico da falsificabilidade.
 
-## Notas relacionadas
+---
 
-- [[Investigação Digital e Evidência Digital]]
-- [[Fases da Investigação Forense Digital]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[LastActivityView e Reconstituição Temporal Live]]
-- [[Estrutura e Hives do Windows Registry]]
-- [[Application Compatibility e ShimCache (AppCompatCache)]]
-- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
-- [[Acesso Forense e Montagem de Shadow Copies]]
-- [[Processos e linha de comandos no Windows]]
-- [[Capítulo 1 - Método de Investigação]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Investigação Digital e Evidência Digital]] | `mesmo bloco` |
+| **Seguinte** | [[Fases da Investigação Forense Digital]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Preservação do Sistema e Integridade de Dados]] · `Bloco 02`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `Bloco 03`
+* [[LastActivityView e Reconstituição Temporal Live]] · `ASSI · Cap. 1`
+* [[Estrutura e Hives do Windows Registry]] · `ASSI · Cap. 1`
+* [[Application Compatibility e ShimCache (AppCompatCache)]] · `ASSI · Cap. 1`
+* [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] · `ASSI · Cap. 1`
+* [[Acesso Forense e Montagem de Shadow Copies]] · `ASSI · Cap. 1`
+* [[Processos e linha de comandos no Windows]] · `ASSI · Cap. 1`

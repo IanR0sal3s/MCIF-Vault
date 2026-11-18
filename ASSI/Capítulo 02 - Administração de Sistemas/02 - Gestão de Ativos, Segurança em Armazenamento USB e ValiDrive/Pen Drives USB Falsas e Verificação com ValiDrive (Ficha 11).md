@@ -91,10 +91,16 @@ Para validar a integridade e a capacidade física genuína de unidades USB antes
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]]
-- [[Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)]]
-- [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]
-- [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)]] | `mesmo bloco` |
+| **Seguinte** | [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]] · `mesmo bloco`
+* [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]] · `Comum/`
+* [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]] · `AFD1 · Cap. 2`

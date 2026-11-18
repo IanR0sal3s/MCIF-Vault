@@ -173,13 +173,21 @@ url4    REG_SZ    powershell
 > [!success]- Ver Resposta
 > Significa que o utilizador clicou na barra de endereços do Windows Explorer e digitou explicitamente `cmd` e, mais recentemente, `powershell` para lançar uma consola de comandos diretamente no diretório em que se encontrava a navegar.
 
-## Notas relacionadas
+---
 
-- [[Estrutura e Hives do Windows Registry]]
-- [[Ferramentas de Análise e Extração do Registry]]
-- [[Artefacto Forense UserAssist]]
-- [[Artefacto Forense ShellBags]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Endianness e Ordem de Armazenamento]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Artefactos Forenses de Execução e Persistência no Registry]] | `mesmo bloco` |
+| **Seguinte** | [[Artefacto Forense UserAssist]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 07` |
+
+### Conceitos Relacionados
+
+* [[Estrutura e Hives do Windows Registry]] · `Bloco 05`
+* [[Ferramentas de Análise e Extração do Registry]] · `Bloco 05`
+* [[Artefacto Forense ShellBags]] · `mesmo bloco`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`
+* [[Endianness e Ordem de Armazenamento]] · `AFD1 · Cap. 3`
+* [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] · `AFD1 · Cap. 3`

@@ -122,12 +122,20 @@ Complementarmente, a evidência digital define-se como:
 > [!success]- Ver Resposta
 > É **difícil de controlar** (dados criam-se, modificam-se, transmitem-se ou apagam-se muito depressa) e apresenta grande **diversidade e complexidade** devido à rápida evolução dos sistemas de informação.
 
-## Notas relacionadas
+---
 
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Fases da Investigação Forense Digital]]
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
-- [[Extração da AmCache e Comparação Forense com a ShimCache]]
-- [[Capítulo 1 - Método de Investigação]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 1 - Método de Investigação]] | Início do capítulo |
+| **Seguinte** | [[Investigação Forense Digital - Análise Live vs Post-Mortem]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Fases da Investigação Forense Digital]] · `Bloco 02`
+* [[Princípios e Rota do Manuseamento de Evidência Digital]] · `Bloco 03`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `ASSI · Cap. 1`
+* [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] · `ASSI · Cap. 1`
+* [[Extração da AmCache e Comparação Forense com a ShimCache]] · `ASSI · Cap. 1`

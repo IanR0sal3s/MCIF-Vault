@@ -112,7 +112,16 @@ sudo hdparm --yes-i-know-what-i-am-doing --dco-restore /dev/sdX
    > [!success]- Ver Resposta
    > Como os setores atuais visíveis coincidem com os setores nativos máximos (`976773168/976773168`), a `HPA` está desativada (embora ainda se deva verificar separadamente se existe uma `DCO` com `hdparm --dco-identify`).
 
-## Notas relacionadas
-- [[Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)]]
-- [[Interface SCSI, SAS e Comparação SCSI vs ATA]]
-- [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)]] | `mesmo bloco` |
+| **Seguinte** | [[Interface SCSI, SAS e Comparação SCSI vs ATA]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 4 - Dispositivos de Armazenamento]] · [[00 AFD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]] · `Cap. 2`

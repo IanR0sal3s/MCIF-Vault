@@ -159,18 +159,26 @@ Durante a cópia física de um suporte de armazenamento, a escolha do **tamanho 
 > [!success]- Ver Resposta
 > Um tamanho de bloco maior acelera a aquisição, mas **um único setor defeituoso invalida o bloco inteiro** que o contém. Por isso, o tamanho de bloco deve coincidir com o tamanho do setor do dispositivo (`512 bytes` ou `4096 bytes` em HDDs; dependente de marca, modelo e capacidade em SSDs).
 
-## Notas relacionadas
+---
 
-- [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]]
-- [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]]
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Fases da Investigação Forense Digital]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
-- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
-- [[Processos e linha de comandos no Windows]]
-- [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
-- [[Acesso Forense e Montagem de Shadow Copies]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]] | `Bloco 03` |
+| **Seguinte** | [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]] · `mesmo bloco`
+* [[Investigação Forense Digital - Análise Live vs Post-Mortem]] · `Cap. 1`
+* [[Fases da Investigação Forense Digital]] · `Cap. 1`
+* [[Preservação do Sistema e Integridade de Dados]] · `Cap. 1`
+* [[Princípios e Rota do Manuseamento de Evidência Digital]] · `Cap. 1`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `Cap. 1`
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `Cap. 1`
+* [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] · `Cap. 3`
+* [[Processos e linha de comandos no Windows]] · `ASSI · Cap. 1`
+* [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]] · `ASSI · Cap. 1`
+* [[Acesso Forense e Montagem de Shadow Copies]] · `ASSI · Cap. 1`

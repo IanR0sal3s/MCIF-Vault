@@ -94,8 +94,18 @@ flowchart LR
 > [!success]- Ver Resposta
 > Para isolar as comunicações críticas de gestão e autorização (`PE` $\leftrightarrow$ `PA` $\leftrightarrow$ `PEP`) do tráfego aplicacional dos utilizadores/serviços, impedindo que ativos no *Data Plane* acedam diretamente aos componentes de decisão de confiança e garantindo que nenhum fluxo aplicacional ocorra antes de autorizado pelo *Control Plane*.
 
-## Notas relacionadas
+---
 
-- [[IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)]]
-- [[Assinaturas Digitais, PKI e GnuPG]]
-- [[Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)]] | `Bloco 01` |
+| **Seguinte** | [[Capítulo 4 - Deteção de Intrusões e Zero Trust]] · [[00 SRC]] | Fim do capítulo |
+| **Índice** | [[Capítulo 4 - Deteção de Intrusões e Zero Trust]] · [[00 SRC]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)]] · `Bloco 01`
+* [[Assinaturas Digitais, PKI e GnuPG]] · `Comum/`
+* [[Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees]] · `Cap. 1`

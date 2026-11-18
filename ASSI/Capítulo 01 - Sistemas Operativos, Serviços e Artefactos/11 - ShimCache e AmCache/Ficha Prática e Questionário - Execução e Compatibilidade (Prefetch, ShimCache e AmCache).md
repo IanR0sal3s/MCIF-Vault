@@ -227,13 +227,19 @@ Qual a principal razão técnica pela qual o `Amcache.hve` é mais valioso que a
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Cheat Sheet - Artefactos de Execução e Sistema no Windows]]
-- [[Application Compatibility e ShimCache (AppCompatCache)]]
-- [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
-- [[Extração da AmCache e Comparação Forense com a ShimCache]]
-- [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]]
-- [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
-- [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Extração da AmCache e Comparação Forense com a ShimCache]] | `mesmo bloco` |
+| **Seguinte** | [[Jump Lists - Arquitetura, AppIDs e Carving]] | `muda para Bloco 12` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 11` |
+
+### Conceitos Relacionados
+
+* [[Cheat Sheet - Artefactos de Execução e Sistema no Windows]] · `Bloco 15`
+* [[Application Compatibility e ShimCache (AppCompatCache)]] · `mesmo bloco`
+* [[AmCache - Arquitetura, Hives e Evolução para SQLite]] · `mesmo bloco`
+* [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]] · `mesmo bloco`
+* [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]] · `Bloco 10`
+* [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]] · `Bloco 09`

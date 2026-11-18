@@ -127,24 +127,31 @@ Os valores de *hash*, por si sós, **não são suficientes** para garantir a int
 > [!success]- Ver Resposta
 > Como o cálculo de $H(M)=h$ não depende de nenhum segredo, um atacante com acesso ao local de armazenamento pode alterar $M$ para $M'$ e substituir $h$ por $H(M')$. As **assinaturas digitais** dependem de uma **chave privada** conhecida apenas pelo signatário (especialmente robusta num dispositivo físico seguro como o **Cartão de Cidadão**), impedindo a falsificação do resumo.
 
-## Notas relacionadas
+---
 
-- [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]]
-- [[Assinaturas Digitais, PKI e GnuPG]]
-- [[Fases da Investigação Forense Digital]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Exercícios Práticos - Integridade de Dados e Hashes]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração]]
-- [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]]
-- [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]]
-- [[Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd]]
-- [[UEFI Secure Boot]]
-- [[UEFI Secure Boot - Chaves e Hierarquia]]
-- [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
-- [[PKfail - Cadeia de Ataque e Deteção Forense]]
-- [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
-- [[Extração da AmCache e Comparação Forense com a ShimCache]]
-- [[Análise Forense e Criação a Pedido do Prefetch]]
-- [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]
-- [[Capítulo 1 - Método de Investigação]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Fases da Investigação Forense Digital]] | `mesmo bloco` |
+| **Seguinte** | [[Pesquisa de Evidências e Reconstrução de Eventos]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]] · `Comum/`
+* [[Assinaturas Digitais, PKI e GnuPG]] · `Comum/`
+* [[Exercícios Práticos - Integridade de Dados e Hashes]] · `mesmo bloco`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `Bloco 03`
+* [[Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração]] · `Cap. 2`
+* [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]] · `Cap. 2`
+* [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]] · `Cap. 2`
+* [[Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd]] · `Cap. 2`
+* [[UEFI Secure Boot]] · `ASSI · Cap. 1`
+* [[UEFI Secure Boot - Chaves e Hierarquia]] · `ASSI · Cap. 1`
+* [[PKfail - Vulnerabilidade do UEFI Secure Boot]] · `ASSI · Cap. 1`
+* [[PKfail - Cadeia de Ataque e Deteção Forense]] · `ASSI · Cap. 1`
+* [[AmCache - Arquitetura, Hives e Evolução para SQLite]] · `ASSI · Cap. 1`
+* [[Extração da AmCache e Comparação Forense com a ShimCache]] · `ASSI · Cap. 1`
+* [[Análise Forense e Criação a Pedido do Prefetch]] · `ASSI · Cap. 1`
+* [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] · `ASSI · Cap. 1`

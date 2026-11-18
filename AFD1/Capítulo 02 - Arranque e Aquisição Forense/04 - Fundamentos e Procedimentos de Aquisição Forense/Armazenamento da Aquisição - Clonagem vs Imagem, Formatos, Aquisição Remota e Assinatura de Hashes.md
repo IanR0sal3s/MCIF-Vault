@@ -150,15 +150,22 @@ Para garantir a integridade dos dados adquiridos ao longo do tempo:
 > [!success]- Ver Resposta
 > Calcular *hashes* por blocos pequenos impede que um único erro futuro num setor ou ficheiro invalide toda a imagem do disco. Assinar o ficheiro de *hashes* com **GnuPG** (chave privada) e um servidor de ***timestamping*** impede que terceiros adulterem simultaneamente a imagem e o respetivo ficheiro de *hashes* (já que o hash $H(M)$ não tem segredo), provando autenticidade, integridade e existência numa data exata.
 
-## Notas relacionadas
+---
 
-- [[Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração]]
-- [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]]
-- [[Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)]]
-- [[Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Exercícios Práticos - Integridade de Dados e Hashes]]
-- [[Acesso Forense e Montagem de Shadow Copies]]
-- [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
-- [[Windows Activity Timeline - Arquitetura e Base SQLite]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]] | `mesmo bloco` |
+| **Seguinte** | [[Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)]] | `muda para Bloco 05` |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração]] · `mesmo bloco`
+* [[Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd]] · `Bloco 05`
+* [[Preservação do Sistema e Integridade de Dados]] · `Cap. 1`
+* [[Exercícios Práticos - Integridade de Dados e Hashes]] · `Cap. 1`
+* [[Acesso Forense e Montagem de Shadow Copies]] · `ASSI · Cap. 1`
+* [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]] · `ASSI · Cap. 1`
+* [[Windows Activity Timeline - Arquitetura e Base SQLite]] · `ASSI · Cap. 1`

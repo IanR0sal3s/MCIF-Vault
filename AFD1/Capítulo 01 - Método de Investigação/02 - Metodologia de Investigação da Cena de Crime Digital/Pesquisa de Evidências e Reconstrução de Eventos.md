@@ -132,19 +132,27 @@ O processo de pesquisa divide-se em:
 > [!success]- Ver Resposta
 > Porque diferentes versões de sistemas operativos (ex.: Windows `XP`, `7`, `8`, `10`) e de navegadores (`Firefox`, `Chrome`) têm capacidades distintas e geram artefactos, registos e comportamentos diferentes, exigindo hipóteses ajustadas à versão concreta instalada.
 
-## Notas relacionadas
+---
 
-- [[Fases da Investigação Forense Digital]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Extração da AmCache e Comparação Forense com a ShimCache]]
-- [[Application Compatibility e ShimCache (AppCompatCache)]]
-- [[Windows Search]]
-- [[Artefacto Forense UserAssist]]
-- [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]]
-- [[Artefacto Forense ShellBags]]
-- [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]]
-- [[Abuso e Vetores de Ataque com Ficheiros LNK]]
-- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
-- [[Capítulo 1 - Método de Investigação]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Preservação do Sistema e Integridade de Dados]] | `mesmo bloco` |
+| **Seguinte** | [[Exercícios Práticos - Integridade de Dados e Hashes]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Fases da Investigação Forense Digital]] · `mesmo bloco`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `Bloco 03`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `ASSI · Cap. 1`
+* [[Extração da AmCache e Comparação Forense com a ShimCache]] · `ASSI · Cap. 1`
+* [[Application Compatibility e ShimCache (AppCompatCache)]] · `ASSI · Cap. 1`
+* [[Windows Search]] · `ASSI · Cap. 1`
+* [[Artefacto Forense UserAssist]] · `ASSI · Cap. 1`
+* [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]] · `ASSI · Cap. 1`
+* [[Artefacto Forense ShellBags]] · `ASSI · Cap. 1`
+* [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]] · `ASSI · Cap. 1`
+* [[Abuso e Vetores de Ataque com Ficheiros LNK]] · `ASSI · Cap. 1`
+* [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] · `ASSI · Cap. 1`

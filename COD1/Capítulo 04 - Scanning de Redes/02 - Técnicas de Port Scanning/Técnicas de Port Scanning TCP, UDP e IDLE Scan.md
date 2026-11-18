@@ -83,7 +83,16 @@ O **IDLE Scan** (`nmap -Pn -p- -sI <zombie> <alvo>`) é o método mais furtivo d
    > [!success]- Ver Resposta
    > Indica que o porto está **aberto** no alvo: +1 unidade deve-se ao `RST` que o *zombie* enviou ao alvo após receber o `SYN/ACK`, e +1 unidade deve-se à segunda sonda de leitura feita pelo atacante.
 
-## Notas relacionadas
-- [[Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP]]
-- [[Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão]]
-- [[Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP]] | `Bloco 01` |
+| **Seguinte** | [[Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 4 - Scanning de Redes]] · [[00 COD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest]] · `Bloco 04`

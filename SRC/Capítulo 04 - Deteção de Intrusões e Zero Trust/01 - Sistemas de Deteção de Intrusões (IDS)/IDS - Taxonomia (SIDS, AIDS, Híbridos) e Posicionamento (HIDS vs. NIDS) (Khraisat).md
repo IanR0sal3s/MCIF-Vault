@@ -66,8 +66,17 @@ Um **Sistema de Deteção de Intrusões (`IDS`)** é um sistema de software ou h
 > [!success]- Ver Resposta
 > Um *Hybrid IDS* combina `SIDS` e `AIDS` para aliar a baixa taxa de falsos alarmes e precisão do `SIDS` em ataques conhecidos à capacidade do `AIDS` de detetar ataques *zero-day* desconhecidos.
 
-## Notas relacionadas
+---
 
-- [[IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)]]
-- [[Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos]]
-- [[Ataques e Contramedidas por Camada em IoT (Sharma)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 4 - Deteção de Intrusões e Zero Trust]] | Início do capítulo |
+| **Seguinte** | [[IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 4 - Deteção de Intrusões e Zero Trust]] · [[00 SRC]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos]] · `Bloco 02`
+* [[Ataques e Contramedidas por Camada em IoT (Sharma)]] · `Cap. 3`

@@ -148,11 +148,16 @@ flowchart TD
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell]]
-- [[Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers]]
-- [[Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen]]
-- [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
-- [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell]] | `mesmo bloco` |
+| **Seguinte** | [[Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen]] · `mesmo bloco`
+* [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]] · `Cap. 1`
+* [[AmCache - Arquitetura, Hives e Evolução para SQLite]] · `Cap. 1`

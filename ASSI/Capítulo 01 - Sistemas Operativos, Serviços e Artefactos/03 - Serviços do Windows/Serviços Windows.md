@@ -172,10 +172,18 @@ sc qc Spooler
 > [!success]- Ver Resposta
 > Porque corre sob a conta `LocalSystem` (`SERVICE_START_NAME: LocalSystem`), que detém o privilégio máximo no sistema local; vulnerabilidades como o *PrintNightmare* permitem a um atacante executar código arbitrário ou elevar privilégios diretamente para `SYSTEM`.
 
-## Notas relacionadas
+---
 
-- [[svchost.exe]]
-- [[Serviço BITS]]
-- [[Serviço Delivery Optimization]]
-- [[Windows Search]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Comando forfiles]] | `Bloco 02` |
+| **Seguinte** | [[svchost.exe]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Serviço BITS]] · `mesmo bloco`
+* [[Serviço Delivery Optimization]] · `mesmo bloco`
+* [[Windows Search]] · `mesmo bloco`

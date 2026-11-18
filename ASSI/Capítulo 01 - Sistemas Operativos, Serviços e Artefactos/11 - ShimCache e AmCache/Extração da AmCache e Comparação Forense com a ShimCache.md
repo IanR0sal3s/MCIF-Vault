@@ -194,19 +194,25 @@ Os procedimentos práticos de extração com `AmcacheParser`, `AppCompatCachePar
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Application Compatibility e ShimCache (AppCompatCache)]]
-- [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
-- [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
-- [[Investigação Digital e Evidência Digital]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Exercícios Práticos - Integridade de Dados e Hashes]]
-- [[Código de Ética na Investigação Forense Digital (ISFCE)]]
-- [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]]
-- [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]
-- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[AmCache - Arquitetura, Hives e Evolução para SQLite]] | `mesmo bloco` |
+| **Seguinte** | [[Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 11` |
+
+### Conceitos Relacionados
+
+* [[Application Compatibility e ShimCache (AppCompatCache)]] · `mesmo bloco`
+* [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]] · `mesmo bloco`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `Bloco 10`
+* [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]] · `Bloco 10`
+* [[Investigação Digital e Evidência Digital]] · `AFD1 · Cap. 1`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`
+* [[Exercícios Práticos - Integridade de Dados e Hashes]] · `AFD1 · Cap. 1`
+* [[Código de Ética na Investigação Forense Digital (ISFCE)]] · `AFD1 · Cap. 1`
+* [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]] · `AFD1 · Cap. 2`
+* [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]] · `AFD1 · Cap. 2`
+* [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]] · `AFD1 · Cap. 2`

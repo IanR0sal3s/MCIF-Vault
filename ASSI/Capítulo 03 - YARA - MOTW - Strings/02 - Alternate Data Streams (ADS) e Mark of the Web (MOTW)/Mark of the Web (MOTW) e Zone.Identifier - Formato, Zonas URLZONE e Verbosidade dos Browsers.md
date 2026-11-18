@@ -183,11 +183,16 @@ No Windows, a configuração das permissões de segurança associadas a cada `UR
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell]]
-- [[Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker]]
-- [[Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen]]
-- [[Aplicações UWP (Universal Windows Platform) - Visão Geral]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker]] | `mesmo bloco` |
+| **Seguinte** | [[Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell]] · `mesmo bloco`
+* [[Aplicações UWP (Universal Windows Platform) - Visão Geral]] · `Cap. 1`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`

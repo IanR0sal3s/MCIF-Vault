@@ -136,11 +136,18 @@ WMP11.AssocFile.MP3="%ProgramFiles(x86)%\Windows Media Player\wmplayer.exe" /pre
 > [!success]- Ver Resposta
 > Porque `HKCR` é uma vista virtual que combina `HKLM\SOFTWARE\Classes` (que exige privilégios administrativos para escrita) e `HKCU\Software\Classes` (gravado no hive `USRCLASS.DAT` do utilizador, editável sem elevação). Como o Windows dá precedência às entradas de `HKCU` sobre as de `HKLM`, qualquer chave criada em `HKCU\Software\Classes` sobrepõe a associação global do sistema para esse utilizador.
 
-## Notas relacionadas
+---
 
-- [[Estrutura e Hives do Windows Registry]]
-- [[Ferramentas de Análise e Extração do Registry]]
-- [[Artefactos Forenses de Execução e Persistência no Registry]]
-- [[Endianness e Ordem de Armazenamento]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Estrutura e Hives do Windows Registry]] | `mesmo bloco` |
+| **Seguinte** | [[Ferramentas de Análise e Extração do Registry]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Artefactos Forenses de Execução e Persistência no Registry]] · `Bloco 07`
+* [[Endianness e Ordem de Armazenamento]] · `AFD1 · Cap. 3`
+* [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] · `AFD1 · Cap. 3`

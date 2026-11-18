@@ -148,14 +148,22 @@ reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\hivelist
 > [!success]- Ver Resposta
 > Na chave `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\hivelist`.
 
-## Notas relacionadas
+---
 
-- [[Tipos de Dados e Associação de Ficheiros no Registry]]
-- [[Ferramentas de Análise e Extração do Registry]]
-- [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]]
-- [[Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)]]
-- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[UWP - Artefactos Forenses e Estrutura de Dados]] | `Bloco 04` |
+| **Seguinte** | [[Tipos de Dados e Associação de Ficheiros no Registry]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Ferramentas de Análise e Extração do Registry]] · `mesmo bloco`
+* [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]] · `mesmo bloco`
+* [[Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)]] · `AFD1 · Cap. 2`
+* [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]] · `AFD1 · Cap. 2`
+* [[Investigação Forense Digital - Análise Live vs Post-Mortem]] · `AFD1 · Cap. 1`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`
+* [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] · `AFD1 · Cap. 3`

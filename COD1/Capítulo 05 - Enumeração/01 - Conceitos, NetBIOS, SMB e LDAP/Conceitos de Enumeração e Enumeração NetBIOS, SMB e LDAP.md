@@ -103,8 +103,18 @@ ldapsearch -x -H ldap://<IP> -b "" -s base namingContexts
    > [!success]- Ver Resposta
    > Obtém-se a raiz do diretório (*Base DN* / `namingContexts`, como `DC=empresa,DC=local`), necessária como ponto de partida para consultar utilizadores, grupos e objetos dentro da árvore LDAP/Active Directory.
 
-## Notas relacionadas
-- [[Enumeração SNMP (Community Strings, MIB e OIDs)]]
-- [[Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)]]
-- [[Contramedidas de Enumeração e Metodologia Pentest]]
-- [[Cheat Sheet - Enumeração de Serviços e Portos]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 5 - Enumeração]] | Início do capítulo |
+| **Seguinte** | [[Enumeração SNMP (Community Strings, MIB e OIDs)]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 5 - Enumeração]] · [[00 COD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)]] · `Bloco 03`
+* [[Contramedidas de Enumeração e Metodologia Pentest]] · `Bloco 04`
+* [[Cheat Sheet - Enumeração de Serviços e Portos]] · `mesmo cap.`

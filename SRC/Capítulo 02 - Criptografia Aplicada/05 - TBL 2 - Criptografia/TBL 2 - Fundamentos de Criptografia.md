@@ -44,10 +44,18 @@ Mapeamento e fundamentação das **10 questões** do *Team-Based Learning* (`TBL
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas]]
-- [[Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4]]
-- [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]]
-- [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]]
-- [[Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Redes Privadas Virtuais (VPN) - IPSec e OpenVPN]] | `Bloco 04` |
+| **Seguinte** | [[Capítulo 2 - Criptografia Aplicada]] · [[00 SRC]] | Fim do capítulo |
+| **Índice** | [[Capítulo 2 - Criptografia Aplicada]] · [[00 SRC]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas]] · `Bloco 01`
+* [[Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4]] · `Bloco 01`
+* [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]] · `Bloco 02`
+* [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]] · `Comum/`
+* [[Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais]] · `Bloco 03`

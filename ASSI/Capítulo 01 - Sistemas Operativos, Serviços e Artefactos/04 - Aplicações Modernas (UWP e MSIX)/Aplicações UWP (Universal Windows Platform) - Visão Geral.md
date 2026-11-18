@@ -131,9 +131,17 @@ Para os artefactos forenses gerados durante a utilização das aplicações (his
 > * **(a) No `cmd.exe`**: `tasklist /apps | find /c "."`
 > * **(b) No PowerShell**: `Get-AppxPackage -AllUsers | Export-Csv -Path appx_todos_utilizadores.csv`
 
-## Notas relacionadas
+---
 
-- [[UWP - Artefactos Forenses e Estrutura de Dados]]
-- [[Processos e linha de comandos no Windows]]
-- [[Registry em Aplicações Modernas (MSIX e Helium)]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ficha Prática e Questionário - Serviços e Windows Search]] | `Bloco 03` |
+| **Seguinte** | [[UWP - Artefactos Forenses e Estrutura de Dados]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Processos e linha de comandos no Windows]] · `Bloco 02`
+* [[Registry em Aplicações Modernas (MSIX e Helium)]] · `Bloco 06`

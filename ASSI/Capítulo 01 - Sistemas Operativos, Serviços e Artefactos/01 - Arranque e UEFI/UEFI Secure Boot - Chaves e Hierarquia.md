@@ -110,10 +110,17 @@ A posse da chave privada da Platform Key anula completamente a eficácia do Secu
 > [!success]- Ver Resposta
 > Com a chave privada da `PK`, o atacante assina a adição de uma `KEK` própria no firmware; de seguida, usa a sua `KEK` para assinar e inserir um certificado seu na base `db`. Por fim, assina o *bootkit* com esse certificado e coloca-o na partição `ESP`, passando na verificação do Secure Boot como software legítimo.
 
-## Notas relacionadas
+---
 
-- [[UEFI Secure Boot]]
-- [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
-- [[PKfail - Cadeia de Ataque e Deteção Forense]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[UEFI Secure Boot]] | `mesmo bloco` |
+| **Seguinte** | [[PKfail - Vulnerabilidade do UEFI Secure Boot]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[PKfail - Cadeia de Ataque e Deteção Forense]] · `mesmo bloco`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`

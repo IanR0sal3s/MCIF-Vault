@@ -195,13 +195,22 @@ O programa da unidade curricular integra a aplicação prática destes conceitos
 > 2. `Activity_History_Report` (histórico de atividades)
 > 3. `Internet_History_Report` (pesquisas e histórico do Microsoft Edge).
 
-## Notas relacionadas
+---
 
-- [[Serviços Windows]]
-- [[Serviço BITS]]
-- [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Serviço Delivery Optimization]] | `mesmo bloco` |
+| **Seguinte** | [[Ficha Prática e Questionário - Serviços e Windows Search]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Serviços Windows]] · `mesmo bloco`
+* [[Serviço BITS]] · `mesmo bloco`
+* [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]] · `Bloco 13`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`
+* [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] · `AFD1 · Cap. 3`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`
+* [[Sistemas de Numeração e Conversão entre Bases]] · `AFD1 · Cap. 3`

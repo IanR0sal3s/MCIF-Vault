@@ -87,11 +87,19 @@ Em ambientes corporativos com requisitos estritos de segurança, o Secure Boot t
 > [!success]- Ver Resposta
 > Porque o mecanismo criptográfico do firmware continuará a verificar as assinaturas normalmente, mas qualquer atacante em posse da chave privada da PK poderá assinar novas chaves e binários maliciosos (*bootkits*) que serão reconhecidos como fidedignos e legítimos pelo UEFI.
 
-## Notas relacionadas
+---
 
-- [[UEFI Secure Boot - Chaves e Hierarquia]]
-- [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
-- [[Processo de Arranque UEFI, Secure Boot e Fluxo do Windows]]
-- [[Arranque Forense e Processo de Boot (BIOS e Código Máquina)]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] | Início do capítulo |
+| **Seguinte** | [[UEFI Secure Boot - Chaves e Hierarquia]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[PKfail - Vulnerabilidade do UEFI Secure Boot]] · `mesmo bloco`
+* [[Processo de Arranque UEFI, Secure Boot e Fluxo do Windows]] · `AFD1 · Cap. 2`
+* [[Arranque Forense e Processo de Boot (BIOS e Código Máquina)]] · `AFD1 · Cap. 2`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`

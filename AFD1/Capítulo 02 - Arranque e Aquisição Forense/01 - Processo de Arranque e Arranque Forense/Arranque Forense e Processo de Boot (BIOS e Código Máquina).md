@@ -147,16 +147,24 @@ Nos sistemas baseados em firmware **BIOS** tradicional, o arranque opera por enc
 > [!success]- Ver Resposta
 > A BIOS lê e executa o primeiro setor físico do disco (**MBR**, limitado a 512 bytes partilhados com a tabela de partições). Como esse espaço é insuficiente para carregar um sistema operativo completo, o código do MBR localiza e transfere a execução para código adicional no primeiro setor da partição ativa (**VBR**), o qual carrega finalmente o sistema operativo.
 
-## Notas relacionadas
+---
 
-- [[Processo de Arranque UEFI, Secure Boot e Fluxo do Windows]]
-- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
-- [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]]
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Organização de Estruturas de Dados em Binário]]
-- [[UEFI Secure Boot]]
-- [[Estrutura e Hives do Windows Registry]]
-- [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 2 - Arranque e Aquisição Forense]] | Início do capítulo |
+| **Seguinte** | [[Processo de Arranque UEFI, Secure Boot e Fluxo do Windows]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]] · `Bloco 02`
+* [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]] · `Bloco 04`
+* [[Investigação Forense Digital - Análise Live vs Post-Mortem]] · `Cap. 1`
+* [[Preservação do Sistema e Integridade de Dados]] · `Cap. 1`
+* [[Sistemas de Numeração e Conversão entre Bases]] · `Cap. 3`
+* [[Organização de Estruturas de Dados em Binário]] · `Cap. 3`
+* [[UEFI Secure Boot]] · `ASSI · Cap. 1`
+* [[Estrutura e Hives do Windows Registry]] · `ASSI · Cap. 1`
+* [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]] · `ASSI · Cap. 1`

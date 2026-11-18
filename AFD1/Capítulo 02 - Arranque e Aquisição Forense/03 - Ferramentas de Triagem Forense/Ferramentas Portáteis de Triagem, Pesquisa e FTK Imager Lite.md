@@ -127,18 +127,26 @@ As aplicações portáteis (executáveis autónomos que não requerem instalaç�
 > [!success]- Ver Resposta
 > Porque executam diretamente a partir do suporte externo sem escrever entradas de instalação no Windows Registry nem sobrescrever setores livres no disco suspeito, mantendo a pegada forense mínima e preservando a integridade da evidência.
 
-## Notas relacionadas
+---
 
-- [[Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)]]
-- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
-- [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Jump Lists - Arquitetura, AppIDs e Carving]]
-- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
-- [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]]
-- [[LastActivityView e Reconstituição Temporal Live]]
-- [[Windows Search]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)]] | `mesmo bloco` |
+| **Seguinte** | [[Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração]] | `muda para Bloco 04` |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]] · `Bloco 02`
+* [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]] · `Bloco 05`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `Cap. 1`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `Cap. 1`
+* [[Jump Lists - Arquitetura, AppIDs e Carving]] · `ASSI · Cap. 1`
+* [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] · `ASSI · Cap. 1`
+* [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]] · `ASSI · Cap. 1`
+* [[LastActivityView e Reconstituição Temporal Live]] · `ASSI · Cap. 1`
+* [[Windows Search]] · `ASSI · Cap. 1`
+* [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] · `Cap. 3`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`

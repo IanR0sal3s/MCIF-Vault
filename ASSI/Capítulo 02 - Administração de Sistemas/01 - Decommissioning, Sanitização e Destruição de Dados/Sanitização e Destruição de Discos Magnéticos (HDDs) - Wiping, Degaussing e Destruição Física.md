@@ -157,12 +157,18 @@ O *wiping* por software sobrescreve todos os setores endereçáveis do disco atr
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]]
-- [[Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados]]
-- [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]
-- [[Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell]]
-- [[Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker]]
-- [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones]] | `mesmo bloco` |
+| **Seguinte** | [[Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]] · `mesmo bloco`
+* [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]] · `Comum/`
+* [[Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell]] · `Cap. 3`
+* [[Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker]] · `Cap. 3`
+* [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]] · `AFD1 · Cap. 2`

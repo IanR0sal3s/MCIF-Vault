@@ -198,14 +198,19 @@ Saída de exemplo do LECmd na consola:
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Jump Lists - Arquitetura, AppIDs e Carving]]
-- [[Abuso e Vetores de Ataque com Ficheiros LNK]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Artefactos Forenses de Dispositivos USB]]
-- [[Organização de Estruturas de Dados em Binário]]
-- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
-- [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Jump Lists - Arquitetura, AppIDs e Carving]] | `mesmo bloco` |
+| **Seguinte** | [[Abuso e Vetores de Ataque com Ficheiros LNK]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 12` |
+
+### Conceitos Relacionados
+
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `Bloco 10`
+* [[Artefactos Forenses de Dispositivos USB]] · `Bloco 08`
+* [[Organização de Estruturas de Dados em Binário]] · `AFD1 · Cap. 3`
+* [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] · `AFD1 · Cap. 3`
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `AFD1 · Cap. 1`
+* [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]] · `AFD1 · Cap. 1`

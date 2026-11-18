@@ -119,13 +119,18 @@ Quando a organização autoriza armazenamento amovível, tem de articular os tr�
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)]]
-- [[Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)]]
-- [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]
-- [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]]
-- [[Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação]]
-- [[Artefactos Forenses de Dispositivos USB]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]] | `Comum/` · `Bloco 01` |
+| **Seguinte** | [[Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)]] · `mesmo bloco`
+* [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]] · `Bloco 03`
+* [[Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação]] · `Bloco 03`
+* [[Artefactos Forenses de Dispositivos USB]] · `Cap. 1`
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `AFD1 · Cap. 1`

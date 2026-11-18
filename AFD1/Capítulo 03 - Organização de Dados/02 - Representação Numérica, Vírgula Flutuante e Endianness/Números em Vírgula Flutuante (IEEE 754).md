@@ -122,9 +122,16 @@ $$1 + 2^{-3} + 2^{-4} + 2^{-5} + 2^{-6} + 2^{-9} + 2^{-10} + 2^{-11} + 2^{-13} +
 > [!success]- Ver Resposta
 > Em binário (`0 01111111 00111100111011011001001`), o bit de sinal é `0` (positivo), o expoente `01111111` vale $127 - 127 = 0$ ($2^0 = 1$) e a mantissa com o `1` implícito reposto vale `1.00111100111011011001001`$_2 \approx 1{,}238000035$, resultando em **`1,238`**.
 
-## Notas relacionadas
+---
 
-- [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Endianness e Ordem de Armazenamento]]
-- [[Organização de Estruturas de Dados em Binário]]
-- [[Capítulo 3 - Organização de Dados]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Sistemas de Numeração e Conversão entre Bases]] | `mesmo bloco` |
+| **Seguinte** | [[Endianness e Ordem de Armazenamento]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - Organização de Dados]] · [[00 AFD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Organização de Estruturas de Dados em Binário]] · `Bloco 03`

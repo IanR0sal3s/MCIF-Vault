@@ -132,7 +132,16 @@ Para visualizar o diagrama acima sem matemática, imagina que o bloco é formado
 > [!success]- Ver Resposta
 > Porque o tamanho efetivo da chave de `56` bits ($2^{56} \approx 7.2 \times 10^{16}$ chaves) tornou-se vulnerável a ataques de pesquisa exaustiva (*brute force*) com poder computacional moderno.
 
-## Notas relacionadas
+---
 
-- [[Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas]]
-- [[TBL 2 - Fundamentos de Criptografia]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas]] | `mesmo bloco` |
+| **Seguinte** | [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 2 - Criptografia Aplicada]] · [[00 SRC]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[TBL 2 - Fundamentos de Criptografia]] · `Bloco 05`

@@ -214,9 +214,14 @@ vssadmin delete shadows /shadow={72e983d2-5f56-441a-bbbf-616e28c56cbd}
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
-- [[Acesso Forense e Montagem de Shadow Copies]]
-- [[LastActivityView e Reconstituição Temporal Live]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]] | `mesmo bloco` |
+| **Seguinte** | [[Acesso Forense e Montagem de Shadow Copies]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 09` |
+
+### Conceitos Relacionados
+
+* [[LastActivityView e Reconstituição Temporal Live]] · `mesmo bloco`

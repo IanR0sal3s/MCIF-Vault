@@ -114,12 +114,19 @@ flowchart LR
 > [!success]- Ver Resposta
 > Casos com **requisitos legais** podem exigir desligar o sistema da tomada e copiar integralmente todos os dados; numa infeção por *spyware* ou em *honeypots* pode não haver preservação formal; e em casos que não seguem para tribunal aplicam-se técnicas intermédias.
 
-## Notas relacionadas
+---
 
-- [[Investigação Digital e Evidência Digital]]
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Artefactos Forenses de Dispositivos USB]]
-- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
-- [[Capítulo 1 - Método de Investigação]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Investigação Forense Digital - Análise Live vs Post-Mortem]] | `Bloco 01` |
+| **Seguinte** | [[Preservação do Sistema e Integridade de Dados]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Investigação Digital e Evidência Digital]] · `Bloco 01`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `mesmo bloco`
+* [[Artefactos Forenses de Dispositivos USB]] · `ASSI · Cap. 1`
+* [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] · `ASSI · Cap. 1`

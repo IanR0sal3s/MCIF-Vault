@@ -163,12 +163,20 @@ loki.exe --no-log --no-jsonl --no-html -r <IP:PORT> -p tcp --remote-format json
 > [!success]- Ver Resposta
 > Porque o perito pode executar `loki-util.exe --update` previamente numa estação conectada à Internet, copiar o conjunto já atualizado para uma pen USB forense ou ambiente **WinFE**, e correr apenas o `loki.exe` offline no sistema alvo isolado da rede.
 
-## Notas relacionadas
+---
 
-- [[Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração]]
-- [[YARA-X (Reimplementação em Rust) e Ferramenta CLI yr]]
-- [[YARA - Introdução, Estrutura de Regras, Metadados e Condições]]
-- [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]]
-- [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração]] | `mesmo bloco` |
+| **Seguinte** | [[Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[YARA-X (Reimplementação em Rust) e Ferramenta CLI yr]] · `mesmo bloco`
+* [[YARA - Introdução, Estrutura de Regras, Metadados e Condições]] · `mesmo bloco`
+* [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]] · `mesmo bloco`
+* [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]] · `AFD1 · Cap. 2`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`

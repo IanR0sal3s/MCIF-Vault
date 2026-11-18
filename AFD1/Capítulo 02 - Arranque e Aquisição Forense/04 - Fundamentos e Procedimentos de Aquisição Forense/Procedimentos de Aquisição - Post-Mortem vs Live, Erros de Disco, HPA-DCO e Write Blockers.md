@@ -160,15 +160,22 @@ Os **bloqueadores de escrita (*write blockers*)** impedem qualquer operação de
 > [!success]- Ver Resposta
 > Os **hardware write blockers** são específicos por interface (`ATA`, `SATA`, `SCSI`, `Firewire`, `USB`), oferecem **melhor velocidade de aquisição** e impedem escritas **independentemente do sistema operativo**, sendo a melhor opção técnica embora **mais dispendiosa**. Os **software write blockers** são **mais económicos**, mas podem ser **contornados (*bypass*)** por aplicações que comuniquem diretamente com o hardware a baixo nível. Ambos são testados pelo projeto **CFTT** do NIST.
 
-## Notas relacionadas
+---
 
-- [[Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração]]
-- [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]]
-- [[Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd]]
-- [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]]
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Organização de Estruturas de Dados em Binário]]
-- [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
-- [[PKfail - Cadeia de Ataque e Deteção Forense]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração]] | `mesmo bloco` |
+| **Seguinte** | [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd]] · `Bloco 05`
+* [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]] · `Bloco 05`
+* [[Investigação Forense Digital - Análise Live vs Post-Mortem]] · `Cap. 1`
+* [[Preservação do Sistema e Integridade de Dados]] · `Cap. 1`
+* [[Organização de Estruturas de Dados em Binário]] · `Cap. 3`
+* [[PKfail - Vulnerabilidade do UEFI Secure Boot]] · `ASSI · Cap. 1`
+* [[PKfail - Cadeia de Ataque e Deteção Forense]] · `ASSI · Cap. 1`

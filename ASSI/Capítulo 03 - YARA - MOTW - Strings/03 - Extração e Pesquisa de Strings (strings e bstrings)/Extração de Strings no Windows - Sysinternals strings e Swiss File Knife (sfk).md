@@ -157,10 +157,15 @@ sfk strings FILE | sfk filter -ls+WORD
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Conceito de Strings e Comando strings em Unix-Linux]]
-- [[Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios]]
-- [[Processos e linha de comandos no Windows]]
-- [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Conceito de Strings e Comando strings em Unix-Linux]] | `mesmo bloco` |
+| **Seguinte** | [[Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Processos e linha de comandos no Windows]] · `Cap. 1`
+* [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]] · `AFD1 · Cap. 2`

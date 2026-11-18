@@ -102,9 +102,17 @@ Embora ambos estejam envolvidos em transferências do Windows Update, operam em 
 > [!success]- Ver Resposta
 > Deve configurar-se a política de grupo com `GroupMode = 1` para restringir a partilha P2P exclusivamente a máquinas da mesma rede local (LAN), impedindo a partilha com a Internet pública. O tráfego P2P do serviço utiliza tipicamente a porta **7680/TCP** (além de ligações UDP).
 
-## Notas relacionadas
+---
 
-- [[svchost.exe]]
-- [[Serviço BITS]]
-- [[Serviços Windows]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Serviço BITS]] | `mesmo bloco` |
+| **Seguinte** | [[Windows Search]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[svchost.exe]] · `mesmo bloco`
+* [[Serviços Windows]] · `mesmo bloco`

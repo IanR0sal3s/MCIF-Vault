@@ -195,13 +195,19 @@ flowchart LR
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
-- [[Windows Activity Timeline - Arquitetura e Base SQLite]]
-- [[Recuperação de Clipboard e Sincronização na Timeline]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]] | `mesmo bloco` |
+| **Seguinte** | [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] | `muda para Bloco 15` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 14` |
+
+### Conceitos Relacionados
+
+* [[Windows Activity Timeline - Arquitetura e Base SQLite]] · `mesmo bloco`
+* [[Recuperação de Clipboard e Sincronização na Timeline]] · `mesmo bloco`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `Bloco 10`
+* [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] · `AFD1 · Cap. 3`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`
+* [[Princípios e Rota do Manuseamento de Evidência Digital]] · `AFD1 · Cap. 1`

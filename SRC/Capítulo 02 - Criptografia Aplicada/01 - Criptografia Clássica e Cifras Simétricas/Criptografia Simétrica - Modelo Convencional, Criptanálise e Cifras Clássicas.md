@@ -73,7 +73,16 @@ Num sistema de cifragem simétrica (convencional), intervêm cinco elementos:
 > [!success]- Ver Resposta
 > Não. O algoritmo deve ser aberto ao escrutínio; a segurança deve depender exclusivamente da confidencialidade da chave secreta partilhada entre emissor e recetor.
 
-## Notas relacionadas
+---
 
-- [[Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4]]
-- [[Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 2 - Criptografia Aplicada]] | Início do capítulo |
+| **Seguinte** | [[Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Criptografia Aplicada]] · [[00 SRC]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees]] · `Cap. 1`

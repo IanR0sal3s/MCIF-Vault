@@ -148,11 +148,16 @@ A existência de cópias sombra altera drasticamente a eficácia de uma perícia
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[LastActivityView e Reconstituição Temporal Live]]
-- [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]]
-- [[Acesso Forense e Montagem de Shadow Copies]]
-- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[LastActivityView e Reconstituição Temporal Live]] | `mesmo bloco` |
+| **Seguinte** | [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 09` |
+
+### Conceitos Relacionados
+
+* [[Acesso Forense e Montagem de Shadow Copies]] · `mesmo bloco`
+* [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] · `AFD1 · Cap. 3`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`

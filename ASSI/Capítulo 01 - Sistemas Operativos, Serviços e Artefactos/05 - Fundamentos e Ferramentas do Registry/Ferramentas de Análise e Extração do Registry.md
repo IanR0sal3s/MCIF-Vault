@@ -138,12 +138,21 @@ O executável de linha de comandos do **RegRipper** (`rip.exe`) processa ficheir
 > [!success]- Ver Resposta
 > Quando executado com privilégios de Administrador num sistema vivo, o `RegistryExplorer` contorna o bloqueio exclusivo do Configuration Manager recorrendo ao serviço *Volume Shadow Copy* (VSS) ou leitura direta de baixo nível, permitindo abrir os hives ativos e aplicar o *replay* dos ficheiros de transação (`.LOG1` e `.LOG2`).
 
-## Notas relacionadas
+---
 
-- [[Estrutura e Hives do Windows Registry]]
-- [[Artefacto Forense UserAssist]]
-- [[Artefactos Forenses de Execução e Persistência no Registry]]
-- [[Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)]]
-- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Tipos de Dados e Associação de Ficheiros no Registry]] | `mesmo bloco` |
+| **Seguinte** | [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Estrutura e Hives do Windows Registry]] · `mesmo bloco`
+* [[Artefacto Forense UserAssist]] · `Bloco 07`
+* [[Artefactos Forenses de Execução e Persistência no Registry]] · `Bloco 07`
+* [[Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)]] · `AFD1 · Cap. 2`
+* [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]] · `AFD1 · Cap. 2`
+* [[Investigação Forense Digital - Análise Live vs Post-Mortem]] · `AFD1 · Cap. 1`

@@ -193,12 +193,21 @@ usbview.exe /sxml list.xml
 > [!success]- Ver Resposta
 > O `USBOblivion` apaga os registos de dispositivos USB nas chaves `USBSTOR`, `USB` e `MountedDevices` do hive `SYSTEM` e limpa o ficheiro `setupapi.dev.log`. O perito pode detetar a manobra anti-forense encontrando rasto da execução do próprio `USBOblivion` (em `UserAssist`, `MuiCache` ou `Prefetch`) e detetando inconsistências como pastas e ficheiros acedidos em unidades externas que permanecem gravados nos hives do utilizador (**ShellBags** em `USRCLASS.DAT`, `RecentDocs`, `ComDlg32` e atalhos `.lnk`).
 
-## Notas relacionadas
+---
 
-- [[Estrutura e Hives do Windows Registry]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Artefacto Forense ShellBags]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
-- [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]]
-- [[Fases da Investigação Forense Digital]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Artefacto Forense ShellBags]] | `Bloco 07` |
+| **Seguinte** | [[LastActivityView e Reconstituição Temporal Live]] | `muda para Bloco 09` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 08` |
+
+### Conceitos Relacionados
+
+* [[Salvaguarda e Monitorização do Registry]] · `Bloco 06`
+* [[Estrutura e Hives do Windows Registry]] · `Bloco 05`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `AFD1 · Cap. 1`
+* [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]] · `AFD1 · Cap. 1`
+* [[Fases da Investigação Forense Digital]] · `AFD1 · Cap. 1`

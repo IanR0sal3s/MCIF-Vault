@@ -160,11 +160,18 @@ Segundo o modelo da *Trellix* (*"Scanning Danger: Unmasking the Threats of Quish
 > [!success]- Ver Resposta
 > Ao ocultar o URL dentro de uma imagem QR, o atacante evita os filtros textuais de URL do servidor de e-mail e leva o utilizador a abrir o link no seu smartphone pessoal, fora do perímetro protegido da empresa. Ao contrário do *quishing* (`https://...`), um QR de **Passkeys (`FIDO2`)** usa o esquema `FIDO:/...` e exige verificação de proximidade via **Bluetooth**, impedindo ataques à distância.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo]]
-- [[Business Email Compromise (BEC) e Fraudes Executivas com Deepfake de Áudio e Vídeo]]
-- [[Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay]]
-- [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]]
-- [[Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo]] | `mesmo bloco` |
+| **Seguinte** | [[Business Email Compromise (BEC) e Fraudes Executivas com Deepfake de Áudio e Vídeo]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay]] · `Bloco 06`
+* [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]] · `Bloco 06`
+* [[Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones]] · `Bloco 01`

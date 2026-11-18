@@ -69,7 +69,16 @@ A postura defensiva de uma organização assenta em **políticas de segurança**
 > [!success]- Ver Resposta
 > A `NIS 2` é uma diretiva europeia transversal para reforço da cibersegurança, gestão de riscos e reporte de incidentes em setores essenciais/importantes da UE, enquanto o `PCI-DSS` é um *standard* setorial específico para organizações que lidam com cartões de pagamento.
 
-## Notas relacionadas
+---
 
-- [[Testes de Penetração - Metodologia, Pentest Request e Relatórios]]
-- [[Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Testes de Penetração - Metodologia, Pentest Request e Relatórios]] | `mesmo bloco` |
+| **Seguinte** | [[Capítulo 1 - Introdução à Cibersegurança]] · [[00 COD1]] | Fim do capítulo |
+| **Índice** | [[Capítulo 1 - Introdução à Cibersegurança]] · [[00 COD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos]] · `SRC · Cap. 4`

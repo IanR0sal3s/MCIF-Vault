@@ -144,16 +144,23 @@ partners[0].quota=1.238;
 > [!success]- Ver Resposta
 > Interpretando diretamente em Big-endian (`0xb3000d00` e `0xc9769e3f`), obtêm-se valores implausíveis para um registo de sócio: `3 003 124 992` e `-1 010 147,94`. Invertendo os 4 bytes de cada campo para **Little-endian**, obtêm-se **`0x000d00b3` (`852 147`)** e **`0x3f9e76c9` (`1,238`)**, valores semanticamente coerentes.
 
-## Notas relacionadas
+---
 
-- [[Endianness e Ordem de Armazenamento]]
-- [[Números em Vírgula Flutuante (IEEE 754)]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Artefacto Forense UserAssist]]
-- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
-- [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]]
-- [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]
-- [[Codificação uLEB128 em Estruturas de Dados do Windows]]
-- [[Capítulo 3 - Organização de Dados]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] | `mesmo bloco` |
+| **Seguinte** | [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] | `Comum/` · `muda para Bloco 04` |
+| **Índice** | [[Capítulo 3 - Organização de Dados]] · [[00 AFD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Endianness e Ordem de Armazenamento]] · `Bloco 02`
+* [[Números em Vírgula Flutuante (IEEE 754)]] · `Bloco 02`
+* [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] · `Bloco 01`
+* [[Artefacto Forense UserAssist]] · `ASSI · Cap. 1`
+* [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] · `ASSI · Cap. 1`
+* [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]] · `ASSI · Cap. 1`
+* [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] · `ASSI · Cap. 1`
+* [[Codificação uLEB128 em Estruturas de Dados do Windows]] · `ASSI · Cap. 1`

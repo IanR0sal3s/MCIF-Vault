@@ -154,13 +154,20 @@ Total (sha256): 5767d9dcd2e48b3a0dce1b9a143ecf7a664364660637c5f348d1054afb4a1784
 > [!success]- Ver Resposta
 > `bs=512` alinha o bloco de aquisição com o setor físico padrão de `512 bytes` de um HDD; `split=10G` e `splitformat=aa` dividem a imagem `RAW` em ficheiros de `10 GB` com sufixos alfabéticos (`image.dd.aa`, `image.dd.ab`, ...). Outros derivados forenses do `dd` incluem **`dc3dd`**, **`ddrescue`**, **`dd_rescue`** e **`rdd`**.
 
-## Notas relacionadas
+---
 
-- [[Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)]]
-- [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]]
-- [[Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração]]
-- [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]]
-- [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Exercícios Práticos - Integridade de Dados e Hashes]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)]] | `mesmo bloco` |
+| **Seguinte** | [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração]] · `Bloco 04`
+* [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]] · `Bloco 04`
+* [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]] · `Bloco 04`
+* [[Preservação do Sistema e Integridade de Dados]] · `Cap. 1`
+* [[Exercícios Práticos - Integridade de Dados e Hashes]] · `Cap. 1`

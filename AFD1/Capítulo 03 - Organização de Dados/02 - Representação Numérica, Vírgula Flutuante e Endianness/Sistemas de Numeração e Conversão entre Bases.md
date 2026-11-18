@@ -154,13 +154,21 @@ Agrupando os bits de 4 em 4:
 > [!success]- Ver Resposta
 > **1 Byte equivale a 8 bits e a exatamente 2 dígitos hexadecimais**. O sistema hexadecimal representa diretamente blocos de 4 bits (*nibbles*) sem o comprimento excessivo do binário nem a falta de alinhamento posicional da base 10.
 
-## Notas relacionadas
+---
 
-- [[Números em Vírgula Flutuante (IEEE 754)]]
-- [[Endianness e Ordem de Armazenamento]]
-- [[Organização de Estruturas de Dados em Binário]]
-- [[Codificação uLEB128 em Estruturas de Dados do Windows]]
-- [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]]
-- [[Estrutura Interna e Algoritmo de Hashing do Prefetch]]
-- [[Jump Lists - Arquitetura, AppIDs e Carving]]
-- [[Capítulo 3 - Organização de Dados]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] | `Bloco 01` |
+| **Seguinte** | [[Números em Vírgula Flutuante (IEEE 754)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - Organização de Dados]] · [[00 AFD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Endianness e Ordem de Armazenamento]] · `mesmo bloco`
+* [[Organização de Estruturas de Dados em Binário]] · `Bloco 03`
+* [[Codificação uLEB128 em Estruturas de Dados do Windows]] · `ASSI · Cap. 1`
+* [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]] · `ASSI · Cap. 1`
+* [[Estrutura Interna e Algoritmo de Hashing do Prefetch]] · `ASSI · Cap. 1`
+* [[Jump Lists - Arquitetura, AppIDs e Carving]] · `ASSI · Cap. 1`

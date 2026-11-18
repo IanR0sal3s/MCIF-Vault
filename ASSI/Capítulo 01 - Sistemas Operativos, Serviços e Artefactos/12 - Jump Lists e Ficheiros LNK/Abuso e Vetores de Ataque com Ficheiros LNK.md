@@ -212,11 +212,17 @@ bstrings.exe -f "C:\Caminho\OutstandingPayment.lnk" -m 20 --lr "http|powershell|
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Jump Lists - Arquitetura, AppIDs e Carving]]
-- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] | `mesmo bloco` |
+| **Seguinte** | [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]] | `muda para Bloco 13` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 12` |
+
+### Conceitos Relacionados
+
+* [[Jump Lists - Arquitetura, AppIDs e Carving]] · `mesmo bloco`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `Bloco 10`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`
+* [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]] · `AFD1 · Cap. 3`

@@ -69,6 +69,7 @@
     a.obs-link { color: var(--primary); text-decoration: none; font-size: 12px; font-weight: 600; }
     a.obs-link:hover { text-decoration: underline; }
     .sec-label { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); margin: 14px 0 8px; }
+    .shared-badge { display: inline-block; margin-left: 8px; padding: 1px 7px; font-size: 11px; font-weight: 600; border-radius: 99px; background: rgba(99, 102, 241, 0.18); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.4); vertical-align: middle; }
   </style>
 </head>
 <body>
@@ -127,32 +128,64 @@
     let currentPath = [];
     const expandedTree = new Set();
 
-    // Construir árvore de pastas a partir de n.path
+    // Construir árvore de pastas a partir de n.path + atalhos em placements (Comum/)
+    function insertAtFolder(root, folderParts, noteObj) {
+      let node = root;
+      const acc = [];
+      for (const folder of folderParts) {
+        acc.push(folder);
+        if (!node.children.has(folder)) {
+          node.children.set(folder, { name: folder, pathArr: [...acc], children: new Map(), notes: [] });
+        }
+        node = node.children.get(folder);
+      }
+      node.notes.push(noteObj);
+    }
+
+    function sortTreeNotes(node) {
+      const folderKey = node.pathArr.join('/');
+      node.notes.sort((a, b) => {
+        const oa = (a.order_map && a.order_map[folderKey] !== undefined) ? a.order_map[folderKey] : 999999;
+        const ob = (b.order_map && b.order_map[folderKey] !== undefined) ? b.order_map[folderKey] : 999999;
+        if (oa !== ob) return oa - ob;
+        return a.title.localeCompare(b.title);
+      });
+      for (const ch of node.children.values()) sortTreeNotes(ch);
+    }
+
     function buildTree(list) {
       const root = { name: 'Início', pathArr: [], children: new Map(), notes: [] };
       for (const n of list) {
         const parts = n.path.split('/');
         parts.pop(); // remove nome do ficheiro .md
-        let node = root;
-        const acc = [];
-        for (const folder of parts) {
-          acc.push(folder);
-          if (!node.children.has(folder)) {
-            node.children.set(folder, { name: folder, pathArr: [...acc], children: new Map(), notes: [] });
+        insertAtFolder(root, parts, n);
+        if (Array.isArray(n.placements)) {
+          for (const place of n.placements) {
+            const pParts = place.split('/').filter(Boolean);
+            insertAtFolder(root, pParts, { ...n, isShortcut: true });
           }
-          node = node.children.get(folder);
         }
-        node.notes.push(n);
       }
+      sortTreeNotes(root);
       return root;
     }
 
     const vaultTree = buildTree(rawNotes);
 
     function collectNotes(node) {
-      let arr = [...node.notes];
-      for (const ch of node.children.values()) arr = arr.concat(collectNotes(ch));
-      return arr;
+      const seen = new Set();
+      const out = [];
+      function walk(nd) {
+        for (const n of nd.notes) {
+          if (!seen.has(n.path)) {
+            seen.add(n.path);
+            out.push(n);
+          }
+        }
+        for (const ch of nd.children.values()) walk(ch);
+      }
+      walk(node);
+      return out;
     }
 
     function getState(path) { return progress[path] !== undefined ? progress[path] : 0; }
@@ -247,9 +280,13 @@
       return `<div class="note-list">` + list.map(n => {
         const s = getState(n.path);
         const obsUrl = `obsidian://open?vault=${encodeURIComponent(VAULT_NAME)}&file=${encodeURIComponent(n.path)}`;
+        const sharedUcs = (n.shared_ucs && n.shared_ucs.length) ? n.shared_ucs.join(', ') : '';
+        const sharedBadge = (n.uc === 'COMUM' || n.isShortcut)
+          ? `<span class="shared-badge" title="Nota partilhada em Comum/ — alterações aqui sincronizam diretamente com a nota original">Partilhada · Comum/${sharedUcs ? ' · ' + sharedUcs : ''}</span>`
+          : '';
         return `<div class="note-row">
           <div style="flex:1;min-width:240px">
-            <div style="font-weight:600">${n.title}</div>
+            <div style="font-weight:600">${n.title}${sharedBadge}</div>
             <div class="meta">${n.uc}${n.cap ? ' · Cap. ' + n.cap : ''} · ${n.tipo || 'nota'} · <a class="obs-link" href="${obsUrl}">Abrir no Obsidian</a></div>
           </div>
           <div class="pill-group">

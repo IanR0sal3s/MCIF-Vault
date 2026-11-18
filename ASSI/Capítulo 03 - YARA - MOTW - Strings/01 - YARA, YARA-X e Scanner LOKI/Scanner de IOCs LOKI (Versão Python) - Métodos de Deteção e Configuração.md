@@ -189,12 +189,19 @@ usage: loki.py [-h] [-p path] [-s kilobyte] [-l log-file] [-r remote-loghost]
 > [!success]- Ver Resposta
 > Deve correr com privilégios de **Administrador** para obter permissão de leitura sobre a memória de todos os processos e diretorias protegidas do sistema. A flag **`-s kilobyte`** define o tamanho máximo dos ficheiros a analisar (por omissão **`5000` KB** $\approx 5\text{ MB}$).
 
-## Notas relacionadas
+---
 
-- [[Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI]]
-- [[YARA - Introdução, Estrutura de Regras, Metadados e Condições]]
-- [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]]
-- [[YARA-X (Reimplementação em Rust) e Ferramenta CLI yr]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[YARA-X (Reimplementação em Rust) e Ferramenta CLI yr]] | `mesmo bloco` |
+| **Seguinte** | [[Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[YARA - Introdução, Estrutura de Regras, Metadados e Condições]] · `mesmo bloco`
+* [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]] · `mesmo bloco`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`

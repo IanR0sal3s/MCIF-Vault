@@ -237,12 +237,19 @@ $ip = /([0-9]{1,3}\.){3}[0-9]{1,3}/ wide ascii
 > [!success]- Ver Resposta
 > Expressões regulares demasiado permissivas aumentam drasticamente o custo de avaliação do motor clássico em C, degradando o desempenho do varrimento; deve dar-se preferência a strings literais, sequências hexadecimais com *jumps* limitados (ex.: `[4-6]`) ou recorrer ao motor otimizado do **YARA-X**.
 
-## Notas relacionadas
+---
 
-- [[YARA - Introdução, Estrutura de Regras, Metadados e Condições]]
-- [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]]
-- [[YARA-X (Reimplementação em Rust) e Ferramenta CLI yr]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
-- [[Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[YARA - Introdução, Estrutura de Regras, Metadados e Condições]] | `mesmo bloco` |
+| **Seguinte** | [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[YARA-X (Reimplementação em Rust) e Ferramenta CLI yr]] · `mesmo bloco`
+* [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] · `AFD1 · Cap. 3`
+* [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]] · `AFD1 · Cap. 3`
+* [[Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios]] · `Bloco 03`
