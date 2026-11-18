@@ -75,7 +75,17 @@ $$\text{LBA} = (C \times \max_H + H) \times \max_S + (S - 1)$$
    > [!success]- Ver Resposta
    > O acesso via `INT 13h` delega na BIOS a comunicação com o hardware, sendo mais simples mas lento e limitado (usado hoje apenas durante o *boot*); o acesso direto envia comandos diretamente ao controlador do disco, sendo mais complexo mas substancialmente mais rápido.
 
-## Notas relacionadas
-- [[Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)]]
-- [[Interface SCSI, SAS e Comparação SCSI vs ATA]]
-- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 4 - Dispositivos de Armazenamento]] | Início do capítulo |
+| **Seguinte** | [[Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 4 - Dispositivos de Armazenamento]] · [[00 AFD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Interface SCSI, SAS e Comparação SCSI vs ATA]] · `mesmo bloco`
+* [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] · `Cap. 3`

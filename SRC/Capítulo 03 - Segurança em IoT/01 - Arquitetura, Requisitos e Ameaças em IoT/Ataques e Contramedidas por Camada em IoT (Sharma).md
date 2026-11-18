@@ -85,8 +85,17 @@ Nenhuma política ou algoritmo único protege todas as camadas IoT: cada camada 
 > [!success]- Ver Resposta
 > Para *Side-Channel*: *hiding* e *masking* (desacoplar consumo/tempo da chave criptográfica), hardware dedicado e injeção de ruído/*dummy data*. Para *Traffic Analysis*: cifragem combinada com *traffic shaping*, *padding* e pacotes fictícios.
 
-## Notas relacionadas
+---
 
-- [[Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)]]
-- [[Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)]]
-- [[TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)]] | `mesmo bloco` |
+| **Seguinte** | [[Segurança em BLE - Pairing Feature Exchange, LE Legacy e LE Secure Connections (Lacava)]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 3 - Segurança em IoT]] · [[00 SRC]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)]] · `Bloco 03`
+* [[TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)]] · `Bloco 04`

@@ -146,13 +146,21 @@ Adotar uma cultura punitiva perante erros humanos compromete diretamente a defes
 > [!success]- Ver Resposta
 > Punir ou envergonhar vítimas leva-as a esconder futuros incidentes por receio de represálias, atrasando a contenção. O reforço positivo integra o reporte no procedimento de **Resposta a Incidentes**, recompensa quem alerta atempadamente a equipa de TI e aplica o princípio *"better to report a false positive than to let go a true problem"*.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)]]
-- [[Business Email Compromise (BEC) e Fraudes Executivas com Deepfake de Áudio e Vídeo]]
-- [[Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)]]
-- [[Abuso e Vetores de Ataque com Ficheiros LNK]]
-- [[Artefactos Forenses de Dispositivos USB]]
-- [[Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers]]
-- [[Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação]] | `Bloco 03` |
+| **Seguinte** | [[Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Business Email Compromise (BEC) e Fraudes Executivas com Deepfake de Áudio e Vídeo]] · `mesmo bloco`
+* [[Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)]] · `Bloco 02`
+* [[Abuso e Vetores de Ataque com Ficheiros LNK]] · `Cap. 1`
+* [[Artefactos Forenses de Dispositivos USB]] · `Cap. 1`
+* [[Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers]] · `Cap. 3`
+* [[Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen]] · `Cap. 3`

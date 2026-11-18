@@ -89,7 +89,16 @@ O **Website Footprinting** analisa o sítio web da organização para identifica
    > [!success]- Ver Resposta
    > Os cabeçalhos HTTP (`Server`, `X-Powered-By`, `Content-Type`) expõem o servidor web, linguagens/frameworks e versões, enquanto o *site mirroring* (`HTTrack`, `wget -mk`) copia toda a árvore de diretórios e ficheiros para análise offline de comentários no código-fonte, paths e parâmetros.
 
-## Notas relacionadas
-- [[Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)]]
-- [[WHOIS, DNS, Networking Footprinting e Engenharia Social]]
-- [[Footprinting Pentest e Contramedidas (Metodologia Prática)]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)]] | `Bloco 01` |
+| **Seguinte** | [[WHOIS, DNS, Networking Footprinting e Engenharia Social]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 3 - Rastreamento e Reconhecimento]] · [[00 COD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Footprinting Pentest e Contramedidas (Metodologia Prática)]] · `Bloco 04`

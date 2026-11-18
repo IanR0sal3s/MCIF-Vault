@@ -96,10 +96,19 @@ Para apoiar o preenchimento consistente das tabelas de catalogação pedidas no 
 > [!success]- Ver Resposta
 > Enquanto um disco regista atributos físicos de hardware (marca, modelo, número de série, interface, capacidade e estado de funcionamento), um serviço lógico regista domínio/IP, porto e protocolo (`TCP/UDP`), tipo de informação recolhida (histórico DNS, certificados, logs), *registrar*/fornecedor, datas de criação/expiração, estado atual e anexos.
 
-## Notas relacionadas
+---
 
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
-- [[Artefactos Forenses de Dispositivos USB]]
-- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
-- [[Capítulo 1 - Método de Investigação]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Código de Ética na Investigação Forense Digital (ISFCE)]] | `mesmo bloco` |
+| **Seguinte** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | Fim do capítulo |
+| **Índice** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `Bloco 03`
+* [[Princípios e Rota do Manuseamento de Evidência Digital]] · `Bloco 03`
+* [[Artefactos Forenses de Dispositivos USB]] · `ASSI · Cap. 1`
+* [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] · `ASSI · Cap. 1`

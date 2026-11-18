@@ -130,8 +130,12 @@ forfiles /p "C:\Temp" /d -7 /c "cmd /c dir @file"
 > * **`@fname`**: devolve apenas o nome do ficheiro sem a extensão.
 > * **`@path`**: devolve o caminho absoluto completo do ficheiro no disco (incluindo diretório, nome e extensão).
 
-## Notas relacionadas
+---
 
-- [[Processos e linha de comandos no Windows]]
-- [[Serviços Windows]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Processos e linha de comandos no Windows]] | `mesmo bloco` |
+| **Seguinte** | [[Serviços Windows]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 02` |

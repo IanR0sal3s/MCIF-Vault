@@ -130,13 +130,19 @@ Três erros operacionais recorrentes originam fugas graves de dados pessoais pun
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)]]
-- [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]]
-- [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]]
-- [[Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing]]
-- [[Conceito de Strings e Comando strings em Unix-Linux]]
-- [[Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)]]
-- [[Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)]] | `Comum/` · `mesmo bloco` |
+| **Seguinte** | [[Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo]] | `muda para Bloco 04` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]] · `Bloco 01`
+* [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]] · `Bloco 02`
+* [[Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing]] · `Bloco 05`
+* [[Conceito de Strings e Comando strings em Unix-Linux]] · `Cap. 3`
+* [[Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)]] · `Cap. 3`
+* [[Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios]] · `Cap. 3`

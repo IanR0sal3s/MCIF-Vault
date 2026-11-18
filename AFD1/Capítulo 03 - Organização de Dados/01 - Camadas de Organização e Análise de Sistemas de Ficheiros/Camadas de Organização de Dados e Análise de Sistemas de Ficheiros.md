@@ -190,16 +190,24 @@ flowchart LR
 > [!success]- Ver Resposta
 > A sequência segue: `HD` $\rightarrow$ **Physical analysis** $\rightarrow$ `Sectors of data` $\rightarrow$ **Volume analysis** $\rightarrow$ `Volume` $\rightarrow$ **File System analysis** $\rightarrow$ `File` $\rightarrow$ **Application analysis**. Analisar ao nível do **volume** permite identificar dados ocultos colocados entre partições ou fora dos limites declarados pelo sistema de ficheiros.
 
-## Notas relacionadas
+---
 
-- [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Organização de Estruturas de Dados em Binário]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
-- [[UWP - Artefactos Forenses e Estrutura de Dados]]
-- [[Jump Lists - Arquitetura, AppIDs e Carving]]
-- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
-- [[Estrutura e Hives do Windows Registry]]
-- [[Windows Search]]
-- [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
-- [[Capítulo 3 - Organização de Dados]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 3 - Organização de Dados]] | Início do capítulo |
+| **Seguinte** | [[Sistemas de Numeração e Conversão entre Bases]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 3 - Organização de Dados]] · [[00 AFD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Organização de Estruturas de Dados em Binário]] · `Bloco 03`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`
+* [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]] · `ASSI · Cap. 1`
+* [[UWP - Artefactos Forenses e Estrutura de Dados]] · `ASSI · Cap. 1`
+* [[Jump Lists - Arquitetura, AppIDs e Carving]] · `ASSI · Cap. 1`
+* [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] · `ASSI · Cap. 1`
+* [[Estrutura e Hives do Windows Registry]] · `ASSI · Cap. 1`
+* [[Windows Search]] · `ASSI · Cap. 1`
+* [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]] · `ASSI · Cap. 1`

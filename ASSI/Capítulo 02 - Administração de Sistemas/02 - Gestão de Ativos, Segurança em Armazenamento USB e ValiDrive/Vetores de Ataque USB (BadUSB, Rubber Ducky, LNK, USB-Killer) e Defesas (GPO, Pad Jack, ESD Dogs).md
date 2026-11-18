@@ -128,13 +128,18 @@ Com base na classificação de **Nissim, N., Yahalom, R., & Elovici, Y. (2017)**
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]]
-- [[Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)]]
-- [[Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo]]
-- [[Artefactos Forenses de Dispositivos USB]]
-- [[Abuso e Vetores de Ataque com Ficheiros LNK]]
-- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
-- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]] | `mesmo bloco` |
+| **Seguinte** | [[Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo]] · `Bloco 04`
+* [[Artefactos Forenses de Dispositivos USB]] · `Cap. 1`
+* [[Abuso e Vetores de Ataque com Ficheiros LNK]] · `Cap. 1`
+* [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] · `Cap. 1`
+* [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]] · `AFD1 · Cap. 2`

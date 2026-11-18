@@ -81,8 +81,17 @@ Nos slides 37–38 (e Stallings Fig. 11.3 / 12.1), distinguem-se quatro formas d
 > [!success]- Ver Resposta
 > Porque no `HMAC` tanto o emissor como o recetor partilham a mesma chave secreta $K$ (qualquer um pode produzir a etiqueta), enquanto na assinatura digital apenas o emissor detém a chave privada $PR_A$ usada para assinar.
 
-## Notas relacionadas
+---
 
-- [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]]
-- [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]]
-- [[TBL 2 - Fundamentos de Criptografia]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)]] | `Comum/` · `mesmo bloco` |
+| **Seguinte** | [[Assinaturas Digitais, PKI e GnuPG]] | `Comum/` · `muda para Bloco 04` |
+| **Índice** | [[Capítulo 2 - Criptografia Aplicada]] · [[00 SRC]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]] · `Bloco 02`
+* [[TBL 2 - Fundamentos de Criptografia]] · `Bloco 05`

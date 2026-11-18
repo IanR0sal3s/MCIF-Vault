@@ -206,13 +206,18 @@ A estrutura do `SRUDB.dat`, extração de métricas de rede e processos, e anál
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Windows Activity Timeline - Arquitetura e Base SQLite]]
-- [[Recuperação de Clipboard e Sincronização na Timeline]]
-- [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Recuperação de Clipboard e Sincronização na Timeline]] | `mesmo bloco` |
+| **Seguinte** | [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 14` |
+
+### Conceitos Relacionados
+
+* [[Windows Activity Timeline - Arquitetura e Base SQLite]] · `mesmo bloco`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `Bloco 10`
+* [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] · `AFD1 · Cap. 3`
+* [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] · `AFD1 · Cap. 3`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`

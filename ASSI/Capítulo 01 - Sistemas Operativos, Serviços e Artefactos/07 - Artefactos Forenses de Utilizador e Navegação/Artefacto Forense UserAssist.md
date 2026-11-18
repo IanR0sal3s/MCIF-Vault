@@ -155,15 +155,24 @@ O comportamento do `UserAssist` pode ser alterado ou desativado através da subc
 > [!success]- Ver Resposta
 > Sim, a defesa para o contador a 1 num `.lnk` é tecnicamente plausível: a simples abertura da pasta da pen USB no Windows Explorer para visualizar os ficheiros pode fazer com que a *shell* processe o atalho `.lnk` e incremente o contador em 1 unidade sem execução real (devendo o perito verificar o tempo de foco no offset `12–15` e cruzar com `Prefetch`/`Amcache`). Quanto à ausência no `UserAssist`, **não prova** que o binário não correu, pois o `UserAssist` apenas regista lançamentos via GUI (`explorer.exe`), ignorando execuções via `cmd.exe`, PowerShell ou tarefas agendadas.
 
-## Notas relacionadas
+---
 
-- [[Estrutura e Hives do Windows Registry]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Ferramentas de Análise e Extração do Registry]]
-- [[Artefactos Forenses de Execução e Persistência no Registry]]
-- [[Organização de Estruturas de Dados em Binário]]
-- [[Endianness e Ordem de Armazenamento]]
-- [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Código de Ética na Investigação Forense Digital (ISFCE)]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]] | `mesmo bloco` |
+| **Seguinte** | [[Artefacto Forense ShellBags]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 07` |
+
+### Conceitos Relacionados
+
+* [[Estrutura e Hives do Windows Registry]] · `Bloco 05`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`
+* [[Ferramentas de Análise e Extração do Registry]] · `Bloco 05`
+* [[Artefactos Forenses de Execução e Persistência no Registry]] · `mesmo bloco`
+* [[Organização de Estruturas de Dados em Binário]] · `AFD1 · Cap. 3`
+* [[Endianness e Ordem de Armazenamento]] · `AFD1 · Cap. 3`
+* [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]] · `AFD1 · Cap. 3`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`
+* [[Código de Ética na Investigação Forense Digital (ISFCE)]] · `AFD1 · Cap. 1`

@@ -89,7 +89,17 @@ sudo nmap -sU -p 161 <IP> --script="snmp*"
    > [!success]- Ver Resposta
    > `public` é a community string padrão de apenas leitura (*read-only*, consulta de estado/dados), enquanto `private` é a padrão de leitura e escrita (*read/write*, permitindo alterar configurações remotamente).
 
-## Notas relacionadas
-- [[Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP]]
-- [[Contramedidas de Enumeração e Metodologia Pentest]]
-- [[Cheat Sheet - Enumeração de Serviços e Portos]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Conceitos de Enumeração e Enumeração NetBIOS, SMB e LDAP]] | `Bloco 01` |
+| **Seguinte** | [[Enumeração SMTP, DNS, FTP, IPsec e VoIP (SIP)]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 5 - Enumeração]] · [[00 COD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Contramedidas de Enumeração e Metodologia Pentest]] · `Bloco 04`
+* [[Cheat Sheet - Enumeração de Serviços e Portos]] · `mesmo cap.`

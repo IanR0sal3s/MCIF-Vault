@@ -141,10 +141,18 @@ Documentado na imprensa internacional ([Caso Hong Kong Deepfake](https://tinyurl
 > [!success]- Ver Resposta
 > Porque foi convidada para uma **videoconferência em direto com múltiplos participantes** onde todos os outros interlocutores (incluindo o **CFO** e outros executivos conhecidos) eram **recriações *deepfake* de vídeo e áudio em tempo real**, dissipando a suspeita inicial e levando-a a realizar **`15` transferências** para **5 contas** em Hong Kong.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo]]
-- [[Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)]]
-- [[Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay]]
-- [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)]] | `mesmo bloco` |
+| **Seguinte** | [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]] | `muda para Bloco 05` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo]] · `mesmo bloco`
+* [[Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay]] · `Bloco 06`
+* [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]] · `Bloco 06`

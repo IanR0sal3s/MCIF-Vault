@@ -180,13 +180,18 @@ Na base **`InventoryApplicationFile.db`**, cada registo de executável preserva:
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Application Compatibility e ShimCache (AppCompatCache)]]
-- [[Extração da AmCache e Comparação Forense com a ShimCache]]
-- [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Application Compatibility e ShimCache (AppCompatCache)]] | `mesmo bloco` |
+| **Seguinte** | [[Extração da AmCache e Comparação Forense com a ShimCache]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 11` |
+
+### Conceitos Relacionados
+
+* [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]] · `mesmo bloco`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `Bloco 10`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `AFD1 · Cap. 1`

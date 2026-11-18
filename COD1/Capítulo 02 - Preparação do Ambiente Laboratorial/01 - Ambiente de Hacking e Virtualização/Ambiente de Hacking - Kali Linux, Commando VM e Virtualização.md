@@ -83,7 +83,17 @@ Para montar um laboratório funcional de testes de penetração, o ambiente base
    > [!success]- Ver Resposta
    > As credenciais padrão são `kali` / `kali`. Para engenharia reversa de binários, a ferramenta referida no capítulo é o `Ghidra`.
 
-## Notas relacionadas
-- [[Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix]]
-- [[Testes de Penetração - Metodologia, Pentest Request e Relatórios]]
-- [[Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 2 - Preparação do Ambiente Laboratorial]] | Início do capítulo |
+| **Seguinte** | [[Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 2 - Preparação do Ambiente Laboratorial]] · [[00 COD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Testes de Penetração - Metodologia, Pentest Request e Relatórios]] · `Cap. 1`
+* [[Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional]]

@@ -102,13 +102,19 @@ Para deslocações a países estrangeiros de risco elevado, aplicam-se as recome
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]]
-- [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]]
-- [[Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay]]
-- [[Arranque Forense e Processo de Boot (BIOS e Código Máquina)]]
-- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
-- [[UEFI Secure Boot]]
-- [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE]] | `mesmo bloco` |
+| **Seguinte** | [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]] · `Bloco 03`
+* [[Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay]] · `Bloco 06`
+* [[Arranque Forense e Processo de Boot (BIOS e Código Máquina)]] · `AFD1 · Cap. 2`
+* [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]] · `AFD1 · Cap. 2`
+* [[UEFI Secure Boot]] · `Cap. 1`
+* [[PKfail - Vulnerabilidade do UEFI Secure Boot]] · `Cap. 1`

@@ -185,11 +185,17 @@ No Slide 25 da apresentação é indicada a realização da **Ficha 15** referen
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers]]
-- [[Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell]]
-- [[Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker]]
-- [[Serviço BITS]]
-- [[Abuso e Vetores de Ataque com Ficheiros LNK]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers]] | `mesmo bloco` |
+| **Seguinte** | [[Conceito de Strings e Comando strings em Unix-Linux]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell]] · `mesmo bloco`
+* [[Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker]] · `mesmo bloco`
+* [[Serviço BITS]] · `Cap. 1`
+* [[Abuso e Vetores de Ataque com Ficheiros LNK]] · `Cap. 1`

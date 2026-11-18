@@ -165,12 +165,18 @@ A concentração de informação em suportes digitais amplia drasticamente o imp
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones]]
-- [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]]
-- [[Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados]]
-- [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]]
-- [[Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 2 - Administração de Sistemas]] | Início do capítulo |
+| **Seguinte** | [[Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]] · `mesmo bloco`
+* [[Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados]] · `mesmo bloco`
+* [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]] · `Comum/`
+* [[Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação]] · `Bloco 03`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`

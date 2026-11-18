@@ -105,13 +105,21 @@ flowchart LR
 > [!success]- Ver Resposta
 > O *Lab 01* consiste em construir uma imagem de arranque **WinFE (*Windows Forensic Environment*)** e arrancar uma máquina virtual através dela. Como o WinFE é um Windows PE modificado sem *auto-mount* em escrita para unidades locais, os discos virtuais internos não são montados nem modificados ao iniciar, permitindo usar ferramentas portáteis Windows (`FTK Imager Lite`, `RegRipper`) sem alterar a evidência.
 
-## Notas relacionadas
+---
 
-- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
-- [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]
-- [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]]
-- [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]]
-- [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
-- [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]] | `mesmo bloco` |
+| **Seguinte** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | Fim do capítulo |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]] · `Bloco 02`
+* [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]] · `Bloco 03`
+* [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]] · `Bloco 04`
+* [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]] · `Bloco 04`
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `Cap. 1`
+* [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]] · `Cap. 1`

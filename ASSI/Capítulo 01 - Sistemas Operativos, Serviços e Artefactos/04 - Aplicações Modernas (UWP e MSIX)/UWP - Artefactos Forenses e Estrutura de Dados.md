@@ -148,11 +148,19 @@ Numa análise a aplicações UWP, a recolha deve seguir uma sequência lógica e
 > [!success]- Ver Resposta
 > O `swapfile.sys` é o ficheiro de paginação dedicado onde o Windows descarrega páginas de memória das aplicações UWP e contentores quando estes são suspensos em segundo plano. Através de pesquisa de *strings* e *carving*, o perito pode recuperar mensagens em claro, URLs ou chaves de sessão voláteis.
 
-## Notas relacionadas
+---
 
-- [[Aplicações UWP (Universal Windows Platform) - Visão Geral]]
-- [[Registry em Aplicações Modernas (MSIX e Helium)]]
-- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Aplicações UWP (Universal Windows Platform) - Visão Geral]] | `mesmo bloco` |
+| **Seguinte** | [[Estrutura e Hives do Windows Registry]] | `muda para Bloco 05` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Registry em Aplicações Modernas (MSIX e Helium)]] · `Bloco 06`
+* [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] · `AFD1 · Cap. 3`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`

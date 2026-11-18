@@ -270,11 +270,17 @@ A opção **`streams_interface=windows`** serve para que o driver NTFS em Linux 
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker]]
-- [[Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers]]
-- [[Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen]]
-- [[Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)]]
-- [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI]] | `Bloco 01` |
+| **Seguinte** | [[Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers]] · `mesmo bloco`
+* [[Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen]] · `mesmo bloco`
+* [[Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)]] · `AFD1 · Cap. 2`
+* [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]] · `AFD1 · Cap. 2`

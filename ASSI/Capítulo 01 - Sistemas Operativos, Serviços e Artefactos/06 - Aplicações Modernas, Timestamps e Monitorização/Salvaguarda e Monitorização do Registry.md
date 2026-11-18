@@ -147,10 +147,19 @@ sysmon.exe -u
 > [!success]- Ver Resposta
 > O parâmetro `/FO csv` instrui o `schtasks` a formatar a listagem de tarefas como valores separados por vírgulas (CSV). Já o parâmetro `/v` passado ao `findstr` inverte a correspondência textual, exibindo apenas as linhas que **não** contêm a palavra `"ready"` (permitindo identificar tarefas desativadas, em execução ou com falhas).
 
-## Notas relacionadas
+---
 
-- [[Estrutura e Hives do Windows Registry]]
-- [[Ferramentas de Análise e Extração do Registry]]
-- [[Artefactos Forenses de Execução e Persistência no Registry]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] | `Comum/` · `mesmo bloco` |
+| **Seguinte** | [[Artefactos Forenses de Execução e Persistência no Registry]] | `muda para Bloco 07` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 06` |
+
+### Conceitos Relacionados
+
+* [[Artefactos Forenses de Dispositivos USB]] · `Bloco 08`
+* [[Estrutura e Hives do Windows Registry]] · `Bloco 05`
+* [[Ferramentas de Análise e Extração do Registry]] · `Bloco 05`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`

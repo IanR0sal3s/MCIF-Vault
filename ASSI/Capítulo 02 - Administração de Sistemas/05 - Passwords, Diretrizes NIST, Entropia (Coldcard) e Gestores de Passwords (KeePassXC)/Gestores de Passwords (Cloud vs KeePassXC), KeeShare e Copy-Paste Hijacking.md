@@ -110,11 +110,18 @@ Os gestores de passwords (*cloud* como `Bitwarden` ou locais como `KeePassXC`) e
 > [!success]- Ver Resposta
 > O **`KeeShare`** permite partilhar de forma sincronizada apenas grupos ou entradas específicas de uma base de dados através de um ficheiro contentor (via Dropbox, Google Drive ou Nextcloud), assegurando confidencialidade e integridade com **cifragem ponta a ponta (E2EE)**, **certificado assinado** e **assinaturas criptográficas**.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]]
-- [[Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing]]
-- [[Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin)]]
-- [[Recuperação de Clipboard e Sincronização na Timeline]]
-- [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing]] | `mesmo bloco` |
+| **Seguinte** | [[Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]] · `mesmo bloco`
+* [[Recuperação de Clipboard e Sincronização na Timeline]] · `Cap. 1`
+* [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]] · `Bloco 06`

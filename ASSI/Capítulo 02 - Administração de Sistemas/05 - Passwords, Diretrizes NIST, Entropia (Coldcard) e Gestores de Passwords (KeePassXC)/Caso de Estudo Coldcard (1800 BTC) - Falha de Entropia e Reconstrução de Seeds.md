@@ -99,10 +99,17 @@ flowchart LR
 > [!success]- Ver Resposta
 > Foram roubados **`1800 BTC`** (cerca de **`~$100 milhões USD`**) de aproximadamente **`~7000` endereços Bitcoin**. Como as carteiras eram mantidas *offline* (*air-gapped*) para armazenamento a longo prazo, muitas vítimas só descobriram o desvio semanas depois, quando tentaram movimentar os fundos.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)]]
-- [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking]]
-- [[Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing]]
-- [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)]] | `mesmo bloco` |
+| **Seguinte** | [[Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking]] · `mesmo bloco`
+* [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]] · `AFD1 · Cap. 3`

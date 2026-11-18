@@ -212,13 +212,20 @@ Os procedimentos de análise da pasta Explorer, extração de imagens com `thumb
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Jump Lists - Arquitetura, AppIDs e Carving]]
-- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
-- [[Windows Search]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Código de Ética na Investigação Forense Digital (ISFCE)]]
-- [[Organização de Estruturas de Dados em Binário]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Abuso e Vetores de Ataque com Ficheiros LNK]] | `Bloco 12` |
+| **Seguinte** | [[Windows Activity Timeline - Arquitetura e Base SQLite]] | `muda para Bloco 14` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 13` |
+
+### Conceitos Relacionados
+
+* [[Jump Lists - Arquitetura, AppIDs e Carving]] · `Bloco 12`
+* [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] · `Bloco 12`
+* [[Windows Search]] · `Bloco 03`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `Bloco 10`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`
+* [[Código de Ética na Investigação Forense Digital (ISFCE)]] · `AFD1 · Cap. 1`
+* [[Organização de Estruturas de Dados em Binário]] · `AFD1 · Cap. 3`

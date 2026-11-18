@@ -255,14 +255,21 @@ udisksctl mount -b /dev/loop0p1
 > [!success]- Ver Resposta
 > Permite realizar a montagem sem privilégios **`sudo`** (utilizador regular nos grupos `fuse` e `disk`, reduzindo riscos de segurança) e suporta **emulação de escrita (`--cache cachefile`)** num ficheiro de *cache* separado, deixando a imagem forense original 100% intacta.
 
-## Notas relacionadas
+---
 
-- [[Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd]]
-- [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]]
-- [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]]
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
-- [[Estrutura e Hives do Windows Registry]]
-- [[Análise Forense e Criação a Pedido do Prefetch]]
-- [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes]] | `Bloco 04` |
+| **Seguinte** | [[Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)]] · `mesmo bloco`
+* [[Princípios e Rota do Manuseamento de Evidência Digital]] · `Cap. 1`
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `Cap. 1`
+* [[Estrutura e Hives do Windows Registry]] · `ASSI · Cap. 1`
+* [[Análise Forense e Criação a Pedido do Prefetch]] · `ASSI · Cap. 1`
+* [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]] · `ASSI · Cap. 1`

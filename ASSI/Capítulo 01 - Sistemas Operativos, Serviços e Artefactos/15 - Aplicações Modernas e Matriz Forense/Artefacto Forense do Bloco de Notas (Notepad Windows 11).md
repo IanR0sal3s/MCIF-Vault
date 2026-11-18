@@ -189,13 +189,19 @@ A aquisição física da pasta `LocalState`, dissecação da estrutura binária 
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Codificação uLEB128 em Estruturas de Dados do Windows]]
-- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
-- [[Registry em Aplicações Modernas (MSIX e Helium)]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Organização de Estruturas de Dados em Binário]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Endianness e Ordem de Armazenamento]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]] | `Bloco 14` |
+| **Seguinte** | [[Codificação uLEB128 em Estruturas de Dados do Windows]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 15` |
+
+### Conceitos Relacionados
+
+* [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] · `mesmo bloco`
+* [[Registry em Aplicações Modernas (MSIX e Helium)]] · `Bloco 06`
+* [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] · `AFD1 · Cap. 3`
+* [[Organização de Estruturas de Dados em Binário]] · `AFD1 · Cap. 3`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`
+* [[Endianness e Ordem de Armazenamento]] · `AFD1 · Cap. 3`

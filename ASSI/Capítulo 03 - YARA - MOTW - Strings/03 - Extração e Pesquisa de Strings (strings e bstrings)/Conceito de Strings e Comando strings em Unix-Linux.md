@@ -250,10 +250,16 @@ strings file | grep ...
 
 ---
 
-## Notas relacionadas
+## Navegação e Notas Relacionadas
 
-- [[Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)]]
-- [[Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen]] | `Bloco 02` |
+| **Seguinte** | [[Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios]] · `mesmo bloco`
+* [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] · `AFD1 · Cap. 3`
+* [[Sistemas de Numeração e Conversão entre Bases]] · `AFD1 · Cap. 3`

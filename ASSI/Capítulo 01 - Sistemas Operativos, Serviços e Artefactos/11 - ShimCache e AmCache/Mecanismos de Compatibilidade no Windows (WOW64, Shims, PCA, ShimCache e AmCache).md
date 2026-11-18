@@ -221,12 +221,18 @@ Conforme sistematizado na [[Matriz de Correlação Forense e Cronologia de Ativa
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Application Compatibility e ShimCache (AppCompatCache)]]
-- [[AmCache - Arquitetura, Hives e Evolução para SQLite]]
-- [[Extração da AmCache e Comparação Forense com a ShimCache]]
-- [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]]
-- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Análise Forense e Criação a Pedido do Prefetch]] | `Bloco 10` |
+| **Seguinte** | [[Application Compatibility e ShimCache (AppCompatCache)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 11` |
+
+### Conceitos Relacionados
+
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `Bloco 10`
+* [[AmCache - Arquitetura, Hives e Evolução para SQLite]] · `mesmo bloco`
+* [[Extração da AmCache e Comparação Forense com a ShimCache]] · `mesmo bloco`
+* [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]] · `Bloco 05`
+* [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] · `Bloco 15`

@@ -155,15 +155,22 @@ Na recolha de evidências, deve dar-se prioridade rigorosa dos dados **mais vol�
 > [!success]- Ver Resposta
 > Um **executável** pode apagar ficheiros no computador do investigador ou comunicar com um servidor remoto; um **ficheiro HTML** pode executar *scripts* no navegador do perito e descarregar conteúdos externos, exigindo máquinas virtuais e redes isoladas.
 
-## Notas relacionadas
+---
 
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
-- [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
-- [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]]
-- [[UWP - Artefactos Forenses e Estrutura de Dados]]
-- [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]]
-- [[Salvaguarda e Monitorização do Registry]]
-- [[Capítulo 1 - Método de Investigação]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Princípios e Rota do Manuseamento de Evidência Digital]] | `mesmo bloco` |
+| **Seguinte** | [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Preservação do Sistema e Integridade de Dados]] · `Bloco 02`
+* [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] · `ASSI · Cap. 1`
+* [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]] · `ASSI · Cap. 1`
+* [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]] · `ASSI · Cap. 1`
+* [[UWP - Artefactos Forenses e Estrutura de Dados]] · `ASSI · Cap. 1`
+* [[Volume Shadow Service (VSS) - Arquitetura e Funcionamento]] · `ASSI · Cap. 1`
+* [[Salvaguarda e Monitorização do Registry]] · `ASSI · Cap. 1`

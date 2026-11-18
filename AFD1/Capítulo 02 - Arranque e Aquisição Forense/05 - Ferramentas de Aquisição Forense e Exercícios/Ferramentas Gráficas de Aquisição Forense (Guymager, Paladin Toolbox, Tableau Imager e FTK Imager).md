@@ -148,13 +148,20 @@ O **FTK Imager** é destacado na aula como a **opção recomendada para ambiente
 > [!success]- Ver Resposta
 > Cria imagens físicas e lógicas (de discos, CD/DVDs, pens USB, pastas ou ficheiros individuais), pré-visualiza conteúdos (incluindo **`File Slack`** e espaço não alocado em hexadecimal), monta imagens em modo *read-only*, exporta ficheiros/pastas, recupera ficheiros eliminados da Reciclagem (*Recycle Bin*), calcula *hashes* gerando relatórios e possui versão portátil (**Lite**).
 
-## Notas relacionadas
+---
 
-- [[Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)]]
-- [[Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd]]
-- [[Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager]]
-- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
-- [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]
-- [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]]
-- [[Organização de Estruturas de Dados em Binário]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd]] | `mesmo bloco` |
+| **Seguinte** | [[Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)]] · `mesmo bloco`
+* [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]] · `Bloco 02`
+* [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]] · `Bloco 03`
+* [[Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers]] · `Bloco 04`
+* [[Organização de Estruturas de Dados em Binário]] · `Cap. 3`

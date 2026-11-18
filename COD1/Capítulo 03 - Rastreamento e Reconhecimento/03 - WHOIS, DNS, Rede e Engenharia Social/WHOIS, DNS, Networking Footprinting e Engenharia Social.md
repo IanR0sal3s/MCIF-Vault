@@ -103,8 +103,17 @@ As consultas DNS revelam servidores expostos, serviços de e-mail, subdomínios,
    > [!success]- Ver Resposta
    > O registo `TXT` expõe políticas de e-mail (`SPF`, `DMARC`) e tokens de verificação de serviços externos/cloud utilizados pela organização. O pedido `AXFR` testa se o servidor DNS permite indevidamente transferência de zona a qualquer cliente, o que exporia todos os registos e hostnames internos/externos do domínio.
 
-## Notas relacionadas
-- [[Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)]]
-- [[OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail]]
-- [[Footprinting Pentest e Contramedidas (Metodologia Prática)]]
-- [[Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[OSINT - Plataformas (GitHub, Trello), Redes Sociais, Website e E-mail]] | `Bloco 02` |
+| **Seguinte** | [[Footprinting Pentest e Contramedidas (Metodologia Prática)]] | `muda para Bloco 04` |
+| **Índice** | [[Capítulo 3 - Rastreamento e Reconhecimento]] · [[00 COD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)]] · `Bloco 01`
+* [[Scanning de Redes - Conceitos, Flags TCP e Descoberta ICMP]] · `Cap. 4`

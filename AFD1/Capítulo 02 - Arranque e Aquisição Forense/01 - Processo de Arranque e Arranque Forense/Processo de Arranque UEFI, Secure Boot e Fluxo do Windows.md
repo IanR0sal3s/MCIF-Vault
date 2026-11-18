@@ -158,16 +158,23 @@ flowchart TD
 > [!success]- Ver Resposta
 > Após o **`Winload.exe`**, executa-se a verificação **`Kernel Mode Code Signing`** (assinatura digital dos controladores e componentes de modo kernel), carrega-se o núcleo **`NToskrnl.exe`**, inicializa-se a camada **`Hardware Abstraction Layer (HAL)`** e arranca o **`Session Manager Subsystem` (`smss.exe`)**, culminando no ecrã de **`Logon`**.
 
-## Notas relacionadas
+---
 
-- [[Arranque Forense e Processo de Boot (BIOS e Código Máquina)]]
-- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
-- [[UEFI Secure Boot]]
-- [[UEFI Secure Boot - Chaves e Hierarquia]]
-- [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
-- [[PKfail - Cadeia de Ataque e Deteção Forense]]
-- [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]]
-- [[Serviços Windows]]
-- [[svchost.exe]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Arranque Forense e Processo de Boot (BIOS e Código Máquina)]] | `mesmo bloco` |
+| **Seguinte** | [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[UEFI Secure Boot]] · `ASSI · Cap. 1`
+* [[UEFI Secure Boot - Chaves e Hierarquia]] · `ASSI · Cap. 1`
+* [[PKfail - Vulnerabilidade do UEFI Secure Boot]] · `ASSI · Cap. 1`
+* [[PKfail - Cadeia de Ataque e Deteção Forense]] · `ASSI · Cap. 1`
+* [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]] · `ASSI · Cap. 2`
+* [[Serviços Windows]] · `ASSI · Cap. 1`
+* [[svchost.exe]] · `ASSI · Cap. 1`
+* [[Preservação do Sistema e Integridade de Dados]] · `Cap. 1`

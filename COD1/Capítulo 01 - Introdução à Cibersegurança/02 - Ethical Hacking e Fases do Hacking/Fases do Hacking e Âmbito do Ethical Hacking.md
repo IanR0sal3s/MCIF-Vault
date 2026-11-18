@@ -71,8 +71,16 @@ flowchart LR
 > [!success]- Ver Resposta
 > (1) O que consegue um atacante descobrir sobre o alvo? (2) O que consegue fazer com essa informação? (3) As ações estão a ser identificadas ou monitorizadas? (4) Todos os sistemas estão atualizados e protegidos?
 
-## Notas relacionadas
+---
 
-- [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]]
-- [[Testes de Penetração - Metodologia, Pentest Request e Relatórios]]
-- [[Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]] | `Comum/` · `Bloco 01` |
+| **Seguinte** | [[Testes de Penetração - Metodologia, Pentest Request e Relatórios]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 1 - Introdução à Cibersegurança]] · [[00 COD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Footprinting - Conceitos, Objetivos e Motores de Pesquisa (Google Hacking)]] · `Cap. 3`

@@ -141,11 +141,19 @@ Ao executar `ent ls.txt` sobre um ficheiro de texto de `2750` bytes, observam-se
 > [!success]- Ver Resposta
 > A entropia varia entre `0` e `8.0 bits/byte`: **`~4.5 bits/byte`** indica baixa entropia, redundância estrutural e elevada compressibilidade (ex.: texto `.txt`, onde `ent ls.txt` reporta `4.532263 bits/byte` e **`43%`** de compressão ótima, além de Chi-quadrado, média aritmética de `127.5` para aleatoriedade, Monte Carlo $\pi$ e correlação série). **`~7.9 bits/byte`** indica dados aleatórios e incompressíveis (comprimidos, cifrados ou empacotados), onde o **`DIE`** reporta por exemplo `Total: 7.96365` e **`packed (99%)`**.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]]
-- [[Caso de Estudo Coldcard (1800 BTC) - Falha de Entropia e Reconstrução de Seeds]]
-- [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]]
-- [[Conceito de Strings e Comando strings em Unix-Linux]]
-- [[Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed]] | `mesmo bloco` |
+| **Seguinte** | [[Caso de Estudo Coldcard (1800 BTC) - Falha de Entropia e Reconstrução de Seeds]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]] · `mesmo bloco`
+* [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]] · `Cap. 3`
+* [[Conceito de Strings e Comando strings em Unix-Linux]] · `Cap. 3`
+* [[Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios]] · `Cap. 3`

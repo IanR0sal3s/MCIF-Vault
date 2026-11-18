@@ -224,12 +224,18 @@ A exploração da base de dados SQLite `ActivitiesCache.db`, identificação de 
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Recuperação de Clipboard e Sincronização na Timeline]]
-- [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
-- [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]]
-- [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]] | `Bloco 13` |
+| **Seguinte** | [[Recuperação de Clipboard e Sincronização na Timeline]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 14` |
+
+### Conceitos Relacionados
+
+* [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]] · `mesmo bloco`
+* [[Análise Forense do SRUM e Ferramentas Nativas (powercfg)]] · `mesmo bloco`
+* [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]] · `AFD1 · Cap. 3`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `AFD1 · Cap. 1`

@@ -100,7 +100,17 @@ Os relatórios gerados por ferramentas como `Nessus` e `OpenVAS` revelam os risc
    > [!success]- Ver Resposta
    > Scripts `safe` limitam-se a recolher informação sem explorar falhas nem perturbar o serviço, enquanto scripts `intrusive` podem tentar explorar ativamente vulnerabilidades ou causar indisponibilidade/crashes nos sistemas alvo.
 
-## Notas relacionadas
-- [[Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação]]
-- [[Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)]]
-- [[Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)]] | `Comum/` · `Bloco 02` |
+| **Seguinte** | [[Capítulo 6 - Análise de Vulnerabilidades]] · [[00 COD1]] | Fim do capítulo |
+| **Índice** | [[Capítulo 6 - Análise de Vulnerabilidades]] · [[00 COD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Análise e Gestão de Vulnerabilidades - Ciclo de Vida e Classificação]] · `Bloco 01`
+* [[Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional]]

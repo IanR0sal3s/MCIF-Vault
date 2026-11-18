@@ -205,12 +205,18 @@ Qual é a finalidade técnica do argumento `/svc` na execução do comando `task
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Serviços Windows]]
-- [[svchost.exe]]
-- [[Serviço BITS]]
-- [[Windows Search]]
-- [[Processos e linha de comandos no Windows]]
-- [[Comando forfiles]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Windows Search]] | `mesmo bloco` |
+| **Seguinte** | [[Aplicações UWP (Universal Windows Platform) - Visão Geral]] | `muda para Bloco 04` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Serviços Windows]] · `mesmo bloco`
+* [[svchost.exe]] · `mesmo bloco`
+* [[Serviço BITS]] · `mesmo bloco`
+* [[Processos e linha de comandos no Windows]] · `Bloco 02`
+* [[Comando forfiles]] · `Bloco 02`

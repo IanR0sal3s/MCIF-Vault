@@ -108,12 +108,21 @@ O **Código de Ética da ISFCE** protege a integridade da perícia através de d
 > [!success]- Ver Resposta
 > Só pode revelar assuntos confidenciais mediante **ordem de um tribunal de jurisdição competente** ou **permissão expressa do cliente**. Respeitar o *scope* significa examinar exaustivamente as evidências apenas dentro dos limites exatos da autorização recebida, nunca os excedendo.
 
-## Notas relacionadas
+---
 
-- [[Investigação Digital e Evidência Digital]]
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Extração da AmCache e Comparação Forense com a ShimCache]]
-- [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]]
-- [[Artefacto Forense UserAssist]]
-- [[Capítulo 1 - Método de Investigação]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] | `Bloco 03` |
+| **Seguinte** | [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | `Bloco 04` |
+
+### Conceitos Relacionados
+
+* [[Investigação Digital e Evidência Digital]] · `Bloco 01`
+* [[Princípios e Rota do Manuseamento de Evidência Digital]] · `Bloco 03`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `ASSI · Cap. 1`
+* [[Extração da AmCache e Comparação Forense com a ShimCache]] · `ASSI · Cap. 1`
+* [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]] · `ASSI · Cap. 1`
+* [[Artefacto Forense UserAssist]] · `ASSI · Cap. 1`

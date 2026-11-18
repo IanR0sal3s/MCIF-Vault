@@ -160,12 +160,20 @@ e espelhado online em [rockyou.txt.bz2 (SkullSecurity)](http://downloads.skullse
 > [!success]- Ver Resposta
 > (1) **Texto limpo**: comprometimento imediato (*"game over"*); (2) **Hash sem *salt* ou *salt* global**: vulnerável a dicionário em massa e *Rainbow Tables*; (3) **Hash rápido com `per-credential salt`**: derrota *Rainbow Tables*, mas é quebrado rapidamente por força bruta/dicionário em GPU; (4) **`Per-credential salt` + `Key Stretching` lento**: torna os ataques offline extremamente lentos, protegendo passwords não triviais.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)]]
-- [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]]
-- [[Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Exercícios Práticos - Integridade de Dados e Hashes]]
-- [[Cheat Sheet - Administração de Sistemas e Controlo de Acessos]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]] | `mesmo bloco` |
+| **Seguinte** | [[Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 06` |
+
+### Conceitos Relacionados
+
+* [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]] · `Bloco 05`
+* [[Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed]] · `Bloco 05`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`
+* [[Exercícios Práticos - Integridade de Dados e Hashes]] · `AFD1 · Cap. 1`
+* [[Cheat Sheet - Administração de Sistemas e Controlo de Acessos]] · `mesmo cap.`

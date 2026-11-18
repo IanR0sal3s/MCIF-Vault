@@ -136,10 +136,19 @@ Esta chave no `User.dat` do pacote regista a lista detalhada e marcas temporais 
 > [!success]- Ver Resposta
 > O `AppManifest.xml` declara a identidade da aplicação (nome, versão, arquitetura), dependências e as capacidades/permissões exigidas (rede, microfone, etc.). Um atacante não pode modificar livremente os ficheiros do pacote porque todo o pacote MSIX tem obrigatoriamente de estar assinado digitalmente por um certificado fidedigno, sendo a integridade criptográfica validada pelo sistema operativo.
 
-## Notas relacionadas
+---
 
-- [[Estrutura e Hives do Windows Registry]]
-- [[Ferramentas de Análise e Extração do Registry]]
-- [[Aplicações UWP (Universal Windows Platform) - Visão Geral]]
-- [[UWP - Artefactos Forenses e Estrutura de Dados]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ficha Prática e Questionário - Windows Registry e Artefactos Forenses]] | `Bloco 05` |
+| **Seguinte** | [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] | `Comum/` · `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 06` |
+
+### Conceitos Relacionados
+
+* [[Estrutura e Hives do Windows Registry]] · `Bloco 05`
+* [[Ferramentas de Análise e Extração do Registry]] · `Bloco 05`
+* [[Aplicações UWP (Universal Windows Platform) - Visão Geral]] · `Bloco 04`
+* [[UWP - Artefactos Forenses e Estrutura de Dados]] · `Bloco 04`

@@ -84,7 +84,16 @@ Estrutura hierárquica em árvore que representa técnicas potenciais para explo
 > [!success]- Ver Resposta
 > Num nó `AND`, o atacante precisa de concretizar **todos** os sub-objetivos filhos para atingir o objetivo desse nó; num nó `OR`, basta concretizar **pelo menos um** dos sub-objetivos filhos.
 
-## Notas relacionadas
+---
 
-- [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]]
-- [[Serviços e Mecanismos de Segurança (ITU-T X.800)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Serviços e Mecanismos de Segurança (ITU-T X.800)]] | `mesmo bloco` |
+| **Seguinte** | [[Laboratório Scapy - Envio e Resposta de Pacotes ICMP]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 1 - Fundamentos de Redes e Segurança]] · [[00 SRC]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Conceitos Fundamentais de Segurança (CIA, Ameaça, Vulnerabilidade e Ataque)]] · `Comum/`

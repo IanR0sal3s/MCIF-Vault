@@ -187,14 +187,22 @@ Atributos essenciais a registar: `tag ID`, tipo de dispositivo, marca e modelo, 
 > [!success]- Ver Resposta
 > Os erros são: ausência de etiqueta identificadora (`tag ID`), ausência de régua/escala métrica, reflexo de *flash* / baixa legibilidade dos números de série e colocação de notas manuscritas informais (ex.: *post-it*) sobre a prova. Registar todas as ações (`Log`) em análise *live* permite justificar posteriormente quais as alterações no sistema causadas pelo próprio investigador.
 
-## Notas relacionadas
+---
 
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]]
-- [[Artefactos Forenses de Dispositivos USB]]
-- [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]]
-- [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]]
-- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
-- [[Windows Activity Timeline - Arquitetura e Base SQLite]]
-- [[Capítulo 1 - Método de Investigação]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] | `mesmo bloco` |
+| **Seguinte** | [[Código de Ética na Investigação Forense Digital (ISFCE)]] | `muda para Bloco 04` |
+| **Índice** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Princípios e Rota do Manuseamento de Evidência Digital]] · `mesmo bloco`
+* [[Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços]] · `Bloco 04`
+* [[Artefactos Forenses de Dispositivos USB]] · `ASSI · Cap. 1`
+* [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]] · `ASSI · Cap. 2`
+* [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]] · `ASSI · Cap. 2`
+* [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] · `ASSI · Cap. 1`
+* [[Windows Activity Timeline - Arquitetura e Base SQLite]] · `ASSI · Cap. 1`

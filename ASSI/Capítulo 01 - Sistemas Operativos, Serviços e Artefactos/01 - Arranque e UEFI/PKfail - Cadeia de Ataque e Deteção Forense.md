@@ -126,11 +126,19 @@ A resolução definitiva da vulnerabilidade exige que os fabricantes OEM publiqu
 > [!success]- Ver Resposta
 > O atacante necessita da chave privada da PK de teste da AMI e de capacidade de escrita nas variáveis NVRAM autenticadas do UEFI, o que exige privilégios de **Administrador local** no sistema operativo ou acesso físico ao menu de configuração do firmware (*Setup Utility*).
 
-## Notas relacionadas
+---
 
-- [[UEFI Secure Boot]]
-- [[UEFI Secure Boot - Chaves e Hierarquia]]
-- [[PKfail - Vulnerabilidade do UEFI Secure Boot]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Exercícios Práticos - Integridade de Dados e Hashes]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[PKfail - Vulnerabilidade do UEFI Secure Boot]] | `mesmo bloco` |
+| **Seguinte** | [[Processos e linha de comandos no Windows]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[UEFI Secure Boot]] · `mesmo bloco`
+* [[UEFI Secure Boot - Chaves e Hierarquia]] · `mesmo bloco`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`
+* [[Exercícios Práticos - Integridade de Dados e Hashes]] · `AFD1 · Cap. 1`

@@ -153,10 +153,17 @@ O relatório em JSON revela dados cruciais: URL de origem (`SourceURL`), caminho
 > * **Event ID 4**: Transferência concluída com sucesso (identifica o *Job ID*, a conta de utilizador responsável e o número de ficheiros).
 > * **Event ID 59 e 60**: Alterações de estado e notificações de transferência.
 
-## Notas relacionadas
+---
 
-- [[svchost.exe]]
-- [[Serviços Windows]]
-- [[Serviço Delivery Optimization]]
-- [[Windows Search]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[svchost.exe]] | `mesmo bloco` |
+| **Seguinte** | [[Serviço Delivery Optimization]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Serviços Windows]] · `mesmo bloco`
+* [[Windows Search]] · `mesmo bloco`

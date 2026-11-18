@@ -246,15 +246,21 @@ Qual é a fórmula de cálculo e a resolução temporal nativa do formato **FILE
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Cheat Sheet - Registry e Forense]]
-- [[Estrutura e Hives do Windows Registry]]
-- [[Tipos de Dados e Associação de Ficheiros no Registry]]
-- [[Ferramentas de Análise e Extração do Registry]]
-- [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]]
-- [[Artefacto Forense UserAssist]]
-- [[Artefacto Forense ShellBags]]
-- [[Artefactos Forenses de Dispositivos USB]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]] | `mesmo bloco` |
+| **Seguinte** | [[Registry em Aplicações Modernas (MSIX e Helium)]] | `muda para Bloco 06` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Cheat Sheet - Registry e Forense]] · `mesmo bloco`
+* [[Estrutura e Hives do Windows Registry]] · `mesmo bloco`
+* [[Tipos de Dados e Associação de Ficheiros no Registry]] · `mesmo bloco`
+* [[Ferramentas de Análise e Extração do Registry]] · `mesmo bloco`
+* [[Artefacto Forense UserAssist]] · `Bloco 07`
+* [[Artefacto Forense ShellBags]] · `Bloco 07`
+* [[Artefactos Forenses de Dispositivos USB]] · `Bloco 08`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`

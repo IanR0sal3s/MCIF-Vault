@@ -231,13 +231,19 @@ A análise prática de ficheiros `AutomaticDestinations-ms`, identificação de 
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
-- [[Abuso e Vetores de Ataque com Ficheiros LNK]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]]
-- [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)]] | `Bloco 11` |
+| **Seguinte** | [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 12` |
+
+### Conceitos Relacionados
+
+* [[Abuso e Vetores de Ataque com Ficheiros LNK]] · `mesmo bloco`
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `Bloco 10`
+* [[Camadas de Organização de Dados e Análise de Sistemas de Ficheiros]] · `AFD1 · Cap. 3`
+* [[Sistemas de Numeração e Conversão entre Bases]] · `AFD1 · Cap. 3`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`
+* [[Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)]] · `AFD1 · Cap. 1`

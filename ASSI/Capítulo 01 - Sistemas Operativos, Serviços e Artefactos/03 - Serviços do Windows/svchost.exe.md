@@ -137,10 +137,17 @@ O Windows suporta dois modelos de execução para [[Serviços Windows|serviços 
 > * **`WIN32_SHARE_PROCESS`**: serviço implementado em DLL que corre alojado dentro de um processo `svchost.exe` (`svchost.exe -k <grupo>`), partilhando recursos com outros serviços (ex.: **BITS** ou **Delivery Optimization**).
 > * **`WIN32_OWN_PROCESS`**: serviço que corre no seu próprio executável `.exe` exclusivo e dedicado (ex.: **Print Spooler** em `spoolsv.exe`).
 
-## Notas relacionadas
+---
 
-- [[Serviços Windows]]
-- [[Serviço BITS]]
-- [[Serviço Delivery Optimization]]
-- [[Processos e linha de comandos no Windows]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Serviços Windows]] | `mesmo bloco` |
+| **Seguinte** | [[Serviço BITS]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Serviço Delivery Optimization]] · `mesmo bloco`
+* [[Processos e linha de comandos no Windows]] · `Bloco 02`

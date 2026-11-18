@@ -144,16 +144,23 @@ As ferramentas de triagem do Windows Registry analisam *hives* *offline* (`SAM`,
 > [!success]- Ver Resposta
 > Pode arrancar a máquina num ambiente de arranque forense como o **WinFE** ou Live USB Linux (onde os ficheiros do disco interno estão inativos) ou utilizar o **FTK Imager Lite**, que lê diretamente ao nível dos setores do sistema de ficheiros contornando o bloqueio da API Win32.
 
-## Notas relacionadas
+---
 
-- [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]]
-- [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Estrutura e Hives do Windows Registry]]
-- [[Ferramentas de Análise e Extração do Registry]]
-- [[Cheat Sheet - Registry e Forense]]
-- [[Artefactos Forenses de Execução e Persistência no Registry]]
-- [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]]
-- [[Artefacto Forense UserAssist]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Capítulo 2 - Arranque e Aquisição Forense]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB]] | `Bloco 02` |
+| **Seguinte** | [[Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Arranque e Aquisição Forense]] · [[00 AFD1]] | `Bloco 03` |
+
+### Conceitos Relacionados
+
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `Cap. 1`
+* [[Estrutura e Hives do Windows Registry]] · `ASSI · Cap. 1`
+* [[Ferramentas de Análise e Extração do Registry]] · `ASSI · Cap. 1`
+* [[Cheat Sheet - Registry e Forense]] · `ASSI · Cap. 1`
+* [[Artefactos Forenses de Execução e Persistência no Registry]] · `ASSI · Cap. 1`
+* [[Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)]] · `ASSI · Cap. 1`
+* [[Artefacto Forense UserAssist]] · `ASSI · Cap. 1`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`

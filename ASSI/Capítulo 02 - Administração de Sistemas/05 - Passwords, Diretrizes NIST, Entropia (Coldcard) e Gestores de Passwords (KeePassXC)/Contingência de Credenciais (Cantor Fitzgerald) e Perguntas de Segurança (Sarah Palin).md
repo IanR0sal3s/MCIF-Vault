@@ -96,9 +96,17 @@ Quando um serviço não permite desativar perguntas de segurança:
 > [!success]- Ver Resposta
 > Deve gerar-se uma ***string* totalmente aleatória** sem relação com a pergunta através do **`KeePass` / `KeePassXC`** (por exemplo, `dc087c651b1cf8dd4605da8ee07c0f4f`) e registar tanto a pergunta como a resposta aleatória no campo de **notas da entrada** correspondente dentro do cofre cifrado.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking]]
-- [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]]
-- [[Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking]] | `mesmo bloco` |
+| **Seguinte** | [[Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay]] | `muda para Bloco 06` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]] · `mesmo bloco`
+* [[Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo]] · `Bloco 04`

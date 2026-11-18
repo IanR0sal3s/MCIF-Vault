@@ -87,8 +87,18 @@ Usado apenas quando **ambos** os dispositivos suportam e definem `SC = 1`. Tamb�
 > [!success]- Ver Resposta
 > Utilizar emparelhamento **`OOB` (*Out-of-Band*) autenticado** (por exemplo, via `NFC`), uma vez que *Numeric Comparison* e *Passkey Entry* exigem capacidades de ecrã/entrada e *Just Works* não autentica contra MITM.
 
-## Notas relacionadas
+---
 
-- [[Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)]]
-- [[TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)]]
-- [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ataques e Contramedidas por Camada em IoT (Sharma)]] | `Bloco 01` |
+| **Seguinte** | [[LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 3 - Segurança em IoT]] · [[00 SRC]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Desafios e Requisitos de Segurança em Arquiteturas IoT (Sharma)]] · `Bloco 01`
+* [[TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)]] · `Bloco 04`
+* [[Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA]] · `Cap. 2`

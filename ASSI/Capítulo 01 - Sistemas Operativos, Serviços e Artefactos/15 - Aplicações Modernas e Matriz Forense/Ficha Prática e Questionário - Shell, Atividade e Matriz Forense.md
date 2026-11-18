@@ -227,16 +227,22 @@ Na famosa cadeia de infeção do malware **Emotet**, os atacantes recorreram ao 
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Cheat Sheet - Artefactos de Execução e Sistema no Windows]]
-- [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]]
-- [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]]
-- [[Abuso e Vetores de Ataque com Ficheiros LNK]]
-- [[Jump Lists - Arquitetura, AppIDs e Carving]]
-- [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]]
-- [[Windows Activity Timeline - Arquitetura e Base SQLite]]
-- [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]]
-- [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]]
-- [[Codificação uLEB128 em Estruturas de Dados do Windows]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos]] | `mesmo bloco` |
+| **Seguinte** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | Fim do capítulo |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 15` |
+
+### Conceitos Relacionados
+
+* [[Cheat Sheet - Artefactos de Execução e Sistema no Windows]] · `mesmo bloco`
+* [[Ficheiros LNK (Shell Links) - Metadados e Formato Binário]] · `Bloco 12`
+* [[Abuso e Vetores de Ataque com Ficheiros LNK]] · `Bloco 12`
+* [[Jump Lists - Arquitetura, AppIDs e Carving]] · `Bloco 12`
+* [[Caches de Ícones e Miniaturas (IconCache e Thumbcache)]] · `Bloco 13`
+* [[Windows Activity Timeline - Arquitetura e Base SQLite]] · `Bloco 14`
+* [[System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE]] · `Bloco 14`
+* [[Artefacto Forense do Bloco de Notas (Notepad Windows 11)]] · `mesmo bloco`
+* [[Codificação uLEB128 em Estruturas de Dados do Windows]] · `mesmo bloco`

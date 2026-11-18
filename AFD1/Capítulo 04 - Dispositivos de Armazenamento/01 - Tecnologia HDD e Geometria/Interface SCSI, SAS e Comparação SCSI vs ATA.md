@@ -79,7 +79,17 @@ atualizado: 2026-11-16
    > [!success]- Ver Resposta
    > Um disco `SATA-2+` pode ser ligado a uma controladora `SAS` (que mantém retrocompatibilidade), mas o inverso não é possível: uma controladora `SATA` não suporta discos `SAS`.
 
-## Notas relacionadas
-- [[Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)]]
-- [[Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)]]
-- [[Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)]] | `mesmo bloco` |
+| **Seguinte** | [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]] | `Comum/` · `muda para Bloco 02` |
+| **Índice** | [[Capítulo 4 - Dispositivos de Armazenamento]] · [[00 AFD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Acesso a Discos (BIOS vs Direto) e Geometria de Discos Rígidos (CHS vs LBA)]] · `mesmo bloco`
+* [[Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD]] · `Bloco 02`

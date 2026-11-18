@@ -140,10 +140,18 @@ inurl:https://trello.com AND intext:@gmail.com AND intext:password
 > [!success]- Ver Resposta
 > A lei `SB-327` proíbe vender dispositivos ligados à Internet com passwords por omissão universais, exigindo uma senha única de fábrica ou definição obrigatória no primeiro arranque. Para prevenir *Shoulder Surfing*, recorre-se a **gestores de passwords**, **2FA**, **filtros de privacidade** e, em cenários extremos, à técnica *"Blanket of security"* usada por Edward Snowden.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]]
-- [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking]]
-- [[Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin)]]
-- [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Caso de Estudo Coldcard (1800 BTC) - Falha de Entropia e Reconstrução de Seeds]] | `mesmo bloco` |
+| **Seguinte** | [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]] · `mesmo bloco`
+* [[Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin)]] · `mesmo bloco`
+* [[Codificação Binário-para-Texto (Base16, Base64 e Base58)]] · `AFD1 · Cap. 3`

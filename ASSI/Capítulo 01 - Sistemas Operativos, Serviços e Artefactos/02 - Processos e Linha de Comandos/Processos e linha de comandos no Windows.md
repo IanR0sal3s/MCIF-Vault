@@ -181,12 +181,20 @@ pslist [-d] [-m] [-x] [-t] [-e] [-s [n]] [\\computador [-u <user>] [-p <pass>]] 
 > Através do encadeamento (*pipe*) do `tasklist` com o comando `find /c`:
 > `tasklist /svc | find /c "svchost.exe"`
 
-## Notas relacionadas
+---
 
-- [[Comando forfiles]]
-- [[Serviços Windows]]
-- [[svchost.exe]]
-- [[Aplicações UWP (Universal Windows Platform) - Visão Geral]]
-- [[Investigação Forense Digital - Análise Live vs Post-Mortem]]
-- [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[PKfail - Cadeia de Ataque e Deteção Forense]] | `Bloco 01` |
+| **Seguinte** | [[Comando forfiles]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Serviços Windows]] · `Bloco 03`
+* [[svchost.exe]] · `Bloco 03`
+* [[Aplicações UWP (Universal Windows Platform) - Visão Geral]] · `Bloco 04`
+* [[Investigação Forense Digital - Análise Live vs Post-Mortem]] · `AFD1 · Cap. 1`
+* [[Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação]] · `AFD1 · Cap. 1`

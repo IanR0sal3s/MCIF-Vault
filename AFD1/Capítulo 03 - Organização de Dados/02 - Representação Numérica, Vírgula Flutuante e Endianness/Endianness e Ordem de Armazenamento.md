@@ -116,15 +116,22 @@ Os sistemas informáticos diferem na ordem pela qual armazenam valores compostos
 > [!success]- Ver Resposta
 > As redes IP utilizam **Big-endian** (*Network Byte Order*) para garantir interoperabilidade entre arquiteturas heterogéneas. Num sistema `x86-64` (Little-endian), ler `b3 00 0d 00` diretamente como `0xB3000D00` produz o valor errado `3 003 124 992` em vez de inverter para `0x000D00B3` (`852 147`).
 
-## Notas relacionadas
+---
 
-- [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Números em Vírgula Flutuante (IEEE 754)]]
-- [[Organização de Estruturas de Dados em Binário]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
-- [[Tipos de Dados e Associação de Ficheiros no Registry]]
-- [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]]
-- [[Artefacto Forense UserAssist]]
-- [[Codificação uLEB128 em Estruturas de Dados do Windows]]
-- [[Capítulo 3 - Organização de Dados]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Números em Vírgula Flutuante (IEEE 754)]] | `mesmo bloco` |
+| **Seguinte** | [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 3 - Organização de Dados]] · [[00 AFD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Sistemas de Numeração e Conversão entre Bases]] · `mesmo bloco`
+* [[Organização de Estruturas de Dados em Binário]] · `Bloco 03`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`
+* [[Tipos de Dados e Associação de Ficheiros no Registry]] · `ASSI · Cap. 1`
+* [[Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)]] · `ASSI · Cap. 1`
+* [[Artefacto Forense UserAssist]] · `ASSI · Cap. 1`
+* [[Codificação uLEB128 em Estruturas de Dados do Windows]] · `ASSI · Cap. 1`

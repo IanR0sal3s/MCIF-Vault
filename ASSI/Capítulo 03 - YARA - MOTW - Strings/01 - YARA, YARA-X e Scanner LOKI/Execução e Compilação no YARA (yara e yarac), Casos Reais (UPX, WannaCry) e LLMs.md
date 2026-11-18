@@ -324,11 +324,18 @@ rule detect_T1055_002 {
 > [!success]- Ver Resposta
 > Porque o ChatGPT gerou `condition: any of ($dll_name, $create_remote_thread_api, $open_process_api)` incluindo `$dll_name = "kernel32.dll"`. Como quase todos os executáveis legítimos do Windows importam `kernel32.dll`, a regra dispararia falsos positivos massivos sem validação e correção manual prévia.
 
-## Notas relacionadas
+---
 
-- [[YARA - Introdução, Estrutura de Regras, Metadados e Condições]]
-- [[YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex]]
-- [[YARA-X (Reimplementação em Rust) e Ferramenta CLI yr]]
-- [[Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração]]
-- [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex]] | `mesmo bloco` |
+| **Seguinte** | [[YARA-X (Reimplementação em Rust) e Ferramenta CLI yr]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[YARA - Introdução, Estrutura de Regras, Metadados e Condições]] · `mesmo bloco`
+* [[Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração]] · `mesmo bloco`
+* [[Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)]] · `Cap. 1`

@@ -134,11 +134,19 @@ trid.exe ficheiro_analisado.exe
 > [!success]- Ver Resposta
 > Enquanto o `exiftool` lê os campos estáticos declarados na estrutura do cabeçalho PE, o `trid` realiza uma análise heurística de padrões binários que permite identificar o **compilador**, a **linguagem de programação** (ex.: Visual C++, Delphi, FreeBASIC, .NET) e se o executável foi comprimido ou ofuscado com um *packer* (como o UPX).
 
-## Notas relacionadas
+---
 
-- [[Estrutura e Hives do Windows Registry]]
-- [[Ferramentas de Análise e Extração do Registry]]
-- [[Registry em Aplicações Modernas (MSIX e Helium)]]
-- [[Endianness e Ordem de Armazenamento]]
-- [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Ferramentas de Análise e Extração do Registry]] | `mesmo bloco` |
+| **Seguinte** | [[Ficha Prática e Questionário - Windows Registry e Artefactos Forenses]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Estrutura e Hives do Windows Registry]] · `mesmo bloco`
+* [[Registry em Aplicações Modernas (MSIX e Helium)]] · `Bloco 06`
+* [[Endianness e Ordem de Armazenamento]] · `AFD1 · Cap. 3`
+* [[Sistemas de Numeração e Conversão entre Bases]] · `AFD1 · Cap. 3`

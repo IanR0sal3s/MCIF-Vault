@@ -291,13 +291,21 @@ rule GRIZZLY_STEPPE_Malware_1
 > [!success]- Ver Resposta
 > Permite a avaliação por **curto-circuito**: o motor YARA valida primeiro dois bytes no offset `0` e o tamanho do ficheiro, descartando de imediato ficheiros não-PE ou superiores a 300 KB sem despender tempo a pesquisar strings em grandes volumes de dados.
 
-## Notas relacionadas
+---
 
-- [[YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex]]
-- [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]]
-- [[YARA-X (Reimplementação em Rust) e Ferramenta CLI yr]]
-- [[Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração]]
-- [[Endianness e Ordem de Armazenamento]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Pesquisa de Evidências e Reconstrução de Eventos]]
-- [[Capítulo 3 - YARA - MOTW - Strings]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 3 - YARA - MOTW - Strings]] | Início do capítulo |
+| **Seguinte** | [[YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 3 - YARA - MOTW - Strings]] · [[00 ASSI]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs]] · `mesmo bloco`
+* [[YARA-X (Reimplementação em Rust) e Ferramenta CLI yr]] · `mesmo bloco`
+* [[Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração]] · `mesmo bloco`
+* [[Endianness e Ordem de Armazenamento]] · `AFD1 · Cap. 3`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`
+* [[Pesquisa de Evidências e Reconstrução de Eventos]] · `AFD1 · Cap. 1`

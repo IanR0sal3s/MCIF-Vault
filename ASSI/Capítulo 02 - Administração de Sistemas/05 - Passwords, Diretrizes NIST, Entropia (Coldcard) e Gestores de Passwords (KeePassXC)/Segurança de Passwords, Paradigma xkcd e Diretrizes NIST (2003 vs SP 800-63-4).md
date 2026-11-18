@@ -138,11 +138,19 @@ Síntese das sete práticas recomendadas em [Wired — 7 Steps to Password Perfe
 > [!success]- Ver Resposta
 > (1) Usar um gestor de passwords; (2) Apostar no comprimento (`>= 15` caracteres); (3) Manter os caracteres especiais separados em vez de os agrupar no início/fim; (4) Não alterar periodicamente a password sem motivo; (5) Usar cada password apenas num único serviço (*single-serve only*); (6) Não confiar no gestor básico do navegador; (7) Ativar autenticação a dois fatores (2FA) sempre que possível.
 
-## Notas relacionadas
+---
 
-- [[Capítulo 2 - Administração de Sistemas]]
-- [[Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed]]
-- [[Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)]]
-- [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking]]
-- [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]]
-- [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Business Email Compromise (BEC) e Fraudes Executivas com Deepfake de Áudio e Vídeo]] | `Bloco 04` |
+| **Seguinte** | [[Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 2 - Administração de Sistemas]] · [[00 ASSI]] | `Bloco 05` |
+
+### Conceitos Relacionados
+
+* [[Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)]] · `mesmo bloco`
+* [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking]] · `mesmo bloco`
+* [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]] · `Bloco 06`
+* [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]] · `Bloco 06`

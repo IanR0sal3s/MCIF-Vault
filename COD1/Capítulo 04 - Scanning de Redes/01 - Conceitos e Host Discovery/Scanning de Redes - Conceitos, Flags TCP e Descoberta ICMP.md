@@ -80,7 +80,17 @@ sudo nmap -sn -PE -PP -PS21,22,23,25,80,113,21339 -PA80,113,443,10042 --source-p
    > [!success]- Ver Resposta
    > Firewalls *stateless* mal configuradas podem bloquear pacotes `SYN` de entrada (`-PS`) mas deixar passar pacotes `ACK` (`-PA`), aos quais o host responde com `RST`. Combinar ambos maximiza a taxa de deteção de máquinas ativas.
 
-## Notas relacionadas
-- [[Técnicas de Port Scanning TCP, UDP e IDLE Scan]]
-- [[Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão]]
-- [[WHOIS, DNS, Networking Footprinting e Engenharia Social]]
+---
+
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Capítulo 4 - Scanning de Redes]] | Início do capítulo |
+| **Seguinte** | [[Técnicas de Port Scanning TCP, UDP e IDLE Scan]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 4 - Scanning de Redes]] · [[00 COD1]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Nmap Avançado e Hping3 - Descoberta, Port Scanning e Evasão]] · `Bloco 03`
+* [[WHOIS, DNS, Networking Footprinting e Engenharia Social]] · `Cap. 3`

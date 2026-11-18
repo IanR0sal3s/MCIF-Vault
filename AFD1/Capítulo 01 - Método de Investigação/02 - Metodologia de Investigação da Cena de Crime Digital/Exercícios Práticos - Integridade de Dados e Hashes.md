@@ -132,13 +132,22 @@ echo -n "Miguel" | sha256sum    # comando Linux
 > [!success]- Ver Resposta
 > A ferramenta gráfica recomendada nos diapositivos para Windows é o **HashCalc** (da SlavaSoft).
 
-## Notas relacionadas
+---
 
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Fases da Investigação Forense Digital]]
-- [[Extração da AmCache e Comparação Forense com a ShimCache]]
-- [[Análise Forense e Criação a Pedido do Prefetch]]
-- [[PKfail - Cadeia de Ataque e Deteção Forense]]
-- [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]]
-- [[Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)]]
-- [[Capítulo 1 - Método de Investigação]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Pesquisa de Evidências e Reconstrução de Eventos]] | `mesmo bloco` |
+| **Seguinte** | [[Princípios e Rota do Manuseamento de Evidência Digital]] | `muda para Bloco 03` |
+| **Índice** | [[Capítulo 1 - Método de Investigação]] · [[00 AFD1]] | `Bloco 02` |
+
+### Conceitos Relacionados
+
+* [[Preservação do Sistema e Integridade de Dados]] · `mesmo bloco`
+* [[Fases da Investigação Forense Digital]] · `mesmo bloco`
+* [[Extração da AmCache e Comparação Forense com a ShimCache]] · `ASSI · Cap. 1`
+* [[Análise Forense e Criação a Pedido do Prefetch]] · `ASSI · Cap. 1`
+* [[PKfail - Cadeia de Ataque e Deteção Forense]] · `ASSI · Cap. 1`
+* [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]] · `ASSI · Cap. 2`
+* [[Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)]] · `ASSI · Cap. 2`

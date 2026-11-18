@@ -80,8 +80,16 @@ A eficácia de um `IDS` é avaliada através da **matriz de confusão**, mas a s
 > [!success]- Ver Resposta
 > O recurso a **características estatísticas dos fluxos de rede** (temporização, dimensão, ritmo), que não dependem da inspeção do conteúdo cifrado dos pacotes, ou a combinação com `HIDS` nos *endpoints*.
 
-## Notas relacionadas
+---
 
-- [[IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)]]
-- [[Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS]]
-- [[Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos]]
+## Navegação e Notas Relacionadas
+
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)]] | `mesmo bloco` |
+| **Seguinte** | [[Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos]] | `muda para Bloco 02` |
+| **Índice** | [[Capítulo 4 - Deteção de Intrusões e Zero Trust]] · [[00 SRC]] | `Bloco 01` |
+
+### Conceitos Relacionados
+
+* [[Modelo TCP-IP, Encapsulamento e Visibilidade de Tráfego HTTPS]] · `Cap. 1`

@@ -193,14 +193,19 @@ A lista de ficheiros e DLLs armazenada dentro do `.pf` é decisiva em dois cená
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
-- [[Análise Forense e Criação a Pedido do Prefetch]]
-- [[Artefacto Forense UserAssist]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]]
-- [[Sistemas de Numeração e Conversão entre Bases]]
-- [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]] | `mesmo bloco` |
+| **Seguinte** | [[Análise Forense e Criação a Pedido do Prefetch]] | `mesmo bloco` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 10` |
+
+### Conceitos Relacionados
+
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `mesmo bloco`
+* [[Artefacto Forense UserAssist]] · `Bloco 07`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`
+* [[Codificação de Caracteres - ASCII, Latin-1 e Unicode]] · `AFD1 · Cap. 3`
+* [[Sistemas de Numeração e Conversão entre Bases]] · `AFD1 · Cap. 3`
+* [[Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)]] · `Comum/`

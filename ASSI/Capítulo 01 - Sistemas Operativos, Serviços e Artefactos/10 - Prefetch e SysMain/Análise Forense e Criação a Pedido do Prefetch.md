@@ -202,13 +202,19 @@ Os procedimentos práticos de extração de ficheiros `.pf`, descompressão `MAM
 
 ---
 
-## Navegação
+## Navegação e Notas Relacionadas
 
-- [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Voltar ao Índice do Capítulo 1]]
-- [[Taxonomia dos Artefactos de Execução no Windows]]
-- [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]]
-- [[Estrutura Interna e Algoritmo de Hashing do Prefetch]]
-- [[Application Compatibility e ShimCache (AppCompatCache)]]
-- [[Preservação do Sistema e Integridade de Dados]]
-- [[Princípios e Rota do Manuseamento de Evidência Digital]]
-- [[Exercícios Práticos - Integridade de Dados e Hashes]]
+| Percurso | Nota | Contexto |
+| :--- | :--- | :--- |
+| **Anterior** | [[Estrutura Interna e Algoritmo de Hashing do Prefetch]] | `mesmo bloco` |
+| **Seguinte** | [[Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)]] | `muda para Bloco 11` |
+| **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 10` |
+
+### Conceitos Relacionados
+
+* [[Taxonomia dos Artefactos de Execução no Windows]] · `mesmo bloco`
+* [[Serviço Prefetch e SysMain - Arquitetura e Funcionamento]] · `mesmo bloco`
+* [[Application Compatibility e ShimCache (AppCompatCache)]] · `Bloco 11`
+* [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`
+* [[Princípios e Rota do Manuseamento de Evidência Digital]] · `AFD1 · Cap. 1`
+* [[Exercícios Práticos - Integridade de Dados e Hashes]] · `AFD1 · Cap. 1`
