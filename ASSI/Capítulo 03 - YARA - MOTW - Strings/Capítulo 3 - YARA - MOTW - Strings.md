@@ -51,7 +51,7 @@ flowchart LR
 
 ---
 
-## 2. Fluxos Alternativos NTFS e Proveniência Web (`02 - Alternate Data Streams (ADS) e Mark of the Web (MOTW)` — 25 Slides)
+## 2. Fluxos Alternativos NTFS e Proveniência Web (`02 - ADS e Mark of the Web` — 25 Slides)
 
 | Nota | Slides | O que vais estudar |
 | :--- | :---: | :--- |

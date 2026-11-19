@@ -66,7 +66,7 @@ flowchart LR
 
 ---
 
-## 4. Fundamentos e Procedimentos de Aquisição Forense (`04 - Fundamentos e Procedimentos de Aquisição Forense`)
+## 4. Fundamentos e Procedimentos de Aquisição Forense (`04 - Procedimentos de Aquisição`)
 
 | Nota | O que vais estudar |
 | :--- | :--- |
@@ -76,7 +76,7 @@ flowchart LR
 
 ---
 
-## 5. Ferramentas de Aquisição Forense e Exercícios (`05 - Ferramentas de Aquisição Forense e Exercícios`)
+## 5. Ferramentas de Aquisição Forense e Exercícios (`05 - Ferramentas de Aquisição`)
 
 | Nota | O que vais estudar |
 | :--- | :--- |

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18",
+  "generated_at": "2026-11-19",
   "stats": {
     "total_notes": 202,
     "notes_by_uc": {
@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-3"
+        "matched_term": "SHA-2"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -2205,7 +2205,7 @@
     {
       "id": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
       "title": "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
-      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/04 - Fundamentos e Procedimentos de Aquisição Forense/Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes.md",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/04 - Procedimentos de Aquisição/Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes.md",
       "uc": "AFD1",
       "capitulo": 2,
       "bloco": 4,
@@ -2271,7 +2271,7 @@
     {
       "id": "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
       "title": "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
-      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/04 - Fundamentos e Procedimentos de Aquisição Forense/Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração.md",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/04 - Procedimentos de Aquisição/Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração.md",
       "uc": "AFD1",
       "capitulo": 2,
       "bloco": 4,
@@ -2336,7 +2336,7 @@
     {
       "id": "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
       "title": "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
-      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/04 - Fundamentos e Procedimentos de Aquisição Forense/Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers.md",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/04 - Procedimentos de Aquisição/Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers.md",
       "uc": "AFD1",
       "capitulo": 2,
       "bloco": 4,
@@ -2401,7 +2401,7 @@
     {
       "id": "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
       "title": "Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount)",
-      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição Forense e Exercícios/Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount).md",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição/Aquisição e Montagem em Linux - Formato EWF (ewf-tools, ewfmount e xmount).md",
       "uc": "AFD1",
       "capitulo": 2,
       "bloco": 5,
@@ -2480,7 +2480,7 @@
     {
       "id": "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
       "title": "Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd",
-      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição Forense e Exercícios/Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd.md",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição/Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd.md",
       "uc": "AFD1",
       "capitulo": 2,
       "bloco": 5,
@@ -2532,7 +2532,7 @@
     {
       "id": "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
       "title": "Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager",
-      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição Forense e Exercícios/Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager.md",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição/Exercícios Práticos e de Projeto - WinFE e Aquisição Forense com FTK Imager.md",
       "uc": "AFD1",
       "capitulo": 2,
       "bloco": 5,
@@ -2576,7 +2576,7 @@
     {
       "id": "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
       "title": "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
-      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição Forense e Exercícios/Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager).md",
+      "path": "AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição/Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager).md",
       "uc": "AFD1",
       "capitulo": 2,
       "bloco": 5,
@@ -6715,7 +6715,7 @@
     {
       "id": "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
       "title": "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning, Sanitização e Destruição de Dados/Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning e Sanitização/Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 1,
@@ -6767,7 +6767,7 @@
     {
       "id": "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
       "title": "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning, Sanitização e Destruição de Dados/Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning e Sanitização/Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 1,
@@ -6816,7 +6816,7 @@
     {
       "id": "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
       "title": "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning, Sanitização e Destruição de Dados/Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning e Sanitização/Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 1,
@@ -6866,7 +6866,7 @@
     {
       "id": "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física",
       "title": "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning, Sanitização e Destruição de Dados/Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning e Sanitização/Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 1,
@@ -6921,7 +6921,7 @@
     {
       "id": "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
       "title": "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/02 - Gestão de Ativos, Segurança em Armazenamento USB e ValiDrive/Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt).md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/02 - Gestão de Ativos e USB/Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt).md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 2,
@@ -6976,7 +6976,7 @@
     {
       "id": "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
       "title": "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/02 - Gestão de Ativos, Segurança em Armazenamento USB e ValiDrive/Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11).md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/02 - Gestão de Ativos e USB/Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11).md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 2,
@@ -7021,7 +7021,7 @@
     {
       "id": "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)",
       "title": "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/02 - Gestão de Ativos, Segurança em Armazenamento USB e ValiDrive/Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs).md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/02 - Gestão de Ativos e USB/Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs).md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 2,
@@ -7077,7 +7077,7 @@
     {
       "id": "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
       "title": "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/03 - Hardening, Vulnerabilidades (CVE, CVSS, CWE), Licenciamento e Fugas de Dados/Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/03 - Hardening, CVE e Fugas/Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 3,
@@ -7129,7 +7129,7 @@
     {
       "id": "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
       "title": "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/03 - Hardening, Vulnerabilidades (CVE, CVSS, CWE), Licenciamento e Fugas de Dados/System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585).md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/03 - Hardening, CVE e Fugas/System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585).md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 3,
@@ -7185,7 +7185,7 @@
     {
       "id": "Business Email Compromise (BEC) e Fraudes Executivas com Deepfake de Áudio e Vídeo",
       "title": "Business Email Compromise (BEC) e Fraudes Executivas com Deepfake de Áudio e Vídeo",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/04 - Educação de Utilizadores, Engenharia Social (Phishing, Smishing, Quishing) e BEC/Business Email Compromise (BEC) e Fraudes Executivas com Deepfake de Áudio e Vídeo.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/04 - Engenharia Social e BEC/Business Email Compromise (BEC) e Fraudes Executivas com Deepfake de Áudio e Vídeo.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 4,
@@ -7229,7 +7229,7 @@
     {
       "id": "Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo",
       "title": "Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/04 - Educação de Utilizadores, Engenharia Social (Phishing, Smishing, Quishing) e BEC/Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/04 - Engenharia Social e BEC/Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 4,
@@ -7279,7 +7279,7 @@
     {
       "id": "Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)",
       "title": "Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/04 - Educação de Utilizadores, Engenharia Social (Phishing, Smishing, Quishing) e BEC/Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR).md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/04 - Engenharia Social e BEC/Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR).md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 4,
@@ -7325,7 +7325,7 @@
     {
       "id": "Caso de Estudo Coldcard (1800 BTC) - Falha de Entropia e Reconstrução de Seeds",
       "title": "Caso de Estudo Coldcard (1800 BTC) - Falha de Entropia e Reconstrução de Seeds",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, Diretrizes NIST, Entropia (Coldcard) e Gestores de Passwords (KeePassXC)/Caso de Estudo Coldcard (1800 BTC) - Falha de Entropia e Reconstrução de Seeds.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, NIST e KeePassXC/Caso de Estudo Coldcard (1800 BTC) - Falha de Entropia e Reconstrução de Seeds.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 5,
@@ -7367,7 +7367,7 @@
     {
       "id": "Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin)",
       "title": "Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin)",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, Diretrizes NIST, Entropia (Coldcard) e Gestores de Passwords (KeePassXC)/Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin).md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, NIST e KeePassXC/Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin).md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 5,
@@ -7410,7 +7410,7 @@
     {
       "id": "Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)",
       "title": "Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, Diretrizes NIST, Entropia (Coldcard) e Gestores de Passwords (KeePassXC)/Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy).md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, NIST e KeePassXC/Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy).md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 5,
@@ -7455,7 +7455,7 @@
     {
       "id": "Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking",
       "title": "Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, Diretrizes NIST, Entropia (Coldcard) e Gestores de Passwords (KeePassXC)/Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, NIST e KeePassXC/Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 5,
@@ -7503,7 +7503,7 @@
     {
       "id": "Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing",
       "title": "Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, Diretrizes NIST, Entropia (Coldcard) e Gestores de Passwords (KeePassXC)/Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, NIST e KeePassXC/Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 5,
@@ -7550,7 +7550,7 @@
     {
       "id": "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
       "title": "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, Diretrizes NIST, Entropia (Coldcard) e Gestores de Passwords (KeePassXC)/Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, NIST e KeePassXC/Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 5,
@@ -7593,7 +7593,7 @@
     {
       "id": "Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)",
       "title": "Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, Diretrizes NIST, Entropia (Coldcard) e Gestores de Passwords (KeePassXC)/Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4).md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, NIST e KeePassXC/Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4).md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 5,
@@ -7642,7 +7642,7 @@
     {
       "id": "Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass",
       "title": "Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/06 - Falhas SS7, SIM-Jacking, 2FA (TOTP), Passkeys (FIDO2) e Armazenamento de Passwords (Hashcat)/Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/06 - 2FA, Passkeys e Hashcat/Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 6,
@@ -7700,7 +7700,7 @@
     {
       "id": "Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)",
       "title": "Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/06 - Falhas SS7, SIM-Jacking, 2FA (TOTP), Passkeys (FIDO2) e Armazenamento de Passwords (Hashcat)/Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP).md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/06 - 2FA, Passkeys e Hashcat/Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP).md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 6,
@@ -7756,7 +7756,7 @@
     {
       "id": "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
       "title": "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/06 - Falhas SS7, SIM-Jacking, 2FA (TOTP), Passkeys (FIDO2) e Armazenamento de Passwords (Hashcat)/Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras).md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/06 - 2FA, Passkeys e Hashcat/Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras).md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 6,
@@ -7807,7 +7807,7 @@
     {
       "id": "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay",
       "title": "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay",
-      "path": "ASSI/Capítulo 02 - Administração de Sistemas/06 - Falhas SS7, SIM-Jacking, 2FA (TOTP), Passkeys (FIDO2) e Armazenamento de Passwords (Hashcat)/Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay.md",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/06 - 2FA, Passkeys e Hashcat/Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay.md",
       "uc": "ASSI",
       "capitulo": 2,
       "bloco": 6,
@@ -8345,7 +8345,7 @@
     {
       "id": "Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell",
       "title": "Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell",
-      "path": "ASSI/Capítulo 03 - YARA - MOTW - Strings/02 - Alternate Data Streams (ADS) e Mark of the Web (MOTW)/Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell.md",
+      "path": "ASSI/Capítulo 03 - YARA - MOTW - Strings/02 - ADS e Mark of the Web/Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell.md",
       "uc": "ASSI",
       "capitulo": 3,
       "bloco": 2,
@@ -8398,7 +8398,7 @@
     {
       "id": "Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen",
       "title": "Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen",
-      "path": "ASSI/Capítulo 03 - YARA - MOTW - Strings/02 - Alternate Data Streams (ADS) e Mark of the Web (MOTW)/Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen.md",
+      "path": "ASSI/Capítulo 03 - YARA - MOTW - Strings/02 - ADS e Mark of the Web/Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen.md",
       "uc": "ASSI",
       "capitulo": 3,
       "bloco": 2,
@@ -8449,7 +8449,7 @@
     {
       "id": "Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker",
       "title": "Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker",
-      "path": "ASSI/Capítulo 03 - YARA - MOTW - Strings/02 - Alternate Data Streams (ADS) e Mark of the Web (MOTW)/Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker.md",
+      "path": "ASSI/Capítulo 03 - YARA - MOTW - Strings/02 - ADS e Mark of the Web/Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker.md",
       "uc": "ASSI",
       "capitulo": 3,
       "bloco": 2,
@@ -8494,7 +8494,7 @@
     {
       "id": "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
       "title": "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
-      "path": "ASSI/Capítulo 03 - YARA - MOTW - Strings/02 - Alternate Data Streams (ADS) e Mark of the Web (MOTW)/Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers.md",
+      "path": "ASSI/Capítulo 03 - YARA - MOTW - Strings/02 - ADS e Mark of the Web/Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers.md",
       "uc": "ASSI",
       "capitulo": 3,
       "bloco": 2,
@@ -11528,7 +11528,7 @@
     {
       "id": "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos",
       "title": "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos",
-      "path": "SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/02 - Zero Trust Architecture (NIST SP 800-207)/Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos.md",
+      "path": "SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/02 - Zero Trust Architecture/Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos.md",
       "uc": "SRC",
       "capitulo": 4,
       "bloco": 2,

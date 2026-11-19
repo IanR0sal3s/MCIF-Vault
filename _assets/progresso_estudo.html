@@ -121,8 +121,38 @@
     const STORAGE_KEY = 'mcif_study_progress_v1';
     const VAULT_NAME = 'MCIF-Vault';
     const rawNotes = (window.MCIF_VAULT || []).filter(n => n.tipo !== 'indice' && n.uc !== 'GERAL');
+    const FOLDER_MIGRATIONS = [
+      ['ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning, Sanitização e Destruição de Dados/', 'ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning e Sanitização/'],
+      ['ASSI/Capítulo 02 - Administração de Sistemas/02 - Gestão de Ativos, Segurança em Armazenamento USB e ValiDrive/', 'ASSI/Capítulo 02 - Administração de Sistemas/02 - Gestão de Ativos e USB/'],
+      ['ASSI/Capítulo 02 - Administração de Sistemas/03 - Hardening, Vulnerabilidades (CVE, CVSS, CWE), Licenciamento e Fugas de Dados/', 'ASSI/Capítulo 02 - Administração de Sistemas/03 - Hardening, CVE e Fugas/'],
+      ['ASSI/Capítulo 02 - Administração de Sistemas/04 - Educação de Utilizadores, Engenharia Social (Phishing, Smishing, Quishing) e BEC/', 'ASSI/Capítulo 02 - Administração de Sistemas/04 - Engenharia Social e BEC/'],
+      ['ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, Diretrizes NIST, Entropia (Coldcard) e Gestores de Passwords (KeePassXC)/', 'ASSI/Capítulo 02 - Administração de Sistemas/05 - Passwords, NIST e KeePassXC/'],
+      ['ASSI/Capítulo 02 - Administração de Sistemas/06 - Falhas SS7, SIM-Jacking, 2FA (TOTP), Passkeys (FIDO2) e Armazenamento de Passwords (Hashcat)/', 'ASSI/Capítulo 02 - Administração de Sistemas/06 - 2FA, Passkeys e Hashcat/'],
+      ['AFD1/Capítulo 02 - Arranque e Aquisição Forense/04 - Fundamentos e Procedimentos de Aquisição Forense/', 'AFD1/Capítulo 02 - Arranque e Aquisição Forense/04 - Procedimentos de Aquisição/'],
+      ['AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição Forense e Exercícios/', 'AFD1/Capítulo 02 - Arranque e Aquisição Forense/05 - Ferramentas de Aquisição/'],
+      ['ASSI/Capítulo 03 - YARA - MOTW - Strings/02 - Alternate Data Streams (ADS) e Mark of the Web (MOTW)/', 'ASSI/Capítulo 03 - YARA - MOTW - Strings/02 - ADS e Mark of the Web/'],
+      ['SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/02 - Zero Trust Architecture (NIST SP 800-207)/', 'SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/02 - Zero Trust Architecture/']
+    ];
+    function migrateProgressPaths(obj) {
+      let changed = false;
+      for (const [oldPrefix, newPrefix] of FOLDER_MIGRATIONS) {
+        for (const k of Object.keys(obj)) {
+          if (k.startsWith(oldPrefix)) {
+            const nk = newPrefix + k.slice(oldPrefix.length);
+            if (obj[nk] === undefined) obj[nk] = obj[k];
+            delete obj[k];
+            changed = true;
+          }
+        }
+      }
+      return changed;
+    }
+
     let progress = {};
-    try { progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (_) { progress = {}; }
+    try {
+      progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      if (migrateProgressPaths(progress)) localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    } catch (_) { progress = {}; }
 
     // Caminho atual selecionado na árvore: [] = raiz, ['AFD1'], ['AFD1', 'Capítulo 01...'], etc.
     let currentPath = [];
@@ -376,7 +406,12 @@
       if (!file) return;
       const reader = new FileReader();
       reader.onload = () => {
-        try { progress = JSON.parse(reader.result); localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); renderAll(); }
+        try {
+          progress = JSON.parse(reader.result);
+          migrateProgressPaths(progress);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+          renderAll();
+        }
         catch (e) { alert('Ficheiro JSON inválido.'); }
       };
       reader.readAsText(file);

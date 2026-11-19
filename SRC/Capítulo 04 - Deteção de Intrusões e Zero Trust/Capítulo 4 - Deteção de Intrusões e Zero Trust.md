@@ -39,7 +39,7 @@ flowchart LR
 
 ---
 
-## 2. *Zero Trust Architecture* (`02 - Zero Trust Architecture (NIST SP 800-207)`)
+## 2. *Zero Trust Architecture* (`02 - Zero Trust Architecture`)
 
 | Nota | Fonte (Secções Destacadas) | O que vais estudar |
 | :--- | :---: | :--- |

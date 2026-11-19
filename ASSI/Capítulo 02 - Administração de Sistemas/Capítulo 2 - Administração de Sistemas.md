@@ -56,7 +56,7 @@ flowchart LR
 
 ## Parte A — Gestão de Sistemas e Dados (*System and Data Management* — 62 Slides)
 
-### 1. Decommissioning, Sanitização e Destruição de Dados (`01 - Decommissioning, Sanitização e Destruição de Dados`)
+### 1. Decommissioning, Sanitização e Destruição de Dados (`01 - Decommissioning e Sanitização`)
 
 | Nota                                                                                              | O que vais estudar                                                                                                               |
 | :------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------- |
@@ -68,7 +68,7 @@ flowchart LR
 
 ---
 
-### 2. Gestão de Ativos, Segurança em Armazenamento USB e ValiDrive (`02 - Gestão de Ativos, Segurança em Armazenamento USB e ValiDrive`)
+### 2. Gestão de Ativos, Segurança em Armazenamento USB e ValiDrive (`02 - Gestão de Ativos e USB`)
 
 | Nota | O que vais estudar |
 | :--- | :--- |
@@ -78,7 +78,7 @@ flowchart LR
 
 ---
 
-### 3. Hardening, Vulnerabilidades (CVE, CVSS, CWE), Licenciamento e Fugas de Dados (`03 - Hardening, Vulnerabilidades (CVE, CVSS, CWE), Licenciamento e Fugas de Dados`)
+### 3. Hardening, Vulnerabilidades (CVE, CVSS, CWE), Licenciamento e Fugas de Dados (`03 - Hardening, CVE e Fugas`)
 
 | Nota                                                                                       | O que vais estudar                                                                                                                |
 | :----------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
@@ -90,7 +90,7 @@ flowchart LR
 
 ## Parte B — Controlo de Acessos (*Access Control* — 119 Slides)
 
-### 4. Educação de Utilizadores, Engenharia Social (Phishing, Smishing, Quishing) e BEC (`04 - Educação de Utilizadores, Engenharia Social (Phishing, Smishing, Quishing) e BEC`)
+### 4. Educação de Utilizadores, Engenharia Social (Phishing, Smishing, Quishing) e BEC (`04 - Engenharia Social e BEC`)
 
 | Nota | O que vais estudar |
 | :--- | :--- |
@@ -100,7 +100,7 @@ flowchart LR
 
 ---
 
-### 5. Passwords, Diretrizes NIST, Entropia (Coldcard) e Gestores de Passwords (KeePassXC) (`05 - Passwords, Diretrizes NIST, Entropia (Coldcard) e Gestores de Passwords (KeePassXC)`)
+### 5. Passwords, Diretrizes NIST, Entropia (Coldcard) e Gestores de Passwords (KeePassXC) (`05 - Passwords, NIST e KeePassXC`)
 
 | Nota | O que vais estudar |
 | :--- | :--- |
@@ -114,7 +114,7 @@ flowchart LR
 
 ---
 
-### 6. Falhas SS7, SIM-Jacking, 2FA (TOTP), Passkeys (FIDO2) e Armazenamento de Passwords (Hashcat) (`06 - Falhas SS7, SIM-Jacking, 2FA (TOTP), Passkeys (FIDO2) e Armazenamento de Passwords (Hashcat)`)
+### 6. Falhas SS7, SIM-Jacking, 2FA (TOTP), Passkeys (FIDO2) e Armazenamento de Passwords (Hashcat) (`06 - 2FA, Passkeys e Hashcat`)
 
 | Nota | O que vais estudar |
 | :--- | :--- |
