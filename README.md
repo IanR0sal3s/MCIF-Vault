@@ -22,13 +22,13 @@ Em vez de depender apenas de árvores de pastas profundas e rígidas, a navegaç
 [README.md (GitHub) / Home.md (Obsidian)]  <- Nível 0: Portal Geral do Mestrado
                      │
                      ▼
-             [00 <SIGLA>.md]              <- Nível 1: Landing Page / MOC da UC (ex: 00 ASSI.md)
+        [00 <SIGLA>.md / 00 Comum.md]     <- Nível 1: Landing Page da UC ou Núcleo Comum
                      │
                      ▼
           [Capítulo X - MOC.md]           <- Nível 2: MOC do Capítulo (ordem sequencial das aulas)
                      │
                      ▼
-             [[Notas Atómicas]]           <- Nível 3: Conceitos, Ferramentas e Procedimentos
+             [[Notas Atómicas]]           <- Nível 3: Conceitos, Ferramentas e Hubs em Comum/
 ```
 
 1. **Nível 0 — Portal Geral**:
@@ -48,11 +48,12 @@ Em vez de depender apenas de árvores de pastas profundas e rígidas, a navegaç
 
 | Sigla | Unidade Curricular | Docente | Semestre | Estado |
 | :--- | :--- | :--- | :--- | :--- |
-| **[[00 ASSI]]** | **Administração Segura de Sistemas Informáticos** | Patrício Domingues | S1 | Concluído (Capítulo 1 — 328 slides, 53 notas) |
-| **[[00 AFD1]]** | **Análise Forense Digital I** | Miguel Frade e Baltazar Rodrigues | S1 | Em progresso (Capítulos 1 e 3 concluídos — 84 slides, 19 notas; Cap. 2 planeado) |
+| **[[00 ASSI]]** | **Administração Segura de Sistemas Informáticos** | Patrício Domingues | S1 | Concluído (Capítulos 1, 2 e 3 — 95 notas indexadas) |
+| **[[00 AFD1]]** | **Análise Forense Digital I** | Miguel Frade e Baltazar Rodrigues | S1 | Em progresso (Capítulos 1 a 4 — 42 notas indexadas) |
 | **PARSI** | Políticas e Análise de Risco na Segurança de Informação | Nuno Salvador | S1 | Planeado |
-| **[[00 SRC]]** | **Segurança em Redes de Computadores** | Luís Frazão | S1 | Concluído (Capítulos 1 a 4 — 24 notas + 2 Cheat Sheets) |
-| **[[00 COD1]]** | Cibersegurança Ofensiva e Defensiva I | Leonel Santos | S1 | Concluído |
+| **[[00 SRC]]** | **Segurança em Redes de Computadores** | Luís Frazão | S1 | Concluído (Capítulos 1 a 4 — 28 notas indexadas) |
+| **[[00 COD1]]** | **Cibersegurança Ofensiva e Defensiva I** | Leonel Santos | S1 | Em Curso (Capítulos 1 a 6 — 29 notas indexadas) |
+| **[[00 Comum]]** | **Núcleo Comum (Conceitos Transversais)** | Transversal | S1 | 6 *hubs* partilhados + índice (`AFD1`, `ASSI`, `COD1`, `SRC`) |
 
 ---
 
@@ -69,12 +70,18 @@ Para assegurar que o repositório mantém um nível elevado de rigor académico 
 
 * Desenvolve notas pequenas, focadas e especializadas (*uma ideia por nota*). Notas atómicas são muito mais fáceis de ligar e reutilizar entre diferentes disciplinas (por exemplo, um artefacto do Windows estudado em ASSI pode ser referenciado em AFD1).
 
-### 3. Uso do Modelo Padrão (*Template*)
+### 3. Uso do Modelo Padrão (*Template*) e Navegação
 
-* Todas as novas notas devem ser criadas a partir do modelo existente em `_templates/Nota de estudo.md`.
-* Mantém o cabeçalho YAML preenchido (`mestrado`, `uc`, `sigla_uc`, `capitulo`, `tipo`, `tags`, `fonte_aula`, `atualizado`).
+* Todas as novas notas devem ser criadas a partir de `_templates/Nota de estudo.md`, mantendo o YAML preenchido e o rodapé `## Navegação e Notas Relacionadas` (`Percurso` + `Conceitos Relacionados`).
+* Conceitos transversais a várias UCs devem viver em `Comum/` com secções `## Aplicação por UC`.
+* Para contribuir com alterações, abre um **Fork + Pull Request** para `main` (o ramo principal tem proteção ativa).
 
-### 4. Convenções Visuais e de Escrita
+### 4. Painel de Progresso e Validação de Integridade
+
+* Abre [`_assets/progresso_estudo.html`](_assets/progresso_estudo.html) no navegador para acompanhar o teu domínio por UC/capítulo na ordem exata dos MOCs (dados guardados localmente no `localStorage`).
+* Antes de abrir um PR, valida ligações e metadados com `python3 _scripts/vault_indexer.py --check`.
+
+### 5. Convenções Visuais e de Escrita
 
 * **Sem emojis decorativos** no corpo de notas técnicas.
 * Callouts (`> [!NOTE]`, `> [!WARNING]`, `> [!IMPORTANT]`, `> [!CAUTION]`) apenas para avisos factuais, armadilhas forenses ou boas práticas de segurança.
@@ -85,6 +92,8 @@ Para assegurar que o repositório mantém um nível elevado de rigor académico 
 ## ⚙️ Configuração Recomendada no Obsidian
 
 Ao clonares este repositório para o teu computador e abrires a pasta no Obsidian:
+
+* *(Utilizadores Windows)*: clona para um caminho curto perto da raiz (ex.: `C:\MCIF-Vault`) ou ativa `git config --global core.longpaths true` para evitar restrições de `MAX_PATH`.
 
 1. Acede a **Definições (Settings)** $\rightarrow$ **Ficheiros e Ligações (Files and links)**.
 2. Em **Local predefinido para novas notas (Default location for new notes)**, seleciona:

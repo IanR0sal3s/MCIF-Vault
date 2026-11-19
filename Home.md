@@ -4,7 +4,7 @@ tipo: indice
 tags:
   - moc
   - mcif
-atualizado: 2026-11-11
+atualizado: 2026-11-19
 ---
 
 # MCIF Vault — Base de Conhecimento Colaborativa
@@ -22,12 +22,12 @@ Este espaço foi desenhado para ser partilhado e expandido pela comunidade de es
 
 | Sigla    | Unidade Curricular                                          | Docente                               | Semestre | Estado                                                                   |
 | :------- | :---------------------------------------------------------- | :------------------------------------ | :------- | :----------------------------------------------------------------------- |
-| **ASSI** | [[00 ASSI]] (Administração Segura de Sistemas Informáticos) | Patrício Domingues                    | S1       | Concluído (Capítulos 1, 2 e 3 — 585 slides, 97 notas)                    |
-| **AFD1** | [[00 AFD1]] (Análise Forense Digital I)                     | Miguel Frade e Baltazar Rodrigues     | S1       | Em progresso (Capítulos 1, 2 e 3 concluídos — 139 slides, 33 notas)      |
-| *PARSI*  | *Políticas e Análise de Risco na Segurança de Informação*   | Nuno Salvador                         | S1       | Planeado                                                                 |
-| **SRC**  | [[00 SRC]] (Segurança em Redes de Computadores)             | Luís Frazão                           | S1       | Concluído (Capítulos 1 a 4 — 24 notas + 2 Cheat Sheets)                  |
-| **[[00 COD1]]** | **Cibersegurança Ofensiva e Defensiva I**                  | Leonel Santos                         | S1       | Em Curso                                                                 |
-| **COMUM** | [[00 Comum]] (Conceitos Transversais entre UCs)            | Transversal                           | S1       | Hubs partilhados (`AFD1`, `ASSI`, `COD1`, `SRC`)                         |
+| **ASSI** | [[00 ASSI]] (Administração Segura de Sistemas Informáticos) | Patrício Domingues | S1 | Concluído (Capítulos 1, 2 e 3 — 95 notas indexadas) |
+| **AFD1** | [[00 AFD1]] (Análise Forense Digital I) | Miguel Frade e Baltazar Rodrigues | S1 | Em progresso (Capítulos 1 a 4 — 42 notas indexadas) |
+| *PARSI* | *Políticas e Análise de Risco na Segurança de Informação* | Nuno Salvador | S1 | Planeado |
+| **SRC** | [[00 SRC]] (Segurança em Redes de Computadores) | Luís Frazão | S1 | Concluído (Capítulos 1 a 4 — 28 notas indexadas) |
+| **COD1** | [[00 COD1]] (Cibersegurança Ofensiva e Defensiva I) | Leonel Santos | S1 | Em Curso (Capítulos 1 a 6 — 29 notas indexadas) |
+| **COMUM** | [[00 Comum]] (Conceitos Transversais entre UCs) | Transversal | S1 | 6 *hubs* partilhados (`AFD1`, `ASSI`, `COD1`, `SRC`) |
 
 ---
 
@@ -55,7 +55,8 @@ Para manter o repositório consistente, fiável e navegável tanto no GitHub com
 
 ### 4. Template Obrigatório
 
-* Toda a nova nota deve utilizar o modelo `_templates/Nota de estudo.md`.
+* Toda a nova nota deve utilizar o modelo `_templates/Nota de estudo.md` (incluindo `## Navegação e Notas Relacionadas` com tabela de `Percurso` e `Conceitos Relacionados`).
+* Conceitos fundamentais partilhados por várias UCs pertencem a `Comum/` com secções `## Aplicação por UC`.
 * Mantenha o cabeçalho YAML preenchido (`mestrado`, `uc`, `sigla_uc`, `capitulo`, `tipo`, `tags`, `fonte_aula`, `atualizado`).
 
 ### 5. Estilo de Escrita

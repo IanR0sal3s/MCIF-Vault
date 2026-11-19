@@ -288,7 +288,7 @@ atualizado: 2026-11-19
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `RegRipper` | `Ferramentas de Análise e Extração do Registry` | `ASSI` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Prefetch` | `Serviço Prefetch e SysMain - Arquitetura e Funcionamento` | `ASSI` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `GnuPG` | `Assinaturas Digitais, PKI e GnuPG` | `COMUM` |
-| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `SHA-2` | `Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)` | `COMUM` |
+| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `SHA-1` | `Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)` | `COMUM` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
 | `Processo de Arranque UEFI, Secure Boot e Fluxo do Windows` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
 | `Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB` | `AFD1` | `Secure Boot` | `UEFI Secure Boot` | `ASSI` |
