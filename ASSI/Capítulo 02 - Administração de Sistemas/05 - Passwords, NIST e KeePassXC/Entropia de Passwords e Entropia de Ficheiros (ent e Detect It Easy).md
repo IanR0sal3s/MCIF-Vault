@@ -45,7 +45,7 @@ A entropia mede a imprevisibilidade de palavras-passe em bits e o grau de aleato
 ## 1. Entropia de Passwords: Fórmula, Crescimento e Script Python (Slides 36–39)
 
 > [!TIP] Calculadora Interativa de Entropia (`L × log₂(R)`)
-> Para testar ao vivo porque uma *passphrase* longa (*xkcd*) supera passwords curtas com muitos símbolos, abre [assi_passwords_entropia.html](file:///home/ian/MCIF-Vault/_assets/assi_passwords_entropia.html) (separador **3. Calculadora de Entropia**).
+> Para testar ao vivo porque uma *passphrase* longa (*xkcd*) supera passwords curtas com muitos símbolos, abre [assi_passwords_entropia.html](../../../_assets/assi_passwords_entropia.html) (separador **3. Calculadora de Entropia**).
 
 ### 1.1. Definição, Tentativas Esperadas e Fórmula (Slides 36–37)
 A **entropia** quantifica a imprevisibilidade de uma palavra-passe contra ataques de adivinhação ou força bruta:

@@ -52,7 +52,7 @@ A avaliação de tempos de força bruta no pior caso com um *cluster* de **`12 x
 ### 1.2. Truncagem Silenciosa (`56–72 Bytes`) e Vulnerabilidade na `Okta` (Slide 48)
 
 > [!TIP] Simulador Interativo do Bug dos 72 Bytes (`Okta Bypass`)
-> Para testar como um prefixo `userId + ":" + username + ":"` longo empurra a password para lá do byte `72` e faz o `bcrypt` ignorá-la, abre [assi_passwords_entropia.html](file:///home/ian/MCIF-Vault/_assets/assi_passwords_entropia.html) (separador **2. Bug bcrypt 72 Bytes**).
+> Para testar como um prefixo `userId + ":" + username + ":"` longo empurra a password para lá do byte `72` e faz o `bcrypt` ignorá-la, abre [assi_passwords_entropia.html](../../../_assets/assi_passwords_entropia.html) (separador **2. Bug bcrypt 72 Bytes**).
 
 * **Limitação Arquitetural do `bcrypt`**: devido à sua base na cifra por blocos **Blowfish**, a maioria das implementações de **`bcrypt` processa apenas os primeiros `56 a 72 bytes` da string de entrada**, truncando silenciosamente qualquer byte adicional sem devolver erro.
 

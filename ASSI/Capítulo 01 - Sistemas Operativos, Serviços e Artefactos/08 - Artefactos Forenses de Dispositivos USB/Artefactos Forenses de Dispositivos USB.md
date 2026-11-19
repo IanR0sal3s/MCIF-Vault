@@ -57,7 +57,7 @@ Rastreio pericial de dispositivos de armazenamento amovível no Windows através
 ## Mapa Rápido: "O que procuro sobre o USB?" $\rightarrow$ "Artefacto e Localização"
 
 > [!TIP] Esquema Interativo de Correlação USB (4 Hives)
-> Para visualizar passo a passo como cruzar `USBSTOR` $\rightarrow$ `MountedDevices` $\rightarrow$ `EMDMgmt` $\rightarrow$ `NTUSER.DAT\MountPoints2`, abre [assi_registry_forense.html](file:///home/ian/MCIF-Vault/_assets/assi_registry_forense.html) (separador **2. Correlação USB**).
+> Para visualizar passo a passo como cruzar `USBSTOR` $\rightarrow$ `MountedDevices` $\rightarrow$ `EMDMgmt` $\rightarrow$ `NTUSER.DAT\MountPoints2`, abre [assi_registry_forense.html](../../../_assets/assi_registry_forense.html) (separador **2. Correlação USB**).
 
 | Pergunta do Investigador | Artefacto / Ferramenta | Caminho Físico / Comando | Limitação / Cuidado Forense |
 | :--- | :--- | :--- | :--- |

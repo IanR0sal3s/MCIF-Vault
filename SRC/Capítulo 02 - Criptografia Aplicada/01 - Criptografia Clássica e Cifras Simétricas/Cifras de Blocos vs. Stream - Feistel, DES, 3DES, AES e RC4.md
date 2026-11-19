@@ -106,7 +106,7 @@ Para visualizar o diagrama acima sem matemática, imagina que o bloco é formado
 > 3. **Porque funciona:** como metade do bloco não foi destruída em cada ronda, na hora de **decifrar** basta passar pela **mesma máquina ao contrário** com as subchaves invertidas!
 
 > [!TIP] Simulador Interativo Offline
-> Para testar visualmente no navegador a diferença entre *Stream* vs. *Blocos*, Confusão vs. Difusão e o truque de Feistel passo a passo, abre [cripto_intuicao.html](file:///home/ian/MCIF-Vault/_assets/cripto_intuicao.html).
+> Para testar visualmente no navegador a diferença entre *Stream* vs. *Blocos*, Confusão vs. Difusão e o truque de Feistel passo a passo, abre [cripto_intuicao.html](../../../_assets/cripto_intuicao.html).
 
 ---
 

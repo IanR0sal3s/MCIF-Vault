@@ -68,7 +68,7 @@ Para manter o repositório consistente, fiável e navegável tanto no GitHub com
 
 ## 📊 Painel Pessoal de Progresso de Estudo
 
-* Abre o **[Painel de Progresso de Estudo](file:///home/ian/MCIF-Vault/_assets/progresso_estudo.html)** no navegador para marcar cada nota como *Por estudar*, *Mais ou menos* ou *Dominado* e acompanhar a tua percentagem por UC e capítulo (os dados ficam guardados apenas no teu navegador / `_local/`, nunca entram em commits).
+* Abre o **[Painel de Progresso de Estudo](_assets/progresso_estudo.html)** no navegador para marcar cada nota como *Por estudar*, *Mais ou menos* ou *Dominado* e acompanhar a tua percentagem por UC e capítulo (os dados ficam guardados apenas no teu navegador / `_local/`, nunca entram em commits).
 
 ---
 

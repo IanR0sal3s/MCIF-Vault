@@ -75,7 +75,7 @@ Para evitar a leitura casual dos nomes dos programas na subchave `Count`, o Wind
 ## Mapa Binário do Valor `Count` (72 Bytes no Windows 7 a 11)
 
 > [!TIP] Simulador Interativo Offline (`UserAssist` ROT13 + 72 Bytes)
-> Para testar ao vivo a conversão **ROT13** de qualquer caminho (`C:\Tools\app.exe`) e ver os campos **Little-Endian** preenchidos nos 72 bytes, abre [assi_registry_forense.html](file:///home/ian/MCIF-Vault/_assets/assi_registry_forense.html).
+> Para testar ao vivo a conversão **ROT13** de qualquer caminho (`C:\Tools\app.exe`) e ver os campos **Little-Endian** preenchidos nos 72 bytes, abre [assi_registry_forense.html](../../../_assets/assi_registry_forense.html).
 
 No Windows 7, 8, 10 e 11, cada entrada dentro da subchave `Count` possui um valor do tipo `REG_BINARY` com um comprimento exato de **72 bytes**. Todos os campos numéricos encontram-se em formato [[Endianness e Ordem de Armazenamento|Little-Endian]]:
 
