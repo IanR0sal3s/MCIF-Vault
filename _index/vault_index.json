@@ -10,8 +10,8 @@
       "GERAL": 1,
       "SRC": 28
     },
-    "total_internal_links": 2039,
-    "total_cross_uc_links": 521,
+    "total_internal_links": 2031,
+    "total_cross_uc_links": 520,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
     "yaml_warnings_count": 0,
@@ -86,7 +86,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-3"
+        "matched_term": "SHA-1"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -135,7 +135,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -250,20 +250,6 @@
         "matched_term": "FTK Imager"
       },
       {
-        "source_id": "Ferramentas de Análise e Extração do Registry",
-        "source_uc": "ASSI",
-        "target_id": "Investigação Digital e Evidência Digital",
-        "target_uc": "AFD1",
-        "matched_term": "Investigação Digital"
-      },
-      {
-        "source_id": "Ferramentas de Análise e Extração do Registry",
-        "source_uc": "ASSI",
-        "target_id": "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
-        "target_uc": "COMUM",
-        "matched_term": "SYSTEMTIME"
-      },
-      {
         "source_id": "Tipos de Dados e Associação de Ficheiros no Registry",
         "source_uc": "ASSI",
         "target_id": "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
@@ -300,6 +286,20 @@
       },
       {
         "source_id": "Estrutura Interna e Algoritmo de Hashing do Prefetch",
+        "source_uc": "ASSI",
+        "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+        "target_uc": "COMUM",
+        "matched_term": "SHA-1"
+      },
+      {
+        "source_id": "Taxonomia dos Artefactos de Execução no Windows",
+        "source_uc": "ASSI",
+        "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
+        "target_uc": "COMUM",
+        "matched_term": "SHA-1"
+      },
+      {
+        "source_id": "AmCache - Arquitetura, Hives e Evolução para SQLite",
         "source_uc": "ASSI",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
@@ -4261,7 +4261,7 @@
         "PE Architecture Identification",
         "32 vs 64 bits"
       ],
-      "summary": "Subsistema de emulação WOW64 (Windows 32-bit on Windows 64-bit), redirecionamento de chaves do Registry para o nó `WOW6432Node` e identificação forense da arquitetura de binários PE (`x86`, `x64`, `ARM64`).",
+      "summary": "Num Windows de 64 bits, o subsistema WOW64 (Windows 32-bit on Windows 64-bit) separa as chaves de aplicações de 32 bits e 64 bits para evitar colisões. Em forense, esta separação afeta tanto onde procurar...",
       "out_links": [
         "00 ASSI",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
@@ -4337,8 +4337,8 @@
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
         "Cheat Sheet - YARA, MOTW e Extração de Strings",
-        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses"
+        "Estrutura e Hives do Windows Registry",
+        "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)"
       ],
       "cross_uc_links": [
         "Endianness e Ordem de Armazenamento",
@@ -4366,14 +4366,14 @@
         "Hives do Registry",
         "Registry Architecture"
       ],
-      "summary": "Base de dados hierárquica introduzida no Windows 95 para substituir ficheiros legados de configuração (`config.sys`, `autoexec.bat`, `.ini`), centralizando definições de sistema, utilizadores e serviços.",
+      "summary": "Base de dados hierárquica introduzida no Windows 95 (substituindo `config.sys`, `autoexec.bat` e ficheiros `.ini`) que centraliza configurações de hardware, sistema operativo, aplicações e atividade de utilizadores....",
       "out_links": [
         "00 ASSI",
         "Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)",
         "Artefacto Forense ShellBags",
-        "Artefactos Forenses de Execução e Persistência no Registry",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Cheat Sheet - Registry e Forense",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
         "Ferramentas de Análise e Extração do Registry",
@@ -4399,7 +4399,6 @@
         "Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios",
         "Ferramentas de Análise e Extração do Registry",
         "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "Registry em Aplicações Modernas (MSIX e Helium)",
         "Salvaguarda e Monitorização do Registry",
@@ -4440,7 +4439,7 @@
         "RegRipper",
         "RegScanner"
       ],
-      "summary": "Instrumentos nativos (`reg.exe`, `regedit.exe`) e ferramentas periciais especializadas (`RegScanner`, `RegistryExplorer`, `RegRipper`) para interrogação live e análise offline de hives do Registry.",
+      "summary": "O Windows inclui ferramentas nativas (`reg.exe`, `regedit.exe`) úteis para administração live, mas a análise forense exige utilitários especializados (`RegScanner`, `RegistryExplorer`, `RegRipper`) capazes de...",
       "out_links": [
         "00 ASSI",
         "Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)",
@@ -4464,7 +4463,6 @@
         "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
         "Estrutura e Hives do Windows Registry",
         "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "Registry em Aplicações Modernas (MSIX e Helium)",
         "Salvaguarda e Monitorização do Registry",
@@ -4478,7 +4476,7 @@
     },
     {
       "id": "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
-      "title": "Ficha Prática e Questionário — Windows Registry e Artefactos Forenses",
+      "title": "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
       "path": "ASSI/Capítulo 01 - Sistemas Operativos, Serviços e Artefactos/05 - Fundamentos e Ferramentas do Registry/Ficha Prática e Questionário - Windows Registry e Artefactos Forenses.md",
       "uc": "ASSI",
       "capitulo": 1,
@@ -4488,32 +4486,22 @@
         "assi",
         "windows",
         "registry",
-        "userassist",
-        "shellbags",
+        "nirsoft",
+        "uwp",
         "usbstor",
-        "wow64",
-        "lab",
-        "questionario"
+        "lab"
       ],
       "aliases": [
         "Ficha Prática 02",
-        "Questionário Registry e Forense",
-        "Lab Registry e Artefactos"
+        "Lab 2 Windows Registry",
+        "Laboratório 2 ASSI"
       ],
-      "summary": "Guião prático de consolidação laboratorial e questionário de avaliação para os Blocos 05 a 08 do Capítulo 1 (Fundamentos do Registry, Aplicações Modernas, Timestamps, Artefactos de Utilizador e Dispositivos USB).",
+      "summary": "Porque importa este laboratório: instala o pacote completo da NirSoft (`NirLauncher`), ensina a automatizar a recolha de tarefas agendadas e apps UWP para ficheiros estruturados (CSV/HTML/JSON), e introduz a extração...",
       "out_links": [
         "00 ASSI",
         "Arquitetura 32 vs 64 bits no Registry e Executáveis (WOW6432Node)",
-        "Artefacto Forense ShellBags",
-        "Artefacto Forense UserAssist",
-        "Artefactos Forenses de Dispositivos USB",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "Cheat Sheet - Registry e Forense",
-        "Estrutura e Hives do Windows Registry",
-        "Ferramentas de Análise e Extração do Registry",
-        "Registry em Aplicações Modernas (MSIX e Helium)",
-        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
-        "Tipos de Dados e Associação de Ficheiros no Registry"
+        "Registry em Aplicações Modernas (MSIX e Helium)"
       ],
       "in_links": [
         "00 ASSI",
@@ -4521,9 +4509,7 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Registry em Aplicações Modernas (MSIX e Helium)"
       ],
-      "cross_uc_links": [
-        "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
-      ]
+      "cross_uc_links": []
     },
     {
       "id": "Tipos de Dados e Associação de Ficheiros no Registry",
@@ -4546,7 +4532,7 @@
         "assoc",
         "ftype"
       ],
-      "summary": "Tipificação binária dos valores armazenados no Windows Registry e mecanismo de resolução de extensões e classes de ficheiros sob o ramo `HKEY_CLASSES_ROOT` (`assoc` e `ftype`).",
+      "summary": "Cada valor no Windows Registry possui um tipo de dados que define como interpretar os seus bytes. Por sua vez, o ramo `HKEY_CLASSES_ROOT` (`HKCR`) controla como o Windows associa extensões de ficheiros a executáveis...",
       "out_links": [
         "00 ASSI",
         "Artefactos Forenses de Execução e Persistência no Registry",
@@ -4563,7 +4549,6 @@
         "Endianness e Ordem de Armazenamento",
         "Estrutura e Hives do Windows Registry",
         "Ferramentas de Análise e Extração do Registry",
-        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Windows Event Log - Arquitetura, Retenção e Event IDs Críticos"
       ],
       "cross_uc_links": [
@@ -4710,7 +4695,6 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Registry e Forense",
         "Estrutura e Hives do Windows Registry",
-        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Investigação Digital e Evidência Digital",
         "Pesquisa de Evidências e Reconstrução de Eventos"
       ],
@@ -4772,7 +4756,6 @@
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Ferramentas de Análise e Extração do Registry",
         "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Investigação Digital e Evidência Digital",
         "LastActivityView e Reconstituição Temporal Live",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
@@ -4834,7 +4817,6 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Registry e Forense",
         "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
-        "Estrutura e Hives do Windows Registry",
         "Ferramentas de Análise e Extração do Registry",
         "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Salvaguarda e Monitorização do Registry",
@@ -4952,7 +4934,6 @@
         "Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo",
         "Exercício de Projeto - Catalogação e Etiquetagem de Dispositivos e Serviços",
         "Fases da Investigação Forense Digital",
-        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Ficheiros LNK (Shell Links) - Metadados e Formato Binário",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
         "LastActivityView e Reconstituição Temporal Live",
@@ -10836,7 +10817,6 @@
         "Estrutura Interna e Algoritmo de Hashing do Prefetch",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
         "Organização de Estruturas de Dados em Binário",
         "Registry em Aplicações Modernas (MSIX e Helium)",
         "Salvaguarda e Monitorização do Registry",
