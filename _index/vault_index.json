@@ -86,7 +86,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -135,7 +135,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -7037,7 +7037,7 @@
         "CVE-2026-45585",
         "KB5089549"
       ],
-      "summary": "k",
+      "summary": "O Hardening protege firmware, portas físicas, FDE (BitLocker, `LUKS2`, `FileVault`) e configuração do SO; contudo, o BitLocker YellowKey (`CVE-2026-45585`) contorna o modo `TPM-only` via WinRE.",
       "out_links": [
         "00 ASSI",
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",

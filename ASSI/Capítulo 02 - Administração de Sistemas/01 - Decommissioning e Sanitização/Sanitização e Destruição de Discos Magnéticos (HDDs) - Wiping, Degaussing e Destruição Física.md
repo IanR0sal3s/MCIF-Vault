@@ -135,10 +135,10 @@ O *wiping* por software sobrescreve todos os setores endereçáveis do disco atr
 > [!success]- Ver Resposta
 > Os três níveis são: (1) **Discarding** (descarte simples sem apagar dados — reutilizável mas inseguro), (2) **Clearing / Purging** (sobreposição por software/*Secure Erase* permite reutilizar o HDD; *degaussing* impede a reutilização do HDD), e (3) **Destroying** (destruição física por trituração/esmagamento — impossibilita qualquer reutilização).
 
-2. **Que seis métodos de sobreposição e que duas opções específicas de limpeza NTFS são disponibilizados pelo software `Eraser`?**
+2. **Qual é a principal vantagem económica do *wiping* por software em HDDs face ao *degaussing* ou trituração, que ferramentas foram referidas em aula e que duas áreas ocultas do NTFS o `Eraser` permite limpar?**
 
 > [!success]- Ver Resposta
-> Os seis métodos são: `Gutmann (35 passes)`, `US DoD 5220.22-M (8-306./E, C and E) (7 passes)`, `US DoD 5220.22-M (8-306./E) (3 passes)`, `Schneier's 7 pass`, `Pseudorandom Data (1 pass)` e `First and last 2KB of the file`. Adicionalmente, permite limpar a **`Cluster Tip Area`** (*slack space* no fim do cluster) e os **`Alternate Data Streams`** (fluxos alternativos do NTFS).
+> O *wiping* por software (com uma ou múltiplas passagens de sobreposição) permite **reutilizar ou revender o HDD em segurança**. As ferramentas referidas em aula são **`Eraser`**, **`Boot&Nuke` (`DBAN`)**, **`CCleaner`** e **`KillDisk` (`Active@ KillDisk`)**. O `Eraser` destaca-se por suportar também a limpeza da **`Cluster Tip Area`** (*slack space* no fim do cluster) e dos **`Alternate Data Streams` (ADS)** do NTFS.
 
 3. **Porque é que um HDD fica inutilizável após o *degaussing*, ao contrário de algumas fitas magnéticas (*tapes*) e disquetes (*floppy disks*)?**
 
