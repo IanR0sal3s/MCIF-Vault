@@ -31,7 +31,7 @@ atualizado: 2026-11-11
 Guia de consulta rápida do Capítulo 2 de ASSI, condensando matrizes de sanitização de dados, hardening, gestão de vulnerabilidades, engenharia social, entropia, Passkeys, Hashcat e armadilhas de exame.
 
 > [!TIP] Finalidade desta Folha de Consulta Rápida
-> Este documento sintetiza os 181 diapositivos do Capítulo 2 (`62` de *System and Data Management* + `119` de *Access Control*), as **Fichas Laboratoriais 10 e 11** e todas as notas atómicas dos Blocos `01` a `06`. Serve de guia de bolso para revisão rápida, preparação de exame e resposta a incidentes.
+> Este documento sintetiza os 181 diapositivos do Capítulo 2 (`62` de *System and Data Management* + `119` de *Access Control*), as **Fichas Laboratoriais 11, 12 e 13** e todas as notas atómicas dos Blocos `01` a `06`. Serve de guia de bolso para revisão rápida, preparação de exame e resposta a incidentes.
 
 ---
 
@@ -103,7 +103,7 @@ Segundo **Jones & Afrifa (2020)**, existem três níveis de tratamento: **1. Dis
 flowchart LR
     P1["1. Physical Access<br/>(BitLocker TPM-only)"] --> P2["2. Malicious Media<br/>(USB/imagem manipulada)"]
     P2 --> P3["3. Boot into WinRE<br/>(Arranca recuperação)"]
-    P3 --> P4["4. Exploit TxF<br/>(autofstx.exe remove/altera<br/>winpeshl.ini)"]
+    P3 --> P4["4. Exploit File Operations<br/>(Manipula arranque do WinRE)"]
     P4 --> P5["5. SYSTEM Shell<br/>(Fallback para cmd.exe<br/>como SYSTEM)"]
     P5 --> P6["6. Data Access<br/>(Volume já desbloqueado<br/>pelo TPM legítimo)"]
 ```
@@ -156,10 +156,10 @@ flowchart LR
 
 ### Higiene, Gestores, Armazenamento Seguro, `TOTP` e `Passkeys`
 
-* **Higiene e Contingência** ([[Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing|Higiene]], [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking|Gestores]], [[Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin)|Contingência]]): política *Clean Desk*; **Google Dorks** (Trello); desgaste de teclados (`#2 #3 #5 #0` $\to$ 24 comb.); PINs previsíveis (`1234`, `19xx`); lei `SB-327` contra *default passwords*; *Shoulder Surfing*; **Cloud** (`Bitwarden`, `1Password`, `LastPass`, `Google PM` — *auto-fill* bloqueia `mail.g0ogle.com`) vs. **Local** (`KeePass`/`KeePassXC` `.kdbx` `AES-256`/`ChaCha20`/`Twofish`, **`KeeShare`** com assinaturas criptográficas, risco de *copy-paste hijacking*); contingência com **dispersão geográfica** (*Cantor Fitzgerald*); responder a perguntas de segurança com **string aleatória no KeePassXC (`Ficha 10`)**.
+* **Higiene e Contingência** ([[Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing|Higiene]], [[Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking|Gestores]], [[Contingência de Credenciais (Cantor Fitzgerald) e Perguntas de Segurança (Sarah Palin)|Contingência]]): política *Clean Desk*; **Google Dorks** (Trello); desgaste de teclados (`#2 #3 #5 #0` $\to$ 24 comb.); PINs previsíveis (`1234`, `19xx`); lei `SB-327` contra *default passwords*; *Shoulder Surfing*; **Cloud** (`Bitwarden`, `1Password`, `LastPass`, `Google PM` — *auto-fill* bloqueia `mail.g0ogle.com`) vs. **Local** (`KeePass`/`KeePassXC` `.kdbx` `AES-256`/`ChaCha20`/`Twofish`, **`KeeShare`** com assinaturas criptográficas, risco de *copy-paste hijacking*); contingência com **dispersão geográfica** (*Cantor Fitzgerald*); responder a perguntas de segurança com **string aleatória no KeePassXC (`Ficha 12`)**.
 * **Armazenamento no Servidor** ([[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass|Salting & Key Stretching]]): **nunca** *plaintext* nem hash rápido (`MD5`); usar **`per-credential salt`** (único por credencial — não por utilizador nem global — anula *Rainbow Tables* e hashes iguais) + **`Key Stretching`** por ordem de preferência: **1. `Argon2`** > **2. `PBKDF2`** > **3. `scrypt`** > **4. `bcrypt`**.
   * **4 Cenários**: (1) *Plaintext* = *"game over"*; (2) *Sem salt / salt global* = dicionário + *Rainbow Tables*; (3) *Hash rápido + per-credential salt* = GPU rápida; (4) *`Per-credential salt` + `Key Stretching` lento* = força bruta inviável.
-* **`TOTP` (`RFC 6238`) vs. `Passkeys` (`FIDO2` — `Ficha 11`)** ([[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)|2FA & Passkeys]]):
+* **`TOTP` (`RFC 6238`) vs. `Passkeys` (`FIDO2` — `Ficha 13`)** ([[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)|2FA & Passkeys]]):
   * **`TOTP`**: $\text{Truncate}(\text{HMAC}(\text{Secret}_{\text{Base32}}, \lfloor \text{Time} / 30 \rfloor))$ + *backup codes* (`10` x `8` dígitos) + suporte nativo no `KeePassXC`; vulnerável a *phishing* em tempo real / *2FA fatigue* (`OTP.Agency`).
   * **`Passkeys` (`FIDO2`)**: **`WebAuthn`** (Client $\leftrightarrow$ Relying Party) + **`CTAP1/U2F` & `CTAP2`** (Client $\leftrightarrow$ Authenticator via USB/NFC/BLE). Chave privada nunca sai do dispositivo; chave pública fica no servidor ligada ao domínio exato (**imune a phishing**). Fluxo *cross-device*: **QR Code FIDO + Bluetooth obrigatório** entre PC e smartphone. *Loophole*: roubo + desbloqueio do smartphone.
 

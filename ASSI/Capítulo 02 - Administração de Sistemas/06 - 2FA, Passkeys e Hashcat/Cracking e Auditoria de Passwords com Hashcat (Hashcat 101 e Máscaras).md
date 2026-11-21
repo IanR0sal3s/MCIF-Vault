@@ -97,9 +97,12 @@ hashcat -m 0 -a 3 -o results.txt FileWithHashesToCrack ?a?a?a?a?a?a?a
 * **`FileWithHashesToCrack`**: ficheiro de texto de entrada com os hashes alvo.
 * **`?a?a?a?a?a?a?a`** (`7` ocorrências de `?a`): testa sistematicamente todas as combinações de uma **palavra-passe com `7` caracteres** sobre os 95 caracteres ASCII imprimíveis (`?l?u?d?s`), totalizando **$95^7$ combinações**.
 
-### 4.2. Aplicação com Dicionário (`-a 0`) e Auditoria Windows `NTLM` (`-m 1000`)
+### 4.2. Custom Charset (`-1`), Dicionário (`-a 0`) e Auditoria Windows `NTLM` (`-m 1000`)
 
 ```bash
+# Custom charset (Ficha 13 Extra-Aula): 7 letras misturando maiúsculas e minúsculas (-1 ?u?l)
+hashcat -m 0 -a 3 -1 ?u?l -o cracked.txt hashes_md5.txt ?1?1?1?1?1?1?1
+
 # Auditoria de hashes MD5 contra o dicionário RockYou no Kali Linux
 hashcat -m 0 -a 0 -o cracked.txt hashes_md5.txt /usr/share/wordlists/rockyou.txt
 
