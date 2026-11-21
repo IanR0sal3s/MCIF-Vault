@@ -28,7 +28,7 @@ aliases:
   - Descontinuação SMS OOB
 atualizado: 2026-11-11
 ---
-
+	
 # Falhas de Autenticação por SMS — Protocolo SS7, SIM-Jacking, Vishing e StingRay
 
 A verificação fora de banda por SMS encontra-se descontinuada pelo NIST devido às falhas do protocolo SS7 (1975), a ataques de SIM-Jacking nas operadoras, ao Vishing e às torres falsas StingRay.
