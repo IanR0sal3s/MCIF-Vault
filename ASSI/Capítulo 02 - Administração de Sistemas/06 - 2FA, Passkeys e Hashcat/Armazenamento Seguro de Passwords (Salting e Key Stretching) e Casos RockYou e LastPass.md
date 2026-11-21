@@ -67,7 +67,19 @@ Perante a inevitabilidade de fugas de dados, as passwords exigem um salt único 
     1. **Impede que duas palavras-passe idênticas produzam o mesmo hash** na base de dados;
     2. **Invalida integralmente *lookup tables* e *Rainbow Tables* pré-computadas**, forçando o atacante a testar cada credencial separadamente.
 
-### 2.2. Funções Unidirecionais com `Key Stretching` — Ordem de Preferência (Slide 109)
+### 2.2. O que é o `Key Stretching` e Como Funciona (Slide 109)
+
+Mesmo com um `per-credential salt`, uma função de hash criptográfico comum (`MD5`, `SHA-1`, `SHA-256`) foi desenhada para ser **extremamente rápida** — uma GPU moderna calcula milhares de milhões de hashes `MD5`/`SHA-256` por segundo, quebrando passwords fracas ou médias em minutos.
+
+O **`Key Stretching`** (*esticamento de chave*) resolve este problema tornando o cálculo do hash **deliberadamente lento e dispendioso** através de dois mecanismos:
+
+1. **Iteração repetida (`iteration count` / fator de custo)**: em vez de aplicar o hash uma única vez, o algoritmo reaplica a função milhares ou centenas de milhares de vezes em cadeia ($H_1 = \text{Hash}(\text{password} \mathbin{\Vert} \text{salt})$, $H_2 = \text{Hash}(H_1)$, $\dots$, $H_N = \text{Hash}(H_{N-1})$).
+2. **Assimetria Defensiva (Utilizador vs. Atacante)**:
+   * Para um **utilizador legítimo** a fazer *login* (1 única verificação), demorar **`100–300 ms`** é impercetível;
+   * Para um **atacante em força bruta offline** que precisa de testar $10^9$ candidatas, multiplicar cada tentativa por centenas de milhares de iterações (ou exigir dezenas de MB de RAM por tentativa, no caso das funções ***memory-hard*** como `Argon2` e `scrypt`) trava o paralelismo em GPU/ASIC e torna o ataque computacionalmente inviável.
+3. **Ajuste ao longo do tempo**: à medida que o hardware fica mais rápido, o administrador aumenta o `iteration count` (ou custo de memória) para manter o tempo por verificação constante — razão pela qual as `500` iterações antigas da LastPass ficaram obsoletas face às `300,000`–`600,000` recomendadas hoje.
+
+#### Funções Unidirecionais com `Key Stretching` — Ordem de Preferência (Slide 109)
 
 | Ordem de Preferência | Função de Derivação / Hashing | Características Técnicas |
 | :---: | :--- | :--- |
@@ -75,8 +87,6 @@ Perante a inevitabilidade de fugas de dados, as passwords exigem um salt único 
 | **2.º** | **`PBKDF2`** | Norma NIST / PKCS #5; aplica iterativamente uma função pseudoaleatória (como `HMAC-SHA256`). |
 | **3.º** | **`scrypt`** | Função *memory-hard* e *CPU-hard* que consome RAM significativa para travar paralelismo em hardware dedicado. |
 | **4.º** | **`bcrypt`** | Baseada na cifra *Blowfish* com fator de custo ajustável (sujeita ao limite interno de 56–72 bytes de entrada). |
-
-* **Mecanismo do `Key Stretching`**: todas estas funções integram um **contador de iterações ajustável (*iteration count* / fator de custo)** e são concebidas para executar de forma **deliberadamente lenta**, tornando ataques de força bruta em massa computacionalmente inviáveis.
 
 ---
 
@@ -116,18 +126,6 @@ e espelhado online em [rockyou.txt.bz2 (SkullSecurity)](http://downloads.skullse
 | **2. Hash sem `salt` ou com *salt* global do sistema** | Vulnerável a **ataques de dicionário em massa** e a **tabelas pré-computadas (*lookup / rainbow tables*)**; senhas iguais geram o mesmo hash. |
 | **3. Hash rápido com `per-credential salt`** | Neutraliza *lookup/rainbow tables*, mas permanece vulnerável a **ataques rápidos de dicionário e força bruta em GPU** (milhares de milhões de hashes/s). |
 | **4. `Per-credential salt` + função lenta com `Key Stretching` (`Argon2`, `PBKDF2`, `scrypt`, `bcrypt`)** | **Força bruta e dicionários tornam-se extremamente lentos**, protegendo eficazmente todas as passwords não triviais. |
-
-### 4.2. Infografia NCSC e Bibliografia Científica (Slides 116, 118–119)
-
-* **Diretrizes NCSC (*Password Security*, Slide 116)**:
-  * **Administradores (*Sysadmins*)**: não confiar apenas em passwords; **nunca guardar em *plaintext***; aplicar **hash com `salt` + função lenta**; exigir **2FA**; **não impor expiração periódica**; bloquear senhas comuns (*blacklist*).
-  * **Utilizadores**: **não reutilizar passwords**; usar **gestor de passwords**; ativar **2FA**; escolher senhas longas (ex.: 3 palavras aleatórias / $\ge 15$ caracteres).
-* **Referências de Aprofundamento**:
-  * [OWASP Password Storage Cheat Sheet](http://bit.ly/1gVO8Xa) e [OWASP Cryptographic Storage Cheat Sheet](http://bit.ly/2p0le4S);
-  * [OpenWall (2012)](http://bit.ly/2ztxSvc) — *"Password security: past, present, future"*;
-  * Pearman, S. et al. (2017) — *"Let's Go in for a Closer Look: Observing Passwords in Their Natural Habitat"* (*ACM SIGSAC CCS*);
-  * Hitaj, B., Gasti, P., Ateniese, G., & Perez-Cruz, F. (2017) — ***"PassGAN: A Deep Learning Approach for Password Guessing"*** (GANs treinadas sobre o *dataset* *RockYou* para gerar candidatas realistas);
-  * Brotherston, L. & Berlin, A. (2016) — *Defensive Security Handbook* (Caps. 5 e 13).
 
 ---
 

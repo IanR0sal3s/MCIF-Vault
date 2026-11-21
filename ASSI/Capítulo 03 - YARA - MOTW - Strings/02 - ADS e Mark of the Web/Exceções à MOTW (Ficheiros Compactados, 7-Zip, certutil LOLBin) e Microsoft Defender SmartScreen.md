@@ -139,11 +139,12 @@ Na consola de segurança do Windows (pesquisando por *"reputation-based protecti
 
 ---
 
-## Referência Laboratorial: Ficha 15
+## Referência Laboratorial: Ficha 15 (`ADS & Mark Of The Web`)
 
-No Slide 25 da apresentação é indicada a realização da **Ficha 15** referente à prática de **Mark Of The Web (MOTW)** e **[[Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell|Alternate Data Streams (ADS)]]**.
-
-*(Nota: Quando o enunciado da Ficha 15 for disponibilizado, será integrado como nota de exercício neste bloco).*
+A **Ficha 15** consolida em laboratório os conceitos deste bloco:
+1. **ADS em CMD e PowerShell**: criação de duas ADS (`myADS1` e `myADS2`) com `echo ... > _file.txt:myADS1`, inspeção com `dir /r`, leitura via `more <` e via PowerShell (`Get-Item -Stream *` e `Get-Content -Stream`);
+2. **MOTW e verbosidade**: descarregamento de um ficheiro da plataforma da UC no navegador habitual e no **Microsoft Edge** para comparar a verbosidade da stream `Zone.Identifier` (`ZoneId=3`, `ReferrerUrl`, `HostUrl`);
+3. **Remoção de ADS/MOTW**: eliminação da ADS com **`streams.exe -d`** (Sysinternals) e confirmação de que a `Zone.Identifier` desapareceu.
 
 ---
 
