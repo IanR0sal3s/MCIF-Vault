@@ -98,22 +98,11 @@ Como cada byte contém $8\text{ bits}$, a entropia de um ficheiro varia entre **
 | **Alta Entropia** | **$\approx 7.9\text{ bits/byte}$** | Elevada aleatoriedade / ausência de estrutura aparente; **não comprime significativamente**. Exemplos: arquivos comprimidos (`.zip`, `.gz`, `.7z`), dados cifrados (*ransomware*, VeraCrypt, BitLocker) ou executáveis empacotados (*packed malware* como `UPX`). |
 | **Baixa Entropia** | **$\approx 4.5\text{ bits/byte}$** | Elevada redundância e estrutura; **comprime significativamente**. Exemplos: texto simples (`.txt`), código-fonte, HTML e ficheiros de log. |
 
-### Anatomia das Ferramentas (`ent` no Linux vs. `Detect It Easy` no Windows)
+### Ferramentas de Cálculo (`ent` no Linux vs. `Detect It Easy` no Windows)
 
-**1. Linux — `ent`** (instalável via `sudo apt install ent`, Slide 41):
-
-Ao executar `ent ls.txt` sobre um ficheiro de texto de `2750` bytes, observam-se cinco métricas periciais principais:
-
-* **`Entropy = 4.532263 bits per byte.`**: confirma baixa entropia típica de texto ASCII;
-* **`Optimum compression would reduce the size of this 2750 byte file by 43 percent.`**: estima uma redução de **`43%`** por compressão devido à redundância;
-* **`Chi square distribution`**: mede o desvio face a uma distribuição uniforme aleatória;
-* **`Arithmetic mean value of data bytes`**: média aritmética dos valores dos bytes (em dados verdadeiramente aleatórios converge para **`127.5`**);
-* **Estimativa de $\pi$ por Monte Carlo e Coeficiente de Correlação Série**: avaliam independência estatística entre bytes consecutivos.
-
-**2. Windows — `Detect It Easy (DIE)`** ([Detect It Easy (GitHub)](https://horsicq.github.io), Slide 41):
-
-* Aplicação gráfica para análise de binários que calcula a entropia global e desenha o perfil de entropia por secção PE/ELF;
-* No exemplo da aula, um binário comprimido/empacotado apresenta **`Total: 7.96365`** bits/byte e o diagnóstico automático **`packed (99%)`**.
+* **Linux — `ent`** (instalável via `sudo apt install ent`, Slide 41): utilitário de linha de comandos que calcula a entropia por byte de um ficheiro e a taxa de compressão ótima estimada (ex.: texto simples $\approx 4.5\text{ bits/byte}$ com elevada compressibilidade vs. ficheiro `.7z` ou `.kdbx` $\approx 7.9\text{ bits/byte}$).
+* **Windows — `Detect It Easy (DIE)`** ([Detect It Easy (GitHub)](https://horsicq.github.io), Slide 41): aplicação gráfica para análise de binários que calcula a entropia global e por secção PE/ELF, sinalizando automaticamente ficheiros comprimidos, cifrados ou empacotados (*packed*).
+* **Prática Laboratorial (Ficha 12)**: compara-se a entropia do PDF da ficha, do texto extraído com `pdftotext` (baixa entropia), do mesmo ficheiro em `.7z` / `.7z` cifrado e de uma base `.kdbx` do KeePassXC (próximo de `8 bits/byte`).
 
 ---
 
@@ -136,10 +125,10 @@ Ao executar `ent ls.txt` sobre um ficheiro de texto de `2750` bytes, observam-se
 > [!success]- Ver Resposta
 > Para `123456`, $E = 6 \times \log_2(6) = \mathbf{15.51\text{ bits}}$ ($\approx 16$ bits, muito fraca, média de $2^{15} = 32\,768$ tentativas). Para a string hexadecimal de 32 caracteres, $E = 32 \times \log_2(15) = \mathbf{125\text{ bits}}$ (forte).
 
-3. **Como se interpreta a entropia por byte num ficheiro (`~4.5` vs. `~7.9 bits/byte`) e que informação fornecem `ent` e `Detect It Easy (DIE)`?**
+3. **Como se interpreta a entropia por byte num ficheiro (`~4.5` vs. `~7.9 bits/byte`) e que ferramentas foram usadas em aula para a medir?**
 
 > [!success]- Ver Resposta
-> A entropia varia entre `0` e `8.0 bits/byte`: **`~4.5 bits/byte`** indica baixa entropia, redundância estrutural e elevada compressibilidade (ex.: texto `.txt`, onde `ent ls.txt` reporta `4.532263 bits/byte` e **`43%`** de compressão ótima, além de Chi-quadrado, média aritmética de `127.5` para aleatoriedade, Monte Carlo $\pi$ e correlação série). **`~7.9 bits/byte`** indica dados aleatórios e incompressíveis (comprimidos, cifrados ou empacotados), onde o **`DIE`** reporta por exemplo `Total: 7.96365` e **`packed (99%)`**.
+> A entropia por byte varia entre `0` e `8.0 bits/byte`: **`~4.5 bits/byte`** indica baixa entropia, elevada estrutura/redundância e boa compressibilidade (ex.: ficheiros de texto simples); **`~7.9 bits/byte`** indica elevada aleatoriedade e baixa compressibilidade (ex.: ficheiros comprimidos `.7z`/`.zip`, cifrados `.kdbx` ou binários empacotados/*packed*). Em Linux mede-se com **`ent`** (CLI) e em Windows com **`Detect It Easy (DIE)`** (GUI).
 
 ---
 

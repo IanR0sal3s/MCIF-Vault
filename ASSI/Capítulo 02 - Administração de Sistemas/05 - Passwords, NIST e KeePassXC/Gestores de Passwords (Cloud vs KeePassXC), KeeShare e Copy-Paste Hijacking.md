@@ -37,10 +37,10 @@ Os gestores de passwords (*cloud* como `Bitwarden` ou locais como `KeePassXC`) e
 
 > [!TIP] Lógica de Funcionamento e Valor Forense
 > * **Porque existe (Sistema / Ameaça)**: Cumprir a regra de passwords únicas e longas ($\ge 15$ caracteres) em dezenas de serviços ultrapassa a memória humana; contudo, copiar manualmente segredos através da área de transferência expõe-nos a *clipper malware* e ao histórico do sistema operativo.
-> * **Porque importa (Segurança / Forense)**: O *auto-fill* valida o domínio exato contra ataques homográficos (`mail.g0ogle.com`), o `KeePassXC` protege o *clipboard* limpando-o aos `10s` com a flag `ClipboardViewerIgnore`, e o `KeeShare` permite partilha colaborativa autenticada.
+> * **Porque importa (Segurança / Forense)**: O *auto-fill* valida o domínio exato contra ataques homográficos (`mail.g0ogle.com`), o `KeePassXC` bloqueia por omissão capturas de ecrã (Ficha 12) e armazena credenciais localmente em `.kdbx` cifrado, e o `KeeShare` permite partilha colaborativa autenticada.
 > * **Pontos Críticos e Armadilhas para Exame**:
 >   * **`KeePass`** (GPL v2+): usa **`AES/Rijndael`** e **`Twofish`**; *Master Key* aceita **`Password`**, **`Key file`** ou **`Password + Key file`** (recomendado), com suporte a *plugins*.
->   * **`KeePassXC`** (**Ficha 10**): *fork open-source* multiplataforma com bases **`.kdbx`** cifradas por **`AES-256`**, **`ChaCha20`** ou **`Twofish`**.
+>   * **`KeePassXC`** (**Ficha 12**): *fork open-source* multiplataforma com bases **`.kdbx`** cifradas por **`AES-256`**, **`ChaCha20`** ou **`Twofish`** (e bloqueio de *screenshots* ativo por omissão, configurável em *View* $\to$ *Allow Screen Capture*).
 >   * **`KeeShare`**: partilha sincronizada de grupos/entradas via contentor intermédio (Dropbox, Google Drive, Nextcloud) com **assinaturas criptográficas** e **E2EE**.
 >   * ***Copy-paste hijacking***: *clipper malware* alterou endereços Bitcoin no *clipboard* roubando **`13 BTC`** (`$36,000` em jun/2017 $\to$ `$905,801` em nov/2024).
 
@@ -69,9 +69,10 @@ Os gestores de passwords (*cloud* como `Bitwarden` ou locais como `KeePassXC`) e
    * Software *open source* (licença **GPL v2 ou posterior**) para Windows, Linux, Android e iOS;
    * Cifra a base de dados local com **`AES/Rijndael`** e **`Twofish`** e suporta *plugins*;
    * **Composição da *Master Key***: apenas **`Password`**, apenas **`Key file`**, ou **`Password + Key file`**.
-2. **`KeePassXC` (Slide 67 — `Ficha 10: keepassXC + entropy`, Slide 79)**:
+2. **`KeePassXC` (Slide 67 — Ficha 12: `keepassXC + keeShare + entropia`)**:
    * *Fork* comunitário *open-source* e multiplataforma (**Windows, macOS e Linux**);
-   * Utiliza o formato **`.kdbx`** (compatível com KeePass) com algoritmos de cifragem modernos: **`AES-256`**, **`ChaCha20`** e **`Twofish`**.
+   * Utiliza o formato **`.kdbx`** (compatível com KeePass) com algoritmos de cifragem modernos: **`AES-256`**, **`ChaCha20`** e **`Twofish`**;
+   * **Proteção de ecrã (Ficha 12)**: bloqueia capturas de ecrã por omissão (só permite se o utilizador ativar *View* $\to$ *Allow Screen Capture*).
 3. **Partilha Segura com `KeeShare` (Slide 68)**:
    * Mecanismo integrado no `KeePassXC` para **gestão colaborativa de passwords** em equipa;
    * Sincroniza **grupos ou entradas específicas** através de um contentor intermédio baseado em ficheiros (partilhável via **Dropbox, Google Drive, Nextcloud**, etc.);
@@ -95,10 +96,10 @@ Os gestores de passwords (*cloud* como `Bitwarden` ou locais como `KeePassXC`) e
 > [!success]- Ver Resposta
 > O *auto-fill* verifica o domínio exato do URL antes de injetar as credenciais, protegendo contra sites falsos visualmente idênticos (*typosquatting* / ataques homográficos, ex.: preenche em `mail.google.com` mas recusa preencher em `mail.g0ogle.com`), além de evitar expor a password na área de transferência a *clipper malware*.
 
-2. **Como funciona o *Copy-paste hijacking* e que proteções forenses integra o `KeePassXC` na cópia de credenciais?**
+2. **Como funciona o *Copy-paste hijacking*, que caso real ilustrou o seu impacto e por que razão afeta mais o uso manual de gestores locais?**
 
 > [!success]- Ver Resposta
-> Um *clipper malware* monitoriza o *clipboard* para ler senhas copiadas ou substituir silenciosamente dados no momento da colagem (tendo roubado **`13 BTC`** num caso documentado na aula). Para proteger a área de transferência contra leitura e persistência no histórico do Windows (`Win+V` / `ActivitiesCache.db`), o `KeePassXC` limpa o *clipboard* após **`10 segundos`** e marca os dados com a flag **`ClipboardViewerIgnore`** (`ExcludeClipboardContentFromMonitorProcessing`).
+> Um *clipper malware* monitoriza o *clipboard* para ler senhas copiadas ou substituir silenciosamente o conteúdo no momento da colagem (num caso documentado em aula, trocou endereços Bitcoin copiados e acumulou **`13 BTC`**). Afeta sobretudo o uso manual de gestores locais porque a transferência via `Ctrl+C`/`Ctrl+V` expõe os dados na área de transferência — risco mitigado pelo *auto-fill* direto no navegador.
 
 3. **Compare os algoritmos de cifragem e as opções de *Master Key* entre `KeePass` e `KeePassXC`.**
 
