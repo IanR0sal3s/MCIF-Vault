@@ -26,7 +26,7 @@ aliases:
 fonte_aula: 01_FA_services+WSearch+Registry---2026-27_ULO_v2.pdf
 fontes:
   - "http://www.nirsoft.net/utils/recent_files_view.html"
-atualizado: 2026-09-23
+atualizado: 2026-11-21
 ---
 
 # Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)
@@ -110,9 +110,8 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32
 
 ### Subchaves de Elevado Valor Pericial
 
-1. **`OpenSavePidlMRU`**: Lista os ficheiros abertos ou guardados através de caixas de diálogo, organizados em subchaves por extensão (e `*` para todos) e ordenados pelo valor binário **`MRUListEx`**.
+1. **`OpenSavePidlMRU`** (e **`OpenSaveMRU`**): Lista os ficheiros/links abertos ou guardados através de caixas de diálogo, organizados em subchaves por extensão (e `*` para todos) e ordenados pelo valor binário **`MRUListEx`**.
 2. **`LastVisitedPidlMRU`**: Regista o **nome do executável de origem** (ex.: `winword.exe`, `chrome.exe`, `mspaint.exe`) que invocou a caixa de diálogo, juntamente com o **último diretório (PIDL)** navegado dentro dessa aplicação, também ordenado por `MRUListEx`.
-3. **`CIDSizeMRU`**: Regista o executável juntamente com as dimensões e posições em píxeis das janelas de diálogo no ecrã.
 
 ---
 
@@ -145,6 +144,7 @@ url4    REG_SZ    powershell
 
 ## Ferramentas de Análise
 
+* **OpenSaveFilesView** (NirSoft): lista diretamente o conteúdo das chaves `ComDlg32\OpenSaveMRU` e `ComDlg32\OpenSavePidlMRU` (validar o executável com `sigcheck /vt OpenSaveFilesView.exe`).
 * **RecentFilesView** (NirSoft): utilitário gráfico que cruza automaticamente as chaves `RecentDocs`, `RunMRU` e a pasta de atalhos `.lnk` (`Recent`), apresentando uma tabela cronológica dos últimos ficheiros abertos e pastas visitadas.
 * **RegRipper** (`rip.exe`): plugins dedicados `runmru`, `recentdocs`, `typedpaths` e `comdlg32` executados sobre o ficheiro `NTUSER.DAT`.
 * **RegistryExplorer** (Eric Zimmerman): descodifica automaticamente as estruturas binárias PIDL e ordena visualmente os valores segundo `MRUList` e `MRUListEx`.
