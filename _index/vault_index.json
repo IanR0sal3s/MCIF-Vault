@@ -10,7 +10,7 @@
       "GERAL": 1,
       "SRC": 28
     },
-    "total_internal_links": 2031,
+    "total_internal_links": 2032,
     "total_cross_uc_links": 520,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
@@ -86,7 +86,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-1"
+        "matched_term": "SHA-2"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -135,7 +135,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -4579,7 +4579,7 @@
         "Virtualized Registry",
         "Helium User.dat"
       ],
-      "summary": "Modelo de isolamento por contentores e virtualização de hives do Windows Registry na subpasta `Helium` (`User.dat` e `Registry.dat`) em aplicações empacotadas em formato MSIX.",
+      "summary": "As aplicações modernas empacotadas em MSIX (ex.: Notepad no W11, Windows Terminal, Teams, Paint, Dropbox) correm num contentor isolado com assinatura digital obrigatória e manifesto `AppManifest.xml`. Em vez de...",
       "out_links": [
         "00 ASSI",
         "Aplicações UWP (Universal Windows Platform) - Visão Geral",
@@ -4628,7 +4628,7 @@
         "Procmon",
         "Monitorização do Registry"
       ],
-      "summary": "Mecanismos nativos de cópia de segurança periódica (`RegBack` e `RegIdleBackup`), auditoria de tarefas agendadas (`schtasks.exe`) e monitorização de alterações ao Registry em tempo real (`Procmon` vs. `Sysmon`).",
+      "summary": "A auditoria contínua e histórica do Registry envolve a salvaguarda automática (`RegBack`), a consulta de tarefas agendadas (`schtasks`) e a monitorização de acessos em tempo real (`Procmon` e `Sysmon`).",
       "out_links": [
         "00 ASSI",
         "Artefactos Forenses de Dispositivos USB",
@@ -4637,6 +4637,7 @@
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Estrutura e Hives do Windows Registry",
         "Ferramentas de Análise e Extração do Registry",
+        "Monitorização Avançada com Sysmon (Sysinternals)",
         "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
@@ -8958,6 +8959,7 @@
       "in_links": [
         "Capítulo 4 - Logs",
         "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+        "Salvaguarda e Monitorização do Registry",
         "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa"
       ],
       "cross_uc_links": []
