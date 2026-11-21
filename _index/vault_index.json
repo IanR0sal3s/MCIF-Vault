@@ -10,7 +10,7 @@
       "GERAL": 1,
       "SRC": 28
     },
-    "total_internal_links": 2032,
+    "total_internal_links": 2028,
     "total_cross_uc_links": 520,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-2"
+        "matched_term": "SHA-1"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -4758,7 +4758,6 @@
         "Ferramentas de Análise e Extração do Registry",
         "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
         "Investigação Digital e Evidência Digital",
-        "LastActivityView e Reconstituição Temporal Live",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)",
         "Organização de Estruturas de Dados em Binário",
@@ -4877,7 +4876,6 @@
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Endianness e Ordem de Armazenamento",
         "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
-        "LastActivityView e Reconstituição Temporal Live",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Taxonomia dos Artefactos de Execução no Windows",
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
@@ -4976,7 +4974,7 @@
         "ShadowCopyView",
         "Ficha 3 VSS"
       ],
-      "summary": "O acesso forense às cópias de sombra identificadas via vssadmin exige a sua exposição no sistema de ficheiros Win32 através de `mklink /d`, `VSCMount` ou `ShadowCopyView`.",
+      "summary": "Como as Shadow Copies residem apenas no namespace interno do kernel (`\\\\?\\GLOBALROOT\\Device\\HarddiskVolumeShadowCopyN`) sem letra de unidade, o perito expõe-nas ao sistema de ficheiros através de três métodos:...",
       "out_links": [
         "00 ASSI",
         "Camadas de Organização de Dados e Análise de Sistemas de Ficheiros",
@@ -5030,7 +5028,7 @@
         "Comandos VSS",
         "Manipulação de Shadow Copies"
       ],
-      "summary": "A administração e auditoria pericial do Volume Shadow Service realiza-se através de utilitários nativos (`vssadmin`, PowerShell, `wmic`) e gestão de ACLs (`icacls`).",
+      "summary": "A administração e auditoria do VSS exige privilégios de Administrador e realiza-se via `vssadmin`, PowerShell (`Win32_ShadowCopy`), `wmic` (descontinuado) e `icacls`.",
       "out_links": [
         "00 ASSI",
         "Acesso Forense e Montagem de Shadow Copies",
@@ -5068,16 +5066,12 @@
         "Reconstituição Temporal Live com LastActivityView",
         "NirSoft LastActivityView"
       ],
-      "summary": "O LastActivityView é um utilitário forense da NirSoft concebido para a reconstituição rápida de uma linha do tempo (timeline) de ações do utilizador e eventos num sistema Windows ativo (live).",
+      "summary": "O `LastActivityView` (NirSoft) é um utilitário de triagem rápida que recolhe dados de múltiplas fontes num sistema Windows ativo (live) para construir uma linha do tempo unificada de atividade do utilizador e do sistema.",
       "out_links": [
         "00 ASSI",
-        "AmCache - Arquitetura, Hives e Evolução para SQLite",
-        "Artefacto Forense UserAssist",
         "Artefactos Forenses de Dispositivos USB",
-        "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
-        "Estrutura Interna e Algoritmo de Hashing do Prefetch",
         "Gestão e Manipulação de VSS (CLI, PowerShell e Permissões)",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "Princípios e Rota do Manuseamento de Evidência Digital",
@@ -5250,7 +5244,6 @@
         "Análise Forense e Criação a Pedido do Prefetch",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
-        "LastActivityView e Reconstituição Temporal Live",
         "Preservação do Sistema e Integridade de Dados",
         "Serviço Prefetch e SysMain - Arquitetura e Funcionamento",
         "Sistemas de Numeração e Conversão entre Bases",
@@ -5429,7 +5422,6 @@
         "Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker",
         "Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)",
         "Investigação Digital e Evidência Digital",
-        "LastActivityView e Reconstituição Temporal Live",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)",
         "Pesquisa de Evidências e Reconstrução de Eventos",
