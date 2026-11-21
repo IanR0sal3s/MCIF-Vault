@@ -3,7 +3,7 @@ title: Índice Semântico e Mapa de Contexto do Vault
 tipo: indice
 tags:
   - indice-sistema
-atualizado: 2026-11-19
+atualizado: 2026-11-21
 ---
 
 # Índice Semântico e Mapa de Contexto do Vault (MCIF)
@@ -18,14 +18,14 @@ atualizado: 2026-11-19
 
 | Métrica | Valor |
 | :--- | :---: |
-| **Total de Notas Mapeadas** | `202` |
+| **Total de Notas Mapeadas** | `214` |
 | Notas em **AFD1** | `42` |
-| Notas em **ASSI** | `95` |
+| Notas em **ASSI** | `107` |
 | Notas em **COD1** | `29` |
 | Notas em **COMUM** | `7` |
 | Notas em **GERAL** | `1` |
 | Notas em **SRC** | `28` |
-| **Total de Ligações Internas (Wikilinks Únicos)** | `1989` |
+| **Total de Ligações Internas (Wikilinks Únicos)** | `2068` |
 | **Ligações Cruzadas entre UCs Diferentes** | `528` |
 | **Links Quebrados (*Broken Links*)** | `0` |
 | **Notas Órfãs (Sem Ligações de Entrada)** | `0` |
@@ -83,7 +83,7 @@ atualizado: 2026-11-19
 | `4.1` | **`Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO)`**<br/><small>`AFD1/Capítulo 04 - Dispositivos de Armazenamento/01 - Tecnologia HDD e Geometria/Interfaces de Disco - ATA (IDE-PATA-SATA) e Áreas Protegidas (HPA e DCO).md`</small> | `nota` | `#afd1`, `#forense`, `#ata`, `#sata`, `#hpa`, `#dco` | Capítulo: Capítulo 4 - Dispositivos de Armazenamento |
 | `4.2` | **`Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD`**<br/><small>`AFD1/Capítulo 04 - Dispositivos de Armazenamento/02 - Tecnologia SSD e Memória NAND/Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD.md`</small> | `nota` | `#afd1`, `#forense`, `#ssd`, `#usb`, `#m2`, `#nvme` | Capítulo: Capítulo 4 - Dispositivos de Armazenamento<br/>**Pontes Inter-UCs (1)**: `Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)` |
 
-### Unidade Curricular: `ASSI` (95 notas)
+### Unidade Curricular: `ASSI` (107 notas)
 
 | Cap.Bloco | Nota (`ID` de Wikilink) | Tipo | Tags & Aliases | Resumo Central e Pontes Inter-UCs |
 | :---: | :--- | :---: | :--- | :--- |
@@ -182,6 +182,18 @@ atualizado: 2026-11-19
 | `3.3` | **`Conceito de Strings e Comando strings em Unix-Linux`**<br/><small>`ASSI/Capítulo 03 - YARA - MOTW - Strings/03 - Extração e Pesquisa de Strings (strings e bstrings)/Conceito de Strings e Comando strings em Unix-Linux.md`</small> | `ferramenta` | `#assi`, `#forense`, `#strings`, `#linux`, `#unix`, `#codificacao`<br/>Aliases: *Comando strings*, *Unix strings*, *Conceito de Strings*, *strings -e S* | O comando Unix/Linux `strings` extrai sequências de caracteres imprimíveis de ficheiros de texto e binários para revelar contexto forense, suportando controlo de offsets, secções e codificações.<br/>**Pontes Inter-UCs (3)**: `00 AFD1`, `Codificação de Caracteres - ASCII, Latin-1 e Unicode`, `Sistemas de Numeração e Conversão entre Bases` |
 | `3.3` | **`Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios`**<br/><small>`ASSI/Capítulo 03 - YARA - MOTW - Strings/03 - Extração e Pesquisa de Strings (strings e bstrings)/Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios.md`</small> | `ferramenta` | `#assi`, `#forense`, `#bstrings`, `#zimmerman`, `#strings`, `#regex`<br/>Aliases: *bstrings*, *Eric Zimmerman bstrings*, *bstrings -p*, *Exercise with bstrings* | O `bstrings`, de Eric Zimmerman, automatiza a extração de strings ASCII e Unicode no Windows com limites mínimo e máximo, processamento por blocos e 27 expressões regulares forenses integradas.<br/>**Pontes Inter-UCs (2)**: `00 AFD1`, `Codificação Binário-para-Texto (Base16, Base64 e Base58)` |
 | `3.3` | **`Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)`**<br/><small>`ASSI/Capítulo 03 - YARA - MOTW - Strings/03 - Extração e Pesquisa de Strings (strings e bstrings)/Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk).md`</small> | `ferramenta` | `#assi`, `#forense`, `#strings`, `#windows`, `#sysinternals`, `#sfk`<br/>Aliases: *Strings in Windows*, *Sysinternals strings*, *strings.exe*, *sfk strings* | Como o Windows não inclui um comando `strings` nativo, recorre-se ao `strings.exe` da Sysinternals, ao Swiss File Knife (`sfk`) ou ao `bstrings` para extrair texto ASCII e Unicode em binários.<br/>**Pontes Inter-UCs (2)**: `00 AFD1`, `Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite` |
+| `4` | **`Capítulo 4 - Logs`**<br/><small>`ASSI/Capítulo 04 - Logs/Capítulo 4 - Logs.md`</small> | `indice` | `#moc`, `#assi`, `#logs`, `#evtx`, `#sysmon`, `#sigma`<br/>Aliases: *Capítulo 4 ASSI*, *MOC Capítulo 4 ASSI*, *Logs ASSI* | Mapa de estudo do Capítulo 4 de ASSI (Prof. Patrício Domingues), cobrindo 127 diapositivos (Parte 1: 93 slides; Parte 2: 34 slides) e as Fichas Práticas 16, 17 e 18, sintetizados em 10 notas focadas no essencial e 1... |
+| `4` | **`Cheat Sheet - Logs no Windows e Threat Hunting`**<br/><small>`ASSI/Capítulo 04 - Logs/Cheat Sheet - Logs no Windows e Threat Hunting.md`</small> | `cheatsheet` | `#assi`, `#cheatsheet`, `#logs`, `#evtx`, `#event-id`, `#sigma`<br/>Aliases: *Cheat Sheet Capítulo 4 ASSI*, *Cheat Sheet Logs Windows* | Guia de consulta rápida do Capítulo 4 - Logs · Simulador interativo: [assi_logs_forense.html](../../_assets/assi_logs_forense.html). |
+| `4.1` | **`Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)`**<br/><small>`ASSI/Capítulo 04 - Logs/01 - Windows Event Log e Extração/Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd).md`</small> | `ferramenta` | `#assi`, `#logs`, `#evtx`, `#evtx_dump`, `#jq`, `#fulleventlogview`<br/>Aliases: *evtx_dump e jq*, *FullEventLogView*, *EvtxECmd*, *Ficha 16 ASSI* | Para analisar grandes volumes de ficheiros `.evtx` de forma rápida ou em triagem forense offline, recorre-se a ferramentas especializadas de conversão para JSON/CSV e agregação visual. |
+| `4.1` | **`Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)`**<br/><small>`ASSI/Capítulo 04 - Logs/01 - Windows Event Log e Extração/Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell).md`</small> | `ferramenta` | `#assi`, `#logs`, `#evtx`, `#wevtutil`, `#psloglist`, `#powershell`<br/>Aliases: *WEVTUtil*, *psloglist*, *Get-WinEvent*, *PowerShell Event Logs* | A consulta, configuração e limpeza de Windows Event Logs em linha de comando ou scripts realiza-se através do utilitário nativo `wevtutil`, do `psloglist` (Sysinternals) e dos cmdlets PowerShell (`Get-WinEvent`). |
+| `4.1` | **`Windows Event Log - Arquitetura, Retenção e Event IDs Críticos`**<br/><small>`ASSI/Capítulo 04 - Logs/01 - Windows Event Log e Extração/Windows Event Log - Arquitetura, Retenção e Event IDs Críticos.md`</small> | `conceito` | `#assi`, `#logs`, `#evtx`, `#event-log`, `#event-id`, `#retencao`<br/>Aliases: *Windows Event Log*, *EVTX vs EVT*, *Retenção de Logs*, *Event IDs Críticos* | Os logs registam eventos do sistema operativo e de aplicações, servindo tanto para administração (deteção de anomalias e avarias) como para investigação forense (reconstrução de logins, instalação de serviços e... |
+| `4.2` | **`Análise Forense de USB e Crashes nos Logs EVTX`**<br/><small>`ASSI/Capítulo 04 - Logs/02 - Casos de Estudo Forenses em EVTX/Análise Forense de USB e Crashes nos Logs EVTX.md`</small> | `analise` | `#assi`, `#logs`, `#evtx`, `#usb`, `#partition-diagnostic`, `#crash`<br/>Aliases: *Logs USB EVTX*, *Partition Diagnostic EVTX*, *USBDriveLog*, *Logs de Crash e BSOD* | Além de eventos de autenticação e persistência, os logs `.evtx` preservam evidências diretas da ligação de dispositivos de armazenamento externo e de falhas críticas de aplicações ou do sistema operativo. |
+| `4.2` | **`Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX`**<br/><small>`ASSI/Capítulo 04 - Logs/02 - Casos de Estudo Forenses em EVTX/Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX.md`</small> | `analise` | `#assi`, `#logs`, `#evtx`, `#powershell`, `#downgrade`, `#psreadline`<br/>Aliases: *Logs PowerShell*, *PowerShell Downgrade Attack*, *PSReadLine*, *Persistência Task Scheduler* | Atacantes utilizam frequentemente o PowerShell para execução ofensiva e o Task Scheduler para obter persistência. Ambos deixam vestígios específicos em logs `.evtx` e ficheiros auxiliares. |
+| `4.3` | **`Monitorização Avançada com Sysmon (Sysinternals)`**<br/><small>`ASSI/Capítulo 04 - Logs/03 - Threat Hunting e Monitorização/Monitorização Avançada com Sysmon (Sysinternals).md`</small> | `ferramenta` | `#assi`, `#logs`, `#evtx`, `#sysmon`, `#sysinternals`, `#monitorizacao`<br/>Aliases: *Sysmon*, *System Monitor*, *SysmonForLinux*, *Ficha 17 ASSI* | O Sysmon (System Monitor, Sysinternals) é um serviço persistente que expande drasticamente a telemetria nativa do Windows, registando atividade detalhada do sistema no ficheiro:... |
+| `4.3` | **`Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa`**<br/><small>`ASSI/Capítulo 04 - Logs/03 - Threat Hunting e Monitorização/Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa.md`</small> | `ferramenta` | `#assi`, `#logs`, `#evtx`, `#sigma`, `#apt-hunter`, `#chainsaw`<br/>Aliases: *Regras SIGMA*, *APT-Hunter*, *Chainsaw*, *Hayabusa* | Dado o elevado volume de ficheiros e eventos `.evtx`, a deteção de atividades suspeitas ou Advanced Persistent Threats (APT) apoia-se em regras padronizadas (SIGMA) e ferramentas automatizadas de triagem e geração de... |
+| `4.4` | **`Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)`**<br/><small>`ASSI/Capítulo 04 - Logs/04 - Logs Ad-Hoc no Windows/Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer).md`</small> | `analise` | `#assi`, `#logs`, `#onedrive`, `#odl`, `#sqlite`, `#onedriveexplorer`<br/>Aliases: *Logs OneDrive*, *OneDriveExplorer*, *Ficheiros ODL* | O cliente Microsoft OneDrive mantém localmente logs de sincronização, ficheiros de estado e bases de dados SQLite que permitem reconstruir a estrutura de pastas e atividade de ficheiros na nuvem. |
+| `4.4` | **`Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)`**<br/><small>`ASSI/Capítulo 04 - Logs/04 - Logs Ad-Hoc no Windows/Logs ETL e Caso de Estudo Delivery Optimization (IP Externo).md`</small> | `analise` | `#assi`, `#logs`, `#etl`, `#delivery-optimization`, `#tracerpt`, `#ip-externo`<br/>Aliases: *Event Trace Log*, *Logs ETL*, *Delivery Optimization ETL*, *tracerpt* | Os ficheiros *ETL (Event Trace Log) são um formato binário da Microsoft desenhado para registar execuções (traces) de eventos de elevada frequência (ex.: acessos a disco, page faults*). No serviço Delivery... |
+| `4.4` | **`Memory Dumps (.dmp) e Windows Error Reporting (WER)`**<br/><small>`ASSI/Capítulo 04 - Logs/04 - Logs Ad-Hoc no Windows/Memory Dumps (.dmp) e Windows Error Reporting (WER).md`</small> | `conceito` | `#assi`, `#logs`, `#logs-ad-hoc`, `#dump`, `#wer`, `#storm-0558`<br/>Aliases: *Logs Ad-Hoc Windows*, *Core Dump e Memory Dump*, *Windows Error Reporting*, *Caso Storm-0558* | Para além do sistema formal de Windows Event Logs, o Windows gera numerosos logs ad-hoc (muitos em `%SYSTEMROOT%\Logs`) e artefactos de diagnóstico em caso de falha, como memory dumps (`.dmp`) e relatórios WER (`.wer`). |
 
 ### Unidade Curricular: `COD1` (29 notas)
 
@@ -276,7 +288,7 @@ atualizado: 2026-11-19
 
 | Nota de Origem | UC | Conceito / Alias Detetado no Texto | Nota de Destino Sugerida | UC |
 | :--- | :---: | :---: | :--- | :---: |
-| `Investigação Forense Digital - Análise Live vs Post-Mortem` | `AFD1` | `Amcache.hve` | `AmCache - Arquitetura, Hives e Evolução para SQLite` | `ASSI` |
+| `Investigação Forense Digital - Análise Live vs Post-Mortem` | `AFD1` | `AmCache` | `AmCache - Arquitetura, Hives e Evolução para SQLite` | `ASSI` |
 | `Pesquisa de Evidências e Reconstrução de Eventos` | `AFD1` | `SHA-1` | `Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)` | `COMUM` |
 | `Preservação do Sistema e Integridade de Dados` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
 | `Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
@@ -288,7 +300,7 @@ atualizado: 2026-11-19
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `RegRipper` | `Ferramentas de Análise e Extração do Registry` | `ASSI` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Prefetch` | `Serviço Prefetch e SysMain - Arquitetura e Funcionamento` | `ASSI` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `GnuPG` | `Assinaturas Digitais, PKI e GnuPG` | `COMUM` |
-| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `SHA-1` | `Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)` | `COMUM` |
+| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `SHA-2` | `Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)` | `COMUM` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
 | `Processo de Arranque UEFI, Secure Boot e Fluxo do Windows` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
 | `Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB` | `AFD1` | `Secure Boot` | `UEFI Secure Boot` | `ASSI` |
@@ -313,6 +325,8 @@ atualizado: 2026-11-19
 | `AmCache - Arquitetura, Hives e Evolução para SQLite` | `ASSI` | `Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)` | `COMUM` | `#sha1` |
 | `Ambiente de Hacking - Kali Linux, Commando VM e Virtualização` | `COD1` | `Ferramentas de Análise e Extração do Registry` | `ASSI` | `#ferramentas` |
 | `Anonimização - MAC, Proxy, VPN, kali-anonsurf e Whonix` | `COD1` | `Cheat Sheet - Criptografia, Hash, PKI e VPNs` | `SRC` | `#vpn` |
+| `Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)` | `ASSI` | `Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)` | `COMUM` | `#sqlite` |
+| `Análise Forense de USB e Crashes nos Logs EVTX` | `ASSI` | `Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD` | `AFD1` | `#usb` |
 | `Análise Forense e Criação a Pedido do Prefetch` | `ASSI` | `Laboratório Scapy - Envio e Resposta de Pacotes ICMP` | `SRC` | `#python` |
 | `Aquisição em Linha de Comandos no Linux - dcfldd e Derivados do dd` | `AFD1` | `Conceito de Strings e Comando strings em Unix-Linux` | `ASSI` | `#linux` |
 | `Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes` | `AFD1` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` | `#assinatura-digital` |
@@ -329,8 +343,6 @@ atualizado: 2026-11-19
 | `Assinaturas Digitais, PKI e GnuPG` | `COMUM` | `Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas` | `SRC` | `#criptografia` |
 | `Assinaturas Digitais, PKI e GnuPG` | `COMUM` | `TBL 2 - Fundamentos de Criptografia` | `SRC` | `#criptografia` |
 | `Ataques e Contramedidas por Camada em IoT (Sharma)` | `SRC` | `Contramedidas de Enumeração e Metodologia Pentest` | `COD1` | `#contramedidas` |
-| `Ataques e Contramedidas por Camada em IoT (Sharma)` | `SRC` | `Footprinting Pentest e Contramedidas (Metodologia Prática)` | `COD1` | `#contramedidas` |
-| `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` | `Preservação do Sistema e Integridade de Dados` | `AFD1` | `#assinatura-digital` |
 
 ### 3.3. Ligações Inter-UCs Unidirecionais (Oportunidades de Reciprocidade)
 

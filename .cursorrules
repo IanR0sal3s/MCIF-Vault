@@ -103,9 +103,25 @@ Para evitar ler dezenas de ficheiros sempre que for necessário contextualizar u
 
 ## 7. Procedimento de Verificação após Modificações
 Sempre que criares, editares, renomeares ou ligares notas no repositório:
-1. Atualiza a MOC do capítulo e/ou da UC correspondente.
+1. Atualiza a MOC do capítulo, a MOC da UC (`00 <SIGLA>.md`) e, quando concluíres ou alterares significativamente um capítulo, os portais globais (`Home.md` e `README.md`).
 2. Executa obrigatoriamente o indexador e validador de integridade:
    ```bash
    python3 _scripts/vault_indexer.py --check
    ```
-3. Confirma que o comando retorna `0` links quebrados, `0` notas órfãs, `0` avisos de YAML Frontmatter e `0` ficheiros com 0 bytes, mantendo os ficheiros em `_index/` sempre sincronizados com o estado atual do vault.
+3. Confirma que o comando retorna `0` links quebrados, `0` notas órfãs, `0` avisos de YAML Frontmatter e `0` ficheiros com 0 bytes, mantendo os ficheiros em `_index/` (incluindo `_index/vault_catalog.js` usado por `_assets/progresso_estudo.html`) sempre sincronizados com o estado atual do vault.
+
+---
+
+## 8. Páginas HTML Interativas de Apoio ao Estudo (`_assets/`)
+Quando um capítulo envolve **cálculos, codificações, correlação multi-artefacto ou treino ativo rápido** (ex.: fórmulas, conversores, simuladores ou quizzes de triagem), o agente pode propor e criar uma página HTML autónoma em `_assets/` para acelerar o estudo:
+1. **Critério de Utilidade (Sem Ruído)**:
+   * Criar apenas quando acrescenta valor pedagógico real e reduz carga mental — nunca por obrigação em temas puramente descritivos.
+   * Manter o foco no essencial avaliável, evitando expandir minúcias ilustrativas de screenshots.
+2. **Padrão Técnico e Visual**:
+   * Ficheiro único autocontido (HTML + CSS + JS inline, zero dependências externas) que funciona offline no navegador e suporta modo claro/escuro (`prefers-color-scheme`).
+   * Referenciar a página a partir da MOC do capítulo e/ou da Cheat Sheet respetiva usando caminho relativo (ex.: `[assi_logs_forense.html](../../_assets/assi_logs_forense.html)`).
+3. **Exemplos de Referência no Vault** (consultar antes de criar novos):
+   * `_assets/assi_passwords_entropia.html` — simulador de *salting*, bug `bcrypt` 72 bytes e calculadora de entropia.
+   * `_assets/assi_registry_forense.html` — descodificador ROT13 (`UserAssist`) e cadeia de correlação USB em 4 hives.
+   * `_assets/assi_logs_forense.html` — conversor `Vista+ ↔ Win 2000/XP (-4096)`, quiz de Event IDs e triagem forense por cenário.
+   * `_assets/cripto_intuicao.html` — visualizações interativas de criptografia (`SRC`).

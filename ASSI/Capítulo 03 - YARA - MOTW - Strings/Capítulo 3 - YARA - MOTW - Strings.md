@@ -78,6 +78,7 @@ flowchart LR
 - [[Cheat Sheet - YARA, MOTW e Extração de Strings|Ir para a Cheat Sheet do Capítulo 3]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Ir para o Capítulo 1 de ASSI]]
 - [[Capítulo 2 - Administração de Sistemas|Recuar para o Capítulo 2 de ASSI (Administração de Sistemas e Controlo de Acessos)]]
+- [[Capítulo 4 - Logs|Avançar para o Capítulo 4 de ASSI (Logs no Windows, Threat Hunting e Logs Ad-Hoc)]]
 - [[Capítulo 1 - Método de Investigação|Pontes com AFD1 — Capítulo 1 (Método de Investigação Forense)]]
 - [[Capítulo 2 - Arranque e Aquisição Forense|Pontes com AFD1 — Capítulo 2 (Arranque e Aquisição Forense)]]
 - [[Capítulo 3 - Organização de Dados|Pontes com AFD1 — Capítulo 3 (Organização de Dados, Endianness e Codificações)]]

@@ -48,7 +48,7 @@ Em vez de depender apenas de árvores de pastas profundas e rígidas, a navegaç
 
 | Sigla | Unidade Curricular | Docente | Semestre | Estado |
 | :--- | :--- | :--- | :--- | :--- |
-| **[[00 ASSI]]** | **Administração Segura de Sistemas Informáticos** | Patrício Domingues | S1 | Concluído (Capítulos 1, 2 e 3 — 95 notas indexadas) |
+| **[[00 ASSI]]** | **Administração Segura de Sistemas Informáticos** | Patrício Domingues | S1 | Concluído (Capítulos 1 a 4 — 107 notas indexadas) |
 | **[[00 AFD1]]** | **Análise Forense Digital I** | Miguel Frade e Baltazar Rodrigues | S1 | Em progresso (Capítulos 1 a 4 — 42 notas indexadas) |
 | **PARSI** | Políticas e Análise de Risco na Segurança de Informação | Nuno Salvador | S1 | Planeado |
 | **[[00 SRC]]** | **Segurança em Redes de Computadores** | Luís Frazão | S1 | Concluído (Capítulos 1 a 4 — 28 notas indexadas) |

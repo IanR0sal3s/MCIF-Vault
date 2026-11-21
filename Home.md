@@ -4,7 +4,7 @@ tipo: indice
 tags:
   - moc
   - mcif
-atualizado: 2026-11-19
+atualizado: 2026-11-21
 ---
 
 # MCIF Vault — Base de Conhecimento Colaborativa
@@ -22,7 +22,7 @@ Este espaço foi desenhado para ser partilhado e expandido pela comunidade de es
 
 | Sigla    | Unidade Curricular                                          | Docente                               | Semestre | Estado                                                                   |
 | :------- | :---------------------------------------------------------- | :------------------------------------ | :------- | :----------------------------------------------------------------------- |
-| **ASSI** | [[00 ASSI]] (Administração Segura de Sistemas Informáticos) | Patrício Domingues | S1 | Concluído (Capítulos 1, 2 e 3 — 95 notas indexadas) |
+| **ASSI** | [[00 ASSI]] (Administração Segura de Sistemas Informáticos) | Patrício Domingues | S1 | Concluído (Capítulos 1 a 4 — 107 notas indexadas) |
 | **AFD1** | [[00 AFD1]] (Análise Forense Digital I) | Miguel Frade e Baltazar Rodrigues | S1 | Em progresso (Capítulos 1 a 4 — 42 notas indexadas) |
 | *PARSI* | *Políticas e Análise de Risco na Segurança de Informação* | Nuno Salvador | S1 | Planeado |
 | **SRC** | [[00 SRC]] (Segurança em Redes de Computadores) | Luís Frazão | S1 | Concluído (Capítulos 1 a 4 — 28 notas indexadas) |

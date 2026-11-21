@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Treino Interativo — Logs no Windows &amp; Triagem Forense (ASSI Cap. 4)</title>
+  <style>
+    :root {
+      --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --muted: #475569;
+      --border: #cbd5e1; --primary: #2563eb; --primary-fg: #ffffff;
+      --accent: #059669; --warn: #d97706; --err: #dc2626; --chip: #f1f5f9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --muted: #94a3b8;
+        --border: #334155; --primary: #3b82f6; --primary-fg: #ffffff;
+        --accent: #10b981; --warn: #f59e0b; --err: #ef4444; --chip: #0f172a;
+      }
+    }
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+    body { margin: 0; padding: 24px; background: var(--bg); color: var(--text); }
+    .container { max-width: 960px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    h1 { margin: 0; font-size: 18px; }
+    .sub { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+    .tabs { display: flex; gap: 6px; background: var(--chip); padding: 4px; border-radius: 10px; border: 1px solid var(--border); }
+    button { cursor: pointer; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 7px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; transition: border-color .15s, background .15s; }
+    button:hover { border-color: var(--primary); }
+    button.active { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
+    .panel { display: none; padding-top: 16px; }
+    .panel.active { display: block; }
+    .box { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-top: 12px; }
+    .mono { font-family: monospace; word-break: break-all; }
+    input[type="number"] { padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--text); font-family: monospace; font-size: 14px; width: 110px; }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .chip-btn { padding: 4px 9px; font-size: 12px; border-radius: 99px; background: var(--chip); }
+    .quiz-card { margin-top: 14px; border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: var(--bg); }
+    .quiz-q { font-size: 16px; font-weight: 700; margin: 6px 0 12px; }
+    .opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px; }
+    .opt-btn { text-align: left; padding: 10px 12px; line-height: 1.35; }
+    .opt-btn.ok { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .opt-btn.bad { background: var(--err); color: #fff; border-color: var(--err); }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 700; background: var(--chip); border: 1px solid var(--border); color: var(--muted); }
+    .scenario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr)); gap: 9px; margin-top: 12px; }
+    .sc-card { border: 1px solid var(--border); border-radius: 10px; padding: 11px 12px; background: var(--bg); cursor: pointer; font-size: 13px; font-weight: 600; transition: border-color .15s, transform .1s; }
+    .sc-card:hover { border-color: var(--primary); transform: translateY(-1px); }
+    .sc-card.hi { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); background: var(--card); }
+    .sc-tag { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 4px; }
+    .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 14px; }
+    .d-card { border: 1px solid var(--border); border-radius: 10px; padding: 12px; background: var(--card); font-size: 13px; }
+    .d-card.warn { border-color: var(--warn); }
+    .d-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .d-card.warn .d-lbl { color: var(--warn); }
+    pre { margin: 0; padding: 8px 10px; background: var(--chip); border-radius: 7px; font-family: monospace; font-size: 12px; white-space: pre-wrap; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>Logs no Windows — Event IDs &amp; Triagem Forense</h1>
+        <p class="sub">Treino interativo offline — ASSI Capítulo 4 (EVTX, Threat Hunting &amp; Logs Ad-Hoc)</p>
+      </div>
+      <div class="tabs">
+        <button class="active" onclick="openTab('t1', this)">1. Event IDs (-4096 &amp; Quiz)</button>
+        <button onclick="openTab('t2', this)">2. Triagem Forense ("Onde procurar?")</button>
+      </div>
+    </div>
+
+    <!-- TAB 1: EVENT IDS CONVERTER + QUIZ -->
+    <div id="t1" class="panel active">
+      <div class="box">
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:8px">Conversor Rápido Security.evtx (Vista+ &harr; Win 2000/XP)</div>
+        <div class="row">
+          <label style="font-size:13px">Vista / Win 7–11:</label>
+          <input id="idVista" type="number" value="4624" oninput="fromVista()" />
+          <span style="font-weight:700;color:var(--muted)">&minus; 4096 =</span>
+          <label style="font-size:13px">Win 2000 / XP:</label>
+          <input id="idXp" type="number" value="528" oninput="fromXp()" />
+          <button class="chip-btn" onclick="setPair(4624)">4624 (Logon OK)</button>
+          <button class="chip-btn" onclick="setPair(4625)">4625 (Logon Falhado)</button>
+          <button class="chip-btn" onclick="setPair(4720)">4720 (Conta Criada)</button>
+        </div>
+        <div id="convHint" class="sub" style="margin-top:8px"></div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="row" style="justify-content:space-between">
+          <div>
+            <span class="badge" id="qCounter">1 / 12</span>
+            <span class="badge" id="qScore" style="margin-left:6px;color:var(--accent)">Acertos: 0</span>
+          </div>
+          <div class="row">
+            <button onclick="nextQ()">Próxima</button>
+            <button onclick="resetQuiz()">Baralhar / Reiniciar</button>
+          </div>
+        </div>
+        <div class="quiz-q" id="qText"></div>
+        <div class="opts" id="qOpts"></div>
+        <div id="qFeedback" class="sub" style="margin-top:10px;font-weight:600"></div>
+      </div>
+    </div>
+
+    <!-- TAB 2: TRIAGEM FORENSE -->
+    <div id="t2" class="panel">
+      <p class="sub">Escolhe um cenário típico de investigação ou exame para ver imediatamente o log, o Event ID, o comando principal e a armadilha a evitar:</p>
+      <div class="scenario-grid" id="scGrid"></div>
+
+      <div class="box" style="margin-top:14px">
+        <div style="font-size:15px;font-weight:700" id="scTitle"></div>
+        <div class="detail-grid">
+          <div class="d-card">
+            <div class="d-lbl">Log / Caminho Forense</div>
+            <div id="scPath" class="mono" style="font-size:12px"></div>
+          </div>
+          <div class="d-card">
+            <div class="d-lbl">Event ID / Formato</div>
+            <div id="scId"></div>
+          </div>
+          <div class="d-card">
+            <div class="d-lbl">Ferramenta / Comando Essencial</div>
+            <pre id="scCmd"></pre>
+          </div>
+          <div class="d-card warn">
+            <div class="d-lbl">Armadilha de Exame</div>
+            <div id="scTrap"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openTab(id, btn) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    // --- TAB 1: CONVERTER ---
+    const KNOWN_VISTA = {
+      4624: 'An account was successfully logged on (XP: 528)',
+      4625: 'An account failed to log on (XP: 529)',
+      4720: 'User account created (XP: 624)'
+    };
+    function updateConvHint(v) {
+      const h = document.getElementById('convHint');
+      h.textContent = KNOWN_VISTA[v] ? 'Evento conhecido: ' + KNOWN_VISTA[v] : 'Regra geral para eventos de auditoria Security (Vista+ -> Win 2000/XP): subtrair 4096.';
+    }
+    function fromVista() {
+      const v = parseInt(document.getElementById('idVista').value, 10);
+      if (!isNaN(v)) {
+        document.getElementById('idXp').value = v - 4096;
+        updateConvHint(v);
+      }
+    }
+    function fromXp() {
+      const x = parseInt(document.getElementById('idXp').value, 10);
+      if (!isNaN(x)) {
+        document.getElementById('idVista').value = x + 4096;
+        updateConvHint(x + 4096);
+      }
+    }
+    function setPair(v) {
+      document.getElementById('idVista').value = v;
+      fromVista();
+    }
+
+    // --- TAB 1: QUIZ ---
+    const QUESTIONS = [
+      { q: 'Event ID 1102 em Security.evtx indica:', a: 'O log de auditoria foi limpo (The audit log was cleared)', d: ['Logon com credenciais explícitas', 'Criação de tarefa agendada', 'Downgrade para PowerShell v2'] },
+      { q: 'Event ID 4648 em Security.evtx indica:', a: 'Tentativa de logon com credenciais explícitas', d: ['Logon com sucesso', 'Logon falhado', 'Remoção de tarefa agendada'] },
+      { q: 'Event ID 4698 em Security.evtx indica:', a: 'Criação de uma tarefa agendada (Task Scheduler)', d: ['Remoção de uma tarefa agendada', 'Execução de script PowerShell', 'Limpeza do log de auditoria'] },
+      { q: 'Event ID 106 no Task Scheduler Operational Log indica:', a: 'Uma tarefa agendada foi instalada', d: ['A tarefa terminou a execução', 'A tarefa foi desinstalada', 'Ocorreu um crash de aplicação'] },
+      { q: 'Event ID 4104 em PowerShell/Operational.evtx regista:', a: 'O conteúdo completo do script executado (Script Block)', d: ['Apenas o carregamento de módulos', 'O downgrade para PowerShell v2', 'Uma ligação de rede do Sysmon'] },
+      { q: 'Como se deteta um downgrade para PowerShell v2?', a: 'Event ID 400 em Windows PowerShell.evtx (EngineVersion=2.0)', d: ['Event ID 4104 em PowerShell/Operational', 'Event ID 4625 em Security.evtx', 'Ficheiro PSReadLine com timestamp'] },
+      { q: 'Event ID 1006 em Partition%4Diagnostic.evtx regista:', a: 'Interação com dispositivos de armazenamento (discos, pens USB)', d: ['Crash de aplicação (App Crash)', 'BSOD do sistema operativo', 'Relatório WER enviado à Microsoft'] },
+      { q: 'Event ID 1001 no log System (nível Error) corresponde a:', a: 'BSOD (Blue Screen of Death)', d: ['Relatório WER normal de aplicação', 'App Hang (aplicação bloqueada)', 'Arranque de tarefa agendada'] },
+      { q: 'Event ID 1001 no log Application (nível Information) corresponde a:', a: 'Windows Error Reporting (WER)', d: ['BSOD (Blue Screen of Death)', 'App Crash / Application Error (ID 1000)', 'App Hang (ID 1002)'] },
+      { q: 'Event ID 1002 no log Application corresponde a:', a: 'App Hang (bloqueio de aplicação)', d: ['App Crash (Application Error)', 'BSOD no log System', 'Ligação de dispositivo USB'] },
+      { q: 'Event IDs 200 e 201 no Task Scheduler Operational Log registam:', a: 'Arranque (200) e fim (201) da execução de uma tarefa', d: ['Instalação (200) e desinstalação (201)', 'Ativação (200) e desativação (201)', 'Logon (200) e logoff (201)'] },
+      { q: 'Event ID 4699 em Security.evtx indica:', a: 'Remoção de uma tarefa agendada', d: ['Criação de uma tarefa agendada', 'Atualização de uma tarefa agendada', 'Criação de conta de utilizador'] }
+    ];
+
+    let deck = [], idx = 0, score = 0, answered = false;
+    function shuffle(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+    function resetQuiz() {
+      deck = shuffle(QUESTIONS);
+      idx = 0; score = 0;
+      renderQ();
+    }
+    function renderQ() {
+      answered = false;
+      const item = deck[idx];
+      document.getElementById('qCounter').textContent = (idx + 1) + ' / ' + deck.length;
+      document.getElementById('qScore').textContent = 'Acertos: ' + score;
+      document.getElementById('qText').textContent = item.q;
+      document.getElementById('qFeedback').textContent = '';
+      const opts = shuffle([item.a, ...item.d]);
+      const box = document.getElementById('qOpts');
+      box.innerHTML = '';
+      opts.forEach(text => {
+        const b = document.createElement('button');
+        b.className = 'opt-btn';
+        b.textContent = text;
+        b.onclick = () => {
+          if (answered) return;
+          answered = true;
+          const ok = text === item.a;
+          if (ok) { score++; b.classList.add('ok'); document.getElementById('qFeedback').textContent = 'Correto!'; }
+          else {
+            b.classList.add('bad');
+            document.getElementById('qFeedback').textContent = 'Incorreto. Resposta certa: ' + item.a;
+            Array.from(box.children).forEach(btn => { if (btn.textContent === item.a) btn.classList.add('ok'); });
+          }
+          document.getElementById('qScore').textContent = 'Acertos: ' + score;
+        };
+        box.appendChild(b);
+      });
+    }
+    function nextQ() {
+      idx = (idx + 1) % deck.length;
+      renderQ();
+    }
+
+    // --- TAB 2: TRIAGEM FORENSE ---
+    const SCENARIOS = [
+      {
+        tag: 'Execução Ofensiva',
+        title: 'PowerShell v5+ & Downgrade v2',
+        path: 'Microsoft-Windows-PowerShell/Operational.evtx\nWindows PowerShell.evtx\n%UserProfile%\\AppData\\Roaming\\Microsoft\\Windows\\PowerShell\\PSReadline\\',
+        id: 'IDs 4103 (módulos), 4104 (script completo) e ID 400 (EngineVersion=2.0 no downgrade).',
+        cmd: 'wevtutil qe Microsoft-Windows-PowerShell/Operational /f:xml',
+        trap: 'O histórico PSReadLine guarda os comandos interativos em texto simples, mas SEM marcadores temporais (timestamps).'
+      },
+      {
+        tag: 'Persistência',
+        title: 'Tarefas Agendadas (Task Scheduler)',
+        path: 'Security.evtx\nMicrosoft-Windows-TaskScheduler/Operational.evtx',
+        id: 'Security: 4698 (criar), 4699 (apagar), 4700–4702.\nOperational: 106 (instalar), 141 (desinstalar), 200/201 (início/fim).',
+        cmd: 'psloglist security -x -i 4698,4699,4700,4701,4702 -s\nschtasks /query /FO CSV',
+        trap: 'Cruzar sempre Security (quem criou: Account Name / Logon ID no 4698) com o Operational Log (quando correu: 200/201).'
+      },
+      {
+        tag: 'Dispositivos Externos',
+        title: 'Pen USB / Disco Ligado ao Windows',
+        path: '%SYSTEMROOT%\\system32\\winevt\\Logs\\Microsoft-Windows-Partition%4Diagnostic.evtx\nMicrosoft-Windows-Storsvc/Diagnostic',
+        id: 'Event ID 1006 (ambos ativos por omissão; estilo 0=GPT, 1=MBR).',
+        cmd: 'Partition%4DiagnosticParser (Python -> HTML)\nUSBDriveLog (NirSoft)',
+        trap: 'O log Partition%4Diagnostic.evtx é apagado automaticamente sempre que ocorre uma atualização major do Windows.'
+      },
+      {
+        tag: 'Geolocalização / Rede',
+        title: 'Recuperar IP Externo (Delivery Optimization)',
+        path: 'C:\\Windows\\ServiceProfiles\\NetworkService\\AppData\\Local\\Microsoft\\Windows\\DeliveryOptimization\\Logs',
+        id: 'Ficheiros binários .etl: domgmt* (32 KiB, >1 ano) vs. dosvc* (ExternalIPAddress, 28 dias).',
+        cmd: 'Get-DeliveryOptimizationLog | Where-Object Message -Like "*ExternalIpAddress*"\ntracerpt dosvc.etl -o -report',
+        trap: 'Os ficheiros dosvc* com ExternalIPAddress só retêm os últimos 28 dias, e a geolocalização por IP de banda larga pode não ser exata.'
+      },
+      {
+        tag: 'Anti-Forense',
+        title: 'Limpeza de Logs / Auditoria',
+        path: '%SYSTEMROOT%\\system32\\winevt\\Logs\\Security.evtx',
+        id: 'Event ID 1102 (The audit log was cleared). Requer privilégios de administrador.',
+        cmd: 'wevtutil el | ForEach-Object { wevtutil cl "$_" }\nClear-EventLog -LogName Security',
+        trap: 'Mesmo quando um atacante limpa o Security.evtx, o Windows regista imediatamente o Event ID 1102 — e registos antigos também desaparecem naturalmente pela gestão circular (1–20 MiB).'
+      },
+      {
+        tag: 'Falhas & Memória',
+        title: 'Crashes, BSOD, Dumps (.dmp) e WER',
+        path: 'Application.evtx / System.evtx\nC:\\ProgramData\\Microsoft\\Windows\\WER\\ReportArchive\n%SYSTEMROOT%\\Logs',
+        id: 'ID 1000 (App Crash), ID 1002 (App Hang), ID 1001 System (BSOD Error) vs. ID 1001 Application (WER Info). Ficheiros .wer em UTF-16-LE.',
+        cmd: 'psloglist -i 1001 -s -x application -r\nsfk list -dir c:\\ -file .dmp\nAppCrashView / BlueScreenView / WinDbg',
+        trap: 'Chrome, Firefox e LibreOffice não usam WER. Crash dumps podem vazar segredos em RAM (caso Storm-0558: chave MSA fora de HSM/TPM).'
+      },
+      {
+        tag: 'Cloud / Sincronização',
+        title: 'Atividade de Ficheiros no OneDrive',
+        path: '%LOCALAPPDATA%\\Microsoft\\OneDrive\\logs\\ (Business1 / Personal)\n%LOCALAPPDATA%\\Microsoft\\OneDrive\\settings\\',
+        id: 'Logs .odl/.odlgz/.odlsent/.aold, estado <UserCid>.dat e bases SQLite 3.',
+        cmd: 'OneDriveExplorer.exe --LIVE LIVE --csv --output-dir c:\\temp\\OneDriveCSV\nsfk hexfind -text "/SQLite format 3/" -dir %LOCALAPPDATA%\\Microsoft\\OneDrive\\ -stat',
+        trap: 'Desde abril de 2022, os logs .odl estão cifrados com ECB 128 bits — a chave encontra-se no ficheiro local general.keystore.'
+      },
+      {
+        tag: 'Threat Hunting',
+        title: 'Deteção em Massa (SIGMA, Chainsaw, Hayabusa, Sysmon)',
+        path: 'Diretoria com cópia de ficheiros .evtx\nMicrosoft-Windows-Sysmon%4Operational.evtx',
+        id: 'Regras SIGMA (YAML — "SIGMA está para logs como YARA está para ficheiros").',
+        cmd: 'chainsaw hunt logs/ -s sigma/ --mapping map.yml --csv --output out\nhayabusa.exe csv-timeline -d logsDir -o hayabusa.csv\nsysmon -accepteula -i sysmonconfig-export.xml',
+        trap: 'psloglist só lê 8 logs clássicos diretamente (canais modernos exigem -l <caminho>); para timelines rápidas usar Hayabusa ou EvtxECmd + TimelineExplorer.'
+      }
+    ];
+
+    function renderScenarios() {
+      const grid = document.getElementById('scGrid');
+      SCENARIOS.forEach((sc, i) => {
+        const d = document.createElement('div');
+        d.className = 'sc-card' + (i === 0 ? ' hi' : '');
+        d.innerHTML = '<div class="sc-tag">' + sc.tag + '</div>' + sc.title;
+        d.onclick = () => selectScenario(i, d);
+        grid.appendChild(d);
+      });
+      selectScenario(0, grid.children[0]);
+    }
+    function selectScenario(i, el) {
+      document.querySelectorAll('.sc-card').forEach(c => c.classList.remove('hi'));
+      el.classList.add('hi');
+      const sc = SCENARIOS[i];
+      document.getElementById('scTitle').textContent = sc.title;
+      document.getElementById('scPath').textContent = sc.path;
+      document.getElementById('scId').textContent = sc.id;
+      document.getElementById('scCmd').textContent = sc.cmd;
+      document.getElementById('scTrap').textContent = sc.trap;
+    }
+
+    updateConvHint(4624);
+    resetQuiz();
+    renderScenarios();
+  </script>
+</body>
+</html>

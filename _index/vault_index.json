@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-19",
+  "generated_at": "2026-11-21",
   "stats": {
-    "total_notes": 202,
+    "total_notes": 214,
     "notes_by_uc": {
       "AFD1": 42,
-      "ASSI": 95,
+      "ASSI": 107,
       "COD1": 29,
       "COMUM": 7,
       "GERAL": 1,
       "SRC": 28
     },
-    "total_internal_links": 1989,
+    "total_internal_links": 2068,
     "total_cross_uc_links": 528,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
@@ -30,7 +30,7 @@
         "source_uc": "AFD1",
         "target_id": "AmCache - Arquitetura, Hives e Evolução para SQLite",
         "target_uc": "ASSI",
-        "matched_term": "Amcache.hve"
+        "matched_term": "AmCache"
       },
       {
         "source_id": "Pesquisa de Evidências e Reconstrução de Eventos",
@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-1"
+        "matched_term": "SHA-2"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -371,6 +371,24 @@
         "uc_b": "SRC",
         "shared_tags": [
           "vpn"
+        ]
+      },
+      {
+        "note_a": "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
+        "uc_a": "ASSI",
+        "note_b": "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
+        "uc_b": "COMUM",
+        "shared_tags": [
+          "sqlite"
+        ]
+      },
+      {
+        "note_a": "Análise Forense de USB e Crashes nos Logs EVTX",
+        "uc_a": "ASSI",
+        "note_b": "Arquitetura SSD vs Pen USB, Conetores M.2, PCIe e Apple SSD",
+        "uc_b": "AFD1",
+        "shared_tags": [
+          "usb"
         ]
       },
       {
@@ -650,24 +668,6 @@
         "uc_b": "ASSI",
         "shared_tags": [
           "resumo"
-        ]
-      },
-      {
-        "note_a": "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
-        "uc_a": "AFD1",
-        "note_b": "Cheat Sheet - YARA, MOTW e Extração de Strings",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "resumo"
-        ]
-      },
-      {
-        "note_a": "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
-        "uc_a": "AFD1",
-        "note_b": "Recuperação de Clipboard e Sincronização na Timeline",
-        "uc_b": "ASSI",
-        "shared_tags": [
-          "base64"
         ]
       }
     ],
@@ -3575,8 +3575,10 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Capítulo 2 - Administração de Sistemas",
         "Capítulo 3 - YARA - MOTW - Strings",
+        "Capítulo 4 - Logs",
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Cheat Sheet - Artefactos de Execução e Sistema no Windows",
+        "Cheat Sheet - Logs no Windows e Threat Hunting",
         "Cheat Sheet - Registry e Forense",
         "Cheat Sheet - YARA, MOTW e Extração de Strings",
         "Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)",
@@ -3591,6 +3593,8 @@
         "Acesso Forense e Montagem de Shadow Copies",
         "Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell",
         "AmCache - Arquitetura, Hives e Evolução para SQLite",
+        "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
+        "Análise Forense de USB e Crashes nos Logs EVTX",
         "Análise Forense do SRUM e Ferramentas Nativas (powercfg)",
         "Análise Forense e Criação a Pedido do Prefetch",
         "Aplicações UWP (Universal Windows Platform) - Visão Geral",
@@ -3613,8 +3617,10 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Capítulo 2 - Administração de Sistemas",
         "Capítulo 3 - YARA - MOTW - Strings",
+        "Capítulo 4 - Logs",
         "Caso de Estudo Coldcard (1800 BTC) - Falha de Entropia e Reconstrução de Seeds",
         "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
+        "Cheat Sheet - Logs no Windows e Threat Hunting",
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Codificação uLEB128 em Estruturas de Dados do Windows",
@@ -3624,6 +3630,7 @@
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Código de Ética na Investigação Forense Digital (ISFCE)",
         "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
+        "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
         "Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo",
@@ -3636,9 +3643,11 @@
         "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)",
+        "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)",
         "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay",
         "Fases da Investigação Forense Digital",
         "Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker",
+        "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Ferramentas de Análise e Extração do Registry",
         "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
@@ -3658,10 +3667,13 @@
         "LastActivityView e Reconstituição Temporal Live",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
+        "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)",
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+        "Monitorização Avançada com Sysmon (Sysinternals)",
         "Organização de Estruturas de Dados em Binário",
         "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
@@ -3689,6 +3701,7 @@
         "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
         "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
         "Taxonomia dos Artefactos de Execução no Windows",
+        "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa",
         "Tipos de Dados e Associação de Ficheiros no Registry",
         "UEFI Secure Boot",
         "UEFI Secure Boot - Chaves e Hierarquia",
@@ -3696,6 +3709,7 @@
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)",
         "Volume Shadow Service (VSS) - Arquitetura e Funcionamento",
         "Windows Activity Timeline - Arquitetura e Base SQLite",
+        "Windows Event Log - Arquitetura, Retenção e Event IDs Críticos",
         "Windows Search",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições",
         "YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex",
@@ -3958,6 +3972,7 @@
         "Comando forfiles",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)",
+        "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
         "Ficha Prática e Questionário - Serviços e Windows Search",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "PKfail - Cadeia de Ataque e Deteção Forense",
@@ -4050,6 +4065,7 @@
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen",
         "Ficha Prática e Questionário - Serviços e Windows Search",
+        "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
         "Serviço Delivery Optimization",
         "Serviços Windows",
         "Windows Search",
@@ -4089,6 +4105,7 @@
       ],
       "in_links": [
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
         "Serviço BITS",
         "Serviços Windows",
         "Windows Search",
@@ -4133,6 +4150,7 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Comando forfiles",
         "Ficha Prática e Questionário - Serviços e Windows Search",
+        "Monitorização Avançada com Sysmon (Sysinternals)",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "Processos e linha de comandos no Windows",
         "Serviço BITS",
@@ -4236,6 +4254,7 @@
       "in_links": [
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Ficha Prática e Questionário - Serviços e Windows Search",
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "Processos e linha de comandos no Windows",
         "Serviço BITS",
@@ -4656,7 +4675,8 @@
         "Endianness e Ordem de Armazenamento",
         "Estrutura e Hives do Windows Registry",
         "Ferramentas de Análise e Extração do Registry",
-        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses"
+        "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
+        "Windows Event Log - Arquitetura, Retenção e Event IDs Críticos"
       ],
       "cross_uc_links": [
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
@@ -4751,7 +4771,8 @@
         "Artefactos Forenses de Execução e Persistência no Registry",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Registry e Forense",
-        "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação"
+        "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Monitorização Avançada com Sysmon (Sysinternals)"
       ],
       "cross_uc_links": [
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
@@ -4924,6 +4945,7 @@
         "Artefactos Forenses de Interação do Utilizador (MRU e TypedPaths)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Registry e Forense",
+        "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
         "Estrutura e Hives do Windows Registry",
         "Ferramentas de Análise e Extração do Registry",
         "Ferramentas de Triagem Forense no Windows Registry (RegistryReport, ForensicUserInfo e WRR)",
@@ -5035,6 +5057,7 @@
         "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
+        "Análise Forense de USB e Crashes nos Logs EVTX",
         "Artefacto Forense ShellBags",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Cheat Sheet - Registry e Forense",
@@ -6244,6 +6267,7 @@
         "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)"
       ],
       "in_links": [
+        "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
         "Análise Forense do SRUM e Ferramentas Nativas (powercfg)",
         "Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes",
         "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
@@ -6551,7 +6575,8 @@
         "Investigação Digital e Evidência Digital",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)",
-        "Pesquisa de Evidências e Reconstrução de Eventos"
+        "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Windows Event Log - Arquitetura, Retenção e Event IDs Críticos"
       ],
       "cross_uc_links": [
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
@@ -8232,6 +8257,7 @@
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
+        "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa",
         "YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex",
         "YARA-X (Reimplementação em Rust) e Ferramenta CLI yr"
       ],
@@ -8639,6 +8665,7 @@
         "Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)",
         "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
         "Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)",
+        "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Pesquisa de Evidências e Reconstrução de Eventos",
@@ -8683,13 +8710,16 @@
         "Processos e linha de comandos no Windows"
       ],
       "in_links": [
+        "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
         "Capítulo 3 - YARA - MOTW - Strings",
         "Cheat Sheet - YARA, MOTW e Extração de Strings",
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Conceito de Strings e Comando strings em Unix-Linux",
         "Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios",
+        "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
         "YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex"
       ],
       "cross_uc_links": [
@@ -8730,6 +8760,7 @@
         "Capítulo 2 - Administração de Sistemas",
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
+        "Capítulo 4 - Logs",
         "Cheat Sheet - YARA, MOTW e Extração de Strings",
         "Conceito de Strings e Comando strings em Unix-Linux",
         "Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios",
@@ -8750,6 +8781,7 @@
         "Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Capítulo 2 - Administração de Sistemas",
+        "Capítulo 4 - Logs",
         "Cheat Sheet - YARA, MOTW e Extração de Strings",
         "Codificação Binário-para-Texto (Base16, Base64 e Base58)",
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
@@ -8824,6 +8856,505 @@
       "in_links": [
         "00 ASSI",
         "Capítulo 3 - YARA - MOTW - Strings"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)",
+      "title": "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)",
+      "path": "ASSI/Capítulo 04 - Logs/01 - Windows Event Log e Extração/Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd).md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": 1,
+      "tipo": "ferramenta",
+      "tags": [
+        "assi",
+        "logs",
+        "evtx",
+        "evtx_dump",
+        "jq",
+        "fulleventlogview",
+        "evtxecmd",
+        "timeline-explorer",
+        "ficha-16"
+      ],
+      "aliases": [
+        "evtx_dump e jq",
+        "FullEventLogView",
+        "EvtxECmd",
+        "Ficha 16 ASSI"
+      ],
+      "summary": "Para analisar grandes volumes de ficheiros `.evtx` de forma rápida ou em triagem forense offline, recorre-se a ferramentas especializadas de conversão para JSON/CSV e agregação visual.",
+      "out_links": [
+        "00 ASSI",
+        "Capítulo 4 - Logs",
+        "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
+        "Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios",
+        "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
+        "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa"
+      ],
+      "in_links": [
+        "Capítulo 4 - Logs",
+        "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
+        "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
+        "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
+      "title": "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
+      "path": "ASSI/Capítulo 04 - Logs/01 - Windows Event Log e Extração/Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell).md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": 1,
+      "tipo": "ferramenta",
+      "tags": [
+        "assi",
+        "logs",
+        "evtx",
+        "wevtutil",
+        "psloglist",
+        "powershell",
+        "cli"
+      ],
+      "aliases": [
+        "WEVTUtil",
+        "psloglist",
+        "Get-WinEvent",
+        "PowerShell Event Logs"
+      ],
+      "summary": "A consulta, configuração e limpeza de Windows Event Logs em linha de comando ou scripts realiza-se através do utilitário nativo `wevtutil`, do `psloglist` (Sysinternals) e dos cmdlets PowerShell (`Get-WinEvent`).",
+      "out_links": [
+        "00 ASSI",
+        "Capítulo 4 - Logs",
+        "Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)",
+        "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)",
+        "Processos e linha de comandos no Windows",
+        "Windows Event Log - Arquitetura, Retenção e Event IDs Críticos"
+      ],
+      "in_links": [
+        "Capítulo 4 - Logs",
+        "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
+        "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)",
+        "Windows Event Log - Arquitetura, Retenção e Event IDs Críticos"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Windows Event Log - Arquitetura, Retenção e Event IDs Críticos",
+      "title": "Windows Event Log - Arquitetura, Retenção e Event IDs Críticos",
+      "path": "ASSI/Capítulo 04 - Logs/01 - Windows Event Log e Extração/Windows Event Log - Arquitetura, Retenção e Event IDs Críticos.md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": 1,
+      "tipo": "conceito",
+      "tags": [
+        "assi",
+        "logs",
+        "evtx",
+        "event-log",
+        "event-id",
+        "retencao",
+        "forense"
+      ],
+      "aliases": [
+        "Windows Event Log",
+        "EVTX vs EVT",
+        "Retenção de Logs",
+        "Event IDs Críticos"
+      ],
+      "summary": "Os logs registam eventos do sistema operativo e de aplicações, servindo tanto para administração (deteção de anomalias e avarias) como para investigação forense (reconstrução de logins, instalação de serviços e...",
+      "out_links": [
+        "00 ASSI",
+        "Capítulo 4 - Logs",
+        "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
+        "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
+        "Tipos de Dados e Associação de Ficheiros no Registry"
+      ],
+      "in_links": [
+        "Capítulo 4 - Logs",
+        "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Análise Forense de USB e Crashes nos Logs EVTX",
+      "title": "Análise Forense de USB e Crashes nos Logs EVTX",
+      "path": "ASSI/Capítulo 04 - Logs/02 - Casos de Estudo Forenses em EVTX/Análise Forense de USB e Crashes nos Logs EVTX.md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": 2,
+      "tipo": "analise",
+      "tags": [
+        "assi",
+        "logs",
+        "evtx",
+        "usb",
+        "partition-diagnostic",
+        "crash",
+        "bsod",
+        "forense"
+      ],
+      "aliases": [
+        "Logs USB EVTX",
+        "Partition Diagnostic EVTX",
+        "USBDriveLog",
+        "Logs de Crash e BSOD"
+      ],
+      "summary": "Além de eventos de autenticação e persistência, os logs `.evtx` preservam evidências diretas da ligação de dispositivos de armazenamento externo e de falhas críticas de aplicações ou do sistema operativo.",
+      "out_links": [
+        "00 ASSI",
+        "Artefactos Forenses de Dispositivos USB",
+        "Capítulo 4 - Logs",
+        "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+        "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa"
+      ],
+      "in_links": [
+        "Capítulo 4 - Logs",
+        "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+        "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
+      "title": "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
+      "path": "ASSI/Capítulo 04 - Logs/02 - Casos de Estudo Forenses em EVTX/Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX.md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": 2,
+      "tipo": "analise",
+      "tags": [
+        "assi",
+        "logs",
+        "evtx",
+        "powershell",
+        "downgrade",
+        "psreadline",
+        "task-scheduler",
+        "persistencia",
+        "forense"
+      ],
+      "aliases": [
+        "Logs PowerShell",
+        "PowerShell Downgrade Attack",
+        "PSReadLine",
+        "Persistência Task Scheduler"
+      ],
+      "summary": "Atacantes utilizam frequentemente o PowerShell para execução ofensiva e o Task Scheduler para obter persistência. Ambos deixam vestígios específicos em logs `.evtx` e ficheiros auxiliares.",
+      "out_links": [
+        "00 ASSI",
+        "Análise Forense de USB e Crashes nos Logs EVTX",
+        "Artefactos Forenses de Execução e Persistência no Registry",
+        "Capítulo 4 - Logs",
+        "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)",
+        "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)"
+      ],
+      "in_links": [
+        "Análise Forense de USB e Crashes nos Logs EVTX",
+        "Capítulo 4 - Logs",
+        "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Monitorização Avançada com Sysmon (Sysinternals)",
+      "title": "Monitorização Avançada com Sysmon (Sysinternals)",
+      "path": "ASSI/Capítulo 04 - Logs/03 - Threat Hunting e Monitorização/Monitorização Avançada com Sysmon (Sysinternals).md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": 3,
+      "tipo": "ferramenta",
+      "tags": [
+        "assi",
+        "logs",
+        "evtx",
+        "sysmon",
+        "sysinternals",
+        "monitorizacao",
+        "ficha-17"
+      ],
+      "aliases": [
+        "Sysmon",
+        "System Monitor",
+        "SysmonForLinux",
+        "Ficha 17 ASSI"
+      ],
+      "summary": "O Sysmon (System Monitor, Sysinternals) é um serviço persistente que expande drasticamente a telemetria nativa do Windows, registando atividade detalhada do sistema no ficheiro:...",
+      "out_links": [
+        "00 ASSI",
+        "Capítulo 4 - Logs",
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+        "Salvaguarda e Monitorização do Registry",
+        "Serviços Windows",
+        "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa"
+      ],
+      "in_links": [
+        "Capítulo 4 - Logs",
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+        "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa",
+      "title": "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa",
+      "path": "ASSI/Capítulo 04 - Logs/03 - Threat Hunting e Monitorização/Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa.md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": 3,
+      "tipo": "ferramenta",
+      "tags": [
+        "assi",
+        "logs",
+        "evtx",
+        "sigma",
+        "apt-hunter",
+        "chainsaw",
+        "hayabusa",
+        "threat-hunting",
+        "timeline-explorer"
+      ],
+      "aliases": [
+        "Regras SIGMA",
+        "APT-Hunter",
+        "Chainsaw",
+        "Hayabusa"
+      ],
+      "summary": "Dado o elevado volume de ficheiros e eventos `.evtx`, a deteção de atividades suspeitas ou Advanced Persistent Threats (APT) apoia-se em regras padronizadas (SIGMA) e ferramentas automatizadas de triagem e geração de...",
+      "out_links": [
+        "00 ASSI",
+        "Análise Forense de USB e Crashes nos Logs EVTX",
+        "Capítulo 4 - Logs",
+        "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)",
+        "Monitorização Avançada com Sysmon (Sysinternals)",
+        "YARA - Introdução, Estrutura de Regras, Metadados e Condições"
+      ],
+      "in_links": [
+        "Análise Forense de USB e Crashes nos Logs EVTX",
+        "Capítulo 4 - Logs",
+        "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)",
+        "Monitorização Avançada com Sysmon (Sysinternals)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
+      "title": "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
+      "path": "ASSI/Capítulo 04 - Logs/04 - Logs Ad-Hoc no Windows/Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer).md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": 4,
+      "tipo": "analise",
+      "tags": [
+        "assi",
+        "logs",
+        "onedrive",
+        "odl",
+        "sqlite",
+        "onedriveexplorer",
+        "privacidade",
+        "forense"
+      ],
+      "aliases": [
+        "Logs OneDrive",
+        "OneDriveExplorer",
+        "Ficheiros ODL"
+      ],
+      "summary": "O cliente Microsoft OneDrive mantém localmente logs de sincronização, ficheiros de estado e bases de dados SQLite que permitem reconstruir a estrutura de pastas e atividade de ficheiros na nuvem.",
+      "out_links": [
+        "00 ASSI",
+        "Capítulo 4 - Logs",
+        "Cheat Sheet - Logs no Windows e Threat Hunting",
+        "Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)",
+        "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
+        "Windows Activity Timeline - Arquitetura e Base SQLite"
+      ],
+      "in_links": [
+        "Capítulo 4 - Logs",
+        "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
+      "title": "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
+      "path": "ASSI/Capítulo 04 - Logs/04 - Logs Ad-Hoc no Windows/Logs ETL e Caso de Estudo Delivery Optimization (IP Externo).md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": 4,
+      "tipo": "analise",
+      "tags": [
+        "assi",
+        "logs",
+        "etl",
+        "delivery-optimization",
+        "tracerpt",
+        "ip-externo",
+        "forense"
+      ],
+      "aliases": [
+        "Event Trace Log",
+        "Logs ETL",
+        "Delivery Optimization ETL",
+        "tracerpt"
+      ],
+      "summary": "Os ficheiros *ETL (Event Trace Log) são um formato binário da Microsoft desenhado para registar execuções (traces) de eventos de elevada frequência (ex.: acessos a disco, page faults*). No serviço Delivery...",
+      "out_links": [
+        "00 ASSI",
+        "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
+        "Capítulo 4 - Logs",
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+        "Serviço BITS",
+        "Serviço Delivery Optimization"
+      ],
+      "in_links": [
+        "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
+        "Capítulo 4 - Logs",
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+      "title": "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+      "path": "ASSI/Capítulo 04 - Logs/04 - Logs Ad-Hoc no Windows/Memory Dumps (.dmp) e Windows Error Reporting (WER).md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": 4,
+      "tipo": "conceito",
+      "tags": [
+        "assi",
+        "logs",
+        "logs-ad-hoc",
+        "dump",
+        "wer",
+        "storm-0558",
+        "appcrashview",
+        "bluescreenview",
+        "sfk",
+        "ficha-18"
+      ],
+      "aliases": [
+        "Logs Ad-Hoc Windows",
+        "Core Dump e Memory Dump",
+        "Windows Error Reporting",
+        "Caso Storm-0558",
+        "Ficha 18 ASSI"
+      ],
+      "summary": "Para além do sistema formal de Windows Event Logs, o Windows gera numerosos logs ad-hoc (muitos em `%SYSTEMROOT%\\Logs`) e artefactos de diagnóstico em caso de falha, como memory dumps (`.dmp`) e relatórios WER (`.wer`).",
+      "out_links": [
+        "00 ASSI",
+        "Análise Forense de USB e Crashes nos Logs EVTX",
+        "Capítulo 4 - Logs",
+        "Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)",
+        "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
+        "Monitorização Avançada com Sysmon (Sysinternals)",
+        "svchost.exe"
+      ],
+      "in_links": [
+        "Análise Forense de USB e Crashes nos Logs EVTX",
+        "Capítulo 4 - Logs",
+        "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
+        "Monitorização Avançada com Sysmon (Sysinternals)"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Capítulo 4 - Logs",
+      "title": "Capítulo 4 - Logs",
+      "path": "ASSI/Capítulo 04 - Logs/Capítulo 4 - Logs.md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "indice",
+      "tags": [
+        "moc",
+        "assi",
+        "logs",
+        "evtx",
+        "sysmon",
+        "sigma",
+        "wer",
+        "etl",
+        "onedrive",
+        "forense"
+      ],
+      "aliases": [
+        "Capítulo 4 ASSI",
+        "MOC Capítulo 4 ASSI",
+        "Logs ASSI"
+      ],
+      "summary": "Mapa de estudo do Capítulo 4 de ASSI (Prof. Patrício Domingues), cobrindo 127 diapositivos (Parte 1: 93 slides; Parte 2: 34 slides) e as Fichas Práticas 16, 17 e 18, sintetizados em 10 notas focadas no essencial e 1...",
+      "out_links": [
+        "00 ASSI",
+        "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
+        "Análise Forense de USB e Crashes nos Logs EVTX",
+        "Capítulo 3 - YARA - MOTW - Strings",
+        "Cheat Sheet - Logs no Windows e Threat Hunting",
+        "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
+        "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)",
+        "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
+        "Home",
+        "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+        "Monitorização Avançada com Sysmon (Sysinternals)",
+        "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa",
+        "Windows Event Log - Arquitetura, Retenção e Event IDs Críticos"
+      ],
+      "in_links": [
+        "00 ASSI",
+        "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
+        "Análise Forense de USB e Crashes nos Logs EVTX",
+        "Capítulo 3 - YARA - MOTW - Strings",
+        "Cheat Sheet - Logs no Windows e Threat Hunting",
+        "Deteção Forense de PowerShell e Persistência (Task Scheduler) em EVTX",
+        "Extração e Análise Offline de EVTX (evtx_dump, jq, FullEventLogView e EvtxECmd)",
+        "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
+        "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+        "Monitorização Avançada com Sysmon (Sysinternals)",
+        "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa",
+        "Windows Event Log - Arquitetura, Retenção e Event IDs Críticos"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Cheat Sheet - Logs no Windows e Threat Hunting",
+      "title": "Cheat Sheet - Logs no Windows e Threat Hunting",
+      "path": "ASSI/Capítulo 04 - Logs/Cheat Sheet - Logs no Windows e Threat Hunting.md",
+      "uc": "ASSI",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "cheatsheet",
+      "tags": [
+        "assi",
+        "cheatsheet",
+        "logs",
+        "evtx",
+        "event-id",
+        "sigma",
+        "sysmon",
+        "wer",
+        "etl",
+        "onedrive"
+      ],
+      "aliases": [
+        "Cheat Sheet Capítulo 4 ASSI",
+        "Cheat Sheet Logs Windows"
+      ],
+      "summary": "Guia de consulta rápida do Capítulo 4 - Logs · Simulador interativo: [assi_logs_forense.html](../../_assets/assi_logs_forense.html).",
+      "out_links": [
+        "00 ASSI",
+        "Capítulo 4 - Logs"
+      ],
+      "in_links": [
+        "00 ASSI",
+        "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
+        "Capítulo 4 - Logs"
       ],
       "cross_uc_links": []
     },
@@ -10481,7 +11012,8 @@
         "Capítulo 2 - Administração de Sistemas",
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Capítulo 3 - Organização de Dados",
-        "Capítulo 3 - YARA - MOTW - Strings"
+        "Capítulo 3 - YARA - MOTW - Strings",
+        "Capítulo 4 - Logs"
       ],
       "cross_uc_links": []
     },
