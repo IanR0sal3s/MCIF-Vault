@@ -10,7 +10,7 @@
       "GERAL": 1,
       "SRC": 28
     },
-    "total_internal_links": 2043,
+    "total_internal_links": 2039,
     "total_cross_uc_links": 521,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
@@ -30,7 +30,7 @@
         "source_uc": "AFD1",
         "target_id": "AmCache - Arquitetura, Hives e Evolução para SQLite",
         "target_uc": "ASSI",
-        "matched_term": "Amcache.hve"
+        "matched_term": "AmCache"
       },
       {
         "source_id": "Pesquisa de Evidências e Reconstrução de Eventos",
@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-1"
+        "matched_term": "SHA-2"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -3826,7 +3826,6 @@
       ],
       "in_links": [
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "Ficha Prática e Questionário - Serviços e Windows Search",
         "Processos e linha de comandos no Windows",
         "Serviços Windows"
       ],
@@ -3873,7 +3872,6 @@
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)",
         "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
-        "Ficha Prática e Questionário - Serviços e Windows Search",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
@@ -3886,7 +3884,7 @@
     },
     {
       "id": "Ficha Prática e Questionário - Serviços e Windows Search",
-      "title": "Ficha Prática e Questionário — Serviços e Windows Search",
+      "title": "Ficha Prática e Questionário - Serviços e Windows Search",
       "path": "ASSI/Capítulo 01 - Sistemas Operativos, Serviços e Artefactos/03 - Serviços do Windows/Ficha Prática e Questionário - Serviços e Windows Search.md",
       "uc": "ASSI",
       "capitulo": 1,
@@ -3895,29 +3893,23 @@
       "tags": [
         "assi",
         "windows",
-        "servicos",
         "wsearch",
-        "cli",
+        "sysinternals",
+        "zimmerman",
         "sidr",
-        "lab",
-        "questionario"
+        "lab"
       ],
       "aliases": [
         "Ficha Prática 01",
         "Lab 1 Windows Search",
-        "Questionário Serviços Windows"
+        "Laboratório 1 ASSI"
       ],
-      "summary": "Guião prático de consolidação laboratorial e questionário de avaliação para os Blocos 02 e 03 do Capítulo 1 (Processos, Linha de Comandos, Serviços do Windows e Windows Search).",
+      "summary": "Porque importa este laboratório: prepara o teu ambiente Windows com as três suites base usadas ao longo de toda a cadeira (Sysinternals, Eric Zimmerman e NirSoft) e ensina-te a extrair — e até compilar a partir do...",
       "out_links": [
         "00 ASSI",
         "Aplicações UWP (Universal Windows Platform) - Visão Geral",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "Comando forfiles",
-        "Processos e linha de comandos no Windows",
-        "Serviço BITS",
-        "Serviços Windows",
-        "Windows Search",
-        "svchost.exe"
+        "Windows Search"
       ],
       "in_links": [
         "00 ASSI",
@@ -3934,14 +3926,13 @@
       "uc": "ASSI",
       "capitulo": 1,
       "bloco": 3,
-      "tipo": "procedimento",
+      "tipo": "conceito",
       "tags": [
         "assi",
         "windows",
         "servicos",
         "bits",
         "lolbin",
-        "ese",
         "forense"
       ],
       "aliases": [
@@ -3950,7 +3941,7 @@
         "bitsadmin",
         "BitsParser"
       ],
-      "summary": "O Background Intelligent Transfer Service (BITS) é o serviço do Windows que transfere ficheiros em segundo plano utilizando largura de banda ociosa, garantindo retoma automática após quebras de rede ou reinícios.",
+      "summary": "O *BITS (Background Intelligent Transfer Service) é um serviço do Windows que corre em processo partilhado via svchost.exe e utiliza períodos de inatividade da rede* (largura de banda ociosa) para transferir...",
       "out_links": [
         "00 ASSI",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
@@ -3964,7 +3955,6 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen",
-        "Ficha Prática e Questionário - Serviços e Windows Search",
         "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
         "Serviço Delivery Optimization",
         "Serviços Windows",
@@ -3994,10 +3984,11 @@
         "DeliveryOptimization",
         "Delivery Optimization Service"
       ],
-      "summary": "O Delivery Optimization (`DoSvc`) é o serviço do Windows que otimiza o descarregamento e distribuição de atualizações do Windows Update e da Microsoft Store através de uma arquitetura híbrida cliente-servidor e ponto...",
+      "summary": "O Delivery Optimization (`DoSvc`) é um serviço do Windows (empregue pelo Windows Update) que utiliza um protocolo P2P (estilo BitTorrent) para descarregar e partilhar conteúdos com computadores na proximidade.",
       "out_links": [
         "00 ASSI",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Logs ETL e Caso de Estudo Delivery Optimization (IP Externo)",
         "Serviço BITS",
         "Serviços Windows",
         "Windows Search",
@@ -4035,7 +4026,7 @@
         "sc.exe",
         "net start"
       ],
-      "summary": "Os Serviços do Windows (equivalentes aos daemons em sistemas Unix/Linux) são programas em segundo plano que operam de forma não interativa para assegurar funções contínuas de rede, hardware, segurança e infraestrutura.",
+      "summary": "Os Serviços do Windows (equivalentes aos daemons em Unix/Linux) executam em segundo plano de forma não interativa (sem input do utilizador) e podem iniciar automaticamente no arranque do sistema operativo.",
       "out_links": [
         "00 ASSI",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
@@ -4049,7 +4040,6 @@
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Comando forfiles",
-        "Ficha Prática e Questionário - Serviços e Windows Search",
         "Monitorização Avançada com Sysmon (Sysinternals)",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "Processos e linha de comandos no Windows",
@@ -4082,7 +4072,7 @@
         "sidr",
         "WinSearchDBAnalyzer"
       ],
-      "summary": "O Windows Search (`WSearch`) é o serviço do Windows responsável pela indexação contínua de conteúdos e metadados de ficheiros, alimentando a pesquisa no Menu Iniciar (`Win+Q`), Explorador (`F3`), Microsoft Edge e...",
+      "summary": "O Windows Search (`WSearch`) é o serviço do Windows que indexa ficheiros e metadados numa base de dados para fornecer pesquisas rápidas (Barra de tarefas `Win + Q`, Explorador `F3`, barra de endereço do Edge e...",
       "out_links": [
         "00 ASSI",
         "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
@@ -4141,7 +4131,7 @@
         "Service Host",
         "svchost.exe"
       ],
-      "summary": "O `svchost.exe` (Host Process for Windows Services) é o executável anfitrião genérico do Windows (`%SystemRoot%\\System32\\svchost.exe`) responsável por alojar múltiplos serviços de sistema implementados como...",
+      "summary": "O `svchost.exe` (Service Host) é o executável anfitrião do Windows (`%SystemRoot%\\system32\\svchost.exe`) que aloja múltiplos serviços implementados como bibliotecas DLL, otimizando o uso de recursos do sistema.",
       "out_links": [
         "00 ASSI",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
@@ -4152,7 +4142,6 @@
       ],
       "in_links": [
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "Ficha Prática e Questionário - Serviços e Windows Search",
         "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "Processos e linha de comandos no Windows",
@@ -9107,7 +9096,8 @@
       "in_links": [
         "Análise Forense de Logs do OneDrive (ODL, SQLite e OneDriveExplorer)",
         "Capítulo 4 - Logs",
-        "Memory Dumps (.dmp) e Windows Error Reporting (WER)"
+        "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
+        "Serviço Delivery Optimization"
       ],
       "cross_uc_links": []
     },

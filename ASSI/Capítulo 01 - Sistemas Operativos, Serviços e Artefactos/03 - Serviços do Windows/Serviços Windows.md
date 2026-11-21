@@ -18,159 +18,77 @@ aliases:
   - Windows Services
   - sc.exe
   - net start
-fonte_aula: 01_FA_services+WSearch+Registry---2026-27_ULO_v2.pdf
-atualizado: 2026-09-24
+fonte_aula: 01_FA_services+WSearch+Registry---2026-27_ULO_v4.pdf
+atualizado: 2026-11-21
 ---
 
 # Serviços do Windows
 
-Os **Serviços do Windows** (equivalentes aos *daemons* em sistemas Unix/Linux) são programas em segundo plano que operam de forma não interativa para assegurar funções contínuas de rede, hardware, segurança e infraestrutura.
+Os **Serviços do Windows** (equivalentes aos *daemons* em Unix/Linux) executam em segundo plano de forma **não interativa** (sem input do utilizador) e podem iniciar automaticamente no arranque do sistema operativo.
 
-> [!TIP] Lógica de Funcionamento e Valor Forense
-> * **Porque existe (Sistema)**: O sistema operativo necessita de executar tarefas críticas continuamente desde o arranque (como DHCP, DNS, firewall ou criptografia BitLocker) independentemente de existir ou não uma sessão gráfica de utilizador iniciada, sendo todos os serviços geridos centralmente pelo **Service Control Manager** (`scm.exe` / `services.exe`).
-> * **Porque importa (Forense / Segurança)**: A criação ou modificação de serviços é um dos mecanismos clássicos de persistência e elevação de privilégios (`LocalSystem`), e serviços desnecessários ativos (como o `Spooler` em Controladores de Domínio) expõem superfícies críticas de ataque (*PrintNightmare*).
-> * **Pontos Críticos para Exame**:
->   * Sintaxe estrita do `sc config`: é **obrigatório incluir um espaço após o sinal de igual** (ex.: `sc config Spooler start= disabled`).
->   * Diferença entre `sc qc <servico>` (consulta a configuração estática: binário, dependências, conta e tipo de arranque) e `sc query <servico>` (consulta o estado dinâmico de execução).
+## 1. Dimensão e Exemplos Típicos
 
----
+Um sistema Windows mantém centenas de serviços (contáveis via `psservice` da Sysinternals):
+* **Registados** (`psservice | findstr /i "SERVICE_NAME"`): ~240 no W10 (v1703) · ~294 no W11 (v23H2);
+* **Em execução** (`psservice | findstr /i "Running"`): ~101 no W10 (v1703) · ~158 no W11 (v23H2).
 
-## Quantidade e Ordem de Grandeza de Serviços
-
-Um sistema operativo Windows moderno mantém centenas de serviços registados, variando consoante a versão do sistema e as aplicações instaladas. A ferramenta **`psservice`** (Sysinternals) permite quantificar os serviços registados e os serviços em estado ativo (*Running*):
-
-| Critério de Pesquisa (`psservice`) | Windows 10 (v1703) | Windows 11 (v23H2) |
-| :--- | :---: | :---: |
-| **Serviços Registados** (`psservice \| findstr /i "SERVICE_NAME"`) | ~240 | ~294 |
-| **Serviços em Execução** (`psservice \| findstr /i "Running"`) | ~101 | ~158 |
-
-*(Estes valores representam ordens de grandeza observadas em ambientes de teste de referência).*
-
----
-
-## Exemplos Típicos de Serviços do Sistema
-
-| Serviço | Nome Interno | Descrição e Função |
-| :--- | :--- | :--- |
-| **Adobe Acrobat Update Service** | `AdobeARMservice` | Gestão de atualizações automáticas de produtos Adobe. |
-| **Windows Audio** | `Audiosrv` | Gestão e encaminhamento de áudio para aplicações e dispositivos. |
-| **BitLocker Drive Encryption** | `BDESVC` | Gestão de encriptação de volumes de armazenamento. |
-| **Base Filtering Engine** | `BFE` | Gestor de políticas de filtragem de pacotes, firewall do Windows e IPsec. |
-| **Background Intelligent Transfer Service** | `BITS` | Transferência inteligente de ficheiros em segundo plano ([[Serviço BITS]]). |
-| **Certificate Propagation** | `CertPropSvc` | Propagação de certificados de segurança a partir de *Smart Cards* (ex.: Cartão de Cidadão) para o repositório de certificados do utilizador. |
-| **Microsoft Office Click-to-Run** | `ClickToRunSvc` | Gestão de atualizações e streaming de componentes do Microsoft Office. |
-| **Dropbox Update Service** | `Dbupdate` | Serviço de atualização automática do cliente Dropbox. |
-| **DHCP Client** | `Dhcp` | Registo de rede e obtenção de configurações dinâmicas de IP via DHCP. |
-| **Connected User Experiences and Telemetry** | `DiagTrack` | Serviço de telemetria, diagnóstico e recolha de dados de experiência. |
-| **DNS Client** | `Dnscache` | Resolução e colocação em memória cache de nomes de domínio DNS. |
-| **Windows Update** | `wuauserv` | Deteção, descarregamento e instalação de atualizações do Windows. |
-| **Print Spooler** | `Spooler` | Gestão das tarefas de impressão e interação com drivers de impressora. |
-| **Windows Search** | `WSearch` | Indexação de conteúdos e metadados de ficheiros ([[Windows Search]]). |
-| **Delivery Optimization** | `DoSvc` | Otimização de entrega de atualizações via rede local P2P ([[Serviço Delivery Optimization]]). |
+| Serviço | Função |
+| :--- | :--- |
+| **`BDESVC`** | BitLocker Drive Encryption Service |
+| **`BFE`** | Base Filtering Engine (políticas de firewall e IPsec) |
+| **`BITS`** | [[Serviço BITS|Background Intelligent Transfer Service]] |
+| **`CertPropSvc`** | Copia certificados de *smart cards* (ex.: Cartão de Cidadão) para o repositório do utilizador |
+| **`DiagTrack`** | Connected User Experiences and Telemetry |
+| **`Dhcp` / `Dnscache`** | Cliente DHCP / Cliente DNS |
+| **`wuauserv`** | Windows Update |
+| **`Spooler`** | Print Spooler (`spoolsv.exe`) — gere tarefas de impressão |
+| **`WSearch`** | [[Windows Search]] — indexação de ficheiros |
+| **`DoSvc`** | [[Serviço Delivery Optimization]] — distribuição P2P de updates |
 
 ---
 
-## Gestão e Interfaces de Administração
+## 2. Gestão Gráfica e Linha de Comandos (`net` e `sc`)
 
-### 1. Interfaces Gráficas
-
-* **Consola de Gestão MMC (`services.msc`)**: Interface gráfica padrão que permite inspecionar propriedades, tipo de arranque (Automático, Manual, Desativado), dependências e credenciais de início de sessão de cada serviço.
-* **Gestor de Tarefas (`Task Manager`)**: No Windows 11, inclui um separador lateral dedicado à monitorização do estado de serviços e associação a PIDs.
-
-### 2. Comparação e Anatomia dos Utilitários CLI (`net.exe` vs. `sc.exe`)
-
-| Característica | `net.exe` (`net start` / `net stop`) | `sc.exe` (*Service Control*) |
-| :--- | :--- | :--- |
-| **Nível de Controlo** | Básico: apenas controlo de estado imediato (iniciar, parar, pausar, continuar). | Granular: comunica diretamente com o **Service Control Manager** (`scm.exe` / `services.exe`). |
-| **Alteração de Arranque / Registo** | Não suporta alterar tipo de arranque nem eliminar serviços. | Suporta reconfigurar arranque (`sc config`), consultar configuração (`sc qc`) e remover (`sc delete`). |
-
-#### Comandos `net.exe` (exigem privilégios de Administrador)
-
-```cmd
-REM Listar serviços iniciados
-net start
-
-REM Controlar a execução de um serviço
-net start nome_servico
-net stop nome_servico
-net pause nome_servico
-net continue nome_servico
-```
-
-#### Anatomia do Comando `sc.exe` (Service Control)
-
-```cmd
-sc <subcomando> <nome_servico> [parametro= valor]
-```
-
-* **`query` / `queryex`**: mostra o estado operacional atual (`RUNNING`, `STOPPED`) e, no caso de `queryex`, o **PID** e flags estendidas.
-* **`qc`** (*Query Config*): extrai a configuração persistente do serviço no Registry (`BINARY_PATH_NAME`, `START_TYPE`, `DEPENDENCIES`, `SERVICE_START_NAME`).
-* **`config`**: modifica parâmetros permanentes do serviço (atenção à regra sintática: `start= disabled` exige um espaço após o `=`).
-
-```cmd
-REM Consultar estado detalhado de um serviço
-sc query nome_servico
-sc queryex nome_servico
-
-REM Consultar a configuração completa (caminho do binário, tipo de processo, dependências)
-sc qc nome_servico
-
-REM Iniciar, parar ou eliminar um serviço
-sc start nome_servico
-sc stop nome_servico
-sc delete nome_servico
-
-REM Alterar o tipo de arranque (atenção: espaço obrigatório após start=)
-sc config nome_servico start= disabled
-```
+* **Interfaces gráficas**: **Gestor de Tarefas** (W11 inclui separador *Serviços*) e **MMC** (`services.msc` via `Win + R`).
+* **`net` (modo administrador)** — controlo básico de execução:
+  ```cmd
+  net start                    :: Lista serviços em execução
+  net stop|start|pause|continue nome_servico
+  ```
+* **`sc` (*Service Control*)** — interage diretamente com o gestor de serviços (`scm.exe`):
+  ```cmd
+  sc query nome_servico        :: Estado dinâmico atual (RUNNING / STOPPED)
+  sc queryex nome_servico      :: Estado estendido (inclui PID)
+  sc qc nome_servico           :: Configuração estática (executável, arranque, dependências, conta)
+  sc start|stop|pause|delete nome_servico
+  sc create nome_servico
+  ```
 
 ---
 
-## Caso de Estudo: O Serviço Spooler (`spoolsv.exe`)
+## 3. Caso de Estudo: `Spooler` (`sc qc Spooler`)
 
-A inspeção do serviço de impressão através de `sc qc Spooler` ilustra a estrutura de configuração de um serviço com processo autónomo:
-
-```cmd
-sc qc Spooler
-```
-
-| Campo Devolvido (`sc qc`) | Valor no Serviço `Spooler` | Significado Técnico e Forense |
-| :--- | :--- | :--- |
-| **`BINARY_PATH_NAME`** | `C:\Windows\System32\spoolsv.exe` | Executável invocado pelo SCM ao iniciar o serviço. |
-| **`TYPE`** | `110  WIN32_OWN_PROCESS (interactive)` | O serviço corre num processo exclusivo e dedicado, separado de outros serviços. |
-| **`START_TYPE`** | `2   AUTO_START` | Inicializado automaticamente durante o arranque do sistema operativo. |
-| **`ERROR_CONTROL`** | `1   NORMAL` | Se o serviço falhar no arranque, o Windows regista um erro no Event Log mas prossegue o arranque normalmente. |
-| **`DEPENDENCIES`** | `RPCSS` e `HTTP` | Depende da inicialização prévia dos serviços Remote Procedure Call (`RPCSS`) e `HTTP`. |
-| **`SERVICE_START_NAME`** | `LocalSystem` | Corre sob a conta interna de maior privilégio do sistema local. |
-
-> [!WARNING] Vetor Histórico de Ataque
-> O Print Spooler é historicamente alvo frequente de vulnerabilidades graves de execução remota de código e elevação local de privilégios (como o *PrintNightmare*). Em servidores de infraestrutura que não operem como servidores de impressão (ex.: Controladores de Domínio Active Directory), a boa prática de endurecimento (*hardening*) dita a desativação expressa deste serviço (`sc config Spooler start= disabled`).
+O comando `sc qc <serviço>` revela o executável associado (`BINARY_PATH_NAME`) e os parâmetros de segurança:
+* **`BINARY_PATH_NAME`**: `C:\Windows\System32\spoolsv.exe`
+* **`TYPE`**: `WIN32_OWN_PROCESS` (corre em processo próprio) + `Interactive` (autorizado a interagir com ambiente gráfico)
+* **`START_TYPE`**: `AUTO_START` (arranca com o SO)
+* **`ERROR_CONTROL`**: `1 Normal` (falha não impede o arranque normal do Windows)
+* **`DEPENDENCIES`**: `RPCss` e `HTTP`
+* **`SERVICE_START_NAME`**: **`LocalSystem`** (elevado privilégio — motivo pelo qual o `Spooler` é alvo frequente de ataques e falhas).
 
 ---
 
 ## Perguntas de revisão
 
-1. **Qual é a diferença entre os comandos `sc query Spooler` e `sc qc Spooler`?**
+1. **Qual a diferença entre `sc query Spooler` e `sc qc Spooler`?**
 
 > [!success]- Ver Resposta
-> * **`sc query Spooler`**: consulta o **estado dinâmico atual** do serviço (ex.: se está `RUNNING` ou `STOPPED`).
-> * **`sc qc Spooler`** (*Query Configuration*): consulta a **configuração estática** do serviço registada no sistema (caminho do binário `BINARY_PATH_NAME`, tipo de processo `WIN32_OWN_PROCESS`, tipo de arranque `AUTO_START`, dependências e conta `SERVICE_START_NAME`).
+> `sc query` consulta o **estado atual** do serviço (ex.: `RUNNING`/`STOPPED`), enquanto `sc qc` (*Query Config*) consulta a **configuração persistente** (executável `BINARY_PATH_NAME`, tipo de processo, arranque, dependências e conta `SERVICE_START_NAME`).
 
-2. **Qual é o comando exato de linha de comandos para desativar permanentemente o arranque automático do serviço Print Spooler num servidor Windows?**
-
-> [!success]- Ver Resposta
-> `sc config Spooler start= disabled` (respeitando obrigatoriamente o espaço em branco imediatamente após `start=`).
-
-3. **Como se pode contabilizar na linha de comandos o número aproximado de serviços registados e o número de serviços em execução recorrendo à ferramenta `psservice` (Sysinternals)?**
+2. **Porque é que o serviço `Spooler` (`spoolsv.exe`) é considerado de alto risco quando contém vulnerabilidades?**
 
 > [!success]- Ver Resposta
-> * Serviços registados: `psservice | findstr /i "SERVICE_NAME"` (~240 no Windows 10; ~294 no Windows 11).
-> * Serviços em execução: `psservice | findstr /i "Running"` (~101 no Windows 10; ~158 no Windows 11).
-
-4. **Por que razão o serviço `Spooler` representa um risco elevado de segurança quando explorado e que privilégio detém por omissão?**
-
-> [!success]- Ver Resposta
-> Porque corre sob a conta `LocalSystem` (`SERVICE_START_NAME: LocalSystem`), que detém o privilégio máximo no sistema local; vulnerabilidades como o *PrintNightmare* permitem a um atacante executar código arbitrário ou elevar privilégios diretamente para `SYSTEM`.
+> Porque corre sob a conta **`LocalSystem`** (elevado privilégio no sistema local), além de interagir com drivers de impressora e arrancar automaticamente com o SO.
 
 ---
 
