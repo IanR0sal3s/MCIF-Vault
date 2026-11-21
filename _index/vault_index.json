@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-2"
+        "matched_term": "SHA-3"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -4170,7 +4170,7 @@
         "Universal Windows Platform",
         "Metro Apps"
       ],
-      "summary": "A Universal Windows Platform (UWP) é a plataforma de aplicações modernas do Windows (sucessora das Metro Apps do Windows 8), distribuída em pacotes APPX/MSIX que correm isolados em sandbox sob a API WinRT.",
+      "summary": "A Universal Windows Platform (UWP) — sucessora das Metro Apps (W8) e Modern Apps — é a plataforma de aplicações modernas da Microsoft (desde o W10), distribuída via Microsoft Store no formato APPX para múltiplos...",
       "out_links": [
         "00 ASSI",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
@@ -4210,7 +4210,7 @@
         "Artefactos UWP",
         "StateRepository"
       ],
-      "summary": "A investigação forense de Aplicações UWP incide sobre três fontes principais: a pasta de pacote do utilizador (`%LocalAppData%\\Packages\\`), as bases SQLite3 do State Repository (`.srd`) e o ficheiro de paginação...",
+      "summary": "A análise forense de aplicações UWP concentra-se em três fontes principais: a pasta de pacotes do utilizador, as bases SQLite3 do State Repository e o ficheiro de memória virtual `swapfile.sys`.",
       "out_links": [
         "00 ASSI",
         "Aplicações UWP (Universal Windows Platform) - Visão Geral",

@@ -17,136 +17,40 @@ aliases:
   - UWP Forensics
   - Artefactos UWP
   - StateRepository
-fonte_aula: 01_FA_services+WSearch+Registry---2026-27_ULO_v2.pdf
+fonte_aula: 01_FA_services+WSearch+Registry---2026-27_ULO_v4.pdf
 fontes:
-  - "Yogesh Khatri, Appx-Analysis (Magnet Summit 2019), https://github.com/ydkhatri/Appx-Analysis"
-atualizado: 2026-09-24
+  - "Yogesh Khatri, AppxAnalysis (Magnet Summit 2019), https://github.com/ydkhatri/Appx-Analysis"
+atualizado: 2026-11-21
 ---
 
 # Artefactos Forenses em Aplicações UWP
 
-A investigação forense de [[Aplicações UWP (Universal Windows Platform) - Visão Geral|Aplicações UWP]] incide sobre três fontes principais: a pasta de pacote do utilizador (`%LocalAppData%\Packages\`), as bases SQLite3 do **State Repository** (`.srd`) e o ficheiro de paginação `swapfile.sys`.
+A análise forense de [[Aplicações UWP (Universal Windows Platform) - Visão Geral|aplicações UWP]] concentra-se em **três fontes principais**: a pasta de pacotes do utilizador, as bases SQLite3 do *State Repository* e o ficheiro de memória virtual `swapfile.sys`.
 
-> [!TIP] Lógica de Funcionamento e Valor Forense
-> * **Porque existe (Sistema)**: Como as aplicações UWP correm em *sandbox* sem acesso direto ao Registry global ou a pastas arbitrárias do disco, o Windows redireciona os seus dados e configurações para um diretório de pacote dedicado por utilizador e regista as instalações numa base SQLite central (*State Repository*).
-> * **Porque importa (Forense / Segurança)**: Permite reconstruir que aplicações foram instaladas e quando (`.srd`), recuperar dados locais, caches web e definições de cada utilizador (`Packages\<APP>`) e extrair mensagens ou chaves em claro de aplicações suspensas em memória (`C:\swapfile.sys`).
-> * **Pontos Críticos para Exame**:
->   * **Armadilha clássica de exame**: O ficheiro `%LocalAppData%\Packages\<APP>\Settings\settings.dat` **não é SQLite** — é uma **hive de Registry do Windows** (analisada com `RegistryExplorer` ou `reg.exe load`), ao passo que os ficheiros `.srd` do *State Repository* são bases **SQLite3**.
->   * As páginas de memória de aplicações UWP suspensas em segundo plano são descarregadas em **`C:\swapfile.sys`** (distinto do `pagefile.sys` tradicional).
+## 1. Mapa dos 3 Locais Forenses UWP
 
----
-
-## Mapa Global dos 3 Locais Forenses UWP
-
-| Fonte Forense | Caminho no Disco | Formato / Motor | Evidência Pericial Obtida |
+| Fonte Forense | Localização no Disco | Formato / Motor | O que revela |
 | :--- | :--- | :--- | :--- |
-| **1. Dados por Utilizador (`Packages`)** | `C:\Users\%username%\AppData\Local\Packages\<APP>\` | Ficheiros locais + Hive de Registry (**`settings.dat`**) | Dados persistentes (`LocalState`), caches web (`AC\INet*`), dados MSIX/Helium (`SystemAppData`) e definições (`Settings\settings.dat`). |
-| **2. Inventário Global (*State Repository*)** | `C:\ProgramData\Microsoft\Windows\AppRepository\` (ou subpastas `Packages\` / `Downlevel\`) | **SQLite3** (**`StateRepository-Machine.srd`** e **`StateRepository-Deployment.srd`**) | Registo global de pacotes instalados na máquina, utilizadores associados, versões e carimbos temporais de *deployment*. |
-| **3. Memória Virtual de Apps Suspensas** | `C:\swapfile.sys` | Ficheiro de paginação de memória (binário bruto) | Fragmentos de texto, mensagens em claro, URLs ou chaves de sessão de apps UWP suspensas (via *strings* e *carving*). |
+| **1. Dados por utilizador** | `C:\Users\%username%\AppData\Local\Packages\<APP>\` | Ficheiros da app + **`Settings\settings.dat`** (ficheiro de **Registry**) | Dados locais e configurações privadas de cada aplicação UWP. |
+| **2. Inventário global (*State Repository*)** | `C:\ProgramData\Microsoft\Windows\AppRepository\Packages\` | **SQLite3** (`StateRepository-Machine.srd` e `StateRepository-Deployment.srd`) | Listagem e histórico global de aplicações APPX instaladas na máquina. |
+| **3. Memória virtual** | `C:\swapfile.sys` | Ficheiro de paginação dedicado | Memória virtual usada por aplicações UWP (permite pesquisa de *strings*). |
 
----
-
-## 1. Dados e Configurações por Utilizador (`Packages`)
-
-Os dados de sessão, ficheiros descarregados e definições de cada aplicação UWP residem na pasta local de dados do respetivo utilizador:
-
-```text
-C:\Users\%username%\AppData\Local\Packages\
-```
-
-Cada aplicação instalada possui um subdiretório próprio nomeado através do seu identificador de pacote (ex.: `27879SnkeKhn.NotepadX_xq0nh4s6cn4qe`).
-
-### Estrutura Típica da Pasta da Aplicação
-Dentro da pasta de cada pacote, os dados organizam-se na seguinte hierarquia:
-
-```text
-<APP_PACKAGE_NAME>\
-├── Settings\
-│   └── settings.dat       <- Hive de Registry privado da aplicação
-├── LocalState\            <- Ficheiros locais persistentes da aplicação
-├── LocalCache\            <- Ficheiros temporários e recriáveis pela aplicação
-├── RoamingState\          <- Definições sincronizadas entre dispositivos da mesma conta
-├── AC\                    <- AppContainer: caches in-app, cookies e histórico web
-│   ├── INetCache\
-│   ├── INetCookies\
-│   └── INetHistory\
-├── SystemAppData\         <- Dados de sistema do pacote (inclui subpasta Helium em MSIX)
-└── TempState\             <- Ficheiros temporários locais
-```
-
-### O Ficheiro de Registry `settings.dat`
-As configurações internas da aplicação UWP são mantidas num ficheiro binário dedicado:
-
-```text
-%LocalAppData%\Packages\<APP>\Settings\settings.dat
-```
-
-* **Formato**: Embora muitas componentes modernas usem SQLite, o `settings.dat` é estruturado internamente como um **ficheiro de Registry** do Windows.
-* **Análise**: Não pode ser aberto com visualizadores SQLite. Deve ser analisado através de ferramentas de Registry (como o `RegistryExplorer` ou através do comando nativo `reg.exe load`).
-
----
-
-## 2. Inventário Global do Sistema: State Repository
-
-Para auditar o histórico de todas as aplicações UWP instaladas no sistema operativo (incluindo utilizadores associados, versões e data de instalação), o Windows utiliza o **State Repository**:
-
-```text
-C:\ProgramData\Microsoft\Windows\AppRepository\Packages\
-```
-
-Este repositório assenta em duas bases de dados relacionais em formato **SQLite3**:
-
-| Ficheiro de Base de Dados | Função Pericial |
-| :--- | :--- |
-| **`StateRepository-Machine.srd`** | Registo global de aplicações, extensões, protocolos, nós e permissões associadas à máquina. |
-| **`StateRepository-Deployment.srd`** | Histórico de operações de instalação, pacotes fontes, utilizadores de destino e estado de implementação (*deployment*). |
-
-> [!NOTE] Localização dos Ficheiros `.srd`
-> Dependendo da compilação e versão específica do Windows 10 ou Windows 11, os ficheiros `.srd` podem encontrar-se diretamente na raiz de `C:\ProgramData\Microsoft\Windows\AppRepository\` ou sob a subpasta `Packages\` e `Downlevel\`. O perito deve verificar a existência dos ficheiros em ambos os caminhos.
-
-### Ferramentas de Extração
-Para além de consultas SQL diretas através do *DB Browser for SQLite*, destaca-se a suite de scripts e ferramentas desenvolvida por **Yogesh Khatri** (*Appx-Analysis*, Magnet User Summit), que correlaciona tabelas como `Application`, `AppInstaller` e `Package` para reconstruir o inventário de software instalado.
-
----
-
-## 3. Análise de Memória Virtual: `swapfile.sys`
-
-As aplicações UWP e os processos em contentor utilizam o ficheiro de paginação específico **`swapfile.sys`** (localizado na raiz do volume do sistema, ex.: `C:\swapfile.sys`) para descarregar páginas de memória quando as aplicações são suspensas em segundo plano.
-
-* **Relevância pericial**: Permite a recuperação de fragmentos de texto, mensagens em claro, URLs ou chaves de sessão de aplicações suspensas através de técnicas de pesquisa de cadeias de caracteres (*strings*) e *carving* de ficheiros.
-* É um artefacto complementar aos ficheiros de perfil e ao State Repository quando se investigam processos e mensagens voláteis.
-
----
-
-## Metodologia de Recolha Pericial
-
-Numa análise a aplicações UWP, a recolha deve seguir uma sequência lógica e metódica:
-
-1. **Inventário**: Extração das bases de dados `.srd` do `AppRepository` para mapear que aplicações existem e quando foram instaladas.
-2. **Dados de Utilizador**: Preservação da pasta `%LocalAppData%\Packages\<APP>` do utilizador visado (com especial atenção às subpastas `LocalState`, `AC` e `SystemAppData`).
-3. **Definições**: Carregamento pericial do `settings.dat` para inspecionar preferências da app.
-4. **Memória de Troca**: Análise de *strings* ao `swapfile.sys` se a investigação exigir recuperar conteúdo em trânsito de apps suspensas.
+> [!IMPORTANT] Armadilha de Exame: `settings.dat` vs. `.srd`
+> O ficheiro `%LocalAppData%\Packages\<APP>\Settings\settings.dat` **não é SQLite** — é um **ficheiro de Registry** privado da aplicação. Já `StateRepository-Machine.srd` e `StateRepository-Deployment.srd` são bases de dados **SQLite3** (analisáveis com *DB Browser for SQLite* ou os scripts *AppxAnalysis* de Yogesh Khatri).
 
 ---
 
 ## Perguntas de revisão
 
-1. **Qual é o formato interno do ficheiro `%LocalAppData%\Packages\<APP>\Settings\settings.dat` e que ferramentas devem ser utilizadas para o analisar?**
+1. **Qual o formato interno de `settings.dat` face a `StateRepository-Machine.srd` e `StateRepository-Deployment.srd`?**
 
 > [!success]- Ver Resposta
-> O ficheiro `settings.dat` **não é uma base de dados SQLite**, mas sim uma **hive de Registry do Windows** privada da aplicação UWP. Por isso, deve ser analisado com ferramentas de inspeção do Registry, como o **`RegistryExplorer`** ou o utilitário nativo **`reg.exe load`**.
+> `settings.dat` (`%LocalAppData%\Packages\<APP>\Settings\`) é um **ficheiro de Registry**; os ficheiros `.srd` em `C:\ProgramData\Microsoft\Windows\AppRepository\Packages\` são bases de dados **SQLite3**.
 
-2. **Onde reside o State Repository do Windows, que formato de base de dados utiliza e qual é a função dos ficheiros `StateRepository-Machine.srd` e `StateRepository-Deployment.srd`?**
-
-> [!success]- Ver Resposta
-> Reside em `C:\ProgramData\Microsoft\Windows\AppRepository\` (ou nas subpastas `Packages\` e `Downlevel\`) e utiliza o formato **SQLite3** (analisável com *DB Browser for SQLite* ou *Appx-Analysis* de Yogesh Khatri):
-> * **`StateRepository-Machine.srd`**: guarda o registo global de aplicações, extensões, protocolos e permissões da máquina.
-> * **`StateRepository-Deployment.srd`**: guarda o histórico de operações de instalação (*deployment*), pacotes fonte e utilizadores associados.
-
-3. **Qual é o papel do ficheiro `C:\swapfile.sys` numa investigação forense a aplicações UWP?**
+2. **Que ficheiro de paginação utilizam as aplicações UWP para memória virtual?**
 
 > [!success]- Ver Resposta
-> O `swapfile.sys` é o ficheiro de paginação dedicado onde o Windows descarrega páginas de memória das aplicações UWP e contentores quando estes são suspensos em segundo plano. Através de pesquisa de *strings* e *carving*, o perito pode recuperar mensagens em claro, URLs ou chaves de sessão voláteis.
+> O ficheiro **`swapfile.sys`** (distinto do `pagefile.sys` tradicional).
 
 ---
 
