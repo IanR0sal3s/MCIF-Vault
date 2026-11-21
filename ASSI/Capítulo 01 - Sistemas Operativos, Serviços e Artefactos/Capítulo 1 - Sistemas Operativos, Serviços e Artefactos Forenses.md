@@ -29,10 +29,8 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 
 | Nota | Descrição e Foco Técnico |
 | :--- | :--- |
-| [[UEFI Secure Boot]] | Validação modular do arranque por assinatura digital |
-| [[UEFI Secure Boot - Chaves e Hierarquia]] | Hierarquia de validação: PK, KEK, `db`, `dbx` |
-| [[PKfail - Vulnerabilidade do UEFI Secure Boot]] | Chave de teste AMI usada como Platform Key em ~850 modelos |
-| [[PKfail - Cadeia de Ataque e Deteção Forense]] | Exploração de bootkits; deteção via `IsBootSecure` e `sigcheck` |
+| [[UEFI Secure Boot]] | Validação modular do arranque por assinatura digital e hierarquia de chaves (`PK`, `KEK`, `db`, `dbx`) |
+| [[PKfail - Vulnerabilidade do UEFI Secure Boot]] | Chave de teste AMI (`DO NOT TRUST`, `CVE-2016-5247`) em ~850 modelos; validação com `sigcheck` e `IsBootSecure` |
 
 ---
 

@@ -148,6 +148,6 @@ echo -n "Miguel" | sha256sum    # comando Linux
 * [[Fases da Investigação Forense Digital]] · `mesmo bloco`
 * [[Extração da AmCache e Comparação Forense com a ShimCache]] · `ASSI · Cap. 1`
 * [[Análise Forense e Criação a Pedido do Prefetch]] · `ASSI · Cap. 1`
-* [[PKfail - Cadeia de Ataque e Deteção Forense]] · `ASSI · Cap. 1`
+* [[PKfail - Vulnerabilidade do UEFI Secure Boot]] · `ASSI · Cap. 1`
 * [[Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass]] · `ASSI · Cap. 2`
 * [[Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)]] · `ASSI · Cap. 2`

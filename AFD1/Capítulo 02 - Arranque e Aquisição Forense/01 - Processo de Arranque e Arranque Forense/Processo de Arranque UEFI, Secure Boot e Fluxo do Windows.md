@@ -128,8 +128,8 @@ flowchart TD
 ## Além da aula
 
 * **Aprofundamento Criptográfico do UEFI Secure Boot e Vulnerabilidade PKfail em [[00 ASSI|ASSI]]**:
-  * Na unidade curricular de **ASSI**, este mesmo processo de arranque é estudado ao nível da sua hierarquia criptográfica e exploração ofensiva/forense nas notas [[UEFI Secure Boot]] e [[UEFI Secure Boot - Chaves e Hierarquia]]. A validação criptográfica de assinatura digital no código de arranque opera através de 4 variáveis NVRAM: **PK (*Platform Key*)**, **KEK (*Key Exchange Key*)**, **db (*Signature Database* — whitelist)** e **dbx (*Forbidden Signatures Database* — blacklist)**.
-  * Na nota [[PKfail - Vulnerabilidade do UEFI Secure Boot]] e em [[PKfail - Cadeia de Ataque e Deteção Forense]], analisa-se o caso real (`CVE-2016-5247`) em que a chave privada da *Platform Key* de teste da AMI ("DO NOT TRUST") foi deixada em equipamentos de produção, permitindo a atacantes assinar *bootkits* maliciosos na partição ESP (`bootmgfw.efi`) que contornam o *Secure Boot* e comprometem o `Bootmgr.exe` e o `Winload.exe` antes do `NToskrnl.exe` iniciar.
+  * Na unidade curricular de **ASSI**, este mesmo processo de arranque é estudado ao nível da sua hierarquia criptográfica e exploração ofensiva/forense nas notas [[UEFI Secure Boot]] e [[UEFI Secure Boot]]. A validação criptográfica de assinatura digital no código de arranque opera através de 4 variáveis NVRAM: **PK (*Platform Key*)**, **KEK (*Key Exchange Key*)**, **db (*Signature Database* — whitelist)** e **dbx (*Forbidden Signatures Database* — blacklist)**.
+  * Na nota [[PKfail - Vulnerabilidade do UEFI Secure Boot]] e em [[PKfail - Vulnerabilidade do UEFI Secure Boot]], analisa-se o caso real (`CVE-2016-5247`) em que a chave privada da *Platform Key* de teste da AMI ("DO NOT TRUST") foi deixada em equipamentos de produção, permitindo a atacantes assinar *bootkits* maliciosos na partição ESP (`bootmgfw.efi`) que contornam o *Secure Boot* e comprometem o `Bootmgr.exe` e o `Winload.exe` antes do `NToskrnl.exe` iniciar.
 * **Subsistema de Sessão e Serviços do Windows**:
   * Após o **Session Manager Subsystem (`smss.exe`)** e o `wininit.exe` entrarem em execução no final do fluxograma da aula, é iniciado o *Service Control Manager (`services.exe`)* que lança os processos anfitriões [[svchost.exe]] e os [[Serviços Windows]] estudados no Bloco 03 de ASSI.
 
@@ -171,9 +171,7 @@ flowchart TD
 ### Conceitos Relacionados
 
 * [[UEFI Secure Boot]] · `ASSI · Cap. 1`
-* [[UEFI Secure Boot - Chaves e Hierarquia]] · `ASSI · Cap. 1`
 * [[PKfail - Vulnerabilidade do UEFI Secure Boot]] · `ASSI · Cap. 1`
-* [[PKfail - Cadeia de Ataque e Deteção Forense]] · `ASSI · Cap. 1`
 * [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]] · `ASSI · Cap. 2`
 * [[Serviços Windows]] · `ASSI · Cap. 1`
 * [[svchost.exe]] · `ASSI · Cap. 1`

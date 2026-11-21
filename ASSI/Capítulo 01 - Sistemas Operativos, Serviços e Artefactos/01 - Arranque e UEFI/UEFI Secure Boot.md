@@ -10,82 +10,70 @@ tags:
   - assi
   - uefi
   - secure-boot
+  - cryptography
   - firmware
 aliases:
   - Secure Boot
   - Arranque do Windows
-fonte_aula: 01_FA_services+WSearch+Registry---2026-27_ULO_v2.pdf
-atualizado: 2026-09-24
+  - UEFI Key Hierarchy
+  - UEFI Secure Boot - Chaves e Hierarquia
+fonte_aula: 01_FA_services+WSearch+Registry---2026-27_ULO_v4.pdf
+atualizado: 2026-11-21
 ---
 
-# Arranque do Windows e Secure Boot
+# UEFI Secure Boot — Assinatura Digital e Hierarquia de Chaves
 
-No arranque do Windows assente em arquiteturas UEFI, todos os componentes da cadeia de boot são validados por assinaturas digitais antes da execução, impedindo o carregamento de binários ou drivers adulterados.
+No arranque do Windows com **UEFI Secure Boot**, os vários módulos de arranque são validados criptograficamente por assinatura digital antes da execução, impedindo o carregamento de código ou *bootloaders* não autorizados.
 
-> [!TIP] Lógica de Funcionamento e Valor Forense
-> * **Porque existe (Sistema)**: O sistema operativo não se consegue proteger antes de o seu próprio núcleo (`ntoskrnl.exe`) carregar em memória. O Secure Boot delega no firmware UEFI a validação criptográfica sequencial de cada carregador de arranque antes de lhe passar o controlo do processador.
-> * **Porque importa (Forense / Segurança)**: Impede a persistência pré-sistema operativo (*bootkits* e *rootkits* de firmware). Se a raiz de confiança do firmware estiver comprometida (como no caso [[PKfail - Vulnerabilidade do UEFI Secure Boot|PKfail]]), o atacante consegue assinar binários maliciosos que passam na validação como se fossem legítimos.
-> * **Pontos Críticos para Exame**:
->   * Na validação assimétrica, a **chave privada** assina o binário (mantida secreta pelo OEM/Microsoft) e a **chave pública** (no certificado gravado no firmware) valida a assinatura.
->   * Ordem estrita da cadeia de arranque: **UEFI Firmware** $\rightarrow$ **UEFI Boot Manager** $\rightarrow$ **Windows Boot Manager** (`bootmgr.efi`) $\rightarrow$ **Windows Boot Loader** (`winload.efi`) $\rightarrow$ **Windows Kernel** (`ntoskrnl.exe`).
+## 1. Assinatura Digital no Arranque
 
----
-
-## Assinatura Digital e Validação de Código
-
-A cadeia de confiança criptográfica baseia-se num sistema de chaves assimétricas:
-
-| Componente Criptográfico | Detentor / Localização | Função Operacional no Arranque |
-| :--- | :--- | :--- |
-| **Par de Chaves (Privada / Pública)** | Gerado pelo fabricante (OEM / Microsoft) | Base matemática assimétrica que separa a capacidade de assinar da capacidade de verificar. |
-| **Chave Privada (Assinatura)** | Mantida em segredo pelo proprietário | Utilizada exclusivamente para assinar digitalmente o executável ou o *hash* do ficheiro. |
-| **Certificado Digital (Chave Pública)** | Anexado ao binário e gravado nas bases do firmware | Contém a chave pública do assinante; permite ao firmware UEFI validar a autenticidade e integridade do código. |
-
-* **Validação Universal**: O firmware UEFI utiliza a chave pública contida no certificado (ou gravada nas suas bases de dados fidedignas) para validar a autenticidade e integridade do código. Qualquer entidade consegue validar a assinatura, mas apenas o detentor da chave privada consegue assinar novo código.
-* **Risco de Comprometimento da Raiz**: Se a chave privada que o firmware reconhece como raiz de confiança (*Platform Key*) estiver comprometida ou for pública, a validação continuará com sucesso, mas validará binários fornecidos pelo atacante — este é o cerne da vulnerabilidade [[PKfail - Vulnerabilidade do UEFI Secure Boot|PKfail]].
+A validação assenta num par de chaves assimétricas:
+* **Chave privada**: mantida secreta pelo assinante (OEM / Microsoft), usada exclusivamente para **assinar** o ficheiro;
+* **Certificado digital (chave pública)**: incluído no ficheiro assinado e nas bases do firmware, permitindo a qualquer sistema **validar** a autenticidade e integridade da assinatura.
 
 ---
 
-## Cadeia de Confiança do Arranque
+## 2. Hierarquia das 4 Chaves / Bases de Dados UEFI
 
-A cadeia de validação sequencial ocorre nos seguintes estágios:
+O Secure Boot organiza a confiança em quatro níveis:
 
-```text
-[1. UEFI Firmware] ──► [2. UEFI Boot Manager] ──► [3. bootmgr.efi] ──► [4. winload.efi] ──► [5. ntoskrnl.exe]
+```mermaid
+flowchart TD
+    PK["1. Platform Key (PK)<br/>Hardware / Firmware — controla as restantes"] --> KEK["2. Key Exchange Key (KEK)<br/>Firmware / Sistema Operativo"]
+    KEK --> DB["3. Signature Database (db)<br/>Assinaturas autorizadas (lista branca)"]
+    KEK --> DBX["4. Forbidden Signature Database (dbx)<br/>Assinaturas proibidas / malware (lista negra)"]
 ```
 
-1. **UEFI Firmware**: Inicialização do hardware e verificação dos controladores EFI.
-2. **UEFI Boot Manager**: Validação do gestor de arranque através das bases de assinaturas do firmware.
-3. **Windows Boot Manager** (`bootmgr.efi`): Validação da integridade dos componentes de arranque do sistema operativo.
-4. **Windows Boot Loader** (`winload.efi`): Carregamento e validação dos controladores críticos e do núcleo.
-5. **Windows Kernel** (`ntoskrnl.exe`): Inicialização do núcleo do sistema operativo e subsequente arranque dos subsistemas.
+| Chave / Base | Âmbito | Função Principal |
+| :--- | :--- | :--- |
+| **`PK`** (*Platform Key*) | Hardware / Firmware | **Mais importante** — raiz de confiança da plataforma; permite alterar todas as restantes chaves. |
+| **`KEK`** (*Key Exchange Key*) | Firmware / Sistema Operativo | Intermediária que autoriza atualizações às bases `db` e `dbx`. |
+| **`db`** (*Signature Database*) | Componentes UEFI e arranque | **Lista branca** de assinaturas e certificados autorizados a executar. |
+| **`dbx`** (*Forbidden Signature Database*) | Software malicioso / revogado | **Lista negra** usada para negar execução; **prevalece sobre a `db`**. |
 
-Cada elo desta cadeia tem de estar obrigatoriamente assinado e validado contra a hierarquia de chaves configurada no firmware ([[UEFI Secure Boot - Chaves e Hierarquia]]).
+> [!IMPORTANT] Risco de Comprometimento da `PK`
+> Como a **Platform Key (`PK`)** controla as restantes chaves, a exposição da sua chave privada permite a um atacante substituir o software de arranque por código malicioso mantendo o Secure Boot aparentemente ativo — o cerne da vulnerabilidade [[PKfail - Vulnerabilidade do UEFI Secure Boot|PKfail]].
 
 ---
 
 ## Além da aula
 
-Em ambientes corporativos com requisitos estritos de segurança, o Secure Boot trabalha em articulação com o módulo TPM (*Trusted Platform Module*) e com o BitLocker. As medições de integridade da cadeia de arranque são gravadas nos registos PCR (*Platform Configuration Registers*) do TPM. Caso ocorra uma alteração não autorizada no firmware ou na Platform Key, o TPM recusa libertar a chave de desencriptação do volume de sistema, exigindo a chave de recuperação do BitLocker.
+* **Cadeia típica de arranque Windows**: `UEFI Firmware` → `UEFI Boot Manager` → `bootmgr.efi` → `winload.efi` → `ntoskrnl.exe`.
+* **Integração com TPM / BitLocker**: as medições de integridade da cadeia de arranque ficam nos registos PCR do TPM; alterações não autorizadas na `PK` ou no firmware bloqueiam a libertação automática da chave do BitLocker.
 
 ---
 
 ## Perguntas de revisão
 
-1. **No contexto do UEFI Secure Boot, qual é a diferença funcional entre a chave privada e a chave pública no processo de validação de um binário de arranque?**
+1. **Qual o papel da chave privada vs. chave pública na validação de código do UEFI Secure Boot?**
 
 > [!success]- Ver Resposta
-> A **chave privada** é mantida em segredo pelo fabricante (OEM ou Microsoft) e serve exclusivamente para criar a assinatura digital do binário (ou do seu *hash*). A **chave pública** está incluída no certificado digital anexado ao binário e nas bases de dados do firmware UEFI, permitindo a qualquer sistema verificar a autenticidade e integridade do código antes de o executar.
+> A **chave privada** (secreta) assina o binário; a **chave pública** (contida no certificado digital e no firmware) permite validar a assinatura antes de executar o módulo.
 
-2. **Qual é a sequência exata dos cinco componentes que formam a cadeia de confiança no arranque UEFI do Windows?**
-
-> [!success]- Ver Resposta
-> 1. **UEFI Firmware** $\rightarrow$ 2. **UEFI Boot Manager** $\rightarrow$ 3. **Windows Boot Manager** (`bootmgr.efi`) $\rightarrow$ 4. **Windows Boot Loader** (`winload.efi`) $\rightarrow$ 5. **Windows Kernel** (`ntoskrnl.exe`).
-
-3. **Por que motivo um sistema com o Secure Boot ativo continua vulnerável se a chave privada da Platform Key (PK) for divulgada publicamente?**
+2. **Qual é a chave mais importante do UEFI Secure Boot e qual a diferença entre `db` e `dbx`?**
 
 > [!success]- Ver Resposta
-> Porque o mecanismo criptográfico do firmware continuará a verificar as assinaturas normalmente, mas qualquer atacante em posse da chave privada da PK poderá assinar novas chaves e binários maliciosos (*bootkits*) que serão reconhecidos como fidedignos e legítimos pelo UEFI.
+> A mais importante é a **Platform Key (`PK`)**, pois permite alterar todas as restantes chaves (`KEK`, `db`, `dbx`). A `db` é a lista branca de assinaturas autorizadas a executar, enquanto a `dbx` é a lista negra de assinaturas proibidas (software malicioso/revogado), que nega a execução mesmo que conste na `db`.
 
 ---
 
@@ -94,12 +82,11 @@ Em ambientes corporativos com requisitos estritos de segurança, o Secure Boot t
 | Percurso | Nota | Contexto |
 | :--- | :--- | :--- |
 | **Anterior** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] | Início do capítulo |
-| **Seguinte** | [[UEFI Secure Boot - Chaves e Hierarquia]] | `mesmo bloco` |
+| **Seguinte** | [[PKfail - Vulnerabilidade do UEFI Secure Boot]] | `mesmo bloco` |
 | **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 01` |
 
 ### Conceitos Relacionados
 
-* [[PKfail - Vulnerabilidade do UEFI Secure Boot]] · `mesmo bloco`
 * [[Processo de Arranque UEFI, Secure Boot e Fluxo do Windows]] · `AFD1 · Cap. 2`
 * [[Arranque Forense e Processo de Boot (BIOS e Código Máquina)]] · `AFD1 · Cap. 2`
 * [[Preservação do Sistema e Integridade de Dados]] · `AFD1 · Cap. 1`

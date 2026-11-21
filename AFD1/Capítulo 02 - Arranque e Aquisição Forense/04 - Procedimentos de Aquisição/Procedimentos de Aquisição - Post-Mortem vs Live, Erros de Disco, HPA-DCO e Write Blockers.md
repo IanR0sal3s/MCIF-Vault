@@ -129,7 +129,7 @@ Os **bloqueadores de escrita (*write blockers*)** impedem qualquer operação de
 ## Além da aula
 
 * **Ameaças ao Firmware e Cadeia de Arranque em [[00 ASSI|ASSI]]**:
-  * O alerta da aula sobre *spyware* no firmware de discos rígidos (revelações da NSA, como o módulo *IRATEMONK* do catálogo ANT) e sobre a impossibilidade de confiar num SO em execução devido a *rootkits* articula-se diretamente com o estudo de *bootkits* UEFI em [[PKfail - Vulnerabilidade do UEFI Secure Boot]] e [[PKfail - Cadeia de Ataque e Deteção Forense]]: quando o próprio firmware ou kernel está comprometido, a análise *live* pode sofrer manipulação ativa (*API hooking*), tornando a aquisição *offline* com *hardware write-blocker* a única fonte totalmente imune a ocultação por software.
+  * O alerta da aula sobre *spyware* no firmware de discos rígidos (revelações da NSA, como o módulo *IRATEMONK* do catálogo ANT) e sobre a impossibilidade de confiar num SO em execução devido a *rootkits* articula-se diretamente com o estudo de *bootkits* UEFI em [[PKfail - Vulnerabilidade do UEFI Secure Boot]] e [[PKfail - Vulnerabilidade do UEFI Secure Boot]]: quando o próprio firmware ou kernel está comprometido, a análise *live* pode sofrer manipulação ativa (*API hooking*), tornando a aquisição *offline* com *hardware write-blocker* a única fonte totalmente imune a ocultação por software.
 
 ---
 
@@ -178,4 +178,3 @@ Os **bloqueadores de escrita (*write blockers*)** impedem qualquer operação de
 * [[Preservação do Sistema e Integridade de Dados]] · `Cap. 1`
 * [[Organização de Estruturas de Dados em Binário]] · `Cap. 3`
 * [[PKfail - Vulnerabilidade do UEFI Secure Boot]] · `ASSI · Cap. 1`
-* [[PKfail - Cadeia de Ataque e Deteção Forense]] · `ASSI · Cap. 1`

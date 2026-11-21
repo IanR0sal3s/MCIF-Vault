@@ -1,17 +1,17 @@
 {
   "generated_at": "2026-11-21",
   "stats": {
-    "total_notes": 214,
+    "total_notes": 212,
     "notes_by_uc": {
       "AFD1": 42,
-      "ASSI": 107,
+      "ASSI": 105,
       "COD1": 29,
       "COMUM": 7,
       "GERAL": 1,
       "SRC": 28
     },
-    "total_internal_links": 2068,
-    "total_cross_uc_links": 528,
+    "total_internal_links": 2044,
+    "total_cross_uc_links": 521,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
     "yaml_warnings_count": 0,
@@ -30,7 +30,7 @@
         "source_uc": "AFD1",
         "target_id": "AmCache - Arquitetura, Hives e Evolução para SQLite",
         "target_uc": "ASSI",
-        "matched_term": "AmCache"
+        "matched_term": "Amcache.hve"
       },
       {
         "source_id": "Pesquisa de Evidências e Reconstrução de Eventos",
@@ -86,7 +86,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-2"
+        "matched_term": "SHA-3"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -135,7 +135,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -885,12 +885,6 @@
       {
         "from_id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "from_uc": "AFD1",
-        "to_id": "PKfail - Cadeia de Ataque e Deteção Forense",
-        "to_uc": "ASSI"
-      },
-      {
-        "from_id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
-        "from_uc": "AFD1",
         "to_id": "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "to_uc": "ASSI"
       },
@@ -903,13 +897,19 @@
       {
         "from_id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "from_uc": "AFD1",
-        "to_id": "UEFI Secure Boot - Chaves e Hierarquia",
+        "to_id": "svchost.exe",
         "to_uc": "ASSI"
       },
       {
-        "from_id": "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+        "from_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "from_uc": "AFD1",
-        "to_id": "svchost.exe",
+        "to_id": "Caches de Ícones e Miniaturas (IconCache e Thumbcache)",
+        "to_uc": "ASSI"
+      },
+      {
+        "from_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
+        "from_uc": "AFD1",
+        "to_id": "Conceito de Strings e Comando strings em Unix-Linux",
         "to_uc": "ASSI"
       }
     ]
@@ -1171,7 +1171,7 @@
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Fases da Investigação Forense Digital",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Preservação do Sistema e Integridade de Dados",
         "Princípios e Rota do Manuseamento de Evidência Digital"
@@ -1187,7 +1187,7 @@
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Preservação do Sistema e Integridade de Dados",
         "Princípios e Rota do Manuseamento de Evidência Digital"
@@ -1197,7 +1197,7 @@
         "Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass",
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Extração da AmCache e Comparação Forense com a ShimCache",
-        "PKfail - Cadeia de Ataque e Deteção Forense"
+        "PKfail - Vulnerabilidade do UEFI Secure Boot"
       ]
     },
     {
@@ -1401,13 +1401,11 @@
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Fases da Investigação Forense Digital",
         "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
-        "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia"
+        "UEFI Secure Boot"
       ],
       "in_links": [
         "AmCache - Arquitetura, Hives e Evolução para SQLite",
@@ -1430,7 +1428,6 @@
         "Fases da Investigação Forense Digital",
         "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Pesquisa de Evidências e Reconstrução de Eventos",
         "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
@@ -1438,7 +1435,6 @@
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
         "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições"
       ],
       "cross_uc_links": [
@@ -1450,10 +1446,8 @@
         "Estrutura Interna e Algoritmo de Hashing do Prefetch",
         "Extração da AmCache e Comparação Forense com a ShimCache",
         "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
-        "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia"
+        "UEFI Secure Boot"
       ]
     },
     {
@@ -1951,13 +1945,11 @@
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 2 - Arranque e Aquisição Forense",
         "Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Preservação do Sistema e Integridade de Dados",
         "Serviços Windows",
         "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
         "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia",
         "svchost.exe"
       ],
       "in_links": [
@@ -1970,12 +1962,10 @@
       ],
       "cross_uc_links": [
         "00 ASSI",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Serviços Windows",
         "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
         "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia",
         "svchost.exe"
       ]
     },
@@ -2373,7 +2363,6 @@
         "Ferramentas Gráficas de Aquisição Forense (Guymager, Paladin Toolbox, Tableau Imager e FTK Imager)",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
         "Organização de Estruturas de Dados em Binário",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Preservação do Sistema e Integridade de Dados",
         "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração"
@@ -2394,7 +2383,6 @@
       ],
       "cross_uc_links": [
         "00 ASSI",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot"
       ]
     },
@@ -3675,7 +3663,6 @@
         "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
         "Monitorização Avançada com Sysmon (Sysinternals)",
         "Organização de Estruturas de Dados em Binário",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
         "Pesquisa de Evidências e Reconstrução de Eventos",
@@ -3704,7 +3691,6 @@
         "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa",
         "Tipos de Dados e Associação de Ficheiros no Registry",
         "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia",
         "UWP - Artefactos Forenses e Estrutura de Dados",
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)",
         "Volume Shadow Service (VSS) - Arquitetura e Funcionamento",
@@ -3719,52 +3705,6 @@
       "cross_uc_links": []
     },
     {
-      "id": "PKfail - Cadeia de Ataque e Deteção Forense",
-      "title": "PKfail - Cadeia de Ataque e Deteção Forense",
-      "path": "ASSI/Capítulo 01 - Sistemas Operativos, Serviços e Artefactos/01 - Arranque e UEFI/PKfail - Cadeia de Ataque e Deteção Forense.md",
-      "uc": "ASSI",
-      "capitulo": 1,
-      "bloco": 1,
-      "tipo": "procedimento",
-      "tags": [
-        "assi",
-        "bootkit",
-        "forense",
-        "uefi",
-        "powershell"
-      ],
-      "aliases": [
-        "PKfail Exploit Chain",
-        "Deteção PKfail"
-      ],
-      "summary": "A exploração da vulnerabilidade PKfail permite a um atacante usar a chave privada pública da Platform Key (AMI) para injetar certificados próprios no firmware e executar bootkits antes do kernel do Windows,...",
-      "out_links": [
-        "00 ASSI",
-        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "Exercícios Práticos - Integridade de Dados e Hashes",
-        "PKfail - Vulnerabilidade do UEFI Secure Boot",
-        "Preservação do Sistema e Integridade de Dados",
-        "Processos e linha de comandos no Windows",
-        "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia"
-      ],
-      "in_links": [
-        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "Exercícios Práticos - Integridade de Dados e Hashes",
-        "PKfail - Vulnerabilidade do UEFI Secure Boot",
-        "Preservação do Sistema e Integridade de Dados",
-        "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
-        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
-        "Processos e linha de comandos no Windows",
-        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
-        "UEFI Secure Boot - Chaves e Hierarquia"
-      ],
-      "cross_uc_links": [
-        "Exercícios Práticos - Integridade de Dados e Hashes",
-        "Preservação do Sistema e Integridade de Dados"
-      ]
-    },
-    {
       "id": "PKfail - Vulnerabilidade do UEFI Secure Boot",
       "title": "PKfail - Vulnerabilidade do UEFI Secure Boot",
       "path": "ASSI/Capítulo 01 - Sistemas Operativos, Serviços e Artefactos/01 - Arranque e UEFI/PKfail - Vulnerabilidade do UEFI Secure Boot.md",
@@ -3777,77 +3717,38 @@
         "cve/cve-2016-5247",
         "uefi",
         "secure-boot",
-        "bootkit"
+        "bootkit",
+        "sigcheck"
       ],
       "aliases": [
         "PKfail",
-        "CVE-2016-5247"
+        "CVE-2016-5247",
+        "PKfail - Cadeia de Ataque e Deteção Forense"
       ],
-      "summary": "A vulnerabilidade PKfail (CVE-2016-5247) resulta da utilização, em produção por dezenas de fabricantes, de uma chave privada de teste da American Megatrends (AMI) como Platform Key (PK) mestra do UEFI Secure Boot.",
+      "summary": "A vulnerabilidade PKfail (`CVE-2016-5247`) resulta de vários fabricantes terem utilizado em produção, como Platform Key (PK), uma chave privada de teste incluída no código exemplo da American Megatrends (AMI) —...",
       "out_links": [
         "00 ASSI",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
+        "Exercícios Práticos - Integridade de Dados e Hashes",
         "Preservação do Sistema e Integridade de Dados",
-        "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia"
+        "Processos e linha de comandos no Windows",
+        "UEFI Secure Boot"
       ],
       "in_links": [
         "Assinaturas Digitais, PKI e GnuPG",
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
+        "Exercícios Práticos - Integridade de Dados e Hashes",
         "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "Preservação do Sistema e Integridade de Dados",
         "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
-        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
-        "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia"
-      ],
-      "cross_uc_links": [
-        "Preservação do Sistema e Integridade de Dados"
-      ]
-    },
-    {
-      "id": "UEFI Secure Boot - Chaves e Hierarquia",
-      "title": "UEFI Secure Boot - Chaves e Hierarquia",
-      "path": "ASSI/Capítulo 01 - Sistemas Operativos, Serviços e Artefactos/01 - Arranque e UEFI/UEFI Secure Boot - Chaves e Hierarquia.md",
-      "uc": "ASSI",
-      "capitulo": 1,
-      "bloco": 1,
-      "tipo": "conceito",
-      "tags": [
-        "assi",
-        "uefi",
-        "secure-boot",
-        "cryptography",
-        "firmware"
-      ],
-      "aliases": [
-        "UEFI Key Hierarchy",
-        "Secure Boot Architecture",
-        "UEFI Secure Boot - Chaves e Hierarquia (PK, KEK, db, dbx)"
-      ],
-      "summary": "A integridade do UEFI Secure Boot baseia-se numa relação de confiança hierárquica entre quatro bases de dados e certificados gravados na NVRAM do firmware: a Platform Key (`PK`), a Key Exchange Key (`KEK`), a base...",
-      "out_links": [
-        "00 ASSI",
-        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
-        "PKfail - Vulnerabilidade do UEFI Secure Boot",
-        "Preservação do Sistema e Integridade de Dados",
-        "UEFI Secure Boot"
-      ],
-      "in_links": [
-        "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
-        "PKfail - Vulnerabilidade do UEFI Secure Boot",
-        "Preservação do Sistema e Integridade de Dados",
-        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+        "Processos e linha de comandos no Windows",
         "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
         "UEFI Secure Boot"
       ],
       "cross_uc_links": [
+        "Exercícios Práticos - Integridade de Dados e Hashes",
         "Preservação do Sistema e Integridade de Dados"
       ]
     },
@@ -3863,33 +3764,33 @@
         "assi",
         "uefi",
         "secure-boot",
+        "cryptography",
         "firmware"
       ],
       "aliases": [
         "Secure Boot",
-        "Arranque do Windows"
+        "Arranque do Windows",
+        "UEFI Key Hierarchy",
+        "UEFI Secure Boot - Chaves e Hierarquia"
       ],
-      "summary": "No arranque do Windows assente em arquiteturas UEFI, todos os componentes da cadeia de boot são validados por assinaturas digitais antes da execução, impedindo o carregamento de binários ou drivers adulterados.",
+      "summary": "No arranque do Windows com UEFI Secure Boot, os vários módulos de arranque são validados criptograficamente por assinatura digital antes da execução, impedindo o carregamento de código ou bootloaders não autorizados.",
       "out_links": [
         "00 ASSI",
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Preservação do Sistema e Integridade de Dados",
-        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
-        "UEFI Secure Boot - Chaves e Hierarquia"
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows"
       ],
       "in_links": [
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
         "Assinaturas Digitais, PKI e GnuPG",
         "Ataques Físicos em Viagens - Evil Maid (FlowCloud) e Burner Phones",
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Preservação do Sistema e Integridade de Dados",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
-        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
-        "UEFI Secure Boot - Chaves e Hierarquia"
+        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)"
       ],
       "cross_uc_links": [
         "Arranque Forense e Processo de Boot (BIOS e Código Máquina)",
@@ -3961,7 +3862,7 @@
         "Comando forfiles",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Serviços Windows",
         "Windows Search",
         "svchost.exe"
@@ -3975,7 +3876,7 @@
         "Ferramentas Nativas e CLI para EVTX (WEVTUtil, psloglist e PowerShell)",
         "Ficha Prática e Questionário - Serviços e Windows Search",
         "Investigação Forense Digital - Análise Live vs Post-Mortem",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
+        "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Princípios de Aquisição Forense, Resposta Inicial e Camadas de Abstração",
         "svchost.exe"
       ],
@@ -6646,7 +6547,6 @@
         "LastActivityView e Reconstituição Temporal Live",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Processos e linha de comandos no Windows",
         "Recuperação de Clipboard e Sincronização na Timeline",
@@ -6661,7 +6561,6 @@
         "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Tipos de Dados e Associação de Ficheiros no Registry",
         "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia",
         "UWP - Artefactos Forenses e Estrutura de Dados",
         "Volume Shadow Service (VSS) - Arquitetura e Funcionamento",
         "Windows Activity Timeline - Arquitetura e Base SQLite",
@@ -6708,7 +6607,6 @@
         "LastActivityView e Reconstituição Temporal Live",
         "Matriz de Correlação Forense e Cronologia de Ativação dos Artefactos",
         "Mecanismos de Compatibilidade no Windows (WOW64, Shims, PCA, ShimCache e AmCache)",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Processos e linha de comandos no Windows",
         "Recuperação de Clipboard e Sincronização na Timeline",
@@ -6723,7 +6621,6 @@
         "Timestamps e Épocas Temporais (UNIX Epoch vs. Windows FILETIME)",
         "Tipos de Dados e Associação de Ficheiros no Registry",
         "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia",
         "UWP - Artefactos Forenses e Estrutura de Dados",
         "Volume Shadow Service (VSS) - Arquitetura e Funcionamento",
         "Windows Activity Timeline - Arquitetura e Base SQLite",
@@ -7185,12 +7082,10 @@
         "Capítulo 2 - Administração de Sistemas",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
         "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
-        "PKfail - Cadeia de Ataque e Deteção Forense",
         "PKfail - Vulnerabilidade do UEFI Secure Boot",
         "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
-        "UEFI Secure Boot",
-        "UEFI Secure Boot - Chaves e Hierarquia"
+        "UEFI Secure Boot"
       ],
       "in_links": [
         "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",

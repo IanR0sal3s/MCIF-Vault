@@ -187,7 +187,7 @@ pslist [-d] [-m] [-x] [-t] [-e] [-s [n]] [\\computador [-u <user>] [-p <pass>]] 
 
 | Percurso | Nota | Contexto |
 | :--- | :--- | :--- |
-| **Anterior** | [[PKfail - Cadeia de Ataque e Deteção Forense]] | `Bloco 01` |
+| **Anterior** | [[PKfail - Vulnerabilidade do UEFI Secure Boot]] | `Bloco 01` |
 | **Seguinte** | [[Comando forfiles]] | `mesmo bloco` |
 | **Índice** | [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]] · [[00 ASSI]] | `Bloco 02` |
 
