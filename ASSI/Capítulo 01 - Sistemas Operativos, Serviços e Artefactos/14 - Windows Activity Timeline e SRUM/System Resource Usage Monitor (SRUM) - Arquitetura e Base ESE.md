@@ -36,6 +36,7 @@ O **SRUM** (*System Resource Usage Monitor*) regista durante 30 a 60 dias na bas
 > * **Pontos Críticos e Armadilhas para Exame**:
 >   * **Arquitetura de 2 Níveis (Minuto 30)**: Para poupar escritas em disco, os *providers* acumulam métricas temporariamente no hive `SOFTWARE` (`...\SRUM\extensions`) e descarregam para a base ESE `%WINDIR%\System32\sru\SRUDB.dat` apenas **ao minuto 30 de cada hora** e antes de um **shutdown** ordeiro.
 >   * **Reparação de *Dirty Shutdown***: Como `SRUDB.dat` usa o motor transacional **ESE (JET Blue)**, aquisições *live* ou desligamentos abruptos deixam a base em estado *Dirty Shutdown*. Antes de usar o `SrumECmd`, é obrigatório verificar o estado com `esentutl /mh` e aplicar os logs com **`esentutl /r sru /d`**.
+>   * **O que o SRUM NÃO regista**: Embora guarde caminho do executável, dono (SID), métricas de I/O, ciclos de CPU, mudanças de contexto e bytes de rede enviados/recebidos, **não regista os argumentos da linha de comandos** (para ver os parâmetros passados a `powershell.exe` ou `rclone.exe`, é necessário cruzar com [[Monitorização Avançada com Sysmon (Sysinternals)|Sysmon Event ID 1]] ou Security Event ID 4688).
 
 ---
 
@@ -198,11 +199,10 @@ A estrutura do `SRUDB.dat`, extração de métricas de rede e processos, e anál
 > 1. Verificar o estado no cabeçalho: `esentutl.exe /mh SRUDB.dat`
 > 2. Executar uma recuperação suave (*Soft Recovery*) a partir da pasta contendo o `.dat` e todos os ficheiros `SRU*.log` e `SRU.chk`: **`esentutl.exe /r sru /d`**. Este comando aplica as transações pendentes nos logs para dentro do `SRUDB.dat`, transitando o estado para `Clean Shutdown`.
 
-5. **Quais são os GUIDs das duas tabelas do SRUM mais importantes para investigar, respetivamente, o tráfego de rede por aplicação (exfiltração) e o consumo de ciclos de CPU/I/O por aplicação?**
+5. **Que métricas de processo o SRUM regista e qual é a principal informação de execução que NÃO recolhe?**
 
 > [!success]- Ver Resposta
-> * **Tráfego de Rede (*Network Data Usage* — `nduprov.dll`)**: **`{973F5D5C-1D90-4944-BE8E-24B94231A174}`** (contém `BytesSent` e `BytesRecvd`).
-> * **Consumo de Recursos da Aplicação (*Application Resource Usage* — `appsruprov.dll`)**: **`{D10CA2FE-6FCF-4F6D-848E-B2E99266FA89}`** (contém ciclos de CPU e leituras/escritas em disco).
+> O SRUM regista o **caminho do executável**, o **dono/utilizador (SID)**, **métricas de I/O**, **n.º de ciclos de CPU**, **n.º de mudanças de contexto** e **tráfego de rede** (bytes enviados/recebidos). Contudo, **não regista os argumentos da linha de comandos** — para recuperar parâmetros passados ao processo, o perito precisa de cruzar com logs como *Sysmon Event ID 1* ou *Security Event ID 4688*.
 
 ---
 

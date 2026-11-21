@@ -10,7 +10,7 @@
       "GERAL": 1,
       "SRC": 28
     },
-    "total_internal_links": 2028,
+    "total_internal_links": 2029,
     "total_cross_uc_links": 520,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
@@ -86,7 +86,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-1"
+        "matched_term": "SHA-3"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -135,7 +135,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -6059,6 +6059,7 @@
         "Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses",
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação",
+        "Monitorização Avançada com Sysmon (Sysinternals)",
         "Recuperação de Clipboard e Sincronização na Timeline",
         "Taxonomia dos Artefactos de Execução no Windows",
         "Windows Activity Timeline - Arquitetura e Base SQLite",
@@ -8952,6 +8953,7 @@
         "Capítulo 4 - Logs",
         "Memory Dumps (.dmp) e Windows Error Reporting (WER)",
         "Salvaguarda e Monitorização do Registry",
+        "System Resource Usage Monitor (SRUM) - Arquitetura e Base ESE",
         "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa"
       ],
       "cross_uc_links": []
