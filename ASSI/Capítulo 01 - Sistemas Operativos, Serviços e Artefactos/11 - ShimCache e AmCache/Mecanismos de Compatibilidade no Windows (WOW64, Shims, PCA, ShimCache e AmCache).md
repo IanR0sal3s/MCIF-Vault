@@ -23,12 +23,15 @@ aliases:
   - Visão Integrada de Compatibilidade
   - Arquitetura de Compatibilidade
   - Pirâmide de Compatibilidade Windows
-atualizado: 2026-10-09
+atualizado: 2026-11-21
 ---
 
 # Mecanismos de Compatibilidade no Windows — Visão Integrada e Forense
 
 A infraestrutura de compatibilidade do Windows articula cinco camadas distintas (`WOW64`, `Shims`, `ShimCache`, `PCA` e `AmCache`) para executar software legado sem degradar o desempenho.
+
+> [!TIP] Simulador Interativo Offline ("Correu ou só Existiu?" + Drill)
+> Para testar cenários reais de execução vs. existência (`Prefetch`, `UserAssist`, `ShimCache`, `AmCache`, `SRUM`) e treinar as distinções críticas de exame, abre [assi_execucao_compat.html](../../../_assets/assi_execucao_compat.html).
 
 > [!TIP] Lógica de Funcionamento e Valor Forense
 > - **Porque existe (Sistema)**: Para que programas antigos (Windows 95/XP ou 32 bits) funcionem em sistemas modernos de 64 bits (Windows 10/11), o Windows divide o problema em 5 camadas: 1) `WOW64` traduz 32$\to$64 bits; 2) `Shims` (`sysmain.sdb`) intercetam APIs; 3) `ShimCache` guarda em RAM se o binário precisa de shims para não reler a base `sysmain.sdb` sempre que o ficheiro é visto; 4) `PCA` (`PcaSvc`) deteta crashes em tempo de execução; e 5) `AmCache` inventaria binários e drivers a cada 24h para preparar *upgrades* do Windows.

@@ -21,12 +21,12 @@ aliases:
   - Ficha Prática 03
   - Questionário Execução e Compatibilidade
   - Lab Prefetch ShimCache AmCache
-atualizado: 2026-10-13
+atualizado: 2026-11-21
 ---
 
 # Ficha Prática e Questionário — Execução e Compatibilidade (Prefetch, ShimCache e AmCache)
 
-Guião prático de consolidação laboratorial e questionário de avaliação para os **Blocos 09, 10 e 11** do Capítulo 1 (*Volume Shadow Service, Prefetch e SysMain, ShimCache e AmCache — Fichas Laboratoriais 3, 4 e 5*).
+Guião prático de consolidação laboratorial e questionário de avaliação para os **Blocos 09, 10 e 11** do Capítulo 1 (*Volume Shadow Service, Prefetch e SysMain, ShimCache e AmCache — Fichas Laboratoriais 3, 4 e 5*). Para treino interativo, abre [assi_execucao_compat.html](../../../_assets/assi_execucao_compat.html).
 
 ---
 
@@ -127,6 +127,17 @@ AmcacheParser.exe -f "C:\Forensics\Amcache.hve" -i --csv "C:\Forensics\Amcache_E
 **3. Validação contra bases de Threat Intelligence:**
 
 * Copiar o hash SHA-1 de uma entrada desconhecida e pesquisar na API ou interface do **VirusTotal**.
+
+### Exercício 5: Bases de Dados SQLite 3 da AmCache e `Handle` (Ficha 05 — Secção 3)
+
+No Windows 11 recente, além do `Amcache.hve`, existem bases **SQLite 3** em `%WINDIR%\AppCompat\Programs\`:
+
+1. **Inspeção em `DB Browser for SQLite`**: abrir `InventoryApplicationShortcut.db` e converter o campo `LastModified` (Windows FILETIME) para data legível:
+   ```sql
+   SELECT datetime((LastModified - 116444736000000000) / 10000000, 'unixepoch') AS Timestamp, *
+   FROM InventoryApplicationShortcut_0;
+   ```
+2. **Identificar bloqueios de ficheiro com `Handle` (Sysinternals)**: correr `handle.exe` em consola de administrador para determinar quais os PIDs dos processos que mantêm aberta a base de dados do AmCache (explicando porque a cópia direta falha num sistema *live*).
 
 ---
 

@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-1"
+        "matched_term": "SHA-3"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -5598,7 +5598,7 @@
         "Questionário Execução e Compatibilidade",
         "Lab Prefetch ShimCache AmCache"
       ],
-      "summary": "Guião prático de consolidação laboratorial e questionário de avaliação para os Blocos 09, 10 e 11 do Capítulo 1 (Volume Shadow Service, Prefetch e SysMain, ShimCache e AmCache — Fichas Laboratoriais 3, 4 e 5).",
+      "summary": "Guião prático de consolidação laboratorial e questionário de avaliação para os Blocos 09, 10 e 11 do Capítulo 1 (Volume Shadow Service, Prefetch e SysMain, ShimCache e AmCache — Fichas Laboratoriais 3, 4 e 5). Para...",
       "out_links": [
         "00 ASSI",
         "AmCache - Arquitetura, Hives e Evolução para SQLite",

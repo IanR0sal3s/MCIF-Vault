@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador Forense — Execução vs. Existência (Prefetch, ShimCache, AmCache)</title>
+  <style>
+    :root {
+      --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --muted: #475569;
+      --border: #cbd5e1; --primary: #2563eb; --primary-fg: #ffffff;
+      --ok: #059669; --warn: #d97706; --err: #dc2626; --chip: #f1f5f9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --muted: #94a3b8;
+        --border: #334155; --primary: #3b82f6; --primary-fg: #ffffff;
+        --ok: #10b981; --warn: #f59e0b; --err: #ef4444; --chip: #0f172a;
+      }
+    }
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+    body { margin: 0; padding: 24px; background: var(--bg); color: var(--text); }
+    .container { max-width: 980px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    h1 { margin: 0; font-size: 18px; }
+    .sub { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+    .tabs { display: flex; gap: 6px; background: var(--chip); padding: 4px; border-radius: 10px; border: 1px solid var(--border); }
+    button { cursor: pointer; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 7px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; transition: border-color .15s; }
+    button:hover { border-color: var(--primary); }
+    button.active { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
+    .panel { display: none; padding-top: 16px; }
+    .panel.active { display: block; }
+    .sc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 9px; margin-top: 10px; }
+    .sc-btn { text-align: left; padding: 11px 12px; border-radius: 10px; background: var(--bg); font-size: 13px; font-weight: 600; }
+    .sc-btn.hi { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); background: var(--card); }
+    .sc-sub { font-size: 11px; color: var(--muted); font-weight: 400; margin-top: 3px; }
+    .verdict { margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); font-size: 13px; }
+    .art-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 10px; margin-top: 12px; }
+    .art-card { border: 1px solid var(--border); border-radius: 10px; padding: 12px; background: var(--card); font-size: 12px; }
+    .art-card.ok { border-color: var(--ok); }
+    .art-card.warn { border-color: var(--warn); }
+    .art-card.err { border-color: var(--err); }
+    .art-name { font-weight: 700; font-size: 13px; margin-bottom: 6px; }
+    .pill { display: inline-block; padding: 2px 7px; border-radius: 99px; font-size: 11px; font-weight: 700; margin-bottom: 6px; color: #fff; }
+    .pill.ok { background: var(--ok); }
+    .pill.warn { background: var(--warn); }
+    .pill.err { background: var(--err); }
+    .quiz-card { margin-top: 12px; border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: var(--bg); }
+    .quiz-q { font-size: 15px; font-weight: 700; margin: 8px 0 12px; }
+    .opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px; }
+    .opt-btn { text-align: left; padding: 10px 12px; line-height: 1.35; }
+    .opt-btn.ok { background: var(--ok); color: #fff; border-color: var(--ok); }
+    .opt-btn.bad { background: var(--err); color: #fff; border-color: var(--err); }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 700; background: var(--chip); border: 1px solid var(--border); color: var(--muted); }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>Execução vs. Existência — Prefetch, ShimCache &amp; AmCache</h1>
+        <p class="sub">Simulador offline — ASSI Capítulo 1 (Blocos 10 e 11)</p>
+      </div>
+      <div class="tabs">
+        <button class="active" onclick="openTab('t1', this)">1. Correu ou só Existiu?</button>
+        <button onclick="openTab('t2', this)">2. Drill Rápido (10 Perguntas)</button>
+      </div>
+    </div>
+
+    <!-- TAB 1 -->
+    <div id="t1" class="panel active">
+      <p class="sub">Seleciona um cenário real em Windows 10/11 para ver imediatamente que artefactos ficam registados, quais provam execução e onde estão as armadilhas:</p>
+      <div class="sc-grid" id="scGrid"></div>
+      <div class="verdict" id="verdictBox"></div>
+      <div class="art-grid" id="artGrid"></div>
+    </div>
+
+    <!-- TAB 2 -->
+    <div id="t2" class="panel">
+      <div class="quiz-card">
+        <div class="row">
+          <div>
+            <span class="badge" id="qCounter">1 / 10</span>
+            <span class="badge" id="qScore" style="margin-left:6px;color:var(--ok)">Acertos: 0</span>
+          </div>
+          <div>
+            <button onclick="nextQ()">Próxima</button>
+            <button onclick="resetQuiz()">Baralhar</button>
+          </div>
+        </div>
+        <div class="quiz-q" id="qText"></div>
+        <div class="opts" id="qOpts"></div>
+        <div id="qFeedback" class="sub" style="margin-top:10px;font-weight:600"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openTab(id, btn) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    const SCENARIOS = [
+      {
+        title: '1. Binário copiado de USB (NUNCA executado)',
+        sub: 'Apenas copiado ou visto numa pasta no Explorer',
+        verdict: '<strong>Conclusão Pericial:</strong> Só existe prova de <strong>EXISTÊNCIA</strong>. Nunca concluir que o ficheiro correu apenas por aparecer na ShimCache ou AmCache!',
+        cards: [
+          { name: 'Prefetch (.pf)', st: 'err', lbl: 'Ausente', txt: 'Só é criado quando o processo arranca em CPU/RAM.' },
+          { name: 'UserAssist (ROT13)', st: 'err', lbl: 'Ausente', txt: 'Sem clique/execução via Explorer (cuidado: ver um .lnk numa pasta pode dar falso positivo).' },
+          { name: 'ShimCache (SYSTEM)', st: 'warn', lbl: 'Pode aparecer (Existência)', txt: 'No W10/11 não tem InsertFlag — prova apenas presença no disco/USB.' },
+          { name: 'AmCache (.hve / SQLite)', st: 'warn', lbl: 'Pode aparecer (Existência)', txt: 'Regista caminho + hash SHA-1 em UnassociatedFileEntries, mas não prova execução.' },
+          { name: 'SRUM (SRUDB.dat)', st: 'err', lbl: 'Ausente', txt: 'Sem consumo de CPU ou tráfego de rede.' }
+        ]
+      },
+      {
+        title: '2. Malware corrido via CMD e auto-apagado',
+        sub: 'Self-deleting malware lançado por linha de comandos',
+        verdict: '<strong>Conclusão Pericial:</strong> Prova forte de <strong>EXECUÇÃO</strong> via Prefetch (e SRUM), mesmo sem o .exe existir no disco — mas <strong>UserAssist fica cego</strong> porque foi via CLI!',
+        cards: [
+          { name: 'Prefetch (.pf)', st: 'ok', lbl: 'Prova Execução', txt: 'Permanece em C:\\Windows\\Prefetch com contador, até 8 datas e DLLs dos 1.ºs 10s (não diz o utilizador).' },
+          { name: 'UserAssist (ROT13)', st: 'err', lbl: 'Cego (CLI)', txt: 'Ignora execuções por cmd.exe, PowerShell ou tarefas agendadas.' },
+          { name: 'ShimCache (SYSTEM)', st: 'warn', lbl: 'Só após Shutdown', txt: 'Fica em RAM durante a sessão; persiste no hive SYSTEM no encerramento (sem hash).' },
+          { name: 'AmCache (.hve / SQLite)', st: 'ok', lbl: 'Hash SHA-1 (VirusTotal)', txt: 'Guarda o SHA-1 mesmo após o .exe ser apagado (procurar em UnassociatedFileEntries.csv).' },
+          { name: 'SRUM (SRUDB.dat)', st: 'ok', lbl: 'Prova Execução + Rede', txt: 'Regista CPU, bytes enviados/recebidos e SID do utilizador (atualizado periodicamente).' }
+        ]
+      },
+      {
+        title: '3. App GUI corrida + Corte de Energia (Hard Power-Off)',
+        sub: 'Utilizador clicou no Explorer e puxou o cabo da tomada 2 min depois',
+        verdict: '<strong>Conclusão Pericial:</strong> <strong>ShimCache perde a sessão atual!</strong> Já Prefetch (~10s) e UserAssist (~3s) ficaram gravados no disco.',
+        cards: [
+          { name: 'Prefetch (.pf)', st: 'ok', lbl: 'Persistido (~10s)', txt: 'Gravado em disco pelo SysMain ~10 segundos após o arranque do processo.' },
+          { name: 'UserAssist (ROT13)', st: 'ok', lbl: 'Persistido (GUI)', txt: 'Regista execução via Explorer, contador, tempo de foco e FILETIME64.' },
+          { name: 'ShimCache (SYSTEM)', st: 'err', lbl: 'Perdida (RAM)', txt: 'Estava apenas em memória RAM do kernel; sem shutdown limpo não houve flush para SYSTEM.' },
+          { name: 'AmCache (.hve / SQLite)', st: 'warn', lbl: 'Pode faltar', txt: 'População principal ocorre por tarefas agendadas (~24h) ou instalação.' },
+          { name: 'SRUM (SRUDB.dat)', st: 'warn', lbl: 'Incompleto', txt: 'Flush em disco é periódico (~1h); pode não incluir os últimos minutos.' }
+        ]
+      },
+      {
+        title: '4. Ficheiro executado em Partilha de Rede (UNC) ou USB',
+        sub: 'Ex.: \\\\servidor\\partilha\\ferramenta.exe',
+        verdict: '<strong>Conclusão Pericial:</strong> Prefetch guarda o Volume Serial Number; ShimCache e AmCache preservam caminhos UNC/USB mesmo após desconexão.',
+        cards: [
+          { name: 'Prefetch (.pf)', st: 'ok', lbl: 'Execução + Volume', txt: 'Guarda o nome, caminho/volume de origem e DLLs carregadas.' },
+          { name: 'UserAssist (ROT13)', st: 'warn', lbl: 'Só se GUI', txt: 'Regista apenas se lançado via Explorer; omite se lançado por CLI.' },
+          { name: 'ShimCache (SYSTEM)', st: 'warn', lbl: 'Caminho UNC/USB', txt: 'Regista caminhos locais, USB e UNC (após shutdown; sem hash).' },
+          { name: 'AmCache (.hve / SQLite)', st: 'ok', lbl: 'Caminho + SHA-1 + PnP', txt: 'Guarda SHA-1 do executável e ainda inventaria o dispositivo USB em DevicePnps.csv.' },
+          { name: 'SRUM (SRUDB.dat)', st: 'ok', lbl: 'Atividade de Rede', txt: 'Regista tráfego de rede associado ao binário e SID.' }
+        ]
+      },
+      {
+        title: '5. Atacante põe EnablePrefetcher = 0 no Registry (W11)',
+        sub: 'Tentativa anti-forense de desligar o Prefetch sem parar o serviço',
+        verdict: '<strong>Conclusão Pericial:</strong> <strong>Falha do atacante!</strong> No W10/11 o serviço SysMain repõe automaticamente o valor para 3.',
+        cards: [
+          { name: 'Prefetch (.pf)', st: 'ok', lbl: 'Continua Ativo!', txt: 'PfSvSuperfetchCheckAndEnable repõe EnablePrefetcher=3; só para com sc config/stop SysMain.' },
+          { name: 'UserAssist (ROT13)', st: 'ok', lbl: 'Sem impacto', txt: 'Independente do SysMain (só desativa com NoLog=1 em UserAssist\\Settings).' },
+          { name: 'ShimCache (SYSTEM)', st: 'warn', lbl: 'Sem impacto', txt: 'Independente do SysMain (usa PcaSvc e sysmain.sdb — não confundir nomes!).' },
+          { name: 'AmCache (.hve / SQLite)', st: 'ok', lbl: 'Sem impacto', txt: 'Independente do SysMain; continua a recolher SHA-1 e inventário.' },
+          { name: 'SRUM (SRUDB.dat)', st: 'ok', lbl: 'Sem impacto', txt: 'Serviço independente (DPS / Diagnostic Policy Service).' }
+        ]
+      },
+      {
+        title: '6. Sistema Windows 11 recente (>25H2)',
+        sub: 'Evolução de AmCache para SQLite 3 + Prefetch MAM',
+        verdict: '<strong>Conclusão Pericial:</strong> Além de Amcache.hve, inspecionar as novas bases <strong>SQLite 3</strong> em C:\\Windows\\AppCompat\\Programs\\ e converter FILETIME em SQL!',
+        cards: [
+          { name: 'Prefetch (.pf)', st: 'ok', lbl: 'Formato MAM (1024)', txt: 'Comprimido em MAM\\x04 (requer PECmd para descomprimir); máx. 1024 ficheiros, 8 datas.' },
+          { name: 'UserAssist (ROT13)', st: 'ok', lbl: '72 bytes (NTUSER)', txt: 'Mantém estrutura de 72 bytes, ROT13 e GUIDs estáticos.' },
+          { name: 'ShimCache (SYSTEM)', st: 'warn', lbl: '1024 entradas (sem flag)', txt: 'Sem InsertFlag; coluna Executed do AppCompatCacheParser não é fiável.' },
+          { name: 'AmCache (SQLite 3)', st: 'ok', lbl: 'DeviceCensus / Inventory*.db', txt: 'Bases SQLite 3 com timestamps FILETIME: (LastModified - 116444736000000000) / 10000000.' },
+          { name: 'SRUM (SRUDB.dat)', st: 'ok', lbl: 'Base ESE ativa', txt: 'Continua em C:\\Windows\\System32\\sru\\SRUDB.dat.' }
+        ]
+      }
+    ];
+
+    function renderScenarios() {
+      const grid = document.getElementById('scGrid');
+      SCENARIOS.forEach((sc, i) => {
+        const b = document.createElement('button');
+        b.className = 'sc-btn' + (i === 0 ? ' hi' : '');
+        b.innerHTML = sc.title + '<div class="sc-sub">' + sc.sub + '</div>';
+        b.onclick = () => selectSc(i, b);
+        grid.appendChild(b);
+      });
+      selectSc(0, grid.children[0]);
+    }
+    function selectSc(i, btn) {
+      document.querySelectorAll('.sc-btn').forEach(b => b.classList.remove('hi'));
+      btn.classList.add('hi');
+      const sc = SCENARIOS[i];
+      document.getElementById('verdictBox').innerHTML = sc.verdict;
+      const ag = document.getElementById('artGrid');
+      ag.innerHTML = '';
+      sc.cards.forEach(c => {
+        const d = document.createElement('div');
+        d.className = 'art-card ' + c.st;
+        d.innerHTML = '<div class="art-name">' + c.name + '</div><span class="pill ' + c.st + '">' + c.lbl + '</span><div>' + c.txt + '</div>';
+        ag.appendChild(d);
+      });
+    }
+
+    // --- TAB 2: QUIZ ---
+    const QUESTIONS = [
+      { q: 'Qual a diferença entre sysmain.sdb e o serviço SysMain?', a: 'sysmain.sdb é a base de Shims de compatibilidade; SysMain é o serviço (antigo SuperFetch) que cria os ficheiros .pf do Prefetch', d: ['São dois nomes para o mesmo serviço', 'sysmain.sdb guarda os ficheiros .pf e SysMain guarda o AmCache', 'SysMain é a base de dados SQLite do Windows 11'] },
+      { q: 'Onde vive a ShimCache durante a sessão ativa e quando é gravada no hive SYSTEM?', a: 'Vive em memória RAM e só é gravada em SYSTEM no encerramento (shutdown/reboot)', d: ['É gravada em tempo real no NTUSER.DAT', 'Vive no Amcache.hve e atualiza a cada 24h', 'É gravada em C:\\Windows\\Prefetch ao fim de 10 segundos'] },
+      { q: 'Qual destes artefactos guarda o hash criptográfico SHA-1 dos executáveis?', a: 'AmCache (Amcache.hve)', d: ['ShimCache (AppCompatCache)', 'Prefetch (.pf)', 'UserAssist (ROT13)'] },
+      { q: 'No Windows 10/11, a coluna Executed=True do AppCompatCacheParser prova que o binário correu?', a: 'Não — a InsertFlag foi removida no W10/11; a ShimCache só prova existência', d: ['Sim, em todas as versões do Windows', 'Sim, mas apenas para ficheiros em C:\\Windows', 'Sim, desde que o computador não tenha sido reiniciado'] },
+      { q: 'O que representa o timestamp LastModifiedTimeUTC numa entrada da ShimCache?', a: 'A data de última modificação do ficheiro no disco (NTFS), NÃO a data de execução', d: ['A data exata em que o programa foi executado', 'A data do último shutdown do Windows', 'A data em que o ficheiro entrou na RAM'] },
+      { q: 'No AmcacheParser, qual dos CSVs é prioritário para caçar malware portátil / droppers?', a: 'UnassociatedFileEntries.csv', d: ['ProgramEntries.csv', 'DeviceContainers.csv', 'DriverPackages.csv'] },
+      { q: 'Qual o limite máximo de ficheiros .pf no Windows 10/11 e quantas datas de execução guarda cada .pf?', a: 'Máximo 1024 ficheiros .pf; últimas 8 execuções por ficheiro', d: ['Máximo 128 ficheiros .pf; última execução apenas', 'Máximo 512 ficheiros .pf; últimas 16 execuções', 'Sem limite de ficheiros; todas as execuções'] },
+      { q: 'Qual a evolução histórica dos ficheiros do AmCache do Windows 7 até ao Windows 11 (>25H2)?', a: 'RecentFileCache.bcf (W7) -> Amcache.hve REGF (W8–11) -> SQLite 3 (W11 >25H2)', d: ['Amcache.hve -> RecentFileCache.bcf -> Prefetch MAM', 'SYSTEM -> NTUSER.DAT -> UsrClass.dat', 'SCCA -> MAM -> REGF'] },
+      { q: 'Qual a única forma eficaz de desativar o Prefetch no Windows 10/11?', a: 'Parar e desativar o serviço SysMain (sc config SysMain start=disabled + sc stop SysMain)', d: ['Colocar EnablePrefetcher = 0 no Registry', 'Apagar a pasta C:\\Windows\\Prefetch', 'Desativar o serviço PcaSvc'] },
+      { q: 'Porque falha o comando copy sobre C:\\Windows\\AppCompat\\Programs\\Amcache.hve num sistema live?', a: 'O ficheiro está bloqueado em acesso exclusivo pelo kernel — requer VSS ou Raw Disk Access', d: ['Porque o ficheiro está cifrado com BitLocker', 'Porque só existe em RAM até ao shutdown', 'Porque tem atributo apenas de leitura'] }
+    ];
+
+    let deck = [], idx = 0, score = 0, answered = false;
+    function shuffle(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+      return a;
+    }
+    function resetQuiz() { deck = shuffle(QUESTIONS); idx = 0; score = 0; renderQ(); }
+    function renderQ() {
+      answered = false;
+      const item = deck[idx];
+      document.getElementById('qCounter').textContent = (idx + 1) + ' / ' + deck.length;
+      document.getElementById('qScore').textContent = 'Acertos: ' + score;
+      document.getElementById('qText').textContent = item.q;
+      document.getElementById('qFeedback').textContent = '';
+      const opts = shuffle([item.a, ...item.d]);
+      const box = document.getElementById('qOpts');
+      box.innerHTML = '';
+      opts.forEach(text => {
+        const b = document.createElement('button');
+        b.className = 'opt-btn';
+        b.textContent = text;
+        b.onclick = () => {
+          if (answered) return;
+          answered = true;
+          if (text === item.a) { score++; b.classList.add('ok'); document.getElementById('qFeedback').textContent = 'Correto!'; }
+          else {
+            b.classList.add('bad');
+            document.getElementById('qFeedback').textContent = 'Incorreto. Resposta certa: ' + item.a;
+            Array.from(box.children).forEach(btn => { if (btn.textContent === item.a) btn.classList.add('ok'); });
+          }
+          document.getElementById('qScore').textContent = 'Acertos: ' + score;
+        };
+        box.appendChild(b);
+      });
+    }
+    function nextQ() { idx = (idx + 1) % deck.length; renderQ(); }
+
+    renderScenarios();
+    resetQuiz();
+  </script>
+</body>
+</html>
