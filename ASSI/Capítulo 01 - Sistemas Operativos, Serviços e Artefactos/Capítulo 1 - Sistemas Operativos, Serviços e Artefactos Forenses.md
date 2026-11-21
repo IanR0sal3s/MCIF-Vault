@@ -172,8 +172,10 @@ As notas encontram-se estruturadas por blocos temáticos numerados na pasta `ASS
 
 ---
 
-> [!TIP] Folha de Consulta Rápida — Parte 2 (Execução e Sistema)
-> Para uma síntese rápida de todos os caminhos de artefactos, motores (ESE, SQLite, CFB), assinaturas binárias (MAM, SCCA, 4C 00 00 00, NP, uLEB128), matriz cronológica de ativação e comandos CLI, consulta a **[[Cheat Sheet - Artefactos de Execução e Sistema no Windows]]**.
+> [!TIP] Folha de Consulta Rápida e Simuladores Interativos — Parte 2
+> * **Resumo rápido**: consulta a **[[Cheat Sheet - Artefactos de Execução e Sistema no Windows]]** (caminhos, motores ESE/SQLite/CFB, assinaturas mágicas, cronologia e comandos CLI).
+> * **Simulador Execução vs. Existência** (Bloco 11): [`_assets/assi_execucao_compat.html`](../../_assets/assi_execucao_compat.html)
+> * **Simulador `uLEB128` e Corte de Energia** (Bloco 15): [`_assets/assi_uleb128_cronologia.html`](../../_assets/assi_uleb128_cronologia.html)
 
 ## 15. Aplicações Modernas e Matriz Forense (15 - Aplicações Modernas e Matriz Forense)
 

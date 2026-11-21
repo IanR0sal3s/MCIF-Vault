@@ -34,6 +34,9 @@ A **Matriz de Correlação Forense** articula os artefactos do Windows 10/11 com
 >   * **Ordem Temporal de Persistência em Disco**: **`UserAssist`** ($\approx 3\text{s}$) $\longrightarrow$ **`Prefetch`** ($\approx 10\text{s}$) $\longrightarrow$ **`SRUM`** ($\approx 1\text{h}$, ao minuto 30) $\longrightarrow$ **`Amcache`** (após tarefa agendada `Compatibility Appraiser`) $\longrightarrow$ **`ShimCache`** (**apenas no Shutdown / Restart**).
 >   * **Consequência de Corte Abrupto de Energia**: Se um computador for desligado puxando o cabo de alimentação 5 minutos após a execução de um malware, o **`UserAssist`** e o **`Prefetch`** já terão registado a execução em disco, mas a **`ShimCache`** em disco (hive `SYSTEM`) e o **`SRUM`** (`SRUDB.dat`) ainda não terão comitado os dados dessa sessão!
 
+> [!INFO] Simulador Interativo (Browser)
+> Testa diferentes momentos de corte de energia ($T+1\text{s}$ até *Shutdown* ordeiro) e vê que artefactos sobrevivem em disco em [`_assets/assi_uleb128_cronologia.html`](../../../_assets/assi_uleb128_cronologia.html).
+
 ---
 
 ## 1. Cronologia do "Tempo de Ativação" dos Artefactos de Execução

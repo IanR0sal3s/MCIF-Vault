@@ -109,7 +109,7 @@ Para converter os ficheiros `{GUID}.bin` em relatórios legíveis, existem duas 
 flowchart LR
     BinFiles["Ficheiros TabState\\*.bin<br/>(Bytes brutos NP + uLEB128)"] --> ParserChoice{"Ferramenta de Extração"}
     
-    ParserChoice --> AlFaifi["<b>notepad_parser</b> (Python)<br/>AbdulRhman Alfaifi"]
+    ParserChoice --> AlFaifi["<b>notepad_parser</b> (Rust)<br/>AbdulRhman Alfaifi"]
     ParserChoice --> Ogmini["<b>Notepad-State-Library</b> (C#)<br/>ogmini"]
 
     AlFaifi --> OutJSON["Exportação JSONL / CSV<br/>(info_notepad_data.jsonl)"]
@@ -117,7 +117,7 @@ flowchart LR
 ```
 
 ### 1. `notepad_parser` (AbdulRhman Alfaifi)
-Utilitário em Python de elevado desempenho e estabilidade para extração automatizada:
+Utilitário desenvolvido em **Rust** de elevado desempenho e estabilidade para extração automatizada:
 
 ```cmd
 REM Exportar o histórico do Bloco de Notas para formato JSONL estruturado

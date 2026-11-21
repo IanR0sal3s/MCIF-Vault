@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador Forense — uLEB128 e Cronologia de Ativação (ASSI Cap. 1)</title>
+  <style>
+    :root {
+      --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --muted: #475569;
+      --border: #cbd5e1; --primary: #2563eb; --primary-fg: #ffffff;
+      --ok: #059669; --warn: #d97706; --err: #dc2626; --chip: #f1f5f9;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --muted: #94a3b8;
+        --border: #334155; --primary: #3b82f6; --primary-fg: #ffffff;
+        --ok: #10b981; --warn: #f59e0b; --err: #ef4444; --chip: #0f172a;
+      }
+    }
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+    body { margin: 0; padding: 24px; background: var(--bg); color: var(--text); }
+    .container { max-width: 980px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    h1 { margin: 0; font-size: 18px; }
+    .sub { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+    .tabs { display: flex; flex-wrap: wrap; gap: 6px; background: var(--chip); padding: 4px; border-radius: 10px; border: 1px solid var(--border); }
+    button { cursor: pointer; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 7px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; transition: border-color .15s; }
+    button:hover { border-color: var(--primary); }
+    button.active { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
+    .panel { display: none; padding-top: 16px; }
+    .panel.active { display: block; }
+    .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+    .box { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+    .box h2 { margin: 0 0 8px; font-size: 15px; }
+    .label { font-size: 12px; color: var(--muted); margin-bottom: 6px; display: block; }
+    input[type="text"], input[type="number"] {
+      width: 100%; padding: 9px 11px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--card); color: var(--text); font-family: var(--mono); font-size: 14px;
+    }
+    .presets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .presets button { font-size: 12px; padding: 4px 9px; font-family: var(--mono); }
+    .byte-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .byte-card { border: 1px solid var(--border); background: var(--card); border-radius: 10px; padding: 10px 12px; min-width: 155px; }
+    .byte-hex { font-family: var(--mono); font-size: 18px; font-weight: 700; }
+    .bits { font-family: var(--mono); font-size: 13px; margin-top: 4px; display: flex; gap: 4px; align-items: center; }
+    .msb { padding: 1px 6px; border-radius: 5px; font-weight: 700; color: #fff; }
+    .msb.cont { background: var(--warn); }
+    .msb.end { background: var(--ok); }
+    .payload { padding: 1px 6px; border-radius: 5px; background: var(--chip); border: 1px solid var(--border); }
+    .meta { font-size: 11px; color: var(--muted); margin-top: 5px; line-height: 1.35; }
+    .result-bar { margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: var(--card); border: 1px solid var(--border); font-family: var(--mono); font-size: 13px; }
+    .err-msg { color: var(--err); font-size: 13px; margin-top: 8px; font-weight: 600; }
+    .sc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-top: 10px; }
+    .sc-btn { text-align: left; padding: 10px 11px; border-radius: 10px; background: var(--bg); font-size: 12px; font-weight: 600; }
+    .sc-btn.hi { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); background: var(--card); }
+    .sc-sub { font-size: 11px; color: var(--muted); font-weight: 400; margin-top: 3px; }
+    .art-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-top: 14px; }
+    .art-card { border: 1px solid var(--border); border-radius: 10px; padding: 12px; background: var(--card); font-size: 12px; }
+    .art-card.ok { border-color: var(--ok); }
+    .art-card.warn { border-color: var(--warn); }
+    .art-card.err { border-color: var(--err); }
+    .art-name { font-weight: 700; font-size: 13px; margin-bottom: 5px; }
+    .pill { display: inline-block; padding: 2px 7px; border-radius: 99px; font-size: 11px; font-weight: 700; margin-bottom: 6px; color: #fff; }
+    .pill.ok { background: var(--ok); }
+    .pill.warn { background: var(--warn); }
+    .pill.err { background: var(--err); }
+    .verdict { margin-top: 12px; padding: 12px 14px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); font-size: 13px; line-height: 1.45; }
+    .quiz-card { margin-top: 12px; border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: var(--bg); }
+    .quiz-q { font-size: 15px; font-weight: 700; margin: 8px 0 12px; }
+    .opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px; }
+    .opt-btn { text-align: left; padding: 10px 12px; line-height: 1.35; }
+    .opt-btn.ok { background: var(--ok); color: #fff; border-color: var(--ok); }
+    .opt-btn.bad { background: var(--err); color: #fff; border-color: var(--err); }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 700; background: var(--chip); border: 1px solid var(--border); color: var(--muted); }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+    code { font-family: var(--mono); font-size: 12px; background: var(--chip); padding: 1px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>uLEB128 &amp; Cronologia de Ativação Forense</h1>
+        <p class="sub">ASSI · Capítulo 1 · Bloco 15 (Notepad W11 TabState, uLEB128 e Matriz de Persistência)</p>
+      </div>
+      <div class="tabs">
+        <button class="active" data-tab="uleb">Conversor uLEB128</button>
+        <button data-tab="timeline">Corte de Energia (T0 → Shutdown)</button>
+        <button data-tab="quiz">Treino Exame (8 Q)</button>
+      </div>
+    </div>
+
+    <!-- TAB 1: uLEB128 -->
+    <div id="tab-uleb" class="panel active">
+      <div class="grid2">
+        <div class="box">
+          <h2>1. Codificar: Decimal → uLEB128</h2>
+          <label class="label" for="decInput">Inteiro sem sinal (decimal, suporta até 64-bit FILETIME):</label>
+          <input id="decInput" type="text" value="301" placeholder="Ex.: 301" />
+          <div class="presets">
+            <button data-dec="111">111 (FilePathLen)</button>
+            <button data-dec="127">127 (máx. 1B)</button>
+            <button data-dec="128">128 (mín. 2B)</button>
+            <button data-dec="301">301 (slide aula)</button>
+            <button data-dec="65535">65535 (3B)</button>
+          </div>
+          <div id="encOut"></div>
+        </div>
+
+        <div class="box">
+          <h2>2. Descodificar: Hex uLEB128 → Decimal</h2>
+          <label class="label" for="hexInput">Bytes em hexadecimal separados por espaço:</label>
+          <input id="hexInput" type="text" value="AD 02" placeholder="Ex.: AD 02" />
+          <div class="presets">
+            <button data-hex="6F">6F</button>
+            <button data-hex="80 01">80 01</button>
+            <button data-hex="AD 02">AD 02</button>
+            <button data-hex="FF FF 03">FF FF 03</button>
+            <button data-hex="6F 43 00">6F 43 00 (pára no 1.º!)</button>
+          </div>
+          <div id="decOut"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: TIMELINE COLD PULL -->
+    <div id="tab-timeline" class="panel">
+      <p class="sub" style="margin-top:0">Seleciona o instante em que a máquina é apreendida ou perde energia após a execução de um binário GUI em <strong>T = 0</strong> (ex.: 14h10). Observa quais os artefactos que já foram gravados em disco vs. perdidos em RAM:</p>
+      <div class="sc-grid" id="scGrid"></div>
+      <div class="verdict" id="tlVerdict"></div>
+      <div class="art-grid" id="artGrid"></div>
+    </div>
+
+    <!-- TAB 3: QUIZ -->
+    <div id="tab-quiz" class="panel">
+      <div class="row">
+        <span class="badge" id="qCounter">Pergunta 1 / 8</span>
+        <span class="badge" id="qScore">Pontuação: 0</span>
+        <button id="qReset">Reiniciar</button>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-q" id="qText"></div>
+        <div class="opts" id="qOpts"></div>
+        <div class="verdict" id="qExp" style="display:none"></div>
+        <div style="margin-top:12px; text-align:right">
+          <button id="qNext" style="display:none">Próxima pergunta →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tabs
+    document.querySelectorAll('.tabs button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // uLEB128 Encoder
+    function renderEncode() {
+      const raw = document.getElementById('decInput').value.trim();
+      const out = document.getElementById('encOut');
+      if (!/^\d+$/.test(raw)) {
+        out.innerHTML = '<div class="err-msg">Introduz um número inteiro não-negativo válido.</div>';
+        return;
+      }
+      let n = BigInt(raw);
+      const binStr = n.toString(2);
+      const bytes = [];
+      let tmp = n;
+      do {
+        let chunk = Number(tmp & 0x7Fn);
+        tmp >>= 7n;
+        const cont = tmp > 0n ? 1 : 0;
+        const byteVal = chunk | (cont << 7);
+        bytes.push({ byteVal, chunk, cont });
+      } while (tmp > 0n);
+
+      const hexSeq = bytes.map(b => b.byteVal.toString(16).toUpperCase().padStart(2, '0')).join(' ');
+      let html = `<div class="result-bar"><strong>Hex uLEB128:</strong> ${hexSeq} &nbsp;(${bytes.length} byte${bytes.length > 1 ? 's' : ''})<br><span style="color:var(--muted)">Binário original: ${binStr} (${binStr.length} bit${binStr.length > 1 ? 's' : ''})</span></div>`;
+      html += '<div class="byte-row">';
+      bytes.forEach((b, i) => {
+        const hex = '0x' + b.byteVal.toString(16).toUpperCase().padStart(2, '0');
+        const p7 = b.chunk.toString(2).padStart(7, '0');
+        html += `<div class="byte-card">
+          <div class="byte-hex">Byte ${i + 1}: ${hex}</div>
+          <div class="bits">
+            <span class="msb ${b.cont ? 'cont' : 'end'}">${b.cont}</span>
+            <span class="payload">${p7}</span>
+          </div>
+          <div class="meta">MSB=${b.cont} (${b.cont ? 'continua' : 'último byte'})<br>Dados=${b.chunk} × 128<sup>${i}</sup></div>
+        </div>`;
+      });
+      html += '</div>';
+      out.innerHTML = html;
+    }
+
+    // uLEB128 Decoder
+    function renderDecode() {
+      const raw = document.getElementById('hexInput').value.trim();
+      const out = document.getElementById('decOut');
+      if (!raw) { out.innerHTML = ''; return; }
+      const tokens = raw.split(/[\s,]+/).filter(Boolean);
+      if (!tokens.every(t => /^[0-9a-fA-F]{1,2}$/.test(t))) {
+        out.innerHTML = '<div class="err-msg">Formato inválido. Usa bytes hexadecimais (ex.: AD 02).</div>';
+        return;
+      }
+      let result = 0n;
+      let shift = 0n;
+      let terminated = false;
+      const steps = [];
+      let usedCount = 0;
+
+      for (let i = 0; i < tokens.length; i++) {
+        const val = parseInt(tokens[i], 16);
+        const cont = (val & 0x80) ? 1 : 0;
+        const payload = val & 0x7F;
+        result |= BigInt(payload) << shift;
+        steps.push({ idx: i + 1, hex: val.toString(16).toUpperCase().padStart(2, '0'), val, cont, payload, power: i });
+        usedCount++;
+        if (cont === 0) {
+          terminated = true;
+          break;
+        }
+        shift += 7n;
+      }
+
+      let html = '';
+      if (!terminated) {
+        html += '<div class="err-msg">Atenção: o último byte ainda tem Bit 7 = 1 (sequência incompleta!).</div>';
+      } else {
+        const extra = tokens.length - usedCount;
+        const extraNote = extra > 0 ? `<br><span style="color:var(--warn)">Auto-delimitado: parou no byte ${usedCount} (ignorou ${extra} byte(s) do campo seguinte).</span>` : '';
+        const sumExpr = steps.map(s => `${s.payload}×128^${s.power}`).join(' + ');
+        html += `<div class="result-bar"><strong>Decimal:</strong> ${result.toString()}<br><span style="color:var(--muted)">Cálculo: ${sumExpr} = ${result.toString()}</span>${extraNote}</div>`;
+      }
+      html += '<div class="byte-row">';
+      steps.forEach(s => {
+        const p7 = s.payload.toString(2).padStart(7, '0');
+        html += `<div class="byte-card">
+          <div class="byte-hex">Byte ${s.idx}: 0x${s.hex}</div>
+          <div class="bits">
+            <span class="msb ${s.cont ? 'cont' : 'end'}">${s.cont}</span>
+            <span class="payload">${p7}</span>
+          </div>
+          <div class="meta">MSB=${s.cont} (${s.cont ? 'segue' : 'fim'})<br>0x${s.hex} &amp; 0x7F = ${s.payload}</div>
+        </div>`;
+      });
+      html += '</div>';
+      out.innerHTML = html;
+    }
+
+    document.getElementById('decInput').addEventListener('input', renderEncode);
+    document.getElementById('hexInput').addEventListener('input', renderDecode);
+    document.querySelectorAll('[data-dec]').forEach(b => b.addEventListener('click', () => {
+      document.getElementById('decInput').value = b.dataset.dec;
+      renderEncode();
+    }));
+    document.querySelectorAll('[data-hex]').forEach(b => b.addEventListener('click', () => {
+      document.getElementById('hexInput').value = b.dataset.hex;
+      renderDecode();
+    }));
+    renderEncode();
+    renderDecode();
+
+    // TAB 2: Cold Pull Timeline Scenarios
+    const SCENARIOS = [
+      {
+        id: 't1', title: 'T + 1 seg (Corte imediato)', sub: '14h10m01s · Cold pull',
+        verdict: 'Aos 1 segundo após o arranque, <strong>nenhum</strong> dos cinco artefactos de execução concluiu ainda o flush para disco. Apenas a aquisição de memória RAM capturaria o processo.',
+        states: {
+          ua: ['err', 'Não persistido', 'Aguarda ~3s de foco GUI no Explorer para atualizar NTUSER.DAT.'],
+          pf: ['err', 'Não persistido', 'SysMain monitoriza os primeiros 10s antes de gravar o .pf.'],
+          srum: ['err', 'Só em RAM/Reg', 'Próxima descarga para SRUDB.dat só ao minuto 30 (14h30).'],
+          amc: ['err', 'Não persistido', 'Aguarda tarefa agendada diária Compatibility Appraiser.'],
+          shim: ['err', 'Perdida (RAM)', 'Só descarrega para SYSTEM no shutdown ordeiro.']
+        }
+      },
+      {
+        id: 't5', title: 'T + 5 seg (Corte rápido)', sub: '14h10m05s · Cold pull',
+        verdict: 'Aos 5 segundos, o <strong>UserAssist</strong> (se lançado via GUI) já registou em disco, mas o <strong>Prefetch</strong> ainda não completou a janela de 10 segundos.',
+        states: {
+          ua: ['ok', 'Em disco', 'NTUSER.DAT atualizado (~3s após clique GUI no Explorer).'],
+          pf: ['err', 'Não persistido', 'Faltam 5s para concluir a janela de observação de 10s.'],
+          srum: ['err', 'Só em RAM/Reg', 'Descarga horária só às 14h30; corte deixa SRUDB.dat sem esta sessão.'],
+          amc: ['err', 'Não persistido', 'Aguarda tarefa agendada (~24h).'],
+          shim: ['err', 'Perdida (RAM)', 'Corte abrupto impede flush da RAM do kernel para SYSTEM.']
+        }
+      },
+      {
+        id: 't2m', title: 'T + 2 min (Busca policial)', sub: '14h12 · Puxar da tomada',
+        verdict: 'Cenário clássico de exame! <strong>UserAssist</strong> e <strong>Prefetch</strong> já estão em disco; <strong>SRUM</strong> (antes das 14h30), <strong>Amcache</strong> e <strong>ShimCache</strong> não terão a execução em disco (e o SRUDB.dat ficará em <em>Dirty Shutdown</em>).',
+        states: {
+          ua: ['ok', 'Em disco', 'Persistido em NTUSER.DAT (ROT13) desde T+3s.'],
+          pf: ['ok', 'Em disco', 'Ficheiro .pf gravado em C:\\Windows\\Prefetch após T+10s.'],
+          srum: ['err', 'Não descarregado', 'Corte às 14h12 ocorre antes do minuto 30 (14h30). Base fica Dirty Shutdown.'],
+          amc: ['err', 'Não persistido', 'Binário portátil não correu ainda a tarefa agendada diária.'],
+          shim: ['err', 'Perdida (RAM)', 'Corte de energia descarta a lista mantida na RAM do kernel.']
+        }
+      },
+      {
+        id: 't45m', title: 'T + 45 min (Após min. 30)', sub: '14h55 · Cold pull',
+        verdict: 'Como o relógio já cruzou o <strong>minuto 30 (14h30)</strong>, o <strong>SRUM</strong> já descarregou os dados das 14h10 para <code>SRUDB.dat</code>! Mas a <strong>ShimCache</strong> desta sessão continua perdida sem shutdown ordeiro.',
+        states: {
+          ua: ['ok', 'Em disco', 'Persistido em NTUSER.DAT.'],
+          pf: ['ok', 'Em disco', 'Ficheiro .pf criado em %WINDIR%\\Prefetch.'],
+          srum: ['ok', 'Em disco (Dirty)', 'Flush feito às 14h30! Reparar com esentutl /r sru /d antes do SrumECmd.'],
+          amc: ['warn', 'Depende da tarefa', 'Só se tiver ocorrido instalação MSI ou tarefa agendada no intervalo.'],
+          shim: ['err', 'Perdida (RAM)', 'Sem shutdown ordeiro, a ShimCache em SYSTEM não tem esta sessão.']
+        }
+      },
+      {
+        id: 't24h', title: 'T + 24h (Sem reiniciar)', sub: 'Dia seguinte · Cold pull',
+        verdict: 'Após 24 horas sem reiniciar, a tarefa agendada <code>Microsoft Compatibility Appraiser</code> já atualizou o <strong>Amcache.hve</strong>, mas a <strong>ShimCache</strong> em disco continua sem o flush desta sessão.',
+        states: {
+          ua: ['ok', 'Em disco', 'Persistido em NTUSER.DAT.'],
+          pf: ['ok', 'Em disco', 'Ficheiro .pf criado em %WINDIR%\\Prefetch.'],
+          srum: ['ok', 'Em disco', 'Vários flushes horários já gravados em SRUDB.dat.'],
+          amc: ['ok', 'Em disco', 'Tarefa agendada diária populou Amcache.hve (com SHA-1).'],
+          shim: ['err', 'Perdida (RAM)', 'Continua apenas em RAM até haver shutdown/restart ordeiro.']
+        }
+      },
+      {
+        id: 'shut', title: 'Shutdown / Restart Ordeiro', sub: 'Encerramento normal do SO',
+        verdict: 'Num <strong>encerramento ordeiro</strong>, o Windows faz flush final do <strong>SRUM</strong> (em <em>Clean Shutdown</em>) e comita a <strong>ShimCache</strong> da RAM para o hive <code>SYSTEM</code>.',
+        states: {
+          ua: ['ok', 'Em disco', 'Persistido em NTUSER.DAT.'],
+          pf: ['ok', 'Em disco', 'Ficheiro .pf preservado em %WINDIR%\\Prefetch.'],
+          srum: ['ok', 'Em disco (Clean)', 'Flush final executado antes do shutdown (Clean Shutdown).'],
+          amc: ['warn', 'Se tarefa correu', 'Presente se a tarefa agendada ou instalador tiver corrido.'],
+          shim: ['ok', 'Em disco', 'Kernel gravou AppCompatCache no hive SYSTEM (prova existência).']
+        }
+      }
+    ];
+
+    const ART_META = [
+      ['ua', '1. UserAssist (~3s)'],
+      ['pf', '2. Prefetch (~10s)'],
+      ['srum', '3. SRUM (~1h · min. 30)'],
+      ['amc', '4. Amcache (schtask)'],
+      ['shim', '5. ShimCache (Shutdown)']
+    ];
+
+    function selectScenario(idx) {
+      document.querySelectorAll('#scGrid .sc-btn').forEach((b, i) => b.classList.toggle('hi', i === idx));
+      const sc = SCENARIOS[idx];
+      document.getElementById('tlVerdict').innerHTML = sc.verdict;
+      document.getElementById('artGrid').innerHTML = ART_META.map(([k, label]) => {
+        const [cls, badge, desc] = sc.states[k];
+        return `<div class="art-card ${cls}">
+          <div class="art-name">${label}</div>
+          <span class="pill ${cls}">${badge}</span>
+          <div>${desc}</div>
+        </div>`;
+      }).join('');
+    }
+
+    document.getElementById('scGrid').innerHTML = SCENARIOS.map((s, i) =>
+      `<button class="sc-btn" data-sc="${i}">${s.title}<div class="sc-sub">${s.sub}</div></button>`
+    ).join('');
+    document.querySelectorAll('#scGrid .sc-btn').forEach(b => b.addEventListener('click', () => selectScenario(+b.dataset.sc)));
+    selectScenario(2);
+
+    // TAB 3: Quiz
+    const QUIZ = [
+      {
+        q: 'Qual é o valor decimal da sequência uLEB128 "AD 02"?',
+        opts: ['301', '175', '557', '45'],
+        ans: 0,
+        exp: '0xAD (173) tem MSB=1 → payload = 173 − 128 = 45. 0x02 tem MSB=0 → payload = 2. Little-Endian base 128: 45 + 2×128 = 301.'
+      },
+      {
+        q: 'Qual é a codificação uLEB128 do número decimal 128?',
+        opts: ['80', '80 01', '01 80', '7F 01'],
+        ans: 1,
+        exp: '127 é o máximo em 1 byte (0x7F). 128 = 0 + 1×128 → Byte 1: MSB=1 + 0000000 = 0x80; Byte 2: MSB=0 + 0000001 = 0x01.'
+      },
+      {
+        q: 'Num ficheiro TabState do Notepad W11, o campo FilePathLength inicia em 6F 43 00 3A 00. Quantos bytes ocupa FilePathLength?',
+        opts: ['1 byte (valor 111)', '2 bytes (valor 8559)', '4 bytes fixos', '5 bytes'],
+        ans: 0,
+        exp: '0x6F = 111 < 128 (Bit 7 = 0). O uLEB128 termina imediatamente no 1.º byte! 43 00 3A 00 já é "C:" em UTF-16LE.'
+      },
+      {
+        q: 'Um PC Windows 11 executa um binário GUI às 14h10 e perde energia às 14h12 (corte abrupto). Que artefactos estão em disco?',
+        opts: ['UserAssist e Prefetch', 'ShimCache e SRUM', 'Todos os cinco', 'Apenas Amcache'],
+        ans: 0,
+        exp: 'UserAssist (~3s) e Prefetch (~10s) já foram gravados. SRUM só descarrega às 14h30 e ShimCache só no shutdown ordeiro.'
+      },
+      {
+        q: 'Qual é a ordem cronológica correta de persistência em disco após T = 0?',
+        opts: ['ShimCache → Prefetch → UserAssist → SRUM → Amcache', 'UserAssist → Prefetch → SRUM → Amcache → ShimCache', 'Prefetch → UserAssist → Amcache → ShimCache → SRUM', 'UserAssist → SRUM → Prefetch → ShimCache → Amcache'],
+        ans: 1,
+        exp: 'UserAssist (~3s) → Prefetch (~10s) → SRUM (~1h, min. 30) → Amcache (tarefa agendada) → ShimCache (shutdown).'
+      },
+      {
+        q: 'Nos ficheiros TabState\\{GUID}.bin do Bloco de Notas W11, quais são os 2 bytes mágicos iniciais e a codificação do texto?',
+        opts: ['4E 50 ("NP") e UTF-16LE', '4C 00 ("L") e UTF-8', '57 69 ("Wi") e ASCII', '72 65 ("re") e UTF-16BE'],
+        ans: 0,
+        exp: 'Assinatura 4E 50 ("NP"), texto em UTF-16LE (2 bytes/char), inteiros em uLEB128 e CRC32 em Big-Endian.'
+      },
+      {
+        q: 'Um ficheiro TabState tem TypeFlag = 0x00 no offset 0x03. O que significa?',
+        opts: ['Separador gravado em disco com hash SHA-256', 'Separador de rascunho nunca gravado em disco (unsaved tab)', 'Ficheiro corrompido sem CRC32', 'Separador fechado pelo utilizador'],
+        ans: 1,
+        exp: 'TypeFlag = 0x01 indica ficheiro gravado em disco (inclui FilePath, FileSize, LastWriteTimestamp e SHA-256); 0x00 indica rascunho não guardado.'
+      },
+      {
+        q: 'Qual das opções indica corretamente o que o SRUM regista vs. o que NÃO regista?',
+        opts: ['Regista argumentos da linha de comandos, mas não bytes de rede', 'Regista caminho, SID, CPU e bytes de rede, mas NÃO regista argumentos da linha de comandos', 'Regista apenas aplicações UWP mostradas no Task Manager', 'Só grava dados quando o utilizador ativa Win+V'],
+        ans: 1,
+        exp: 'O SRUM guarda caminho, SID, CPU, I/O e tráfego de rede durante 30–60 dias, mas não guarda argumentos de linha de comandos.'
+      }
+    ];
+
+    let qi = 0, score = 0, locked = false;
+    function renderQuiz() {
+      const item = QUIZ[qi];
+      locked = false;
+      document.getElementById('qCounter').textContent = `Pergunta ${qi + 1} / ${QUIZ.length}`;
+      document.getElementById('qScore').textContent = `Pontuação: ${score}`;
+      document.getElementById('qText').textContent = item.q;
+      document.getElementById('qExp').style.display = 'none';
+      document.getElementById('qNext').style.display = 'none';
+      document.getElementById('qOpts').innerHTML = item.opts.map((o, idx) =>
+        `<button class="opt-btn" data-idx="${idx}">${String.fromCharCode(65 + idx)}) ${o}</button>`
+      ).join('');
+      document.querySelectorAll('#qOpts .opt-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (locked) return;
+          locked = true;
+          const chosen = +btn.dataset.idx;
+          if (chosen === item.ans) { score++; btn.classList.add('ok'); }
+          else {
+            btn.classList.add('bad');
+            document.querySelector(`#qOpts .opt-btn[data-idx="${item.ans}"]`).classList.add('ok');
+          }
+          document.getElementById('qScore').textContent = `Pontuação: ${score}`;
+          const exp = document.getElementById('qExp');
+          exp.innerHTML = (chosen === item.ans ? '<strong>Correto!</strong> ' : '<strong>Incorreto.</strong> ') + item.exp;
+          exp.style.display = 'block';
+          const nextBtn = document.getElementById('qNext');
+          nextBtn.textContent = qi < QUIZ.length - 1 ? 'Próxima pergunta →' : 'Ver resultado final';
+          nextBtn.style.display = 'inline-block';
+        });
+      });
+    }
+    document.getElementById('qNext').addEventListener('click', () => {
+      if (qi < QUIZ.length - 1) { qi++; renderQuiz(); }
+      else {
+        document.getElementById('qText').textContent = `Concluído! Pontuação final: ${score} / ${QUIZ.length}`;
+        document.getElementById('qOpts').innerHTML = '';
+        document.getElementById('qExp').style.display = 'none';
+        document.getElementById('qNext').style.display = 'none';
+      }
+    });
+    document.getElementById('qReset').addEventListener('click', () => { qi = 0; score = 0; renderQuiz(); });
+    renderQuiz();
+  </script>
+</body>
+</html>

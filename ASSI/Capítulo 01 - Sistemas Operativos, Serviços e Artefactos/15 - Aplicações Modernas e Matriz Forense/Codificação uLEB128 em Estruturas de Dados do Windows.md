@@ -34,6 +34,9 @@ O **uLEB128** (*Unsigned Little Endian Base 128*) comprime inteiros sem sinal em
 >   * **Regra do Bit 7 (MSB)**: Em cada byte lido, apenas os **7 bits inferiores (`Bits 6..0`, máscara `0x7F`)** contêm valor numérico. O **Bit 7 (MSB, máscara `0x80`)** é o *continuation bit*: se for **`1`** (byte $\ge \text{0x80}$), o número continua no byte seguinte; se for **`0`** (byte $\le \text{0x7F}$), esse é o último byte do inteiro.
 >   * **Ordem Little-Endian dos Grupos de 7 Bits**: O primeiro byte armazenado em disco contém os **7 bits menos significativos** do número; o segundo byte contém os 7 bits seguintes (multiplicados por $2^7 = 128$), e assim por diante. Exemplo clássico de aula: **$301_{10} \longrightarrow \textbf{\texttt{AD 02}}$**.
 
+> [!INFO] Simulador Interativo (Browser)
+> Pratica a codificação/descodificação `uLEB128` passo a passo (com destaque do bit MSB e treino de exame) em [`_assets/assi_uleb128_cronologia.html`](../../../_assets/assi_uleb128_cronologia.html).
+
 ---
 
 ## 1. Princípio de Funcionamento e Regra dos 7 Bits
