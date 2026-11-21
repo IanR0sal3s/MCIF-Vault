@@ -37,6 +37,69 @@ O Registry funciona como uma árvore semelhante a um sistema de ficheiros:
 
 Embora o `regedit` mostre uma árvore unificada com 5 ramos (`HKEY_*`), fisicamente o Registry está distribuído por vários ficheiros no disco — e alguns ramos são apenas atalhos em memória:
 
+```mermaid
+flowchart TB
+    classDef virtual fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef base fill:#ede7f6,stroke:#512da8,stroke-width:2px;
+    classDef sysdisco fill:#f1f8e9,stroke:#388e3c,stroke-width:2px;
+    classDef userdisco fill:#fffde7,stroke:#fbc02d,stroke-width:2px;
+
+    subgraph Nivel1["1. Vistas Virtuais e Atalhos Dinâmicos (Criados em RAM)"]
+        direction LR
+        HKCC["<b>HKCC</b><br/><i>HKEY_CURRENT_CONFIG</i>"]
+        HKCR["<b>HKCR</b><br/><i>HKEY_CLASSES_ROOT</i><br/>(Associações e Extensões)"]
+        HKCU["<b>HKCU</b><br/><i>HKEY_CURRENT_USER</i>"]
+    end
+
+    subgraph Nivel2["2. Hives Lógicos Base (Estruturas Permanentes)"]
+        direction LR
+        HKLM["<b>HKLM</b><br/><i>HKEY_LOCAL_MACHINE</i><br/>(Global do Sistema)"]
+        HKU["<b>HKU</b><br/><i>HKEY_USERS</i><br/>(Perfis por SID)"]
+    end
+
+    subgraph Nivel3["3. Ficheiros Físicos no Disco"]
+        subgraph FichSistema["%SystemRoot%\System32\config\ (Ficheiros Globais da Máquina)"]
+            direction TB
+            F_SYS["SYSTEM"]
+            F_SAM["SAM"]
+            F_SEC["SECURITY"]
+            F_SOFT["SOFTWARE"]
+            F_DEF["DEFAULT (Perfil padrão)"]
+        end
+
+        subgraph FichUser["C:\Users\&lt;User&gt;\ (Ficheiros do Utilizador)"]
+            direction TB
+            F_NTU["NTUSER.DAT<br/>(Raiz do perfil)"]
+            F_USRC["USRCLASS.DAT<br/>(AppData\Local\...\Windows\)"]
+        end
+    end
+
+    %% Relações dos Atalhos / Vistas Virtuais
+    HKCC -->|"Alias dinâmico para HKLM\SYSTEM\...\Hardware Profiles"| HKLM
+    HKCU -->|"Ponteiro dinâmico para HKU\&lt;SID_Sessão_Ativa&gt;"| HKU
+
+    %% A Fusão Virtual de HKCR
+    HKCR -.->|"1. Definições Base da Máquina (HKLM\SOFTWARE\Classes)"| HKLM
+    HKCR -.->|"2. Sobreposição com Prioridade (HKCU\Software\Classes)"| HKCU
+
+    %% Mapeamento Físico de HKLM
+    HKLM -->|"Kernel, drivers e serviços"| F_SYS
+    HKLM -->|"Contas e hashes locais"| F_SAM
+    HKLM -->|"Políticas de segurança e LSA"| F_SEC
+    HKLM -->|"Aplicações instaladas e definições do SO"| F_SOFT
+
+    %% Mapeamento Físico de HKU
+    HKU -->|"HKU\.DEFAULT"| F_DEF
+    HKU -->|"HKU\&lt;SID&gt; (Definições pessoais)"| F_NTU
+    HKU -->|"HKU\&lt;SID&gt;_Classes (ShellBags e associações)"| F_USRC
+
+    %% Aplicação de Cores
+    class HKCC,HKCU,HKCR virtual;
+    class HKLM,HKU base;
+    class F_SYS,F_SAM,F_SEC,F_SOFT,F_DEF sysdisco;
+    class F_NTU,F_USRC userdisco;
+```
+
 | Hive Lógico (`regedit`) | Natureza / Ficheiro Físico no Disco | O que guarda (visão prática) |
 | :--- | :--- | :--- |
 | **`HKLM\SYSTEM`** | `%SystemRoot%\System32\config\system` | Serviços, drivers, `ControlSet`, rede e dispositivos USB (`USBSTOR`). |
