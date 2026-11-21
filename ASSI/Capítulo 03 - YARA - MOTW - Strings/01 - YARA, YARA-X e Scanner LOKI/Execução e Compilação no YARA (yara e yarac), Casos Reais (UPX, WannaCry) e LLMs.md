@@ -60,7 +60,7 @@ yara -C rule.yarac INPUT
 
 ---
 
-## 2. Anatomia do Comando `yara` / `yarac` e Todas as 28 Opções (`yara --help`)
+## 2. Anatomia do Comando `yara` / `yarac` e Opções Essenciais
 
 ### Anatomia do Comando `yara` e `yarac`
 
@@ -74,7 +74,7 @@ yara [options] [NAMESPACE:]RULES_FILE... FILE | DIR | PID
 │    │         │           │             └─ Alvo da análise: ficheiro, diretoria (com -r) ou PID
 │    │         │           └─────────────── Ficheiro(s) de regras (.yar ou .yarac com -C)
 │    │         └─────────────────────────── Namespace opcional para isolar identificadores de regras
-│    └───────────────────────────────────── Flags de execução, output, variáveis e desempenho
+│    └───────────────────────────────────── Flags de execução, output e desempenho
 └────────────────────────────────────────── Motor executor de regras YARA
 ```
 
@@ -98,48 +98,20 @@ yara exemplo.yara -n -r DIRS_to_SEARCH
 yara suspicious_strings.yar -c -r DIR
 ```
 
-### A. Execução, Alvo e Filtragem de Regras (10 opções)
+### Opções Essenciais do `yara` (Aulas e Ficha 14)
 
-| Opção Curta / Longa | Descrição Técnica (`yara --help`) |
+| Opção Curta / Longa | Descrição Técnica |
 | :--- | :--- |
 | **`-r`, `--recursive`** | Pesquisa diretorias de forma **recursiva**. |
 | **`-C`, `--compiled-rules`** | Carrega ficheiros de **regras pré-compiladas** com o `yarac`. |
-| **`-p`, `--threads=NUMBER`** | Utiliza o número especificado de *threads* para varrer uma diretoria em paralelo. |
-| `-t`, `--tag=TAG` | Imprime apenas regras marcadas com a `TAG` especificada. |
-| `-i`, `--identifier=IDENTIFIER` | Imprime apenas as regras cujo nome corresponda a `IDENTIFIER`. |
-| `-a`, `--timeout=SECONDS` | Aborta o varrimento após o número indicado de segundos. |
-| `-l`, `--max-rules=NUMBER` | Aborta o varrimento após atingir `NUMBER` regras correspondidas. |
-| `--scan-list` | Analisa os ficheiros listados dentro de `FILE` (um caminho por linha). |
-| `-N`, `--no-follow-symlinks` | Não segue ligações simbólicas (*symlinks*) durante o varrimento. |
-| `-f`, `--fast-scan` | Ativa o modo de correspondência rápida. |
-
-### B. Controlo de Output e Diagnóstico (9 opções)
-
-| Opção Curta / Longa | Descrição Técnica (`yara --help`) |
-| :--- | :--- |
-| **`-s`, `--print-strings`** | Imprime as **strings exatas e respetivos *offsets*** que dispararam na regra. |
-| **`-m`, `--print-meta`** | Imprime os **metadados** (`meta:`) das regras que dispararam. |
-| **`-g`, `--print-tags`** | Imprime as *tags* associadas à regra. |
 | **`-n`, `--negate`** | Imprime apenas as regras **não satisfeitas**. |
 | **`-c`, `--count`** | Imprime **apenas o número (contagem)** de correspondências por ficheiro. |
-| `-L`, `--print-string-length` | Imprime o comprimento das strings correspondidas. |
-| `-e`, `--print-namespace` | Imprime o *namespace* das regras. |
-| `-S`, `--print-stats` | Imprime estatísticas de desempenho das regras. |
-| `-D`, `--print-module-data` | Imprime os dados recolhidos pelos módulos carregados. |
-
-### C. Variáveis, Módulos e Parâmetros Avançados (9 opções)
-
-| Opção Curta / Longa | Descrição Técnica (`yara --help`) |
-| :--- | :--- |
-| `-d`, `--define=VAR=VALUE` | Define uma variável externa acessível dentro das regras. |
-| `-x`, `--module-data=MODULE=FILE` | Passa o conteúdo de `FILE` como dados extra para o módulo indicado. |
-| `--fail-on-warnings` | Faz a execução falhar caso ocorram avisos. |
-| `-w`, `--no-warnings` | Desativa a exibição de avisos. |
-| `--max-strings-per-rule=NUMBER` | Define o número máximo de strings por regra (padrão = `10000`). |
-| `-k`, `--stack-size=SLOTS` | Define o tamanho máximo da pilha interna (padrão = `16384`). |
-| `--atom-quality-table=FILE` | Caminho para um ficheiro com a tabela de qualidade de átomos. |
-| `-h`, `--help` | Apresenta a mensagem de ajuda e termina. |
-| `-v`, `--version` | Mostra a informação de versão do YARA. |
+| **`-s`, `--print-strings`** | Imprime as **strings exatas e respetivos *offsets*** que dispararam na regra. |
+| **`-m`, `--print-meta`** | Imprime os **metadados** (`meta:`) das regras que dispararam (Ficha 14). |
+| **`-L`, `--print-string-length`** | Imprime o **comprimento** e *offset* das strings correspondidas (Ficha 14). |
+| **`-g`, `--print-tags`** | Imprime as *tags* associadas à regra. |
+| **`-p`, `--threads=NUMBER`** | Define o número de *threads* para varrer diretorias em paralelo. |
+| **`-t`, `--tag=TAG`** | Filtra a saída para regras marcadas com a `TAG` indicada. |
 
 ---
 

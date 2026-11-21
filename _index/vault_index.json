@@ -86,7 +86,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -135,7 +135,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",

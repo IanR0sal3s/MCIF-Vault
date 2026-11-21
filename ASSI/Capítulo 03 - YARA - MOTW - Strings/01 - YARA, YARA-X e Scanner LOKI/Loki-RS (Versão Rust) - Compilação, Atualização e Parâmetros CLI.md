@@ -110,11 +110,12 @@ Usage: loki.exe [OPTIONS]
 
 ---
 
-## 3. Referência Laboratorial: Ficha de Trabalho 14
+## 3. Referência Laboratorial: Ficha de Trabalho 14 (`YARA & LOKI`)
 
-No Slide 35 da apresentação é indicada a realização da **Ficha de trabalho 14** referente à consolidação prática de **YARA & LOKI**.
-
-*(Nota: Quando o enunciado da Ficha de trabalho 14 for disponibilizado, será integrado como nota de exercício neste bloco).*
+A **Ficha 14** consolida em laboratório os três componentes deste bloco:
+1. **`yara` clássico**: aplicação de `suspicious_strings.yar` sobre `sysmon.exe` usando `-L` (comprimento/offset) e `-m` (metadados);
+2. **`YARA-X` (`yr`)**: geração (com validação crítica) de uma regra para detetar bases **SQLite 3** (`"SQLite format"`) e **SQLite WAL**, compilação via `yr compile sqlite.yr -o sqlite.yrc` e varrimento em `%LocalAppData%` com `yr scan -r -C sqlite.yrc %LocalAppData%`;
+3. **Extra-Aula (`Loki-RS` e `yarac`)**: compilação com `cargo b --release`, atualização via `loki-util.exe update`, execução com `loki.exe -f c:\PASTA` e compilação/execução de uma regra de IPv4 (`yarac ip.yar ip.yarac` $\to$ `yara -C ip.yarac FICHEIRO_ALVO`).
 
 ---
 
