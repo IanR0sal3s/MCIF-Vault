@@ -16,12 +16,15 @@ aliases:
   - Capítulo 4 SRC
   - MOC Capítulo 4 SRC
   - Deteção de Intrusões e Zero Trust
-atualizado: 2026-11-15
+atualizado: 2026-11-22
 ---
 
 # Capítulo 4 — Deteção de Intrusões (`IDS`) e *Zero Trust Architecture* (`ZTA`)
 
-Mapa de estudo do **Capítulo 4** de [[00 SRC|SRC]], cobrindo **estritamente as secções destacadas a amarelo** do *survey* sobre Sistemas de Deteção de Intrusões (`s42400-019-0038-7.pdf`, *Khraisat et al., 2019*) e da norma `NIST SP 800-207` (`NIST.SP.800-207.pdf`), organizados em **3 notas atómicas** na pasta `SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/`.
+Mapa de estudo do **Capítulo 4** de [[00 SRC|SRC]], cobrindo **estritamente as secções destacadas a amarelo** do *survey* sobre Sistemas de Deteção de Intrusões (`s42400-019-0038-7.pdf`, *Khraisat et al., 2019*) e da norma `NIST SP 800-207` (`NIST.SP.800-207.pdf`), organizados em **3 notas atómicas** e **1 Cheat Sheet e Questionário de Consolidação** na pasta `SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/`.
+
+> [!TIP] Guia de Consulta Rápida e Autoavaliação
+> Para tabelas de revisão rápida (`SIDS` vs. `AIDS` vs. Híbridos, `HIDS` vs. `NIDS`, fórmulas da matriz de confusão, os 7 *Tenets* do Zero Trust e `PE`/`PA`/`PEP`) e um questionário de consolidação com soluções comentadas, consulta **[[Cheat Sheet e Questionário - IDS e Zero Trust Architecture]]**.
 
 ```mermaid
 flowchart LR
@@ -50,4 +53,5 @@ flowchart LR
 ## Navegação
 
 - [[00 SRC|Voltar ao MOC Geral de SRC]]
+- [[Cheat Sheet e Questionário - IDS e Zero Trust Architecture|Ir para a Cheat Sheet e Questionário do Capítulo 4]]
 - [[Capítulo 3 - Segurança em IoT|Recuar para o Capítulo 3 de SRC]]

@@ -1,17 +1,17 @@
 {
   "generated_at": "2026-11-22",
   "stats": {
-    "total_notes": 212,
+    "total_notes": 215,
     "notes_by_uc": {
       "AFD1": 42,
-      "ASSI": 105,
+      "ASSI": 107,
       "COD1": 29,
       "COMUM": 7,
       "GERAL": 1,
-      "SRC": 28
+      "SRC": 29
     },
-    "total_internal_links": 2029,
-    "total_cross_uc_links": 520,
+    "total_internal_links": 2068,
+    "total_cross_uc_links": 521,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
     "yaml_warnings_count": 0,
@@ -86,7 +86,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -135,7 +135,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -3573,7 +3573,9 @@
         "Ficha Prática e Questionário - Serviços e Windows Search",
         "Ficha Prática e Questionário - Shell, Atividade e Matriz Forense",
         "Ficha Prática e Questionário - Windows Registry e Artefactos Forenses",
-        "Home"
+        "Home",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
+        "Questionário de Consolidação - YARA, MOTW e Strings"
       ],
       "in_links": [
         "00 Comum",
@@ -3672,6 +3674,8 @@
         "Procedimentos de Aquisição - Post-Mortem vs Live, Erros de Disco, HPA-DCO e Write Blockers",
         "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
         "Processos e linha de comandos no Windows",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "Recuperação de Clipboard e Sincronização na Timeline",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
         "Registry em Aplicações Modernas (MSIX e Helium)",
@@ -6795,6 +6799,7 @@
         "Certificação de Sanitização, Audit Trail e Guia NCSC para Dispositivos Usados",
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Decommissioning de Equipamentos, Destruição de Papel (P-1 a P-7) e Enquadramento Legal UE",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)"
       ],
       "cross_uc_links": [
@@ -6848,6 +6853,7 @@
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
         "Registo, Etiquetagem e Fotografia Pericial (Regras LabCIF)",
         "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
@@ -6894,6 +6900,7 @@
         "Capítulo 2 - Administração de Sistemas",
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
         "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)",
         "Vetores de Ataque USB (BadUSB, Rubber Ducky, LNK, USB-Killer) e Defesas (GPO, Pad Jack, ESD Dogs)"
       ],
@@ -7057,7 +7064,8 @@
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
         "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
-        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows"
+        "Processo de Arranque UEFI, Secure Boot e Fluxo do Windows",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos"
       ],
       "cross_uc_links": [
         "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
@@ -7200,7 +7208,8 @@
         "Capítulo 2 - Administração de Sistemas",
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Educação de Utilizadores, Phishing, Spear-Phishing e Reforço Positivo",
-        "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay"
+        "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos"
       ],
       "cross_uc_links": []
     },
@@ -7330,6 +7339,7 @@
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
         "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
         "Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)"
       ],
       "cross_uc_links": []
@@ -7468,6 +7478,7 @@
         "Capítulo 2 - Administração de Sistemas",
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
         "Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)"
       ],
       "cross_uc_links": []
@@ -7517,7 +7528,8 @@
         "Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)",
         "Gestores de Passwords (Cloud vs KeePassXC), KeeShare e Copy-Paste Hijacking",
         "Higiene de Credenciais - Clean Desk, Google Dorks, PINs e Shoulder Surfing",
-        "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed"
+        "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos"
       ],
       "cross_uc_links": []
     },
@@ -7627,6 +7639,7 @@
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay",
         "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
         "Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)",
         "Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)"
       ],
@@ -7678,7 +7691,8 @@
         "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
         "Exercícios Práticos - Integridade de Dados e Hashes",
         "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
-        "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed"
+        "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos"
       ],
       "cross_uc_links": [
         "Exercícios Práticos - Integridade de Dados e Hashes",
@@ -7766,7 +7780,7 @@
         "Administração de Sistemas",
         "System and Data Management e Access Control"
       ],
-      "summary": "Mapa de estudo do Capítulo 2 de ASSI (Prof. Patrício Domingues), cobrindo 181 diapositivos organizados em 25 notas atómicas focadas e 1 Cheat Sheet de revisão rápida.",
+      "summary": "Mapa de estudo do Capítulo 2 de ASSI (Prof. Patrício Domingues), cobrindo 181 diapositivos organizados em 25 notas atómicas focadas, 1 Cheat Sheet de revisão rápida e 1 Questionário de Consolidação.",
       "out_links": [
         "00 ASSI",
         "Armazenamento Seguro de Passwords (Salting e Key Stretching) e Casos RockYou e LastPass",
@@ -7796,6 +7810,7 @@
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
         "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
         "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física",
         "Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)",
         "Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)",
@@ -7826,6 +7841,7 @@
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
         "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
         "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física",
         "Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)",
         "Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)",
@@ -7902,11 +7918,57 @@
         "Capítulo 2 - Administração de Sistemas",
         "Cheat Sheet - YARA, MOTW e Extração de Strings",
         "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
-        "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay"
+        "Falhas de Autenticação por SMS - Protocolo SS7, SIM-Jacking, Vishing e StingRay",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos"
       ],
       "cross_uc_links": [
         "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
         "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)"
+      ]
+    },
+    {
+      "id": "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
+      "title": "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
+      "path": "ASSI/Capítulo 02 - Administração de Sistemas/Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos.md",
+      "uc": "ASSI",
+      "capitulo": 2,
+      "bloco": null,
+      "tipo": "exercicio",
+      "tags": [
+        "assi",
+        "exercicio",
+        "questionario",
+        "revisao",
+        "administracao-sistemas",
+        "controlo-acessos"
+      ],
+      "aliases": [
+        "Questionário Capítulo 2 ASSI",
+        "Revisão Administração de Sistemas"
+      ],
+      "summary": "Autoavaliação estilo exame (Grupo I — escolha múltipla + Grupo II — resposta aberta curta) para validar a compreensão dos Blocos 01 a 06 do Capítulo 2 - Administração de Sistemas.",
+      "out_links": [
+        "00 ASSI",
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)",
+        "Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)",
+        "Capítulo 2 - Administração de Sistemas",
+        "Cheat Sheet - Administração de Sistemas e Controlo de Acessos",
+        "Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)",
+        "Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)",
+        "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
+        "Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed",
+        "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
+        "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física",
+        "Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)",
+        "Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)",
+        "System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)"
+      ],
+      "in_links": [
+        "00 ASSI",
+        "Capítulo 2 - Administração de Sistemas"
+      ],
+      "cross_uc_links": [
+        "Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)"
       ]
     },
     {
@@ -7952,6 +8014,7 @@
         "Endianness e Ordem de Armazenamento",
         "Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)",
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições",
         "YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex",
@@ -8004,6 +8067,7 @@
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
         "YARA-X (Reimplementação em Rust) e Ferramenta CLI yr"
       ],
@@ -8058,6 +8122,7 @@
         "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições",
         "YARA-X (Reimplementação em Rust) e Ferramenta CLI yr"
       ],
@@ -8113,6 +8178,7 @@
         "Gestão de Vulnerabilidades, CVE e Sistemas de Pontuação (CVSS e CWE)",
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
         "Threat Hunting em EVTX - Regras SIGMA, APT-Hunter, Chainsaw e Hayabusa",
         "YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex",
@@ -8170,6 +8236,7 @@
         "Codificação de Caracteres - ASCII, Latin-1 e Unicode",
         "Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios",
         "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições",
         "YARA-X (Reimplementação em Rust) e Ferramenta CLI yr"
       ],
@@ -8219,6 +8286,7 @@
         "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições",
         "YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex"
@@ -8270,6 +8338,7 @@
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física"
       ],
       "cross_uc_links": [
@@ -8370,6 +8439,7 @@
         "Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física"
       ],
       "cross_uc_links": []
@@ -8418,7 +8488,8 @@
         "Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen",
         "Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
-        "Pesquisa de Evidências e Reconstrução de Eventos"
+        "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Questionário de Consolidação - YARA, MOTW e Strings"
       ],
       "cross_uc_links": [
         "Pesquisa de Evidências e Reconstrução de Eventos"
@@ -8469,7 +8540,8 @@
         "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
         "Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)",
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
-        "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação"
+        "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
+        "Questionário de Consolidação - YARA, MOTW e Strings"
       ],
       "cross_uc_links": [
         "00 AFD1",
@@ -8526,6 +8598,7 @@
         "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
         "Licenciamento de Software, Fugas em Partilha de Dados (SAS Tokens) e Falhas de Redação",
         "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex"
       ],
       "cross_uc_links": [
@@ -8608,7 +8681,7 @@
         "MOC Capítulo 3 ASSI",
         "YARA - MOTW - Strings"
       ],
-      "summary": "Mapa de estudo do Capítulo 3 de ASSI (Prof. Patrício Domingues), cobrindo 76 diapositivos das três apresentações (YARA & LOKI, MOTW / ADS e \"strings\" utilities) organizados em 13 notas atómicas focadas e 1 Cheat...",
+      "summary": "Mapa de estudo do Capítulo 3 de ASSI (Prof. Patrício Domingues), cobrindo 76 diapositivos das três apresentações (YARA & LOKI, MOTW / ADS e \"strings\" utilities) organizados em 13 notas atómicas focadas, 1 Cheat Sheet...",
       "out_links": [
         "00 ASSI",
         "Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell",
@@ -8628,6 +8701,7 @@
         "Home",
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições",
         "YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex",
@@ -8653,6 +8727,7 @@
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
         "Pesquisa de Evidências e Reconstrução de Eventos",
+        "Questionário de Consolidação - YARA, MOTW e Strings",
         "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
         "YARA - Introdução, Estrutura de Regras, Metadados e Condições",
         "YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex",
@@ -8702,6 +8777,53 @@
         "Exceções à MOTW (Ficheiros Compactados, 7-Zip, certutil LOLBin) e Microsoft Defender SmartScreen",
         "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
         "Extração de Strings no Windows - Sysinternals strings e Swiss File Knife (sfk)",
+        "Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker",
+        "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
+        "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
+        "Scanner de IOCs LOKI (Versão Python) - Métodos de Deteção e Configuração",
+        "YARA - Introdução, Estrutura de Regras, Metadados e Condições",
+        "YARA - Tipos de Strings, Modificadores, Formato Hexadecimal, Base64 e Regex",
+        "YARA-X (Reimplementação em Rust) e Ferramenta CLI yr"
+      ],
+      "in_links": [
+        "00 ASSI",
+        "Capítulo 3 - YARA - MOTW - Strings",
+        "Questionário de Consolidação - YARA, MOTW e Strings"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Questionário de Consolidação - YARA, MOTW e Strings",
+      "title": "Questionário de Consolidação - YARA, MOTW e Strings",
+      "path": "ASSI/Capítulo 03 - YARA - MOTW - Strings/Questionário de Consolidação - YARA, MOTW e Strings.md",
+      "uc": "ASSI",
+      "capitulo": 3,
+      "bloco": null,
+      "tipo": "exercicio",
+      "tags": [
+        "assi",
+        "exercicio",
+        "questionario",
+        "revisao",
+        "yara",
+        "loki",
+        "motw",
+        "ads",
+        "strings"
+      ],
+      "aliases": [
+        "Questionário Capítulo 3 ASSI",
+        "Revisão YARA MOTW Strings"
+      ],
+      "summary": "Autoavaliação estilo exame (Grupo I — escolha múltipla + Grupo II — resposta aberta curta) para validar a compreensão dos Blocos 01 a 03 do Capítulo 3 - YARA - MOTW - Strings.",
+      "out_links": [
+        "00 ASSI",
+        "Alternate Data Streams (ADS) no NTFS - Arquitetura, Manipulação em CMD e PowerShell",
+        "Capítulo 3 - YARA - MOTW - Strings",
+        "Cheat Sheet - YARA, MOTW e Extração de Strings",
+        "Conceito de Strings e Comando strings em Unix-Linux",
+        "Eric Zimmerman bstrings - Parâmetros, Expressões Regulares e Exercícios",
+        "Execução e Compilação no YARA (yara e yarac), Casos Reais (UPX, WannaCry) e LLMs",
         "Ferramentas Gráficas de Análise de ADS e Caso de Estudo WastedLocker",
         "Loki-RS (Versão Rust) - Compilação, Atualização e Parâmetros CLI",
         "Mark of the Web (MOTW) e Zone.Identifier - Formato, Zonas URLZONE e Verbosidade dos Browsers",
@@ -10494,6 +10616,7 @@
         "Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)",
         "Interface SCSI, SAS e Comparação SCSI vs ATA",
         "Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)",
+        "Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos",
         "Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física"
       ],
       "cross_uc_links": [
@@ -10904,6 +11027,7 @@
         "Capítulo 4 - Deteção de Intrusões e Zero Trust",
         "Cheat Sheet - Criptografia, Hash, PKI e VPNs",
         "Cheat Sheet - Segurança em IoT (BLE, LoRaWAN e MQTT)",
+        "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "Home"
       ],
       "in_links": [
@@ -10916,6 +11040,7 @@
         "Capítulo 4 - Deteção de Intrusões e Zero Trust",
         "Cheat Sheet - Criptografia, Hash, PKI e VPNs",
         "Cheat Sheet - Segurança em IoT (BLE, LoRaWAN e MQTT)",
+        "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "Cifras de Blocos vs. Stream - Feistel, DES, 3DES, AES e RC4",
         "Criptografia Assimétrica - Princípios, Diffie-Hellman, ECC e Algoritmo RSA",
         "Criptografia Simétrica - Modelo Convencional, Criptanálise e Cifras Clássicas",
@@ -11874,6 +11999,7 @@
       ],
       "in_links": [
         "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
         "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
         "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
@@ -11911,6 +12037,7 @@
       ],
       "in_links": [
         "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
         "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
       ],
@@ -11949,6 +12076,7 @@
       ],
       "in_links": [
         "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
         "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)"
@@ -11981,6 +12109,7 @@
       "out_links": [
         "00 SRC",
         "Capítulo 3 - Segurança em IoT",
+        "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
         "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
         "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
@@ -11988,9 +12117,46 @@
       "in_links": [
         "00 SRC",
         "Capítulo 3 - Segurança em IoT",
+        "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
         "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
         "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "cross_uc_links": []
+    },
+    {
+      "id": "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
+      "title": "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
+      "path": "SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/Cheat Sheet e Questionário - IDS e Zero Trust Architecture.md",
+      "uc": "SRC",
+      "capitulo": 4,
+      "bloco": null,
+      "tipo": "cheatsheet",
+      "tags": [
+        "cheatsheet",
+        "exercicio",
+        "src",
+        "ids",
+        "zero-trust",
+        "zta",
+        "nist"
+      ],
+      "aliases": [
+        "Cheat Sheet Capítulo 4 SRC",
+        "Questionário Capítulo 4 SRC",
+        "Revisão IDS e Zero Trust"
+      ],
+      "summary": "Folha de consulta rápida e questionário de cenários (estilo TBL) do Capítulo 4 - Deteção de Intrusões e Zero Trust de SRC.",
+      "out_links": [
+        "00 SRC",
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
+        "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "in_links": [
+        "00 SRC",
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust"
       ],
       "cross_uc_links": []
     }

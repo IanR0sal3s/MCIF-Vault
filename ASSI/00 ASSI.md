@@ -11,7 +11,7 @@ aliases:
   - ASSI
   - 00 ASSI
   - Administração Segura de Sistemas Informáticos
-atualizado: 2026-11-21
+atualizado: 2026-11-22
 ---
 
 # Administração Segura de Sistemas Informáticos (ASSI)
@@ -28,8 +28,8 @@ Unidade curricular do **Mestrado em Cibersegurança e Informática Forense (MCIF
 | Capítulo | Designação | Estado / Cobertura |
 | :--- | :--- | :--- |
 | **[[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses]]** | **Sistemas Operativos, Serviços e Artefactos Forenses no Windows**<br/>• **Parte 1**: Arranque, UEFI/PKfail, Processos, Serviços, UWP, Registry e Dispositivos USB (170 slides)<br/>• **Parte 2**: VSS, Prefetch, ShimCache, AmCache, Jump Lists, LNK, Caches Gráficas, Timeline, SRUM, Bloco de Notas W11 e Matriz Forense (158 slides) | Concluído (328 slides mapeados, 47 notas temáticas + 4 Fichas Práticas + 2 Cheat Sheets) |
-| **[[Capítulo 2 - Administração de Sistemas]]** | **Administração de Sistemas (*System and Data Management & Access Control*)**<br/>• **Parte A (*System and Data Management*)**: Decommissioning, destruição de papel (`P-1`–`P-7`), *Evil Maid*/*Burner Phones*, sanitização de HDDs e SSDs/NVMe, gestão de ativos, segurança USB (`VeraCrypt`, `BadUSB`, `ValiDrive` — Ficha 11), Hardening, `YellowKey`, CVE/CVSS/CWE, licenciamento e fugas `SAS Tokens` (62 slides)<br/>• **Parte B (*Access Control*)**: Engenharia social (*phishing*, *smishing*, `SMS Blaster`, *quishing*, BEC/*deepfake*), diretrizes NIST `SP 800-63-4`, `bcrypt` (`Okta`), `FortiBleed`, entropia (`Coldcard`), higiene e `KeePassXC` (Ficha 10), `SS7`/`SIM-Jacking`, `TOTP`, `Passkeys` (Ficha 11), *salting*, *key stretching* e `hashcat` (119 slides) | Concluído (181 slides mapeados, 25 notas atómicas + 1 Cheat Sheet) |
-| **[[Capítulo 3 - YARA - MOTW - Strings]]** | **YARA, LOKI, Alternate Data Streams (ADS), Mark of the Web (MOTW) e Utilitários de Extração de Strings**<br/>• **Bloco 01**: Pesquisa de Padrões, Malware e IOCs (`YARA`, `yarac`, `YARA-X` / `yr`, `LOKI` Python e `Loki-RS` em Rust — 35 slides, Ficha 14)<br/>• **Bloco 02**: Fluxos Alternativos NTFS (`ADS`), caso `WastedLocker`, `Mark of the Web (MOTW)` / `Zone.Identifier`, exceções (`7-Zip`, `certutil`) e `SmartScreen` (25 slides, Ficha 15)<br/>• **Bloco 03**: Extração e Pesquisa de Strings (`strings` Unix/Linux, Sysinternals `strings.exe`, `sfk strings` e `bstrings` de Eric Zimmerman — 16 slides) | Concluído (76 slides mapeados, 13 notas atómicas + 1 Cheat Sheet) |
+| **[[Capítulo 2 - Administração de Sistemas]]** | **Administração de Sistemas (*System and Data Management & Access Control*)**<br/>• **Parte A (*System and Data Management*)**: Decommissioning, destruição de papel (`P-1`–`P-7`), *Evil Maid*/*Burner Phones*, sanitização de HDDs e SSDs/NVMe, gestão de ativos, segurança USB (`VeraCrypt`, `BadUSB`, `ValiDrive` — Ficha 11), Hardening, `YellowKey`, CVE/CVSS/CWE, licenciamento e fugas `SAS Tokens` (62 slides)<br/>• **Parte B (*Access Control*)**: Engenharia social (*phishing*, *smishing*, `SMS Blaster`, *quishing*, BEC/*deepfake*), diretrizes NIST `SP 800-63-4`, `bcrypt` (`Okta`), `FortiBleed`, entropia (`Coldcard`), higiene e `KeePassXC` (Ficha 10), `SS7`/`SIM-Jacking`, `TOTP`, `Passkeys` (Ficha 11), *salting*, *key stretching* e `hashcat` (119 slides) | Concluído (181 slides mapeados, 25 notas atómicas + 1 Cheat Sheet + 1 Questionário) |
+| **[[Capítulo 3 - YARA - MOTW - Strings]]** | **YARA, LOKI, Alternate Data Streams (ADS), Mark of the Web (MOTW) e Utilitários de Extração de Strings**<br/>• **Bloco 01**: Pesquisa de Padrões, Malware e IOCs (`YARA`, `yarac`, `YARA-X` / `yr`, `LOKI` Python e `Loki-RS` em Rust — 35 slides, Ficha 14)<br/>• **Bloco 02**: Fluxos Alternativos NTFS (`ADS`), caso `WastedLocker`, `Mark of the Web (MOTW)` / `Zone.Identifier`, exceções (`7-Zip`, `certutil`) e `SmartScreen` (25 slides, Ficha 15)<br/>• **Bloco 03**: Extração e Pesquisa de Strings (`strings` Unix/Linux, Sysinternals `strings.exe`, `sfk strings` e `bstrings` de Eric Zimmerman — 16 slides) | Concluído (76 slides mapeados, 13 notas atómicas + 1 Cheat Sheet + 1 Questionário) |
 | **[[Capítulo 4 - Logs]]** | **Logs no Windows, Threat Hunting e Logs Ad-Hoc**<br/>• **Parte 1 (EVTX & Threat Hunting)**: Retenção legal, `.evt` vs. `.evtx`, Event IDs críticos, `WEVTUtil`, `psloglist`, `Get-WinEvent`, `evtx_dump`+`jq`, Ficha 16 (`FullEventLogView`, `EvtxECmd`), casos USB/PowerShell/Task Scheduler/Crashes, regras `SIGMA`, `APT-Hunter`, `Chainsaw`, `Hayabusa` e `Sysmon` (93 slides, Fichas 16 e 17)<br/>• **Parte 2 (Logs Ad-Hoc)**: Memory dumps (`.dmp`), `WER` e caso **Storm-0558**, `ETL` / Delivery Optimization (`ExternalIPAddress`), OneDrive (`.odl`/SQLite/`OneDriveExplorer`) e privacidade em veículos (34 slides, Ficha 18) | Concluído (127 slides mapeados, 10 notas essenciais + 1 Cheat Sheet) |
 
 ### 📑 Folhas de Consulta Rápida (Cheat Sheets de Apoio)
@@ -40,12 +40,14 @@ Unidade curricular do **Mestrado em Cibersegurança e Informática Forense (MCIF
 * **[[Cheat Sheet - YARA, MOTW e Extração de Strings]]**: Guia de bolso do Capítulo 3 para sintaxe YARA/`yr`, scanners LOKI/`Loki-RS`, ADS em CMD/PowerShell, `WastedLocker`, `Zone.Identifier`, exceções `7-Zip`/`certutil` e comparativo `strings`/`sfk`/`bstrings`.
 * **[[Cheat Sheet - Logs no Windows e Threat Hunting]]**: Guia de bolso do Capítulo 4 para prazos de retenção, caminhos forenses, Event IDs críticos, comandos CLI/Threat Hunting (`wevtutil`, `psloglist`, `jq`, `Chainsaw`, `Hayabusa`, `Sysmon`, `tracerpt`) e armadilhas de exame.
 
-### 🧪 Fichas Práticas e Questionários de Avaliação (Capítulo 1)
+### 🧪 Fichas Práticas e Questionários de Consolidação
 
-* **[[Ficha Prática e Questionário - Serviços e Windows Search]]**: Laboratório 1 — Serviços, Processos, CLI e Windows Search (`sidr`).
-* **[[Ficha Prática e Questionário - Windows Registry e Artefactos Forenses]]**: Laboratório do Registry — Hives, WOW64, UserAssist (ROT13), ShellBags e USB.
-* **[[Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)]]**: Fichas 3, 4 e 5 — VSS, Prefetch (`PECmd`), ShimCache, AmCache e Regra de Ouro.
-* **[[Ficha Prática e Questionário - Shell, Atividade e Matriz Forense]]**: Fichas 6 a 10 — LNKs (`LECmd`), Jump Lists, Thumbcache, SRUM, Notepad W11, uLEB128 e Reconstituição Temporal.
+* **[[Ficha Prática e Questionário - Serviços e Windows Search]]**: Capítulo 1 (Lab 1) — Serviços, Processos, CLI e Windows Search (`sidr`).
+* **[[Ficha Prática e Questionário - Windows Registry e Artefactos Forenses]]**: Capítulo 1 (Lab Registry) — Hives, WOW64, UserAssist (ROT13), ShellBags e USB.
+* **[[Ficha Prática e Questionário - Execução e Compatibilidade (Prefetch, ShimCache e AmCache)]]**: Capítulo 1 (Fichas 3–5) — VSS, Prefetch (`PECmd`), ShimCache, AmCache e Regra de Ouro.
+* **[[Ficha Prática e Questionário - Shell, Atividade e Matriz Forense]]**: Capítulo 1 (Fichas 6–10) — LNKs (`LECmd`), Jump Lists, Thumbcache, SRUM, Notepad W11, uLEB128 e Reconstituição Temporal.
+* **[[Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos]]**: Capítulo 2 — Sanitização HDD/SSD, segurança USB, Hardening/`YellowKey`, CVE/CVSS, NIST, entropia, `TOTP`/Passkeys, *salting*/*key stretching* e `hashcat`.
+* **[[Questionário de Consolidação - YARA, MOTW e Strings]]**: Capítulo 3 — Regras YARA/`YARA-X`, scanners `LOKI`/`Loki-RS`, NTFS `ADS`/`WastedLocker`, `Zone.Identifier`/exceções MOTW e `strings`/`sfk`/`bstrings`.
 
 ---
 

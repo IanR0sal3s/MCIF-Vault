@@ -20,15 +20,16 @@ aliases:
   - Capítulo 3 ASSI
   - MOC Capítulo 3 ASSI
   - YARA - MOTW - Strings
-atualizado: 2026-11-11
+atualizado: 2026-11-22
 ---
 
 # Capítulo 3 — YARA - MOTW - Strings
 
-Mapa de estudo do **Capítulo 3** de [[00 ASSI|ASSI]] (Prof. Patrício Domingues), cobrindo **76 diapositivos** das três apresentações (*YARA & LOKI*, *MOTW / ADS* e *"strings" utilities*) organizados em **13 notas atómicas focadas** e **1 Cheat Sheet de revisão rápida** na pasta `ASSI/Capítulo 03 - YARA - MOTW - Strings/`.
+Mapa de estudo do **Capítulo 3** de [[00 ASSI|ASSI]] (Prof. Patrício Domingues), cobrindo **76 diapositivos** das três apresentações (*YARA & LOKI*, *MOTW / ADS* e *"strings" utilities*) organizados em **13 notas atómicas focadas**, **1 Cheat Sheet de revisão rápida** e **1 Questionário de Consolidação** na pasta `ASSI/Capítulo 03 - YARA - MOTW - Strings/`.
 
-> [!TIP] Guia de Consulta Rápida para Exame
-> Para tabelas comparativas (`YARA` vs. `YARA-X`, `LOKI` vs. `Loki-RS`, `CMD` vs. `PowerShell` em ADS, `ZoneId 0–4`, exceções `7-Zip`/`certutil`, `strings` vs. `strings.exe`/`sfk`/`bstrings`), sintaxes CLI e o *Top 8* de armadilhas de exame, consulta a **[[Cheat Sheet - YARA, MOTW e Extração de Strings]]**.
+> [!TIP] Guia de Consulta Rápida e Autoavaliação
+> * Para tabelas comparativas (`YARA` vs. `YARA-X`, `LOKI` vs. `Loki-RS`, `CMD` vs. `PowerShell` em ADS, `ZoneId 0–4`, exceções `7-Zip`/`certutil`, `strings` vs. `strings.exe`/`sfk`/`bstrings`), sintaxes CLI e o *Top 8* de armadilhas de exame, consulta a **[[Cheat Sheet - YARA, MOTW e Extração de Strings]]**.
+> * Para testar a compreensão integrada de regras YARA, ADS/MOTW e extração de strings com soluções comentadas, resolve o **[[Questionário de Consolidação - YARA, MOTW e Strings]]**.
 
 ```mermaid
 flowchart LR
@@ -76,6 +77,7 @@ flowchart LR
 
 - [[00 ASSI|Voltar ao MOC Geral de ASSI]]
 - [[Cheat Sheet - YARA, MOTW e Extração de Strings|Ir para a Cheat Sheet do Capítulo 3]]
+- [[Questionário de Consolidação - YARA, MOTW e Strings|Resolver o Questionário de Consolidação do Capítulo 3]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Ir para o Capítulo 1 de ASSI]]
 - [[Capítulo 2 - Administração de Sistemas|Recuar para o Capítulo 2 de ASSI (Administração de Sistemas e Controlo de Acessos)]]
 - [[Capítulo 4 - Logs|Avançar para o Capítulo 4 de ASSI (Logs no Windows, Threat Hunting e Logs Ad-Hoc)]]

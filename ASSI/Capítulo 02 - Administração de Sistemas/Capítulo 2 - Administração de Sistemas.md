@@ -26,16 +26,17 @@ aliases:
   - MOC Capítulo 2 ASSI
   - Administração de Sistemas
   - System and Data Management e Access Control
-atualizado: 2026-11-11
+atualizado: 2026-11-22
 custom-width: 50
 ---
 
 # Capítulo 2 — Administração de Sistemas (*System and Data Management & Access Control*)
 
-Mapa de estudo do **Capítulo 2** de [[00 ASSI|ASSI]] (Prof. Patrício Domingues), cobrindo **181 diapositivos** organizados em **25 notas atómicas focadas** e **1 Cheat Sheet de revisão rápida**.
+Mapa de estudo do **Capítulo 2** de [[00 ASSI|ASSI]] (Prof. Patrício Domingues), cobrindo **181 diapositivos** organizados em **25 notas atómicas focadas**, **1 Cheat Sheet de revisão rápida** e **1 Questionário de Consolidação**.
 
-> [!TIP] Guia de Consulta Rápida para Exame
-> Para tabelas de comparação rápida (`P-1`–`P-7`, HDD vs. SSD, `NIST 2003 vs. 2024`, `Argon2 > PBKDF2`, `hashcat` e os 31 casos de estudo), consulta a **[[Cheat Sheet - Administração de Sistemas e Controlo de Acessos]]**.
+> [!TIP] Guia de Consulta Rápida e Autoavaliação
+> * Para tabelas de comparação rápida (`P-1`–`P-7`, HDD vs. SSD, `NIST 2003 vs. 2024`, `Argon2 > PBKDF2`, `hashcat` e os 31 casos de estudo), consulta a **[[Cheat Sheet - Administração de Sistemas e Controlo de Acessos]]**.
+> * Para testar a compreensão integrada de todo o capítulo com cenários de aplicação e soluções comentadas, resolve o **[[Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos]]**.
 
 ```mermaid
 flowchart LR
@@ -129,6 +130,7 @@ flowchart LR
 
 - [[00 ASSI|Voltar ao Índice Geral de ASSI]]
 - [[Cheat Sheet - Administração de Sistemas e Controlo de Acessos|Ir para a Cheat Sheet do Capítulo 2]]
+- [[Questionário de Consolidação - Administração de Sistemas e Controlo de Acessos|Resolver o Questionário de Consolidação do Capítulo 2]]
 - [[Capítulo 1 - Sistemas Operativos, Serviços e Artefactos Forenses|Recuar para o Capítulo 1 de ASSI]]
 - [[Capítulo 3 - YARA - MOTW - Strings|Avançar para o Capítulo 3 de ASSI]]
 - [[Capítulo 1 - Método de Investigação|Pontes com AFD1 — Capítulo 1 (Método de Investigação, Integridade de Hashes e Regras LabCIF)]]

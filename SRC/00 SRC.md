@@ -14,7 +14,7 @@ aliases:
   - 00 SRC
   - Segurança em Redes de Computadores
   - Security in Computer Networks
-atualizado: 2026-11-15
+atualizado: 2026-11-22
 ---
 
 # Segurança em Redes de Computadores (SRC)
@@ -33,12 +33,13 @@ Unidade curricular do **Mestrado em Cibersegurança e Informática Forense (MCIF
 | **[[Capítulo 1 - Fundamentos de Redes e Segurança]]**  | **Fundamentos de Redes e Segurança**<br/>Arquitetura TCP/IP e encapsulamento, visibilidade de tráfego HTTPS, governação da Internet (IXPs, cabos submarinos, DNS/AS, RFCs), conceitos de segurança (NIST, CIA, `RFC 4949`), serviços e mecanismos (`X.800`), princípios de desenho seguro, *attack surfaces*, *attack trees* e laboratório `scapy`/ICMP.                                                                   | Concluído (26 slides + Stallings Cap. 1 + 2 scripts `scapy`, 6 notas)        |
 | **[[Capítulo 2 - Criptografia Aplicada]]**             | **Criptografia Aplicada (*Applied Cryptography*)**<br/>Modelo convencional e criptanálise, cifras clássicas, cifras de blocos (`Feistel`, `DES`, `AES`) vs. *stream* (`RC4`), criptografia assimétrica e `RSA`, funções de *hash* (`MD5`, `SHA-2`, `SHA-3`, `RIPEMD`), `MAC`/`HMAC`, assinaturas digitais, PKI/`OpenSSL`, `GnuPG`, `SSH`, `TLS 1.3`, `IPSec`/`OpenVPN` e `TBL #2`.                                         | Concluído (77 slides + Stallings + TBL #2, 9 notas + 1 Cheat Sheet)          |
 | **[[Capítulo 3 - Segurança em IoT]]**                  | **Segurança em IoT (*Internet of Things Security*)**<br/>Desafios e ataques por camada IoT (*Perception*, *Network*, *Application*, *Processing*, *Business*), requisitos específicos e contramedidas (*Sharma*), segurança em `BLE` (*Pairing Feature Exchange*, *LE Legacy* vs. *LE Secure Connections* — *Lacava*), `LPWAN` e arquitetura/modelo de ameaças `LoRaWAN` (*Stanco*) e `TBL #3` (`MQTT`, `BLE`, `LoRaWAN`). | Concluído (3 artigos — secções destacadas + TBL #3, 6 notas + 1 Cheat Sheet) |
-| **[[Capítulo 4 - Deteção de Intrusões e Zero Trust]]** | **Deteção de Intrusões (IDS) e *Zero Trust Architecture* (ZTA)**<br/>Taxonomia de `IDS` (`SIDS` vs. técnicas híbridas, `HIDS`/`NIDS`, fontes de dados, matriz de confusão e métricas, evasão e desafios — *Khraisat et al.*) e fundamentos de *Zero Trust Architecture* (`NIST SP 800-207`: princípios, componentes lógicos `PE`/`PA`/`PEP`, `PKI`/`ID Management` e separação *Control Plane* vs. *Data Plane*).          | Concluído (2 documentos — secções destacadas, 3 notas)                       |
+| **[[Capítulo 4 - Deteção de Intrusões e Zero Trust]]** | **Deteção de Intrusões (IDS) e *Zero Trust Architecture* (ZTA)**<br/>Taxonomia de `IDS` (`SIDS` vs. técnicas híbridas, `HIDS`/`NIDS`, fontes de dados, matriz de confusão e métricas, evasão e desafios — *Khraisat et al.*) e fundamentos de *Zero Trust Architecture* (`NIST SP 800-207`: princípios, componentes lógicos `PE`/`PA`/`PEP`, `PKI`/`ID Management` e separação *Control Plane* vs. *Data Plane*).          | Concluído (2 documentos — secções destacadas, 3 notas + 1 Cheat Sheet e Questionário) |
 
 ### Folhas de Consulta Rápida (Cheat Sheets de Apoio)
 
 * **[[Cheat Sheet - Criptografia, Hash, PKI e VPNs]]**: Guia de bolso do Capítulo 2 para notação criptográfica, simétrica vs. assimétrica, propriedades de *hash*/`MAC`, `OpenSSL` CA, `GnuPG`, `SSH` e `IPSec`/`OpenVPN`.
 * **[[Cheat Sheet - Segurança em IoT (BLE, LoRaWAN e MQTT)]]**: Guia de bolso do Capítulo 3 para camadas IoT, modos de emparelhamento `BLE`, chaves e servidores `LoRaWAN` e segurança em `MQTT`.
+* **[[Cheat Sheet e Questionário - IDS e Zero Trust Architecture]]**: Guia de bolso e questionário de consolidação do Capítulo 4 para `SIDS`/`AIDS`/Híbridos, `HIDS`/`NIDS`, métricas de desempenho (`TPR`, `FPR`, `FNR`, `CR`, `ROC`), evasão, 7 *Tenets* do Zero Trust e `PE`/`PA`/`PEP`.
 
 ---
 
