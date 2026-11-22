@@ -1,11 +1,11 @@
 ---
 title: Cheat Sheet - Enumeração de Serviços e Portos
-tipo: cheat-sheet
+tipo: cheatsheet
 mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
 capitulo: 5
-tags: [cod1, cheat-sheet, enumeracao, smb, snmp, ldap, dns, smtp]
+tags: [cod1, cheatsheet, enumeracao, smb, snmp, ldap, dns, smtp]
 aliases: [Cheat Sheet Enumeração]
 atualizado: 2026-11-16
 ---

@@ -30,9 +30,9 @@ Autoavaliação estilo exame (Grupo I — escolha múltipla + Grupo II — respo
 ### 1. Sanitização de HDDs vs. SSDs
 Uma organização pretende abater discos rígidos magnéticos (`HDD`) e unidades `SSD` NVMe contendo dados confidenciais. Qual afirmação está **correta**?
 * **A)** O *degaussing* destrói os dados em SSDs NAND Flash e permite reutilizar os HDDs após formatação rápida.
-* **B)** O *degaussing* inutiliza HDDs (destrói as *servo tracks* de fábrica) e **não tem efeito em SSDs/Flash**; para NVMe deve usar-se `Format NVM` (*Cryptographic Erase*) ou `nvme sanitize`.
-* **C)** Passar um HDD pelo `DiskMantler` (60 s) destrói definitivamente todos os dados dos pratos.
-* **D)** Três passagens DoD 5220.22-M garantem eliminação total em pens USB e SSDs, incluindo blocos de *over-provisioning*.
+* **B)** Três passagens DoD 5220.22-M garantem eliminação total em pens USB e SSDs, incluindo blocos de *over-provisioning*.
+* **C)** O *degaussing* inutiliza HDDs (destrói as *servo tracks* de fábrica) e não tem efeito em SSDs/Flash; para NVMe deve usar-se `Format NVM` (*Cryptographic Erase*) ou `nvme sanitize`.
+* **D)** Passar um HDD pelo `DiskMantler` (60 segundos) destrói definitivamente todos os dados magnéticos dos pratos.
 
 ### 2. Hierarquia Normativa (`Policy` vs. `Standard` vs. `Procedure`)
 Numa política de armazenamento amovível com `VeraCrypt`, a instrução *"cifrar com VeraCrypt usando AES-Twofish, Serpent-AES ou AES-Twofish-Serpent"* corresponde a que nível?
@@ -43,59 +43,59 @@ Numa política de armazenamento amovível com `VeraCrypt`, a instrução *"cifra
 
 ### 3. Pen Drives USB Falsas (`ValiDrive` — Ficha 11)
 Uma pen USB comprada por `$19.99` anuncia `1 TB` ao sistema operativo, mas só possui `64 GB` físicos reais. Como atua o `ValiDrive`?
-* **A)** Formata a pen a baixo nível destruindo todos os dados existentes para medir o espaço real.
-* **B)** Executa testes aleatórios **não destrutivos** (*spot-check*) em **576 regiões** ao longo da capacidade declarada, distinguindo *Validated Storage* (verde) de *Missing Storage* (vermelho).
-* **C)** Lê apenas o descritor `reported capacity` do firmware USB.
-* **D)** Aplica *degaussing* seletivo na *Fake Part*.
+* **A)** Executa testes aleatórios não destrutivos (*spot-check*) em 576 regiões ao longo da capacidade declarada, distinguindo *Validated Storage* (verde) de *Missing Storage* (vermelho).
+* **B)** Formata a pen a baixo nível destruindo todos os dados existentes para medir o espaço físico real.
+* **C)** Lê apenas o descritor `reported capacity` do firmware USB e compara-o com o número de série.
+* **D)** Executa sobrescrita sequencial completa de toda a *Fake Part* para recuperar os setores reais.
 
 ### 4. `BitLocker's YellowKey` (`CVE-2026-45585`)
 Que condição e mitigação caracterizam a vulnerabilidade `BitLocker's YellowKey`?
-* **A)** Exploração remota via SMB em Windows 10; mitigada desativando o `SecureBoot`.
-* **B)** Requer **acesso físico** em Windows 11 ($\ge$ `24H2`) / Server 2025 com BitLocker **`TPM-only` sem PIN**, abusando do **WinRE**; mitigada com `KB5089549` e **`TPM+PIN`**.
-* **C)** Afeta apenas discos Linux `LUKS2` sem password na BIOS.
-* **D)** Permite decifrar volumes `VeraCrypt` através de um *Account-level SAS Token*.
+* **A)** Exploração remota via SMB em Windows 10; mitigada desativando o `SecureBoot` na UEFI.
+* **B)** Afeta apenas discos Linux `LUKS2` configurados sem password de arranque na BIOS.
+* **C)** Permite decifrar volumes `VeraCrypt` através de um *Account-level SAS Token* exposto.
+* **D)** Requer acesso físico em Windows 11 ($\ge$ `24H2`) / Server 2025 com BitLocker `TPM-only` sem PIN, abusando do WinRE; mitigada com `KB5089549` e `TPM+PIN`.
 
 ### 5. `SMS Blaster` vs. Smishing Tradicional
 Qual é a principal particularidade técnica de uma estação portátil `SMS Blaster`?
-* **A)** Requer a lista prévia de números telefónicos das vítimas para enviar mensagens via operador.
-* **B)** Imita uma torre celular com sinal dominante e força o ***downgrade* para `2G`** (sem cifragem nem autenticação), difundindo SMS por *Cell Broadcast* sem precisar dos números; mitigável desligando `2G` no `Android 12+`.
-* **C)** Funciona exclusivamente em redes `5G` com autenticação mútua.
-* **D)** Captura códigos `Passkey` através de Bluetooth a longa distância.
+* **A)** Requer a lista prévia de números telefónicos das vítimas para enviar mensagens através da rede do operador.
+* **B)** Imita uma torre celular com sinal dominante e força o *downgrade* para `2G` (sem cifragem nem autenticação), difundindo SMS sem precisar dos números; mitigável desligando `2G` no Android 12+.
+* **C)** Funciona exclusivamente em redes `5G` explorando a autenticação mútua entre terminal e estação base.
+* **D)** Interceta códigos `Passkey` através de Bluetooth a longa distância em zonas movimentadas.
 
 ### 6. Diretrizes `NIST SP 800-63-4` (2024) vs. NIST 2003
 O que mudou fundamentalmente nas recomendações de passwords do `NIST SP 800-63-4` face a 2003?
-* **A)** Passou a exigir rotação obrigatória a cada 60 dias e proibiu caracteres Unicode.
-* **B)** **Proibiu exigir alterações periódicas obrigatórias** (salvo evidência de *data breach* / *credential stuffing*), privilegiando comprimento ($\ge 8$, idealmente $\ge 15$ até $64$ caracteres) e permitindo ASCII/Unicode.
+* **A)** Proibiu exigir alterações periódicas obrigatórias (salvo evidência de *data breach* ou *credential stuffing*), privilegiando comprimento ($\ge 8$, idealmente $\ge 15$ até $64$ caracteres) e permitindo ASCII/Unicode.
+* **B)** Passou a exigir rotação obrigatória a cada 60 dias e proibiu caracteres Unicode e espaços em branco.
 * **C)** Recomendou substituir palavras-passe longas por sequências curtas de 8 caracteres com substituições (`Tr0ub4dor&3`).
-* **D)** Tornou o SMS *Out-of-Band* o método preferencial de 2FA.
+* **D)** Tornou o SMS *Out-of-Band* o método preferencial de autenticação multifator para contas críticas.
 
 ### 7. Entropia de Passwords e de Ficheiros
 Considerando $E = L \times \log_2(R)$ e a escala de entropia por byte (`0–8 bits/byte`), qual afirmação está **correta**?
-* **A)** A entropia cresce linearmente com $R$ e logaritmicamente com $L$; um ficheiro cifrado `.kdbx` tem entropia $\approx 4.5\text{ bits/byte}$.
-* **B)** A entropia cresce **linearmente com $L$** e com $\log_2(R)$; um ficheiro de texto simples tem entropia baixa ($\approx 4.5\text{ bits/byte}$, comprime bem) e um ficheiro comprimido/cifrado tem entropia alta ($\approx 7.9\text{ bits/byte}$).
-* **C)** Uma password de $n$ bits exige em média $2^n$ tentativas.
-* **D)** O `ent` e o `Detect It Easy` servem apenas para calcular entropia de passwords curtas.
+* **A)** A entropia cresce linearmente com $R$ e logaritmicamente com $L$; um ficheiro cifrado `.kdbx` apresenta entropia $\approx 4.5\text{ bits/byte}$.
+* **B)** Uma password de $n$ bits exige em média $2^n$ tentativas num ataque de força bruta exaustivo.
+* **C)** O `ent` e o `Detect It Easy` servem exclusivamente para calcular a entropia de passwords curtas em texto limpo.
+* **D)** A entropia cresce linearmente com $L$ e com $\log_2(R)$; um ficheiro de texto simples tem entropia baixa ($\approx 4.5\text{ bits/byte}$) e um ficheiro comprimido ou cifrado tem entropia alta ($\approx 7.9\text{ bits/byte}$).
 
 ### 8. Limite do `bcrypt` (`Okta Bypass`)
 Porque provocou `bcrypt(userId + ":" + username + ":" + password)` um *authentication bypass* na Okta quando `username > 56 bytes`?
-* **A)** Porque o `bcrypt` não usa *salt*.
-* **B)** Porque o `bcrypt` (baseado em *Blowfish*) processa apenas os primeiros **`56–72 bytes`** da entrada e trunca silenciosamente o restante, ignorando a `password`.
-* **C)** Porque o `bcrypt` é vulnerável a *Rainbow Tables* quando recebe nomes longos.
-* **D)** Porque o `bcrypt` converte automaticamente a password para texto limpo acima de 56 bytes.
+* **A)** Porque o `bcrypt` não suporta *per-credential salt* quando recebe entradas concatenadas.
+* **B)** Porque o `bcrypt` (baseado em *Blowfish*) processa apenas os primeiros `56–72 bytes` da entrada e trunca silenciosamente o restante, ignorando a `password`.
+* **C)** Porque o `bcrypt` fica vulnerável a *Rainbow Tables* pré-computadas quando recebe nomes longos.
+* **D)** Porque o `bcrypt` converte automaticamente a password para texto limpo sempre que ultrapassa 56 bytes.
 
 ### 9. `TOTP` (`RFC 6238`) vs. `Passkeys` (`FIDO2`)
 Qual a principal vantagem de segurança das `Passkeys` (`FIDO2`) face a códigos `TOTP` de 6 dígitos?
-* **A)** As `Passkeys` enviam a chave privada cifrada ao servidor em cada login.
-* **B)** As `Passkeys` vinculam criptograficamente o par de chaves assimétricas ao **domínio exato** (imunes a phishing/proxies AitM como `OTP.Agency`) e exigem **Bluetooth** para prova de proximidade em fluxos *cross-device*.
-* **C)** O `TOTP` depende obrigatoriamente da rede celular `SS7`.
-* **D)** As `Passkeys` eliminam qualquer risco mesmo que o smartphone seja roubado e desbloqueado.
+* **A)** As `Passkeys` enviam a chave privada cifrada ao servidor de autenticação em cada sessão.
+* **B)** O `TOTP` depende obrigatoriamente da rede celular `SS7` para sincronizar o contador temporal.
+* **C)** As `Passkeys` vinculam criptograficamente o par de chaves assimétricas ao domínio exato (imunes a phishing/proxies AitM como `OTP.Agency`) e exigem Bluetooth para prova de proximidade em fluxos *cross-device*.
+* **D)** As `Passkeys` eliminam qualquer risco mesmo que o smartphone da vítima seja roubado e desbloqueado.
 
 ### 10. Armazenamento Seguro e `hashcat`
 O que executa o comando `hashcat -m 0 -a 3 -1 ?u?l -o cracked.txt hashes.txt ?1?1?1?1?1?1?1`?
-* **A)** Ataque de dicionário (`-a 3`) sobre hashes `NTLM` (`-m 0`) usando `rockyou.txt`.
-* **B)** Ataque de **força bruta por máscara (`-a 3`)** sobre hashes **`MD5` (`-m 0`)** testando palavras-passe de **7 letras** misturando maiúsculas e minúsculas (`-1 ?u?l`).
-* **C)** Ataque sobre hashes `SHA-256` com 7 caracteres ASCII imprimíveis (`?a`).
-* **D)** Reparação de uma base de dados `KeePassXC`.
+* **A)** Ataque de força bruta por máscara (`-a 3`) sobre hashes `MD5` (`-m 0`), testando palavras-passe de 7 letras misturando maiúsculas e minúsculas (`-1 ?u?l`).
+* **B)** Ataque de dicionário (`-a 3`) sobre hashes `NTLM` (`-m 0`), testando palavras da lista `rockyou.txt`.
+* **C)** Ataque de máscara sobre hashes `SHA-256` (`-m 0`), testando 7 caracteres ASCII imprimíveis (`?a`).
+* **D)** Ataque híbrido sobre bases de dados `KeePassXC` com 7 dígitos numéricos.
 
 ---
 
@@ -116,16 +116,16 @@ O que executa o comando `hashcat -m 0 -a 3 -1 ?u?l -o cracked.txt hashes.txt ?1?
 
 | # | Resposta | Referência para Rever |
 | :---: | :---: | :--- |
-| **1** | **B** | [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]] · [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]] |
+| **1** | **C** | [[Sanitização e Destruição de Discos Magnéticos (HDDs) - Wiping, Degaussing e Destruição Física]] · [[Arquitetura SSD e Memória NAND (Wear Leveling e Garbage Collection)]] |
 | **2** | **C** | [[Gestão de Ativos (Asset Management) e Políticas de Armazenamento Amovível (VeraCrypt)]] |
-| **3** | **B** | [[Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)]] |
-| **4** | **B** | [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]] |
+| **3** | **A** | [[Pen Drives USB Falsas e Verificação com ValiDrive (Ficha 11)]] |
+| **4** | **D** | [[System e OS Hardening e Vulnerabilidade BitLocker YellowKey (CVE-2026-45585)]] |
 | **5** | **B** | [[Smishing, Estações SMS Blaster (Downgrade 2G) e Quishing (Códigos QR)]] |
-| **6** | **B** | [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]] |
-| **7** | **B** | [[Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)]] |
+| **6** | **A** | [[Segurança de Passwords, Paradigma xkcd e Diretrizes NIST (2003 vs SP 800-63-4)]] |
+| **7** | **D** | [[Entropia de Passwords e Entropia de Ficheiros (ent e Detect It Easy)]] |
 | **8** | **B** | [[Limite do bcrypt (Okta Bypass), Credential Stuffing e Caso FortiBleed]] |
-| **9** | **B** | [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]] |
-| **10** | **B** | [[Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)]] |
+| **9** | **C** | [[Autenticação 2FA (Protocolo TOTP RFC 6238) e Passkeys (FIDO2 - WebAuthn e CTAP)]] |
+| **10** | **A** | [[Cracking e Auditoria de Passwords com Hashcat (Hashcat 101 e Máscaras)]] |
 
 ---
 

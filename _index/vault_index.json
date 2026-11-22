@@ -86,7 +86,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-3"
+        "matched_term": "SHA-2"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -135,7 +135,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Arranque do Windows"
+        "matched_term": "Secure Boot"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -608,33 +608,6 @@
         ]
       },
       {
-        "note_a": "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
-        "uc_a": "AFD1",
-        "note_b": "Cheat Sheet - Enumeração de Serviços e Portos",
-        "uc_b": "COD1",
-        "shared_tags": [
-          "cheat-sheet"
-        ]
-      },
-      {
-        "note_a": "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
-        "uc_a": "AFD1",
-        "note_b": "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
-        "uc_b": "COD1",
-        "shared_tags": [
-          "cheat-sheet"
-        ]
-      },
-      {
-        "note_a": "Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)",
-        "uc_a": "AFD1",
-        "note_b": "Cheat Sheet - Scanning de Redes e Nmap",
-        "uc_b": "COD1",
-        "shared_tags": [
-          "cheat-sheet"
-        ]
-      },
-      {
         "note_a": "Cheat Sheet - Enumeração de Serviços e Portos",
         "uc_a": "COD1",
         "note_b": "Governação da Internet - IXPs, Infraestrutura Submarina, DNS e RFCs",
@@ -668,6 +641,33 @@
         "uc_b": "ASSI",
         "shared_tags": [
           "resumo"
+        ]
+      },
+      {
+        "note_a": "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
+        "uc_a": "AFD1",
+        "note_b": "Cheat Sheet - YARA, MOTW e Extração de Strings",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "resumo"
+        ]
+      },
+      {
+        "note_a": "Cheat Sheet - Organização de Dados, Codificações e Timestamps",
+        "uc_a": "AFD1",
+        "note_b": "Recuperação de Clipboard e Sincronização na Timeline",
+        "uc_b": "ASSI",
+        "shared_tags": [
+          "base64"
+        ]
+      },
+      {
+        "note_a": "Cheat Sheet - Playbook de Pentesting e Footprinting Organizacional",
+        "uc_a": "COD1",
+        "note_b": "Fases da Investigação Forense Digital",
+        "uc_b": "AFD1",
+        "shared_tags": [
+          "metodologia"
         ]
       }
     ],
@@ -3517,10 +3517,10 @@
       "uc": "AFD1",
       "capitulo": 4,
       "bloco": null,
-      "tipo": "cheat-sheet",
+      "tipo": "cheatsheet",
       "tags": [
         "afd1",
-        "cheat-sheet",
+        "cheatsheet",
         "forense",
         "hdd",
         "ssd",
@@ -10088,10 +10088,10 @@
       "uc": "COD1",
       "capitulo": 4,
       "bloco": null,
-      "tipo": "cheat-sheet",
+      "tipo": "cheatsheet",
       "tags": [
         "cod1",
-        "cheat-sheet",
+        "cheatsheet",
         "nmap",
         "hping3",
         "scanning"
@@ -10332,10 +10332,10 @@
       "uc": "COD1",
       "capitulo": 5,
       "bloco": null,
-      "tipo": "cheat-sheet",
+      "tipo": "cheatsheet",
       "tags": [
         "cod1",
-        "cheat-sheet",
+        "cheatsheet",
         "enumeracao",
         "smb",
         "snmp",
@@ -10490,10 +10490,10 @@
       "uc": "COD1",
       "capitulo": null,
       "bloco": null,
-      "tipo": "cheat-sheet",
+      "tipo": "cheatsheet",
       "tags": [
         "cod1",
-        "cheat-sheet",
+        "cheatsheet",
         "playbook",
         "pentest",
         "footprinting",

@@ -1,11 +1,11 @@
 ---
 title: Cheat Sheet - Scanning de Redes e Nmap
-tipo: cheat-sheet
+tipo: cheatsheet
 mestrado: Cibersegurança e Informática Forense
 uc: Cibersegurança Ofensiva e Defensiva I
 sigla_uc: COD1
 capitulo: 4
-tags: [cod1, cheat-sheet, nmap, hping3, scanning]
+tags: [cod1, cheatsheet, nmap, hping3, scanning]
 aliases: [Cheat Sheet Nmap, Scanning Cheat Sheet]
 atualizado: 2026-11-16
 ---

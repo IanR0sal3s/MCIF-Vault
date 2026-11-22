@@ -68,8 +68,15 @@
     .st-btn.s2 { background: var(--ok); color: #fff; border-color: var(--ok); }
     a.obs-link { color: var(--primary); text-decoration: none; font-size: 12px; font-weight: 600; }
     a.obs-link:hover { text-decoration: underline; }
-    .sec-label { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); margin: 14px 0 8px; }
+    .sec-label { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); margin: 14px 0 8px; display: flex; align-items: center; gap: 8px; }
+    .sec-hint { font-size: 11px; font-weight: 500; text-transform: none; color: var(--muted); opacity: .85; }
     .shared-badge { display: inline-block; margin-left: 8px; padding: 1px 7px; font-size: 11px; font-weight: 600; border-radius: 99px; background: rgba(99, 102, 241, 0.18); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.4); vertical-align: middle; }
+    .support-badge { display: inline-block; margin-left: 8px; padding: 1px 7px; font-size: 11px; font-weight: 600; border-radius: 99px; background: rgba(14, 165, 233, 0.15); color: #0284c7; border: 1px solid rgba(14, 165, 233, 0.35); vertical-align: middle; }
+    @media (prefers-color-scheme: dark) { .support-badge { color: #38bdf8; } }
+    .support-row { background: rgba(14, 165, 233, 0.03); }
+    .chk-btn { padding: 5px 12px; font-size: 12px; border-radius: 99px; background: var(--card); border: 1px solid var(--border); color: var(--text); }
+    .chk-btn.done { background: #0284c7; color: #fff; border-color: #0284c7; }
+    .support-summary { margin-top: 6px; font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
   </style>
 </head>
 <body>
@@ -87,6 +94,9 @@
             <option value="0">Por estudar</option>
             <option value="1">Mais ou menos</option>
             <option value="2">Dominado</option>
+            <option value="SUPPORT_ALL">Apoio / Questionários (todos)</option>
+            <option value="SUPPORT_TODO">Apoio / Questionários (por fazer)</option>
+            <option value="SUPPORT_DONE">Apoio / Questionários (vistos)</option>
           </select>
           <button onclick="exportProgress()">Exportar JSON</button>
           <button onclick="document.getElementById('impFile').click()">Importar JSON</button>
@@ -100,6 +110,10 @@
           <span id="globalPct">0%</span>
         </div>
         <div class="bar"><div id="globalBar" style="width:0%"></div></div>
+        <div class="support-summary">
+          <span>Questionários, Fichas e Cheat Sheets (não contam para o %):</span>
+          <span id="globalSupport">0/0 vistos</span>
+        </div>
       </div>
     </div>
 
@@ -119,8 +133,18 @@
   <script src="../_index/vault_catalog.js"></script>
   <script>
     const STORAGE_KEY = 'mcif_study_progress_v1';
+    const VISITED_KEY = 'mcif_study_visited_v1';
     const VAULT_NAME = 'MCIF-Vault';
+    const SUPPORT_TYPES = new Set(['exercicio', 'cheatsheet']);
     const rawNotes = (window.MCIF_VAULT || []).filter(n => n.tipo !== 'indice' && n.uc !== 'GERAL');
+    function isSupportMaterial(n) {
+      return SUPPORT_TYPES.has((n.tipo || '').toLowerCase());
+    }
+    function supportKindLabel(n) {
+      const t = (n.tipo || '').toLowerCase();
+      if (t === 'exercicio') return 'Questionário / Prática';
+      return 'Cheat Sheet';
+    }
     const FOLDER_MIGRATIONS = [
       ['ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning, Sanitização e Destruição de Dados/', 'ASSI/Capítulo 02 - Administração de Sistemas/01 - Decommissioning e Sanitização/'],
       ['ASSI/Capítulo 02 - Administração de Sistemas/02 - Gestão de Ativos, Segurança em Armazenamento USB e ValiDrive/', 'ASSI/Capítulo 02 - Administração de Sistemas/02 - Gestão de Ativos e USB/'],
@@ -149,10 +173,23 @@
     }
 
     let progress = {};
+    let visited = {};
     try {
       progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-      if (migrateProgressPaths(progress)) localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-    } catch (_) { progress = {}; }
+      visited = JSON.parse(localStorage.getItem(VISITED_KEY) || '{}');
+      let pChanged = migrateProgressPaths(progress);
+      let vChanged = migrateProgressPaths(visited);
+      // Migrar eventuais estados antigos de material de apoio para visited
+      for (const n of rawNotes) {
+        if (isSupportMaterial(n) && progress[n.path] !== undefined) {
+          if (progress[n.path] > 0) { visited[n.path] = 1; vChanged = true; }
+          delete progress[n.path];
+          pChanged = true;
+        }
+      }
+      if (pChanged) localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+      if (vChanged) localStorage.setItem(VISITED_KEY, JSON.stringify(visited));
+    } catch (_) { progress = {}; visited = {}; }
 
     // Caminho atual selecionado na árvore: [] = raiz, ['AFD1'], ['AFD1', 'Capítulo 01...'], etc.
     let currentPath = [];
@@ -219,6 +256,7 @@
     }
 
     function getState(path) { return progress[path] !== undefined ? progress[path] : 0; }
+    function isVisited(path) { return Boolean(visited[path]); }
 
     function setState(path, val) {
       if (val === 0) delete progress[path];
@@ -227,16 +265,32 @@
       renderAll();
     }
 
+    function toggleVisited(path) {
+      if (visited[path]) delete visited[path];
+      else visited[path] = 1;
+      localStorage.setItem(VISITED_KEY, JSON.stringify(visited));
+      renderAll();
+    }
+
     function calcStats(list) {
-      if (!list.length) return { pct: 0, done: 0, mid: 0, todo: 0, total: 0 };
+      const studyList = list.filter(n => !isSupportMaterial(n));
+      const supportList = list.filter(isSupportMaterial);
+      const supportDone = supportList.filter(n => isVisited(n.path)).length;
+      if (!studyList.length) {
+        return { pct: null, done: 0, mid: 0, todo: 0, total: 0, supportDone, supportTotal: supportList.length };
+      }
       let pts = 0, done = 0, mid = 0, todo = 0;
-      for (const n of list) {
+      for (const n of studyList) {
         const s = getState(n.path);
         if (s === 2) { pts += 1; done++; }
         else if (s === 1) { pts += 0.5; mid++; }
         else todo++;
       }
-      return { pct: Math.round((pts / list.length) * 100), done, mid, todo, total: list.length };
+      return {
+        pct: Math.round((pts / studyList.length) * 100),
+        done, mid, todo, total: studyList.length,
+        supportDone, supportTotal: supportList.length
+      };
     }
 
     function navigateTo(pathArr) {
@@ -283,7 +337,7 @@
             <span onclick="toggleExpand('${key.replace(/'/g,"\\'")}', event)" style="width:12px;display:inline-block;text-align:center">${arrow}</span>
             <span title="${node.name}">${node.name}</span>
           </span>
-          <span class="t-pct">${st.pct}%</span>
+          <span class="t-pct">${st.pct !== null ? st.pct + '%' : (st.supportTotal ? `${st.supportDone}/${st.supportTotal}` : '—')}</span>
         </div>`;
       }
 
@@ -302,18 +356,32 @@
       document.getElementById('treeRoot').innerHTML =
         `<div class="t-item ${rootActive}" onclick="navigateTo([])">
           <span class="t-left">🏠 <strong>Todas as UCs</strong></span>
-          <span class="t-pct">${gst.pct}%</span>
+          <span class="t-pct">${gst.pct ?? 0}%</span>
         </div>` + renderTreeNode(vaultTree);
     }
 
     function renderNoteRows(list) {
       return `<div class="note-list">` + list.map(n => {
-        const s = getState(n.path);
         const obsUrl = `obsidian://open?vault=${encodeURIComponent(VAULT_NAME)}&file=${encodeURIComponent(n.path)}`;
         const sharedUcs = (n.shared_ucs && n.shared_ucs.length) ? n.shared_ucs.join(', ') : '';
         const sharedBadge = (n.uc === 'COMUM' || n.isShortcut)
           ? `<span class="shared-badge" title="Nota partilhada em Comum/ — alterações aqui sincronizam diretamente com a nota original">Partilhada · Comum/${sharedUcs ? ' · ' + sharedUcs : ''}</span>`
           : '';
+        if (isSupportMaterial(n)) {
+          const done = isVisited(n.path);
+          const isEx = (n.tipo || '').toLowerCase() === 'exercicio';
+          const btnLabel = done ? (isEx ? 'Feito ✓' : 'Visto ✓') : (isEx ? 'Marcar como feito' : 'Marcar como visto');
+          return `<div class="note-row support-row">
+            <div style="flex:1;min-width:240px">
+              <div style="font-weight:600">${n.title}<span class="support-badge">${supportKindLabel(n)}</span>${sharedBadge}</div>
+              <div class="meta">${n.uc}${n.cap ? ' · Cap. ' + n.cap : ''} · não conta para o % · <a class="obs-link" href="${obsUrl}">Abrir no Obsidian</a></div>
+            </div>
+            <div class="pill-group">
+              <button class="chk-btn ${done ? 'done' : ''}" onclick="toggleVisited('${n.path.replace(/'/g,"\\'")}')">${btnLabel}</button>
+            </div>
+          </div>`;
+        }
+        const s = getState(n.path);
         return `<div class="note-row">
           <div style="flex:1;min-width:240px">
             <div style="font-weight:600">${n.title}${sharedBadge}</div>
@@ -349,13 +417,17 @@
       if (q || stF !== 'ALL') {
         const scope = collectNotes(curNode);
         const found = scope.filter(n => {
-          if (stF !== 'ALL' && String(getState(n.path)) !== stF) return false;
+          const sup = isSupportMaterial(n);
+          if (stF === 'SUPPORT_ALL' && !sup) return false;
+          if (stF === 'SUPPORT_TODO' && (!sup || isVisited(n.path))) return false;
+          if (stF === 'SUPPORT_DONE' && (!sup || !isVisited(n.path))) return false;
+          if (['0', '1', '2'].includes(stF) && (sup || String(getState(n.path)) !== stF)) return false;
           if (q && !n.title.toLowerCase().includes(q) && !n.path.toLowerCase().includes(q)) return false;
           return true;
         });
         main.innerHTML = found.length
-          ? `<div class="meta">${found.length} nota(s) encontrada(s) neste âmbito</div>` + renderNoteRows(found)
-          : `<div class="meta" style="padding:20px;text-align:center">Nenhuma nota corresponde ao filtro atual.</div>`;
+          ? `<div class="meta">${found.length} item(ns) encontrado(s) neste âmbito</div>` + renderNoteRows(found)
+          : `<div class="meta" style="padding:20px;text-align:center">Nenhum item corresponde ao filtro atual.</div>`;
         return;
       }
 
@@ -368,18 +440,33 @@
         for (const ch of children) {
           const st = calcStats(collectNotes(ch));
           const pj = JSON.stringify(ch.pathArr).replace(/"/g, '&quot;');
-          html += `<div class="folder-card" onclick="navigateTo(${pj})">
-            <div class="folder-name">📁 ${ch.name}</div>
-            <div class="bar"><div style="width:${st.pct}%"></div></div>
-            <div class="meta"><strong>${st.pct}%</strong> · ${st.done}/${st.total} dominadas · ${st.mid} médias</div>
-          </div>`;
+          const supLine = st.supportTotal > 0 ? `<div class="meta" style="margin-top:3px">Apoio / prática: ${st.supportDone}/${st.supportTotal} vistos</div>` : '';
+          if (st.pct === null) {
+            html += `<div class="folder-card" onclick="navigateTo(${pj})">
+              <div class="folder-name">📁 ${ch.name}</div>
+              <div class="meta" style="margin-top:6px">Material de apoio / prática (não conta para o %)</div>
+              ${supLine}
+            </div>`;
+          } else {
+            html += `<div class="folder-card" onclick="navigateTo(${pj})">
+              <div class="folder-name">📁 ${ch.name}</div>
+              <div class="bar"><div style="width:${st.pct}%"></div></div>
+              <div class="meta"><strong>${st.pct}%</strong> · ${st.done}/${st.total} dominadas · ${st.mid} médias</div>
+              ${supLine}
+            </div>`;
+          }
         }
         html += `</div>`;
       }
 
-      // Notas diretas desta pasta (ex.: Cheat Sheets do capítulo ou notas do módulo)
-      if (curNode.notes.length > 0) {
-        html += `<div class="sec-label">Notas (${curNode.notes.length})</div>` + renderNoteRows(curNode.notes);
+      // Notas diretas desta pasta separadas entre estudo e material de apoio/prática
+      const directStudy = curNode.notes.filter(n => !isSupportMaterial(n));
+      const directSupport = curNode.notes.filter(isSupportMaterial);
+      if (directStudy.length > 0) {
+        html += `<div class="sec-label">Notas de Estudo (${directStudy.length})</div>` + renderNoteRows(directStudy);
+      }
+      if (directSupport.length > 0) {
+        html += `<div class="sec-label">Questionários, Fichas e Cheat Sheets (${directSupport.length}) <span class="sec-hint">— registo de passagem, não conta para o %</span></div>` + renderNoteRows(directSupport);
       }
 
       main.innerHTML = html || '<div class="meta">Pasta vazia.</div>';
@@ -387,14 +474,17 @@
 
     function renderAll() {
       const gst = calcStats(rawNotes);
-      document.getElementById('globalPct').textContent = `${gst.pct}% (${gst.done} dominadas · ${gst.mid} mais ou menos · ${gst.todo} por estudar / ${gst.total})`;
-      document.getElementById('globalBar').style.width = gst.pct + '%';
+      const pct = gst.pct ?? 0;
+      document.getElementById('globalPct').textContent = `${pct}% (${gst.done} dominadas · ${gst.mid} mais ou menos · ${gst.todo} por estudar / ${gst.total})`;
+      document.getElementById('globalBar').style.width = pct + '%';
+      document.getElementById('globalSupport').textContent = `${gst.supportDone}/${gst.supportTotal} vistos`;
       renderTree();
       renderMain();
     }
 
     function exportProgress() {
-      const blob = new Blob([JSON.stringify(progress, null, 2)], { type: 'application/json' });
+      const payload = { version: 2, progress, visited };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = 'mcif_progresso_estudo.json';
@@ -407,9 +497,18 @@
       const reader = new FileReader();
       reader.onload = () => {
         try {
-          progress = JSON.parse(reader.result);
+          const parsed = JSON.parse(reader.result);
+          if (parsed && parsed.version === 2 && typeof parsed.progress === 'object') {
+            progress = parsed.progress || {};
+            visited = parsed.visited || {};
+          } else {
+            progress = parsed || {};
+            visited = {};
+          }
           migrateProgressPaths(progress);
+          migrateProgressPaths(visited);
           localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+          localStorage.setItem(VISITED_KEY, JSON.stringify(visited));
           renderAll();
         }
         catch (e) { alert('Ficheiro JSON inválido.'); }
@@ -420,7 +519,9 @@
     function resetProgress() {
       if (confirm('Tens a certeza que queres reiniciar todo o teu progresso local?')) {
         progress = {};
+        visited = {};
         localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+        localStorage.setItem(VISITED_KEY, JSON.stringify(visited));
         renderAll();
       }
     }

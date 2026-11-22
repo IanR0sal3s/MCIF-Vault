@@ -1,13 +1,13 @@
 ---
 title: Cheat Sheet - Dispositivos de Armazenamento (HDD, ATA-SCSI, SSD e M.2)
-tipo: cheat-sheet
+tipo: cheatsheet
 mestrado: Cibersegurança e Informática Forense
 uc: Análise Forense Digital I
 sigla_uc: AFD1
 capitulo: 4
 tags:
   - afd1
-  - cheat-sheet
+  - cheatsheet
   - forense
   - hdd
   - ssd
