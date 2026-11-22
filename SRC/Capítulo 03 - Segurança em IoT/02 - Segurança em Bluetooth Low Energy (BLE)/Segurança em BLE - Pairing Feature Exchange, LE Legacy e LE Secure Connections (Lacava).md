@@ -45,6 +45,19 @@ Esta troca decide:
 2. Se haverá autenticação e qual o **modelo de associação**;
 3. O tamanho da `LTK` e quais as chaves a distribuir (`LTK`, `CSRK`, `IRK`).
 
+```mermaid
+flowchart TD
+    PFE["Fase 1: Pairing Feature Exchange<br/>(SC, MitM, OOB, IO Capability)"] --> SC{"Ambos têm SC = 1?"}
+    SC -- "Não (≥1 tem SC = 0)" --> LEG["<b>LE Legacy Pairing</b><br/>(TK → STK → distribui LTK)"]
+    SC -- "Sim (ambos SC = 1)" --> SEC["<b>LE Secure Connections</b><br/>(ECDH P-256 → DHKey → LTK)"]
+    LEG --> L_JW["Just Works<br/>Vulnerável a Escuta Passiva e MITM"]
+    LEG --> L_PE["Passkey Entry (6 dígitos)<br/>Protege MITM (entropia limitada)"]
+    LEG --> L_OOB["OOB (ex.: NFC)<br/>Resistente a MITM"]
+    SEC --> S_JW["Just Works<br/>Dificulta Escuta Passiva (ECDH),<br/>mas MITM continua possível"]
+    SEC --> S_NC["Numeric Comparison / Passkey<br/>(Exige ecrã/teclado) → Protege MITM"]
+    SEC --> S_OOB["OOB Autenticado (ex.: NFC)<br/>Ideal sem ecrã/teclado → Protege MITM"]
+```
+
 ---
 
 ## 2. *LE Legacy Pairing* (Secção 3.2)

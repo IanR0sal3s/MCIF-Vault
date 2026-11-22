@@ -44,6 +44,16 @@ O ***Zero Trust* (`ZT`)** é um paradigma de cibersegurança focado na proteçã
 * **Zona de Confiança Implícita (*Implicit Trust Zone*)**: área onde todas as entidades têm pelo menos o nível de confiança do último *gateway* `PDP`/`PEP` (analogia da segurança de aeroporto). O objetivo da `ZTA` é **encolher esta zona ao mínimo possível**, aproximando `PDP`/`PEP` de cada recurso.
 * **Avaliação dinâmica baseada em risco**: cada pedido avalia identidade (pessoas e entidades não-pessoa / `NPE`), postura de segurança do dispositivo, hora, localização e contexto — sem assumir que pedidos subsequentes numa sessão antiga permanecem válidos.
 
+### 1.1. Os 7 Princípios Fundamentais do *Zero Trust* (*Tenets of Zero Trust*, Secção 2.1)
+
+1. **Todas as fontes de dados e serviços de computação são considerados recursos** (incluindo sensores, *SaaS* e até dispositivos pessoais `BYOD` que acedam a recursos empresariais).
+2. **Toda a comunicação é protegida independentemente da localização de rede**: estar dentro do perímetro físico/rede interna não confere confiança automática; toda a comunicação protege confidencialidade, integridade e autenticação da origem.
+3. **O acesso a recursos individuais é concedido por sessão (*per-session*)** e com menor privilégio; autorizar acesso a um recurso não concede acesso automático a outro.
+4. **O acesso é determinado por política dinâmica**, combinando identidade do cliente, estado observável do ativo/aplicação e atributos comportamentais e ambientais (hora, localização, anomalias).
+5. **A organização monitoriza e mede continuamente a integridade e a postura de segurança de todos os ativos** (ex.: via `CDM`), tratando de forma diferenciada ou bloqueando dispositivos desatualizados ou subvertidos.
+6. **Toda a autenticação e autorização são dinâmicas e estritamente impostas antes do acesso** (ciclo contínuo de `ICAM`, `MFA`, reavaliação e possível reautenticação durante a sessão).
+7. **A organização recolhe o máximo de telemetria possível** sobre ativos, rede e comunicações para melhorar continuamente a sua postura de segurança e o contexto das políticas.
+
 ---
 
 ## 2. Componentes Lógicos da `ZTA` (Secção 3, Fig. 2)

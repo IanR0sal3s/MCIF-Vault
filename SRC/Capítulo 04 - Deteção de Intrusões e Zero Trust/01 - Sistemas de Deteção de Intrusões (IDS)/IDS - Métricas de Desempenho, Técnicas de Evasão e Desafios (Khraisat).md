@@ -33,14 +33,22 @@ A eficácia de um `IDS` é avaliada através da **matriz de confusão**, mas a s
 
 ---
 
-## 1. Métricas de Desempenho e Matriz de Confusão (Tabela 6, p. 11)
+## 1. Métricas de Desempenho e Matriz de Confusão (Tabela 6, p. 11–12)
 
 | Classe Real \ Classe Prevista | **Normal** (Previsto) | **Attack** (Previsto) |
 | :--- | :---: | :---: |
 | **Normal** (Real) | **True Negative (`TN`)** | **False Positive (`FP`)** — falso alarme |
 | **Attack** (Real) | **False Negative (`FN`)** — ataque não detetado | **True Positive (`TP`)** — ataque corretamente detetado |
 
-* **`TPR` (*True Positive Rate*)**: razão entre ataques corretamente previstos (`TP`) e o total de ataques reais (`TP + FN`).
+* **`TPR`** (*True Positive Rate* / *Detection Rate* / *Sensitivity*): proporção de ataques corretamente detetados:
+  $$\text{TPR} = \frac{TP}{TP + FN}$$
+* **`FPR`** (*False Positive Rate* / *False Alarm Rate*): proporção de tráfego normal incorretamente classificado como ataque:
+  $$\text{FPR} = \frac{FP}{FP + TN}$$
+* **`FNR`** (*False Negative Rate*): proporção de ataques que escaparam ao detetor:
+  $$\text{FNR} = \frac{FN}{FN + TP}$$
+* **`Accuracy` (`CR` — *Classification Rate*)**: percentagem global de classificações corretas:
+  $$\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$$
+* **Curva `ROC`** (*Receiver Operating Characteristic*): representa `TPR` (eixo $Y$) em função de `FPR` (eixo $X$) para vários limiares de decisão (*cut-off points*). Um classificador perfeito passa pelo canto superior esquerdo (`100%` *sensitivity*, `0%` *FPR*).
 
 ---
 

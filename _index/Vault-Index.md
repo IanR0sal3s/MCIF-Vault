@@ -3,7 +3,7 @@ title: Índice Semântico e Mapa de Contexto do Vault
 tipo: indice
 tags:
   - indice-sistema
-atualizado: 2026-11-21
+atualizado: 2026-11-22
 ---
 
 # Índice Semântico e Mapa de Contexto do Vault (MCIF)
@@ -286,7 +286,7 @@ atualizado: 2026-11-21
 
 | Nota de Origem | UC | Conceito / Alias Detetado no Texto | Nota de Destino Sugerida | UC |
 | :--- | :---: | :---: | :--- | :---: |
-| `Investigação Forense Digital - Análise Live vs Post-Mortem` | `AFD1` | `AmCache` | `AmCache - Arquitetura, Hives e Evolução para SQLite` | `ASSI` |
+| `Investigação Forense Digital - Análise Live vs Post-Mortem` | `AFD1` | `Amcache.hve` | `AmCache - Arquitetura, Hives e Evolução para SQLite` | `ASSI` |
 | `Pesquisa de Evidências e Reconstrução de Eventos` | `AFD1` | `SHA-1` | `Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)` | `COMUM` |
 | `Preservação do Sistema e Integridade de Dados` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
 | `Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |

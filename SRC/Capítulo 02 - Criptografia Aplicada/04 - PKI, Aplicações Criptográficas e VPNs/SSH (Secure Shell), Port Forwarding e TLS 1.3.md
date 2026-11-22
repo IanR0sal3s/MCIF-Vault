@@ -73,6 +73,18 @@ Pré-requisitos para encaminhamento de portos:
 | **Túnel Local (`-L`)** | `ssh -L 3000:www.dei.estg.ipleiria.pt:80 user@10.1.1.2`<br/>Cliente liga a `localhost:3000` | Cliente (`3000`) $\rightarrow$ Servidor SSH (`10.1.1.2:22`) $\rightarrow$ Destino (`:80`) |
 | **Túnel Remoto (`-R`)** | `ssh -R 5000:www.google.com:80 user@10.1.1.2`<br/>Ligação a `localhost:5000` no servidor | Servidor SSH (`5000`) $\rightarrow$ Cliente SSH $\rightarrow$ Destino (`:80`) |
 
+```mermaid
+flowchart LR
+    subgraph LOCAL["Túnel Local (ssh -L 3000:destino:80 user@ssh_srv)"]
+        direction LR
+        LC["Cliente SSH<br/>Abre porto local :3000"] -->|"Túnel cifrado (:22)"| LS["Servidor SSH<br/>(10.1.1.2)"] --> LD["Serviço Destino<br/>(:80)"]
+    end
+    subgraph REMOTE["Túnel Remoto (ssh -R 5000:destino:80 user@ssh_srv)"]
+        direction LR
+        RS["Servidor SSH<br/>Abre porto remoto :5000"] -->|"Túnel cifrado (inverso)"| RC["Cliente SSH"] --> RD["Serviço Destino<br/>(:80)"]
+    end
+```
+
 ---
 
 ## 3. `TLS 1.3` e Validação de Certificados (*Project Kickoff*, Slides 2–4)

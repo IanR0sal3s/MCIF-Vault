@@ -70,6 +70,17 @@ Estrutura hierárquica em árvore que representa técnicas potenciais para explo
 * **Nós intermédios**: sub-objetivos do tipo **`AND`** (todos os filhos necessários) ou **`OR`** (basta um filho).
 * **Nós folha**: formas iniciais de lançar o ataque (podem ser anotados com custo, dificuldade, etc.).
 
+```mermaid
+flowchart TD
+    Root["Objetivo Raiz (OR):<br/>Comprometer Conta Bancária"]
+    Root --> N1["OR: Roubar Credenciais<br/>no Cliente"]
+    Root --> N2["AND: Intercetar Sessão<br/>na Rede"]
+    N1 --> L1["Phishing / Engenharia Social"]
+    N1 --> L2["Keylogger / Malware"]
+    N2 --> L3["Acesso à Rede Local (MITM)"]
+    N2 --> L4["Ausência de Validação TLS"]
+```
+
 ---
 
 ## Perguntas de revisão
