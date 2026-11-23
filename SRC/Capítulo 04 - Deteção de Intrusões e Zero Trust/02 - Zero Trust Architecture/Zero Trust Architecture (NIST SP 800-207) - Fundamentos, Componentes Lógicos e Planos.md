@@ -6,7 +6,7 @@ uc: Segurança em Redes de Computadores
 sigla_uc: SRC
 capitulo: 4
 bloco: 2
-fonte_aula: NIST.SP.800-207.pdf (Secções 2, 3 e 3.4)
+fonte_aula: NIST.SP.800-207.pdf (Secções 2, 3, 3.1 e 3.4)
 tags:
   - src
   - zero-trust
@@ -14,12 +14,14 @@ tags:
   - nist
   - pki
   - pep
+  - microsegmentacao
 aliases:
   - Zero Trust Architecture
   - ZTA
   - NIST SP 800-207
   - Control Plane vs Data Plane
-atualizado: 2026-11-15
+  - Microsegmentação
+atualizado: 2026-11-23
 ---
 
 # *Zero Trust Architecture* (`NIST SP 800-207`) — Fundamentos, Componentes Lógicos e Planos
@@ -77,13 +79,22 @@ flowchart LR
 * **`ID Management System`**: cria, armazena e gere contas e registos de identidade (ex.: `LDAP`), papéis, atributos de acesso e ativos atribuídos (frequentemente articulado com a `PKI` e federação).
 * **`Continuous Diagnostics and Mitigation` (`CDM`)**: recolhe o estado atual do ativo (versão/patches do SO, integridade de software, vulnerabilidades).
 * **Outras fontes**: *Industry compliance system*, *Threat intelligence feeds*, *Network and system activity logs*, *Data access policies* e **`SIEM`**.
+* **Integração com `IDS`**: alertas de `IDS` (via `SIEM` / *logs*) alimentam a **avaliação dinâmica de risco** no `PE`, podendo desencadear **verificação adicional (reautenticação), restrição de acessos ou terminação da sessão ativa** (via `PA` $\to$ `PEP`) conforme a política de segurança — nem são ignorados durante sessões ativas, nem terminam automaticamente qualquer anomalia (devido a falsos positivos).
+
+### 2.3. Três Abordagens de Implementação de `ZTA` (Secção 3.1)
+
+| Abordagem | Mecanismo Principal | Aplicação e Notas Críticas |
+| :--- | :--- | :--- |
+| **3.1.1 *Enhanced Identity Governance*** | Usa a **identidade** dos utilizadores/serviços como eixo principal das políticas de acesso (complementada por estado do dispositivo). | Adequada a redes abertas/visitantes e serviços *cloud*/`SaaS`; como a conectividade básica de rede é concedida, mantém risco de reconhecimento/DoS interno se não for monitorizada. |
+| **3.1.2 *Micro-Segmentation*** | Isola recursos individuais ou pequenos grupos de *workloads* em segmentos próprios protegidos por **`PEP`** dinâmicos (`NGFW`, *switches* inteligentes ou agentes/*firewalls* no próprio *host*). | **Limita o movimento lateral** aplicando políticas granulares (*allow* explícito apenas aos serviços necessários e *deny* ao restante). *Firewalls* *stateless* estáticas são má escolha pelo alto custo de gestão e incapacidade de adaptação rápida. |
+| **3.1.3 *Network Infrastructure* / `SDP`** | Usa a própria infraestrutura de rede (*overlay* de camada 7 ou inferior, `SDN`, *intent-based networking*) com o `PA` como controlador de rede. | O agente no cliente e o *gateway* do recurso (atuando como `PEP` configurado pelo `PA`) estabelecem um canal seguro dedicado apenas após autorização do `PE`. |
 
 ---
 
 ## 3. Separação *Control Plane* vs. *Data Plane* e Requisitos de Rede (Secção 3.4)
 
 * ***Control Plane***: usado por `PE`, `PA` e `PEP` (e infraestrutura) para configurar ativos, avaliar/autorizar acesso e estabelecer caminhos de comunicação. Deve ser **logicamente separado** e não diretamente acessível por ativos/utilizadores comuns.
-* ***Data Plane***: usado exclusivamente pelo tráfego aplicacional/de serviço após o caminho ter sido estabelecido via *Control Plane*.
+* ***Data Plane***: usado exclusivamente pelo tráfego aplicacional de serviço após o caminho ter sido estabelecido via *Control Plane*.
 * **Requisitos-chave (Secção 3.4.1)**:
   * Distinguir ativos geridos e sua postura através de **credenciais emitidas pela empresa** (nunca por informação falsificável como endereços `MAC`);
   * Observar todo o tráfego no *Data Plane* (ao menos metadados: destino, hora, identidade) para alimentar o `PE`;
@@ -111,7 +122,7 @@ flowchart LR
 | Percurso | Nota | Contexto |
 | :--- | :--- | :--- |
 | **Anterior** | [[IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)]] | `Bloco 01` |
-| **Seguinte** | [[Capítulo 4 - Deteção de Intrusões e Zero Trust]] · [[00 SRC]] | Fim do capítulo |
+| **Seguinte** | [[TBL 4 - IDS, Firewall e Zero Trust]] | `muda para Bloco 03` |
 | **Índice** | [[Capítulo 4 - Deteção de Intrusões e Zero Trust]] · [[00 SRC]] | `Bloco 02` |
 
 ### Conceitos Relacionados

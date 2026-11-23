@@ -51,7 +51,7 @@ Em vez de depender apenas de árvores de pastas profundas e rígidas, a navegaç
 | **[[00 ASSI]]** | **Administração Segura de Sistemas Informáticos** | Patrício Domingues | S1 | Concluído (Capítulos 1 a 4 — 107 notas indexadas) |
 | **[[00 AFD1]]** | **Análise Forense Digital I** | Miguel Frade e Baltazar Rodrigues | S1 | Em progresso (Capítulos 1 a 4 — 42 notas indexadas) |
 | **PARSI** | Políticas e Análise de Risco na Segurança de Informação | Nuno Salvador | S1 | Planeado |
-| **[[00 SRC]]** | **Segurança em Redes de Computadores** | Luís Frazão | S1 | Concluído (Capítulos 1 a 4 — 29 notas indexadas) |
+| **[[00 SRC]]** | **Segurança em Redes de Computadores** | Luís Frazão | S1 | Concluído (Capítulos 1 a 4 — 30 notas indexadas) |
 | **[[00 COD1]]** | **Cibersegurança Ofensiva e Defensiva I** | Leonel Santos | S1 | Em Curso (Capítulos 1 a 6 — 29 notas indexadas) |
 | **[[00 Comum]]** | **Núcleo Comum (Conceitos Transversais)** | Transversal | S1 | 6 *hubs* partilhados + índice (`AFD1`, `ASSI`, `COD1`, `SRC`) |
 

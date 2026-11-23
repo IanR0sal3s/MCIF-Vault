@@ -48,6 +48,8 @@ A eficácia de um `IDS` é avaliada através da **matriz de confusão**, mas a s
   $$\text{FNR} = \frac{FN}{FN + TP}$$
 * **`Accuracy` (`CR` — *Classification Rate*)**: percentagem global de classificações corretas:
   $$\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$$
+* **`Precision`** (*Valor Preditivo Positivo*): proporção dos alertas emitidos pelo `IDS` que correspondem efetivamente a ataques reais (essencial quando existe forte desbalanceamento de classes, onde `Accuracy` alta pode mascarar muitos falsos positivos):
+  $$\text{Precision} = \frac{TP}{TP + FP}$$
 * **Curva `ROC`** (*Receiver Operating Characteristic*): representa `TPR` (eixo $Y$) em função de `FPR` (eixo $X$) para vários limiares de decisão (*cut-off points*). Um classificador perfeito passa pelo canto superior esquerdo (`100%` *sensitivity*, `0%` *FPR*).
 
 ---

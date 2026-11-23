@@ -35,17 +35,18 @@ Folha de consulta rápida e questionário de cenários (estilo TBL) do **[[Capí
 | :--- | :--- | :--- |
 | **Metodologia** | **`SIDS`** (assinaturas, baixos `FP`, **não deteta *zero-day***) vs. **`AIDS`** (anomalias, **deteta *zero-day***, altos `FP`, não lê cifrados) vs. **Híbrido** (`SIDS + AIDS`) | Híbridos combinam precisão do `SIDS` com deteção de desconhecidos do `AIDS`. |
 | **Posicionamento** | **`HIDS`** (*logs*, APIs, *system calls*; **analisa após decifragem fim-a-fim** e *insiders*, mas consome recursos do *host*) vs. **`NIDS`** (pacotes, `SNMP`, `NetFlow`; monitoriza vários *hosts* sem agente, mas **falha em *payload* cifrado**) | Combinar `HIDS + NIDS` é essencial sobretudo em ambientes **ICS/SCADA**. |
-| **Métricas** | $\text{TPR}=\frac{TP}{TP+FN}$ · $\text{FPR}=\frac{FP}{FP+TN}$ · $\text{FNR}=\frac{FN}{FN+TP}$ · $\text{Acc}=\frac{TP+TN}{TP+TN+FP+FN}$ | **Curva `ROC`**: `TPR` ($Y$) vs. `FPR` ($X$); ideal = canto superior esquerdo (`100%` TPR, `0%` FPR). |
+| **Métricas** | $\text{TPR}=\frac{TP}{TP+FN}$ · $\text{FPR}=\frac{FP}{FP+TN}$ · $\text{FNR}=\frac{FN}{FN+TP}$ · $\text{Precision}=\frac{TP}{TP+FP}$ · $\text{Acc}=\frac{TP+TN}{TP+TN+FP+FN}$ | **Curva `ROC`**: `TPR` ($Y$) vs. `FPR` ($X$); ideal = canto superior esquerdo. Atenção ao desbalanceamento: `Accuracy` alta pode esconder `Precision` baixa. |
 | **4 Evasões** | **1. *Fragmentation*** (*overlap*, *overwrite*, *timeouts*) · **2. *Flooding*** · **3. *Obfuscation*** (hex, Unicode/UTF-8, dupla codificação) · **4. *Encryption*** (`HTTPS`) | Contra `HTTPS`, o `NIDS` recorre a **características estatísticas de fluxo** (ou `HIDS`). |
 
 ### 1.2. *Zero Trust Architecture* (`NIST SP 800-207`)
 
 * **Premissa:** nunca conceder confiança implícita pela localização na rede; encolher a **zona de confiança implícita** ao mínimo possível aproximando `PDP`/`PEP` do recurso.
 * **Componentes Lógicos:**
-  * **`PE` (*Policy Engine*)**: toma e regista a decisão (*trust algorithm* + fontes `CDM`, `PKI`, `ID Mgmt`, `SIEM`, *Threat Intel*, *Logs*, políticas).
+  * **`PE` (*Policy Engine*)**: toma e regista a decisão (*trust algorithm* + fontes `CDM`, `PKI`, `ID Mgmt`, `SIEM`/`IDS`, *Threat Intel*, *Logs*, políticas). Alertas de `IDS` alimentam o risco dinâmico e podem acionar reautenticação, restrição ou terminação da sessão conforme a política (sem bloqueio cego de todo falso positivo).
   * **`PA` (*Policy Administrator*)**: executa a decisão, gera credenciais de sessão e comanda o `PEP` no *Control Plane*.
   * **`PEP` (*Policy Enforcement Point*)**: único ponto de passagem no *Data Plane* (ativa, monitoriza e termina ligações).
 * **Separação de Planos:** ***Control Plane*** (`PE` $\leftrightarrow$ `PA` $\leftrightarrow$ `PEP`, inacessível a ativos comuns) vs. ***Data Plane*** (tráfego aplicacional só após autorização; sem recurso alcançável fora do `PEP`; nunca identificar ativos por endereço `MAC`).
+* **3 Abordagens de Implementação (Secção 3.1):** **1. *Enhanced Identity Governance*** (políticas centradas na identidade, ideal para *cloud*/`SaaS`) · **2. *Micro-Segmentation*** (`NGFW` ou *firewalls*/agentes no *host* como `PEP` com políticas granulares *allow* apenas ao necessário / *deny* ao resto para limitar movimento lateral) · **3. *Network Infrastructure* / `SDP`** (redes *overlay* / `SDN` com `PA` como controlador).
 * **7 Tenets (Secção 2.1):** (1) tudo é recurso; (2) toda comunicação protegida independentemente da rede; (3) acesso *per-session* e menor privilégio; (4) política dinâmica baseada em identidade/estado/comportamento; (5) monitorização contínua de integridade/postura (`CDM`); (6) autenticação/autorização dinâmicas antes e durante o acesso (`ICAM`/`MFA`); (7) recolha máxima de telemetria para melhoria contínua.
 
 ---

@@ -3,7 +3,7 @@ title: Índice Semântico e Mapa de Contexto do Vault
 tipo: indice
 tags:
   - indice-sistema
-atualizado: 2026-11-22
+atualizado: 2026-11-23
 ---
 
 # Índice Semântico e Mapa de Contexto do Vault (MCIF)
@@ -18,14 +18,14 @@ atualizado: 2026-11-22
 
 | Métrica | Valor |
 | :--- | :---: |
-| **Total de Notas Mapeadas** | `215` |
+| **Total de Notas Mapeadas** | `216` |
 | Notas em **AFD1** | `42` |
 | Notas em **ASSI** | `107` |
 | Notas em **COD1** | `29` |
 | Notas em **COMUM** | `7` |
 | Notas em **GERAL** | `1` |
-| Notas em **SRC** | `29` |
-| **Total de Ligações Internas (Wikilinks Únicos)** | `2068` |
+| Notas em **SRC** | `30` |
+| **Total de Ligações Internas (Wikilinks Únicos)** | `2076` |
 | **Ligações Cruzadas entre UCs Diferentes** | `521` |
 | **Links Quebrados (*Broken Links*)** | `0` |
 | **Notas Órfãs (Sem Ligações de Entrada)** | `0` |
@@ -247,7 +247,7 @@ atualizado: 2026-11-22
 | :---: | :--- | :---: | :--- | :--- |
 | `-` | **`Home`**<br/><small>`Home.md`</small> | `indice` | `#moc`, `#mcif` | Repositório aberto e colaborativo de notas de estudo e investigação para o Mestrado em Cibersegurança e Informática Forense (MCIF). |
 
-### Unidade Curricular: `SRC` (29 notas)
+### Unidade Curricular: `SRC` (30 notas)
 
 | Cap.Bloco | Nota (`ID` de Wikilink) | Tipo | Tags & Aliases | Resumo Central e Pontes Inter-UCs |
 | :---: | :--- | :---: | :--- | :--- |
@@ -275,11 +275,12 @@ atualizado: 2026-11-22
 | `3.3` | **`LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco)`**<br/><small>`SRC/Capítulo 03 - Segurança em IoT/03 - Segurança em LPWAN e LoRaWAN/LPWAN e Arquitetura LoRaWAN - Entidades, Classes e Chaves (Stanco).md`</small> | `conceito` | `#src`, `#iot`, `#lpwan`, `#lorawan`, `#seguranca-iot`<br/>Aliases: *LPWAN*, *LoRaWAN*, *AppSKey e NwkSKey* | As redes `LPWAN` (Low Power Wide Area Networks, como `LoRaWAN`, `Sigfox` e `NB-IoT`) combinam longo alcance (quilómetros) com baixo consumo energético e baixo débito, distinguindo-se das redes de curto alcance... |
 | `3.3` | **`Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco)`**<br/><small>`SRC/Capítulo 03 - Segurança em IoT/03 - Segurança em LPWAN e LoRaWAN/Modelo de Ameaças em LPWAN - Vetores, Atores e Classificação de Ataques (Stanco).md`</small> | `analise` | `#src`, `#iot`, `#lpwan`, `#threat-model`, `#lorawan`<br/>Aliases: *Modelo de Ameaças LPWAN*, *Vetores de Ataque LPWAN* | Uma arquitetura `LPWAN` apresenta uma superfície de ataque distribuída — desde os dispositivos finais no terreno até às aplicações na cloud — exigindo a proteção das propriedades `CIAA` (Confidentiality, Integrity,... |
 | `3.4` | **`TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)`**<br/><small>`SRC/Capítulo 03 - Segurança em IoT/04 - TBL 3 - Internet of Things/TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT).md`</small> | `exercicio` | `#src`, `#tbl`, `#iot`, `#ble`, `#lorawan`, `#mqtt`<br/>Aliases: *TBL 3 SRC*, *TBL IoT* | Síntese e fundamentação dos 10 cenários práticos do `TBL #3` (`TBL_3_EN_IoT.pdf`) aplicados a sensores, `LoRaWAN`, `BLE` e `MQTT`. |
-| `4` | **`Capítulo 4 - Deteção de Intrusões e Zero Trust`**<br/><small>`SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/Capítulo 4 - Deteção de Intrusões e Zero Trust.md`</small> | `indice` | `#moc`, `#src`, `#ids`, `#zero-trust`, `#nist`<br/>Aliases: *Capítulo 4 SRC*, *MOC Capítulo 4 SRC*, *Deteção de Intrusões e Zero Trust* | Mapa de estudo do Capítulo 4 de SRC, cobrindo estritamente as secções destacadas a amarelo do survey sobre Sistemas de Deteção de Intrusões (`s42400-019-0038-7.pdf`, Khraisat et al., 2019) e da norma `NIST SP... |
+| `4` | **`Capítulo 4 - Deteção de Intrusões e Zero Trust`**<br/><small>`SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/Capítulo 4 - Deteção de Intrusões e Zero Trust.md`</small> | `indice` | `#moc`, `#src`, `#ids`, `#zero-trust`, `#nist`, `#tbl`<br/>Aliases: *Capítulo 4 SRC*, *MOC Capítulo 4 SRC*, *Deteção de Intrusões e Zero Trust* | Mapa de estudo do Capítulo 4 de SRC, cobrindo as secções destacadas do survey sobre Sistemas de Deteção de Intrusões (`s42400-019-0038-7.pdf`, Khraisat et al., 2019), a norma `NIST SP 800-207` (`NIST.SP.800-207.pdf`)... |
 | `4` | **`Cheat Sheet e Questionário - IDS e Zero Trust Architecture`**<br/><small>`SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/Cheat Sheet e Questionário - IDS e Zero Trust Architecture.md`</small> | `cheatsheet` | `#cheatsheet`, `#exercicio`, `#src`, `#ids`, `#zero-trust`, `#zta`<br/>Aliases: *Cheat Sheet Capítulo 4 SRC*, *Questionário Capítulo 4 SRC*, *Revisão IDS e Zero Trust* | Folha de consulta rápida e questionário de cenários (estilo TBL) do Capítulo 4 - Deteção de Intrusões e Zero Trust de SRC. |
 | `4.1` | **`IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)`**<br/><small>`SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/01 - Sistemas de Deteção de Intrusões (IDS)/IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat).md`</small> | `analise` | `#src`, `#ids`, `#evasao`, `#matriz-confusao`, `#scada`<br/>Aliases: *Evasão de IDS*, *Matriz de Confusão IDS*, *Desafios IDS* | A eficácia de um `IDS` é avaliada através da matriz de confusão, mas a sua operação prática enfrenta quatro grandes técnicas de evasão (Fragmentation, Flooding, Obfuscation e Encryption) e desafios críticos em... |
 | `4.1` | **`IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)`**<br/><small>`SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/01 - Sistemas de Deteção de Intrusões (IDS)/IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat).md`</small> | `conceito` | `#src`, `#ids`, `#sids`, `#aids`, `#hids`, `#nids`<br/>Aliases: *Intrusion Detection System*, *SIDS vs AIDS*, *HIDS vs NIDS* | Um Sistema de Deteção de Intrusões (`IDS`) é um sistema de software ou hardware que identifica atividades maliciosas em redes ou sistemas informáticos — algo que uma firewall tradicional não consegue detetar — para... |
 | `4.2` | **`Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos`**<br/><small>`SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/02 - Zero Trust Architecture/Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos.md`</small> | `conceito` | `#src`, `#zero-trust`, `#zta`, `#nist`, `#pki`, `#pep`<br/>Aliases: *Zero Trust Architecture*, *ZTA*, *NIST SP 800-207*, *Control Plane vs Data Plane* | O **Zero Trust (`ZT`) é um paradigma de cibersegurança focado na proteção de recursos sob a premissa de que a confiança nunca é concedida implicitamente (nem pela localização física ou de rede), devendo ser...<br/>**Pontes Inter-UCs (1)**: `Assinaturas Digitais, PKI e GnuPG` |
+| `4.3` | **`TBL 4 - IDS, Firewall e Zero Trust`**<br/><small>`SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/03 - TBL 4 - IDS e Firewall/TBL 4 - IDS, Firewall e Zero Trust.md`</small> | `exercicio` | `#src`, `#tbl`, `#ids`, `#firewall`, `#zero-trust`, `#microsegmentacao`<br/>Aliases: *TBL 4 SRC*, *TBL IDS e Firewall*, *MCIF #4 IDS & Firewall* | Síntese e fundamentação das 9 questões do `TBL #4` (`MCIF #4 IDS & Firewall (EN)`) sobre sistemas de deteção de intrusões (`SIDS`/`AIDS`, `HIDS`/`NIDS`, métricas, evasão por fragmentação), microsegmentação e Zero... |
 
 ---
 
@@ -289,7 +290,7 @@ atualizado: 2026-11-22
 
 | Nota de Origem | UC | Conceito / Alias Detetado no Texto | Nota de Destino Sugerida | UC |
 | :--- | :---: | :---: | :--- | :---: |
-| `Investigação Forense Digital - Análise Live vs Post-Mortem` | `AFD1` | `Amcache.hve` | `AmCache - Arquitetura, Hives e Evolução para SQLite` | `ASSI` |
+| `Investigação Forense Digital - Análise Live vs Post-Mortem` | `AFD1` | `AmCache` | `AmCache - Arquitetura, Hives e Evolução para SQLite` | `ASSI` |
 | `Pesquisa de Evidências e Reconstrução de Eventos` | `AFD1` | `SHA-1` | `Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)` | `COMUM` |
 | `Preservação do Sistema e Integridade de Dados` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
 | `Diretrizes de Manuseamento - Identificação, Preservação, Isolamento e Correlação` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
@@ -297,14 +298,14 @@ atualizado: 2026-11-22
 | `Princípios e Rota do Manuseamento de Evidência Digital` | `AFD1` | `AmcacheParser` | `Extração da AmCache e Comparação Forense com a ShimCache` | `ASSI` |
 | `Princípios e Rota do Manuseamento de Evidência Digital` | `AFD1` | `LECmd` | `Ficheiros LNK (Shell Links) - Metadados e Formato Binário` | `ASSI` |
 | `Princípios e Rota do Manuseamento de Evidência Digital` | `AFD1` | `JLECmd` | `Jump Lists - Arquitetura, AppIDs e Carving` | `ASSI` |
-| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Secure Boot` | `UEFI Secure Boot` | `ASSI` |
+| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Arranque do Windows` | `UEFI Secure Boot` | `ASSI` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `RegRipper` | `Ferramentas de Análise e Extração do Registry` | `ASSI` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Prefetch` | `Serviço Prefetch e SysMain - Arquitetura e Funcionamento` | `ASSI` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `GnuPG` | `Assinaturas Digitais, PKI e GnuPG` | `COMUM` |
-| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `SHA-2` | `Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)` | `COMUM` |
+| `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `SHA-3` | `Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)` | `COMUM` |
 | `Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
 | `Processo de Arranque UEFI, Secure Boot e Fluxo do Windows` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
-| `Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB` | `AFD1` | `Secure Boot` | `UEFI Secure Boot` | `ASSI` |
+| `Dispositivos de Arranque Forense - Disquetes DOS, Live CDs Linux, WinFE e USB` | `AFD1` | `Arranque do Windows` | `UEFI Secure Boot` | `ASSI` |
 | `Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite` | `AFD1` | `Windows Registry` | `Estrutura e Hives do Windows Registry` | `ASSI` |
 | `Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite` | `AFD1` | `Prefetch` | `Serviço Prefetch e SysMain - Arquitetura e Funcionamento` | `ASSI` |
 | `Armazenamento da Aquisição - Clonagem vs Imagem, Formatos, Aquisição Remota e Assinatura de Hashes` | `AFD1` | `Assinatura Digital` | `Autenticação de Mensagens (MAC, HMAC) e Assinaturas Digitais` | `SRC` |
