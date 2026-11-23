@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-22",
+  "generated_at": "2026-11-23",
   "stats": {
-    "total_notes": 215,
+    "total_notes": 216,
     "notes_by_uc": {
       "AFD1": 42,
       "ASSI": 107,
       "COD1": 29,
       "COMUM": 7,
       "GERAL": 1,
-      "SRC": 29
+      "SRC": 30
     },
-    "total_internal_links": 2068,
+    "total_internal_links": 2076,
     "total_cross_uc_links": 521,
     "broken_links_count": 0,
     "orphan_notes_count": 0,
@@ -30,7 +30,7 @@
         "source_uc": "AFD1",
         "target_id": "AmCache - Arquitetura, Hives e Evolução para SQLite",
         "target_uc": "ASSI",
-        "matched_term": "Amcache.hve"
+        "matched_term": "AmCache"
       },
       {
         "source_id": "Pesquisa de Evidências e Reconstrução de Eventos",
@@ -86,7 +86,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -114,7 +114,7 @@
         "source_uc": "AFD1",
         "target_id": "Funções de Hash Criptográficas e Integridade (MD5, SHA-1, SHA-2 e SHA-3)",
         "target_uc": "COMUM",
-        "matched_term": "SHA-2"
+        "matched_term": "SHA-3"
       },
       {
         "source_id": "Cheat Sheet - Método de Investigação, Arranque e Aquisição Forense",
@@ -135,7 +135,7 @@
         "source_uc": "AFD1",
         "target_id": "UEFI Secure Boot",
         "target_uc": "ASSI",
-        "matched_term": "Secure Boot"
+        "matched_term": "Arranque do Windows"
       },
       {
         "source_id": "Ferramentas Portáteis de Triagem, Pesquisa e FTK Imager Lite",
@@ -11060,6 +11060,7 @@
         "Serviços e Mecanismos de Segurança (ITU-T X.800)",
         "TBL 2 - Fundamentos de Criptografia",
         "TBL 3 - Segurança em IoT (BLE, LoRaWAN e MQTT)",
+        "TBL 4 - IDS, Firewall e Zero Trust",
         "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
       ],
       "cross_uc_links": []
@@ -12002,6 +12003,7 @@
         "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "Evasão a IDS-Firewall, Banner Grabbing e Metodologia Pentest",
         "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+        "TBL 4 - IDS, Firewall e Zero Trust",
         "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
       ],
       "cross_uc_links": []
@@ -12039,6 +12041,7 @@
         "Capítulo 4 - Deteção de Intrusões e Zero Trust",
         "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
+        "TBL 4 - IDS, Firewall e Zero Trust",
         "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
       ],
       "cross_uc_links": []
@@ -12057,13 +12060,15 @@
         "zta",
         "nist",
         "pki",
-        "pep"
+        "pep",
+        "microsegmentacao"
       ],
       "aliases": [
         "Zero Trust Architecture",
         "ZTA",
         "NIST SP 800-207",
-        "Control Plane vs Data Plane"
+        "Control Plane vs Data Plane",
+        "Microsegmentação"
       ],
       "summary": "O **Zero Trust (`ZT`) é um paradigma de cibersegurança focado na proteção de recursos sob a premissa de que a confiança nunca é concedida implicitamente (nem pela localização física ou de rede), devendo ser...",
       "out_links": [
@@ -12072,18 +12077,56 @@
         "Capítulo 4 - Deteção de Intrusões e Zero Trust",
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
         "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
-        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees"
+        "Princípios Fundamentais de Desenho Seguro, Attack Surfaces e Attack Trees",
+        "TBL 4 - IDS, Firewall e Zero Trust"
       ],
       "in_links": [
         "Capítulo 4 - Deteção de Intrusões e Zero Trust",
         "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "Controlos de Segurança, Standards e Legislação (NIS 2, ISO 27001, NIST CSF)",
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
-        "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)"
+        "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+        "TBL 4 - IDS, Firewall e Zero Trust"
       ],
       "cross_uc_links": [
         "Assinaturas Digitais, PKI e GnuPG"
       ]
+    },
+    {
+      "id": "TBL 4 - IDS, Firewall e Zero Trust",
+      "title": "TBL 4 - IDS, Firewall e Zero Trust",
+      "path": "SRC/Capítulo 04 - Deteção de Intrusões e Zero Trust/03 - TBL 4 - IDS e Firewall/TBL 4 - IDS, Firewall e Zero Trust.md",
+      "uc": "SRC",
+      "capitulo": 4,
+      "bloco": 3,
+      "tipo": "exercicio",
+      "tags": [
+        "src",
+        "tbl",
+        "ids",
+        "firewall",
+        "zero-trust",
+        "microsegmentacao"
+      ],
+      "aliases": [
+        "TBL 4 SRC",
+        "TBL IDS e Firewall",
+        "MCIF #4 IDS & Firewall"
+      ],
+      "summary": "Síntese e fundamentação das 9 questões do `TBL #4` (`MCIF #4 IDS & Firewall (EN)`) sobre sistemas de deteção de intrusões (`SIDS`/`AIDS`, `HIDS`/`NIDS`, métricas, evasão por fragmentação), microsegmentação e Zero...",
+      "out_links": [
+        "00 SRC",
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
+        "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
+        "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "in_links": [
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
+      ],
+      "cross_uc_links": []
     },
     {
       "id": "Capítulo 4 - Deteção de Intrusões e Zero Trust",
@@ -12098,20 +12141,22 @@
         "src",
         "ids",
         "zero-trust",
-        "nist"
+        "nist",
+        "tbl"
       ],
       "aliases": [
         "Capítulo 4 SRC",
         "MOC Capítulo 4 SRC",
         "Deteção de Intrusões e Zero Trust"
       ],
-      "summary": "Mapa de estudo do Capítulo 4 de SRC, cobrindo estritamente as secções destacadas a amarelo do survey sobre Sistemas de Deteção de Intrusões (`s42400-019-0038-7.pdf`, Khraisat et al., 2019) e da norma `NIST SP...",
+      "summary": "Mapa de estudo do Capítulo 4 de SRC, cobrindo as secções destacadas do survey sobre Sistemas de Deteção de Intrusões (`s42400-019-0038-7.pdf`, Khraisat et al., 2019), a norma `NIST SP 800-207` (`NIST.SP.800-207.pdf`)...",
       "out_links": [
         "00 SRC",
         "Capítulo 3 - Segurança em IoT",
         "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
         "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+        "TBL 4 - IDS, Firewall e Zero Trust",
         "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
       ],
       "in_links": [
@@ -12120,6 +12165,7 @@
         "Cheat Sheet e Questionário - IDS e Zero Trust Architecture",
         "IDS - Métricas de Desempenho, Técnicas de Evasão e Desafios (Khraisat)",
         "IDS - Taxonomia (SIDS, AIDS, Híbridos) e Posicionamento (HIDS vs. NIDS) (Khraisat)",
+        "TBL 4 - IDS, Firewall e Zero Trust",
         "Zero Trust Architecture (NIST SP 800-207) - Fundamentos, Componentes Lógicos e Planos"
       ],
       "cross_uc_links": []
@@ -12156,7 +12202,8 @@
       ],
       "in_links": [
         "00 SRC",
-        "Capítulo 4 - Deteção de Intrusões e Zero Trust"
+        "Capítulo 4 - Deteção de Intrusões e Zero Trust",
+        "TBL 4 - IDS, Firewall e Zero Trust"
       ],
       "cross_uc_links": []
     }

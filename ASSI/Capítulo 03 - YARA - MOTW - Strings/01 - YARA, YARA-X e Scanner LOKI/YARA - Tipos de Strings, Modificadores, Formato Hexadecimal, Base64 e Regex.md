@@ -166,7 +166,7 @@ $ip = /([0-9]{1,3}\.){3}[0-9]{1,3}/ wide ascii
 
 | Símbolo | Descrição Técnica |
 | :---: | :--- |
-| **`\|`** | Operador de **alternância** (OU lógico entre alternativas, ex.: `(on\|off)`). |
+| **<code>&#124;</code>** | Operador de **alternância** (OU lógico entre alternativas, ex.: <code>(on&#124;off)</code>). |
 | **`()`** | Agrupa sub-expressões para aplicar quantificadores ou alternância. |
 | **`[]`** | Classe de caracteres entre parênteses retos (ex.: `[0-9a-zA-Z]`). |
 
